@@ -40,6 +40,178 @@
       "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "__Prefab": "prefabs/player.object"
+    },
+    {
+      "Id": "7d4e5e8a-5ca0-4851-b5b8-4de35975cb2e",
+      "Name": "Camera",
+      "Enabled": true,
+      "Position": "497.1481,-422.6899,425.4719",
+      "Rotation": "-0.2601569,0.1942207,0.7579172,0.5658249",
+      "Scale": "1,1,1",
+      "Components": [
+        {
+          "__type": "CameraComponent",
+          "__enabled": true,
+          "BackgroundColor": "0.33333,0.46275,0.52157,1",
+          "ClearFlags": "Color, Depth, Stencil",
+          "FieldOfView": 60,
+          "ZFar": 10000,
+          "ZNear": 10
+        }
+      ]
+    },
+    {
+      "Id": "859f0245-7f3c-4e8c-97d3-046386795722",
+      "Name": "Cube",
+      "Enabled": true,
+      "Position": "510.8315,295.1506,20.26566",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
+      "Components": [
+        {
+          "__type": "ModelComponent",
+          "__enabled": false,
+          "MaterialOverride": null,
+          "Model": "models/dev/box.vmdl",
+          "ShouldCastShadows": true,
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "ColliderBoxComponent",
+          "__enabled": true,
+          "IsTrigger": true,
+          "Scale": "455.6,430.1,67.55",
+          "Surface": null
+        },
+        {
+          "__type": "CameraTriggerComponent",
+          "__enabled": true,
+          "CameraPoint": "1bef0808-8dbd-42cc-91cf-19f6b685ffae"
+        }
+      ],
+      "Children": [
+        {
+          "Id": "1bef0808-8dbd-42cc-91cf-19f6b685ffae",
+          "Name": "Object",
+          "Enabled": true,
+          "Position": "396.1543,30.86443,236.05",
+          "Rotation": "0.3479502,0.0002928673,-0.9375126,0.0007890981",
+          "Scale": "1,1,1",
+          "Components": [
+            {
+              "__type": "CameraComponent",
+              "__enabled": true,
+              "BackgroundColor": "0.33333,0.46275,0.52157,1",
+              "ClearFlags": "Color, Depth, Stencil",
+              "FieldOfView": 60,
+              "ZFar": 10000,
+              "ZNear": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "22ab2784-4d93-426b-bfea-da61463678c1",
+      "Name": "Cube",
+      "Enabled": true,
+      "Position": "839.6343,336.6133,33.47725",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
+      "Components": [
+        {
+          "__type": "ModelComponent",
+          "__enabled": false,
+          "MaterialOverride": null,
+          "Model": "models/dev/box.vmdl",
+          "ShouldCastShadows": true,
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "ColliderBoxComponent",
+          "__enabled": true,
+          "IsTrigger": true,
+          "Scale": "154.25,288.5,120.05",
+          "Surface": null
+        },
+        {
+          "__type": "CameraTriggerComponent",
+          "__enabled": true,
+          "CameraPoint": "117b0b93-1a59-44cd-822c-f3f42c575911"
+        }
+      ],
+      "Children": [
+        {
+          "Id": "117b0b93-1a59-44cd-822c-f3f42c575911",
+          "Name": "Camera",
+          "Enabled": true,
+          "Position": "398.961,-224.7979,275.2309",
+          "Rotation": "-0.4243713,0.03133271,0.8589726,0.2847691",
+          "Scale": "1,1,1",
+          "Components": [
+            {
+              "__type": "CameraComponent",
+              "__enabled": true,
+              "BackgroundColor": "0.33333,0.46275,0.52157,1",
+              "ClearFlags": "Color, Depth, Stencil",
+              "FieldOfView": 60,
+              "ZFar": 10000,
+              "ZNear": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "fad25c2a-f95c-412c-9525-2a1b6995ae93",
+      "Name": "Cube",
+      "Enabled": true,
+      "Position": "1169.731,124.9862,-0.0003596583",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
+      "Components": [
+        {
+          "__type": "ModelComponent",
+          "__enabled": false,
+          "MaterialOverride": null,
+          "Model": "models/dev/box.vmdl",
+          "ShouldCastShadows": true,
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "ColliderBoxComponent",
+          "__enabled": true,
+          "IsTrigger": true,
+          "Scale": "194.15,236.9,114.65",
+          "Surface": null
+        },
+        {
+          "__type": "CameraTriggerComponent",
+          "__enabled": true,
+          "CameraPoint": "001a4a6f-6d32-4481-8b98-aa317a3c1013"
+        }
+      ],
+      "Children": [
+        {
+          "Id": "001a4a6f-6d32-4481-8b98-aa317a3c1013",
+          "Name": "Camera",
+          "Enabled": true,
+          "Position": "-56.8348,-608.2037,164.7901",
+          "Rotation": "0.1607996,-0.1803211,-0.6468321,-0.723349",
+          "Scale": "1,1,1",
+          "Components": [
+            {
+              "__type": "CameraComponent",
+              "__enabled": true,
+              "BackgroundColor": "0.33333,0.46275,0.52157,1",
+              "ClearFlags": "Color, Depth, Stencil",
+              "FieldOfView": 60,
+              "ZFar": 10000,
+              "ZNear": 10
+            }
+          ]
+        }
+      ]
     }
   ],
   "__references": []

@@ -1,6 +1,6 @@
 using Sandbox;
 using System.Drawing;
-
+using System.Linq;
 
 public class PlayerController : BaseComponent
 {
@@ -11,10 +11,27 @@ public class PlayerController : BaseComponent
 
 	[Property] GameObject Body { get; set; }
 	[Property] GameObject Eye { get; set; }
-	[Property] GameObject Camera { get; set; }
+	[Property] public GameObject Camera { get; set; }
 	[Property] bool FirstPerson { get; set; }
 
 	public Angles EyeAngles;
+
+	public override void OnEnabled()
+	{
+		base.OnEnabled();
+		// Update camera position
+		Camera = Scene.GetAllObjects( true ).Where( X => X.GetComponent<CameraComponent>() != null ).FirstOrDefault();
+		if ( Camera is not null )
+		{
+			var camPos = Eye.Transform.Position - EyeAngles.ToRotation().Forward * CameraDistance;
+
+			if ( FirstPerson ) camPos = Eye.Transform.Position + EyeAngles.ToRotation().Forward * 8;
+
+			Camera.Transform.Position = camPos;
+			Camera.Transform.Rotation = EyeAngles.ToRotation();
+
+		}
+	}
 
 	public override void Update()
 	{
@@ -23,17 +40,7 @@ public class PlayerController : BaseComponent
 		EyeAngles.yaw -= Input.MouseDelta.x * 0.1f;
 		EyeAngles.roll = 0;
 
-		// Update camera position
-		var camera = Camera.GetComponent<CameraComponent>( true, true );
-		if ( camera is not null )
-		{
-			var camPos = Eye.Transform.Position - EyeAngles.ToRotation().Forward * CameraDistance;
-
-			if ( FirstPerson ) camPos = Eye.Transform.Position + EyeAngles.ToRotation().Forward * 8;
-
-			camera.Transform.Position = camPos;
-			camera.Transform.Rotation = EyeAngles.ToRotation();
-		}
+		Camera = Scene.GetAllObjects( true ).Where( X => X.GetComponent<CameraComponent>() != null ).FirstOrDefault();
 
 
 		// read inputs
