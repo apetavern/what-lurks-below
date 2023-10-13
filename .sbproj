@@ -1,8 +1,8 @@
 {
-  "Title": "Testbed",
+  "Title": "brick-jam",
   "Type": "game",
-  "Org": "facepunch",
-  "Ident": "testbed",
+  "Org": "apetavern",
+  "Ident": "brick-jam",
   "Tags": null,
   "Schema": 1,
   "HasAssets": true,

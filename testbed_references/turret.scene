@@ -177,7 +177,7 @@
       "Name": "Cube",
       "Enabled": true,
       "Position": "1420.439,-314.1158,-1418.345",
-      "Rotation": "-0.00000003254731,0,0,1",
+      "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Components": [
         {
@@ -208,7 +208,7 @@
       "Name": "Cube",
       "Enabled": true,
       "Position": "1420.439,-189.5529,-1418.345",
-      "Rotation": "-0.00000003254731,0,0,1",
+      "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Components": [
         {
@@ -239,7 +239,7 @@
       "Name": "Cube",
       "Enabled": true,
       "Position": "1420.439,-163.9043,-1338.204",
-      "Rotation": "-0.00000003254731,0,0,1",
+      "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Components": [
         {
@@ -270,7 +270,7 @@
       "Name": "Cube",
       "Enabled": true,
       "Position": "1420.439,277.354,-1346.362",
-      "Rotation": "-0.00000003254731,0,0,1",
+      "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Components": [
         {
@@ -301,7 +301,7 @@
       "Name": "Cube",
       "Enabled": true,
       "Position": "1420.439,-82.8088,-1418.345",
-      "Rotation": "-0.00000003254731,0,0,1",
+      "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Components": [
         {
@@ -332,7 +332,7 @@
       "Name": "Cube",
       "Enabled": true,
       "Position": "1420.439,-174.5318,-1259.018",
-      "Rotation": "-0.00000003254731,0,0,1",
+      "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Components": [
         {
@@ -363,7 +363,7 @@
       "Name": "Cube (1)",
       "Enabled": true,
       "Position": "686.7393,322.773,-1612.719",
-      "Rotation": "-0.00000003254731,0,0,1",
+      "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Components": [
         {
@@ -394,7 +394,7 @@
       "Name": "Cube (1)",
       "Enabled": true,
       "Position": "686.7393,393.245,-1612.719",
-      "Rotation": "-0.00000003254731,0,0,1",
+      "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Components": [
         {
@@ -425,7 +425,7 @@
       "Name": "Cube (1)",
       "Enabled": true,
       "Position": "686.7393,466.1223,-1612.719",
-      "Rotation": "-0.00000003254731,0,0,1",
+      "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Components": [
         {
@@ -456,7 +456,7 @@
       "Name": "Cube (1)",
       "Enabled": true,
       "Position": "686.7393,538.7812,-1612.719",
-      "Rotation": "-0.00000003254731,0,0,1",
+      "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Components": [
         {
@@ -487,7 +487,7 @@
       "Name": "Cube (2)",
       "Enabled": true,
       "Position": "686.7393,247.0549,-1612.719",
-      "Rotation": "-0.00000003254731,0,0,1",
+      "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Components": [
         {
@@ -518,7 +518,7 @@
       "Name": "Cube (3)",
       "Enabled": true,
       "Position": "686.7393,168.3942,-1612.719",
-      "Rotation": "-0.00000003254731,0,0,1",
+      "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Components": [
         {
@@ -549,7 +549,7 @@
       "Name": "Cube (4)",
       "Enabled": true,
       "Position": "686.7393,91.1157,-1612.719",
-      "Rotation": "-0.00000003254731,0,0,1",
+      "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Components": [
         {
@@ -580,7 +580,7 @@
       "Name": "Cube (5)",
       "Enabled": true,
       "Position": "393.1795,-531.9441,1091.211",
-      "Rotation": "-0.00000003254731,0,0,1",
+      "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Components": [
         {
@@ -611,7 +611,7 @@
       "Name": "Cube (5)",
       "Enabled": true,
       "Position": "326.341,-599.5729,1091.211",
-      "Rotation": "-0.00000003254731,0,0,1",
+      "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Components": [
         {
@@ -642,7 +642,7 @@
       "Name": "Cube (5)",
       "Enabled": true,
       "Position": "267.9455,-676.0168,1091.211",
-      "Rotation": "-0.00000003254731,0,0,1",
+      "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Components": [
         {
@@ -673,7 +673,7 @@
       "Name": "Cube (5)",
       "Enabled": true,
       "Position": "273.5231,-436.83,1091.211",
-      "Rotation": "-0.00000003254731,0,0,1",
+      "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Components": [
         {
@@ -704,7 +704,7 @@
       "Name": "Cube (5)",
       "Enabled": true,
       "Position": "171.2026,-716.7321,1091.211",
-      "Rotation": "-0.00000003254731,0,0,1",
+      "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Components": [
         {
@@ -735,7 +735,7 @@
       "Name": "Cube (5)",
       "Enabled": true,
       "Position": "154.2063,-586.5585,1091.211",
-      "Rotation": "-0.00000003254731,0,0,1",
+      "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Components": [
         {
@@ -766,7 +766,7 @@
       "Name": "Cube (5)",
       "Enabled": true,
       "Position": "220.7851,-527.5274,1091.211",
-      "Rotation": "-0.00000003254731,0,0,1",
+      "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Components": [
         {
@@ -797,7 +797,7 @@
       "Name": "Cube (5)",
       "Enabled": true,
       "Position": "171.3494,-432.7322,1091.211",
-      "Rotation": "-0.00000003254731,0,0,1",
+      "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Components": [
         {
@@ -828,7 +828,7 @@
       "Name": "Cube (5)",
       "Enabled": true,
       "Position": "220.5939,-361.897,1091.211",
-      "Rotation": "-0.00000003254731,0,0,1",
+      "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Components": [
         {
@@ -859,7 +859,7 @@
       "Name": "Cube (5)",
       "Enabled": true,
       "Position": "509.3035,-499.0526,1091.211",
-      "Rotation": "-0.00000003254731,0,0,1",
+      "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Components": [
         {
@@ -890,7 +890,7 @@
       "Name": "Cube (5)",
       "Enabled": true,
       "Position": "102.8515,-749.5279,1091.211",
-      "Rotation": "-0.00000003254731,0,0,1",
+      "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Components": [
         {
@@ -921,7 +921,7 @@
       "Name": "Cube (5)",
       "Enabled": true,
       "Position": "79.7005,-642.796,1091.211",
-      "Rotation": "-0.00000003254731,0,0,1",
+      "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Components": [
         {
@@ -952,7 +952,7 @@
       "Name": "Cube (5)",
       "Enabled": true,
       "Position": "118.2239,-498.7248,1091.211",
-      "Rotation": "-0.00000003254731,0,0,1",
+      "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Components": [
         {
@@ -983,7 +983,7 @@
       "Name": "Cube (5)",
       "Enabled": true,
       "Position": "138.8147,-372.9793,1091.211",
-      "Rotation": "-0.00000003254731,0,0,1",
+      "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Components": [
         {
@@ -1014,7 +1014,7 @@
       "Name": "Cube (6)",
       "Enabled": true,
       "Position": "686.7393,-73.5093,-1612.719",
-      "Rotation": "-0.00000003254731,0,0,1",
+      "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Components": [
         {
@@ -1045,7 +1045,7 @@
       "Name": "Cube (6)",
       "Enabled": true,
       "Position": "904.5154,-141.3905,-1437.039",
-      "Rotation": "-0.00000003254731,0,0,1",
+      "Rotation": "0,0,0,1",
       "Scale": "6.4,6.4,6.4",
       "Components": [
         {
@@ -1095,7 +1095,7 @@
       "Name": "Cube (7)",
       "Enabled": true,
       "Position": "686.7393,-158.5866,-1612.719",
-      "Rotation": "-0.00000003254731,0,0,1",
+      "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Components": [
         {
@@ -1126,7 +1126,7 @@
       "Name": "Cube (8)",
       "Enabled": true,
       "Position": "686.7393,-241.4487,-1612.719",
-      "Rotation": "-0.00000003254731,0,0,1",
+      "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Components": [
         {
@@ -1157,7 +1157,7 @@
       "Name": "Cube (9)",
       "Enabled": true,
       "Position": "686.7393,-323.4224,-1612.719",
-      "Rotation": "-0.00000003254731,0,0,1",
+      "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Components": [
         {
@@ -1188,7 +1188,7 @@
       "Name": "Cube (10)",
       "Enabled": true,
       "Position": "686.7393,-276.2431,-1563.041",
-      "Rotation": "-0.00000003254731,0,0,1",
+      "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Components": [
         {
@@ -1219,7 +1219,7 @@
       "Name": "Cube (11)",
       "Enabled": true,
       "Position": "686.7393,-198.8401,-1563.041",
-      "Rotation": "-0.00000003254731,0,0,1",
+      "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Components": [
         {
@@ -1250,7 +1250,7 @@
       "Name": "Cube (12)",
       "Enabled": true,
       "Position": "686.7393,-115.8088,-1563.041",
-      "Rotation": "-0.00000003254731,0,0,1",
+      "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Components": [
         {
@@ -1281,7 +1281,7 @@
       "Name": "Cube (13)",
       "Enabled": true,
       "Position": "686.7393,-29.5168,-1563.041",
-      "Rotation": "-0.00000003254731,0,0,1",
+      "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Components": [
         {
@@ -1312,7 +1312,7 @@
       "Name": "Cube (14)",
       "Enabled": true,
       "Position": "686.7393,55.9645,-1563.041",
-      "Rotation": "-0.00000003254731,0,0,1",
+      "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Components": [
         {
@@ -1343,7 +1343,7 @@
       "Name": "Cube (14)",
       "Enabled": true,
       "Position": "686.7393,357.9727,-1563.041",
-      "Rotation": "-0.00000003254731,0,0,1",
+      "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Components": [
         {
@@ -1374,7 +1374,7 @@
       "Name": "Cube (14)",
       "Enabled": true,
       "Position": "686.7393,504.4504,-1563.041",
-      "Rotation": "-0.00000003254731,0,0,1",
+      "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Components": [
         {
@@ -1405,7 +1405,7 @@
       "Name": "Cube (15)",
       "Enabled": true,
       "Position": "686.7393,129.0565,-1563.041",
-      "Rotation": "-0.00000003254731,0,0,1",
+      "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Components": [
         {
@@ -1436,7 +1436,7 @@
       "Name": "Cube (16)",
       "Enabled": true,
       "Position": "686.7393,210.5549,-1563.041",
-      "Rotation": "-0.00000003254731,0,0,1",
+      "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Components": [
         {
@@ -1467,7 +1467,7 @@
       "Name": "Cube (17)",
       "Enabled": true,
       "Position": "686.7393,286.9323,-1563.041",
-      "Rotation": "-0.00000003254731,0,0,1",
+      "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Components": [
         {
@@ -1498,7 +1498,7 @@
       "Name": "Cube (17)",
       "Enabled": true,
       "Position": "686.7393,429.4614,-1563.041",
-      "Rotation": "-0.00000003254731,0,0,1",
+      "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Components": [
         {
@@ -1529,7 +1529,7 @@
       "Name": "Cube (18)",
       "Enabled": true,
       "Position": "686.7393,250.0716,-1498.417",
-      "Rotation": "-0.00000003254731,0,0,1",
+      "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Components": [
         {
@@ -1560,7 +1560,7 @@
       "Name": "Cube (19)",
       "Enabled": true,
       "Position": "686.7393,176.8109,-1404.687",
-      "Rotation": "-0.00000003254731,0,0,1",
+      "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Components": [
         {
@@ -1591,7 +1591,7 @@
       "Name": "Cube (20)",
       "Enabled": true,
       "Position": "686.7393,97.5859,-1498.417",
-      "Rotation": "-0.00000003254731,0,0,1",
+      "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Components": [
         {
@@ -1622,7 +1622,7 @@
       "Name": "Cube (21)",
       "Enabled": true,
       "Position": "686.7393,16.4862,-1498.417",
-      "Rotation": "-0.00000003254731,0,0,1",
+      "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Components": [
         {
@@ -1653,7 +1653,7 @@
       "Name": "Cube (22)",
       "Enabled": true,
       "Position": "686.7393,-68.0729,-1498.417",
-      "Rotation": "-0.00000003254731,0,0,1",
+      "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Components": [
         {
@@ -1684,7 +1684,7 @@
       "Name": "Cube (22)",
       "Enabled": true,
       "Position": "686.7393,329.0835,-1498.417",
-      "Rotation": "-0.00000003254731,0,0,1",
+      "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Components": [
         {
@@ -1715,7 +1715,7 @@
       "Name": "Cube (22)",
       "Enabled": true,
       "Position": "686.7393,407.8695,-1498.417",
-      "Rotation": "-0.00000003254731,0,0,1",
+      "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Components": [
         {
@@ -1746,7 +1746,7 @@
       "Name": "Cube (22)",
       "Enabled": true,
       "Position": "686.7393,479.6847,-1498.417",
-      "Rotation": "-0.00000003254731,0,0,1",
+      "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Components": [
         {
@@ -1777,7 +1777,7 @@
       "Name": "Cube (22)",
       "Enabled": true,
       "Position": "686.7393,444.2884,-1427.168",
-      "Rotation": "-0.00000003254731,0,0,1",
+      "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Components": [
         {
@@ -1808,7 +1808,7 @@
       "Name": "Cube (22)",
       "Enabled": true,
       "Position": "686.7393,368.6415,-1427.168",
-      "Rotation": "-0.00000003254731,0,0,1",
+      "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Components": [
         {
@@ -1839,7 +1839,7 @@
       "Name": "Cube (22)",
       "Enabled": true,
       "Position": "686.7393,289.921,-1427.168",
-      "Rotation": "-0.00000003254731,0,0,1",
+      "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Components": [
         {
@@ -1870,7 +1870,7 @@
       "Name": "Cube (22)",
       "Enabled": true,
       "Position": "686.7393,340.3432,-1375.437",
-      "Rotation": "-0.00000003254731,0,0,1",
+      "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Components": [
         {
@@ -1901,7 +1901,7 @@
       "Name": "Cube (22)",
       "Enabled": true,
       "Position": "686.7393,410.9009,-1375.437",
-      "Rotation": "-0.00000003254731,0,0,1",
+      "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Components": [
         {
@@ -1932,7 +1932,7 @@
       "Name": "Cube (22)",
       "Enabled": true,
       "Position": "686.7393,370.0432,-1319.666",
-      "Rotation": "-0.00000003254731,0,0,1",
+      "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Components": [
         {
@@ -1963,7 +1963,7 @@
       "Name": "Cube (23)",
       "Enabled": true,
       "Position": "686.7393,-151.4042,-1498.417",
-      "Rotation": "-0.00000003254731,0,0,1",
+      "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Components": [
         {
@@ -1994,7 +1994,7 @@
       "Name": "Cube",
       "Enabled": true,
       "Position": "1420.439,-168.6941,-1060.616",
-      "Rotation": "-0.00000003254731,0,0,1",
+      "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Components": [
         {
@@ -2025,7 +2025,7 @@
       "Name": "Cube",
       "Enabled": true,
       "Position": "1420.439,-175.0416,-1141.828",
-      "Rotation": "-0.00000003254731,0,0,1",
+      "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Components": [
         {
@@ -2056,7 +2056,7 @@
       "Name": "Cube",
       "Enabled": true,
       "Position": "1420.439,-182.0647,-973.8735",
-      "Rotation": "-0.00000003254731,0,0,1",
+      "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Components": [
         {
@@ -2118,7 +2118,7 @@
       "Name": "Cube",
       "Enabled": true,
       "Position": "1420.439,79.6324,-805.0983",
-      "Rotation": "-0.00000003254731,0,0,1",
+      "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Components": [
         {
@@ -2190,7 +2190,7 @@
       "Name": "Turret",
       "Enabled": true,
       "Position": "1018.834,347.3735,-1616.25",
-      "Rotation": "-0.00000003254731,0,0,1",
+      "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Components": [
         {
@@ -2211,10 +2211,8 @@
         {
           "__type": "TurretComponent",
           "__enabled": true,
-          "Bullet": "bullet.object",
           "Gun": "99e832d5-87ef-4bd1-a3c2-39ba2c536618",
-          "Muzzle": "432c5a69-3822-4504-a15f-5d7b652de9fc",
-          "SecondaryBullet": "cube.object"
+          "Muzzle": "432c5a69-3822-4504-a15f-5d7b652de9fc"
         }
       ],
       "Children": [
@@ -2249,7 +2247,7 @@
               "Name": "Cube (1)",
               "Enabled": true,
               "Position": "17.8328,0.8604,9.1344",
-              "Rotation": "0.00000003254731,0,0,1",
+              "Rotation": "0,0,0,1",
               "Scale": "0.2,0.2,0.2",
               "Components": [
                 {
@@ -2274,7 +2272,7 @@
               "Name": "Cube (1)",
               "Enabled": true,
               "Position": "28.4373,0.8604,9.1344",
-              "Rotation": "0.00000003254731,0,0,1",
+              "Rotation": "0,0,0,1",
               "Scale": "0.2,0.2,0.2",
               "Components": [
                 {
@@ -2299,7 +2297,7 @@
               "Name": "Cube (1)",
               "Enabled": true,
               "Position": "40.0265,0.8604,9.1344",
-              "Rotation": "0.00000003254731,0,0,1",
+              "Rotation": "0,0,0,1",
               "Scale": "0.2,0.2,0.2",
               "Components": [
                 {
@@ -2324,7 +2322,7 @@
               "Name": "Cube (1)",
               "Enabled": true,
               "Position": "51.2432,0.8604,9.1344",
-              "Rotation": "0.00000003254731,0,0,1",
+              "Rotation": "0,0,0,1",
               "Scale": "0.2,0.2,0.2",
               "Components": [
                 {
@@ -2349,7 +2347,7 @@
               "Name": "Cube (1)",
               "Enabled": true,
               "Position": "61.8421,0.8604,9.1344",
-              "Rotation": "0.00000003254731,0,0,1",
+              "Rotation": "0,0,0,1",
               "Scale": "0.2,0.2,0.2",
               "Components": [
                 {
@@ -2374,7 +2372,7 @@
               "Name": "Cube (1)",
               "Enabled": true,
               "Position": "72.9951,0.8604,9.1344",
-              "Rotation": "0.00000003254731,0,0,1",
+              "Rotation": "0,0,0,1",
               "Scale": "0.2,0.2,0.2",
               "Components": [
                 {
@@ -2399,7 +2397,7 @@
               "Name": "Muzzle",
               "Enabled": true,
               "Position": "79.6561,0.8604,9.1344",
-              "Rotation": "0.00000003254731,0,0,1",
+              "Rotation": "0,0,0,1",
               "Scale": "0.2,0.2,0.2"
             }
           ]
