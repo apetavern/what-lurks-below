@@ -8,7 +8,8 @@ public abstract class ColliderBaseComponent : BaseComponent
 	protected PhysicsGroup group;
 
 	bool _isTrigger;
-	[Property] public bool IsTrigger
+	[Property]
+	public bool IsTrigger
 	{
 		get => _isTrigger;
 		set
@@ -43,7 +44,7 @@ public abstract class ColliderBaseComponent : BaseComponent
 				return;
 			}
 		}
-		
+
 		if ( physicsBody is null )
 		{
 			physicsBody = new PhysicsBody( Scene.PhysicsWorld );
@@ -59,6 +60,10 @@ public abstract class ColliderBaseComponent : BaseComponent
 		if ( shape is not null )
 		{
 			shape.IsTrigger = IsTrigger;
+			if ( IsTrigger )
+			{
+				shape.AddTag( "trigger" );
+			}
 		}
 	}
 
@@ -81,9 +86,9 @@ public abstract class ColliderBaseComponent : BaseComponent
 	{
 		if ( group is not null )
 		{
-			foreach( var body in group.Bodies )
+			foreach ( var body in group.Bodies )
 			{
-			//	body?.Move( GameObject.WorldTransform, Time.Delta * 4.0f );
+				//	body?.Move( GameObject.WorldTransform, Time.Delta * 4.0f );
 			}
 
 			return;

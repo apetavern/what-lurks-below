@@ -82,9 +82,9 @@ public class CharacterController : BaseComponent
 		Velocity *= newspeed;
 	}
 
-	PhysicsTraceBuilder BuildTrace( Vector3 from, Vector3 to ) => BuildTrace( Scene.PhysicsWorld.Trace.Ray( from, to ) );
-	
-	PhysicsTraceBuilder BuildTrace( PhysicsTraceBuilder source ) => source.Size( BoundingBox );
+	PhysicsTraceBuilder BuildTrace( Vector3 from, Vector3 to ) => BuildTrace( Scene.PhysicsWorld.Trace.Ray( from, to ).WithoutTags( "trigger" ) );
+
+	PhysicsTraceBuilder BuildTrace( PhysicsTraceBuilder source ) => source.Size( BoundingBox ).WithoutTags( "trigger" );
 
 	void Move( bool step )
 	{
