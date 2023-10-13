@@ -35,16 +35,25 @@ public class PlayerController : BaseComponent
 			camera.Transform.Rotation = EyeAngles.ToRotation();
 		}
 
-		// rotate body to look angles
-		if ( Body is not null )
-		{
-			Body.Transform.Rotation = new Angles( 0, EyeAngles.yaw, 0 ).ToRotation();
-		}
 
 		// read inputs
 		BuildWishVelocity();
 
 		var cc = GameObject.GetComponent<CharacterController>();
+
+
+		// rotate body to look angles
+		if ( Body is not null )
+		{
+			Body.Transform.Rotation = new Angles( 0, EyeAngles.yaw, 0 ).ToRotation();
+			var helper = new CitizenAnimationHelperScene( Body.GetComponent<AnimatedModelComponent>().SceneObject );
+			helper.WithVelocity( cc.Velocity / 2f );
+			helper.IsGrounded = cc.IsOnGround;
+			if ( Input.Down( "Jump" ) && cc.IsOnGround )
+			{
+				helper.TriggerJump();
+			}
+		}
 
 		if ( cc.IsOnGround && Input.Down( "Jump" ) )
 		{

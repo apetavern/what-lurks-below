@@ -65,7 +65,7 @@
       "Id": "8a6e1d7e-62f3-4208-9c5a-182dbd775293",
       "Name": "player",
       "Enabled": true,
-      "Position": "0,0,0",
+      "Position": "0,0,6.355697",
       "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Components": [
@@ -85,7 +85,7 @@
           "Camera": "a66cfaf8-7711-4164-a42c-937f349d8fda",
           "CameraDistance": 200,
           "Eye": "22a31826-e504-41c7-bf0c-e7d1423a7ed1",
-          "FirstPerson": false,
+          "FirstPerson": true,
           "Gravity": "0,0,800"
         }
       ],
@@ -99,7 +99,7 @@
           "Scale": "1,1,1",
           "Components": [
             {
-              "__type": "ModelComponent",
+              "__type": "AnimatedModelComponent",
               "__enabled": true,
               "MaterialOverride": null,
               "Model": "models/citizen/citizen.vmdl",
