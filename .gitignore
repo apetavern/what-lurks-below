@@ -19,3 +19,4 @@ code/Properties/*
 *.vpk
 *launchSettings.json
 *.sln
+.idea/.idea.brick-jam
