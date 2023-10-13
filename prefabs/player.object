@@ -1,0 +1,79 @@
+{
+  "RootObject": {
+    "Id": "8a6e1d7e-62f3-4208-9c5a-182dbd775293",
+    "Name": "player",
+    "Enabled": true,
+    "Position": "0,0,6.355697",
+    "Rotation": "0,0,0,1",
+    "Scale": "1,1,1",
+    "Components": [
+      {
+        "__type": "CharacterController",
+        "__enabled": true,
+        "Acceleration": 10,
+        "GroundAngle": 45,
+        "Height": 64,
+        "Radius": 16,
+        "StepHeight": 18
+      },
+      {
+        "__type": "PlayerController",
+        "__enabled": true,
+        "Body": "4231053c-d3a3-41ea-8f43-b8f337b05db2",
+        "Camera": "b6c62458-08f8-4ff5-9adc-79d84803317a",
+        "CameraDistance": 200,
+        "Eye": "22a31826-e504-41c7-bf0c-e7d1423a7ed1",
+        "FirstPerson": true,
+        "Gravity": "0,0,800"
+      }
+    ],
+    "Children": [
+      {
+        "Id": "4231053c-d3a3-41ea-8f43-b8f337b05db2",
+        "Name": "graphics",
+        "Enabled": true,
+        "Position": "0,0,0",
+        "Rotation": "0,0,0,1",
+        "Scale": "1,1,1",
+        "Components": [
+          {
+            "__type": "AnimatedModelComponent",
+            "__enabled": true,
+            "MaterialOverride": null,
+            "Model": "models/citizen/citizen.vmdl",
+            "ShouldCastShadows": true,
+            "Tint": "1,1,1,1"
+          }
+        ]
+      },
+      {
+        "Id": "22a31826-e504-41c7-bf0c-e7d1423a7ed1",
+        "Name": "eye",
+        "Enabled": true,
+        "Position": "0,0,63.62214",
+        "Rotation": "0,0,0,1",
+        "Scale": "1,1,1"
+      },
+      {
+        "Id": "b6c62458-08f8-4ff5-9adc-79d84803317a",
+        "Name": "camera",
+        "Enabled": true,
+        "Position": "0,0,0",
+        "Rotation": "0,0,0,1",
+        "Scale": "1,1,1",
+        "Components": [
+          {
+            "__type": "CameraComponent",
+            "__enabled": true,
+            "BackgroundColor": "0.33333,0.46275,0.52157,1",
+            "ClearFlags": "Color, Depth, Stencil",
+            "FieldOfView": 60,
+            "ZFar": 10000,
+            "ZNear": 10
+          }
+        ]
+      }
+    ]
+  },
+  "__references": []
+}

@@ -1,26 +1,36 @@
 {
   "GameObjects": [
     {
-      "Id": "c5bbec4f-3f67-4ab9-b6c2-ac6afeec1801",
-      "Name": "Map",
+      "Id": "58f74698-ee36-4905-901e-400a7490326c",
+      "Name": "Plane",
       "Enabled": true,
       "Position": "0,0,0",
       "Rotation": "0,0,0,1",
-      "Scale": "1,1,1",
+      "Scale": "10,10,10",
       "Components": [
         {
-          "__type": "MapComponent",
+          "__type": "ModelComponent",
           "__enabled": true,
-          "MapName": "apetavern.bj_dev_gym"
+          "MaterialOverride": null,
+          "Model": "models/dev/plane.vmdl",
+          "ShouldCastShadows": true,
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "ColliderBoxComponent",
+          "__enabled": true,
+          "IsTrigger": false,
+          "Scale": "100,100,1",
+          "Surface": null
         }
       ]
     },
     {
-      "Id": "af43053c-2ab3-4081-a020-56ae5af26961",
+      "Id": "0c8846cf-d696-4685-9fcd-ada997e562fa",
       "Name": "Directional Light",
       "Enabled": true,
-      "Position": "0,0,128",
-      "Rotation": "0.4304598,0.4304592,-0.5609857,0.560985",
+      "Position": "0,0,0",
+      "Rotation": "0.4351622,0.4351622,-0.5573454,0.5573453",
       "Scale": "1,1,1",
       "Components": [
         {
@@ -33,10 +43,10 @@
       ]
     },
     {
-      "Id": "b82ef908-0473-4666-b316-4d0a5fb2738d",
+      "Id": "8a6e1d7e-62f3-4208-9c5a-182dbd775293",
       "Name": "player",
       "Enabled": true,
-      "Position": "-23.73362,3.557785,0.0001983643",
+      "Position": "0,0,6.355697",
       "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "__Prefab": "prefabs/player.object"
