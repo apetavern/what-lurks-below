@@ -20,10 +20,9 @@
         "__type": "PlayerController",
         "__enabled": true,
         "Body": "4231053c-d3a3-41ea-8f43-b8f337b05db2",
-        "Camera": "b6c62458-08f8-4ff5-9adc-79d84803317a",
         "CameraDistance": 200,
         "Eye": "22a31826-e504-41c7-bf0c-e7d1423a7ed1",
-        "FirstPerson": true,
+        "FirstPerson": false,
         "Gravity": "0,0,800"
       }
     ],
@@ -53,25 +52,6 @@
         "Position": "0,0,63.62214",
         "Rotation": "0,0,0,1",
         "Scale": "1,1,1"
-      },
-      {
-        "Id": "b6c62458-08f8-4ff5-9adc-79d84803317a",
-        "Name": "camera",
-        "Enabled": true,
-        "Position": "0,0,0",
-        "Rotation": "0,0,0,1",
-        "Scale": "1,1,1",
-        "Components": [
-          {
-            "__type": "CameraComponent",
-            "__enabled": true,
-            "BackgroundColor": "0.33333,0.46275,0.52157,1",
-            "ClearFlags": "Color, Depth, Stencil",
-            "FieldOfView": 60,
-            "ZFar": 10000,
-            "ZNear": 10
-          }
-        ]
       }
     ]
   },
