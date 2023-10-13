@@ -11,6 +11,7 @@ public class PlayerController : BaseComponent
 
 	[Property] GameObject Body { get; set; }
 	[Property] GameObject Eye { get; set; }
+	[Property] GameObject Camera { get; set; }
 	[Property] bool FirstPerson { get; set; }
 
 	public Angles EyeAngles;
@@ -23,7 +24,7 @@ public class PlayerController : BaseComponent
 		EyeAngles.roll = 0;
 
 		// Update camera position
-		var camera = GameObject.GetComponent<CameraComponent>( true, true );
+		var camera = Camera.GetComponent<CameraComponent>( true, true );
 		if ( camera is not null )
 		{
 			var camPos = Eye.Transform.Position - EyeAngles.ToRotation().Forward * CameraDistance;
@@ -53,7 +54,7 @@ public class PlayerController : BaseComponent
 			//	flMul *= 0.8f;
 
 			cc.Punch( Vector3.Up * flMul * flGroundFactor );
-		//	cc.IsOnGround = false;
+			//	cc.IsOnGround = false;
 		}
 
 		if ( cc.IsOnGround )
