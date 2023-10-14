@@ -60,6 +60,27 @@ public class PlayerController : BaseComponent
 			{
 				helper.TriggerJump();
 			}
+
+			if ( Input.Down( "Attack2" ) )
+			{
+				helper.Handedness = CitizenAnimationHelperScene.Hand.Both;
+				helper.HoldType = CitizenAnimationHelperScene.HoldTypes.Pistol;
+			}
+			else
+			{
+				helper.Handedness = CitizenAnimationHelperScene.Hand.Left;
+				helper.HoldType = CitizenAnimationHelperScene.HoldTypes.Pistol;
+			}
+
+			if ( Input.Down( "Duck" ) )
+			{
+				helper.DuckLevel = 1f;
+			}
+			else
+			{
+				helper.DuckLevel = 0f;
+
+			}
 		}
 
 		if ( cc.IsOnGround && Input.Down( "Jump" ) )

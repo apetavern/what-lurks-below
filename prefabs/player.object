@@ -3,7 +3,7 @@
     "Id": "8a6e1d7e-62f3-4208-9c5a-182dbd775293",
     "Name": "player",
     "Enabled": true,
-    "Position": "0,0,6.355697",
+    "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
     "Components": [
@@ -46,6 +46,26 @@
             "Model": "models/citizen/citizen.vmdl",
             "ShouldCastShadows": true,
             "Tint": "1,1,1,1"
+          }
+        ],
+        "Children": [
+          {
+            "Id": "843ebc15-3377-41db-92fc-7bff48e4b254",
+            "Name": "gun",
+            "Enabled": true,
+            "Position": "0,0,0",
+            "Rotation": "0,0,0,1",
+            "Scale": "1,1,1",
+            "Components": [
+              {
+                "__type": "AnimatedModelComponent",
+                "__enabled": true,
+                "MaterialOverride": null,
+                "Model": "weapons/rust_pistol/rust_pistol.vmdl",
+                "ShouldCastShadows": true,
+                "Tint": "1,1,1,1"
+              }
+            ]
           }
         ]
       },
