@@ -156,6 +156,13 @@ public class AnimatedModelComponent : BaseComponent, BaseComponent.ExecuteInEdit
 
 		_sceneModel.Transform = Transform.World;
 
+		var parent = GameObject.Parent.GetComponent<AnimatedModelComponent>();
+
+		if ( parent is not null )
+		{
+			parent.SceneModel.AddChild( GameObject.Name, SceneModel );
+		}
+
 		_sceneModel.Update( Time.Delta );
 	}
 
