@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Sandbox;
 
 namespace BrickJam.Player;
 
@@ -10,6 +11,9 @@ public class Inventory : BaseComponent
 	
 	public List<InventoryItem> Get => _items;
 
+	private int ItemCount => _items.Count;
+	[Property] public int Slots { get; set; }
+
 	public InventoryItem this[ int key ]
 	{
 		get => _items[key];
@@ -17,6 +21,9 @@ public class Inventory : BaseComponent
 
 	public void AddItem( InventoryItem item )
 	{
+		if ( ItemCount >= Slots )
+			return;
+		
 		_items.Add( item );
 	}
 

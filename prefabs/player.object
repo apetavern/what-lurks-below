@@ -31,7 +31,8 @@
       },
       {
         "__type": "Inventory",
-        "__enabled": true
+        "__enabled": true,
+        "Slots": 6
       }
     ],
     "Children": [
