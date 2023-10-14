@@ -20,7 +20,7 @@ public class PlayerController : BaseComponent
 	{
 		base.OnEnabled();
 		// Update camera position
-		Camera = Scene.GetAllObjects( true ).Where( X => X.GetComponent<CameraComponent>() != null ).FirstOrDefault();
+		Camera = Scene.GetAllObjects( true ).Where( X => X.GetComponent<CameraComponent>( false ) != null ).FirstOrDefault();
 		if ( Camera is not null )
 		{
 			var camPos = Eye.Transform.Position - EyeAngles.ToRotation().Forward * CameraDistance;
@@ -38,13 +38,13 @@ public class PlayerController : BaseComponent
 		// Eye input
 		EyeAngles.pitch = 0;
 
-		if ( Input.Down( "Left" ) ) EyeAngles.yaw += Time.Delta * 45f;
-		if ( Input.Down( "Right" ) ) EyeAngles.yaw -= Time.Delta * 45f;
+		if ( Input.Down( "Left" ) ) EyeAngles.yaw += Time.Delta * 90f;
+		if ( Input.Down( "Right" ) ) EyeAngles.yaw -= Time.Delta * 90f;
 
 		//EyeAngles.yaw -= Input.MouseDelta.x * 0.1f;
 		EyeAngles.roll = 0;
 
-		Camera = Scene.GetAllObjects( true ).Where( X => X.GetComponent<CameraComponent>() != null ).FirstOrDefault();
+		Camera = Scene.GetAllObjects( true ).Where( X => X.GetComponent<CameraComponent>( false ) != null ).FirstOrDefault();
 
 
 		// read inputs
@@ -151,6 +151,6 @@ public class PlayerController : BaseComponent
 		if ( !WishVelocity.IsNearZeroLength ) WishVelocity = WishVelocity.Normal;
 
 		if ( Input.Down( "Run" ) ) WishVelocity *= 150.0f;
-		else WishVelocity *= 75.0f;
+		else WishVelocity *= 85.0f;
 	}
 }

@@ -22,7 +22,7 @@ public sealed class CameraTriggerComponent : BaseComponent
 		Controller = Player.GetComponent<PlayerController>();
 
 		var box = new BBox();
-		var scale = GetComponent<ColliderBoxComponent>().Scale;
+		var scale = GetComponent<ColliderBoxComponent>( false ).Scale;
 		var position = Transform.Position; // Assuming you have a reference to the object's transform
 
 		// Calculate the minimum and maximum points of the bounding box
