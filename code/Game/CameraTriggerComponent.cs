@@ -15,6 +15,8 @@ public sealed class CameraTriggerComponent : BaseComponent
 
 	[Property] GameObject CameraPoint { get; set; }
 
+	[Property] bool FollowPlayer { get; set; }
+
 	public override void OnEnabled()
 	{
 		base.OnEnabled();
@@ -47,6 +49,13 @@ public sealed class CameraTriggerComponent : BaseComponent
 	public void Triggered()
 	{
 		Controller.Camera.Transform.Position = CameraPoint.Transform.Position;
-		Controller.Camera.Transform.Rotation = CameraPoint.Transform.Rotation;
+		if ( !FollowPlayer )
+		{
+			Controller.Camera.Transform.Rotation = CameraPoint.Transform.Rotation;
+		}
+		else
+		{
+			Controller.Camera.Transform.Rotation = Rotation.LookAt( -(CameraPoint.Transform.Position - Player.Transform.Position) );
+		}
 	}
 }
