@@ -232,6 +232,27 @@
       "Position": "0,0,0",
       "Rotation": "0,0,0,1",
       "Scale": "1,1,1"
+    },
+    {
+      "Id": "f0720726-42a6-4737-8f79-dfac78badc34",
+      "Name": "Pistol Pickup",
+      "Enabled": true,
+      "Position": "100,0,0",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
+      "Components": [
+        {
+          "__type": "ColliderBoxComponent",
+          "__enabled": true,
+          "IsTrigger": true,
+          "Scale": "50,50,50",
+          "Surface": null
+        },
+        {
+          "__type": "ItemPickup",
+          "__enabled": true
+        }
+      ]
     }
   ],
   "__references": []
