@@ -46,7 +46,6 @@ public sealed class CameraTriggerComponent : BaseComponent
 
 	public void Triggered()
 	{
-		Log.Info( CameraPoint.Name );
 		Controller.Camera.Transform.Position = CameraPoint.Transform.Position;
 		Controller.Camera.Transform.Rotation = CameraPoint.Transform.Rotation;
 	}

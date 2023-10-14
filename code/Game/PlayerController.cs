@@ -75,6 +75,7 @@ public class PlayerController : BaseComponent
 			if ( Input.Pressed( "Attack1" ) )
 			{
 				helper.TriggerAttack();
+				Sound.FromWorld( "weapons/rust_pistol/sound/rust_pistol.shoot.sound", Transform.Position + Vector3.Up * 32f );
 			}
 
 			if ( Input.Down( "Duck" ) )
