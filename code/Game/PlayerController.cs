@@ -36,7 +36,7 @@ public class PlayerController : BaseComponent
 	public override void Update()
 	{
 		// Eye input
-		EyeAngles.pitch += Input.MouseDelta.y * 0.1f;
+		EyeAngles.pitch = 0;
 		EyeAngles.yaw -= Input.MouseDelta.x * 0.1f;
 		EyeAngles.roll = 0;
 
@@ -56,7 +56,7 @@ public class PlayerController : BaseComponent
 			var helper = new CitizenAnimationHelperScene( Body.GetComponent<AnimatedModelComponent>().SceneModel );
 			helper.WithVelocity( cc.Velocity / 2f );
 			helper.IsGrounded = cc.IsOnGround;
-			if ( Input.Down( "Jump" ) && cc.IsOnGround )
+			if ( Input.Pressed( "Jump" ) && cc.IsOnGround )
 			{
 				helper.TriggerJump();
 			}
@@ -147,7 +147,7 @@ public class PlayerController : BaseComponent
 
 		if ( !WishVelocity.IsNearZeroLength ) WishVelocity = WishVelocity.Normal;
 
-		if ( Input.Down( "Run" ) ) WishVelocity *= 320.0f;
-		else WishVelocity *= 150.0f;
+		if ( Input.Down( "Run" ) ) WishVelocity *= 150.0f;
+		else WishVelocity *= 75.0f;
 	}
 }
