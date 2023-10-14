@@ -28,6 +28,15 @@
     "ProjectTemplate": null,
     "CsProjName": "",
     "HttpAllowList": null,
-    "TickRate": 50
+    "TickRate": 50,
+    "Compiler": {
+      "RootNamespace": "BrickJam",
+      "DefineConstants": "SANDBOX;ADDON;DEBUG",
+      "NoWarn": "1701;1702;1591;",
+      "WarningsAsErrors": "",
+      "References": [],
+      "IgnoreFolders": [],
+      "DistinctReferences": []
+    }
   }
 }
