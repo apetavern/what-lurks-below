@@ -72,18 +72,30 @@ public class PlayerController : BaseComponent
 				helper.HoldType = CitizenAnimationHelperScene.HoldTypes.Pistol;
 			}
 
+			if ( Input.Pressed( "Attack1" ) )
+			{
+				helper.TriggerAttack();
+			}
+
 			if ( Input.Down( "Duck" ) )
 			{
 				helper.DuckLevel = 1f;
+				if ( Input.Pressed( "Jump" ) )
+				{
+					helper.SpecialMove = CitizenAnimationHelperScene.SpecialMovement.Roll;
+				}
+				else
+				{
+					helper.SpecialMove = CitizenAnimationHelperScene.SpecialMovement.None;
+				}
 			}
 			else
 			{
 				helper.DuckLevel = 0f;
-
 			}
 		}
 
-		if ( cc.IsOnGround && Input.Down( "Jump" ) )
+		if ( cc.IsOnGround && Input.Down( "Jump" ) && !Input.Down( "Duck" ) )
 		{
 			float flGroundFactor = 1.0f;
 			float flMul = 268.3281572999747f * 1.2f;

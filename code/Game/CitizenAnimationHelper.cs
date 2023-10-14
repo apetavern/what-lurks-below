@@ -183,6 +183,11 @@ public struct CitizenAnimationHelperScene
 		Owner.SetAnimParameter( "b_jump", true );
 	}
 
+	public void TriggerAttack()
+	{
+		Owner.SetAnimParameter( "b_attack", true );
+	}
+
 	public void TriggerDeploy()
 	{
 		Owner.SetAnimParameter( "b_deploy", true );
@@ -202,5 +207,22 @@ public struct CitizenAnimationHelperScene
 	{
 		get => 0;
 		set => Owner.SetAnimParameter( "move_style", (int)value );
+	}
+
+	public enum SpecialMovement
+	{
+		None,
+		LedgeGrab,
+		Roll,
+		Slide
+	}
+
+	/// <summary>
+	/// We can force the model to walk or run, or let it decide based on the speed.
+	/// </summary>
+	public SpecialMovement SpecialMove
+	{
+		get => 0;
+		set => Owner.SetAnimParameter( "special_movement_states", (int)value );
 	}
 }
