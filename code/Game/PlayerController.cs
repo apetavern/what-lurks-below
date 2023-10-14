@@ -53,7 +53,7 @@ public class PlayerController : BaseComponent
 		if ( Body is not null )
 		{
 			Body.Transform.Rotation = new Angles( 0, EyeAngles.yaw, 0 ).ToRotation();
-			var helper = new CitizenAnimationHelperScene( Body.GetComponent<AnimatedModelComponent>().SceneObject );
+			var helper = new CitizenAnimationHelperScene( Body.GetComponent<AnimatedModelComponent>().SceneModel );
 			helper.WithVelocity( cc.Velocity / 2f );
 			helper.IsGrounded = cc.IsOnGround;
 			if ( Input.Down( "Jump" ) && cc.IsOnGround )

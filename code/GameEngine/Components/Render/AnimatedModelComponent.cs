@@ -95,8 +95,7 @@ public class AnimatedModelComponent : BaseComponent, BaseComponent.ExecuteInEdit
 	public string TestString { get; set; }
 
 	SceneModel _sceneModel;
-	public SceneModel SceneObject => _sceneModel;
-
+	public SceneModel SceneModel => _sceneModel;
 
 	public override void DrawGizmos()
 	{
@@ -129,12 +128,16 @@ public class AnimatedModelComponent : BaseComponent, BaseComponent.ExecuteInEdit
 		Assert.True( _sceneModel == null );
 		Assert.NotNull( Scene );
 
-		_sceneModel = new SceneModel( Scene.SceneWorld, Model ?? Model.Load( "models/dev/box.vmdl" ), Transform.World );
+		var parent = GameObject.Parent.GetComponent<AnimatedModelComponent>();
 
-		_sceneModel.Transform = Transform.World;
+		_sceneModel = new SceneModel( Scene.SceneWorld, Model ?? Model.Load( "models/dev/box.vmdl" ), parent != null ? parent.SceneModel.Transform : Transform.World );
+
+		_sceneModel.Transform = parent != null ? GameObject.Parent.GetComponent<AnimatedModelComponent>().SceneModel.Transform : Transform.World;
 		_sceneModel.SetMaterialOverride( MaterialOverride );
 		_sceneModel.ColorTint = Tint;
 		_sceneModel.Flags.CastShadows = _castShadows;
+
+		parent.SceneModel.AddChild( GameObject.Name, SceneModel );
 	}
 
 	public override void OnDisabled()
@@ -149,6 +152,7 @@ public class AnimatedModelComponent : BaseComponent, BaseComponent.ExecuteInEdit
 			return;
 
 		_sceneModel.Transform = Transform.World;
+
 		_sceneModel.Update( Time.Delta );
 	}
 
