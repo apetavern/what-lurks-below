@@ -7,7 +7,7 @@ using System.Linq;
 
 public class Scene : GameObject
 {
-	public bool IsEditor { get; set; }
+	public bool IsEditor { get; private set; }
 	public Action<string> OnEdited { get; set; }
 
 	public SceneWorld SceneWorld { get; private set; }
@@ -30,6 +30,11 @@ public class Scene : GameObject
 		PhysicsWorld.SetCollisionRules( settings );
 	}
 
+	public static Scene CreateEditorScene()
+	{
+		return new Scene() { IsEditor = true };
+	}
+
 	public void Register( GameObject o )
 	{
 		o.Parent = this;
@@ -37,11 +42,23 @@ public class Scene : GameObject
 		SceneUtility.ActivateGameObject( o );
 	}
 
+	/// <summary>
+	/// The update loop will turn certain settings on
+	/// Here we turn them to their defaults.
+	/// </summary>
+	void InitialSettings()
+	{
+		SceneWorld.GradientFog.Enabled = false;
+	}
+
 	public void EditorTick()
 	{
 		ProcessDeletes();
 		PreRender();
 		DrawGizmos();
+		InitialSettings();
+		Tick();
+		ProcessDeletes();
 	}
 
 	public void GameTick()
@@ -54,6 +71,8 @@ public class Scene : GameObject
 
 			if ( GameManager.IsPaused )
 				return;
+
+			InitialSettings();
 
 			Tick();
 

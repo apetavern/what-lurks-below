@@ -39,6 +39,7 @@ public abstract partial class BaseComponent
 	}
 
 	public string Name { get; set; }
+	private bool ShouldExecute => !Scene.IsEditor || this is ExecuteInEditor;
 
 	public virtual void DrawGizmos() { }
 
@@ -50,7 +51,11 @@ public abstract partial class BaseComponent
 		if ( _enabledState )
 		{
 			_enabledState = false;
-			OnDisabled();
+
+			if ( ShouldExecute )
+			{
+				ExceptionWrap( "OnDisabled", OnDisabled );
+			}
 		}
 
 		GameObject = null;
@@ -71,6 +76,7 @@ public abstract partial class BaseComponent
 	internal virtual void InternalUpdate() 
 	{
 		if ( !Enabled ) return;
+		if ( !ShouldExecute ) return;
 
 		Update();
 	}
@@ -87,11 +93,17 @@ public abstract partial class BaseComponent
 			onAwake?.Invoke();
 			onAwake = null;
 
-			ExceptionWrap( "OnEnabled", OnEnabled );
+			if ( ShouldExecute )
+			{
+				ExceptionWrap( "OnEnabled", OnEnabled );
+			}
 		}
 		else
 		{
-			ExceptionWrap( "OnDisabled", OnDisabled );
+			if ( ShouldExecute )
+			{
+				ExceptionWrap( "OnDisabled", OnDisabled );
+			}
 		}
 	}
 
@@ -146,4 +158,12 @@ public abstract partial class BaseComponent
 
 	/// <inheritdoc cref="GameObject.GetComponents{T}(bool, bool)"/>
 	public IEnumerable<T> GetComponents<T>( bool enabledOnly = true, bool deep = false ) => GameObject.GetComponents<T>( enabledOnly, deep );
+
+	/// <summary>
+	/// A component with this interface will run in the editor
+	/// </summary>
+	public interface ExecuteInEditor
+	{
+
+	}
 }
