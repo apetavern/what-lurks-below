@@ -6,7 +6,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 
-[Title( "Map" )]
+[Title( "Local Map" )]
 [Category( "World" )]
 [Icon( "visibility", "red", "white" )]
 public class LocalMapComponent : BaseComponent, BaseComponent.ExecuteInEditor
