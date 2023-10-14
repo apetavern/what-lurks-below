@@ -37,7 +37,11 @@ public class PlayerController : BaseComponent
 	{
 		// Eye input
 		EyeAngles.pitch = 0;
-		EyeAngles.yaw -= Input.MouseDelta.x * 0.1f;
+
+		if ( Input.Down( "Left" ) ) EyeAngles.yaw += Time.Delta * 45f;
+		if ( Input.Down( "Right" ) ) EyeAngles.yaw -= Time.Delta * 45f;
+
+		//EyeAngles.yaw -= Input.MouseDelta.x * 0.1f;
 		EyeAngles.roll = 0;
 
 		Camera = Scene.GetAllObjects( true ).Where( X => X.GetComponent<CameraComponent>() != null ).FirstOrDefault();
@@ -140,8 +144,7 @@ public class PlayerController : BaseComponent
 
 		if ( Input.Down( "Forward" ) ) WishVelocity += rot.Forward;
 		if ( Input.Down( "Backward" ) ) WishVelocity += rot.Backward;
-		if ( Input.Down( "Left" ) ) WishVelocity += rot.Left;
-		if ( Input.Down( "Right" ) ) WishVelocity += rot.Right;
+
 
 		WishVelocity = WishVelocity.WithZ( 0 );
 
