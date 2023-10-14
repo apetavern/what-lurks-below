@@ -3,7 +3,7 @@
     {
       "Id": "58f74698-ee36-4905-901e-400a7490326c",
       "Name": "Plane",
-      "Enabled": true,
+      "Enabled": false,
       "Position": "0,0,0",
       "Rotation": "0,0,0,1",
       "Scale": "10,10,10",
@@ -165,6 +165,21 @@
           "Position": "-40.5463,131.7372,189.5846",
           "Rotation": "-0.1115178,-0.2003899,0.5288851,-0.81712",
           "Scale": "1,1,1"
+        }
+      ]
+    },
+    {
+      "Id": "2c378c7a-5587-4e90-aaff-3a69492fc969",
+      "Name": "map",
+      "Enabled": true,
+      "Position": "0,0,0",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
+      "Components": [
+        {
+          "__type": "LocalMapComponent",
+          "__enabled": true,
+          "MapFileName": "maps/bj_dev_gym.vmap"
         }
       ]
     }

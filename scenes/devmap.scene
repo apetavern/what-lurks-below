@@ -107,7 +107,7 @@
       "Id": "22ab2784-4d93-426b-bfea-da61463678c1",
       "Name": "Zone",
       "Enabled": true,
-      "Position": "839.6343,336.6133,33.47725",
+      "Position": "998.1601,336.6133,33.47725",
       "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Components": [
@@ -115,7 +115,7 @@
           "__type": "ColliderBoxComponent",
           "__enabled": true,
           "IsTrigger": true,
-          "Scale": "154.25,288.5,120.05",
+          "Scale": "455.6,288.5,114.8",
           "Surface": null
         },
         {
@@ -129,8 +129,8 @@
           "Id": "117b0b93-1a59-44cd-822c-f3f42c575911",
           "Name": "ZoneCamera",
           "Enabled": true,
-          "Position": "398.961,-224.7979,275.2309",
-          "Rotation": "-0.4243713,0.03133271,0.8589726,0.2847691",
+          "Position": "251.1752,138.1658,138.3932",
+          "Rotation": "0.2383413,0.1552005,-0.8942686,0.3455249",
           "Scale": "1,1,1",
           "Components": [
             {
@@ -188,6 +188,50 @@
           ]
         }
       ]
+    },
+    {
+      "Id": "7530f785-a8ec-488e-9f5f-22f0f8588731",
+      "Name": "Fog",
+      "Enabled": true,
+      "Position": "0,0,-97.12166",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
+      "Components": [
+        {
+          "__type": "GradientFog",
+          "__enabled": true,
+          "Color": "0.18699,0.5396,0.26457,1",
+          "EndDistance": 1026.1,
+          "FalloffExponent": 1,
+          "Height": 212.35,
+          "StartDistance": 0,
+          "VerticalFalloffExponent": 1.6
+        }
+      ]
+    },
+    {
+      "Id": "8f63a8b0-fc7b-46e2-ae70-84643b0c5d21",
+      "Name": "Skybox",
+      "Enabled": true,
+      "Position": "0,0,-34.30033",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
+      "Components": [
+        {
+          "__type": "SkyBox2D",
+          "__enabled": true,
+          "SkyMaterial": "materials/skybox/skybox_day_cloudy_field_a.vmat",
+          "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "Id": "27dd2426-886b-480c-851b-48c40ba04bb6",
+      "Name": "Object",
+      "Enabled": true,
+      "Position": "0,0,0",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1"
     }
   ],
   "__references": []
