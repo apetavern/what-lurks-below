@@ -63,6 +63,10 @@ public class ItemPickup : BaseComponent
 
 		_sceneModel.Rotation = Rotation.From( 45f, Time.Now * 90f, 0 );
 
+		_sceneModel.Position = Transform.Position + Vector3.Up * _sceneModel.Bounds.Size;
+
+		_sceneModel.Update( 0.1f );
+
 		base.Update();
 	}
 
