@@ -28,6 +28,10 @@
       {
         "__type": "HUD",
         "__enabled": true
+      },
+      {
+        "__type": "Inventory",
+        "__enabled": true
       }
     ],
     "Children": [

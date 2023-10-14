@@ -3,6 +3,7 @@ using System.Linq;
 
 namespace BrickJam.Player;
 
+[Category("Player")]
 public class Inventory : BaseComponent
 {
 	private List<InventoryItem> _items = new();
