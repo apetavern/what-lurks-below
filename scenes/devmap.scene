@@ -11,9 +11,10 @@
         {
           "__type": "MapComponent",
           "__enabled": true,
-          "MapName": "apetavern.bj_dev_gym"
+          "MapName": "apetavern.bj_dev"
         }
-      ]
+      ],
+      "Children": []
     },
     {
       "Id": "af43053c-2ab3-4081-a020-56ae5af26961",
@@ -69,16 +70,16 @@
       "Scale": "1,1,1",
       "Components": [
         {
-          "__type": "CameraTriggerComponent",
-          "__enabled": true,
-          "CameraPoint": "1bef0808-8dbd-42cc-91cf-19f6b685ffae"
-        },
-        {
           "__type": "ColliderBoxComponent",
           "__enabled": true,
           "IsTrigger": true,
           "Scale": "455.6,430.1,67.55",
           "Surface": null
+        },
+        {
+          "__type": "CameraTriggerComponent",
+          "__enabled": true,
+          "CameraPoint": "1bef0808-8dbd-42cc-91cf-19f6b685ffae"
         }
       ],
       "Children": [
@@ -112,16 +113,16 @@
       "Scale": "1,1,1",
       "Components": [
         {
-          "__type": "CameraTriggerComponent",
-          "__enabled": true,
-          "CameraPoint": "117b0b93-1a59-44cd-822c-f3f42c575911"
-        },
-        {
           "__type": "ColliderBoxComponent",
           "__enabled": true,
           "IsTrigger": true,
           "Scale": "455.6,288.5,114.8",
           "Surface": null
+        },
+        {
+          "__type": "CameraTriggerComponent",
+          "__enabled": true,
+          "CameraPoint": "117b0b93-1a59-44cd-822c-f3f42c575911"
         }
       ],
       "Children": [
@@ -155,16 +156,16 @@
       "Scale": "1,1,1",
       "Components": [
         {
-          "__type": "CameraTriggerComponent",
-          "__enabled": true,
-          "CameraPoint": "001a4a6f-6d32-4481-8b98-aa317a3c1013"
-        },
-        {
           "__type": "ColliderBoxComponent",
           "__enabled": true,
           "IsTrigger": true,
           "Scale": "194.15,236.9,114.65",
           "Surface": null
+        },
+        {
+          "__type": "CameraTriggerComponent",
+          "__enabled": true,
+          "CameraPoint": "001a4a6f-6d32-4481-8b98-aa317a3c1013"
         }
       ],
       "Children": [
@@ -242,17 +243,17 @@
       "Scale": "1,1,1",
       "Components": [
         {
-          "__type": "ItemPickup",
-          "__enabled": true,
-          "Item": {},
-          "Model": "weapons/rust_pistol/rust_pistol.vmdl"
-        },
-        {
           "__type": "ColliderBoxComponent",
           "__enabled": true,
           "IsTrigger": true,
           "Scale": "50,50,50",
           "Surface": null
+        },
+        {
+          "__type": "ItemPickup",
+          "__enabled": true,
+          "Item": {},
+          "Model": "weapons/rust_pistol/rust_pistol.vmdl"
         }
       ]
     },
@@ -265,19 +266,19 @@
       "Scale": "1,1,1",
       "Components": [
         {
+          "__type": "ModelCollider",
+          "__enabled": true,
+          "IsTrigger": false,
+          "Model": "models/environment/rooms/test_room_01.vmdl",
+          "Surface": null
+        },
+        {
           "__type": "ModelComponent",
           "__enabled": true,
           "MaterialOverride": null,
           "Model": "models/environment/rooms/test_room_01.vmdl",
           "ShouldCastShadows": true,
           "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "ModelCollider",
-          "__enabled": true,
-          "IsTrigger": false,
-          "Model": "models/environment/rooms/test_room_01.vmdl",
-          "Surface": null
         }
       ]
     }
