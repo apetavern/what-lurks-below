@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 [Title( "Map" )]
 [Category( "World" )]
 [Icon( "visibility", "red", "white" )]
-public class LocalMapComponent : BaseComponent
+public class LocalMapComponent : BaseComponent, BaseComponent.ExecuteInEditor
 {
 	[Property]
 	public string MapFileName { get; set; }
@@ -45,7 +45,7 @@ public class LocalMapComponent : BaseComponent
 		loadedMap?.Delete();
 		loadedMap = null;
 
-		foreach( var child in GameObject.Children )
+		foreach ( var child in GameObject.Children )
 		{
 			child.Destroy();
 		}

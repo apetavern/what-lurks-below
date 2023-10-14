@@ -5,7 +5,7 @@ using Sandbox.Diagnostics;
 [Category( "Rendering" )]
 [Icon( "visibility", "red", "white" )]
 [Alias( "ModelComponentMate" )]
-public class AnimatedModelComponent : BaseComponent
+public class AnimatedModelComponent : BaseComponent, BaseComponent.ExecuteInEditor
 {
 	Model _model;
 
