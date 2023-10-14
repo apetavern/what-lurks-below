@@ -137,7 +137,10 @@ public class AnimatedModelComponent : BaseComponent, BaseComponent.ExecuteInEdit
 		_sceneModel.ColorTint = Tint;
 		_sceneModel.Flags.CastShadows = _castShadows;
 
-		parent.SceneModel.AddChild( GameObject.Name, SceneModel );
+		if ( parent is not null )
+		{
+			parent.SceneModel.AddChild( GameObject.Name, SceneModel );
+		}
 	}
 
 	public override void OnDisabled()
