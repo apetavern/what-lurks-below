@@ -1,21 +1,6 @@
 {
   "GameObjects": [
     {
-      "Id": "c5bbec4f-3f67-4ab9-b6c2-ac6afeec1801",
-      "Name": "Map",
-      "Enabled": true,
-      "Position": "0,0,0",
-      "Rotation": "0,0,0,1",
-      "Scale": "1,1,1",
-      "Components": [
-        {
-          "__type": "MapComponent",
-          "__enabled": true,
-          "MapName": "apetavern.bj_dev"
-        }
-      ]
-    },
-    {
       "Id": "af43053c-2ab3-4081-a020-56ae5af26961",
       "Name": "Directional Light",
       "Enabled": true,
@@ -64,22 +49,22 @@
       "Id": "859f0245-7f3c-4e8c-97d3-046386795722",
       "Name": "Zone",
       "Enabled": true,
-      "Position": "402.2094,255.2794,20.26534",
+      "Position": "356.6562,178.8306,20.26512",
       "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Components": [
+        {
+          "__type": "ColliderBoxComponent",
+          "__enabled": true,
+          "IsTrigger": true,
+          "Scale": "800,587.15,67.55",
+          "Surface": null
+        },
         {
           "__type": "CameraTriggerComponent",
           "__enabled": true,
           "CameraPoint": "1bef0808-8dbd-42cc-91cf-19f6b685ffae",
           "FollowPlayer": true
-        },
-        {
-          "__type": "ColliderBoxComponent",
-          "__enabled": true,
-          "IsTrigger": true,
-          "Scale": "455.6,430.1,67.55",
-          "Surface": null
         }
       ],
       "Children": [
@@ -113,17 +98,17 @@
       "Scale": "1,1,1",
       "Components": [
         {
+          "__type": "CameraTriggerComponent",
+          "__enabled": true,
+          "CameraPoint": "0125f512-47bb-4df0-843a-a50242e844d0",
+          "FollowPlayer": false
+        },
+        {
           "__type": "ColliderBoxComponent",
           "__enabled": true,
           "IsTrigger": true,
           "Scale": "455.6,430.1,67.55",
           "Surface": null
-        },
-        {
-          "__type": "CameraTriggerComponent",
-          "__enabled": true,
-          "CameraPoint": "0125f512-47bb-4df0-843a-a50242e844d0",
-          "FollowPlayer": false
         }
       ],
       "Children": [
@@ -201,42 +186,50 @@
       "Scale": "1,1,1",
       "Components": [
         {
-          "__type": "ItemPickup",
-          "__enabled": true,
-          "Item": {},
-          "Model": "weapons/rust_pistol/rust_pistol.vmdl"
-        },
-        {
           "__type": "ColliderBoxComponent",
           "__enabled": true,
           "IsTrigger": true,
           "Scale": "50,50,50",
           "Surface": null
+        },
+        {
+          "__type": "ItemPickup",
+          "__enabled": true,
+          "Item": {},
+          "Model": "weapons/rust_pistol/rust_pistol.vmdl"
         }
       ]
     },
     {
-      "Id": "ddeedd42-ee37-44e7-a3e6-ed229ae4914b",
-      "Name": "test_room_01",
+      "Id": "b303d9fe-6b7d-4f2f-a096-3f28020db7e7",
+      "Name": "MapGenerator",
       "Enabled": true,
-      "Position": "399.3337,729.5617,0.008231642",
+      "Position": "0,0,0",
       "Rotation": "0,0,0,1",
-      "Scale": "1,1,1",
+      "Scale": "1,1,1"
+    },
+    {
+      "Id": "5c6f927e-9ed2-41f1-8ca1-cd65e828ea74",
+      "Name": "Plane",
+      "Enabled": true,
+      "Position": "0,0,0",
+      "Rotation": "0,0,0,1",
+      "Scale": "5.344188,5.344188,5.344188",
       "Components": [
+        {
+          "__type": "ColliderBoxComponent",
+          "__enabled": true,
+          "IsTrigger": false,
+          "Scale": "100,100,1",
+          "Surface": null
+        },
         {
           "__type": "ModelComponent",
           "__enabled": true,
-          "MaterialOverride": null,
-          "Model": "models/environment/rooms/test_room_01.vmdl",
+          "MaterialOverride": "materials/dev/black_grid_8.vmat",
+          "Model": "models/dev/plane.vmdl",
           "ShouldCastShadows": true,
           "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "ModelCollider",
-          "__enabled": true,
-          "IsTrigger": false,
-          "Model": "models/environment/rooms/test_room_01.vmdl",
-          "Surface": null
         }
       ]
     }

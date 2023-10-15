@@ -1,0 +1,28 @@
+{
+  "RootObject": {
+    "Id": "ddeedd42-ee37-44e7-a3e6-ed229ae4914b",
+    "Name": "test_room_01",
+    "Enabled": true,
+    "Position": "399.3337,729.5617,0.008231642",
+    "Rotation": "0,0,0,1",
+    "Scale": "1,1,1",
+    "Components": [
+      {
+        "__type": "ModelComponent",
+        "__enabled": true,
+        "MaterialOverride": null,
+        "Model": "models/environment/rooms/test_room_01.vmdl",
+        "ShouldCastShadows": true,
+        "Tint": "1,1,1,1"
+      },
+      {
+        "__type": "ModelCollider",
+        "__enabled": true,
+        "IsTrigger": false,
+        "Model": "models/environment/rooms/test_room_01.vmdl",
+        "Surface": null
+      }
+    ]
+  },
+  "__references": []
+}
