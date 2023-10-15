@@ -1,7 +1,7 @@
 {
   "GameObjects": [
     {
-      "Id": "af43053c-2ab3-4081-a020-56ae5af26961",
+      "Id": "00000000-0000-0000-0000-000000000000",
       "Name": "Directional Light",
       "Enabled": true,
       "Position": "0,0,128",
@@ -18,7 +18,7 @@
       ]
     },
     {
-      "Id": "b82ef908-0473-4666-b316-4d0a5fb2738d",
+      "Id": "00000000-0000-0000-0000-000000000000",
       "Name": "player",
       "Enabled": true,
       "Position": "-23.73362,3.557785,0.0001983643",
@@ -27,7 +27,7 @@
       "__Prefab": "prefabs/player.object"
     },
     {
-      "Id": "7d4e5e8a-5ca0-4851-b5b8-4de35975cb2e",
+      "Id": "00000000-0000-0000-0000-000000000000",
       "Name": "Camera",
       "Enabled": true,
       "Position": "497.1481,-422.6899,425.4719",
@@ -46,10 +46,10 @@
       ]
     },
     {
-      "Id": "859f0245-7f3c-4e8c-97d3-046386795722",
+      "Id": "00000000-0000-0000-0000-000000000000",
       "Name": "Zone",
       "Enabled": true,
-      "Position": "356.6562,178.8306,20.26512",
+      "Position": "0,0,0",
       "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Components": [
@@ -57,19 +57,19 @@
           "__type": "ColliderBoxComponent",
           "__enabled": true,
           "IsTrigger": true,
-          "Scale": "800,587.15,67.55",
+          "Scale": "800,800,67.55",
           "Surface": null
         },
         {
           "__type": "CameraTriggerComponent",
           "__enabled": true,
-          "CameraPoint": "1bef0808-8dbd-42cc-91cf-19f6b685ffae",
+          "CameraPoint": "00000000-0000-0000-0000-000000000000",
           "FollowPlayer": true
         }
       ],
       "Children": [
         {
-          "Id": "1bef0808-8dbd-42cc-91cf-19f6b685ffae",
+          "Id": "00000000-0000-0000-0000-000000000000",
           "Name": "ZoneCamera",
           "Enabled": true,
           "Position": "396.1543,30.86443,236.05",
@@ -90,7 +90,7 @@
       ]
     },
     {
-      "Id": "b595d32e-bb0b-492e-8a37-add2babd53a6",
+      "Id": "00000000-0000-0000-0000-000000000000",
       "Name": "Zone",
       "Enabled": true,
       "Position": "402.2094,687.045,20.26534",
@@ -100,7 +100,7 @@
         {
           "__type": "CameraTriggerComponent",
           "__enabled": true,
-          "CameraPoint": "0125f512-47bb-4df0-843a-a50242e844d0",
+          "CameraPoint": "00000000-0000-0000-0000-000000000000",
           "FollowPlayer": false
         },
         {
@@ -113,7 +113,7 @@
       ],
       "Children": [
         {
-          "Id": "0125f512-47bb-4df0-843a-a50242e844d0",
+          "Id": "00000000-0000-0000-0000-000000000000",
           "Name": "ZoneCamera",
           "Enabled": true,
           "Position": "257.5967,49.65237,220.7832",
@@ -134,7 +134,7 @@
       ]
     },
     {
-      "Id": "7530f785-a8ec-488e-9f5f-22f0f8588731",
+      "Id": "00000000-0000-0000-0000-000000000000",
       "Name": "Fog",
       "Enabled": true,
       "Position": "0,0,-97.12166",
@@ -154,7 +154,7 @@
       ]
     },
     {
-      "Id": "8f63a8b0-fc7b-46e2-ae70-84643b0c5d21",
+      "Id": "00000000-0000-0000-0000-000000000000",
       "Name": "Skybox",
       "Enabled": true,
       "Position": "0,0,-34.30033",
@@ -170,7 +170,7 @@
       ]
     },
     {
-      "Id": "27dd2426-886b-480c-851b-48c40ba04bb6",
+      "Id": "00000000-0000-0000-0000-000000000000",
       "Name": "Object",
       "Enabled": true,
       "Position": "0,0,0",
@@ -178,7 +178,7 @@
       "Scale": "1,1,1"
     },
     {
-      "Id": "f0720726-42a6-4737-8f79-dfac78badc34",
+      "Id": "00000000-0000-0000-0000-000000000000",
       "Name": "Pistol Pickup",
       "Enabled": true,
       "Position": "100,0,0",
@@ -201,7 +201,7 @@
       ]
     },
     {
-      "Id": "b303d9fe-6b7d-4f2f-a096-3f28020db7e7",
+      "Id": "00000000-0000-0000-0000-000000000000",
       "Name": "MapGenerator",
       "Enabled": true,
       "Position": "0,0,0",
@@ -211,31 +211,6 @@
         {
           "__type": "MapGeneratorComponent",
           "__enabled": true
-        }
-      ]
-    },
-    {
-      "Id": "5c6f927e-9ed2-41f1-8ca1-cd65e828ea74",
-      "Name": "Plane",
-      "Enabled": true,
-      "Position": "0,0,0",
-      "Rotation": "0,0,0,1",
-      "Scale": "5.344188,5.344188,5.344188",
-      "Components": [
-        {
-          "__type": "ColliderBoxComponent",
-          "__enabled": true,
-          "IsTrigger": false,
-          "Scale": "100,100,1",
-          "Surface": null
-        },
-        {
-          "__type": "ModelComponent",
-          "__enabled": true,
-          "MaterialOverride": "materials/dev/black_grid_8.vmat",
-          "Model": "models/dev/plane.vmdl",
-          "ShouldCastShadows": true,
-          "Tint": "1,1,1,1"
         }
       ]
     }

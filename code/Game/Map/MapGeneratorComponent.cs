@@ -6,10 +6,13 @@ using System.Collections.Generic;
 [Icon( "map", "red", "white" )]
 public sealed class MapGeneratorComponent : BaseComponent
 {
-	List<GameObject> gameObjects = new List<GameObject>() { };
+	List<string> Rooms = new List<string>() { "prefabs/rooms/room_01.object" };
 
 	public override void OnStart()
 	{
+		var room1 = ResourceLibrary.Get<PrefabFile>( Rooms[0] );
+		SceneUtility.Instantiate( room1.Scene, Transform.Position, Transform.Rotation );
+
 		base.OnStart();
 	}
 
