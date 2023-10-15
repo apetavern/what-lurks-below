@@ -131,6 +131,24 @@
           "SnapGridSize": 1024
         }
       ]
+    },
+    {
+      "Id": "c02125d1-191d-463e-bf65-c1b71adfd1a0",
+      "Name": "Plane",
+      "Enabled": true,
+      "Position": "0,0,673.3181",
+      "Rotation": "0,0,0,1",
+      "Scale": "100,100,100",
+      "Components": [
+        {
+          "__type": "ModelComponent",
+          "__enabled": true,
+          "MaterialOverride": null,
+          "Model": "models/dev/plane.vmdl",
+          "ShouldCastShadows": true,
+          "Tint": "1,1,1,1"
+        }
+      ]
     }
   ],
   "__references": []

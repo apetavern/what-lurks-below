@@ -8,13 +8,13 @@
     "Scale": "1,1,1",
     "Components": [
       {
-        "__type": "CharacterController",
+        "__type": "Inventory",
         "__enabled": true,
-        "Acceleration": 10,
-        "GroundAngle": 45,
-        "Height": 64,
-        "Radius": 16,
-        "StepHeight": 18
+        "Slots": 6
+      },
+      {
+        "__type": "HUD",
+        "__enabled": true
       },
       {
         "__type": "PlayerController",
@@ -26,13 +26,13 @@
         "Gravity": "0,0,800"
       },
       {
-        "__type": "HUD",
-        "__enabled": true
-      },
-      {
-        "__type": "Inventory",
+        "__type": "CharacterController",
         "__enabled": true,
-        "Slots": 6
+        "Acceleration": 10,
+        "GroundAngle": 45,
+        "Height": 64,
+        "Radius": 16,
+        "StepHeight": 18
       }
     ],
     "Children": [
@@ -69,6 +69,26 @@
                 "Model": "weapons/rust_pistol/rust_pistol.vmdl",
                 "ShouldCastShadows": true,
                 "Tint": "1,1,1,1"
+              }
+            ]
+          },
+          {
+            "Id": "9bc07488-f235-4735-8469-b5f39f501ebe",
+            "Name": "Spot Light",
+            "Enabled": true,
+            "Position": "8.730989,0,66.07413",
+            "Rotation": "0,0,0,1",
+            "Scale": "1,1,1",
+            "Components": [
+              {
+                "__type": "SpotLightComponent",
+                "__enabled": true,
+                "Attenuation": 1,
+                "ConeInner": 15,
+                "ConeOuter": 45,
+                "Cookie": null,
+                "LightColor": "0.91373,0.98039,1,1",
+                "Radius": 500
               }
             ]
           }
