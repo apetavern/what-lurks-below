@@ -72,11 +72,8 @@ public sealed class RoomChunkComponent : BaseComponent
 		Vector3 controlPoint1 = doorPosition1.Transform.Position - doorPosition1.Transform.Rotation.Right * 768;
 		Vector3 controlPoint2 = doorPosition2.Transform.Position - doorPosition2.Transform.Rotation.Right * 768;
 
-		// Create a Bézier curve using the positions and control points
+		// Create a Bezier curve using the positions and control points
 		List<Vector3> curvePoints = CreateBezierCurve( doorPosition1.Transform.Position, controlPoint1, controlPoint2, doorPosition2.Transform.Position, 128f );
-
-		// Create the curve by placing objects/tiles along the Bézier curve
-		//CreateCurve( curvePoints );
 
 		PathPoints.Add( EnforcePoints( curvePoints, 128f ) );
 	}

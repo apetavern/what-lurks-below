@@ -152,6 +152,8 @@ public sealed class MapGeneratorComponent : BaseComponent
 		return unconnectedNeighbors;
 	}
 
+	List<GameObject> hallwayChunks = new List<GameObject>();
+
 	public async void CreateHallways()
 	{
 		await GameTask.Delay( 1000 );
@@ -161,15 +163,20 @@ public sealed class MapGeneratorComponent : BaseComponent
 			{
 				for ( int i = 0; i < hall.Count; i++ )
 				{
-					var tr = Physics.Trace.Ray( hall[i], hall[i] - Vector3.Up ).WithoutTags( "room" ).Run();
-					if ( !tr.Hit || (tr.Body.GameObject as GameObject).GetComponent<RoomChunkComponent>( false ) == null )
+					var tr = Physics.Trace.Ray( hall[i], hall[i] - Vector3.Up ).Run();
+					if ( !tr.Hit )//|| (tr.Body.GameObject as GameObject).GetComponent<RoomChunkComponent>( false ) == null 
 					{
-						SpawnPrefabFromPath( Hallways[0], hall[i], Rotation.Identity );
+						hallwayChunks.Add( SpawnPrefabFromPath( Hallways[0], hall[i], Rotation.Identity ) );
 					}
-
-					await GameTask.Delay( 10 );
 				}
 			}
+		}
+
+		await GameTask.Delay( 200 );
+
+		foreach ( var item in hallwayChunks )
+		{
+			item.GetComponent<HallwayChunkComponent>( false ).CheckSides();
 			await GameTask.Delay( 10 );
 		}
 
@@ -188,7 +195,7 @@ public sealed class MapGeneratorComponent : BaseComponent
 					if ( room.GameObject.GetBounds().Overlaps( room2.GameObject.GetBounds() ) )
 					{
 						overlaps++;
-						room.Transform.Position += (room.Transform.Position - room2.Transform.Position) * 0.325f;
+						room.Transform.Position += (room.Transform.Position - room2.Transform.Position) * 0.3f;
 					}
 				}
 			}

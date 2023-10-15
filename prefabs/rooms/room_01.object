@@ -5,7 +5,7 @@
     "Enabled": true,
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
-    "Scale": "1,1,1",
+    "Scale": "1.2,1.2,1.2",
     "Components": [
       {
         "__type": "ModelCollider",
