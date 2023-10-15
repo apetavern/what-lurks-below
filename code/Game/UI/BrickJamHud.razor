@@ -1,0 +1,15 @@
+﻿@using Sandbox;
+@using Sandbox.UI;
+@inherits RootPanel
+@attribute [StyleSheet]
+
+<root>
+    <div style="font-size: 32px; color: white">@System.DateTime.Now</div>
+</root>
+
+@code {
+    protected override int BuildHash()
+    {
+        return System.HashCode.Combine(System.DateTime.Now);
+    }
+}

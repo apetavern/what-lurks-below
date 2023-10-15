@@ -8,18 +8,9 @@
     "Scale": "1,1,1",
     "Components": [
       {
-        "__type": "HealthComponent",
+        "__type": "Inventory",
         "__enabled": true,
-        "InitialHealth": 100
-      },
-      {
-        "__type": "CharacterController",
-        "__enabled": true,
-        "Acceleration": 10,
-        "GroundAngle": 45,
-        "Height": 64,
-        "Radius": 16,
-        "StepHeight": 18
+        "Slots": 6
       },
       {
         "__type": "PlayerController",
@@ -31,13 +22,18 @@
         "Gravity": "0,0,800"
       },
       {
-        "__type": "HUD",
-        "__enabled": true
+        "__type": "CharacterController",
+        "__enabled": true,
+        "Acceleration": 10,
+        "GroundAngle": 45,
+        "Height": 64,
+        "Radius": 16,
+        "StepHeight": 18
       },
       {
-        "__type": "Inventory",
+        "__type": "HealthComponent",
         "__enabled": true,
-        "Slots": 6
+        "InitialHealth": 100
       }
     ],
     "Children": [

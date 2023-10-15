@@ -20,8 +20,8 @@ public sealed class CameraTriggerComponent : BaseComponent
 	public override void OnEnabled()
 	{
 		base.OnEnabled();
-		Player = Scene.GetAllObjects( true ).Where( X => X.Name == "player" ).FirstOrDefault();
-		Controller = Player.GetComponent<PlayerController>();
+		Player = Scene.GetAllObjects( true ).FirstOrDefault( x => x.Name == "player" );
+		Controller = Player?.GetComponent<PlayerController>( false );
 
 		var box = new BBox();
 		var scale = GetComponent<ColliderBoxComponent>( false ).Scale;

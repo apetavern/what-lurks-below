@@ -115,8 +115,6 @@ public class ItemPickup : BaseComponent
 		if ( inv is null )
 			return;
 		
-		// this is null
-		Log.Info( _pickupResource.Item );
 		var added = inv.AddItem( _pickupResource.Item );
 		if ( !added )
 			return;

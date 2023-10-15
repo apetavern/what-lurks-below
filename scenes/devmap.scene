@@ -35,10 +35,6 @@
       "Scale": "1,1,1",
       "Components": [
         {
-          "__type": "SoundListenerComponent",
-          "__enabled": true
-        },
-        {
           "__type": "CameraComponent",
           "__enabled": true,
           "BackgroundColor": "0.33333,0.46275,0.52157,1",
@@ -46,6 +42,10 @@
           "FieldOfView": 60,
           "ZFar": 10000,
           "ZNear": 10
+        },
+        {
+          "__type": "SoundListenerComponent",
+          "__enabled": true
         }
       ]
     },
@@ -102,17 +102,16 @@
       "Scale": "1,1,1",
       "Components": [
         {
+          "__type": "ItemPickup",
+          "__enabled": true,
+          "Type": "Ammo"
+        },
+        {
           "__type": "ColliderBoxComponent",
           "__enabled": true,
           "IsTrigger": true,
           "Scale": "50,50,50",
           "Surface": null
-        },
-        {
-          "__type": "ItemPickup",
-          "__enabled": true,
-          "ModelScale": 1.5,
-          "Type": "Ammo"
         }
       ]
     },
@@ -125,17 +124,16 @@
       "Scale": "1,1,1",
       "Components": [
         {
-          "__type": "ItemPickup",
-          "__enabled": true,
-          "ModelScale": 1,
-          "Type": "Health"
-        },
-        {
           "__type": "ColliderBoxComponent",
           "__enabled": true,
           "IsTrigger": true,
           "Scale": "50,50,50",
           "Surface": null
+        },
+        {
+          "__type": "ItemPickup",
+          "__enabled": true,
+          "Type": "Health"
         }
       ]
     },
@@ -148,17 +146,16 @@
       "Scale": "1,1,1",
       "Components": [
         {
+          "__type": "ItemPickup",
+          "__enabled": true,
+          "Type": "Item"
+        },
+        {
           "__type": "ColliderBoxComponent",
           "__enabled": true,
           "IsTrigger": true,
           "Scale": "50,50,50",
           "Surface": null
-        },
-        {
-          "__type": "ItemPickup",
-          "__enabled": true,
-          "ModelScale": 2,
-          "Type": "Key"
         }
       ]
     },
@@ -171,17 +168,16 @@
       "Scale": "1,1,1",
       "Components": [
         {
-          "__type": "ItemPickup",
-          "__enabled": true,
-          "ModelScale": 1,
-          "Type": "Health"
-        },
-        {
           "__type": "ColliderBoxComponent",
           "__enabled": true,
           "IsTrigger": true,
           "Scale": "50,50,50",
           "Surface": null
+        },
+        {
+          "__type": "ItemPickup",
+          "__enabled": true,
+          "Type": "Health"
         }
       ]
     },
@@ -216,6 +212,20 @@
           "Model": "models/dev/plane.vmdl",
           "ShouldCastShadows": true,
           "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "Id": "7300f772-430f-4719-9526-cbaa4374af4e",
+      "Name": "UI",
+      "Enabled": true,
+      "Position": "0,0,0",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
+      "Components": [
+        {
+          "__type": "RootPanelComponent",
+          "__enabled": true
         }
       ]
     }
