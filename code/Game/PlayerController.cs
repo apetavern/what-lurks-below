@@ -81,9 +81,12 @@ public class PlayerController : BaseComponent
 		{
 			var room = Scene.GetAllObjects( true ).Where( X => X.GetComponent<RoomChunkComponent>( false ) != null ).FirstOrDefault();
 
-			Transform.Position = room.Transform.Position.WithZ( 0 );
-			WishVelocity = Vector3.Zero;
-			cc.Velocity = Vector3.Zero;
+			if ( room is not null )
+			{
+				Transform.Position = room.Transform.Position.WithZ( 0 );
+				WishVelocity = Vector3.Zero;
+				cc.Velocity = Vector3.Zero;
+			}
 		}
 
 		// rotate body to look angles

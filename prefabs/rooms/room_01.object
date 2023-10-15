@@ -1,16 +1,25 @@
 {
   "RootObject": {
-    "Id": "a0bfdc72-717a-43e8-8dcf-55eb03ee50c5",
+    "Id": "06b81bfa-2ca2-4ef7-85b8-10a477368bba",
     "Name": "room_01",
     "Enabled": true,
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
-    "Scale": "1.2,1.2,1.2",
+    "Scale": "1,1,1",
     "Components": [
       {
-        "__type": "RoomChunkComponent",
-        "__enabled": true,
-        "CameraTrigger": "f1a3cdcd-5b1f-456f-bb25-b251ad71dad7"
+        "__type": "ModelCollider",
+        "__enabled": false,
+        "IsTrigger": false,
+        "Model": "models/environment/rooms/test_room_01.vmdl",
+        "Surface": null
+      },
+      {
+        "__type": "ModelCollider",
+        "__enabled": false,
+        "IsTrigger": false,
+        "Model": "models/environment/rooms/test_room_01.vmdl",
+        "Surface": null
       },
       {
         "__type": "ModelComponent",
@@ -19,6 +28,11 @@
         "Model": "models/environment/rooms/test_room_01.vmdl",
         "ShouldCastShadows": true,
         "Tint": "1,1,1,1"
+      },
+      {
+        "__type": "RoomChunkComponent",
+        "__enabled": true,
+        "CameraTrigger": "54cdc790-4b71-4796-b1fb-11d31ed4f2fa"
       },
       {
         "__type": "ModelCollider",
@@ -37,7 +51,7 @@
     ],
     "Children": [
       {
-        "Id": "f1a3cdcd-5b1f-456f-bb25-b251ad71dad7",
+        "Id": "54cdc790-4b71-4796-b1fb-11d31ed4f2fa",
         "Name": "Zone",
         "Enabled": true,
         "Position": "-14.23788,0,25.73827",
@@ -45,22 +59,22 @@
         "Scale": "1,1,1",
         "Components": [
           {
+            "__type": "CameraTriggerComponent",
+            "__enabled": true,
+            "CameraPoint": "644eb4d4-f19e-4059-906a-21e42f3bb178",
+            "FollowPlayer": true
+          },
+          {
             "__type": "ColliderBoxComponent",
             "__enabled": false,
             "IsTrigger": true,
             "Scale": "617.6,520.55,128",
             "Surface": null
-          },
-          {
-            "__type": "CameraTriggerComponent",
-            "__enabled": true,
-            "CameraPoint": "8be905f2-790f-43e9-865c-3b4dc2632b58",
-            "FollowPlayer": true
           }
         ],
         "Children": [
           {
-            "Id": "8be905f2-790f-43e9-865c-3b4dc2632b58",
+            "Id": "644eb4d4-f19e-4059-906a-21e42f3bb178",
             "Name": "ZONECAM",
             "Enabled": true,
             "Position": "252.0372,30.62191,137.6134",
@@ -70,7 +84,7 @@
         ]
       },
       {
-        "Id": "1089272d-c8b1-4637-96cb-1fbe16db9590",
+        "Id": "3d9f400c-af9e-401e-a000-8e34a1446b55",
         "Name": "Spot Light",
         "Enabled": true,
         "Position": "-233.3163,0.000005306606,223.4649",
@@ -90,7 +104,7 @@
         ]
       },
       {
-        "Id": "c02bd865-bf41-45ed-8cf6-d607a6bfb309",
+        "Id": "a3b556ba-20ac-4491-bf4e-ce5660e14e4e",
         "Name": "Door",
         "Enabled": true,
         "Position": "-16,260,0",
@@ -104,11 +118,11 @@
         ]
       },
       {
-        "Id": "58f74999-9ffa-46d9-b630-d054e75c7aba",
+        "Id": "5e377fe8-c8a2-410a-afd3-f244474c7f69",
         "Name": "Door",
         "Enabled": true,
         "Position": "-16.00006,-252,-0.000001618709",
-        "Rotation": "0.00000005552744,0.00000001504666,1,-0.0000006397578",
+        "Rotation": "-0.00000005432734,0.00000001693246,-1,-0.0000006397578",
         "Scale": "1,1,1",
         "Components": [
           {

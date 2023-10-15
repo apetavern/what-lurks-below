@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 [Icon( "map", "red", "white" )]
 public sealed class MapGeneratorComponent : BaseComponent
 {
-	List<string> Rooms = new List<string>() { "prefabs/rooms/room_01.object" };
+	List<string> Rooms = new List<string>() { "prefabs/rooms/sewer_room_01.object", "prefabs/rooms/room_01.object" };
 
 	List<string> Hallways = new List<string>() { "prefabs/hallways/hallway_01.object" };
 
@@ -27,7 +27,7 @@ public sealed class MapGeneratorComponent : BaseComponent
 
 	public override void OnStart()
 	{
-		SpawnedRooms.Add( SpawnPrefabFromPath( Rooms[0], Transform.Position, Transform.Rotation ).GetComponent<RoomChunkComponent>( false ) );
+		SpawnedRooms.Add( SpawnPrefabFromPath( Rooms[Game.Random.Int( 0, Rooms.Count - 1 )], Transform.Position, Transform.Rotation ).GetComponent<RoomChunkComponent>( false ) );
 
 		for ( int i = 0; i < RoomCount; i++ )
 		{
@@ -35,7 +35,7 @@ public sealed class MapGeneratorComponent : BaseComponent
 
 			Vector3 PlacePoint = new Vector3( SpawnPoint.x, SpawnPoint.y, 0 );
 
-			SpawnedRooms.Add( SpawnPrefabFromPath( Rooms[0], Transform.Position + PlacePoint, Transform.Rotation ).GetComponent<RoomChunkComponent>( false ) );
+			SpawnedRooms.Add( SpawnPrefabFromPath( Rooms[Game.Random.Int( 0, Rooms.Count - 1 )], Transform.Position + PlacePoint, Transform.Rotation ).GetComponent<RoomChunkComponent>( false ) );
 		}
 
 		base.OnStart();
@@ -164,7 +164,7 @@ public sealed class MapGeneratorComponent : BaseComponent
 				for ( int i = 0; i < hall.Count; i++ )
 				{
 					var tr = Physics.Trace.Ray( hall[i], hall[i] - Vector3.Up ).Run();
-					if ( !tr.Hit )//|| (tr.Body.GameObject as GameObject).GetComponent<RoomChunkComponent>( false ) == null 
+					if ( !tr.Hit && hall[i] != Vector3.Zero )//|| (tr.Body.GameObject as GameObject).GetComponent<RoomChunkComponent>( false ) == null 
 					{
 						hallwayChunks.Add( SpawnPrefabFromPath( Hallways[0], hall[i], Rotation.Identity ) );
 					}
@@ -208,6 +208,10 @@ public sealed class MapGeneratorComponent : BaseComponent
 					var GridSnappedPosition = room.Transform.Position;
 					GridSnappedPosition.x = MathF.Round( GridSnappedPosition.x / SnapGridSize ) * SnapGridSize;
 					GridSnappedPosition.y = MathF.Round( GridSnappedPosition.y / SnapGridSize ) * SnapGridSize;
+
+					GridSnappedPosition.x += 64f;
+					GridSnappedPosition.y += 64f;
+
 					room.Transform.Position = GridSnappedPosition;
 					room.GetComponent<RoomChunkComponent>( false ).SetupCollision();
 				}

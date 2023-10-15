@@ -151,8 +151,16 @@ public sealed class RoomChunkComponent : BaseComponent
 	public void SetupCollision()
 	{
 		CameraTrigger.GetComponent<CameraTriggerComponent>( false ).RecalcBounds();
-		GetComponent<ModelCollider>( false ).Enabled = true;
-		GetComponent<ModelComponent>( false ).SceneObject.Tags.Add( "room" );
+
+		foreach ( var coll in GetComponents<ModelCollider>( false, true ) )
+		{
+			coll.Enabled = false;
+		}
+
+		foreach ( var coll in GetComponents<ModelCollider>( false, true ) )
+		{
+			coll.Enabled = true;
+		}
 		Log.Info( "Collision fixed!" );
 	}
 
