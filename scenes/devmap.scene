@@ -18,7 +18,7 @@
       ]
     },
     {
-      "Id": "00000000-0000-0000-0000-000000000000",
+      "Id": "7ebc391e-925e-489c-a0dd-a48345ab8d2a",
       "Name": "player",
       "Enabled": true,
       "Position": "-23.73362,3.557785,0.0001983643",
@@ -27,7 +27,7 @@
       "__Prefab": "prefabs/player.object"
     },
     {
-      "Id": "00000000-0000-0000-0000-000000000000",
+      "Id": "b87e8bdf-9559-4b22-817d-0e9af9983c9c",
       "Name": "Camera",
       "Enabled": true,
       "Position": "497.1481,-422.6899,425.4719",
@@ -46,40 +46,7 @@
       ]
     },
     {
-      "Id": "00000000-0000-0000-0000-000000000000",
-      "Name": "Zone",
-      "Enabled": true,
-      "Position": "0,0,0",
-      "Rotation": "0,0,0,1",
-      "Scale": "1,1,1",
-      "Components": [
-        {
-          "__type": "ColliderBoxComponent",
-          "__enabled": true,
-          "IsTrigger": true,
-          "Scale": "800,800,87.95",
-          "Surface": null
-        },
-        {
-          "__type": "CameraTriggerComponent",
-          "__enabled": true,
-          "CameraPoint": "2715a233-e667-4064-b20e-d5c6d6b7df33",
-          "FollowPlayer": true
-        }
-      ],
-      "Children": [
-        {
-          "Id": "2715a233-e667-4064-b20e-d5c6d6b7df33",
-          "Name": "ZoneCamera2",
-          "Enabled": true,
-          "Position": "252.0372,30.62191,137.6134",
-          "Rotation": "0.3479502,0.0002928673,-0.9375126,0.0007890981",
-          "Scale": "1,1,1"
-        }
-      ]
-    },
-    {
-      "Id": "00000000-0000-0000-0000-000000000000",
+      "Id": "a035ffaf-a7d0-4e6e-8ca4-7a398e29ad08",
       "Name": "Fog",
       "Enabled": true,
       "Position": "0,0,-97.12166",
@@ -99,7 +66,7 @@
       ]
     },
     {
-      "Id": "00000000-0000-0000-0000-000000000000",
+      "Id": "441bdfe0-648f-4b46-8ba9-88edc38fa7fa",
       "Name": "Skybox",
       "Enabled": true,
       "Position": "0,0,-34.30033",
@@ -115,7 +82,7 @@
       ]
     },
     {
-      "Id": "00000000-0000-0000-0000-000000000000",
+      "Id": "e52ba547-7741-4f69-8bdb-c9f1df0e5871",
       "Name": "Object",
       "Enabled": true,
       "Position": "0,0,0",
@@ -123,7 +90,7 @@
       "Scale": "1,1,1"
     },
     {
-      "Id": "00000000-0000-0000-0000-000000000000",
+      "Id": "77a5ccfd-2ea5-43d0-9394-097299cd1401",
       "Name": "Pistol Pickup",
       "Enabled": true,
       "Position": "100,0,0",
@@ -146,7 +113,7 @@
       ]
     },
     {
-      "Id": "00000000-0000-0000-0000-000000000000",
+      "Id": "278ca51d-c541-4dc6-b167-54e714179d52",
       "Name": "MapGenerator",
       "Enabled": true,
       "Position": "0,0,0",
@@ -155,7 +122,8 @@
       "Components": [
         {
           "__type": "MapGeneratorComponent",
-          "__enabled": true
+          "__enabled": true,
+          "RoomCount": 10
         }
       ]
     }

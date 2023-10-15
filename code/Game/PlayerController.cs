@@ -29,7 +29,6 @@ public class PlayerController : BaseComponent
 
 			Camera.Transform.Position = camPos;
 			Camera.Transform.Rotation = EyeAngles.ToRotation();
-
 		}
 	}
 
@@ -52,6 +51,15 @@ public class PlayerController : BaseComponent
 
 		var cc = GameObject.GetComponent<CharacterController>();
 
+
+		if ( Transform.Position.z < -100f )
+		{
+			var room = Scene.GetAllObjects( true ).Where( X => X.GetComponent<RoomChunkComponent>( false ) != null ).FirstOrDefault();
+
+			Transform.Position = room.Transform.Position.WithZ( 0 );
+			WishVelocity = Vector3.Zero;
+			cc.Velocity = Vector3.Zero;
+		}
 
 		// rotate body to look angles
 		if ( Body is not null )

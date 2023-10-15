@@ -34,6 +34,20 @@ public sealed class CameraTriggerComponent : BaseComponent
 		Bounds = box;
 	}
 
+	public void RecalcBounds()
+	{
+		GetComponent<ColliderBoxComponent>( false ).Enabled = true;
+		var box = new BBox();
+		var scale = GetComponent<ColliderBoxComponent>( false ).Scale;
+		var position = Transform.Position; // Assuming you have a reference to the object's transform
+
+		// Calculate the minimum and maximum points of the bounding box
+		box.Mins = position - 0.5f * scale;
+		box.Maxs = position + 0.5f * scale;
+
+		Bounds = box;
+	}
+
 	public override void Update()
 	{
 		if ( Player is not null )

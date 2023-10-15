@@ -1,12 +1,19 @@
 {
   "RootObject": {
-    "Id": "ddeedd42-ee37-44e7-a3e6-ed229ae4914b",
-    "Name": "test_room_01",
+    "Id": "35c01f11-faa5-4ab8-bb73-ba0ce1586331",
+    "Name": "room_01",
     "Enabled": true,
-    "Position": "399.3337,729.5617,0.008231642",
+    "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
     "Components": [
+      {
+        "__type": "ModelCollider",
+        "__enabled": false,
+        "IsTrigger": false,
+        "Model": "models/environment/rooms/test_room_01.vmdl",
+        "Surface": null
+      },
       {
         "__type": "ModelComponent",
         "__enabled": true,
@@ -16,11 +23,44 @@
         "Tint": "1,1,1,1"
       },
       {
-        "__type": "ModelCollider",
+        "__type": "RoomChunkComponent",
         "__enabled": true,
-        "IsTrigger": false,
-        "Model": "models/environment/rooms/test_room_01.vmdl",
-        "Surface": null
+        "CameraTrigger": "3a50a54c-e1df-421e-92f8-9bb7dc83cfc9"
+      }
+    ],
+    "Children": [
+      {
+        "Id": "3a50a54c-e1df-421e-92f8-9bb7dc83cfc9",
+        "Name": "Zone",
+        "Enabled": true,
+        "Position": "-14.23788,0,25.73827",
+        "Rotation": "0,0,0,1",
+        "Scale": "1,1,1",
+        "Components": [
+          {
+            "__type": "CameraTriggerComponent",
+            "__enabled": true,
+            "CameraPoint": "f0587be3-dae0-4331-934f-f0c8707fd346",
+            "FollowPlayer": true
+          },
+          {
+            "__type": "ColliderBoxComponent",
+            "__enabled": false,
+            "IsTrigger": true,
+            "Scale": "617.6,520.55,87.95",
+            "Surface": null
+          }
+        ],
+        "Children": [
+          {
+            "Id": "f0587be3-dae0-4331-934f-f0c8707fd346",
+            "Name": "ZONECAM",
+            "Enabled": true,
+            "Position": "252.0372,30.62191,137.6134",
+            "Rotation": "0.3479502,0.0002928673,-0.9375126,0.0007890981",
+            "Scale": "1,1,1"
+          }
+        ]
       }
     ]
   },
