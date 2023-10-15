@@ -1,6 +1,6 @@
 {
   "RootObject": {
-    "Id": "6ec0745f-9c3b-42ca-a0f3-438a6ab4ca30",
+    "Id": "3a41ea3b-78fa-4802-b49f-2b5e2cf03a25",
     "Name": "hallway_01",
     "Enabled": true,
     "Position": "0,0,0",
@@ -8,32 +8,32 @@
     "Scale": "1.28,1.28,1.28",
     "Components": [
       {
-        "__type": "ColliderBoxComponent",
+        "__type": "HallwayChunkComponent",
         "__enabled": true,
-        "IsTrigger": false,
-        "Scale": "100,100,1",
-        "Surface": null
+        "Back": "1298a5f8-8242-40ae-b92b-9362b60cfba7",
+        "Front": "80533bcd-3235-45a5-98d6-657fe695ca13",
+        "Left": "1c0d218c-d1f4-454e-a100-330ee766b876",
+        "Right": "3b69cbd3-6b9f-469c-9efb-eb9169c8b450"
       },
       {
         "__type": "ModelComponent",
         "__enabled": true,
-        "MaterialOverride": null,
+        "MaterialOverride": "materials/dev/simple/floor_simple_128.vmat",
         "Model": "models/dev/plane.vmdl",
         "ShouldCastShadows": true,
         "Tint": "1,1,1,1"
       },
       {
-        "__type": "HallwayChunkComponent",
+        "__type": "ColliderBoxComponent",
         "__enabled": true,
-        "Back": "d8799203-b8bd-4ad2-9401-b8ed7b0f57b5",
-        "Front": "f18177ee-c99d-4fde-8d17-1bb43386c349",
-        "Left": "b5117f29-d7e7-45f8-a7ab-ce8a8e71e3aa",
-        "Right": "824069b5-7d1a-4e83-bc25-7aaebcc39f0f"
+        "IsTrigger": false,
+        "Scale": "100,100,1",
+        "Surface": null
       }
     ],
     "Children": [
       {
-        "Id": "908ee842-d4ad-4a82-b322-b2bd4c4ffa04",
+        "Id": "f4b4ab6e-9fdb-4058-9258-73ecd5b460ee",
         "Name": "Ceiling",
         "Enabled": true,
         "Position": "0,0,100",
@@ -41,24 +41,24 @@
         "Scale": "1,1,1",
         "Components": [
           {
-            "__type": "ColliderBoxComponent",
-            "__enabled": true,
-            "IsTrigger": false,
-            "Scale": "100,100,1",
-            "Surface": null
-          },
-          {
             "__type": "ModelComponent",
             "__enabled": true,
             "MaterialOverride": null,
             "Model": "models/dev/plane.vmdl",
             "ShouldCastShadows": true,
             "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "ColliderBoxComponent",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Scale": "100,100,1",
+            "Surface": null
           }
         ]
       },
       {
-        "Id": "f18177ee-c99d-4fde-8d17-1bb43386c349",
+        "Id": "80533bcd-3235-45a5-98d6-657fe695ca13",
         "Name": "forward",
         "Enabled": true,
         "Position": "50,0,50",
@@ -66,24 +66,24 @@
         "Scale": "1,1,1",
         "Components": [
           {
+            "__type": "ModelComponent",
+            "__enabled": true,
+            "MaterialOverride": "materials/sewer/sewer_wall_01.vmat",
+            "Model": "models/dev/plane.vmdl",
+            "ShouldCastShadows": true,
+            "Tint": "1,1,1,1"
+          },
+          {
             "__type": "ColliderBoxComponent",
             "__enabled": true,
             "IsTrigger": false,
             "Scale": "100,100,1",
             "Surface": null
-          },
-          {
-            "__type": "ModelComponent",
-            "__enabled": true,
-            "MaterialOverride": null,
-            "Model": "models/dev/plane.vmdl",
-            "ShouldCastShadows": true,
-            "Tint": "1,1,1,1"
           }
         ]
       },
       {
-        "Id": "d8799203-b8bd-4ad2-9401-b8ed7b0f57b5",
+        "Id": "1298a5f8-8242-40ae-b92b-9362b60cfba7",
         "Name": "back",
         "Enabled": true,
         "Position": "-50,0,50",
@@ -91,24 +91,24 @@
         "Scale": "1,1,1",
         "Components": [
           {
+            "__type": "ModelComponent",
+            "__enabled": true,
+            "MaterialOverride": "materials/sewer/sewer_wall_01.vmat",
+            "Model": "models/dev/plane.vmdl",
+            "ShouldCastShadows": true,
+            "Tint": "1,1,1,1"
+          },
+          {
             "__type": "ColliderBoxComponent",
             "__enabled": true,
             "IsTrigger": false,
             "Scale": "100,100,1",
             "Surface": null
-          },
-          {
-            "__type": "ModelComponent",
-            "__enabled": true,
-            "MaterialOverride": null,
-            "Model": "models/dev/plane.vmdl",
-            "ShouldCastShadows": true,
-            "Tint": "1,1,1,1"
           }
         ]
       },
       {
-        "Id": "824069b5-7d1a-4e83-bc25-7aaebcc39f0f",
+        "Id": "3b69cbd3-6b9f-469c-9efb-eb9169c8b450",
         "Name": "right",
         "Enabled": true,
         "Position": "0,-50,50",
@@ -116,24 +116,24 @@
         "Scale": "1,1,1",
         "Components": [
           {
+            "__type": "ModelComponent",
+            "__enabled": true,
+            "MaterialOverride": "materials/sewer/sewer_wall_01.vmat",
+            "Model": "models/dev/plane.vmdl",
+            "ShouldCastShadows": true,
+            "Tint": "1,1,1,1"
+          },
+          {
             "__type": "ColliderBoxComponent",
             "__enabled": true,
             "IsTrigger": false,
             "Scale": "100,100,1",
             "Surface": null
-          },
-          {
-            "__type": "ModelComponent",
-            "__enabled": true,
-            "MaterialOverride": null,
-            "Model": "models/dev/plane.vmdl",
-            "ShouldCastShadows": true,
-            "Tint": "1,1,1,1"
           }
         ]
       },
       {
-        "Id": "b5117f29-d7e7-45f8-a7ab-ce8a8e71e3aa",
+        "Id": "1c0d218c-d1f4-454e-a100-330ee766b876",
         "Name": "left",
         "Enabled": true,
         "Position": "0,50,50",
@@ -141,19 +141,19 @@
         "Scale": "1,1,1",
         "Components": [
           {
+            "__type": "ModelComponent",
+            "__enabled": true,
+            "MaterialOverride": "materials/sewer/sewer_wall_01.vmat",
+            "Model": "models/dev/plane.vmdl",
+            "ShouldCastShadows": true,
+            "Tint": "1,1,1,1"
+          },
+          {
             "__type": "ColliderBoxComponent",
             "__enabled": true,
             "IsTrigger": false,
             "Scale": "100,100,1",
             "Surface": null
-          },
-          {
-            "__type": "ModelComponent",
-            "__enabled": true,
-            "MaterialOverride": null,
-            "Model": "models/dev/plane.vmdl",
-            "ShouldCastShadows": true,
-            "Tint": "1,1,1,1"
           }
         ]
       }

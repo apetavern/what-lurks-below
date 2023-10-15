@@ -34,7 +34,7 @@ public sealed class RoomChunkComponent : BaseComponent
 		//Gizmo.Draw.Line( Vector3.Zero, item.Transform.Position - Transform.Position );
 		//}
 
-		if ( PathPoints.Count > 0 )
+		/*if ( PathPoints.Count > 0 )
 		{
 			for ( int i = 0; i < PathPoints.Count; i++ )
 			{
@@ -45,7 +45,7 @@ public sealed class RoomChunkComponent : BaseComponent
 					Gizmo.Draw.Line( localstart, localend );
 				}
 			}
-		}
+		}*/
 	}
 
 	private RoomDoorDefinition ChooseClosestDoorForConnection( RoomChunkComponent room, Vector3 targetPosition )
