@@ -23,19 +23,19 @@
         "Scale": "1,1,1",
         "Components": [
           {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/floor_01.vmdl",
+            "Surface": null
+          },
+          {
             "__type": "ModelComponent",
             "__enabled": true,
             "MaterialOverride": null,
             "Model": "models/environment/floor_01.vmdl",
             "ShouldCastShadows": true,
             "Tint": "1,1,1,1"
-          },
-          {
-            "__type": "ModelCollider",
-            "__enabled": true,
-            "IsTrigger": false,
-            "Model": "models/environment/floor_01.vmdl",
-            "Surface": null
           }
         ]
       },
@@ -48,19 +48,19 @@
         "Scale": "1,1,1",
         "Components": [
           {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/floor_01.vmdl",
+            "Surface": null
+          },
+          {
             "__type": "ModelComponent",
             "__enabled": true,
             "MaterialOverride": null,
             "Model": "models/environment/floor_01.vmdl",
             "ShouldCastShadows": true,
             "Tint": "1,1,1,1"
-          },
-          {
-            "__type": "ModelCollider",
-            "__enabled": true,
-            "IsTrigger": false,
-            "Model": "models/environment/floor_01.vmdl",
-            "Surface": null
           }
         ]
       },
@@ -73,19 +73,19 @@
         "Scale": "1,1,1",
         "Components": [
           {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/floor_02.vmdl",
+            "Surface": null
+          },
+          {
             "__type": "ModelComponent",
             "__enabled": true,
             "MaterialOverride": null,
             "Model": "models/environment/floor_02.vmdl",
             "ShouldCastShadows": true,
             "Tint": "1,1,1,1"
-          },
-          {
-            "__type": "ModelCollider",
-            "__enabled": true,
-            "IsTrigger": false,
-            "Model": "models/environment/floor_02.vmdl",
-            "Surface": null
           }
         ]
       },
@@ -98,19 +98,19 @@
         "Scale": "1,1,1",
         "Components": [
           {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/floor_02.vmdl",
+            "Surface": null
+          },
+          {
             "__type": "ModelComponent",
             "__enabled": true,
             "MaterialOverride": null,
             "Model": "models/environment/floor_02.vmdl",
             "ShouldCastShadows": true,
             "Tint": "1,1,1,1"
-          },
-          {
-            "__type": "ModelCollider",
-            "__enabled": true,
-            "IsTrigger": false,
-            "Model": "models/environment/floor_02.vmdl",
-            "Surface": null
           }
         ]
       },
@@ -123,19 +123,19 @@
         "Scale": "1,1,1",
         "Components": [
           {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/floor_01.vmdl",
+            "Surface": null
+          },
+          {
             "__type": "ModelComponent",
             "__enabled": true,
             "MaterialOverride": null,
             "Model": "models/environment/floor_01.vmdl",
             "ShouldCastShadows": true,
             "Tint": "1,1,1,1"
-          },
-          {
-            "__type": "ModelCollider",
-            "__enabled": true,
-            "IsTrigger": false,
-            "Model": "models/environment/floor_01.vmdl",
-            "Surface": null
           }
         ]
       },
@@ -148,19 +148,19 @@
         "Scale": "1,1,1",
         "Components": [
           {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/floor_01.vmdl",
+            "Surface": null
+          },
+          {
             "__type": "ModelComponent",
             "__enabled": true,
             "MaterialOverride": null,
             "Model": "models/environment/floor_01.vmdl",
             "ShouldCastShadows": true,
             "Tint": "1,1,1,1"
-          },
-          {
-            "__type": "ModelCollider",
-            "__enabled": true,
-            "IsTrigger": false,
-            "Model": "models/environment/floor_01.vmdl",
-            "Surface": null
           }
         ]
       },
@@ -173,19 +173,19 @@
         "Scale": "1,1,1",
         "Components": [
           {
-            "__type": "ModelCollider",
-            "__enabled": true,
-            "IsTrigger": false,
-            "Model": "models/environment/floor_01.vmdl",
-            "Surface": null
-          },
-          {
             "__type": "ModelComponent",
             "__enabled": true,
             "MaterialOverride": null,
             "Model": "models/environment/floor_01.vmdl",
             "ShouldCastShadows": true,
             "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/floor_01.vmdl",
+            "Surface": null
           }
         ]
       },
@@ -198,19 +198,19 @@
         "Scale": "1,1,1",
         "Components": [
           {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/floor_01.vmdl",
+            "Surface": null
+          },
+          {
             "__type": "ModelComponent",
             "__enabled": true,
             "MaterialOverride": null,
             "Model": "models/environment/floor_01.vmdl",
             "ShouldCastShadows": true,
             "Tint": "1,1,1,1"
-          },
-          {
-            "__type": "ModelCollider",
-            "__enabled": true,
-            "IsTrigger": false,
-            "Model": "models/environment/floor_01.vmdl",
-            "Surface": null
           }
         ]
       },
@@ -223,19 +223,19 @@
         "Scale": "1,1,1",
         "Components": [
           {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/floor_01.vmdl",
+            "Surface": null
+          },
+          {
             "__type": "ModelComponent",
             "__enabled": true,
             "MaterialOverride": null,
             "Model": "models/environment/floor_01.vmdl",
             "ShouldCastShadows": true,
             "Tint": "1,1,1,1"
-          },
-          {
-            "__type": "ModelCollider",
-            "__enabled": true,
-            "IsTrigger": false,
-            "Model": "models/environment/floor_01.vmdl",
-            "Surface": null
           }
         ]
       },
@@ -248,19 +248,19 @@
         "Scale": "1,1,1",
         "Components": [
           {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/floor_01.vmdl",
+            "Surface": null
+          },
+          {
             "__type": "ModelComponent",
             "__enabled": true,
             "MaterialOverride": null,
             "Model": "models/environment/floor_01.vmdl",
             "ShouldCastShadows": true,
             "Tint": "1,1,1,1"
-          },
-          {
-            "__type": "ModelCollider",
-            "__enabled": true,
-            "IsTrigger": false,
-            "Model": "models/environment/floor_01.vmdl",
-            "Surface": null
           }
         ]
       },
@@ -273,19 +273,19 @@
         "Scale": "1,1,1",
         "Components": [
           {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/floor_02.vmdl",
+            "Surface": null
+          },
+          {
             "__type": "ModelComponent",
             "__enabled": true,
             "MaterialOverride": null,
             "Model": "models/environment/floor_02.vmdl",
             "ShouldCastShadows": true,
             "Tint": "1,1,1,1"
-          },
-          {
-            "__type": "ModelCollider",
-            "__enabled": true,
-            "IsTrigger": false,
-            "Model": "models/environment/floor_02.vmdl",
-            "Surface": null
           }
         ]
       },
@@ -298,19 +298,19 @@
         "Scale": "1,1,1",
         "Components": [
           {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/floor_01.vmdl",
+            "Surface": null
+          },
+          {
             "__type": "ModelComponent",
             "__enabled": true,
             "MaterialOverride": null,
             "Model": "models/environment/floor_01.vmdl",
             "ShouldCastShadows": true,
             "Tint": "1,1,1,1"
-          },
-          {
-            "__type": "ModelCollider",
-            "__enabled": true,
-            "IsTrigger": false,
-            "Model": "models/environment/floor_01.vmdl",
-            "Surface": null
           }
         ]
       },
@@ -323,19 +323,19 @@
         "Scale": "1,1,1",
         "Components": [
           {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/floor_01.vmdl",
+            "Surface": null
+          },
+          {
             "__type": "ModelComponent",
             "__enabled": true,
             "MaterialOverride": null,
             "Model": "models/environment/floor_01.vmdl",
             "ShouldCastShadows": true,
             "Tint": "1,1,1,1"
-          },
-          {
-            "__type": "ModelCollider",
-            "__enabled": true,
-            "IsTrigger": false,
-            "Model": "models/environment/floor_01.vmdl",
-            "Surface": null
           }
         ]
       },
@@ -348,19 +348,19 @@
         "Scale": "1,1,1",
         "Components": [
           {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/floor_01.vmdl",
+            "Surface": null
+          },
+          {
             "__type": "ModelComponent",
             "__enabled": true,
             "MaterialOverride": null,
             "Model": "models/environment/floor_01.vmdl",
             "ShouldCastShadows": true,
             "Tint": "1,1,1,1"
-          },
-          {
-            "__type": "ModelCollider",
-            "__enabled": true,
-            "IsTrigger": false,
-            "Model": "models/environment/floor_01.vmdl",
-            "Surface": null
           }
         ]
       },
@@ -373,19 +373,19 @@
         "Scale": "1,1,1",
         "Components": [
           {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/floor_01.vmdl",
+            "Surface": null
+          },
+          {
             "__type": "ModelComponent",
             "__enabled": true,
             "MaterialOverride": null,
             "Model": "models/environment/floor_01.vmdl",
             "ShouldCastShadows": true,
             "Tint": "1,1,1,1"
-          },
-          {
-            "__type": "ModelCollider",
-            "__enabled": true,
-            "IsTrigger": false,
-            "Model": "models/environment/floor_01.vmdl",
-            "Surface": null
           }
         ]
       },
@@ -398,19 +398,19 @@
         "Scale": "1,1,1",
         "Components": [
           {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/floor_01.vmdl",
+            "Surface": null
+          },
+          {
             "__type": "ModelComponent",
             "__enabled": true,
             "MaterialOverride": null,
             "Model": "models/environment/floor_01.vmdl",
             "ShouldCastShadows": true,
             "Tint": "1,1,1,1"
-          },
-          {
-            "__type": "ModelCollider",
-            "__enabled": true,
-            "IsTrigger": false,
-            "Model": "models/environment/floor_01.vmdl",
-            "Surface": null
           }
         ]
       },
@@ -423,19 +423,19 @@
         "Scale": "1,1,1",
         "Components": [
           {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/floor_02.vmdl",
+            "Surface": null
+          },
+          {
             "__type": "ModelComponent",
             "__enabled": true,
             "MaterialOverride": null,
             "Model": "models/environment/floor_02.vmdl",
             "ShouldCastShadows": true,
             "Tint": "1,1,1,1"
-          },
-          {
-            "__type": "ModelCollider",
-            "__enabled": true,
-            "IsTrigger": false,
-            "Model": "models/environment/floor_02.vmdl",
-            "Surface": null
           }
         ]
       },
@@ -448,19 +448,19 @@
         "Scale": "1,1,1",
         "Components": [
           {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/floor_01.vmdl",
+            "Surface": null
+          },
+          {
             "__type": "ModelComponent",
             "__enabled": true,
             "MaterialOverride": null,
             "Model": "models/environment/floor_01.vmdl",
             "ShouldCastShadows": true,
             "Tint": "1,1,1,1"
-          },
-          {
-            "__type": "ModelCollider",
-            "__enabled": true,
-            "IsTrigger": false,
-            "Model": "models/environment/floor_01.vmdl",
-            "Surface": null
           }
         ]
       },
@@ -473,19 +473,19 @@
         "Scale": "1,1,1",
         "Components": [
           {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/floor_02.vmdl",
+            "Surface": null
+          },
+          {
             "__type": "ModelComponent",
             "__enabled": true,
             "MaterialOverride": null,
             "Model": "models/environment/floor_02.vmdl",
             "ShouldCastShadows": true,
             "Tint": "1,1,1,1"
-          },
-          {
-            "__type": "ModelCollider",
-            "__enabled": true,
-            "IsTrigger": false,
-            "Model": "models/environment/floor_02.vmdl",
-            "Surface": null
           }
         ]
       },
@@ -498,19 +498,19 @@
         "Scale": "1,1,1",
         "Components": [
           {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/floor_02.vmdl",
+            "Surface": null
+          },
+          {
             "__type": "ModelComponent",
             "__enabled": true,
             "MaterialOverride": null,
             "Model": "models/environment/floor_02.vmdl",
             "ShouldCastShadows": true,
             "Tint": "1,1,1,1"
-          },
-          {
-            "__type": "ModelCollider",
-            "__enabled": true,
-            "IsTrigger": false,
-            "Model": "models/environment/floor_02.vmdl",
-            "Surface": null
           }
         ]
       },
@@ -523,19 +523,19 @@
         "Scale": "1,1,1",
         "Components": [
           {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/wall_01.vmdl",
+            "Surface": null
+          },
+          {
             "__type": "ModelComponent",
             "__enabled": true,
             "MaterialOverride": null,
             "Model": "models/environment/wall_01.vmdl",
             "ShouldCastShadows": true,
             "Tint": "1,1,1,1"
-          },
-          {
-            "__type": "ModelCollider",
-            "__enabled": true,
-            "IsTrigger": false,
-            "Model": "models/environment/wall_01.vmdl",
-            "Surface": null
           }
         ]
       },
@@ -548,19 +548,19 @@
         "Scale": "1,1,1",
         "Components": [
           {
-            "__type": "ModelCollider",
-            "__enabled": true,
-            "IsTrigger": false,
-            "Model": "models/environment/wall_01.vmdl",
-            "Surface": null
-          },
-          {
             "__type": "ModelComponent",
             "__enabled": true,
             "MaterialOverride": null,
             "Model": "models/environment/wall_01.vmdl",
             "ShouldCastShadows": true,
             "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/wall_01.vmdl",
+            "Surface": null
           }
         ]
       },
@@ -573,19 +573,19 @@
         "Scale": "1,1,1",
         "Components": [
           {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/wall_01.vmdl",
+            "Surface": null
+          },
+          {
             "__type": "ModelComponent",
             "__enabled": true,
             "MaterialOverride": null,
             "Model": "models/environment/wall_01.vmdl",
             "ShouldCastShadows": true,
             "Tint": "1,1,1,1"
-          },
-          {
-            "__type": "ModelCollider",
-            "__enabled": true,
-            "IsTrigger": false,
-            "Model": "models/environment/wall_01.vmdl",
-            "Surface": null
           }
         ]
       },
@@ -598,19 +598,19 @@
         "Scale": "1,1,1",
         "Components": [
           {
-            "__type": "ModelCollider",
-            "__enabled": true,
-            "IsTrigger": false,
-            "Model": "models/environment/wall_01.vmdl",
-            "Surface": null
-          },
-          {
             "__type": "ModelComponent",
             "__enabled": true,
             "MaterialOverride": null,
             "Model": "models/environment/wall_01.vmdl",
             "ShouldCastShadows": true,
             "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/wall_01.vmdl",
+            "Surface": null
           }
         ]
       },
@@ -623,19 +623,19 @@
         "Scale": "1,1,1",
         "Components": [
           {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/wall_01.vmdl",
+            "Surface": null
+          },
+          {
             "__type": "ModelComponent",
             "__enabled": true,
             "MaterialOverride": null,
             "Model": "models/environment/wall_01.vmdl",
             "ShouldCastShadows": true,
             "Tint": "1,1,1,1"
-          },
-          {
-            "__type": "ModelCollider",
-            "__enabled": true,
-            "IsTrigger": false,
-            "Model": "models/environment/wall_01.vmdl",
-            "Surface": null
           }
         ]
       },
@@ -648,19 +648,19 @@
         "Scale": "1,1,1",
         "Components": [
           {
-            "__type": "ModelCollider",
-            "__enabled": true,
-            "IsTrigger": false,
-            "Model": "models/environment/wall_01.vmdl",
-            "Surface": null
-          },
-          {
             "__type": "ModelComponent",
             "__enabled": true,
             "MaterialOverride": null,
             "Model": "models/environment/wall_01.vmdl",
             "ShouldCastShadows": true,
             "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/wall_01.vmdl",
+            "Surface": null
           }
         ]
       },
@@ -673,19 +673,19 @@
         "Scale": "1,1,1",
         "Components": [
           {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/wall_01.vmdl",
+            "Surface": null
+          },
+          {
             "__type": "ModelComponent",
             "__enabled": true,
             "MaterialOverride": null,
             "Model": "models/environment/wall_01.vmdl",
             "ShouldCastShadows": true,
             "Tint": "1,1,1,1"
-          },
-          {
-            "__type": "ModelCollider",
-            "__enabled": true,
-            "IsTrigger": false,
-            "Model": "models/environment/wall_01.vmdl",
-            "Surface": null
           }
         ]
       },
@@ -707,19 +707,19 @@
         "Scale": "1,1,1",
         "Components": [
           {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/wall_01.vmdl",
+            "Surface": null
+          },
+          {
             "__type": "ModelComponent",
             "__enabled": true,
             "MaterialOverride": null,
             "Model": "models/environment/wall_01.vmdl",
             "ShouldCastShadows": true,
             "Tint": "1,1,1,1"
-          },
-          {
-            "__type": "ModelCollider",
-            "__enabled": true,
-            "IsTrigger": false,
-            "Model": "models/environment/wall_01.vmdl",
-            "Surface": null
           }
         ]
       },
@@ -732,19 +732,19 @@
         "Scale": "1,1,1",
         "Components": [
           {
-            "__type": "ModelCollider",
-            "__enabled": true,
-            "IsTrigger": false,
-            "Model": "models/environment/wall_01.vmdl",
-            "Surface": null
-          },
-          {
             "__type": "ModelComponent",
             "__enabled": true,
             "MaterialOverride": null,
             "Model": "models/environment/wall_01.vmdl",
             "ShouldCastShadows": true,
             "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/wall_01.vmdl",
+            "Surface": null
           }
         ]
       },
@@ -757,19 +757,19 @@
         "Scale": "1,1,1",
         "Components": [
           {
-            "__type": "ModelCollider",
-            "__enabled": true,
-            "IsTrigger": false,
-            "Model": "models/environment/wall_01.vmdl",
-            "Surface": null
-          },
-          {
             "__type": "ModelComponent",
             "__enabled": true,
             "MaterialOverride": null,
             "Model": "models/environment/wall_01.vmdl",
             "ShouldCastShadows": true,
             "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/wall_01.vmdl",
+            "Surface": null
           }
         ]
       },
@@ -782,19 +782,19 @@
         "Scale": "1,1,1",
         "Components": [
           {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/wall_01.vmdl",
+            "Surface": null
+          },
+          {
             "__type": "ModelComponent",
             "__enabled": true,
             "MaterialOverride": null,
             "Model": "models/environment/wall_01.vmdl",
             "ShouldCastShadows": true,
             "Tint": "1,1,1,1"
-          },
-          {
-            "__type": "ModelCollider",
-            "__enabled": true,
-            "IsTrigger": false,
-            "Model": "models/environment/wall_01.vmdl",
-            "Surface": null
           }
         ]
       },
@@ -807,19 +807,19 @@
         "Scale": "1,1,1",
         "Components": [
           {
-            "__type": "ModelCollider",
-            "__enabled": true,
-            "IsTrigger": false,
-            "Model": "models/environment/wall_01.vmdl",
-            "Surface": null
-          },
-          {
             "__type": "ModelComponent",
             "__enabled": true,
             "MaterialOverride": null,
             "Model": "models/environment/wall_01.vmdl",
             "ShouldCastShadows": true,
             "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/wall_01.vmdl",
+            "Surface": null
           }
         ]
       },
@@ -832,19 +832,19 @@
         "Scale": "1,1,1",
         "Components": [
           {
-            "__type": "ModelCollider",
-            "__enabled": true,
-            "IsTrigger": false,
-            "Model": "models/environment/wall_01.vmdl",
-            "Surface": null
-          },
-          {
             "__type": "ModelComponent",
             "__enabled": true,
             "MaterialOverride": null,
             "Model": "models/environment/wall_01.vmdl",
             "ShouldCastShadows": true,
             "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/wall_01.vmdl",
+            "Surface": null
           }
         ]
       },
@@ -857,19 +857,19 @@
         "Scale": "1,1,1",
         "Components": [
           {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/wall_01.vmdl",
+            "Surface": null
+          },
+          {
             "__type": "ModelComponent",
             "__enabled": true,
             "MaterialOverride": null,
             "Model": "models/environment/wall_01.vmdl",
             "ShouldCastShadows": true,
             "Tint": "1,1,1,1"
-          },
-          {
-            "__type": "ModelCollider",
-            "__enabled": true,
-            "IsTrigger": false,
-            "Model": "models/environment/wall_01.vmdl",
-            "Surface": null
           }
         ]
       },
@@ -882,19 +882,19 @@
         "Scale": "1,1,1",
         "Components": [
           {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/wall_01.vmdl",
+            "Surface": null
+          },
+          {
             "__type": "ModelComponent",
             "__enabled": true,
             "MaterialOverride": null,
             "Model": "models/environment/wall_01.vmdl",
             "ShouldCastShadows": true,
             "Tint": "1,1,1,1"
-          },
-          {
-            "__type": "ModelCollider",
-            "__enabled": true,
-            "IsTrigger": false,
-            "Model": "models/environment/wall_01.vmdl",
-            "Surface": null
           }
         ]
       },
@@ -907,19 +907,19 @@
         "Scale": "1,1,1",
         "Components": [
           {
-            "__type": "ModelCollider",
-            "__enabled": true,
-            "IsTrigger": false,
-            "Model": "models/environment/wall_01.vmdl",
-            "Surface": null
-          },
-          {
             "__type": "ModelComponent",
             "__enabled": true,
             "MaterialOverride": null,
             "Model": "models/environment/wall_01.vmdl",
             "ShouldCastShadows": true,
             "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/wall_01.vmdl",
+            "Surface": null
           }
         ]
       },
@@ -932,19 +932,19 @@
         "Scale": "1,1,1",
         "Components": [
           {
-            "__type": "ModelCollider",
-            "__enabled": true,
-            "IsTrigger": false,
-            "Model": "models/environment/wall_01.vmdl",
-            "Surface": null
-          },
-          {
             "__type": "ModelComponent",
             "__enabled": true,
             "MaterialOverride": null,
             "Model": "models/environment/wall_01.vmdl",
             "ShouldCastShadows": true,
             "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/wall_01.vmdl",
+            "Surface": null
           }
         ]
       },
@@ -957,19 +957,19 @@
         "Scale": "1,1,1",
         "Components": [
           {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/wall_01.vmdl",
+            "Surface": null
+          },
+          {
             "__type": "ModelComponent",
             "__enabled": true,
             "MaterialOverride": null,
             "Model": "models/environment/wall_01.vmdl",
             "ShouldCastShadows": true,
             "Tint": "1,1,1,1"
-          },
-          {
-            "__type": "ModelCollider",
-            "__enabled": true,
-            "IsTrigger": false,
-            "Model": "models/environment/wall_01.vmdl",
-            "Surface": null
           }
         ]
       },
@@ -982,19 +982,19 @@
         "Scale": "1,1,1",
         "Components": [
           {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/wall_01.vmdl",
+            "Surface": null
+          },
+          {
             "__type": "ModelComponent",
             "__enabled": true,
             "MaterialOverride": null,
             "Model": "models/environment/wall_01.vmdl",
             "ShouldCastShadows": true,
             "Tint": "1,1,1,1"
-          },
-          {
-            "__type": "ModelCollider",
-            "__enabled": true,
-            "IsTrigger": false,
-            "Model": "models/environment/wall_01.vmdl",
-            "Surface": null
           }
         ]
       },
@@ -1007,19 +1007,19 @@
         "Scale": "1,1,1",
         "Components": [
           {
-            "__type": "ModelCollider",
-            "__enabled": true,
-            "IsTrigger": false,
-            "Model": "models/environment/wall_01.vmdl",
-            "Surface": null
-          },
-          {
             "__type": "ModelComponent",
             "__enabled": true,
             "MaterialOverride": null,
             "Model": "models/environment/wall_01.vmdl",
             "ShouldCastShadows": true,
             "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/wall_01.vmdl",
+            "Surface": null
           }
         ]
       },
@@ -1032,19 +1032,19 @@
         "Scale": "1,1,1",
         "Components": [
           {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/wall_01.vmdl",
+            "Surface": null
+          },
+          {
             "__type": "ModelComponent",
             "__enabled": true,
             "MaterialOverride": null,
             "Model": "models/environment/wall_01.vmdl",
             "ShouldCastShadows": true,
             "Tint": "1,1,1,1"
-          },
-          {
-            "__type": "ModelCollider",
-            "__enabled": true,
-            "IsTrigger": false,
-            "Model": "models/environment/wall_01.vmdl",
-            "Surface": null
           }
         ]
       },
@@ -1057,19 +1057,19 @@
         "Scale": "1,1,1",
         "Components": [
           {
-            "__type": "ModelCollider",
-            "__enabled": true,
-            "IsTrigger": false,
-            "Model": "models/environment/wall_01.vmdl",
-            "Surface": null
-          },
-          {
             "__type": "ModelComponent",
             "__enabled": true,
             "MaterialOverride": null,
             "Model": "models/environment/wall_01.vmdl",
             "ShouldCastShadows": true,
             "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/wall_01.vmdl",
+            "Surface": null
           }
         ]
       },
@@ -1082,19 +1082,19 @@
         "Scale": "1,1,1",
         "Components": [
           {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/wall_01.vmdl",
+            "Surface": null
+          },
+          {
             "__type": "ModelComponent",
             "__enabled": true,
             "MaterialOverride": null,
             "Model": "models/environment/wall_01.vmdl",
             "ShouldCastShadows": true,
             "Tint": "1,1,1,1"
-          },
-          {
-            "__type": "ModelCollider",
-            "__enabled": true,
-            "IsTrigger": false,
-            "Model": "models/environment/wall_01.vmdl",
-            "Surface": null
           }
         ]
       },
@@ -1107,19 +1107,19 @@
         "Scale": "1,1,1",
         "Components": [
           {
-            "__type": "ModelCollider",
-            "__enabled": true,
-            "IsTrigger": false,
-            "Model": "models/environment/wall_01.vmdl",
-            "Surface": null
-          },
-          {
             "__type": "ModelComponent",
             "__enabled": true,
             "MaterialOverride": null,
             "Model": "models/environment/wall_01.vmdl",
             "ShouldCastShadows": true,
             "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/wall_01.vmdl",
+            "Surface": null
           }
         ]
       },
@@ -1132,19 +1132,19 @@
         "Scale": "1,1,1",
         "Components": [
           {
-            "__type": "ModelCollider",
-            "__enabled": true,
-            "IsTrigger": false,
-            "Model": "models/environment/wall_01.vmdl",
-            "Surface": null
-          },
-          {
             "__type": "ModelComponent",
             "__enabled": true,
             "MaterialOverride": null,
             "Model": "models/environment/wall_01.vmdl",
             "ShouldCastShadows": true,
             "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/wall_01.vmdl",
+            "Surface": null
           }
         ]
       },
@@ -1157,19 +1157,19 @@
         "Scale": "1,1,1",
         "Components": [
           {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/wall_01.vmdl",
+            "Surface": null
+          },
+          {
             "__type": "ModelComponent",
             "__enabled": true,
             "MaterialOverride": null,
             "Model": "models/environment/wall_01.vmdl",
             "ShouldCastShadows": true,
             "Tint": "1,1,1,1"
-          },
-          {
-            "__type": "ModelCollider",
-            "__enabled": true,
-            "IsTrigger": false,
-            "Model": "models/environment/wall_01.vmdl",
-            "Surface": null
           }
         ]
       },
@@ -1182,19 +1182,19 @@
         "Scale": "1,1,1",
         "Components": [
           {
-            "__type": "ModelCollider",
-            "__enabled": true,
-            "IsTrigger": false,
-            "Model": "models/environment/wall_01.vmdl",
-            "Surface": null
-          },
-          {
             "__type": "ModelComponent",
             "__enabled": true,
             "MaterialOverride": null,
             "Model": "models/environment/wall_01.vmdl",
             "ShouldCastShadows": true,
             "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/wall_01.vmdl",
+            "Surface": null
           }
         ]
       },
@@ -1207,19 +1207,19 @@
         "Scale": "1,1,1",
         "Components": [
           {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/wall_01.vmdl",
+            "Surface": null
+          },
+          {
             "__type": "ModelComponent",
             "__enabled": true,
             "MaterialOverride": null,
             "Model": "models/environment/wall_01.vmdl",
             "ShouldCastShadows": true,
             "Tint": "1,1,1,1"
-          },
-          {
-            "__type": "ModelCollider",
-            "__enabled": true,
-            "IsTrigger": false,
-            "Model": "models/environment/wall_01.vmdl",
-            "Surface": null
           }
         ]
       },
@@ -1232,19 +1232,19 @@
         "Scale": "1,1,1",
         "Components": [
           {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/wall_01.vmdl",
+            "Surface": null
+          },
+          {
             "__type": "ModelComponent",
             "__enabled": true,
             "MaterialOverride": null,
             "Model": "models/environment/wall_01.vmdl",
             "ShouldCastShadows": true,
             "Tint": "1,1,1,1"
-          },
-          {
-            "__type": "ModelCollider",
-            "__enabled": true,
-            "IsTrigger": false,
-            "Model": "models/environment/wall_01.vmdl",
-            "Surface": null
           }
         ]
       },
@@ -1257,19 +1257,19 @@
         "Scale": "1,1,1",
         "Components": [
           {
-            "__type": "ModelCollider",
-            "__enabled": true,
-            "IsTrigger": false,
-            "Model": "models/environment/wall_01.vmdl",
-            "Surface": null
-          },
-          {
             "__type": "ModelComponent",
             "__enabled": true,
             "MaterialOverride": null,
             "Model": "models/environment/wall_01.vmdl",
             "ShouldCastShadows": true,
             "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/wall_01.vmdl",
+            "Surface": null
           }
         ]
       },
@@ -1282,19 +1282,19 @@
         "Scale": "1,1,1",
         "Components": [
           {
-            "__type": "ModelCollider",
-            "__enabled": true,
-            "IsTrigger": false,
-            "Model": "models/environment/wall_01.vmdl",
-            "Surface": null
-          },
-          {
             "__type": "ModelComponent",
             "__enabled": true,
             "MaterialOverride": null,
-            "Model": "models/environment/wall_01.vmdl",
+            "Model": "models/environment/wall_02.vmdl",
             "ShouldCastShadows": true,
             "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/wall_02.vmdl",
+            "Surface": null
           }
         ]
       },
@@ -1307,19 +1307,19 @@
         "Scale": "1,1,1",
         "Components": [
           {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/wall_01.vmdl",
+            "Surface": null
+          },
+          {
             "__type": "ModelComponent",
             "__enabled": true,
             "MaterialOverride": null,
             "Model": "models/environment/wall_01.vmdl",
             "ShouldCastShadows": true,
             "Tint": "1,1,1,1"
-          },
-          {
-            "__type": "ModelCollider",
-            "__enabled": true,
-            "IsTrigger": false,
-            "Model": "models/environment/wall_01.vmdl",
-            "Surface": null
           }
         ]
       },
@@ -1332,19 +1332,19 @@
         "Scale": "1,1,1",
         "Components": [
           {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/wall_01.vmdl",
+            "Surface": null
+          },
+          {
             "__type": "ModelComponent",
             "__enabled": true,
             "MaterialOverride": null,
             "Model": "models/environment/wall_01.vmdl",
             "ShouldCastShadows": true,
             "Tint": "1,1,1,1"
-          },
-          {
-            "__type": "ModelCollider",
-            "__enabled": true,
-            "IsTrigger": false,
-            "Model": "models/environment/wall_01.vmdl",
-            "Surface": null
           }
         ]
       },
@@ -1357,19 +1357,19 @@
         "Scale": "1,1,1",
         "Components": [
           {
-            "__type": "ModelCollider",
-            "__enabled": true,
-            "IsTrigger": false,
-            "Model": "models/environment/wall_01.vmdl",
-            "Surface": null
-          },
-          {
             "__type": "ModelComponent",
             "__enabled": true,
             "MaterialOverride": null,
             "Model": "models/environment/wall_01.vmdl",
             "ShouldCastShadows": true,
             "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/wall_01.vmdl",
+            "Surface": null
           }
         ]
       },
@@ -1391,19 +1391,19 @@
         "Scale": "1,1,1",
         "Components": [
           {
-            "__type": "ModelCollider",
-            "__enabled": true,
-            "IsTrigger": false,
-            "Model": "models/environment/stairs_02.vmdl",
-            "Surface": null
-          },
-          {
             "__type": "ModelComponent",
             "__enabled": true,
             "MaterialOverride": null,
             "Model": "models/environment/stairs_02.vmdl",
             "ShouldCastShadows": true,
             "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/stairs_02.vmdl",
+            "Surface": null
           }
         ]
       },
@@ -1416,19 +1416,19 @@
         "Scale": "1,1,1",
         "Components": [
           {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/stairs_02.vmdl",
+            "Surface": null
+          },
+          {
             "__type": "ModelComponent",
             "__enabled": true,
             "MaterialOverride": null,
             "Model": "models/environment/stairs_02.vmdl",
             "ShouldCastShadows": true,
             "Tint": "1,1,1,1"
-          },
-          {
-            "__type": "ModelCollider",
-            "__enabled": true,
-            "IsTrigger": false,
-            "Model": "models/environment/stairs_02.vmdl",
-            "Surface": null
           }
         ]
       },
@@ -1441,19 +1441,19 @@
         "Scale": "1,1,1",
         "Components": [
           {
-            "__type": "ModelCollider",
-            "__enabled": true,
-            "IsTrigger": false,
-            "Model": "models/environment/stairs_02.vmdl",
-            "Surface": null
-          },
-          {
             "__type": "ModelComponent",
             "__enabled": true,
             "MaterialOverride": null,
             "Model": "models/environment/stairs_02.vmdl",
             "ShouldCastShadows": true,
             "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/stairs_02.vmdl",
+            "Surface": null
           }
         ]
       },
@@ -1466,19 +1466,19 @@
         "Scale": "1,1,1",
         "Components": [
           {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/stairs_03.vmdl",
+            "Surface": null
+          },
+          {
             "__type": "ModelComponent",
             "__enabled": true,
             "MaterialOverride": null,
             "Model": "models/environment/stairs_03.vmdl",
             "ShouldCastShadows": true,
             "Tint": "1,1,1,1"
-          },
-          {
-            "__type": "ModelCollider",
-            "__enabled": true,
-            "IsTrigger": false,
-            "Model": "models/environment/stairs_03.vmdl",
-            "Surface": null
           }
         ]
       },
@@ -1491,19 +1491,19 @@
         "Scale": "1,1,1",
         "Components": [
           {
-            "__type": "ModelCollider",
-            "__enabled": true,
-            "IsTrigger": false,
-            "Model": "models/environment/stairs_04.vmdl",
-            "Surface": null
-          },
-          {
             "__type": "ModelComponent",
             "__enabled": true,
             "MaterialOverride": null,
             "Model": "models/environment/stairs_04.vmdl",
             "ShouldCastShadows": true,
             "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/stairs_04.vmdl",
+            "Surface": null
           }
         ]
       },
@@ -1516,42 +1516,17 @@
         "Scale": "1,1,1",
         "Components": [
           {
-            "__type": "ModelComponent",
-            "__enabled": true,
-            "MaterialOverride": null,
-            "Model": "models/environment/stairs_02.vmdl",
-            "ShouldCastShadows": true,
-            "Tint": "1,1,1,1"
-          },
-          {
             "__type": "ModelCollider",
             "__enabled": true,
             "IsTrigger": false,
             "Model": "models/environment/stairs_02.vmdl",
-            "Surface": null
-          }
-        ]
-      },
-      {
-        "Id": "544cf855-f998-45ed-9a51-db4cfdecd2f8",
-        "Name": "stairs_02",
-        "Enabled": true,
-        "Position": "0,384,0",
-        "Rotation": "0,0,0.707107,0.7071065",
-        "Scale": "1,1,1",
-        "Components": [
-          {
-            "__type": "ModelCollider",
-            "__enabled": true,
-            "IsTrigger": false,
-            "Model": "models/environment/stairs_03.vmdl",
             "Surface": null
           },
           {
             "__type": "ModelComponent",
             "__enabled": true,
             "MaterialOverride": null,
-            "Model": "models/environment/stairs_03.vmdl",
+            "Model": "models/environment/stairs_02.vmdl",
             "ShouldCastShadows": true,
             "Tint": "1,1,1,1"
           }
@@ -1566,19 +1541,19 @@
         "Scale": "1,1,1",
         "Components": [
           {
-            "__type": "ModelCollider",
-            "__enabled": true,
-            "IsTrigger": false,
-            "Model": "models/environment/stairs_03.vmdl",
-            "Surface": null
-          },
-          {
             "__type": "ModelComponent",
             "__enabled": true,
             "MaterialOverride": null,
-            "Model": "models/environment/stairs_03.vmdl",
+            "Model": "models/environment/stairs_02.vmdl",
             "ShouldCastShadows": true,
             "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/stairs_02.vmdl",
+            "Surface": null
           }
         ]
       },
@@ -1591,19 +1566,19 @@
         "Scale": "1,1,1",
         "Components": [
           {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/stairs_02.vmdl",
+            "Surface": null
+          },
+          {
             "__type": "ModelComponent",
             "__enabled": true,
             "MaterialOverride": null,
             "Model": "models/environment/stairs_02.vmdl",
             "ShouldCastShadows": true,
             "Tint": "1,1,1,1"
-          },
-          {
-            "__type": "ModelCollider",
-            "__enabled": true,
-            "IsTrigger": false,
-            "Model": "models/environment/stairs_02.vmdl",
-            "Surface": null
           }
         ]
       },
@@ -1616,19 +1591,19 @@
         "Scale": "1,1,1",
         "Components": [
           {
-            "__type": "ModelCollider",
-            "__enabled": true,
-            "IsTrigger": false,
-            "Model": "models/environment/stairs_03.vmdl",
-            "Surface": null
-          },
-          {
             "__type": "ModelComponent",
             "__enabled": true,
             "MaterialOverride": null,
             "Model": "models/environment/stairs_03.vmdl",
             "ShouldCastShadows": true,
             "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/stairs_03.vmdl",
+            "Surface": null
           }
         ]
       },
@@ -1641,19 +1616,19 @@
         "Scale": "1,1,1",
         "Components": [
           {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/stairs_02.vmdl",
+            "Surface": null
+          },
+          {
             "__type": "ModelComponent",
             "__enabled": true,
             "MaterialOverride": null,
             "Model": "models/environment/stairs_02.vmdl",
             "ShouldCastShadows": true,
             "Tint": "1,1,1,1"
-          },
-          {
-            "__type": "ModelCollider",
-            "__enabled": true,
-            "IsTrigger": false,
-            "Model": "models/environment/stairs_02.vmdl",
-            "Surface": null
           }
         ]
       },
@@ -1666,19 +1641,19 @@
         "Scale": "1,1,1",
         "Components": [
           {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/stairs_03.vmdl",
+            "Surface": null
+          },
+          {
             "__type": "ModelComponent",
             "__enabled": true,
             "MaterialOverride": null,
             "Model": "models/environment/stairs_03.vmdl",
             "ShouldCastShadows": true,
             "Tint": "1,1,1,1"
-          },
-          {
-            "__type": "ModelCollider",
-            "__enabled": true,
-            "IsTrigger": false,
-            "Model": "models/environment/stairs_03.vmdl",
-            "Surface": null
           }
         ]
       },
@@ -1691,19 +1666,19 @@
         "Scale": "1,1,1",
         "Components": [
           {
-            "__type": "ModelCollider",
-            "__enabled": true,
-            "IsTrigger": false,
-            "Model": "models/environment/stairs_02.vmdl",
-            "Surface": null
-          },
-          {
             "__type": "ModelComponent",
             "__enabled": true,
             "MaterialOverride": null,
             "Model": "models/environment/stairs_02.vmdl",
             "ShouldCastShadows": true,
             "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/stairs_02.vmdl",
+            "Surface": null
           }
         ]
       },
@@ -1716,17 +1691,17 @@
         "Scale": "1,1,1",
         "Components": [
           {
+            "__type": "CameraTriggerComponent",
+            "__enabled": true,
+            "CameraPoint": "b69a7f5c-f856-4a6a-83c8-b5c4a48f899d",
+            "FollowPlayer": true
+          },
+          {
             "__type": "ColliderBoxComponent",
             "__enabled": true,
             "IsTrigger": true,
             "Scale": "512,640,168.65",
             "Surface": null
-          },
-          {
-            "__type": "CameraTriggerComponent",
-            "__enabled": true,
-            "CameraPoint": "b69a7f5c-f856-4a6a-83c8-b5c4a48f899d",
-            "FollowPlayer": true
           }
         ],
         "Children": [
