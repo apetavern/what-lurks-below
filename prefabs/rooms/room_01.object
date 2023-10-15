@@ -61,6 +61,26 @@
             "Scale": "1,1,1"
           }
         ]
+      },
+      {
+        "Id": "93d4170e-1d98-45fb-a208-dc859357808a",
+        "Name": "Spot Light",
+        "Enabled": true,
+        "Position": "-233.3163,0.000005306606,223.4649",
+        "Rotation": "-0.00000002123512,0.3562662,-0.0000000000000001105327,0.9343852",
+        "Scale": "1,1,1",
+        "Components": [
+          {
+            "__type": "SpotLightComponent",
+            "__enabled": true,
+            "Attenuation": 1,
+            "ConeInner": 15,
+            "ConeOuter": 45,
+            "Cookie": null,
+            "LightColor": "0.91373,0.98039,1,1",
+            "Radius": 500
+          }
+        ]
       }
     ]
   },
