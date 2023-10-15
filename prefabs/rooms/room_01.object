@@ -1,12 +1,19 @@
 {
   "RootObject": {
-    "Id": "35c01f11-faa5-4ab8-bb73-ba0ce1586331",
+    "Id": "e1ca3878-c45e-466e-90dd-2d98ceb97334",
     "Name": "room_01",
     "Enabled": true,
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
     "Components": [
+      {
+        "__type": "ModelCollider",
+        "__enabled": false,
+        "IsTrigger": false,
+        "Model": "models/environment/rooms/test_room_01.vmdl",
+        "Surface": null
+      },
       {
         "__type": "ModelCollider",
         "__enabled": false,
@@ -25,12 +32,12 @@
       {
         "__type": "RoomChunkComponent",
         "__enabled": true,
-        "CameraTrigger": "3a50a54c-e1df-421e-92f8-9bb7dc83cfc9"
+        "CameraTrigger": "7308f3e0-10d0-4c37-ae30-27f55477692d"
       }
     ],
     "Children": [
       {
-        "Id": "3a50a54c-e1df-421e-92f8-9bb7dc83cfc9",
+        "Id": "7308f3e0-10d0-4c37-ae30-27f55477692d",
         "Name": "Zone",
         "Enabled": true,
         "Position": "-14.23788,0,25.73827",
@@ -40,7 +47,7 @@
           {
             "__type": "CameraTriggerComponent",
             "__enabled": true,
-            "CameraPoint": "f0587be3-dae0-4331-934f-f0c8707fd346",
+            "CameraPoint": "1d2b38f1-bcf1-4041-a6b8-b409ab1ef199",
             "FollowPlayer": true
           },
           {
@@ -53,7 +60,7 @@
         ],
         "Children": [
           {
-            "Id": "f0587be3-dae0-4331-934f-f0c8707fd346",
+            "Id": "1d2b38f1-bcf1-4041-a6b8-b409ab1ef199",
             "Name": "ZONECAM",
             "Enabled": true,
             "Position": "252.0372,30.62191,137.6134",
@@ -63,7 +70,7 @@
         ]
       },
       {
-        "Id": "93d4170e-1d98-45fb-a208-dc859357808a",
+        "Id": "57a0c3b7-9c74-47e5-b429-38ec563370f3",
         "Name": "Spot Light",
         "Enabled": true,
         "Position": "-233.3163,0.000005306606,223.4649",
@@ -79,6 +86,34 @@
             "Cookie": null,
             "LightColor": "0.91373,0.98039,1,1",
             "Radius": 500
+          }
+        ]
+      },
+      {
+        "Id": "a55c42ac-5521-47bf-8988-8d9fd7b247b7",
+        "Name": "Door",
+        "Enabled": true,
+        "Position": "-16,260,0",
+        "Rotation": "0,0,0,1",
+        "Scale": "1,1,1",
+        "Components": [
+          {
+            "__type": "RoomDoorDefinition",
+            "__enabled": true
+          }
+        ]
+      },
+      {
+        "Id": "67858354-342f-4cf6-8a58-a588d7b41c06",
+        "Name": "Door",
+        "Enabled": true,
+        "Position": "-16.00006,-252,-0.000001618709",
+        "Rotation": "0.00000005552744,0.00000001504666,1,-0.0000006397578",
+        "Scale": "1,1,1",
+        "Components": [
+          {
+            "__type": "RoomDoorDefinition",
+            "__enabled": true
           }
         ]
       }

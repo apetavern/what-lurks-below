@@ -11,26 +11,31 @@ public sealed class MapGeneratorComponent : BaseComponent
 {
 	List<string> Rooms = new List<string>() { "prefabs/rooms/room_01.object" };
 
+	List<string> Hallways = new List<string>() { "prefabs/hallways/hallway_01.object" };
+
 	List<RoomChunkComponent> SpawnedRooms = new List<RoomChunkComponent>();
 
 	[Property] int RoomCount { get; set; } = 10;
 
 	[Property] float SnapGridSize { get; set; } = 700f;
 
+	public GameObject SpawnPrefabFromPath( string path, Vector3 position, Rotation rotation )
+	{
+		var prefab = ResourceLibrary.Get<PrefabFile>( path );
+		return SceneUtility.Instantiate( prefab.Scene, position, rotation );
+	}
+
 	public override void OnStart()
 	{
-		var room1 = ResourceLibrary.Get<PrefabFile>( Rooms[0] );
-		SpawnedRooms.Add( SceneUtility.Instantiate( room1.Scene, Transform.Position, Transform.Rotation ).GetComponent<RoomChunkComponent>( false ) );
+		SpawnedRooms.Add( SpawnPrefabFromPath( Rooms[0], Transform.Position, Transform.Rotation ).GetComponent<RoomChunkComponent>( false ) );
 
 		for ( int i = 0; i < RoomCount; i++ )
 		{
-			var room = ResourceLibrary.Get<PrefabFile>( Rooms[0] );
-
 			Vector2 SpawnPoint = Game.Random.VectorInCircle( 800 );
 
 			Vector3 PlacePoint = new Vector3( SpawnPoint.x, SpawnPoint.y, 0 );
 
-			SpawnedRooms.Add( SceneUtility.Instantiate( room.Scene, Transform.Position + PlacePoint, Transform.Rotation ).GetComponent<RoomChunkComponent>( false ) );
+			SpawnedRooms.Add( SpawnPrefabFromPath( Rooms[0], Transform.Position + PlacePoint, Transform.Rotation ).GetComponent<RoomChunkComponent>( false ) );
 		}
 
 		base.OnStart();
@@ -147,6 +152,29 @@ public sealed class MapGeneratorComponent : BaseComponent
 		return unconnectedNeighbors;
 	}
 
+	public async void CreateHallways()
+	{
+		await GameTask.Delay( 1000 );
+		foreach ( var room in SpawnedRooms )
+		{
+			foreach ( var hall in room.PathPoints )
+			{
+				for ( int i = 0; i < hall.Count; i++ )
+				{
+					var tr = Physics.Trace.Ray( hall[i], hall[i] - Vector3.Up ).WithoutTags( "room" ).Run();
+					if ( !tr.Hit || (tr.Body.GameObject as GameObject).GetComponent<RoomChunkComponent>( false ) == null )
+					{
+						SpawnPrefabFromPath( Hallways[0], hall[i], Rotation.Identity );
+					}
+
+					await GameTask.Delay( 10 );
+				}
+			}
+			await GameTask.Delay( 10 );
+		}
+
+	}
+
 	public override void Update()
 	{
 		if ( !CorrectedRooms )
@@ -178,6 +206,8 @@ public sealed class MapGeneratorComponent : BaseComponent
 				}
 
 				GenerateRoomConnections();
+
+				CreateHallways();
 			}
 		}
 	}
