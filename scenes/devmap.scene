@@ -4,7 +4,7 @@
       "Id": "00000000-0000-0000-0000-000000000000",
       "Name": "Directional Light",
       "Enabled": true,
-      "Position": "0,0,128",
+      "Position": "-186.5142,0.0002112252,128",
       "Rotation": "0.4304598,0.4304592,-0.5609857,0.560985",
       "Scale": "1,1,1",
       "Components": [
@@ -57,79 +57,24 @@
           "__type": "ColliderBoxComponent",
           "__enabled": true,
           "IsTrigger": true,
-          "Scale": "800,800,67.55",
+          "Scale": "800,800,87.95",
           "Surface": null
         },
         {
           "__type": "CameraTriggerComponent",
           "__enabled": true,
-          "CameraPoint": "00000000-0000-0000-0000-000000000000",
+          "CameraPoint": "2715a233-e667-4064-b20e-d5c6d6b7df33",
           "FollowPlayer": true
         }
       ],
       "Children": [
         {
-          "Id": "00000000-0000-0000-0000-000000000000",
-          "Name": "ZoneCamera",
+          "Id": "2715a233-e667-4064-b20e-d5c6d6b7df33",
+          "Name": "ZoneCamera2",
           "Enabled": true,
-          "Position": "396.1543,30.86443,236.05",
+          "Position": "252.0372,30.62191,137.6134",
           "Rotation": "0.3479502,0.0002928673,-0.9375126,0.0007890981",
-          "Scale": "1,1,1",
-          "Components": [
-            {
-              "__type": "CameraComponent",
-              "__enabled": false,
-              "BackgroundColor": "0.33333,0.46275,0.52157,1",
-              "ClearFlags": "Color, Depth, Stencil",
-              "FieldOfView": 60,
-              "ZFar": 10000,
-              "ZNear": 10
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Id": "00000000-0000-0000-0000-000000000000",
-      "Name": "Zone",
-      "Enabled": true,
-      "Position": "402.2094,687.045,20.26534",
-      "Rotation": "0,0,0,1",
-      "Scale": "1,1,1",
-      "Components": [
-        {
-          "__type": "CameraTriggerComponent",
-          "__enabled": true,
-          "CameraPoint": "00000000-0000-0000-0000-000000000000",
-          "FollowPlayer": false
-        },
-        {
-          "__type": "ColliderBoxComponent",
-          "__enabled": true,
-          "IsTrigger": true,
-          "Scale": "455.6,430.1,67.55",
-          "Surface": null
-        }
-      ],
-      "Children": [
-        {
-          "Id": "00000000-0000-0000-0000-000000000000",
-          "Name": "ZoneCamera",
-          "Enabled": true,
-          "Position": "257.5967,49.65237,220.7832",
-          "Rotation": "0.3479502,0.0002928673,-0.9375126,0.0007890981",
-          "Scale": "1,1,1",
-          "Components": [
-            {
-              "__type": "CameraComponent",
-              "__enabled": false,
-              "BackgroundColor": "0.33333,0.46275,0.52157,1",
-              "ClearFlags": "Color, Depth, Stencil",
-              "FieldOfView": 60,
-              "ZFar": 10000,
-              "ZNear": 10
-            }
-          ]
+          "Scale": "1,1,1"
         }
       ]
     },
