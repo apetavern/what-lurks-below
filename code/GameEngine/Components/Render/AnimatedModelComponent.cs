@@ -164,8 +164,11 @@ public class AnimatedModelComponent : BaseComponent, BaseComponent.ExecuteInEdit
 
 			SceneModel.Bounds = parent.SceneModel.Bounds;
 		}
-
-		_sceneModel.Update( Time.Delta );
 	}
 
+	public override void Update()
+	{
+		base.Update();
+		_sceneModel.Update( Time.Delta );
+	}
 }
