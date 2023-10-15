@@ -21,7 +21,7 @@ public class ItemPickup : BaseComponent
 	{
 		Ammo,
 		Health,
-		Key
+		Item
 	}
 
 	[Property] public PickupType Type { get; set; } = PickupType.Ammo;
@@ -87,14 +87,39 @@ public class ItemPickup : BaseComponent
 
 	void Triggered()
 	{
+		switch ( Type )
+		{
+			case PickupType.Ammo:
+				break;
+			case PickupType.Health:
+				TriggerHealth();
+				break;
+			case PickupType.Item:
+				TriggerItem();
+				break;
+		}
+	}
+
+	void TriggerHealth()
+	{
+		var pHealth = Player.GetComponent<HealthComponent>();
+		pHealth.Health += 25f;
+		
+		Sound.FromScreen( "item_pickup" );
+		Destroy();
+	}
+
+	void TriggerItem()
+	{
 		var inv = Player.GetComponent<Inventory>();
 		if ( inv is null )
 			return;
-
-		var added = inv.AddItem( InventoryItem.FromPickupType( Type ) );
+		
+		// this is null
+		Log.Info( _pickupResource.Item );
+		var added = inv.AddItem( _pickupResource.Item );
 		if ( !added )
 			return;
-
 		Sound.FromScreen( "item_pickup" );
 		Destroy();
 	}

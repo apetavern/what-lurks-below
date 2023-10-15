@@ -2,5 +2,6 @@
   "PickupType": "Key",
   "Scale": 2,
   "Model": "models/items/key/skeleton_key.vmdl",
+  "Item": "assets/inventory_items/skeleton_key.bjitem",
   "__references": []
 }

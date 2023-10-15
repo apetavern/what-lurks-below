@@ -24,7 +24,7 @@ public class Inventory : BaseComponent
 		if ( ItemCount >= Slots )
 			return false;
 		
-		Log.Info(item.Name);
+		Log.Info(item?.Name);
 		
 		_items.Add( item );
 		return true;
