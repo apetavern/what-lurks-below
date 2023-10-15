@@ -15,6 +15,8 @@ public sealed class MapGeneratorComponent : BaseComponent
 
 	[Property] int RoomCount { get; set; } = 10;
 
+	[Property] float SnapGridSize { get; set; } = 700f;
+
 	public override void OnStart()
 	{
 		var room1 = ResourceLibrary.Get<PrefabFile>( Rooms[0] );
@@ -64,7 +66,7 @@ public sealed class MapGeneratorComponent : BaseComponent
 					if ( room.GetBounds().Overlaps( room2.GetBounds() ) )
 					{
 						overlaps++;
-						room.Transform.Position += (room.Transform.Position - room2.Transform.Position) * 0.25f;
+						room.Transform.Position += (room.Transform.Position - room2.Transform.Position) * 0.3f;
 					}
 				}
 			}
@@ -74,6 +76,10 @@ public sealed class MapGeneratorComponent : BaseComponent
 				Log.Info( "Rooms corrected!" );
 				foreach ( var room in SpawnedRooms )
 				{
+					var GridSnappedPosition = room.Transform.Position;
+					GridSnappedPosition.x = MathF.Round( GridSnappedPosition.x / SnapGridSize ) * SnapGridSize;
+					GridSnappedPosition.y = MathF.Round( GridSnappedPosition.y / SnapGridSize ) * SnapGridSize;
+					room.Transform.Position = GridSnappedPosition;
 					room.GetComponent<RoomChunkComponent>( false ).SetupCollision();
 				}
 			}
