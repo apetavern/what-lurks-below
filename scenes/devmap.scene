@@ -104,9 +104,9 @@
         {
           "__type": "ItemPickup",
           "__enabled": true,
-          "Item": {},
           "Model": "weapons/rust_pistol/rust_pistol.vmdl",
-          "ModelScale": 1.5
+          "ModelScale": 1.5,
+          "Type": "Ammo"
         },
         {
           "__type": "ColliderBoxComponent",
@@ -135,9 +135,9 @@
         {
           "__type": "ItemPickup",
           "__enabled": true,
-          "Item": {},
           "Model": "models/items/medkit/medkit.vmdl",
-          "ModelScale": 1
+          "ModelScale": 1,
+          "Type": "Health"
         }
       ]
     },
@@ -152,9 +152,9 @@
         {
           "__type": "ItemPickup",
           "__enabled": true,
-          "Item": {},
           "Model": "models/items/key/skeleton_key.vmdl",
-          "ModelScale": 1
+          "ModelScale": 2,
+          "Type": "Key"
         },
         {
           "__type": "ColliderBoxComponent",

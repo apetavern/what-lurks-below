@@ -22,8 +22,15 @@ public class ItemPickup : BaseComponent
 
 	[Property] public float ModelScale { get; set; } = 1.0f;
 
-	[Property] public InventoryItem Item { get; set; }
+	public enum PickupType
+	{
+		Ammo,
+		Health,
+		Key
+	}
 
+	[Property] public PickupType Type { get; set; } = PickupType.Ammo;
+	
 	public override void OnEnabled()
 	{
 		base.OnEnabled();
@@ -80,8 +87,12 @@ public class ItemPickup : BaseComponent
 		var inv = Player.GetComponent<Inventory>();
 		if ( inv is null )
 			return;
+		
+		var added = inv.AddItem( InventoryItem.FromPickupType( Type ) );
+		if ( !added )
+			return;
 
-		inv.AddItem( Item );
+		Sound.FromScreen( "item_pickup" );
 		Destroy();
 	}
 }

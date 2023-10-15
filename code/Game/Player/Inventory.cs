@@ -19,12 +19,15 @@ public class Inventory : BaseComponent
 		get => _items[key];
 	}
 
-	public void AddItem( InventoryItem item )
+	public bool AddItem( InventoryItem item )
 	{
 		if ( ItemCount >= Slots )
-			return;
+			return false;
+		
+		Log.Info(item.Name);
 		
 		_items.Add( item );
+		return true;
 	}
 
 	public void RemoveItem( string itemName )
