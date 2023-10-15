@@ -35,10 +35,6 @@
       "Scale": "1,1,1",
       "Components": [
         {
-          "__type": "SoundListenerComponent",
-          "__enabled": true
-        },
-        {
           "__type": "CameraComponent",
           "__enabled": true,
           "BackgroundColor": "0.33333,0.46275,0.52157,1",
@@ -46,6 +42,10 @@
           "FieldOfView": 60,
           "ZFar": 10000,
           "ZNear": 10
+        },
+        {
+          "__type": "SoundListenerComponent",
+          "__enabled": true
         }
       ]
     },
@@ -97,7 +97,31 @@
       "Id": "77a5ccfd-2ea5-43d0-9394-097299cd1401",
       "Name": "Pistol Pickup",
       "Enabled": true,
-      "Position": "100,0,0",
+      "Position": "128,0,0",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
+      "Components": [
+        {
+          "__type": "ItemPickup",
+          "__enabled": true,
+          "Item": {},
+          "Model": "weapons/rust_pistol/rust_pistol.vmdl",
+          "ModelScale": 1.5
+        },
+        {
+          "__type": "ColliderBoxComponent",
+          "__enabled": true,
+          "IsTrigger": true,
+          "Scale": "50,50,50",
+          "Surface": null
+        }
+      ]
+    },
+    {
+      "Id": "da014a80-0f8b-4fbd-9a28-eeddb8199414",
+      "Name": "Medkit Pickup",
+      "Enabled": true,
+      "Position": "128,-128,0",
       "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Components": [
@@ -112,8 +136,32 @@
           "__type": "ItemPickup",
           "__enabled": true,
           "Item": {},
-          "Model": "weapons/rust_pistol/rust_pistol.vmdl",
-          "ModelScale": 1.5
+          "Model": "models/items/medkit/medkit.vmdl",
+          "ModelScale": 1
+        }
+      ]
+    },
+    {
+      "Id": "44acedcd-527b-43d2-9ae7-069f98b70ed5",
+      "Name": "Key Pickup",
+      "Enabled": true,
+      "Position": "0,-128,0",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
+      "Components": [
+        {
+          "__type": "ItemPickup",
+          "__enabled": true,
+          "Item": {},
+          "Model": "models/items/key/skeleton_key.vmdl",
+          "ModelScale": 1
+        },
+        {
+          "__type": "ColliderBoxComponent",
+          "__enabled": true,
+          "IsTrigger": true,
+          "Scale": "50,50,50",
+          "Surface": null
         }
       ]
     },
