@@ -1,5 +1,6 @@
 using Sandbox;
 
+[EditorHandle( "materials/gizmo/door.png" )]
 public sealed class RoomDoorDefinition : BaseComponent
 {
 	public override void DrawGizmos()
