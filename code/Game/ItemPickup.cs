@@ -20,6 +20,8 @@ public class ItemPickup : BaseComponent
 
 	[Property] public Model Model { get; set; }
 
+	[Property] public float ModelScale { get; set; } = 1.0f;
+
 	[Property] public InventoryItem Item { get; set; }
 
 	public override void OnEnabled()
@@ -63,9 +65,9 @@ public class ItemPickup : BaseComponent
 
 		if ( _sceneModel != null )
 		{
-			_sceneModel.Rotation = Rotation.From( 45f, Time.Now * 90f, 0 );
-
+			_sceneModel.Rotation = Rotation.From( 0, Time.Now * 90f, 0 );
 			_sceneModel.Position = Transform.Position + Vector3.Up * _sceneModel.Bounds.Size;
+			_sceneModel.Transform = _sceneModel.Transform.WithScale( ModelScale );
 
 			_sceneModel.Update( 0.1f );
 		}
