@@ -32,6 +32,8 @@ public class PlayerController : BaseComponent
 		}
 	}
 
+	public bool CameraControl;
+
 	public override void Update()
 	{
 		// Eye input
@@ -43,7 +45,30 @@ public class PlayerController : BaseComponent
 		//EyeAngles.yaw -= Input.MouseDelta.x * 0.1f;
 		EyeAngles.roll = 0;
 
-		Camera = Scene.GetAllObjects( true ).Where( X => X.GetComponent<CameraComponent>( false ) != null ).FirstOrDefault();
+		if ( CameraControl )
+		{
+			// Update camera position
+			Camera = Scene.GetAllObjects( true ).Where( X => X.GetComponent<CameraComponent>( true ) != null ).FirstOrDefault();
+			if ( Camera is not null )
+			{
+				var camPos = Eye.Transform.Position - (EyeAngles.ToRotation() * Rotation.FromPitch( 15f )).Forward * CameraDistance;
+
+
+				if ( FirstPerson ) camPos = Eye.Transform.Position + EyeAngles.ToRotation().Forward * 8;
+
+
+				var tr = Physics.Trace.Ray( Eye.Transform.Position, camPos )
+					.WithAnyTags( "solid" )
+					.WithoutTags( "trigger" )
+					.Radius( 8 )
+					.Run();
+
+				Camera.Transform.Position = tr.EndPosition;
+				Camera.Transform.Rotation = EyeAngles.ToRotation() * Rotation.FromPitch( 15f );
+			}
+		}
+
+		CameraControl = true;
 
 
 		// read inputs

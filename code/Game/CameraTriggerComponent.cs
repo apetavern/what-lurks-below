@@ -52,7 +52,7 @@ public sealed class CameraTriggerComponent : BaseComponent
 	{
 		if ( Player is not null )
 		{
-			if ( Bounds.Contains( Player.Transform.Position + Vector3.Up * 32f ) )
+			if ( Bounds.Contains( Player.Transform.Position + Vector3.Up * 28f ) )
 			{
 				Triggered();
 			}
@@ -63,6 +63,9 @@ public sealed class CameraTriggerComponent : BaseComponent
 	public void Triggered()
 	{
 		Controller.Camera.Transform.Position = CameraPoint.Transform.Position;
+
+		Player.GetComponent<PlayerController>().CameraControl = false;
+
 		if ( !FollowPlayer )
 		{
 			Controller.Camera.Transform.Rotation = CameraPoint.Transform.Rotation;
