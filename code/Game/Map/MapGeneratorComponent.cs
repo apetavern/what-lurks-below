@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 [Icon( "map", "red", "white" )]
 public sealed class MapGeneratorComponent : BaseComponent
 {
-	List<string> Rooms = new List<string>() { "prefabs/rooms/sewer_room_01.object", "prefabs/rooms/room_01.object" };
+	List<string> Rooms = new List<string>() { "prefabs/rooms/sewer_room_01.object" };
 
 	List<string> Hallways = new List<string>() { "prefabs/hallways/hallway_01.object" };
 
