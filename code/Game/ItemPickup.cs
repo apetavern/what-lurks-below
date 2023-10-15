@@ -8,7 +8,7 @@ namespace BrickJam.Game;
 [Title( "ItemPickup" )]
 [Category( "Map" )]
 [Icon( "colorize", "red", "white" )]
-[EditorHandle( "materials/gizmo/2dskybox.png" )]
+[EditorHandle( "materials/gizmo/items.png" )]
 public class ItemPickup : BaseComponent
 {
 	private BBox Bounds;
@@ -25,7 +25,7 @@ public class ItemPickup : BaseComponent
 	}
 
 	[Property] public PickupType Type { get; set; } = PickupType.Ammo;
-	
+
 	public override void OnEnabled()
 	{
 		base.OnEnabled();
@@ -37,7 +37,7 @@ public class ItemPickup : BaseComponent
 			return;
 
 		_pickupResource = pickup;
-		
+
 		// Setup bounds
 		Player = Scene.GetAllObjects( true ).FirstOrDefault( p => p.Name == "player" );
 		Controller = Player?.GetComponent<PlayerController>();
@@ -90,7 +90,7 @@ public class ItemPickup : BaseComponent
 		var inv = Player.GetComponent<Inventory>();
 		if ( inv is null )
 			return;
-		
+
 		var added = inv.AddItem( InventoryItem.FromPickupType( Type ) );
 		if ( !added )
 			return;
