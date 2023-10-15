@@ -1,0 +1,6 @@
+{
+  "PickupType": "Health",
+  "Scale": 1,
+  "Model": "models/items/medkit/medkit.vmdl",
+  "__references": []
+}

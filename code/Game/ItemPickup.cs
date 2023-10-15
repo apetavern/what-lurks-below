@@ -12,14 +12,10 @@ namespace BrickJam.Game;
 public class ItemPickup : BaseComponent
 {
 	private BBox Bounds;
-
 	private GameObject Player;
-
 	private PlayerController Controller;
-
 	private SceneModel _sceneModel;
-	
-	[Property] public float ModelScale { get; set; } = 1.0f;
+	private PickupResource _pickupResource;
 
 	public enum PickupType
 	{
@@ -28,19 +24,20 @@ public class ItemPickup : BaseComponent
 		Key
 	}
 
-	private static Dictionary<PickupType, string> _pickupModels = new()
-	{
-		{ PickupType.Ammo, "weapons/rust_pistol/rust_pistol.vmdl" },
-		{ PickupType.Health, "models/items/medkit/medkit.vmdl" },
-		{ PickupType.Key, "models/items/key/skeleton_key.vmdl" }
-	};
-
 	[Property] public PickupType Type { get; set; } = PickupType.Ammo;
 	
 	public override void OnEnabled()
 	{
 		base.OnEnabled();
 
+		var pickupResources = ResourceLibrary.GetAll<PickupResource>();
+		var pickup = pickupResources.FirstOrDefault( p => p.PickupType == Type );
+
+		if ( pickup is null )
+			return;
+
+		_pickupResource = pickup;
+		
 		// Setup bounds
 		Player = Scene.GetAllObjects( true ).FirstOrDefault( p => p.Name == "player" );
 		Controller = Player?.GetComponent<PlayerController>();
@@ -55,7 +52,7 @@ public class ItemPickup : BaseComponent
 		Bounds = box;
 
 		// Setup scene model
-		_sceneModel = new SceneModel( Scene.SceneWorld, Model.Load( _pickupModels[Type] ) ?? Model.Load( "models/dev/box.vmdl" ), Transform.World );
+		_sceneModel = new SceneModel( Scene.SceneWorld, _pickupResource.Model ?? Model.Load( "models/dev/box.vmdl" ), Transform.World );
 	}
 
 	public override void OnDisabled()
@@ -80,7 +77,7 @@ public class ItemPickup : BaseComponent
 		{
 			_sceneModel.Rotation = Rotation.From( 0, Time.Now * 90f, 0 );
 			_sceneModel.Position = Transform.Position + Vector3.Up * _sceneModel.Bounds.Size;
-			_sceneModel.Transform = _sceneModel.Transform.WithScale( ModelScale );
+			_sceneModel.Transform = _sceneModel.Transform.WithScale( _pickupResource.Scale );
 
 			_sceneModel.Update( 0.1f );
 		}

@@ -1,0 +1,6 @@
+{
+  "PickupType": "Key",
+  "Scale": 2,
+  "Model": "models/items/key/skeleton_key.vmdl",
+  "__references": []
+}
