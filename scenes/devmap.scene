@@ -35,6 +35,10 @@
       "Scale": "1,1,1",
       "Components": [
         {
+          "__type": "SoundListenerComponent",
+          "__enabled": true
+        },
+        {
           "__type": "CameraComponent",
           "__enabled": true,
           "BackgroundColor": "0.33333,0.46275,0.52157,1",
@@ -42,10 +46,6 @@
           "FieldOfView": 60,
           "ZFar": 10000,
           "ZNear": 10
-        },
-        {
-          "__type": "SoundListenerComponent",
-          "__enabled": true
         }
       ]
     },
@@ -102,18 +102,17 @@
       "Scale": "1,1,1",
       "Components": [
         {
-          "__type": "ItemPickup",
-          "__enabled": true,
-          "Model": "weapons/rust_pistol/rust_pistol.vmdl",
-          "ModelScale": 1.5,
-          "Type": "Ammo"
-        },
-        {
           "__type": "ColliderBoxComponent",
           "__enabled": true,
           "IsTrigger": true,
           "Scale": "50,50,50",
           "Surface": null
+        },
+        {
+          "__type": "ItemPickup",
+          "__enabled": true,
+          "ModelScale": 1.5,
+          "Type": "Ammo"
         }
       ]
     },
@@ -126,18 +125,17 @@
       "Scale": "1,1,1",
       "Components": [
         {
+          "__type": "ItemPickup",
+          "__enabled": true,
+          "ModelScale": 1,
+          "Type": "Health"
+        },
+        {
           "__type": "ColliderBoxComponent",
           "__enabled": true,
           "IsTrigger": true,
           "Scale": "50,50,50",
           "Surface": null
-        },
-        {
-          "__type": "ItemPickup",
-          "__enabled": true,
-          "Model": "models/items/medkit/medkit.vmdl",
-          "ModelScale": 1,
-          "Type": "Health"
         }
       ]
     },
@@ -150,11 +148,33 @@
       "Scale": "1,1,1",
       "Components": [
         {
+          "__type": "ColliderBoxComponent",
+          "__enabled": true,
+          "IsTrigger": true,
+          "Scale": "50,50,50",
+          "Surface": null
+        },
+        {
           "__type": "ItemPickup",
           "__enabled": true,
-          "Model": "models/items/key/skeleton_key.vmdl",
           "ModelScale": 2,
           "Type": "Key"
+        }
+      ]
+    },
+    {
+      "Id": "5f83c059-87dd-46cc-8559-e568feeae5a5",
+      "Name": "Pickup",
+      "Enabled": true,
+      "Position": "128,256,0",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
+      "Components": [
+        {
+          "__type": "ItemPickup",
+          "__enabled": true,
+          "ModelScale": 1,
+          "Type": "Health"
         },
         {
           "__type": "ColliderBoxComponent",

@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using BrickJam.Player;
 using Sandbox;
 
@@ -17,9 +18,7 @@ public class ItemPickup : BaseComponent
 	private PlayerController Controller;
 
 	private SceneModel _sceneModel;
-
-	[Property] public Model Model { get; set; }
-
+	
 	[Property] public float ModelScale { get; set; } = 1.0f;
 
 	public enum PickupType
@@ -28,6 +27,13 @@ public class ItemPickup : BaseComponent
 		Health,
 		Key
 	}
+
+	private static Dictionary<PickupType, string> _pickupModels = new()
+	{
+		{ PickupType.Ammo, "weapons/rust_pistol/rust_pistol.vmdl" },
+		{ PickupType.Health, "models/items/medkit/medkit.vmdl" },
+		{ PickupType.Key, "models/items/key/skeleton_key.vmdl" }
+	};
 
 	[Property] public PickupType Type { get; set; } = PickupType.Ammo;
 	
@@ -49,7 +55,7 @@ public class ItemPickup : BaseComponent
 		Bounds = box;
 
 		// Setup scene model
-		_sceneModel = new SceneModel( Scene.SceneWorld, Model ?? Model.Load( "models/dev/box.vmdl" ), Transform.World );
+		_sceneModel = new SceneModel( Scene.SceneWorld, Model.Load( _pickupModels[Type] ) ?? Model.Load( "models/dev/box.vmdl" ), Transform.World );
 	}
 
 	public override void OnDisabled()
