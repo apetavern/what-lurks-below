@@ -161,6 +161,8 @@ public class AnimatedModelComponent : BaseComponent, BaseComponent.ExecuteInEdit
 		if ( parent is not null )
 		{
 			parent.SceneModel.AddChild( GameObject.Name, SceneModel );
+
+			SceneModel.Bounds = parent.SceneModel.Bounds;
 		}
 
 		_sceneModel.Update( Time.Delta );
