@@ -1,0 +1,94 @@
+{
+  "RootObject": {
+    "Id": "282d0dd1-e5a6-4ee5-a1f8-a6505bfcc5ea",
+    "Name": "door_02",
+    "Enabled": true,
+    "Position": "0,0,0",
+    "Rotation": "0,0,0,1",
+    "Scale": "1,1,1",
+    "Components": [
+      {
+        "__type": "ModelComponent",
+        "__enabled": true,
+        "MaterialOverride": null,
+        "Model": "models/environment/door_01.vmdl",
+        "ShouldCastShadows": true,
+        "Tint": "1,1,1,1"
+      },
+      {
+        "__type": "ModelCollider",
+        "__enabled": true,
+        "IsTrigger": false,
+        "Model": "models/environment/door_01.vmdl",
+        "Surface": null
+      }
+    ],
+    "Children": [
+      {
+        "Id": "6181fe9b-1eaa-4784-a922-e54955bf67af",
+        "Name": "wall_01",
+        "Enabled": true,
+        "Position": "0,0,0",
+        "Rotation": "0,0,0,1",
+        "Scale": "1,1,1",
+        "Components": [
+          {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/door_02.vmdl",
+            "Surface": null
+          },
+          {
+            "__type": "ModelComponent",
+            "__enabled": true,
+            "MaterialOverride": null,
+            "Model": "models/environment/door_02.vmdl",
+            "ShouldCastShadows": true,
+            "Tint": "1,1,1,1"
+          }
+        ]
+      },
+      {
+        "Id": "2846ff4d-a7ee-40e5-a672-a4d9a25a2275",
+        "Name": "wall_01",
+        "Enabled": true,
+        "Position": "0,96,0",
+        "Rotation": "0,0,0,1",
+        "Scale": "1,1,1",
+        "Components": [
+          {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/door_01.vmdl",
+            "Surface": null
+          },
+          {
+            "__type": "ModelComponent",
+            "__enabled": true,
+            "MaterialOverride": null,
+            "Model": "models/environment/door_01.vmdl",
+            "ShouldCastShadows": true,
+            "Tint": "1,1,1,1"
+          }
+        ]
+      },
+      {
+        "Id": "66e0633b-164a-41c1-9a7f-0675fd0c4625",
+        "Name": "Object",
+        "Enabled": true,
+        "Position": "0,64,0",
+        "Rotation": "0,0,0.707107,0.7071065",
+        "Scale": "1,1,1",
+        "Components": [
+          {
+            "__type": "RoomDoorDefinition",
+            "__enabled": true
+          }
+        ]
+      }
+    ]
+  },
+  "__references": []
+}

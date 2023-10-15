@@ -1,0 +1,47 @@
+{
+  "GameObjects": [
+    {
+      "Id": "00000000-0000-0000-0000-000000000000",
+      "Name": "Directional Light",
+      "Enabled": true,
+      "Position": "-186.5142,0.0002112252,128",
+      "Rotation": "0.4304598,0.4304592,-0.5609857,0.560985",
+      "Scale": "1,1,1",
+      "Components": [
+        {
+          "__type": "DirectionalLightComponent",
+          "__enabled": true,
+          "LightColor": "0.91373,0.98039,1,1",
+          "Shadows": true,
+          "SkyColor": "0.05882,0.07451,0.08235,1"
+        }
+      ]
+    },
+    {
+      "Id": "441bdfe0-648f-4b46-8ba9-88edc38fa7fa",
+      "Name": "Skybox",
+      "Enabled": true,
+      "Position": "0,0,-34.30033",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
+      "Components": [
+        {
+          "__type": "SkyBox2D",
+          "__enabled": true,
+          "SkyMaterial": "materials/skybox/skybox_workshop.vmat",
+          "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "Id": "f5c8b7fa-4229-4ccb-bc14-af858f819a4a",
+      "Name": "room_01a",
+      "Enabled": true,
+      "Position": "0,0,0",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
+      "__Prefab": "prefabs/rooms/sewer_room_01.object"
+    }
+  ],
+  "__references": []
+}
