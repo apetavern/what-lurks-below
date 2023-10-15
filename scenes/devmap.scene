@@ -206,7 +206,13 @@
       "Enabled": true,
       "Position": "0,0,0",
       "Rotation": "0,0,0,1",
-      "Scale": "1,1,1"
+      "Scale": "1,1,1",
+      "Components": [
+        {
+          "__type": "MapGeneratorComponent",
+          "__enabled": true
+        }
+      ]
     },
     {
       "Id": "5c6f927e-9ed2-41f1-8ca1-cd65e828ea74",
