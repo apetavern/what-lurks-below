@@ -166,6 +166,11 @@ public class AnimatedModelComponent : BaseComponent, BaseComponent.ExecuteInEdit
 		}
 	}
 
+	public Transform GetAttachmentTransform( string attachmentName )
+	{
+		return SceneModel.GetAttachment( attachmentName ).Value;
+	}
+
 	public override void Update()
 	{
 		base.Update();
