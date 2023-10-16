@@ -72,7 +72,7 @@ public sealed class CameraTriggerComponent : BaseComponent
 		}
 		else
 		{
-			Controller.Camera.Transform.Rotation = Rotation.LookAt( -(CameraPoint.Transform.Position - Player.Transform.Position) );
+			Controller.Camera.Transform.Rotation = Rotation.LookAt( -(CameraPoint.Transform.Position - Player.Transform.Position) + Vector3.Up * 45f );
 		}
 	}
 }
