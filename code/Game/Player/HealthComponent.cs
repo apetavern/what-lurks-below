@@ -1,4 +1,5 @@
-﻿using Sandbox;
+﻿using BrickJam.Game.UI;
+using Sandbox;
 
 namespace BrickJam.Player;
 
@@ -13,5 +14,13 @@ public class HealthComponent : BaseComponent
 		base.OnStart();
 
 		Health = InitialHealth;
+	}
+
+	public override void Update()
+	{
+		base.Update();
+
+		if ( Vitals.Instance is not null )
+			Vitals.Instance.Health = $"{Health:F0}";
 	}
 }
