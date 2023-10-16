@@ -1,6 +1,6 @@
 {
   "RootObject": {
-    "Id": "a74d1263-7d3f-4e7b-b2f8-9dcbc225385b",
+    "Id": "4643e42e-0280-4cdc-9bcb-b099968de18b",
     "Name": "test_enemy",
     "Enabled": true,
     "Position": "0,0,0",
@@ -8,17 +8,31 @@
     "Scale": "1,1,1",
     "Components": [
       {
+        "__type": "AimableTargetComponent",
+        "__enabled": true
+      },
+      {
+        "__type": "CharacterController",
+        "__enabled": true,
+        "Acceleration": 10,
+        "GroundAngle": 45,
+        "Height": 48.55,
+        "Radius": 16,
+        "StepHeight": 18
+      },
+      {
         "__type": "EnemyController",
         "__enabled": true,
-        "AggroRange": 82.6,
-        "Friction": 0.5,
+        "AggroRange": 125.050026,
+        "Body": "3142addf-7994-4b5e-99ca-7332a5237188",
+        "Friction": 0.9499998,
         "Health": 1,
-        "Speed": 1
+        "Speed": 34.799995
       }
     ],
     "Children": [
       {
-        "Id": "dd5fc37a-9798-4cec-bae1-e71f768dab89",
+        "Id": "3142addf-7994-4b5e-99ca-7332a5237188",
         "Name": "Epic Enemy",
         "Enabled": true,
         "Position": "0,0,24.8486",
@@ -36,7 +50,7 @@
         ],
         "Children": [
           {
-            "Id": "2ddbf19c-0720-4790-a53e-b9c6c47a5786",
+            "Id": "0080697a-a0b6-4f86-a32d-10b33e189bf6",
             "Name": "Cube",
             "Enabled": true,
             "Position": "23.1643,-10.82538,11.93309",
@@ -54,7 +68,7 @@
             ]
           },
           {
-            "Id": "127bbcfb-225f-4405-9ba5-1faa7259fef5",
+            "Id": "697d8032-b382-4f25-a9b4-ebb9beea77f8",
             "Name": "Cube",
             "Enabled": true,
             "Position": "22.9366,13.61888,11.93309",

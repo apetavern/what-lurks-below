@@ -1792,6 +1792,24 @@
             "__enabled": true
           }
         ]
+      },
+      {
+        "Id": "4643e42e-0280-4cdc-9bcb-b099968de18b",
+        "Name": "test_enemy",
+        "Enabled": true,
+        "Position": "-305.0778,283.3403,-0.1829863",
+        "Rotation": "0,0,0,1",
+        "Scale": "1,1,1",
+        "__Prefab": "prefabs/enemies/test_enemy.object"
+      },
+      {
+        "Id": "78780cdf-bdc6-41bb-8404-fe709a2db30d",
+        "Name": "test_enemy",
+        "Enabled": true,
+        "Position": "82.58681,-195.5721,-0.1829775",
+        "Rotation": "0.0000000393879,-0.000000000000001666099,0.6608191,0.7505445",
+        "Scale": "1,1,1",
+        "__Prefab": "prefabs/enemies/test_enemy.object"
       }
     ]
   },

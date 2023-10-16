@@ -10,34 +10,52 @@ public class EnemyController : BaseComponent
     [Property] public float Health { get; set; } = 1f;
     [Property] public float AggroRange { get; set; } = 1f;
 
+    [Property] public GameObject Body { get; set; }
+
     public bool IsAggro = false;
 
     GameObject Player;
     CharacterController _characterController;
+    BBox _bounds;
 
     public override void OnEnabled()
     {
         base.OnStart();
 
-        Player = Player = Scene.GetAllObjects( true ).FirstOrDefault( x => x.Name == "player" );
-
-        _characterController = GetComponent<CharacterController>( false );
-
+        Player = Scene.GetAllObjects( true ).FirstOrDefault( x => x.Name == "player" );
     }
 
     public override void Update()
     {
         base.Update();
 
-        Vector3 myPosition = Transform.Position + GameObject.GetBounds().Center;
-        Vector3 playerPosition = Player.Transform.Position + Player.GetBounds().Center;
+        Vector3 myPosition = Transform.Position;
+        Vector3 playerPosition = Player.Transform.Position;
         IsAggro = playerPosition.Distance( myPosition ) <= AggroRange;
+
+        _characterController ??= GameObject.GetComponent<CharacterController>();
 
         if ( IsAggro )
         {
+            // Move towards player when in range
             Vector3 direction = (playerPosition - myPosition).Normal;
-            Vector3 accel = direction * Speed;
-            _characterController.Accelerate( accel );
+            Vector3 wishVelocity = (direction * Speed).WithZ( 0 );
+            _characterController.Accelerate( wishVelocity );
+            _characterController.ApplyFriction( Friction );
+        }
+        else
+        {
+            // Slow down when out of range
+            _characterController.ApplyFriction( Friction / 3f );
+        }
+
+        _characterController.Move();
+
+        // Rotate body towards velocity
+        if ( _characterController.Velocity.LengthSquared > 0.1f )
+        {
+            Rotation targetRotation = Rotation.LookAt( _characterController.Velocity.WithZ( 0 ), Vector3.Up );
+            Body.Transform.Rotation = Rotation.Lerp( Body.Transform.Rotation, targetRotation, Time.Delta * 10f );
         }
     }
 
@@ -48,12 +66,7 @@ public class EnemyController : BaseComponent
         if ( !Gizmo.IsSelected ) return;
 
         // Draw red sphere for aggro range
-        Sphere sphere = new()
-        {
-            Center = GameObject.GetBounds().Center,
-            Radius = AggroRange,
-        };
         Gizmo.Draw.Color = Color.Red;
-        Gizmo.Draw.LineSphere( sphere, 8 );
+        Gizmo.Draw.LineSphere( new() { Center = Vector3.Zero, Radius = AggroRange }, 8 );
     }
 }
