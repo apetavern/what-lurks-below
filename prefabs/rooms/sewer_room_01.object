@@ -1716,116 +1716,6 @@
         ]
       },
       {
-        "Id": "e41fe1dd-9495-4dfb-b0c1-df67c5276c8d",
-        "Name": "Cube",
-        "Enabled": true,
-        "Position": "13.87603,1.489876,53.53305",
-        "Rotation": "0,0,0,1",
-        "Scale": "0.2236415,0.2236415,0.2236415",
-        "Components": [
-          {
-            "__type": "AimableTargetComponent",
-            "__enabled": true
-          },
-          {
-            "__type": "ModelComponent",
-            "__enabled": true,
-            "MaterialOverride": null,
-            "Model": "models/dev/box.vmdl",
-            "ShouldCastShadows": true,
-            "Tint": "1,1,1,1"
-          }
-        ]
-      },
-      {
-        "Id": "140636a7-82d2-4586-ac3e-aed1a4dc6c85",
-        "Name": "Cube",
-        "Enabled": true,
-        "Position": "-74.00293,-131.2415,53.53295",
-        "Rotation": "0,0,0,1",
-        "Scale": "0.2236415,0.2236415,0.2236415",
-        "Components": [
-          {
-            "__type": "ModelComponent",
-            "__enabled": true,
-            "MaterialOverride": null,
-            "Model": "models/dev/box.vmdl",
-            "ShouldCastShadows": true,
-            "Tint": "1,1,1,1"
-          },
-          {
-            "__type": "AimableTargetComponent",
-            "__enabled": true
-          }
-        ]
-      },
-      {
-        "Id": "3e233ad5-2029-4d40-aa41-0084fd9efe3a",
-        "Name": "Cube",
-        "Enabled": true,
-        "Position": "-202.8783,-148.4365,53.53295",
-        "Rotation": "0,0,0,1",
-        "Scale": "0.2236415,0.2236415,0.2236415",
-        "Components": [
-          {
-            "__type": "AimableTargetComponent",
-            "__enabled": true
-          },
-          {
-            "__type": "ModelComponent",
-            "__enabled": true,
-            "MaterialOverride": null,
-            "Model": "models/dev/box.vmdl",
-            "ShouldCastShadows": true,
-            "Tint": "1,1,1,1"
-          }
-        ]
-      },
-      {
-        "Id": "8d3ec295-91ea-49a0-9b69-ee7ce2de5a86",
-        "Name": "Cube",
-        "Enabled": true,
-        "Position": "-226.3882,196.5332,53.53292",
-        "Rotation": "0,0,0,1",
-        "Scale": "0.2236415,0.2236415,0.2236415",
-        "Components": [
-          {
-            "__type": "ModelComponent",
-            "__enabled": true,
-            "MaterialOverride": null,
-            "Model": "models/dev/box.vmdl",
-            "ShouldCastShadows": true,
-            "Tint": "1,1,1,1"
-          },
-          {
-            "__type": "AimableTargetComponent",
-            "__enabled": true
-          }
-        ]
-      },
-      {
-        "Id": "61e5b19d-ee58-4cfc-848d-58e849917181",
-        "Name": "Cube",
-        "Enabled": true,
-        "Position": "-276.8246,-18.78666,53.53288",
-        "Rotation": "0,0,0,1",
-        "Scale": "0.2236415,0.2236415,0.2236415",
-        "Components": [
-          {
-            "__type": "AimableTargetComponent",
-            "__enabled": true
-          },
-          {
-            "__type": "ModelComponent",
-            "__enabled": true,
-            "MaterialOverride": null,
-            "Model": "models/dev/box.vmdl",
-            "ShouldCastShadows": true,
-            "Tint": "1,1,1,1"
-          }
-        ]
-      },
-      {
         "Id": "f437ec58-e427-4066-b2f9-eb2b0f7186be",
         "Name": "Spot Light",
         "Enabled": true,
@@ -1842,6 +1732,64 @@
             "Cookie": null,
             "LightColor": "0.91373,0.98039,1,1",
             "Radius": 500
+          }
+        ]
+      },
+      {
+        "Id": "c4da910b-997c-4982-9c7f-6fc4c832b888",
+        "Name": "barrel",
+        "Enabled": true,
+        "Position": "26.23622,343.1266,0.0009765625",
+        "Rotation": "-0.000000260774,0.0000002791707,-0.6250089,0.780618",
+        "Scale": "1,1,1",
+        "Components": [
+          {
+            "__type": "ModelComponent",
+            "__enabled": true,
+            "MaterialOverride": null,
+            "Model": "models/environment/breakables/barrel/barrel.vmdl",
+            "ShouldCastShadows": true,
+            "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/breakables/barrel/barrel.vmdl",
+            "Surface": null
+          },
+          {
+            "__type": "AimableTargetComponent",
+            "__enabled": true
+          }
+        ]
+      },
+      {
+        "Id": "ec9874bf-28ee-4869-81b1-a1cd44bd9c4d",
+        "Name": "barrel",
+        "Enabled": true,
+        "Position": "63.70639,320.0157,0.0005950722",
+        "Rotation": "-0.000000001452594,0.0000003576257,-0.003481518,0.9999937",
+        "Scale": "1.299553,1.299553,1.299553",
+        "Components": [
+          {
+            "__type": "ModelComponent",
+            "__enabled": true,
+            "MaterialOverride": null,
+            "Model": "models/environment/breakables/barrel/barrel.vmdl",
+            "ShouldCastShadows": true,
+            "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/breakables/barrel/barrel.vmdl",
+            "Surface": null
+          },
+          {
+            "__type": "AimableTargetComponent",
+            "__enabled": true
           }
         ]
       }
