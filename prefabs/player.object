@@ -8,18 +8,9 @@
     "Scale": "1,1,1",
     "Components": [
       {
-        "__type": "Inventory",
+        "__type": "HealthComponent",
         "__enabled": true,
-        "Slots": 6
-      },
-      {
-        "__type": "PlayerController",
-        "__enabled": true,
-        "Body": "4231053c-d3a3-41ea-8f43-b8f337b05db2",
-        "CameraDistance": 200,
-        "Eye": "22a31826-e504-41c7-bf0c-e7d1423a7ed1",
-        "FirstPerson": false,
-        "Gravity": "0,0,800"
+        "InitialHealth": 100
       },
       {
         "__type": "CharacterController",
@@ -31,9 +22,18 @@
         "StepHeight": 18
       },
       {
-        "__type": "HealthComponent",
+        "__type": "PlayerController",
         "__enabled": true,
-        "InitialHealth": 100
+        "Body": "4231053c-d3a3-41ea-8f43-b8f337b05db2",
+        "CameraDistance": 200,
+        "Eye": "22a31826-e504-41c7-bf0c-e7d1423a7ed1",
+        "FirstPerson": false,
+        "Gravity": "0,0,800"
+      },
+      {
+        "__type": "Inventory",
+        "__enabled": true,
+        "Slots": 6
       }
     ],
     "Children": [
@@ -82,6 +82,12 @@
             "Scale": "1,1,1",
             "Components": [
               {
+                "__type": "FollowAttachmentComponent",
+                "__enabled": true,
+                "AttachmentName": "light",
+                "FollowObject": "d74d97d6-9e8d-4152-bdbb-d2612892594d"
+              },
+              {
                 "__type": "SpotLightComponent",
                 "__enabled": true,
                 "Attenuation": 1,
@@ -90,6 +96,24 @@
                 "Cookie": null,
                 "LightColor": "0.91373,0.98039,1,1",
                 "Radius": 500
+              }
+            ]
+          },
+          {
+            "Id": "d74d97d6-9e8d-4152-bdbb-d2612892594d",
+            "Name": "Helmet",
+            "Enabled": true,
+            "Position": "0,0,0",
+            "Rotation": "0,0,0,1",
+            "Scale": "1,1,1",
+            "Components": [
+              {
+                "__type": "AnimatedModelComponent",
+                "__enabled": true,
+                "MaterialOverride": null,
+                "Model": "models/cosmetics/miner_helmet/minster_helmet.vmdl",
+                "ShouldCastShadows": true,
+                "Tint": "1,1,1,1"
               }
             ]
           }
