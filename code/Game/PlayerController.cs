@@ -1,4 +1,5 @@
 using Sandbox;
+using System;
 using System.Drawing;
 using System.Linq;
 
@@ -16,6 +17,8 @@ public class PlayerController : BaseComponent
 
 	public Angles EyeAngles;
 
+	Vector3 EyeStartPos;
+
 	public override void OnEnabled()
 	{
 		base.OnEnabled();
@@ -30,13 +33,50 @@ public class PlayerController : BaseComponent
 			Camera.Transform.Position = camPos;
 			Camera.Transform.Rotation = EyeAngles.ToRotation();
 		}
+
+		EyeStartPos = Eye.Transform.LocalPosition;
 	}
 
 	public override void DrawGizmos()
 	{
 		base.DrawGizmos();
 		Gizmo.Draw.Line( Eye.Transform.Position - Transform.Position, Eye.Transform.Position - Transform.Position + Eye.Transform.Rotation.Forward * 100f );
+
+
 	}
+
+
+	public GameObject GetClosestAimableObjectInViewcone()
+	{
+		var PotentialAimTargets = Scene.GetAllObjects( true ).Where( X => X.GetComponent<AimableTargetComponent>( false ) != null && Vector3.DistanceBetween( X.Transform.Position, Transform.Position ) < 256 );
+		GameObject closestTarget = null;
+		float closestDistance = float.MaxValue;
+
+		float yourFieldOfViewAngle = 25f;
+
+		foreach ( var target in PotentialAimTargets )
+		{
+			// Calculate the vector from the current object to the target object
+			Vector3 toTarget = target.Transform.Position - Eye.Transform.Position;
+
+			// Check if the target is within the field of view
+			if ( Vector3.Dot( toTarget.Normal, Eye.Transform.Rotation.Forward.Normal ) >= MathF.Cos( MathX.DegreeToRadian( yourFieldOfViewAngle ) ) )
+			{
+				// Calculate the distance between the current object and the target
+				float distanceToTarget = toTarget.Length;
+
+				// Update the closest target if this one is closer
+				if ( distanceToTarget < closestDistance )
+				{
+					closestDistance = distanceToTarget;
+					closestTarget = target;
+				}
+			}
+		}
+
+		return closestTarget;
+	}
+
 
 	public bool CameraControl;
 
@@ -116,7 +156,16 @@ public class PlayerController : BaseComponent
 				helper.Handedness = CitizenAnimationHelperScene.Hand.Both;
 				helper.HoldType = CitizenAnimationHelperScene.HoldTypes.Pistol;
 
-				helper.WithLookAt( new Transform( Body.Transform.Position, Body.Transform.Rotation ), Eye.Transform.Position, Vector3.Zero );
+				var closest = GetClosestAimableObjectInViewcone();
+
+				if ( closest != null )
+				{
+					helper.WithLookAt( new Transform( Body.Transform.Position, Body.Transform.Rotation ), Eye.Transform.Position, closest.Transform.Position );
+				}
+				else
+				{
+					helper.WithLookAt( new Transform( Body.Transform.Position, Body.Transform.Rotation ), Eye.Transform.Position, Eye.Transform.Position + Eye.Transform.Rotation.Forward * 100f );
+				}
 			}
 			else
 			{
@@ -133,6 +182,8 @@ public class PlayerController : BaseComponent
 
 			if ( Input.Down( "Duck" ) )
 			{
+				Eye.Transform.LocalPosition = EyeStartPos / 2f;
+
 				helper.DuckLevel = 1f;
 				if ( Input.Pressed( "Jump" ) )
 				{
@@ -145,6 +196,8 @@ public class PlayerController : BaseComponent
 			}
 			else
 			{
+				Eye.Transform.LocalPosition = EyeStartPos;
+
 				helper.DuckLevel = 0f;
 			}
 		}
