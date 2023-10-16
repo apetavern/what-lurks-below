@@ -49,7 +49,7 @@
             "__type": "AnimatedModelComponent",
             "__enabled": true,
             "MaterialOverride": null,
-            "Model": "models/citizen/citizen.vmdl",
+            "Model": "models/player.vmdl",
             "ShouldCastShadows": true,
             "Tint": "1,1,1,1"
           }
@@ -116,16 +116,16 @@
                 "Tint": "1,1,1,1"
               }
             ]
+          },
+          {
+            "Id": "22a31826-e504-41c7-bf0c-e7d1423a7ed1",
+            "Name": "eye",
+            "Enabled": true,
+            "Position": "0,0,63.62214",
+            "Rotation": "0,0,0,1",
+            "Scale": "1,1,1"
           }
         ]
-      },
-      {
-        "Id": "22a31826-e504-41c7-bf0c-e7d1423a7ed1",
-        "Name": "eye",
-        "Enabled": true,
-        "Position": "0,0,63.62214",
-        "Rotation": "0,0,0,1",
-        "Scale": "1,1,1"
       }
     ]
   },
