@@ -122,6 +122,24 @@
             ]
           },
           {
+            "Id": "bfe663db-f3a7-41e5-940c-be4b50d07ffd",
+            "Name": "Backpack",
+            "Enabled": true,
+            "Position": "0,0,0",
+            "Rotation": "0,0,0,1",
+            "Scale": "1,1,1",
+            "Components": [
+              {
+                "__type": "AnimatedModelComponent",
+                "__enabled": true,
+                "MaterialOverride": null,
+                "Model": "models/cosmetics/caving_backpack/caving_backpack.vmdl",
+                "ShouldCastShadows": true,
+                "Tint": "1,1,1,1"
+              }
+            ]
+          },
+          {
             "Id": "22a31826-e504-41c7-bf0c-e7d1423a7ed1",
             "Name": "eye",
             "Enabled": true,
