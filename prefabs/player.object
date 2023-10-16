@@ -52,6 +52,10 @@
             "Model": "models/player.vmdl",
             "ShouldCastShadows": true,
             "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "PlayerClothingComponent",
+            "__enabled": true
           }
         ],
         "Children": [
