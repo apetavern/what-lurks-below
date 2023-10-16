@@ -5,6 +5,11 @@ namespace BrickJam.Game.Weapon;
 public class BaseWeapon : GameObject
 {
 	public virtual Model Model { get; set; }
+	public virtual CitizenAnimationHelperScene.HoldTypes HoldType => CitizenAnimationHelperScene.HoldTypes.None;
+	public virtual CitizenAnimationHelperScene.Hand Handedness => CitizenAnimationHelperScene.Hand.Left;
+	public virtual CitizenAnimationHelperScene.Hand AlternateHandedness => CitizenAnimationHelperScene.Hand.Left;
+	public virtual bool CanFocus => false;
+	
 
 	protected AnimatedModelComponent c_AnimatedModel;
 
