@@ -32,6 +32,12 @@ public class PlayerController : BaseComponent
 		}
 	}
 
+	public override void DrawGizmos()
+	{
+		base.DrawGizmos();
+		Gizmo.Draw.Line( Eye.Transform.Position - Transform.Position, Eye.Transform.Position - Transform.Position + Eye.Transform.Rotation.Forward * 100f );
+	}
+
 	public bool CameraControl;
 
 	public override void Update()
@@ -93,6 +99,7 @@ public class PlayerController : BaseComponent
 		if ( Body is not null )
 		{
 			Body.Transform.Rotation = new Angles( 0, EyeAngles.yaw, 0 ).ToRotation();
+
 			var helper = new CitizenAnimationHelperScene( Body.GetComponent<AnimatedModelComponent>().SceneModel );
 			helper.WithVelocity( cc.Velocity );
 			helper.IsGrounded = cc.IsOnGround;
@@ -101,15 +108,21 @@ public class PlayerController : BaseComponent
 				helper.TriggerJump();
 			}
 
+			Eye.Transform.Rotation = new Angles( 0, EyeAngles.yaw, 0 ).ToRotation();
+
 			if ( Input.Down( "Attack2" ) )
 			{
+
 				helper.Handedness = CitizenAnimationHelperScene.Hand.Both;
 				helper.HoldType = CitizenAnimationHelperScene.HoldTypes.Pistol;
+
+				helper.WithLookAt( new Transform( Body.Transform.Position, Body.Transform.Rotation ), Eye.Transform.Position, Vector3.Zero );
 			}
 			else
 			{
 				helper.Handedness = CitizenAnimationHelperScene.Hand.Left;
 				helper.HoldType = CitizenAnimationHelperScene.HoldTypes.Pistol;
+				helper.WithLookAt( new Transform( Body.Transform.Position, Body.Transform.Rotation ), Eye.Transform.Position, Eye.Transform.Position + Eye.Transform.Rotation.Forward * 100f );
 			}
 
 			if ( Input.Pressed( "Attack1" ) )
