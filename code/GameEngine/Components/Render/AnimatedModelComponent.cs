@@ -161,8 +161,9 @@ public class AnimatedModelComponent : BaseComponent, BaseComponent.ExecuteInEdit
 		if ( parent is not null )
 		{
 			parent.SceneModel.AddChild( GameObject.Name, SceneModel );
-
-			SceneModel.Bounds = parent.SceneModel.Bounds;
+			var newbounds = parent.SceneModel.Bounds;
+			newbounds.AddPoint( parent.SceneModel.Transform.Position + Vector3.Up * 64 );
+			SceneModel.Bounds = newbounds;
 		}
 	}
 
