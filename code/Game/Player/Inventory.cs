@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using BrickJam.Game.Weapon;
 using Sandbox;
 
 namespace BrickJam.Player;
@@ -11,6 +12,7 @@ public class Inventory : BaseComponent
 	
 	public List<InventoryItem> Get => _items;
 
+	private GameObject _player;
 	private int ItemCount => _items.Count;
 	[Property] public int Slots { get; set; }
 
@@ -38,5 +40,25 @@ public class Inventory : BaseComponent
 	public InventoryItem GetItem( string itemName )
 	{
 		return _items.FirstOrDefault( i => i.Name == itemName );
+	}
+
+	public override void OnStart()
+	{
+		_player = Scene.GetAllObjects( true ).FirstOrDefault( p => p.Name == "player" );
+	}
+
+	public override void Update()
+	{
+		if ( _player is null )
+			return;
+
+		var c_PlayerWeapon = _player.GetComponent<WeaponComponent>();
+		if ( c_PlayerWeapon is null )
+			return;
+		
+		if ( Input.Pressed( "slot1" ) )
+		{
+			c_PlayerWeapon.Equip( new PistolWeapon( true, "Pistol", Scene ) );
+		}
 	}
 }

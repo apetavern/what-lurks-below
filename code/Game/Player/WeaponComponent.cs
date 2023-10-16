@@ -22,6 +22,12 @@ public class WeaponComponent : BaseComponent
 
 	public void Equip( BaseWeapon weapon )
 	{
+		if ( weapon.GetType() == ActiveWeapon?.GetType() )
+		{
+			Holster( ActiveWeapon );
+			return;
+		}
+		
 		ActiveWeapon = weapon;
 		ActiveWeapon?.SetActive( _body );
 	}
