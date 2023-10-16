@@ -8,7 +8,7 @@ public class BaseWeapon : GameObject
 	public virtual CitizenAnimationHelperScene.HoldTypes HoldType => CitizenAnimationHelperScene.HoldTypes.None;
 	public virtual CitizenAnimationHelperScene.Hand Handedness => CitizenAnimationHelperScene.Hand.Left;
 	public virtual CitizenAnimationHelperScene.Hand AlternateHandedness => CitizenAnimationHelperScene.Hand.Left;
-	public virtual bool CanFocus => false;
+	public virtual bool CanAimFocus => false;
 	
 
 	protected AnimatedModelComponent c_AnimatedModel;
@@ -29,8 +29,14 @@ public class BaseWeapon : GameObject
 	{
 		c_AnimatedModel.Enabled = false;
 	}
-
-	public virtual void OnPrimaryPressed() { }
 	
-	public virtual void OnSecondaryPressed() { }
+	public virtual void OnIdle( CitizenAnimationHelperScene helper ) { }
+
+	public virtual void OnPrimaryPressed( CitizenAnimationHelperScene helper ) { }
+	
+	public virtual void OnPrimaryHeld ( CitizenAnimationHelperScene helper ) { }
+	
+	public virtual void OnSecondaryPressed( CitizenAnimationHelperScene helper ) { }
+	
+	public virtual void OnSecondaryHeld( CitizenAnimationHelperScene helper ) { }
 }

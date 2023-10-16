@@ -40,13 +40,30 @@ public class WeaponComponent : BaseComponent
 
 	public override void Update()
 	{
+		var citizenModel = _body.GetComponent<AnimatedModelComponent>().SceneModel;
+		var helper = new CitizenAnimationHelperScene( citizenModel );
+		
+		if ( ActiveWeapon is null )
+			helper.HoldType = CitizenAnimationHelperScene.HoldTypes.None;
+		
+		ActiveWeapon?.OnIdle( helper );
+		
 		if ( Input.Pressed( "attack1" ) )
 		{
-			ActiveWeapon?.OnPrimaryPressed();
+			ActiveWeapon?.OnPrimaryPressed( helper );
 		}
-		else if ( Input.Pressed( "attack2" ) )
+		if ( Input.Pressed( "attack2" ) )
 		{
-			ActiveWeapon?.OnSecondaryPressed();
+			ActiveWeapon?.OnSecondaryPressed( helper );
+		}
+
+		if ( Input.Down( "attack1" ) )
+		{
+			ActiveWeapon?.OnPrimaryHeld( helper );
+		}
+		if ( Input.Down( "attack2" ) )
+		{
+			ActiveWeapon?.OnSecondaryHeld( helper );
 		}
 	}
 }

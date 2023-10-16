@@ -148,19 +148,6 @@ public class PlayerController : BaseComponent
 			var helper = new CitizenAnimationHelperScene( Body.GetComponent<AnimatedModelComponent>().SceneModel );
 			helper.WithVelocity( cc.Velocity );
 			helper.IsGrounded = cc.IsOnGround;
-
-			if ( weapon is null )
-			{
-				helper.HoldType = CitizenAnimationHelperScene.HoldTypes.None;
-			}
-			else
-			{
-				helper.HoldType = weapon.HoldType;
-				helper.Handedness = weapon.Handedness;
-
-				if ( weapon.CanFocus && Input.Down( "attack2" ) )
-					helper.Handedness = weapon.AlternateHandedness;
-			}
 			
 			if ( Input.Pressed( "Jump" ) && cc.IsOnGround )
 			{
@@ -188,12 +175,6 @@ public class PlayerController : BaseComponent
 			{
 				AimMultiplier = 1f;
 				helper.WithLookAt( new Transform( Body.Transform.Position, Body.Transform.Rotation ), Eye.Transform.Position, Eye.Transform.Position + Eye.Transform.Rotation.Forward * 100f );
-			}
-
-			if ( Input.Pressed( "Attack1" ) )
-			{
-				helper.TriggerAttack();
-				Sound.FromWorld( "weapons/rust_pistol/sound/rust_pistol.shoot.sound", Transform.Position + Vector3.Up * 32f );
 			}
 
 			if ( Input.Down( "Duck" ) )
