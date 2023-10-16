@@ -18,7 +18,9 @@ public static class EditorScene
 		// create a new, blank one.
 		if ( SceneEditorSession.All.Count == 0 )
 		{
-			NewScene();
+			//NewScene();
+
+			LoadFromScene( ResourceLibrary.Get<SceneFile>( "scenes/devmap.scene" ) );
 		}
 	}
 
