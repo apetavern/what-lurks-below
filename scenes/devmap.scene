@@ -21,7 +21,7 @@
       "Id": "7ebc391e-925e-489c-a0dd-a48345ab8d2a",
       "Name": "player",
       "Enabled": true,
-      "Position": "-23.73362,300.4412,0.0001983643",
+      "Position": "-61.71407,300.4412,175.4625",
       "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "__Prefab": "prefabs/player.object"
@@ -212,20 +212,6 @@
           "Model": "models/dev/plane.vmdl",
           "ShouldCastShadows": true,
           "Tint": "1,1,1,1"
-        }
-      ]
-    },
-    {
-      "Id": "7300f772-430f-4719-9526-cbaa4374af4e",
-      "Name": "UI",
-      "Enabled": true,
-      "Position": "0,0,0",
-      "Rotation": "0,0,0,1",
-      "Scale": "1,1,1",
-      "Components": [
-        {
-          "__type": "RootPanelComponent",
-          "__enabled": true
         }
       ]
     }

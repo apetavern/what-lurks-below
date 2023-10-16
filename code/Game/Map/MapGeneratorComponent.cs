@@ -191,7 +191,7 @@ public sealed class MapGeneratorComponent : BaseComponent
 			{
 				foreach ( var room2 in SpawnedRooms )
 				{
-					if ( room == room2 ) continue;
+					if ( room == room2 || room == SpawnedRooms[0] ) continue;
 					if ( room.GameObject.GetBounds().Overlaps( room2.GameObject.GetBounds() ) )
 					{
 						overlaps++;
