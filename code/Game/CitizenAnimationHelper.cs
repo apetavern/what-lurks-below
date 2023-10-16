@@ -14,16 +14,20 @@ public struct CitizenAnimationHelperScene
 		Owner = entity;
 	}
 
+	public void SetAnimLookAt( string name, Transform origin, Vector3 eyePositionInWorld, Vector3 lookatPositionInWorld )
+	{
+		Vector3 value = (lookatPositionInWorld - eyePositionInWorld) * origin.Rotation.Inverse;
+		Owner.SetAnimParameter( name, value );
+	}
+
 	/// <summary>
 	/// Have the player look at this point in the world
 	/// </summary>
-	public void WithLookAt( Vector3 look, float eyesWeight = 1.0f, float headWeight = 1.0f, float bodyWeight = 1.0f )
+	public void WithLookAt( Transform origin, Vector3 eyepos, Vector3 look, float eyesWeight = 1.0f, float headWeight = 1.0f, float bodyWeight = 1.0f )
 	{
-		/*var aimRay = Owner.AimRay;
-
-		Owner.SetAnimLookAt( "aim_eyes", aimRay.Position, look );
-		Owner.SetAnimLookAt( "aim_head", aimRay.Position, look );
-		Owner.SetAnimLookAt( "aim_body", aimRay.Position, look );*/
+		SetAnimLookAt( "aim_eyes", origin, eyepos, look );
+		SetAnimLookAt( "aim_head", origin, eyepos, look );
+		SetAnimLookAt( "aim_body", origin, eyepos, look );
 
 		Owner.SetAnimParameter( "aim_eyes_weight", eyesWeight );
 		Owner.SetAnimParameter( "aim_head_weight", headWeight );
