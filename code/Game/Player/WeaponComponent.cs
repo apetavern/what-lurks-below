@@ -9,19 +9,21 @@ public class WeaponComponent : BaseComponent
 {
 	public BaseWeapon ActiveWeapon { get; set; }
 	private GameObject _player;
+	private GameObject _body;
 
 	public override void OnStart()
 	{
 		base.OnStart();
 		
 		_player = Scene.GetAllObjects( true ).FirstOrDefault( p => p.Name == "player" );
+		_body = _player?.GetComponent<PlayerController>().Body;
 		Equip( new PistolWeapon( true, "Pistol", Scene ) );
 	}
 
 	public void Equip( BaseWeapon weapon )
 	{
 		ActiveWeapon = weapon;
-		ActiveWeapon?.SetActive( _player );
+		ActiveWeapon?.SetActive( _body );
 	}
 
 	public void Holster( BaseWeapon weapon )

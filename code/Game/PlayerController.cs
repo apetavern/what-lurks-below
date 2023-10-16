@@ -10,7 +10,7 @@ public class PlayerController : BaseComponent
 
 	public Vector3 WishVelocity { get; private set; }
 
-	[Property] GameObject Body { get; set; }
+	[Property] public GameObject Body { get; set; }
 	[Property] GameObject Eye { get; set; }
 	[Property] public GameObject Camera { get; set; }
 	[Property] bool FirstPerson { get; set; }
