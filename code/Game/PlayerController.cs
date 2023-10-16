@@ -2,6 +2,7 @@ using Sandbox;
 using System;
 using System.Drawing;
 using System.Linq;
+using BrickJam.Player;
 
 public class PlayerController : BaseComponent
 {
@@ -9,6 +10,7 @@ public class PlayerController : BaseComponent
 	[Property] public float CameraDistance { get; set; } = 200.0f;
 
 	public Vector3 WishVelocity { get; private set; }
+	public GameObject Player => GameObject;
 
 	[Property] public GameObject Body { get; set; }
 	[Property] GameObject Eye { get; set; }
@@ -134,6 +136,9 @@ public class PlayerController : BaseComponent
 			}
 		}
 
+		var c_PlayerWeapon = Player.GetComponent<WeaponComponent>();
+		var weapon = c_PlayerWeapon.ActiveWeapon;
+
 		// rotate body to look angles
 		if ( Body is not null )
 		{
@@ -142,6 +147,20 @@ public class PlayerController : BaseComponent
 			var helper = new CitizenAnimationHelperScene( Body.GetComponent<AnimatedModelComponent>().SceneModel );
 			helper.WithVelocity( cc.Velocity );
 			helper.IsGrounded = cc.IsOnGround;
+
+			if ( weapon is null )
+			{
+				helper.HoldType = CitizenAnimationHelperScene.HoldTypes.None;
+			}
+			else
+			{
+				helper.HoldType = weapon.HoldType;
+				helper.Handedness = weapon.Handedness;
+
+				if ( weapon.CanFocus && Input.Down( "attack2" ) )
+					helper.Handedness = weapon.AlternateHandedness;
+			}
+			
 			if ( Input.Pressed( "Jump" ) && cc.IsOnGround )
 			{
 				helper.TriggerJump();
@@ -151,10 +170,6 @@ public class PlayerController : BaseComponent
 
 			if ( Input.Down( "Attack2" ) )
 			{
-
-				helper.Handedness = CitizenAnimationHelperScene.Hand.Both;
-				helper.HoldType = CitizenAnimationHelperScene.HoldTypes.Pistol;
-
 				var closest = GetClosestAimableObjectInViewcone();
 
 				if ( closest != null )
@@ -168,8 +183,6 @@ public class PlayerController : BaseComponent
 			}
 			else
 			{
-				helper.Handedness = CitizenAnimationHelperScene.Hand.Left;
-				helper.HoldType = CitizenAnimationHelperScene.HoldTypes.Pistol;
 				helper.WithLookAt( new Transform( Body.Transform.Position, Body.Transform.Rotation ), Eye.Transform.Position, Eye.Transform.Position + Eye.Transform.Rotation.Forward * 100f );
 			}
 
