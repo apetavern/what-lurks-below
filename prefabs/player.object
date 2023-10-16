@@ -34,6 +34,10 @@
         "__type": "Inventory",
         "__enabled": true,
         "Slots": 6
+      },
+      {
+        "__type": "WeaponComponent",
+        "__enabled": true
       }
     ],
     "Children": [
@@ -59,24 +63,6 @@
           }
         ],
         "Children": [
-          {
-            "Id": "843ebc15-3377-41db-92fc-7bff48e4b254",
-            "Name": "gun",
-            "Enabled": true,
-            "Position": "0,0,0",
-            "Rotation": "0,0,0,1",
-            "Scale": "1,1,1",
-            "Components": [
-              {
-                "__type": "AnimatedModelComponent",
-                "__enabled": true,
-                "MaterialOverride": null,
-                "Model": "weapons/rust_pistol/rust_pistol.vmdl",
-                "ShouldCastShadows": true,
-                "Tint": "1,1,1,1"
-              }
-            ]
-          },
           {
             "Id": "9bc07488-f235-4735-8469-b5f39f501ebe",
             "Name": "Spot Light",
