@@ -46,6 +46,16 @@
           "FieldOfView": 60,
           "ZFar": 10000,
           "ZNear": 10
+        },
+        {
+          "__type": "SpotLightComponent",
+          "__enabled": true,
+          "Attenuation": 1,
+          "ConeInner": 15,
+          "ConeOuter": 50,
+          "Cookie": null,
+          "LightColor": "0.91373,0.98039,1,1",
+          "Radius": 500
         }
       ]
     },
