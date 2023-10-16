@@ -56,16 +56,12 @@ public class PlayerController : BaseComponent
 
 		foreach ( var target in PotentialAimTargets )
 		{
-			// Calculate the vector from the current object to the target object
 			Vector3 toTarget = target.Transform.Position - Eye.Transform.Position;
 
-			// Check if the target is within the field of view
 			if ( Vector3.Dot( toTarget.Normal, Eye.Transform.Rotation.Forward.Normal ) >= MathF.Cos( MathX.DegreeToRadian( yourFieldOfViewAngle ) ) )
 			{
-				// Calculate the distance between the current object and the target
 				float distanceToTarget = toTarget.Length;
 
-				// Update the closest target if this one is closer
 				if ( distanceToTarget < closestDistance )
 				{
 					closestDistance = distanceToTarget;
