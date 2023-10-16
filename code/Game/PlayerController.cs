@@ -19,6 +19,8 @@ public class PlayerController : BaseComponent
 
 	Vector3 EyeStartPos;
 
+	float AimMultiplier = 1f;
+
 	public override void OnEnabled()
 	{
 		base.OnEnabled();
@@ -56,7 +58,7 @@ public class PlayerController : BaseComponent
 
 		foreach ( var target in PotentialAimTargets )
 		{
-			Vector3 toTarget = target.Transform.Position - Eye.Transform.Position;
+			Vector3 toTarget = target.GetBounds().Center - Eye.Transform.Position;
 
 			if ( Vector3.Dot( toTarget.Normal, Eye.Transform.Rotation.Forward.Normal ) >= MathF.Cos( MathX.DegreeToRadian( yourFieldOfViewAngle ) ) )
 			{
@@ -81,8 +83,8 @@ public class PlayerController : BaseComponent
 		// Eye input
 		EyeAngles.pitch = 0;
 
-		if ( Input.Down( "Left" ) ) EyeAngles.yaw += Time.Delta * 90f;
-		if ( Input.Down( "Right" ) ) EyeAngles.yaw -= Time.Delta * 90f;
+		if ( Input.Down( "Left" ) ) EyeAngles.yaw += Time.Delta * 90f * AimMultiplier;
+		if ( Input.Down( "Right" ) ) EyeAngles.yaw -= Time.Delta * 90f * AimMultiplier;
 
 		//EyeAngles.yaw -= Input.MouseDelta.x * 0.1f;
 		EyeAngles.roll = 0;
@@ -114,7 +116,6 @@ public class PlayerController : BaseComponent
 		}
 
 		CameraControl = true;
-
 
 		// read inputs
 		BuildWishVelocity();
@@ -151,7 +152,7 @@ public class PlayerController : BaseComponent
 
 			if ( Input.Down( "Attack2" ) )
 			{
-
+				AimMultiplier = 0.5f;
 				helper.Handedness = CitizenAnimationHelperScene.Hand.Both;
 				helper.HoldType = CitizenAnimationHelperScene.HoldTypes.Pistol;
 
@@ -159,7 +160,7 @@ public class PlayerController : BaseComponent
 
 				if ( closest != null )
 				{
-					helper.WithLookAt( new Transform( Body.Transform.Position, Body.Transform.Rotation ), Eye.Transform.Position, closest.Transform.Position );
+					helper.WithLookAt( new Transform( Body.Transform.Position, Body.Transform.Rotation ), Eye.Transform.Position, closest.GetBounds().Center );
 				}
 				else
 				{
@@ -168,6 +169,8 @@ public class PlayerController : BaseComponent
 			}
 			else
 			{
+				AimMultiplier = 1f;
+
 				helper.Handedness = CitizenAnimationHelperScene.Hand.Left;
 				helper.HoldType = CitizenAnimationHelperScene.HoldTypes.Pistol;
 				helper.WithLookAt( new Transform( Body.Transform.Position, Body.Transform.Rotation ), Eye.Transform.Position, Eye.Transform.Position + Eye.Transform.Rotation.Forward * 100f );
@@ -251,7 +254,7 @@ public class PlayerController : BaseComponent
 
 		if ( !WishVelocity.IsNearZeroLength ) WishVelocity = WishVelocity.Normal;
 
-		if ( Input.Down( "Run" ) ) WishVelocity *= 150.0f;
-		else WishVelocity *= 85.0f;
+		if ( Input.Down( "Run" ) ) WishVelocity *= 150.0f * AimMultiplier;
+		else WishVelocity *= 85.0f * AimMultiplier;
 	}
 }
