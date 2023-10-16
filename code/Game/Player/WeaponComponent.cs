@@ -38,13 +38,6 @@ public class WeaponComponent : BaseComponent
 		ActiveWeapon = null;
 	}
 
-	public override void OnEnabled()
-	{
-		base.OnEnabled();
-		
-		
-	}
-
 	public override void Update()
 	{
 		if ( Input.Pressed( "attack1" ) )

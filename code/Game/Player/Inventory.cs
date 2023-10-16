@@ -49,15 +49,15 @@ public class Inventory : BaseComponent
 
 	public override void Update()
 	{
-		if ( _player is null )
-			return;
-
-		var c_PlayerWeapon = _player.GetComponent<WeaponComponent>();
+		var c_PlayerWeapon = _player?.GetComponent<WeaponComponent>();
 		if ( c_PlayerWeapon is null )
 			return;
 		
 		if ( Input.Pressed( "slot1" ) )
 		{
+			/* Future: Check if we have a pistol in our inventory.
+			If so, we need to instantiate it with info from the Pistol InventoryItem. 
+			If not, we do not equip the pistol at all. */
 			c_PlayerWeapon.Equip( new PistolWeapon( true, "Pistol", Scene ) );
 		}
 	}
