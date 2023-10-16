@@ -56,6 +56,23 @@
           "Cookie": null,
           "LightColor": "0.91373,0.98039,1,1",
           "Radius": 500
+        },
+        {
+          "__type": "Vignette",
+          "__enabled": true,
+          "Center": "0.5,0.5",
+          "Color": "0,0,0,1",
+          "Intensity": 0.5,
+          "Roundness": 1,
+          "Smoothness": 1
+        },
+        {
+          "__type": "DepthOfField",
+          "__enabled": true,
+          "BackBlur": true,
+          "BlurSize": 200,
+          "FocalDistance": 512,
+          "FrontBlur": true
         }
       ]
     },

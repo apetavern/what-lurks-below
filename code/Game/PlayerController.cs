@@ -87,6 +87,11 @@ public class PlayerController : BaseComponent
 		//EyeAngles.yaw -= Input.MouseDelta.x * 0.1f;
 		EyeAngles.roll = 0;
 
+		if ( Camera != null )
+		{
+			Camera.GetComponent<DepthOfField>().FocalDistance = Vector3.DistanceBetween( Camera.Transform.Position, Eye.Transform.Position );
+		}
+
 		if ( CameraControl )
 		{
 			// Update camera position
@@ -95,9 +100,7 @@ public class PlayerController : BaseComponent
 			{
 				var camPos = Eye.Transform.Position - (EyeAngles.ToRotation() * Rotation.FromPitch( 15f )).Forward * CameraDistance;
 
-
 				if ( FirstPerson ) camPos = Eye.Transform.Position + EyeAngles.ToRotation().Forward * 8;
-
 
 				var tr = Physics.Trace.Ray( Eye.Transform.Position, camPos )
 					.WithAnyTags( "solid" )
