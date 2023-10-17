@@ -1,6 +1,6 @@
 {
   "RootObject": {
-    "Id": "526a2d2f-e5c9-4ef8-8753-09e4fe868f3d",
+    "Id": "db9d7cc3-d8cb-48cb-b2c0-0ac9bebd97e2",
     "Name": "sewer_room_01",
     "Enabled": true,
     "Position": "0,0,0",
@@ -10,12 +10,12 @@
       {
         "__type": "RoomChunkComponent",
         "__enabled": true,
-        "CameraTrigger": "d17ba22a-d543-45f0-8627-7b0f42be7905"
+        "CameraTrigger": "89cb8d2a-38c1-45b5-a098-05e8aa4adfa6"
       }
     ],
     "Children": [
       {
-        "Id": "91916a10-de0a-4922-893b-af73d82383e7",
+        "Id": "6b8b9a46-0b78-4503-a702-cd4e2bdce0ba",
         "Name": "floor_01",
         "Enabled": true,
         "Position": "128,256,0",
@@ -41,7 +41,7 @@
         ]
       },
       {
-        "Id": "2cc209c6-ad10-4634-9ea5-4a7a1208d7d4",
+        "Id": "2b017d39-b579-40bc-88f5-0c6be140744d",
         "Name": "floor_01",
         "Enabled": true,
         "Position": "-128,256,0",
@@ -67,7 +67,7 @@
         ]
       },
       {
-        "Id": "f4e41912-4b74-4737-b221-1220313809c7",
+        "Id": "d2d93c76-6342-4d5c-9ae5-1d65de77743a",
         "Name": "floor_01",
         "Enabled": true,
         "Position": "0,256,0",
@@ -93,7 +93,7 @@
         ]
       },
       {
-        "Id": "d5de140b-906a-481d-91f3-c41e15ee661d",
+        "Id": "22ec3df6-4d7e-4e06-98be-66649735b0bb",
         "Name": "floor_01",
         "Enabled": true,
         "Position": "0,128,0",
@@ -119,7 +119,7 @@
         ]
       },
       {
-        "Id": "129d29c4-89af-40d4-8367-90ebc79a95bb",
+        "Id": "f311d413-77b0-4f30-a02a-90146b44200e",
         "Name": "floor_01",
         "Enabled": true,
         "Position": "128,-256,0",
@@ -145,7 +145,7 @@
         ]
       },
       {
-        "Id": "d02b7b56-3f4c-4139-91c6-fcbe7c42c9f7",
+        "Id": "9086d768-2d9d-4953-883c-36b62588687f",
         "Name": "floor_01",
         "Enabled": true,
         "Position": "128,0,0",
@@ -171,7 +171,7 @@
         ]
       },
       {
-        "Id": "08e38a60-ab1c-4d11-905c-ed10d7d8193a",
+        "Id": "72a25a30-c60e-4f47-b1b5-c68fbfdf369f",
         "Name": "floor_01",
         "Enabled": true,
         "Position": "128,128,0",
@@ -197,7 +197,7 @@
         ]
       },
       {
-        "Id": "3f36e559-cf63-4594-af4f-0e7c54bc7d93",
+        "Id": "c7075aa6-7b17-4e46-859f-f510ea394442",
         "Name": "floor_01",
         "Enabled": true,
         "Position": "128,-128,0",
@@ -223,7 +223,7 @@
         ]
       },
       {
-        "Id": "25489f9c-8e1c-449d-b74a-e3cffb6ad87d",
+        "Id": "cf971844-dc2c-4efc-b28e-ba88451dde29",
         "Name": "floor_01",
         "Enabled": true,
         "Position": "-128,128,0",
@@ -249,7 +249,7 @@
         ]
       },
       {
-        "Id": "a535e79e-11a0-4cb7-a2c9-bd30fb63f8b5",
+        "Id": "98c7652f-27f6-4dc9-956c-dca8c863440a",
         "Name": "floor_01",
         "Enabled": true,
         "Position": "-128,-256,0",
@@ -275,7 +275,7 @@
         ]
       },
       {
-        "Id": "8fb3f275-7d00-4639-b7fb-33054be55c8b",
+        "Id": "c227cf34-aa5e-42f8-bf98-d3bce36c5f12",
         "Name": "floor_01",
         "Enabled": true,
         "Position": "-128,-128,0",
@@ -301,7 +301,7 @@
         ]
       },
       {
-        "Id": "de8a0a6b-3786-4794-8671-6cfdff01791c",
+        "Id": "c4b302d1-3975-428f-8468-4c94be5bce1c",
         "Name": "floor_01",
         "Enabled": true,
         "Position": "-256,-128,0",
@@ -327,7 +327,7 @@
         ]
       },
       {
-        "Id": "0e1ebb69-e719-4589-8191-26ede9ba1e7b",
+        "Id": "3d5287ab-c53c-49be-baf1-dc2acc6ea087",
         "Name": "floor_01",
         "Enabled": true,
         "Position": "-256,-256,0",
@@ -353,7 +353,7 @@
         ]
       },
       {
-        "Id": "2c4762fd-ac35-49dd-84b3-674379cfb41f",
+        "Id": "3d6f4014-fbda-4e45-b168-ca71bca9de05",
         "Name": "floor_01",
         "Enabled": true,
         "Position": "-256,0,0",
@@ -379,7 +379,7 @@
         ]
       },
       {
-        "Id": "8a59304a-5cba-4173-94c5-2e2a1c6ba58f",
+        "Id": "5b00db5c-de88-484d-a26a-260c253432c0",
         "Name": "floor_01",
         "Enabled": true,
         "Position": "-256,128,0",
@@ -405,7 +405,7 @@
         ]
       },
       {
-        "Id": "8aa1eea6-570c-4687-b5db-2f93db88e5ce",
+        "Id": "b99db484-345e-4e5f-aabe-cbba96bcc2b3",
         "Name": "floor_01",
         "Enabled": true,
         "Position": "-256,256,0",
@@ -431,7 +431,7 @@
         ]
       },
       {
-        "Id": "b867cb75-a742-4d6b-9984-763e46a682f4",
+        "Id": "cbc24d3d-5e06-4009-b4cd-bcc92439f205",
         "Name": "floor_01",
         "Enabled": true,
         "Position": "-128,0,0",
@@ -457,7 +457,7 @@
         ]
       },
       {
-        "Id": "112a89e7-1668-4ec4-b7e9-94d049ffa809",
+        "Id": "16fd012c-d27a-4e80-b07a-7725b0498802",
         "Name": "floor_01",
         "Enabled": true,
         "Position": "0,-256,0",
@@ -483,7 +483,7 @@
         ]
       },
       {
-        "Id": "4555d238-2882-4e5a-9859-2dc9a75a7394",
+        "Id": "7156bbfc-fe95-402e-8fd1-be1895026645",
         "Name": "floor_01",
         "Enabled": true,
         "Position": "0,-128,0",
@@ -509,7 +509,7 @@
         ]
       },
       {
-        "Id": "2ebe0784-8d6b-43d4-982e-a7c6939c0bd0",
+        "Id": "f1cd0ce0-dcc6-4c84-9bd5-2ef587de8f74",
         "Name": "floor_01",
         "Enabled": true,
         "Position": "0,0,0",
@@ -535,7 +535,7 @@
         ]
       },
       {
-        "Id": "f8b3ce95-9827-4f40-95cd-7715ae9d4a2c",
+        "Id": "d6440c83-a60b-4391-9614-bc868f2d93d7",
         "Name": "wall_01",
         "Enabled": true,
         "Position": "128,256,0",
@@ -561,7 +561,7 @@
         ]
       },
       {
-        "Id": "e08ea4de-1ac7-4b33-afb3-c71ac5d99a1a",
+        "Id": "5e62696e-2f8c-4068-bcd9-85eb7ba0e619",
         "Name": "wall_01",
         "Enabled": true,
         "Position": "128,256,128",
@@ -587,7 +587,7 @@
         ]
       },
       {
-        "Id": "6f0b12f8-0088-4e91-a8ed-56d4dabcbb78",
+        "Id": "98a91d35-31ff-4ac2-9621-26fdcddcfcd1",
         "Name": "wall_01",
         "Enabled": true,
         "Position": "128,128,0",
@@ -613,7 +613,7 @@
         ]
       },
       {
-        "Id": "7d1b0e58-6c17-44f8-858f-e561b7f5ef41",
+        "Id": "08fc0c2a-3844-468f-8b74-eaad822277f1",
         "Name": "wall_01",
         "Enabled": true,
         "Position": "128,128,128",
@@ -639,7 +639,7 @@
         ]
       },
       {
-        "Id": "293f16eb-bc67-4f13-9f3d-28069772d66e",
+        "Id": "181b7c73-f0dd-46d2-b025-fc8fe50ab1ee",
         "Name": "wall_01",
         "Enabled": true,
         "Position": "128,0,128",
@@ -665,7 +665,7 @@
         ]
       },
       {
-        "Id": "d17bc66b-1ea6-430e-9705-b1af94d3bf1c",
+        "Id": "a61ae955-576b-4c58-a715-01e583d1541b",
         "Name": "wall_01",
         "Enabled": true,
         "Position": "128,-128,0",
@@ -691,7 +691,7 @@
         ]
       },
       {
-        "Id": "abb5bafd-bc88-42b6-9b51-02bc275d746e",
+        "Id": "a6a43efa-48ba-434e-85f6-bc2788080ef7",
         "Name": "wall_01",
         "Enabled": true,
         "Position": "128,-128,128",
@@ -717,7 +717,7 @@
         ]
       },
       {
-        "Id": "1debfb62-03bc-49f3-bf17-62be13b69289",
+        "Id": "67b5956e-0950-4de7-be3b-5136401aac84",
         "Name": "door_01",
         "Enabled": true,
         "Position": "128,0,0",
@@ -726,7 +726,7 @@
         "__Prefab": "prefabs/pieces/door_01.object"
       },
       {
-        "Id": "c99e8e4a-6ac6-41bc-ae3d-c7aa177a5d28",
+        "Id": "5fba3bf5-73b8-4bb4-b7b7-91d26e86e29b",
         "Name": "wall_01",
         "Enabled": true,
         "Position": "128,-256,0",
@@ -752,7 +752,7 @@
         ]
       },
       {
-        "Id": "cc016c86-de53-4282-a0dd-6c68668679c9",
+        "Id": "a308e0b7-3cb4-4566-a4d6-1b98418b14b4",
         "Name": "wall_01",
         "Enabled": true,
         "Position": "128,-256,128",
@@ -778,7 +778,7 @@
         ]
       },
       {
-        "Id": "5661cd6d-f0fb-48ea-b770-ab8de0f0a8e7",
+        "Id": "4b607771-0907-480e-8fb1-f3e155498432",
         "Name": "wall_01",
         "Enabled": true,
         "Position": "-384,-256,0",
@@ -804,7 +804,7 @@
         ]
       },
       {
-        "Id": "02c26dbe-42fb-4f19-acb5-34d1e407c3f4",
+        "Id": "1a25b1a1-c5f9-4012-9bfe-c68709c6b984",
         "Name": "wall_01",
         "Enabled": true,
         "Position": "-256,-256,0",
@@ -830,7 +830,7 @@
         ]
       },
       {
-        "Id": "58724399-b237-4b3b-bc05-97946135391e",
+        "Id": "bd0c31fa-fb2a-4e62-8c4d-62aef924be17",
         "Name": "wall_01",
         "Enabled": true,
         "Position": "-256,-256,128",
@@ -856,7 +856,7 @@
         ]
       },
       {
-        "Id": "03a2d07c-6c21-4dd3-96dc-9c013d19cc34",
+        "Id": "b5bca22f-5589-4ae5-8328-fb4103f04381",
         "Name": "wall_01",
         "Enabled": true,
         "Position": "-128,-256,0",
@@ -882,7 +882,7 @@
         ]
       },
       {
-        "Id": "81e3666e-82a1-4882-9f6d-ddb27802e981",
+        "Id": "4b221de7-c4f4-44b2-a2a6-4266820fa70b",
         "Name": "wall_01",
         "Enabled": true,
         "Position": "-128,-256,128",
@@ -908,7 +908,7 @@
         ]
       },
       {
-        "Id": "5b3b1cf8-6296-499b-b731-d81676eaeed4",
+        "Id": "f465de54-80ab-4fc9-940f-529db9f577a5",
         "Name": "wall_01",
         "Enabled": true,
         "Position": "0,-256,0",
@@ -934,7 +934,7 @@
         ]
       },
       {
-        "Id": "f7803f9c-6940-49b5-8429-ec59d552e971",
+        "Id": "41545e7c-8ec2-4710-9612-44d3afedfbe0",
         "Name": "wall_01",
         "Enabled": true,
         "Position": "0,-256,128",
@@ -960,7 +960,7 @@
         ]
       },
       {
-        "Id": "192f752a-1141-4ced-9dc6-672df3475462",
+        "Id": "f6bb8250-b5c9-470b-9463-4254c70bffaa",
         "Name": "wall_01",
         "Enabled": true,
         "Position": "128,-256,0",
@@ -986,7 +986,7 @@
         ]
       },
       {
-        "Id": "9fa5fd53-b22a-4c1b-b516-8d4704ff3bca",
+        "Id": "07cdf0ea-bf2c-431d-bbfa-ae281fe35f58",
         "Name": "wall_01",
         "Enabled": true,
         "Position": "128,-256,128",
@@ -1012,7 +1012,7 @@
         ]
       },
       {
-        "Id": "b7033b35-4e76-44e9-b007-de57ea1c9844",
+        "Id": "70597330-fbcb-481e-b760-b45dc876dffc",
         "Name": "wall_01",
         "Enabled": true,
         "Position": "-384,0,0",
@@ -1038,7 +1038,7 @@
         ]
       },
       {
-        "Id": "7e949baa-5630-4261-af05-5833bbe98d2d",
+        "Id": "013bfe8d-e0ad-4814-8e3a-59e447391ebd",
         "Name": "wall_01",
         "Enabled": true,
         "Position": "-384,0,128",
@@ -1064,7 +1064,7 @@
         ]
       },
       {
-        "Id": "c95d35e5-2301-4cb1-9db5-5c34b0f31e49",
+        "Id": "62252952-2fea-40c0-9452-0d1b8d9b671c",
         "Name": "wall_01",
         "Enabled": true,
         "Position": "-384,128,128",
@@ -1090,7 +1090,7 @@
         ]
       },
       {
-        "Id": "e622f389-1f2c-4383-ad0f-9853689b3527",
+        "Id": "d0623938-d801-4ab5-942e-b99a26bd2867",
         "Name": "wall_01",
         "Enabled": true,
         "Position": "-384,256,128",
@@ -1116,7 +1116,7 @@
         ]
       },
       {
-        "Id": "42828590-b026-4cae-ba79-7e4ac78245e1",
+        "Id": "7d2a325b-ef12-40fb-ba9b-16987e66a627",
         "Name": "wall_01",
         "Enabled": true,
         "Position": "-384,-128,128",
@@ -1142,7 +1142,7 @@
         ]
       },
       {
-        "Id": "d01fa32a-10fe-4c11-a656-7044bae7861e",
+        "Id": "bda39ef7-5b25-4878-be3c-adfff45b7ad4",
         "Name": "wall_01",
         "Enabled": true,
         "Position": "-384,-256,128",
@@ -1168,7 +1168,7 @@
         ]
       },
       {
-        "Id": "b0bdc114-d33d-4b67-a5a3-dd9443e9c95c",
+        "Id": "ac4b640f-cd26-4003-b8c5-1de5c51bcab8",
         "Name": "wall_01",
         "Enabled": true,
         "Position": "-384,128,0",
@@ -1194,7 +1194,7 @@
         ]
       },
       {
-        "Id": "f4691584-be0d-4b2b-9433-25f10668ba39",
+        "Id": "42f93edf-4d1d-4633-a77d-b52b6b7a04b0",
         "Name": "wall_01",
         "Enabled": true,
         "Position": "-384,256,0",
@@ -1220,7 +1220,7 @@
         ]
       },
       {
-        "Id": "c9a1c14c-5cb6-4204-b5f9-78a88ab0abc0",
+        "Id": "8b82fda7-edf7-4a46-86e2-4187be20af1a",
         "Name": "wall_01",
         "Enabled": true,
         "Position": "-384,384,0",
@@ -1246,7 +1246,7 @@
         ]
       },
       {
-        "Id": "522f4c81-ca2c-4bfc-8738-e17468a475b5",
+        "Id": "2a445554-8915-4035-be37-b883eece7eb0",
         "Name": "wall_01",
         "Enabled": true,
         "Position": "-384,384,128",
@@ -1272,7 +1272,7 @@
         ]
       },
       {
-        "Id": "e717b34e-ebea-4736-9a00-221c7fae4f43",
+        "Id": "629574fe-5289-4373-a659-5c682e7106d7",
         "Name": "wall_01",
         "Enabled": true,
         "Position": "-256,384.0002,0",
@@ -1298,7 +1298,7 @@
         ]
       },
       {
-        "Id": "7fdaac6e-4ba1-4e6b-891a-1d13e1108b24",
+        "Id": "18fcceca-a28b-4a9a-9461-8300ded9303a",
         "Name": "wall_01",
         "Enabled": true,
         "Position": "-256,384.0002,128",
@@ -1324,7 +1324,7 @@
         ]
       },
       {
-        "Id": "ddb8e6e0-0bf5-41c6-8a29-c1d2a118eaf2",
+        "Id": "b927f5de-c01e-418a-b626-bf303562dd69",
         "Name": "wall_01",
         "Enabled": true,
         "Position": "-128,384,0",
@@ -1350,7 +1350,7 @@
         ]
       },
       {
-        "Id": "33a55c86-e6e1-4065-87d5-461b3c4d9cf7",
+        "Id": "318e14d6-b86d-49f8-bda1-c18067678e52",
         "Name": "wall_01",
         "Enabled": true,
         "Position": "-128,384,128",
@@ -1376,7 +1376,7 @@
         ]
       },
       {
-        "Id": "a6482a24-a425-4d35-b085-8d45526ee51c",
+        "Id": "a3f89b8d-e52f-42b5-8e4e-cf4cac2e3d5a",
         "Name": "wall_01",
         "Enabled": true,
         "Position": "0,384,0",
@@ -1402,7 +1402,7 @@
         ]
       },
       {
-        "Id": "85bc4ef7-6aa4-4f62-a247-e668eab444f4",
+        "Id": "d5026838-8105-484a-a000-a478ca6bf4a3",
         "Name": "wall_01",
         "Enabled": true,
         "Position": "0,384,128",
@@ -1428,7 +1428,7 @@
         ]
       },
       {
-        "Id": "c84ed7f9-966f-4462-abdb-4a55cf7f1f54",
+        "Id": "6bf6e41c-bb3a-4029-af15-e0a23269031d",
         "Name": "door_02",
         "Enabled": true,
         "Position": "-384,-128,0",
@@ -1437,7 +1437,7 @@
         "__Prefab": "prefabs/pieces/door_02.object"
       },
       {
-        "Id": "6eeba5a0-9e8f-40b8-a87a-6a40a34de277",
+        "Id": "643905d0-bcc2-4d8f-b999-ea1ed371f75d",
         "Name": "stairs_02",
         "Enabled": true,
         "Position": "0,0,0",
@@ -1463,7 +1463,7 @@
         ]
       },
       {
-        "Id": "928ee907-672f-4b2e-babb-6fd8d2074b77",
+        "Id": "8c2f6a88-bf97-4a10-9eb0-0c749d11be5d",
         "Name": "stairs_02",
         "Enabled": true,
         "Position": "0,128,0",
@@ -1489,7 +1489,7 @@
         ]
       },
       {
-        "Id": "02a17843-fe6b-4250-ae78-25b0c5c220af",
+        "Id": "6cc9ac4b-2ba0-4d63-8aed-f43ff28de05d",
         "Name": "stairs_02",
         "Enabled": true,
         "Position": "-128,256,0",
@@ -1515,7 +1515,7 @@
         ]
       },
       {
-        "Id": "b4bbebbe-3f96-4983-9731-18de15c37f63",
+        "Id": "e8b89b2e-b576-457b-be24-14ec543a7e5a",
         "Name": "stairs_02",
         "Enabled": true,
         "Position": "-127.9999,128,0",
@@ -1541,7 +1541,7 @@
         ]
       },
       {
-        "Id": "0fb46592-b586-4df9-ada2-ec33a754a124",
+        "Id": "c8b5414b-18e3-406b-90e0-bdb3759da557",
         "Name": "stairs_02",
         "Enabled": true,
         "Position": "-127.9999,128,0",
@@ -1567,7 +1567,7 @@
         ]
       },
       {
-        "Id": "b13792e7-f6cb-411b-a6b5-e2607f10e7e3",
+        "Id": "07132459-a111-483f-88ee-441380895fef",
         "Name": "stairs_02",
         "Enabled": true,
         "Position": "-128,384,0",
@@ -1593,7 +1593,7 @@
         ]
       },
       {
-        "Id": "beb9cda5-8290-41dc-ac44-acedef5becef",
+        "Id": "2e1436e6-6c06-4b66-ad04-a89d9ffe5ad8",
         "Name": "stairs_02",
         "Enabled": true,
         "Position": "0,256,0",
@@ -1619,7 +1619,7 @@
         ]
       },
       {
-        "Id": "452be1d9-b439-497b-8dee-cf72f8776a10",
+        "Id": "f06587ef-c5f3-4109-a81a-eef7353209bf",
         "Name": "stairs_02",
         "Enabled": true,
         "Position": "0,-128,0",
@@ -1645,7 +1645,7 @@
         ]
       },
       {
-        "Id": "0f67f906-013e-4756-8638-a7b378182c62",
+        "Id": "01307588-47c6-47ca-a9d7-e88799877554",
         "Name": "stairs_02",
         "Enabled": true,
         "Position": "-128,-128.0001,0",
@@ -1671,7 +1671,7 @@
         ]
       },
       {
-        "Id": "50d0eea0-bb0e-4b99-b65f-e60281b77164",
+        "Id": "727fe785-d78f-4f20-90ce-c4788d1ca3f8",
         "Name": "stairs_02",
         "Enabled": true,
         "Position": "-256,-128.0001,0",
@@ -1697,7 +1697,7 @@
         ]
       },
       {
-        "Id": "ae25b580-f3f9-4ae7-b4f3-b2b020021b5c",
+        "Id": "be111f86-b129-44e1-bbf5-673584848a16",
         "Name": "stairs_02",
         "Enabled": true,
         "Position": "-256,0,0",
@@ -1723,7 +1723,7 @@
         ]
       },
       {
-        "Id": "dde1a118-3a20-4433-9c1b-980a47964729",
+        "Id": "f80ca12f-707f-45fd-8928-b6b7eaccf6ba",
         "Name": "stairs_02",
         "Enabled": true,
         "Position": "-256,128,0",
@@ -1749,7 +1749,7 @@
         ]
       },
       {
-        "Id": "d17ba22a-d543-45f0-8627-7b0f42be7905",
+        "Id": "89cb8d2a-38c1-45b5-a098-05e8aa4adfa6",
         "Name": "Zone",
         "Enabled": true,
         "Position": "-128,64,0",
@@ -1759,7 +1759,7 @@
           {
             "__type": "CameraTriggerComponent",
             "__enabled": true,
-            "CameraPoint": "368bd041-abd3-431d-9a9c-78a8cb385999",
+            "CameraPoint": "fc1f8bc3-7d0b-4f6e-9758-1f1108992c8e",
             "FollowPlayer": true
           },
           {
@@ -1773,7 +1773,7 @@
         ],
         "Children": [
           {
-            "Id": "368bd041-abd3-431d-9a9c-78a8cb385999",
+            "Id": "fc1f8bc3-7d0b-4f6e-9758-1f1108992c8e",
             "Name": "Camera",
             "Enabled": true,
             "Position": "0,-302.8788,193.0658",
@@ -1783,7 +1783,7 @@
         ]
       },
       {
-        "Id": "759e4bcc-5061-435e-b473-472c03588ae0",
+        "Id": "ab77ce36-22bb-44e5-8373-43523731a00a",
         "Name": "Spot Light",
         "Enabled": true,
         "Position": "-115.8027,366.332,231.2855",
@@ -1803,7 +1803,7 @@
         ]
       },
       {
-        "Id": "0d748e25-ffb6-43bd-bbc8-c319d36df37d",
+        "Id": "22400965-6615-4c3f-ba81-ce28050e28e3",
         "Name": "barrel",
         "Enabled": true,
         "Position": "26.23622,343.1266,0.0009765625",
@@ -1819,21 +1819,48 @@
             "Tint": "1,1,1,1"
           },
           {
-            "__type": "ModelCollider",
-            "__enabled": true,
-            "IsTrigger": false,
-            "Model": "models/environment/breakables/barrel/barrel.vmdl",
-            "Surface": null,
-            "Tags": ""
-          },
-          {
             "__type": "AimableTargetComponent",
             "__enabled": true
+          },
+          {
+            "__type": "HealthComponent",
+            "__enabled": true,
+            "InitialHealth": 12,
+            "IsPlayer": false
+          },
+          {
+            "__type": "CharacterController",
+            "__enabled": true,
+            "Acceleration": 10,
+            "GroundAngle": 45,
+            "Height": 32,
+            "Radius": 16,
+            "StepHeight": 18
+          }
+        ],
+        "Children": [
+          {
+            "Id": "99da5afe-4395-4890-b1d5-89b85b2da42a",
+            "Name": "Object",
+            "Enabled": true,
+            "Position": "0,0,0",
+            "Rotation": "0,0,0,1",
+            "Scale": "1,1,1",
+            "Components": [
+              {
+                "__type": "ModelCollider",
+                "__enabled": true,
+                "IsTrigger": false,
+                "Model": "models/environment/breakables/barrel/barrel.vmdl",
+                "Surface": null,
+                "Tags": "solid"
+              }
+            ]
           }
         ]
       },
       {
-        "Id": "f72c5b32-4f8a-4318-9e5b-08e7635349b1",
+        "Id": "d8a45f49-f62f-4d92-8f51-ce8c8f957c91",
         "Name": "barrel",
         "Enabled": true,
         "Position": "63.70639,320.0157,0.0005950722",
@@ -1849,21 +1876,48 @@
             "Tint": "1,1,1,1"
           },
           {
-            "__type": "ModelCollider",
-            "__enabled": true,
-            "IsTrigger": false,
-            "Model": "models/environment/breakables/barrel/barrel.vmdl",
-            "Surface": null,
-            "Tags": ""
-          },
-          {
             "__type": "AimableTargetComponent",
             "__enabled": true
+          },
+          {
+            "__type": "HealthComponent",
+            "__enabled": true,
+            "InitialHealth": 12,
+            "IsPlayer": false
+          },
+          {
+            "__type": "CharacterController",
+            "__enabled": true,
+            "Acceleration": 10,
+            "GroundAngle": 45,
+            "Height": 32,
+            "Radius": 16,
+            "StepHeight": 18
+          }
+        ],
+        "Children": [
+          {
+            "Id": "d59c6eaa-8591-4c67-8da7-959b7773f416",
+            "Name": "Object",
+            "Enabled": true,
+            "Position": "0,0,0",
+            "Rotation": "0,0,0,1",
+            "Scale": "1,1,1",
+            "Components": [
+              {
+                "__type": "ModelCollider",
+                "__enabled": true,
+                "IsTrigger": false,
+                "Model": "models/environment/breakables/barrel/barrel.vmdl",
+                "Surface": null,
+                "Tags": "solid"
+              }
+            ]
           }
         ]
       },
       {
-        "Id": "706fe69f-7a40-4f2b-b61f-577d8b2ff72a",
+        "Id": "51a01a5d-735d-4752-aaab-62dcc99094de",
         "Name": "test_enemy",
         "Enabled": true,
         "Position": "-305.0778,283.3403,-0.1829863",
@@ -1872,7 +1926,7 @@
         "__Prefab": "prefabs/enemies/test_enemy.object"
       },
       {
-        "Id": "52fe063e-926f-46aa-886e-116fd0b7c8bb",
+        "Id": "6ab70e15-8b35-4907-a10c-5da870b599d1",
         "Name": "test_enemy",
         "Enabled": true,
         "Position": "82.58681,-195.5721,-0.1829775",
