@@ -164,7 +164,9 @@ public class PlayerController : BaseComponent
 
 				if ( closest != null )
 				{
-					helper.WithLookAt( new Transform( Body.Transform.Position, Body.Transform.Rotation ), Eye.Transform.Position, closest.GetBounds().Center );
+					Vector3 targetPos = closest.GetBounds().Center;
+					Eye.Transform.Rotation = Rotation.LookAt( targetPos - Eye.Transform.Position, Vector3.Up );
+					helper.WithLookAt( new Transform( Body.Transform.Position, Body.Transform.Rotation ), Eye.Transform.Position, targetPos );
 				}
 				else
 				{

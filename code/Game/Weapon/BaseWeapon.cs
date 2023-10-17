@@ -36,10 +36,8 @@ public class BaseWeapon : GameObject
 	public virtual void PrimaryFire( Vector3 position, Vector3 direction )
 	{
 		var muzzle = c_AnimatedModel.GetAttachmentTransform( "muzzle" );
-		// why's it on the floor
-		Log.Info( muzzle.Position );
-		
-		var tr = Physics.Trace.Ray( muzzle.Position, muzzle.Position + direction * TraceLength )
+
+		var tr = Physics.Trace.Ray( position, position + direction * TraceLength )
 			.WithoutTags( "trigger" )
 			.Run();
 
