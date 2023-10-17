@@ -41,22 +41,12 @@ public class BaseWeapon : GameObject
 			.WithAnyTags( "solid", "enemy" )
 			.Run();
 
-		// Debug bc wtf
-		if ( tr.Hit )
-		{
-			Log.Info( tr.Body.GameObject );
-			Gizmo.Draw.LineThickness = 4f;
-			Gizmo.Draw.Line( tr.StartPosition, tr.HitPosition );
-		}
-
 		if ( tr.Hit && tr.Body.GameObject is GameObject hitObject )
 		{
 			HealthComponent hitHealth = hitObject.Parent?.GetComponent<HealthComponent>() ?? null;
 			if ( hitHealth != null )
 			{
 				hitHealth.Damage( Damage );
-
-				Log.Info( "yay!" );
 			}
 		}
 	}
