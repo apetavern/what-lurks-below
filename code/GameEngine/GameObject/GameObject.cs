@@ -498,6 +498,25 @@ public partial class GameObject
 	{
 		var renderers = GetComponents<ModelComponent>( true, true );
 
-		return BBox.FromBoxes( renderers.Select( x => x.Bounds ) );
+		var animatedrenderers = GetComponents<AnimatedModelComponent>( true, true );
+
+		IEnumerable<BBox> boxes;
+
+		if ( animatedrenderers.Count() > 0 )
+		{
+			boxes = animatedrenderers.Select( x => x.Bounds );
+		}
+		else if ( renderers.Count() > 0 )
+		{
+			boxes = renderers.Select( x => x.Bounds );
+		}
+		else
+		{
+			boxes = Enumerable.Repeat( new BBox( Transform.Position, 1f ), 1 );
+		}
+
+
+
+		return BBox.FromBoxes( boxes );
 	}
 }
