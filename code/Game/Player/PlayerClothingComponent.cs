@@ -5,7 +5,7 @@ using System.Linq;
 using System.Collections.Generic;
 using System;
 
-
+[Icon( "checkroom", "red", "white" )]
 public sealed class PlayerClothingComponent : BaseComponent
 {
 	/*	[ConVar.Menu( "avatar", Saved = true, ClientData = true )]
@@ -20,7 +20,7 @@ public sealed class PlayerClothingComponent : BaseComponent
 		*/
 		var allclothes = ResourceLibrary.GetAll<Clothing>();
 
-		clothes.Clothing.Add( allclothes.Where( X => X.Category == Clothing.ClothingCategory.Hair ).OrderBy( item => Game.Random.Next() ).FirstOrDefault() );
+		//clothes.Clothing.Add( allclothes.Where( X => X.Category == Clothing.ClothingCategory.Hair ).OrderBy( item => Game.Random.Next() ).FirstOrDefault() );
 		clothes.Clothing.Add( allclothes.Where( X => X.Category == Clothing.ClothingCategory.Tops ).OrderBy( item => Game.Random.Next() ).FirstOrDefault() );
 		clothes.Clothing.Add( allclothes.Where( X => X.Category == Clothing.ClothingCategory.Bottoms ).OrderBy( item => Game.Random.Next() ).FirstOrDefault() );
 		clothes.Clothing.Add( allclothes.Where( X => X.Category == Clothing.ClothingCategory.Footwear ).OrderBy( item => Game.Random.Next() ).FirstOrDefault() );
