@@ -6,6 +6,13 @@
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
+    "Components": [
+      {
+        "__type": "RoomChunkComponent",
+        "__enabled": true,
+        "CameraTrigger": "89cb8d2a-38c1-45b5-a098-05e8aa4adfa6"
+      }
+    ],
     "Children": [
       {
         "Id": "a2567d35-7413-4f86-a692-27d6aff73918",
