@@ -192,6 +192,11 @@ public struct CitizenAnimationHelperScene
 		Owner.SetAnimParameter( "b_attack", true );
 	}
 
+	public void TriggerReload()
+	{
+		Owner.SetAnimParameter( "b_reload", true );
+	}
+
 	public void TriggerDeploy()
 	{
 		Owner.SetAnimParameter( "b_deploy", true );

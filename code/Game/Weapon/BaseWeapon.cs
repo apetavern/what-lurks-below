@@ -11,8 +11,21 @@ public class BaseWeapon : GameObject
 	public virtual CitizenAnimationHelperScene.Hand AlternateHandedness => CitizenAnimationHelperScene.Hand.Left;
 	public virtual bool CanAimFocus => false;
 
+	public int defaultAmmoCount = 6;
+
+	public virtual int AmmoCount
+	{
+		get => defaultAmmoCount;
+		set => defaultAmmoCount = value;
+	}
+	public virtual int MaxAmmo => 6;
 	public virtual float Damage => 10f;
 	public virtual float TraceLength => 1000f;
+
+	public bool Reloading;
+
+	public TimeSince TimeSinceReloadStart;
+	public virtual float ReloadTime => 1f;
 
 	protected AnimatedModelComponent c_AnimatedModel;
 
@@ -35,19 +48,41 @@ public class BaseWeapon : GameObject
 
 	public virtual void PrimaryFire( Vector3 position, Vector3 direction )
 	{
-		var muzzle = c_AnimatedModel.GetAttachmentTransform( "muzzle" );
-
-		var tr = Physics.Trace.Ray( muzzle.Position, muzzle.Position + direction.Normal * TraceLength )
-			.WithAnyTags( "solid", "enemy" )
-			.Run();
-
-		if ( tr.Hit && tr.Body.GameObject is GameObject hitObject )
+		if ( Reloading )
 		{
-			HealthComponent hitHealth = hitObject.Parent?.GetComponent<HealthComponent>() ?? null;
-			if ( hitHealth != null )
+			if ( TimeSinceReloadStart > ReloadTime )
 			{
-				hitHealth.Damage( Damage );
+				AmmoCount = MaxAmmo;
+				Reloading = false;
 			}
+			else
+			{
+				return;
+			}
+		}
+		if ( AmmoCount > 0 )
+		{
+			var muzzle = c_AnimatedModel.GetAttachmentTransform( "muzzle" );
+
+			var tr = Physics.Trace.Ray( muzzle.Position, muzzle.Position + direction.Normal * TraceLength )
+				.WithAnyTags( "solid", "enemy" )
+				.Run();
+
+			if ( tr.Hit && tr.Body.GameObject is GameObject hitObject )
+			{
+				HealthComponent hitHealth = hitObject.Parent?.GetComponent<HealthComponent>() ?? null;
+				if ( hitHealth != null )
+				{
+					hitHealth.Damage( Damage );
+				}
+			}
+			AmmoCount--;
+		}
+		else
+		{
+			//reload
+			TimeSinceReloadStart = 0f;
+			Reloading = true;
 		}
 	}
 

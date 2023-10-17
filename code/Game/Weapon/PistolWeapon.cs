@@ -9,11 +9,21 @@ public class PistolWeapon : BaseWeapon
 	public override CitizenAnimationHelperScene.Hand Handedness => CitizenAnimationHelperScene.Hand.Left;
 	public override CitizenAnimationHelperScene.Hand AlternateHandedness => CitizenAnimationHelperScene.Hand.Both;
 	public override bool CanAimFocus => true;
-
+	public override int AmmoCount
+	{
+		get => base.AmmoCount;
+		set
+		{
+			base.AmmoCount = value;
+		}
+	}
+	public override int MaxAmmo => 15;
 	public override float Damage => 6f;
+	public override float ReloadTime => 0.6f;
 
 	internal PistolWeapon( bool enabled, string name, Scene scene ) : base( enabled, name, scene )
 	{
+		defaultAmmoCount = MaxAmmo;
 	}
 
 	public override void OnIdle( CitizenAnimationHelperScene helper )
@@ -24,8 +34,27 @@ public class PistolWeapon : BaseWeapon
 
 	public override void OnPrimaryPressed( CitizenAnimationHelperScene helper )
 	{
-		helper.TriggerAttack();
-		Sound.FromWorld( "weapons/rust_pistol/sound/rust_pistol.shoot.sound", Transform.Position );
+		if ( Reloading )
+		{
+			if ( TimeSinceReloadStart > ReloadTime )
+			{
+				AmmoCount = MaxAmmo;
+				Reloading = false;
+			}
+			else
+			{
+				return;
+			}
+		}
+		if ( AmmoCount > 0 )
+		{
+			helper.TriggerAttack();
+			Sound.FromWorld( "weapons/rust_pistol/sound/rust_pistol.shoot.sound", Transform.Position );
+		}
+		else
+		{
+			helper.TriggerReload();
+		}
 	}
 
 	public override void OnSecondaryPressed( CitizenAnimationHelperScene helper )
