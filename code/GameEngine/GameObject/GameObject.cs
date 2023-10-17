@@ -502,13 +502,13 @@ public partial class GameObject
 
 		IEnumerable<BBox> boxes;
 
-		if ( animatedrenderers.Count() > 0 )
-		{
-			boxes = animatedrenderers.Select( x => x.Bounds );
-		}
-		else if ( renderers.Count() > 0 )
+		if ( renderers.Count() > 0 )
 		{
 			boxes = renderers.Select( x => x.Bounds );
+		}
+		else if ( animatedrenderers.Count() > 0 )
+		{
+			boxes = animatedrenderers.Select( x => x.Bounds );
 		}
 		else
 		{
