@@ -14,7 +14,7 @@ public class WeaponComponent : BaseComponent
 	public override void OnStart()
 	{
 		base.OnStart();
-		
+
 		_player = Scene.GetAllObjects( true ).FirstOrDefault( p => p.Name == "player" );
 		_body = _player?.GetComponent<PlayerController>().Body;
 		Equip( new PistolWeapon( true, "Pistol", Scene ) );
@@ -27,7 +27,7 @@ public class WeaponComponent : BaseComponent
 			Holster( ActiveWeapon );
 			return;
 		}
-		
+
 		ActiveWeapon = weapon;
 		ActiveWeapon?.SetActive( _body );
 	}
@@ -42,18 +42,22 @@ public class WeaponComponent : BaseComponent
 	{
 		var citizenModel = _body.GetComponent<AnimatedModelComponent>().SceneModel;
 		var helper = new CitizenAnimationHelperScene( citizenModel );
-		
+
 		if ( ActiveWeapon is null )
 			helper.HoldType = CitizenAnimationHelperScene.HoldTypes.None;
-		
+
 		ActiveWeapon?.OnIdle( helper );
-		
+
 		if ( Input.Pressed( "attack1" ) )
 		{
+			var player = _player?.GetComponent<PlayerController>();
+			ActiveWeapon?.PrimaryFire( player.Eye.Transform.Position, player.Eye.Transform.Rotation.Forward );
 			ActiveWeapon?.OnPrimaryPressed( helper );
 		}
 		if ( Input.Pressed( "attack2" ) )
 		{
+			var player = _player?.GetComponent<PlayerController>();
+			ActiveWeapon?.SecondaryFire( player.Eye.Transform.Position, player.Eye.Transform.Rotation.Forward );
 			ActiveWeapon?.OnSecondaryPressed( helper );
 		}
 

@@ -13,7 +13,7 @@ public class PlayerController : BaseComponent
 	public GameObject Player => GameObject;
 
 	[Property] public GameObject Body { get; set; }
-	[Property] GameObject Eye { get; set; }
+	[Property] public GameObject Eye { get; set; }
 	[Property] public GameObject Camera { get; set; }
 	[Property] bool FirstPerson { get; set; }
 
@@ -148,7 +148,7 @@ public class PlayerController : BaseComponent
 			var helper = new CitizenAnimationHelperScene( Body.GetComponent<AnimatedModelComponent>().SceneModel );
 			helper.WithVelocity( cc.Velocity );
 			helper.IsGrounded = cc.IsOnGround;
-			
+
 			if ( Input.Pressed( "Jump" ) && cc.IsOnGround )
 			{
 				helper.TriggerJump();

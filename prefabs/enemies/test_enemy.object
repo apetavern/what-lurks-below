@@ -26,8 +26,13 @@
         "AggroRange": 125.050026,
         "Body": "3142addf-7994-4b5e-99ca-7332a5237188",
         "Friction": 0.9499998,
-        "Health": 1,
         "Speed": 34.799995
+      },
+      {
+        "__type": "HealthComponent",
+        "__enabled": true,
+        "InitialHealth": 25,
+        "IsPlayer": false
       }
     ],
     "Children": [
@@ -35,7 +40,7 @@
         "Id": "3142addf-7994-4b5e-99ca-7332a5237188",
         "Name": "Epic Enemy",
         "Enabled": true,
-        "Position": "0,0,24.8486",
+        "Position": "0,0,22.53286",
         "Rotation": "0,0,0,1",
         "Scale": "0.7,0.7,0.7",
         "Components": [

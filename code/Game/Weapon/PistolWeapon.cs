@@ -10,8 +10,9 @@ public class PistolWeapon : BaseWeapon
 	public override CitizenAnimationHelperScene.Hand AlternateHandedness => CitizenAnimationHelperScene.Hand.Both;
 	public override bool CanAimFocus => true;
 
+	public override float Damage => 6f;
 
-	internal PistolWeapon(bool enabled, string name, Scene scene) : base(enabled, name, scene)
+	internal PistolWeapon( bool enabled, string name, Scene scene ) : base( enabled, name, scene )
 	{
 	}
 

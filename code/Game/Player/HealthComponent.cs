@@ -8,7 +8,13 @@ public class HealthComponent : BaseComponent
 	public float Health { get; set; }
 
 	[Property] public float InitialHealth { get; set; }
-	
+	[Property] public bool IsPlayer { get; set; } = false;
+
+	public bool IsDead = false;
+
+	public delegate void DeathEvent();
+	public event DeathEvent OnDeath;
+
 	public override void OnStart()
 	{
 		base.OnStart();
@@ -20,7 +26,22 @@ public class HealthComponent : BaseComponent
 	{
 		base.Update();
 
-		if ( Vitals.Instance is not null )
+		if ( IsPlayer && Vitals.Instance is not null )
 			Vitals.Instance.Health = $"{Health:F0}";
+	}
+
+	public void Damage( float amount )
+	{
+		if ( IsDead ) return;
+
+		Health -= amount;
+		if ( Health <= 0f )
+		{
+			IsDead = true;
+			OnDeath?.Invoke();
+			Health = 0f;
+		}
+
+		Log.Info( $"Health: {Health}" );
 	}
 }

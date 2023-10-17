@@ -7,7 +7,6 @@ public class EnemyController : BaseComponent
 {
     [Property] public float Speed { get; set; } = 1f;
     [Property] public float Friction { get; set; } = 0.5f;
-    [Property] public float Health { get; set; } = 1f;
     [Property] public float AggroRange { get; set; } = 1f;
 
     [Property] public GameObject Body { get; set; }

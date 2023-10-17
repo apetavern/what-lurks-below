@@ -10,7 +10,8 @@
       {
         "__type": "HealthComponent",
         "__enabled": true,
-        "InitialHealth": 100
+        "InitialHealth": 100,
+        "IsPlayer": true
       },
       {
         "__type": "CharacterController",
