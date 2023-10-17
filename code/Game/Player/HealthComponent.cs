@@ -15,6 +15,9 @@ public class HealthComponent : BaseComponent
 	public delegate void DeathEvent();
 	public event DeathEvent OnDeath;
 
+	public delegate void DamageEvent();
+	public event DamageEvent OnDamage;
+
 	public override void OnStart()
 	{
 		base.OnStart();
@@ -35,6 +38,9 @@ public class HealthComponent : BaseComponent
 		if ( IsDead ) return;
 
 		Health -= amount;
+
+		OnDamage?.Invoke();
+
 		if ( Health <= 0f )
 		{
 			IsDead = true;
