@@ -1933,6 +1933,27 @@
         "Rotation": "0.0000000393879,-0.000000000000001666099,0.6608191,0.7505445",
         "Scale": "1,1,1",
         "__Prefab": "prefabs/enemies/test_enemy.object"
+      },
+      {
+        "Id": "82cd0765-690c-4f2f-ab08-98c437fd86e9",
+        "Name": "Cubemap",
+        "Enabled": true,
+        "Position": "0,-15.33467,64",
+        "Rotation": "0,0,0,1",
+        "Scale": "1,1,1",
+        "Components": [
+          {
+            "__type": "EnvmapComponent",
+            "__enabled": true,
+            "Bounds": {
+              "Mins": "-400,-250,-128",
+              "Maxs": "128,400,200"
+            },
+            "Projection": "Box",
+            "Texture": "textures/cubemaps/default2.vtex",
+            "TintColor": "1,1,1,1"
+          }
+        ]
       }
     ]
   },

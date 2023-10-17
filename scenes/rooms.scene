@@ -37,10 +37,19 @@
       "Id": "f5c8b7fa-4229-4ccb-bc14-af858f819a4a",
       "Name": "room_01a",
       "Enabled": true,
-      "Position": "0,0,0",
+      "Position": "1000,0,0",
       "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "__Prefab": "prefabs/rooms/sewer_room_01.object"
+    },
+    {
+      "Id": "bb978bb5-b9da-45c3-935a-e3e23e64a2b3",
+      "Name": "room_02a",
+      "Enabled": true,
+      "Position": "0,0,0",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
+      "__Prefab": "prefabs/rooms/sewer_room_02.object"
     }
   ],
   "__references": []
