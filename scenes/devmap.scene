@@ -133,7 +133,8 @@
           "__enabled": true,
           "IsTrigger": true,
           "Scale": "50,50,50",
-          "Surface": null
+          "Surface": null,
+          "Tags": ""
         },
         {
           "__type": "ItemPickup",
@@ -160,7 +161,8 @@
           "__enabled": true,
           "IsTrigger": true,
           "Scale": "50,50,50",
-          "Surface": null
+          "Surface": null,
+          "Tags": ""
         }
       ]
     },
@@ -177,7 +179,8 @@
           "__enabled": true,
           "IsTrigger": true,
           "Scale": "50,50,50",
-          "Surface": null
+          "Surface": null,
+          "Tags": ""
         },
         {
           "__type": "ItemPickup",
@@ -204,7 +207,8 @@
           "__enabled": true,
           "IsTrigger": true,
           "Scale": "50,50,50",
-          "Surface": null
+          "Surface": null,
+          "Tags": ""
         }
       ]
     },

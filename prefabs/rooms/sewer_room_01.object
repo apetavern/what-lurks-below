@@ -1764,11 +1764,11 @@
           },
           {
             "__type": "ColliderBoxComponent",
-            "__enabled": false,
+            "__enabled": true,
             "IsTrigger": true,
             "Scale": "512,640,168.65",
             "Surface": null,
-            "Tags": "-solid"
+            "Tags": ""
           }
         ],
         "Children": [

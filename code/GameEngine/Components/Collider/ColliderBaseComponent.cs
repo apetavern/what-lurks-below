@@ -68,6 +68,7 @@ public abstract class ColliderBaseComponent : BaseComponent
 			if ( IsTrigger )
 			{
 				shape.AddTag( "trigger" );
+				shape.RemoveTag( "solid" );
 			}
 
 			var tags = Tags.Split( ',' );
