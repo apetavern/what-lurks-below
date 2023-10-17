@@ -29,6 +29,10 @@
         "__enabled": true,
         "InitialHealth": 25,
         "IsPlayer": false
+      },
+      {
+        "__type": "AimableTargetComponent",
+        "__enabled": true
       }
     ],
     "Children": [
@@ -66,20 +70,6 @@
             "Surface": null,
             "Tags": "enemy"
           },
-          {
-            "__type": "AimableTargetComponent",
-            "__enabled": true
-          }
-        ]
-      },
-      {
-        "Id": "81de0d3e-1b11-49a2-a1af-971a280b56c3",
-        "Name": "aimpoint",
-        "Enabled": true,
-        "Position": "0,0,10.28152",
-        "Rotation": "0,0,0,1",
-        "Scale": "0.4837982,0.4837982,0.4837982",
-        "Components": [
           {
             "__type": "AimableTargetComponent",
             "__enabled": true
