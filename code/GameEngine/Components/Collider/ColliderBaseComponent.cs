@@ -43,7 +43,6 @@ public abstract class ColliderBaseComponent : BaseComponent
 			//
 			if ( physicsBody is null )
 			{
-				Log.Warning( $"{this}: PhysicsBody from {body} was null" );
 				return;
 			}
 		}
