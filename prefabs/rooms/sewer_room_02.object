@@ -1113,7 +1113,7 @@
         "Id": "8839663b-ef1f-44cb-8a1c-8b7cc63ac05e",
         "Name": "pipe_0a",
         "Enabled": true,
-        "Position": "-256,-220,206.737",
+        "Position": "-256,-224,212",
         "Rotation": "0,0,0,1",
         "Scale": "1,1,1",
         "Components": [
@@ -1125,185 +1125,223 @@
             "ShouldCastShadows": true,
             "Tint": "1,1,1,1"
           }
-        ]
-      },
-      {
-        "Id": "2610740a-2e8a-4c97-8d8b-ce32dc98c444",
-        "Name": "pipe_0a",
-        "Enabled": true,
-        "Position": "-177.3,-220,206.737",
-        "Rotation": "0,0,0,1",
-        "Scale": "1,1,1",
-        "Components": [
+        ],
+        "Children": [
           {
-            "__type": "ModelComponent",
-            "__enabled": true,
-            "MaterialOverride": null,
-            "Model": "models/pipes/pipe_0a.vmdl",
-            "ShouldCastShadows": true,
-            "Tint": "1,1,1,1"
-          }
-        ]
-      },
-      {
-        "Id": "c9500ede-5fa0-450f-99ce-928d7f52e08a",
-        "Name": "pipe_0a",
-        "Enabled": true,
-        "Position": "-98.6,-220,206.737",
-        "Rotation": "0,0,0,1",
-        "Scale": "1,1,1",
-        "Components": [
+            "Id": "2610740a-2e8a-4c97-8d8b-ce32dc98c444",
+            "Name": "pipe_0a",
+            "Enabled": true,
+            "Position": "64,0,0",
+            "Rotation": "0,0,0,1",
+            "Scale": "1,1,1",
+            "Components": [
+              {
+                "__type": "ModelComponent",
+                "__enabled": true,
+                "MaterialOverride": null,
+                "Model": "models/pipes/pipe_0a.vmdl",
+                "ShouldCastShadows": true,
+                "Tint": "1,1,1,1"
+              }
+            ]
+          },
           {
-            "__type": "ModelComponent",
-            "__enabled": true,
-            "MaterialOverride": null,
-            "Model": "models/pipes/pipe_0a.vmdl",
-            "ShouldCastShadows": true,
-            "Tint": "1,1,1,1"
-          }
-        ]
-      },
-      {
-        "Id": "61616599-6093-40fc-839e-1b6d1e8e02f6",
-        "Name": "pipe_0a",
-        "Enabled": true,
-        "Position": "-20,-220,206.737",
-        "Rotation": "0,0,0,1",
-        "Scale": "1,1,1",
-        "Components": [
+            "Id": "c9500ede-5fa0-450f-99ce-928d7f52e08a",
+            "Name": "pipe_0a",
+            "Enabled": true,
+            "Position": "128,0,0",
+            "Rotation": "0,0,0,1",
+            "Scale": "1,1,1",
+            "Components": [
+              {
+                "__type": "ModelComponent",
+                "__enabled": true,
+                "MaterialOverride": null,
+                "Model": "models/pipes/pipe_0a.vmdl",
+                "ShouldCastShadows": true,
+                "Tint": "1,1,1,1"
+              }
+            ]
+          },
           {
-            "__type": "ModelComponent",
-            "__enabled": true,
-            "MaterialOverride": null,
-            "Model": "models/pipes/pipe_0a.vmdl",
-            "ShouldCastShadows": true,
-            "Tint": "1,1,1,1"
-          }
-        ]
-      },
-      {
-        "Id": "9cf74613-82af-426b-b90b-d0e911402bb5",
-        "Name": "pipe_0a",
-        "Enabled": true,
-        "Position": "98.04398,-180.6493,206.737",
-        "Rotation": "0,0,0.707107,0.7071065",
-        "Scale": "1,1,1",
-        "Components": [
+            "Id": "61616599-6093-40fc-839e-1b6d1e8e02f6",
+            "Name": "pipe_0a",
+            "Enabled": true,
+            "Position": "192,0,0",
+            "Rotation": "0,0,0,1",
+            "Scale": "1,1,1",
+            "Components": [
+              {
+                "__type": "ModelComponent",
+                "__enabled": true,
+                "MaterialOverride": null,
+                "Model": "models/pipes/pipe_0a.vmdl",
+                "ShouldCastShadows": true,
+                "Tint": "1,1,1,1"
+              }
+            ]
+          },
           {
-            "__type": "ModelComponent",
-            "__enabled": true,
-            "MaterialOverride": null,
-            "Model": "models/pipes/pipe_0a.vmdl",
-            "ShouldCastShadows": true,
-            "Tint": "1,1,1,1"
-          }
-        ]
-      },
-      {
-        "Id": "3c89b3dc-f3f5-4676-be05-92847239d2c3",
-        "Name": "pipe_0a",
-        "Enabled": true,
-        "Position": "98.04398,-101.9415,206.737",
-        "Rotation": "0,0,0.707107,0.7071065",
-        "Scale": "1,1,1",
-        "Components": [
+            "Id": "a9eb2f87-b972-457f-b25f-0379a3d4551a",
+            "Name": "pipe_0a",
+            "Enabled": true,
+            "Position": "256,0,0",
+            "Rotation": "0,0,0,1",
+            "Scale": "1,1,1",
+            "Components": [
+              {
+                "__type": "ModelComponent",
+                "__enabled": true,
+                "MaterialOverride": null,
+                "Model": "models/pipes/pipe_0a.vmdl",
+                "ShouldCastShadows": true,
+                "Tint": "1,1,1,1"
+              }
+            ]
+          },
           {
-            "__type": "ModelComponent",
-            "__enabled": true,
-            "MaterialOverride": null,
-            "Model": "models/pipes/pipe_0a.vmdl",
-            "ShouldCastShadows": true,
-            "Tint": "1,1,1,1"
-          }
-        ]
-      },
-      {
-        "Id": "27c0d4a1-abfe-4cb7-a3f7-dd7fdade2740",
-        "Name": "pipe_0a",
-        "Enabled": true,
-        "Position": "98.04398,-23.25778,206.737",
-        "Rotation": "0,0,0.707107,0.7071065",
-        "Scale": "1,1,1",
-        "Components": [
+            "Id": "9cf74613-82af-426b-b90b-d0e911402bb5",
+            "Name": "pipe_0a",
+            "Enabled": true,
+            "Position": "352,32,0",
+            "Rotation": "0,0,0.707107,0.7071065",
+            "Scale": "1,1,1",
+            "Components": [
+              {
+                "__type": "ModelComponent",
+                "__enabled": true,
+                "MaterialOverride": null,
+                "Model": "models/pipes/pipe_0a.vmdl",
+                "ShouldCastShadows": true,
+                "Tint": "1,1,1,1"
+              }
+            ]
+          },
           {
-            "__type": "ModelComponent",
-            "__enabled": true,
-            "MaterialOverride": null,
-            "Model": "models/pipes/pipe_0a.vmdl",
-            "ShouldCastShadows": true,
-            "Tint": "1,1,1,1"
-          }
-        ]
-      },
-      {
-        "Id": "583c8760-4678-4b71-b5a8-5adcb5fff707",
-        "Name": "pipe_0a",
-        "Enabled": true,
-        "Position": "98.04398,55.445,206.737",
-        "Rotation": "0,0,0.707107,0.7071065",
-        "Scale": "1,1,1",
-        "Components": [
+            "Id": "3c89b3dc-f3f5-4676-be05-92847239d2c3",
+            "Name": "pipe_0a",
+            "Enabled": true,
+            "Position": "352,96,0",
+            "Rotation": "0,0,0.707107,0.7071065",
+            "Scale": "1,1,1",
+            "Components": [
+              {
+                "__type": "ModelComponent",
+                "__enabled": true,
+                "MaterialOverride": null,
+                "Model": "models/pipes/pipe_0a.vmdl",
+                "ShouldCastShadows": true,
+                "Tint": "1,1,1,1"
+              }
+            ]
+          },
           {
-            "__type": "ModelComponent",
-            "__enabled": true,
-            "MaterialOverride": null,
-            "Model": "models/pipes/pipe_0a.vmdl",
-            "ShouldCastShadows": true,
-            "Tint": "1,1,1,1"
-          }
-        ]
-      },
-      {
-        "Id": "99eb69c7-4e55-4000-8cf7-ed45bace5113",
-        "Name": "pipe_0a",
-        "Enabled": true,
-        "Position": "98.04398,134.1739,206.737",
-        "Rotation": "0,0,0.707107,0.7071065",
-        "Scale": "1,1,1",
-        "Components": [
+            "Id": "27c0d4a1-abfe-4cb7-a3f7-dd7fdade2740",
+            "Name": "pipe_0a",
+            "Enabled": true,
+            "Position": "352,160,0",
+            "Rotation": "0,0,0.707107,0.7071065",
+            "Scale": "1,1,1",
+            "Components": [
+              {
+                "__type": "ModelComponent",
+                "__enabled": true,
+                "MaterialOverride": null,
+                "Model": "models/pipes/pipe_0a.vmdl",
+                "ShouldCastShadows": true,
+                "Tint": "1,1,1,1"
+              }
+            ]
+          },
           {
-            "__type": "ModelComponent",
-            "__enabled": true,
-            "MaterialOverride": null,
-            "Model": "models/pipes/pipe_0a.vmdl",
-            "ShouldCastShadows": true,
-            "Tint": "1,1,1,1"
-          }
-        ]
-      },
-      {
-        "Id": "83b0efe4-c8e1-4e07-89c3-7fc3f5949b57",
-        "Name": "pipe_0a",
-        "Enabled": true,
-        "Position": "98.04398,212.6181,206.737",
-        "Rotation": "0,0,0.707107,0.7071065",
-        "Scale": "1,1,1",
-        "Components": [
+            "Id": "583c8760-4678-4b71-b5a8-5adcb5fff707",
+            "Name": "pipe_0a",
+            "Enabled": true,
+            "Position": "352,224,0",
+            "Rotation": "0,0,0.707107,0.7071065",
+            "Scale": "1,1,1",
+            "Components": [
+              {
+                "__type": "ModelComponent",
+                "__enabled": true,
+                "MaterialOverride": null,
+                "Model": "models/pipes/pipe_0a.vmdl",
+                "ShouldCastShadows": true,
+                "Tint": "1,1,1,1"
+              }
+            ]
+          },
           {
-            "__type": "ModelComponent",
-            "__enabled": true,
-            "MaterialOverride": null,
-            "Model": "models/pipes/pipe_0a.vmdl",
-            "ShouldCastShadows": true,
-            "Tint": "1,1,1,1"
-          }
-        ]
-      },
-      {
-        "Id": "e14e3bfa-3fc3-4df3-8b2b-028db532d910",
-        "Name": "pipe_0a",
-        "Enabled": true,
-        "Position": "58.7,-220,206.737",
-        "Rotation": "-0.0000004523773,0.707107,0.7071065,-0.000000452377",
-        "Scale": "1,1,1",
-        "Components": [
+            "Id": "99eb69c7-4e55-4000-8cf7-ed45bace5113",
+            "Name": "pipe_0a",
+            "Enabled": true,
+            "Position": "352,288,0",
+            "Rotation": "0,0,0.707107,0.7071065",
+            "Scale": "1,1,1",
+            "Components": [
+              {
+                "__type": "ModelComponent",
+                "__enabled": true,
+                "MaterialOverride": null,
+                "Model": "models/pipes/pipe_0a.vmdl",
+                "ShouldCastShadows": true,
+                "Tint": "1,1,1,1"
+              }
+            ]
+          },
           {
-            "__type": "ModelComponent",
-            "__enabled": true,
-            "MaterialOverride": null,
-            "Model": "models/pipes/pipe_0a_roundcorner.vmdl",
-            "ShouldCastShadows": true,
-            "Tint": "1,1,1,1"
+            "Id": "83b0efe4-c8e1-4e07-89c3-7fc3f5949b57",
+            "Name": "pipe_0a",
+            "Enabled": true,
+            "Position": "352,352,0",
+            "Rotation": "0.7071061,0.7071074,-0.0000005656472,-0.0000003391069",
+            "Scale": "1,1,1",
+            "Components": [
+              {
+                "__type": "ModelComponent",
+                "__enabled": true,
+                "MaterialOverride": null,
+                "Model": "models/pipes/pipe_0a_valve.vmdl",
+                "ShouldCastShadows": true,
+                "Tint": "1,1,1,1"
+              }
+            ]
+          },
+          {
+            "Id": "ec29c672-f515-4db7-9c3c-78e6f43f3dd3",
+            "Name": "pipe_0a",
+            "Enabled": true,
+            "Position": "352,416,0",
+            "Rotation": "0,0,0.707107,0.7071065",
+            "Scale": "1,1,1",
+            "Components": [
+              {
+                "__type": "ModelComponent",
+                "__enabled": true,
+                "MaterialOverride": null,
+                "Model": "models/pipes/pipe_0a.vmdl",
+                "ShouldCastShadows": true,
+                "Tint": "1,1,1,1"
+              }
+            ]
+          },
+          {
+            "Id": "e14e3bfa-3fc3-4df3-8b2b-028db532d910",
+            "Name": "pipe_0a",
+            "Enabled": true,
+            "Position": "320,0,0",
+            "Rotation": "0.7071061,0,0,-0.7071075",
+            "Scale": "1,1,1",
+            "Components": [
+              {
+                "__type": "ModelComponent",
+                "__enabled": true,
+                "MaterialOverride": null,
+                "Model": "models/pipes/pipe_0a_roundcorner.vmdl",
+                "ShouldCastShadows": true,
+                "Tint": "1,1,1,1"
+              }
+            ]
           }
         ]
       },
