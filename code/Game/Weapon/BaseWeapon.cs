@@ -71,6 +71,12 @@ public class BaseWeapon : GameObject
 			if ( tr.Hit && tr.Body.GameObject is GameObject hitObject )
 			{
 				HealthComponent hitHealth = hitObject.Parent?.GetComponent<HealthComponent>() ?? null;
+
+				if ( hitHealth == null )
+				{
+					hitHealth = hitObject.GetComponent<HealthComponent>();
+				}
+
 				if ( hitHealth != null )
 				{
 					hitHealth.Damage( Damage );
