@@ -35,7 +35,9 @@ public class BaseWeapon : GameObject
 
 	public virtual void PrimaryFire( Vector3 position, Vector3 direction )
 	{
-		var tr = Physics.Trace.Ray( position, position + direction.Normal * TraceLength )
+		var muzzle = c_AnimatedModel.GetAttachmentTransform( "muzzle" );
+
+		var tr = Physics.Trace.Ray( muzzle.Position, muzzle.Position + direction.Normal * TraceLength )
 			.WithAnyTags( "solid", "enemy" )
 			.Run();
 
@@ -44,7 +46,7 @@ public class BaseWeapon : GameObject
 		{
 			Log.Info( tr.Body.GameObject );
 			Gizmo.Draw.LineThickness = 4f;
-			Gizmo.Draw.Line( tr.StartPosition, tr.EndPosition );
+			Gizmo.Draw.Line( tr.StartPosition, tr.HitPosition );
 		}
 
 		if ( tr.Hit && tr.Body.GameObject is GameObject hitObject )

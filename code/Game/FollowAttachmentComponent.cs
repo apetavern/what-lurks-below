@@ -5,9 +5,9 @@ using Sandbox;
 [Icon( "videocam", "red", "white" )]
 public sealed class FollowAttachmentComponent : BaseComponent
 {
-	[Property] GameObject FollowObject { get; set; }
+	[Property] public GameObject FollowObject { get; set; }
 
-	[Property] string AttachmentName { get; set; }
+	[Property] public string AttachmentName { get; set; }
 
 	public override void Update()
 	{

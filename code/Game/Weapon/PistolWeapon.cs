@@ -4,7 +4,7 @@ namespace BrickJam.Game.Weapon;
 
 public class PistolWeapon : BaseWeapon
 {
-	public override Model Model { get; set; } = Model.Load( "weapons/rust_pistol/rust_pistol.vmdl" );
+	public override Model Model { get; set; } = Model.Load( "models/weapons/usp/usp.vmdl" );
 	public override CitizenAnimationHelperScene.HoldTypes HoldType => CitizenAnimationHelperScene.HoldTypes.Pistol;
 	public override CitizenAnimationHelperScene.Hand Handedness => CitizenAnimationHelperScene.Hand.Left;
 	public override CitizenAnimationHelperScene.Hand AlternateHandedness => CitizenAnimationHelperScene.Hand.Both;
