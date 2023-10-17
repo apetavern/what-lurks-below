@@ -8,15 +8,11 @@
     "Scale": "1,1,1",
     "Components": [
       {
-        "__type": "AimableTargetComponent",
-        "__enabled": true
-      },
-      {
         "__type": "CharacterController",
         "__enabled": true,
         "Acceleration": 10,
         "GroundAngle": 45,
-        "Height": 48.55,
+        "Height": 24,
         "Radius": 16,
         "StepHeight": 18
       },
@@ -40,55 +36,17 @@
         "Id": "3142addf-7994-4b5e-99ca-7332a5237188",
         "Name": "Epic Enemy",
         "Enabled": true,
-        "Position": "0,0,22.53286",
+        "Position": "0,0,0",
         "Rotation": "0,0,0,1",
         "Scale": "0.7,0.7,0.7",
         "Components": [
           {
-            "__type": "ModelComponent",
+            "__type": "AnimatedModelComponent",
             "__enabled": true,
             "MaterialOverride": null,
-            "Model": "models/dev/sphere.vmdl",
+            "Model": "models/enemies/gooman/gooman.vmdl",
             "ShouldCastShadows": true,
-            "Tint": "0.19214,0.23128,0.27723,1"
-          }
-        ],
-        "Children": [
-          {
-            "Id": "0080697a-a0b6-4f86-a32d-10b33e189bf6",
-            "Name": "Cube",
-            "Enabled": true,
-            "Position": "23.1643,-10.82538,11.93309",
-            "Rotation": "0,0,0,1",
-            "Scale": "0.25,0.25,0.25",
-            "Components": [
-              {
-                "__type": "ModelComponent",
-                "__enabled": true,
-                "MaterialOverride": "materials/dev/primary_white_emissive.vmat",
-                "Model": "models/dev/sphere.vmdl",
-                "ShouldCastShadows": true,
-                "Tint": "1,0,0,1"
-              }
-            ]
-          },
-          {
-            "Id": "697d8032-b382-4f25-a9b4-ebb9beea77f8",
-            "Name": "Cube",
-            "Enabled": true,
-            "Position": "22.9366,13.61888,11.93309",
-            "Rotation": "0,0,0,1",
-            "Scale": "0.1487239,0.1487239,0.1487239",
-            "Components": [
-              {
-                "__type": "ModelComponent",
-                "__enabled": true,
-                "MaterialOverride": "materials/dev/primary_white_emissive.vmat",
-                "Model": "models/dev/sphere.vmdl",
-                "ShouldCastShadows": true,
-                "Tint": "1,0,0,1"
-              }
-            ]
+            "Tint": "1,1,1,1"
           }
         ]
       },
@@ -107,6 +65,24 @@
             "Scale": "30,30,89.6",
             "Surface": null,
             "Tags": "enemy"
+          },
+          {
+            "__type": "AimableTargetComponent",
+            "__enabled": true
+          }
+        ]
+      },
+      {
+        "Id": "81de0d3e-1b11-49a2-a1af-971a280b56c3",
+        "Name": "aimpoint",
+        "Enabled": true,
+        "Position": "0,0,10.28152",
+        "Rotation": "0,0,0,1",
+        "Scale": "0.4837982,0.4837982,0.4837982",
+        "Components": [
+          {
+            "__type": "AimableTargetComponent",
+            "__enabled": true
           }
         ]
       }

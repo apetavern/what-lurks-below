@@ -36,6 +36,7 @@ public class EnemyController : BaseComponent
 
 	public void OnDamaged()
 	{
+		Body.GetComponent<AnimatedModelComponent>().SceneModel.SetAnimParameter( "hit", true );
 		_characterController.Velocity = -Transform.Rotation.Forward * 100f;
 		TimeSinceDamage = 0f;
 	}
@@ -69,6 +70,9 @@ public class EnemyController : BaseComponent
 		// Rotate body towards velocity
 		if ( _characterController.Velocity.LengthSquared > 0.1f )
 		{
+			Body.GetComponent<AnimatedModelComponent>().SceneModel.SetAnimParameter( "moving", true );
+			Body.GetComponent<AnimatedModelComponent>().SceneModel.SetAnimParameter( "velocity", _characterController.Velocity.LengthSquared / 1000f );
+
 			Rotation targetRotation = Rotation.LookAt( playerPosition - myPosition, Vector3.Up );
 			Body.Transform.Rotation = Rotation.Lerp( Body.Transform.Rotation, targetRotation, Time.Delta * 10f );
 		}

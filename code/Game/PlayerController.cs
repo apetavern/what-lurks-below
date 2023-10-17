@@ -60,7 +60,7 @@ public class PlayerController : BaseComponent
 
 		foreach ( var target in PotentialAimTargets )
 		{
-			Vector3 toTarget = target.GetBounds().Center - Eye.Transform.Position;
+			Vector3 toTarget = target.Transform.Position - Eye.Transform.Position;
 
 			if ( Vector3.Dot( toTarget.Normal, Eye.Transform.Rotation.Forward.Normal ) >= MathF.Cos( MathX.DegreeToRadian( yourFieldOfViewAngle ) ) )
 			{
@@ -164,7 +164,7 @@ public class PlayerController : BaseComponent
 
 				if ( closest != null )
 				{
-					Vector3 targetPos = closest.GetBounds().Center;
+					Vector3 targetPos = closest.Transform.Position;
 					Eye.Transform.Rotation = Rotation.LookAt( targetPos - Eye.Transform.Position, Vector3.Up );
 					helper.WithLookAt( new Transform( Body.Transform.Position, Body.Transform.Rotation ), Eye.Transform.Position, targetPos );
 				}
