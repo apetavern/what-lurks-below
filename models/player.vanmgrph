@@ -62304,11 +62304,15 @@
 			m_bEnabled = true
 		},
 		{
-			m_name = "weapons/rust_pistol/rust_pistol.vmdl"
-			m_bEnabled = false
+			m_name = "models/cosmetics/miner_helmet/minster_helmet.vmdl"
+			m_bEnabled = true
 		},
 		{
 			m_name = "models/citizen_clothes/hair/eyebrows/models/eyebrows.vmdl"
+			m_bEnabled = true
+		},
+		{
+			m_name = "models/cosmetics/caving_backpack/caving_backpack.vmdl"
 			m_bEnabled = true
 		},
 	]
