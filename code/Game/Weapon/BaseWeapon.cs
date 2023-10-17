@@ -35,10 +35,8 @@ public class BaseWeapon : GameObject
 
 	public virtual void PrimaryFire( Vector3 position, Vector3 direction )
 	{
-		var muzzle = c_AnimatedModel.GetAttachmentTransform( "muzzle" );
-
-		var tr = Physics.Trace.Ray( position, position + direction * TraceLength )
-			.WithoutTags( "trigger" )
+		var tr = Physics.Trace.Ray( position, position + direction.Normal * TraceLength )
+			.WithAnyTags( "solid", "enemy" )
 			.Run();
 
 		// Debug bc wtf
@@ -51,7 +49,7 @@ public class BaseWeapon : GameObject
 
 		if ( tr.Hit && tr.Body.GameObject is GameObject hitObject )
 		{
-			HealthComponent hitHealth = hitObject.GetComponent<HealthComponent>();
+			HealthComponent hitHealth = hitObject.Parent?.GetComponent<HealthComponent>() ?? null;
 			if ( hitHealth != null )
 			{
 				hitHealth.Damage( Damage );

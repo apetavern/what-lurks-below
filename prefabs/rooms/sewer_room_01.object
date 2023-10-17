@@ -1,6 +1,6 @@
 {
   "RootObject": {
-    "Id": "56e74ecd-63f7-47d8-b037-7bcfdee690d8",
+    "Id": "526a2d2f-e5c9-4ef8-8753-09e4fe868f3d",
     "Name": "sewer_room_01",
     "Enabled": true,
     "Position": "0,0,0",
@@ -10,12 +10,12 @@
       {
         "__type": "RoomChunkComponent",
         "__enabled": true,
-        "CameraTrigger": "1af05b02-9ea1-4d5f-b532-64e55ba1cf4d"
+        "CameraTrigger": "d17ba22a-d543-45f0-8627-7b0f42be7905"
       }
     ],
     "Children": [
       {
-        "Id": "a726a436-f43d-4320-81b9-0cd03d64e3dd",
+        "Id": "91916a10-de0a-4922-893b-af73d82383e7",
         "Name": "floor_01",
         "Enabled": true,
         "Position": "128,256,0",
@@ -27,7 +27,8 @@
             "__enabled": true,
             "IsTrigger": false,
             "Model": "models/environment/floor_01.vmdl",
-            "Surface": null
+            "Surface": null,
+            "Tags": ""
           },
           {
             "__type": "ModelComponent",
@@ -40,7 +41,7 @@
         ]
       },
       {
-        "Id": "7d211bb3-870d-4a19-8b45-473601ecc442",
+        "Id": "2cc209c6-ad10-4634-9ea5-4a7a1208d7d4",
         "Name": "floor_01",
         "Enabled": true,
         "Position": "-128,256,0",
@@ -52,7 +53,8 @@
             "__enabled": true,
             "IsTrigger": false,
             "Model": "models/environment/floor_01.vmdl",
-            "Surface": null
+            "Surface": null,
+            "Tags": ""
           },
           {
             "__type": "ModelComponent",
@@ -65,7 +67,7 @@
         ]
       },
       {
-        "Id": "81073c6a-5123-4566-a2b2-325c34e95de1",
+        "Id": "f4e41912-4b74-4737-b221-1220313809c7",
         "Name": "floor_01",
         "Enabled": true,
         "Position": "0,256,0",
@@ -77,7 +79,8 @@
             "__enabled": true,
             "IsTrigger": false,
             "Model": "models/environment/floor_02.vmdl",
-            "Surface": null
+            "Surface": null,
+            "Tags": ""
           },
           {
             "__type": "ModelComponent",
@@ -90,7 +93,7 @@
         ]
       },
       {
-        "Id": "a5aa6ec5-046f-4973-8c9f-a763f0572b5e",
+        "Id": "d5de140b-906a-481d-91f3-c41e15ee661d",
         "Name": "floor_01",
         "Enabled": true,
         "Position": "0,128,0",
@@ -102,7 +105,8 @@
             "__enabled": true,
             "IsTrigger": false,
             "Model": "models/environment/floor_02.vmdl",
-            "Surface": null
+            "Surface": null,
+            "Tags": ""
           },
           {
             "__type": "ModelComponent",
@@ -115,7 +119,7 @@
         ]
       },
       {
-        "Id": "77205854-0a52-4212-9fdf-b7a93adc83b1",
+        "Id": "129d29c4-89af-40d4-8367-90ebc79a95bb",
         "Name": "floor_01",
         "Enabled": true,
         "Position": "128,-256,0",
@@ -127,7 +131,8 @@
             "__enabled": true,
             "IsTrigger": false,
             "Model": "models/environment/floor_01.vmdl",
-            "Surface": null
+            "Surface": null,
+            "Tags": ""
           },
           {
             "__type": "ModelComponent",
@@ -140,7 +145,7 @@
         ]
       },
       {
-        "Id": "04a02e4f-2eb7-41ae-b3b2-a89b864b5414",
+        "Id": "d02b7b56-3f4c-4139-91c6-fcbe7c42c9f7",
         "Name": "floor_01",
         "Enabled": true,
         "Position": "128,0,0",
@@ -152,7 +157,8 @@
             "__enabled": true,
             "IsTrigger": false,
             "Model": "models/environment/floor_01.vmdl",
-            "Surface": null
+            "Surface": null,
+            "Tags": ""
           },
           {
             "__type": "ModelComponent",
@@ -165,7 +171,7 @@
         ]
       },
       {
-        "Id": "d4b6d373-60c9-4d82-b204-9148fc594e80",
+        "Id": "08e38a60-ab1c-4d11-905c-ed10d7d8193a",
         "Name": "floor_01",
         "Enabled": true,
         "Position": "128,128,0",
@@ -185,12 +191,13 @@
             "__enabled": true,
             "IsTrigger": false,
             "Model": "models/environment/floor_01.vmdl",
-            "Surface": null
+            "Surface": null,
+            "Tags": ""
           }
         ]
       },
       {
-        "Id": "b8268374-551a-4d1f-9a48-8b613ff28e7c",
+        "Id": "3f36e559-cf63-4594-af4f-0e7c54bc7d93",
         "Name": "floor_01",
         "Enabled": true,
         "Position": "128,-128,0",
@@ -202,7 +209,8 @@
             "__enabled": true,
             "IsTrigger": false,
             "Model": "models/environment/floor_01.vmdl",
-            "Surface": null
+            "Surface": null,
+            "Tags": ""
           },
           {
             "__type": "ModelComponent",
@@ -215,7 +223,7 @@
         ]
       },
       {
-        "Id": "41b5958f-d9d4-4e72-84fe-c166b6c5f20b",
+        "Id": "25489f9c-8e1c-449d-b74a-e3cffb6ad87d",
         "Name": "floor_01",
         "Enabled": true,
         "Position": "-128,128,0",
@@ -227,7 +235,8 @@
             "__enabled": true,
             "IsTrigger": false,
             "Model": "models/environment/floor_01.vmdl",
-            "Surface": null
+            "Surface": null,
+            "Tags": ""
           },
           {
             "__type": "ModelComponent",
@@ -240,7 +249,7 @@
         ]
       },
       {
-        "Id": "bb110802-26f8-4baa-a4f4-956bd5c13949",
+        "Id": "a535e79e-11a0-4cb7-a2c9-bd30fb63f8b5",
         "Name": "floor_01",
         "Enabled": true,
         "Position": "-128,-256,0",
@@ -252,7 +261,8 @@
             "__enabled": true,
             "IsTrigger": false,
             "Model": "models/environment/floor_01.vmdl",
-            "Surface": null
+            "Surface": null,
+            "Tags": ""
           },
           {
             "__type": "ModelComponent",
@@ -265,7 +275,7 @@
         ]
       },
       {
-        "Id": "d9a6e891-d860-4e24-8c35-3aeb85716ab9",
+        "Id": "8fb3f275-7d00-4639-b7fb-33054be55c8b",
         "Name": "floor_01",
         "Enabled": true,
         "Position": "-128,-128,0",
@@ -277,7 +287,8 @@
             "__enabled": true,
             "IsTrigger": false,
             "Model": "models/environment/floor_02.vmdl",
-            "Surface": null
+            "Surface": null,
+            "Tags": ""
           },
           {
             "__type": "ModelComponent",
@@ -290,7 +301,7 @@
         ]
       },
       {
-        "Id": "bd8b9afa-9692-4a3f-8892-6bfdc595d503",
+        "Id": "de8a0a6b-3786-4794-8671-6cfdff01791c",
         "Name": "floor_01",
         "Enabled": true,
         "Position": "-256,-128,0",
@@ -302,7 +313,8 @@
             "__enabled": true,
             "IsTrigger": false,
             "Model": "models/environment/floor_01.vmdl",
-            "Surface": null
+            "Surface": null,
+            "Tags": ""
           },
           {
             "__type": "ModelComponent",
@@ -315,7 +327,7 @@
         ]
       },
       {
-        "Id": "cf1f5da4-2ac2-4862-9c4d-240a49c2bce5",
+        "Id": "0e1ebb69-e719-4589-8191-26ede9ba1e7b",
         "Name": "floor_01",
         "Enabled": true,
         "Position": "-256,-256,0",
@@ -327,7 +339,8 @@
             "__enabled": true,
             "IsTrigger": false,
             "Model": "models/environment/floor_01.vmdl",
-            "Surface": null
+            "Surface": null,
+            "Tags": ""
           },
           {
             "__type": "ModelComponent",
@@ -340,7 +353,7 @@
         ]
       },
       {
-        "Id": "5acb7a08-509f-4d9f-9cc4-2dc643e75c4b",
+        "Id": "2c4762fd-ac35-49dd-84b3-674379cfb41f",
         "Name": "floor_01",
         "Enabled": true,
         "Position": "-256,0,0",
@@ -352,7 +365,8 @@
             "__enabled": true,
             "IsTrigger": false,
             "Model": "models/environment/floor_01.vmdl",
-            "Surface": null
+            "Surface": null,
+            "Tags": ""
           },
           {
             "__type": "ModelComponent",
@@ -365,7 +379,7 @@
         ]
       },
       {
-        "Id": "f498b108-f3b1-464c-9147-55ef4938713b",
+        "Id": "8a59304a-5cba-4173-94c5-2e2a1c6ba58f",
         "Name": "floor_01",
         "Enabled": true,
         "Position": "-256,128,0",
@@ -377,7 +391,8 @@
             "__enabled": true,
             "IsTrigger": false,
             "Model": "models/environment/floor_01.vmdl",
-            "Surface": null
+            "Surface": null,
+            "Tags": ""
           },
           {
             "__type": "ModelComponent",
@@ -390,7 +405,7 @@
         ]
       },
       {
-        "Id": "e4e20e5a-e121-4989-993d-d012dd2e5cbf",
+        "Id": "8aa1eea6-570c-4687-b5db-2f93db88e5ce",
         "Name": "floor_01",
         "Enabled": true,
         "Position": "-256,256,0",
@@ -402,7 +417,8 @@
             "__enabled": true,
             "IsTrigger": false,
             "Model": "models/environment/floor_01.vmdl",
-            "Surface": null
+            "Surface": null,
+            "Tags": ""
           },
           {
             "__type": "ModelComponent",
@@ -415,7 +431,7 @@
         ]
       },
       {
-        "Id": "9ae15b87-9d94-4cfb-9d61-74b138032d53",
+        "Id": "b867cb75-a742-4d6b-9984-763e46a682f4",
         "Name": "floor_01",
         "Enabled": true,
         "Position": "-128,0,0",
@@ -427,7 +443,8 @@
             "__enabled": true,
             "IsTrigger": false,
             "Model": "models/environment/floor_02.vmdl",
-            "Surface": null
+            "Surface": null,
+            "Tags": ""
           },
           {
             "__type": "ModelComponent",
@@ -440,7 +457,7 @@
         ]
       },
       {
-        "Id": "7a48097b-b9c4-4c43-870d-b41d175c6617",
+        "Id": "112a89e7-1668-4ec4-b7e9-94d049ffa809",
         "Name": "floor_01",
         "Enabled": true,
         "Position": "0,-256,0",
@@ -452,7 +469,8 @@
             "__enabled": true,
             "IsTrigger": false,
             "Model": "models/environment/floor_01.vmdl",
-            "Surface": null
+            "Surface": null,
+            "Tags": ""
           },
           {
             "__type": "ModelComponent",
@@ -465,7 +483,7 @@
         ]
       },
       {
-        "Id": "143bb089-b46a-425a-a7e0-c8af63a11714",
+        "Id": "4555d238-2882-4e5a-9859-2dc9a75a7394",
         "Name": "floor_01",
         "Enabled": true,
         "Position": "0,-128,0",
@@ -477,7 +495,8 @@
             "__enabled": true,
             "IsTrigger": false,
             "Model": "models/environment/floor_02.vmdl",
-            "Surface": null
+            "Surface": null,
+            "Tags": ""
           },
           {
             "__type": "ModelComponent",
@@ -490,7 +509,7 @@
         ]
       },
       {
-        "Id": "3545236e-9716-4705-aa45-f6893b91309e",
+        "Id": "2ebe0784-8d6b-43d4-982e-a7c6939c0bd0",
         "Name": "floor_01",
         "Enabled": true,
         "Position": "0,0,0",
@@ -502,7 +521,8 @@
             "__enabled": true,
             "IsTrigger": false,
             "Model": "models/environment/floor_02.vmdl",
-            "Surface": null
+            "Surface": null,
+            "Tags": ""
           },
           {
             "__type": "ModelComponent",
@@ -515,7 +535,7 @@
         ]
       },
       {
-        "Id": "5334b0b9-6b3a-444e-a0ff-bdc8d09dcc5d",
+        "Id": "f8b3ce95-9827-4f40-95cd-7715ae9d4a2c",
         "Name": "wall_01",
         "Enabled": true,
         "Position": "128,256,0",
@@ -527,7 +547,8 @@
             "__enabled": true,
             "IsTrigger": false,
             "Model": "models/environment/wall_01.vmdl",
-            "Surface": null
+            "Surface": null,
+            "Tags": ""
           },
           {
             "__type": "ModelComponent",
@@ -540,7 +561,7 @@
         ]
       },
       {
-        "Id": "6c42d16e-40ac-48dc-9371-850e64783f1c",
+        "Id": "e08ea4de-1ac7-4b33-afb3-c71ac5d99a1a",
         "Name": "wall_01",
         "Enabled": true,
         "Position": "128,256,128",
@@ -560,12 +581,13 @@
             "__enabled": true,
             "IsTrigger": false,
             "Model": "models/environment/wall_01.vmdl",
-            "Surface": null
+            "Surface": null,
+            "Tags": ""
           }
         ]
       },
       {
-        "Id": "6f7ef653-d42c-4dfd-9c12-004b4abf5389",
+        "Id": "6f0b12f8-0088-4e91-a8ed-56d4dabcbb78",
         "Name": "wall_01",
         "Enabled": true,
         "Position": "128,128,0",
@@ -577,7 +599,8 @@
             "__enabled": true,
             "IsTrigger": false,
             "Model": "models/environment/wall_01.vmdl",
-            "Surface": null
+            "Surface": null,
+            "Tags": ""
           },
           {
             "__type": "ModelComponent",
@@ -590,7 +613,7 @@
         ]
       },
       {
-        "Id": "5a1092e8-45f6-4554-861d-1373b5c766be",
+        "Id": "7d1b0e58-6c17-44f8-858f-e561b7f5ef41",
         "Name": "wall_01",
         "Enabled": true,
         "Position": "128,128,128",
@@ -610,12 +633,13 @@
             "__enabled": true,
             "IsTrigger": false,
             "Model": "models/environment/wall_01.vmdl",
-            "Surface": null
+            "Surface": null,
+            "Tags": ""
           }
         ]
       },
       {
-        "Id": "f9fc1cbd-5c14-429a-9f14-df375b7277e1",
+        "Id": "293f16eb-bc67-4f13-9f3d-28069772d66e",
         "Name": "wall_01",
         "Enabled": true,
         "Position": "128,0,128",
@@ -627,7 +651,8 @@
             "__enabled": true,
             "IsTrigger": false,
             "Model": "models/environment/wall_01.vmdl",
-            "Surface": null
+            "Surface": null,
+            "Tags": ""
           },
           {
             "__type": "ModelComponent",
@@ -640,7 +665,7 @@
         ]
       },
       {
-        "Id": "7d7a413a-3337-4c26-8c35-6c6fadfa35f6",
+        "Id": "d17bc66b-1ea6-430e-9705-b1af94d3bf1c",
         "Name": "wall_01",
         "Enabled": true,
         "Position": "128,-128,0",
@@ -660,12 +685,13 @@
             "__enabled": true,
             "IsTrigger": false,
             "Model": "models/environment/wall_01.vmdl",
-            "Surface": null
+            "Surface": null,
+            "Tags": ""
           }
         ]
       },
       {
-        "Id": "8a31ee0e-cf9d-4a05-9962-27a2b3af27c2",
+        "Id": "abb5bafd-bc88-42b6-9b51-02bc275d746e",
         "Name": "wall_01",
         "Enabled": true,
         "Position": "128,-128,128",
@@ -677,7 +703,8 @@
             "__enabled": true,
             "IsTrigger": false,
             "Model": "models/environment/wall_01.vmdl",
-            "Surface": null
+            "Surface": null,
+            "Tags": ""
           },
           {
             "__type": "ModelComponent",
@@ -690,7 +717,7 @@
         ]
       },
       {
-        "Id": "c3dfa378-2e03-4362-ae00-fc9a7cdacb19",
+        "Id": "1debfb62-03bc-49f3-bf17-62be13b69289",
         "Name": "door_01",
         "Enabled": true,
         "Position": "128,0,0",
@@ -699,7 +726,7 @@
         "__Prefab": "prefabs/pieces/door_01.object"
       },
       {
-        "Id": "da1a6967-80e5-4211-bd54-3416e28f5855",
+        "Id": "c99e8e4a-6ac6-41bc-ae3d-c7aa177a5d28",
         "Name": "wall_01",
         "Enabled": true,
         "Position": "128,-256,0",
@@ -711,7 +738,8 @@
             "__enabled": true,
             "IsTrigger": false,
             "Model": "models/environment/wall_01.vmdl",
-            "Surface": null
+            "Surface": null,
+            "Tags": ""
           },
           {
             "__type": "ModelComponent",
@@ -724,7 +752,7 @@
         ]
       },
       {
-        "Id": "0f128edc-1021-44c2-bb2c-ab5a4e13a281",
+        "Id": "cc016c86-de53-4282-a0dd-6c68668679c9",
         "Name": "wall_01",
         "Enabled": true,
         "Position": "128,-256,128",
@@ -744,12 +772,13 @@
             "__enabled": true,
             "IsTrigger": false,
             "Model": "models/environment/wall_01.vmdl",
-            "Surface": null
+            "Surface": null,
+            "Tags": ""
           }
         ]
       },
       {
-        "Id": "8cfe1d39-8050-4334-9263-f54138553a65",
+        "Id": "5661cd6d-f0fb-48ea-b770-ab8de0f0a8e7",
         "Name": "wall_01",
         "Enabled": true,
         "Position": "-384,-256,0",
@@ -769,12 +798,13 @@
             "__enabled": true,
             "IsTrigger": false,
             "Model": "models/environment/wall_01.vmdl",
-            "Surface": null
+            "Surface": null,
+            "Tags": ""
           }
         ]
       },
       {
-        "Id": "4ebbadea-3966-4f89-afdc-f08211aef35f",
+        "Id": "02c26dbe-42fb-4f19-acb5-34d1e407c3f4",
         "Name": "wall_01",
         "Enabled": true,
         "Position": "-256,-256,0",
@@ -786,7 +816,8 @@
             "__enabled": true,
             "IsTrigger": false,
             "Model": "models/environment/wall_01.vmdl",
-            "Surface": null
+            "Surface": null,
+            "Tags": ""
           },
           {
             "__type": "ModelComponent",
@@ -799,7 +830,7 @@
         ]
       },
       {
-        "Id": "5a19ba9f-e0f1-41fa-8ec2-e32a98873d0a",
+        "Id": "58724399-b237-4b3b-bc05-97946135391e",
         "Name": "wall_01",
         "Enabled": true,
         "Position": "-256,-256,128",
@@ -819,12 +850,13 @@
             "__enabled": true,
             "IsTrigger": false,
             "Model": "models/environment/wall_01.vmdl",
-            "Surface": null
+            "Surface": null,
+            "Tags": ""
           }
         ]
       },
       {
-        "Id": "4fd0b4fe-f402-49c2-b2c0-44ebddd9bc75",
+        "Id": "03a2d07c-6c21-4dd3-96dc-9c013d19cc34",
         "Name": "wall_01",
         "Enabled": true,
         "Position": "-128,-256,0",
@@ -844,12 +876,13 @@
             "__enabled": true,
             "IsTrigger": false,
             "Model": "models/environment/wall_01.vmdl",
-            "Surface": null
+            "Surface": null,
+            "Tags": ""
           }
         ]
       },
       {
-        "Id": "3a7cf97b-4489-4a6e-bccb-b92ed2b08527",
+        "Id": "81e3666e-82a1-4882-9f6d-ddb27802e981",
         "Name": "wall_01",
         "Enabled": true,
         "Position": "-128,-256,128",
@@ -861,7 +894,8 @@
             "__enabled": true,
             "IsTrigger": false,
             "Model": "models/environment/wall_01.vmdl",
-            "Surface": null
+            "Surface": null,
+            "Tags": ""
           },
           {
             "__type": "ModelComponent",
@@ -874,7 +908,7 @@
         ]
       },
       {
-        "Id": "16a98ec5-c471-4282-9eb9-130d25023969",
+        "Id": "5b3b1cf8-6296-499b-b731-d81676eaeed4",
         "Name": "wall_01",
         "Enabled": true,
         "Position": "0,-256,0",
@@ -886,7 +920,8 @@
             "__enabled": true,
             "IsTrigger": false,
             "Model": "models/environment/wall_01.vmdl",
-            "Surface": null
+            "Surface": null,
+            "Tags": ""
           },
           {
             "__type": "ModelComponent",
@@ -899,7 +934,7 @@
         ]
       },
       {
-        "Id": "3ec43925-9358-42d0-a0da-9964c094e861",
+        "Id": "f7803f9c-6940-49b5-8429-ec59d552e971",
         "Name": "wall_01",
         "Enabled": true,
         "Position": "0,-256,128",
@@ -919,12 +954,13 @@
             "__enabled": true,
             "IsTrigger": false,
             "Model": "models/environment/wall_01.vmdl",
-            "Surface": null
+            "Surface": null,
+            "Tags": ""
           }
         ]
       },
       {
-        "Id": "ab307e3c-90c3-4ba0-8be1-90a57ccceaee",
+        "Id": "192f752a-1141-4ced-9dc6-672df3475462",
         "Name": "wall_01",
         "Enabled": true,
         "Position": "128,-256,0",
@@ -944,12 +980,13 @@
             "__enabled": true,
             "IsTrigger": false,
             "Model": "models/environment/wall_01.vmdl",
-            "Surface": null
+            "Surface": null,
+            "Tags": ""
           }
         ]
       },
       {
-        "Id": "d436393a-540c-46ef-b9e6-7d012166aea6",
+        "Id": "9fa5fd53-b22a-4c1b-b516-8d4704ff3bca",
         "Name": "wall_01",
         "Enabled": true,
         "Position": "128,-256,128",
@@ -961,7 +998,8 @@
             "__enabled": true,
             "IsTrigger": false,
             "Model": "models/environment/wall_01.vmdl",
-            "Surface": null
+            "Surface": null,
+            "Tags": ""
           },
           {
             "__type": "ModelComponent",
@@ -974,7 +1012,7 @@
         ]
       },
       {
-        "Id": "13761139-cf83-40ae-9d75-dd525cef2696",
+        "Id": "b7033b35-4e76-44e9-b007-de57ea1c9844",
         "Name": "wall_01",
         "Enabled": true,
         "Position": "-384,0,0",
@@ -986,7 +1024,8 @@
             "__enabled": true,
             "IsTrigger": false,
             "Model": "models/environment/wall_01.vmdl",
-            "Surface": null
+            "Surface": null,
+            "Tags": ""
           },
           {
             "__type": "ModelComponent",
@@ -999,7 +1038,7 @@
         ]
       },
       {
-        "Id": "1c0ee9b8-1701-442e-8a6b-ef149c29335e",
+        "Id": "7e949baa-5630-4261-af05-5833bbe98d2d",
         "Name": "wall_01",
         "Enabled": true,
         "Position": "-384,0,128",
@@ -1019,12 +1058,13 @@
             "__enabled": true,
             "IsTrigger": false,
             "Model": "models/environment/wall_01.vmdl",
-            "Surface": null
+            "Surface": null,
+            "Tags": ""
           }
         ]
       },
       {
-        "Id": "a018ba39-0b79-4eb2-a20d-a7b7ca7b773f",
+        "Id": "c95d35e5-2301-4cb1-9db5-5c34b0f31e49",
         "Name": "wall_01",
         "Enabled": true,
         "Position": "-384,128,128",
@@ -1036,7 +1076,8 @@
             "__enabled": true,
             "IsTrigger": false,
             "Model": "models/environment/wall_01.vmdl",
-            "Surface": null
+            "Surface": null,
+            "Tags": ""
           },
           {
             "__type": "ModelComponent",
@@ -1049,7 +1090,7 @@
         ]
       },
       {
-        "Id": "d0f085df-1d06-4a1b-a562-fa02a9b2c551",
+        "Id": "e622f389-1f2c-4383-ad0f-9853689b3527",
         "Name": "wall_01",
         "Enabled": true,
         "Position": "-384,256,128",
@@ -1069,12 +1110,13 @@
             "__enabled": true,
             "IsTrigger": false,
             "Model": "models/environment/wall_01.vmdl",
-            "Surface": null
+            "Surface": null,
+            "Tags": ""
           }
         ]
       },
       {
-        "Id": "eb9ade5d-eb81-4712-aac3-7e9405788fdf",
+        "Id": "42828590-b026-4cae-ba79-7e4ac78245e1",
         "Name": "wall_01",
         "Enabled": true,
         "Position": "-384,-128,128",
@@ -1086,7 +1128,8 @@
             "__enabled": true,
             "IsTrigger": false,
             "Model": "models/environment/wall_01.vmdl",
-            "Surface": null
+            "Surface": null,
+            "Tags": ""
           },
           {
             "__type": "ModelComponent",
@@ -1099,7 +1142,7 @@
         ]
       },
       {
-        "Id": "ff1d92b2-68c5-4088-9eba-686981f38bb1",
+        "Id": "d01fa32a-10fe-4c11-a656-7044bae7861e",
         "Name": "wall_01",
         "Enabled": true,
         "Position": "-384,-256,128",
@@ -1119,12 +1162,13 @@
             "__enabled": true,
             "IsTrigger": false,
             "Model": "models/environment/wall_01.vmdl",
-            "Surface": null
+            "Surface": null,
+            "Tags": ""
           }
         ]
       },
       {
-        "Id": "fc4c926a-9547-436c-832b-bfcca0b52687",
+        "Id": "b0bdc114-d33d-4b67-a5a3-dd9443e9c95c",
         "Name": "wall_01",
         "Enabled": true,
         "Position": "-384,128,0",
@@ -1144,12 +1188,13 @@
             "__enabled": true,
             "IsTrigger": false,
             "Model": "models/environment/wall_01.vmdl",
-            "Surface": null
+            "Surface": null,
+            "Tags": ""
           }
         ]
       },
       {
-        "Id": "cdfd005d-d4c2-48b8-93b7-901cefe01e6f",
+        "Id": "f4691584-be0d-4b2b-9433-25f10668ba39",
         "Name": "wall_01",
         "Enabled": true,
         "Position": "-384,256,0",
@@ -1161,7 +1206,8 @@
             "__enabled": true,
             "IsTrigger": false,
             "Model": "models/environment/wall_01.vmdl",
-            "Surface": null
+            "Surface": null,
+            "Tags": ""
           },
           {
             "__type": "ModelComponent",
@@ -1174,7 +1220,7 @@
         ]
       },
       {
-        "Id": "d3db2d8a-a1ef-4cd4-893f-de54b4cafde8",
+        "Id": "c9a1c14c-5cb6-4204-b5f9-78a88ab0abc0",
         "Name": "wall_01",
         "Enabled": true,
         "Position": "-384,384,0",
@@ -1194,12 +1240,13 @@
             "__enabled": true,
             "IsTrigger": false,
             "Model": "models/environment/wall_01.vmdl",
-            "Surface": null
+            "Surface": null,
+            "Tags": ""
           }
         ]
       },
       {
-        "Id": "12d46c04-aeb0-46fb-b511-b1bdec0141f1",
+        "Id": "522f4c81-ca2c-4bfc-8738-e17468a475b5",
         "Name": "wall_01",
         "Enabled": true,
         "Position": "-384,384,128",
@@ -1211,7 +1258,8 @@
             "__enabled": true,
             "IsTrigger": false,
             "Model": "models/environment/wall_01.vmdl",
-            "Surface": null
+            "Surface": null,
+            "Tags": ""
           },
           {
             "__type": "ModelComponent",
@@ -1224,7 +1272,7 @@
         ]
       },
       {
-        "Id": "6156ce4b-2fe4-4dbf-a418-9db342865026",
+        "Id": "e717b34e-ebea-4736-9a00-221c7fae4f43",
         "Name": "wall_01",
         "Enabled": true,
         "Position": "-256,384.0002,0",
@@ -1236,7 +1284,8 @@
             "__enabled": true,
             "IsTrigger": false,
             "Model": "models/environment/wall_01.vmdl",
-            "Surface": null
+            "Surface": null,
+            "Tags": ""
           },
           {
             "__type": "ModelComponent",
@@ -1249,7 +1298,7 @@
         ]
       },
       {
-        "Id": "059e20f6-17ff-4d21-b588-a8874c71ea81",
+        "Id": "7fdaac6e-4ba1-4e6b-891a-1d13e1108b24",
         "Name": "wall_01",
         "Enabled": true,
         "Position": "-256,384.0002,128",
@@ -1269,12 +1318,13 @@
             "__enabled": true,
             "IsTrigger": false,
             "Model": "models/environment/wall_01.vmdl",
-            "Surface": null
+            "Surface": null,
+            "Tags": ""
           }
         ]
       },
       {
-        "Id": "c901b519-4d44-45a2-90de-a5f7d9b76888",
+        "Id": "ddb8e6e0-0bf5-41c6-8a29-c1d2a118eaf2",
         "Name": "wall_01",
         "Enabled": true,
         "Position": "-128,384,0",
@@ -1294,12 +1344,13 @@
             "__enabled": true,
             "IsTrigger": false,
             "Model": "models/environment/wall_02.vmdl",
-            "Surface": null
+            "Surface": null,
+            "Tags": ""
           }
         ]
       },
       {
-        "Id": "3c80f24c-5c1a-411f-aa62-71ba93ecf98b",
+        "Id": "33a55c86-e6e1-4065-87d5-461b3c4d9cf7",
         "Name": "wall_01",
         "Enabled": true,
         "Position": "-128,384,128",
@@ -1311,7 +1362,8 @@
             "__enabled": true,
             "IsTrigger": false,
             "Model": "models/environment/wall_01.vmdl",
-            "Surface": null
+            "Surface": null,
+            "Tags": ""
           },
           {
             "__type": "ModelComponent",
@@ -1324,7 +1376,7 @@
         ]
       },
       {
-        "Id": "215adc03-5ad6-4bc4-97da-459b27f0358c",
+        "Id": "a6482a24-a425-4d35-b085-8d45526ee51c",
         "Name": "wall_01",
         "Enabled": true,
         "Position": "0,384,0",
@@ -1336,7 +1388,8 @@
             "__enabled": true,
             "IsTrigger": false,
             "Model": "models/environment/wall_01.vmdl",
-            "Surface": null
+            "Surface": null,
+            "Tags": ""
           },
           {
             "__type": "ModelComponent",
@@ -1349,7 +1402,7 @@
         ]
       },
       {
-        "Id": "7d7729c3-7496-41c6-8379-12721f4670d1",
+        "Id": "85bc4ef7-6aa4-4f62-a247-e668eab444f4",
         "Name": "wall_01",
         "Enabled": true,
         "Position": "0,384,128",
@@ -1369,12 +1422,13 @@
             "__enabled": true,
             "IsTrigger": false,
             "Model": "models/environment/wall_01.vmdl",
-            "Surface": null
+            "Surface": null,
+            "Tags": ""
           }
         ]
       },
       {
-        "Id": "5ec3f95a-240f-4b2a-95da-9952795d8c3e",
+        "Id": "c84ed7f9-966f-4462-abdb-4a55cf7f1f54",
         "Name": "door_02",
         "Enabled": true,
         "Position": "-384,-128,0",
@@ -1383,7 +1437,7 @@
         "__Prefab": "prefabs/pieces/door_02.object"
       },
       {
-        "Id": "70806e84-50ba-4f97-8bc7-f9864024986b",
+        "Id": "6eeba5a0-9e8f-40b8-a87a-6a40a34de277",
         "Name": "stairs_02",
         "Enabled": true,
         "Position": "0,0,0",
@@ -1403,12 +1457,13 @@
             "__enabled": true,
             "IsTrigger": false,
             "Model": "models/environment/stairs_02.vmdl",
-            "Surface": null
+            "Surface": null,
+            "Tags": ""
           }
         ]
       },
       {
-        "Id": "abbb67b8-14d6-4b5f-a2f5-753373ed9453",
+        "Id": "928ee907-672f-4b2e-babb-6fd8d2074b77",
         "Name": "stairs_02",
         "Enabled": true,
         "Position": "0,128,0",
@@ -1420,7 +1475,8 @@
             "__enabled": true,
             "IsTrigger": false,
             "Model": "models/environment/stairs_02.vmdl",
-            "Surface": null
+            "Surface": null,
+            "Tags": ""
           },
           {
             "__type": "ModelComponent",
@@ -1433,7 +1489,7 @@
         ]
       },
       {
-        "Id": "5f0d5159-7ff1-4032-a79f-89d97808cd35",
+        "Id": "02a17843-fe6b-4250-ae78-25b0c5c220af",
         "Name": "stairs_02",
         "Enabled": true,
         "Position": "-128,256,0",
@@ -1453,12 +1509,13 @@
             "__enabled": true,
             "IsTrigger": false,
             "Model": "models/environment/stairs_02.vmdl",
-            "Surface": null
+            "Surface": null,
+            "Tags": ""
           }
         ]
       },
       {
-        "Id": "97edf025-3e11-4aaa-9b0b-8b28f8304094",
+        "Id": "b4bbebbe-3f96-4983-9731-18de15c37f63",
         "Name": "stairs_02",
         "Enabled": true,
         "Position": "-127.9999,128,0",
@@ -1470,7 +1527,8 @@
             "__enabled": true,
             "IsTrigger": false,
             "Model": "models/environment/stairs_03.vmdl",
-            "Surface": null
+            "Surface": null,
+            "Tags": ""
           },
           {
             "__type": "ModelComponent",
@@ -1483,7 +1541,7 @@
         ]
       },
       {
-        "Id": "82f06b02-72b7-4416-a2e7-aa75cb65ae5f",
+        "Id": "0fb46592-b586-4df9-ada2-ec33a754a124",
         "Name": "stairs_02",
         "Enabled": true,
         "Position": "-127.9999,128,0",
@@ -1503,12 +1561,13 @@
             "__enabled": true,
             "IsTrigger": false,
             "Model": "models/environment/stairs_04.vmdl",
-            "Surface": null
+            "Surface": null,
+            "Tags": ""
           }
         ]
       },
       {
-        "Id": "e991150e-f43d-40c2-9100-2e55c0e07051",
+        "Id": "b13792e7-f6cb-411b-a6b5-e2607f10e7e3",
         "Name": "stairs_02",
         "Enabled": true,
         "Position": "-128,384,0",
@@ -1520,7 +1579,8 @@
             "__enabled": true,
             "IsTrigger": false,
             "Model": "models/environment/stairs_02.vmdl",
-            "Surface": null
+            "Surface": null,
+            "Tags": ""
           },
           {
             "__type": "ModelComponent",
@@ -1533,7 +1593,7 @@
         ]
       },
       {
-        "Id": "949a08aa-1571-44fb-b1ed-58b888f72b92",
+        "Id": "beb9cda5-8290-41dc-ac44-acedef5becef",
         "Name": "stairs_02",
         "Enabled": true,
         "Position": "0,256,0",
@@ -1553,12 +1613,13 @@
             "__enabled": true,
             "IsTrigger": false,
             "Model": "models/environment/stairs_02.vmdl",
-            "Surface": null
+            "Surface": null,
+            "Tags": ""
           }
         ]
       },
       {
-        "Id": "b9e7a0f1-c9ed-414c-bea8-e68f9ec3cad0",
+        "Id": "452be1d9-b439-497b-8dee-cf72f8776a10",
         "Name": "stairs_02",
         "Enabled": true,
         "Position": "0,-128,0",
@@ -1570,7 +1631,8 @@
             "__enabled": true,
             "IsTrigger": false,
             "Model": "models/environment/stairs_02.vmdl",
-            "Surface": null
+            "Surface": null,
+            "Tags": ""
           },
           {
             "__type": "ModelComponent",
@@ -1583,7 +1645,7 @@
         ]
       },
       {
-        "Id": "b5bf64bd-7aeb-4c7f-aad9-55f04961b9fd",
+        "Id": "0f67f906-013e-4756-8638-a7b378182c62",
         "Name": "stairs_02",
         "Enabled": true,
         "Position": "-128,-128.0001,0",
@@ -1603,12 +1665,13 @@
             "__enabled": true,
             "IsTrigger": false,
             "Model": "models/environment/stairs_03.vmdl",
-            "Surface": null
+            "Surface": null,
+            "Tags": ""
           }
         ]
       },
       {
-        "Id": "111c890b-6849-4ef6-88f7-3e21843f6a3a",
+        "Id": "50d0eea0-bb0e-4b99-b65f-e60281b77164",
         "Name": "stairs_02",
         "Enabled": true,
         "Position": "-256,-128.0001,0",
@@ -1620,7 +1683,8 @@
             "__enabled": true,
             "IsTrigger": false,
             "Model": "models/environment/stairs_02.vmdl",
-            "Surface": null
+            "Surface": null,
+            "Tags": ""
           },
           {
             "__type": "ModelComponent",
@@ -1633,7 +1697,7 @@
         ]
       },
       {
-        "Id": "4ad16368-20d9-437c-8026-d8ce1bc5a28b",
+        "Id": "ae25b580-f3f9-4ae7-b4f3-b2b020021b5c",
         "Name": "stairs_02",
         "Enabled": true,
         "Position": "-256,0,0",
@@ -1645,7 +1709,8 @@
             "__enabled": true,
             "IsTrigger": false,
             "Model": "models/environment/stairs_03.vmdl",
-            "Surface": null
+            "Surface": null,
+            "Tags": ""
           },
           {
             "__type": "ModelComponent",
@@ -1658,7 +1723,7 @@
         ]
       },
       {
-        "Id": "bcde6de3-0b1d-48cd-a5d9-1d897c02fbde",
+        "Id": "dde1a118-3a20-4433-9c1b-980a47964729",
         "Name": "stairs_02",
         "Enabled": true,
         "Position": "-256,128,0",
@@ -1678,12 +1743,13 @@
             "__enabled": true,
             "IsTrigger": false,
             "Model": "models/environment/stairs_02.vmdl",
-            "Surface": null
+            "Surface": null,
+            "Tags": ""
           }
         ]
       },
       {
-        "Id": "1af05b02-9ea1-4d5f-b532-64e55ba1cf4d",
+        "Id": "d17ba22a-d543-45f0-8627-7b0f42be7905",
         "Name": "Zone",
         "Enabled": true,
         "Position": "-128,64,0",
@@ -1693,20 +1759,21 @@
           {
             "__type": "CameraTriggerComponent",
             "__enabled": true,
-            "CameraPoint": "0bc3d4c6-09af-4e86-980d-e2cdc354a375",
+            "CameraPoint": "368bd041-abd3-431d-9a9c-78a8cb385999",
             "FollowPlayer": true
           },
           {
             "__type": "ColliderBoxComponent",
-            "__enabled": true,
+            "__enabled": false,
             "IsTrigger": true,
             "Scale": "512,640,168.65",
-            "Surface": null
+            "Surface": null,
+            "Tags": "-solid"
           }
         ],
         "Children": [
           {
-            "Id": "0bc3d4c6-09af-4e86-980d-e2cdc354a375",
+            "Id": "368bd041-abd3-431d-9a9c-78a8cb385999",
             "Name": "Camera",
             "Enabled": true,
             "Position": "0,-302.8788,193.0658",
@@ -1716,7 +1783,7 @@
         ]
       },
       {
-        "Id": "f437ec58-e427-4066-b2f9-eb2b0f7186be",
+        "Id": "759e4bcc-5061-435e-b473-472c03588ae0",
         "Name": "Spot Light",
         "Enabled": true,
         "Position": "-115.8027,366.332,231.2855",
@@ -1736,7 +1803,7 @@
         ]
       },
       {
-        "Id": "c4da910b-997c-4982-9c7f-6fc4c832b888",
+        "Id": "0d748e25-ffb6-43bd-bbc8-c319d36df37d",
         "Name": "barrel",
         "Enabled": true,
         "Position": "26.23622,343.1266,0.0009765625",
@@ -1756,7 +1823,8 @@
             "__enabled": true,
             "IsTrigger": false,
             "Model": "models/environment/breakables/barrel/barrel.vmdl",
-            "Surface": null
+            "Surface": null,
+            "Tags": ""
           },
           {
             "__type": "AimableTargetComponent",
@@ -1765,7 +1833,7 @@
         ]
       },
       {
-        "Id": "ec9874bf-28ee-4869-81b1-a1cd44bd9c4d",
+        "Id": "f72c5b32-4f8a-4318-9e5b-08e7635349b1",
         "Name": "barrel",
         "Enabled": true,
         "Position": "63.70639,320.0157,0.0005950722",
@@ -1785,7 +1853,8 @@
             "__enabled": true,
             "IsTrigger": false,
             "Model": "models/environment/breakables/barrel/barrel.vmdl",
-            "Surface": null
+            "Surface": null,
+            "Tags": ""
           },
           {
             "__type": "AimableTargetComponent",
@@ -1794,7 +1863,7 @@
         ]
       },
       {
-        "Id": "4643e42e-0280-4cdc-9bcb-b099968de18b",
+        "Id": "706fe69f-7a40-4f2b-b61f-577d8b2ff72a",
         "Name": "test_enemy",
         "Enabled": true,
         "Position": "-305.0778,283.3403,-0.1829863",
@@ -1803,7 +1872,7 @@
         "__Prefab": "prefabs/enemies/test_enemy.object"
       },
       {
-        "Id": "78780cdf-bdc6-41bb-8404-fe709a2db30d",
+        "Id": "52fe063e-926f-46aa-886e-116fd0b7c8bb",
         "Name": "test_enemy",
         "Enabled": true,
         "Position": "82.58681,-195.5721,-0.1829775",

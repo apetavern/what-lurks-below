@@ -1,3 +1,4 @@
+using BrickJam.Player;
 using Sandbox;
 using System.Linq;
 
@@ -15,13 +16,16 @@ public class EnemyController : BaseComponent
 
     GameObject Player;
     CharacterController _characterController;
-    BBox _bounds;
 
     public override void OnEnabled()
     {
         base.OnStart();
 
         Player = Scene.GetAllObjects( true ).FirstOrDefault( x => x.Name == "player" );
+
+        // Destroy on death
+        HealthComponent healthComponent = GameObject.GetComponent<HealthComponent>();
+        healthComponent.OnDeath += () => GameObject.Destroy();
     }
 
     public override void Update()

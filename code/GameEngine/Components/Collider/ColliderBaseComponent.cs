@@ -23,6 +23,9 @@ public abstract class ColliderBaseComponent : BaseComponent
 		}
 	}
 
+	[Property]
+	public string Tags { get; set; } = "";
+
 	public override void OnEnabled()
 	{
 		Assert.IsNull( ownBody );
@@ -59,10 +62,24 @@ public abstract class ColliderBaseComponent : BaseComponent
 		shape = CreatePhysicsShape( physicsBody );
 		if ( shape is not null )
 		{
+			shape.AddTag( "solid" );
+
 			shape.IsTrigger = IsTrigger;
 			if ( IsTrigger )
 			{
 				shape.AddTag( "trigger" );
+			}
+
+			var tags = Tags.Split( ',' );
+			foreach ( var tag in tags )
+			{
+				string realTag = tag.Trim();
+				if ( realTag.StartsWith( '-' ) )
+				{
+					shape.RemoveTag( realTag.Substring( 1 ) );
+					continue;
+				}
+				shape.AddTag( realTag );
 			}
 		}
 	}

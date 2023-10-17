@@ -91,6 +91,24 @@
             ]
           }
         ]
+      },
+      {
+        "Id": "5255d985-b906-4bfb-a936-4680708d8b77",
+        "Name": "Collider",
+        "Enabled": true,
+        "Position": "0,0,44.80552",
+        "Rotation": "0,0,0,1",
+        "Scale": "1,1,1",
+        "Components": [
+          {
+            "__type": "ColliderBoxComponent",
+            "__enabled": true,
+            "IsTrigger": true,
+            "Scale": "30,30,89.6",
+            "Surface": null,
+            "Tags": "enemy"
+          }
+        ]
       }
     ]
   },
