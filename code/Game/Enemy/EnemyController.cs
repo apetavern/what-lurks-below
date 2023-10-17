@@ -4,6 +4,7 @@ using System.Linq;
 
 namespace BrickJam.Game;
 
+[Icon( "smart_toy", "red", "white" )]
 public class EnemyController : BaseComponent
 {
 	[Property] public float Speed { get; set; } = 1f;

@@ -3,6 +3,7 @@ using Sandbox;
 
 namespace BrickJam.Player;
 
+[Icon( "monitor_heart", "red", "white" )]
 public class HealthComponent : BaseComponent
 {
 	public float Health { get; set; }
