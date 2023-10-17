@@ -42,6 +42,10 @@ public class WeaponComponent : BaseComponent
 	{
 		var citizenModel = _body.GetComponent<AnimatedModelComponent>().SceneModel;
 		var helper = new CitizenAnimationHelperScene( citizenModel );
+		
+		var ctrl = _player?.GetComponent<PlayerController>();
+		if ( ctrl is null )
+			return;
 
 		if ( ActiveWeapon is null )
 			helper.HoldType = CitizenAnimationHelperScene.HoldTypes.None;
@@ -50,14 +54,12 @@ public class WeaponComponent : BaseComponent
 
 		if ( Input.Pressed( "attack1" ) )
 		{
-			var player = _player?.GetComponent<PlayerController>();
-			ActiveWeapon?.PrimaryFire( player.Eye.Transform.Position, player.Eye.Transform.Rotation.Forward );
+			ActiveWeapon?.PrimaryFire( ctrl.Eye.Transform.Position, ctrl.Eye.Transform.Rotation.Forward );
 			ActiveWeapon?.OnPrimaryPressed( helper );
 		}
 		if ( Input.Pressed( "attack2" ) )
 		{
-			var player = _player?.GetComponent<PlayerController>();
-			ActiveWeapon?.SecondaryFire( player.Eye.Transform.Position, player.Eye.Transform.Rotation.Forward );
+			ActiveWeapon?.SecondaryFire( ctrl.Eye.Transform.Position, ctrl.Eye.Transform.Rotation.Forward );
 			ActiveWeapon?.OnSecondaryPressed( helper );
 		}
 
