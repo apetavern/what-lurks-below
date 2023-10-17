@@ -62315,6 +62315,10 @@
 			m_name = "models/cosmetics/caving_backpack/caving_backpack.vmdl"
 			m_bEnabled = true
 		},
+		{
+			m_name = "models/items/knife/knife.vmdl"
+			m_bEnabled = true
+		},
 	]
 	m_cameraSettings = 
 	{
