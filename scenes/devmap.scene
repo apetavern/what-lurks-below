@@ -11,7 +11,7 @@
         {
           "__type": "DirectionalLightComponent",
           "__enabled": true,
-          "LightColor": "0.91373,0.98039,1,1",
+          "LightColor": "0.26042,0.32673,0.27235,1",
           "Shadows": true,
           "SkyColor": "0.05882,0.07451,0.08235,1"
         }
@@ -238,7 +238,7 @@
       "Components": [
         {
           "__type": "ModelComponent",
-          "__enabled": true,
+          "__enabled": false,
           "MaterialOverride": null,
           "Model": "models/dev/plane.vmdl",
           "ShouldCastShadows": true,

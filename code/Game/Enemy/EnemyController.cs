@@ -1,7 +1,7 @@
 using BrickJam.Player;
 using Sandbox;
 using System.Linq;
-
+using System;
 namespace BrickJam.Game;
 
 [Icon( "smart_toy", "red", "white" )]
@@ -28,8 +28,6 @@ public class EnemyController : BaseComponent
 
 	public override void OnEnabled()
 	{
-		base.OnStart();
-
 		Player = Scene.GetAllObjects( true ).FirstOrDefault( x => x.Name == "player" );
 
 		// Destroy on death
@@ -37,7 +35,9 @@ public class EnemyController : BaseComponent
 		healthComponent.OnDeath += () => GameObject.Destroy();
 		healthComponent.OnDamage += OnDamaged;
 
+		var rng = new Random();
 
+		Transform.Scale = Vector3.One * rng.Float( 0.9f, 1.3f );
 	}
 
 	public TimeSince TimeSinceDamage;
