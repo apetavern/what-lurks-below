@@ -12,7 +12,8 @@
         "__enabled": true,
         "IsTrigger": false,
         "Model": "models/environment/door_01.vmdl",
-        "Surface": null
+        "Surface": null,
+        "Tags": ""
       },
       {
         "__type": "ModelComponent",
@@ -34,7 +35,36 @@
         "Components": [
           {
             "__type": "RoomDoorDefinition",
-            "__enabled": true
+            "__enabled": true,
+            "ClosedMesh": "e579b134-e50d-4cc0-88f2-352a682d6635"
+          }
+        ],
+        "Children": [
+          {
+            "Id": "e579b134-e50d-4cc0-88f2-352a682d6635",
+            "Name": "Plane",
+            "Enabled": true,
+            "Position": "0.000002039489,2.444068,64",
+            "Rotation": "0.5000004,0.5,-0.5,0.4999996",
+            "Scale": "1.28,1.28,1.28",
+            "Components": [
+              {
+                "__type": "ModelComponent",
+                "__enabled": true,
+                "MaterialOverride": "materials/sewer/sewer_wall_01.vmat",
+                "Model": "models/dev/plane.vmdl",
+                "ShouldCastShadows": true,
+                "Tint": "1,1,1,1"
+              },
+              {
+                "__type": "ColliderBoxComponent",
+                "__enabled": true,
+                "IsTrigger": false,
+                "Scale": "100,100,3",
+                "Surface": null,
+                "Tags": ""
+              }
+            ]
           }
         ]
       }

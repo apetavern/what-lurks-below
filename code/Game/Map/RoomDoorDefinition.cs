@@ -3,6 +3,12 @@ using Sandbox;
 [EditorHandle( "materials/gizmo/door.png" )]
 public sealed class RoomDoorDefinition : BaseComponent
 {
+	[Property] public GameObject ClosedMesh { get; set; }
+	public void OpenDoor()
+	{
+		ClosedMesh.Enabled = false;
+	}
+
 	public override void DrawGizmos()
 	{
 		base.DrawGizmos();

@@ -72,6 +72,9 @@ public sealed class RoomChunkComponent : BaseComponent
 		Vector3 controlPoint1 = doorPosition1.Transform.Position - doorPosition1.Transform.Rotation.Right * 768;
 		Vector3 controlPoint2 = doorPosition2.Transform.Position - doorPosition2.Transform.Rotation.Right * 768;
 
+		doorPosition1.OpenDoor();
+		doorPosition2.OpenDoor();
+
 		// Create a Bezier curve using the positions and control points
 		List<Vector3> curvePoints = CreateBezierCurve( doorPosition1.Transform.Position, controlPoint1, controlPoint2, doorPosition2.Transform.Position, 128f );
 
