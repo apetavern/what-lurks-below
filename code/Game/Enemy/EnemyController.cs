@@ -45,7 +45,7 @@ public class EnemyController : BaseComponent
 	public void OnDamaged()
 	{
 		Body.GetComponent<AnimatedModelComponent>().SceneModel.SetAnimParameter( "hit", true );
-		_characterController.Velocity = -Transform.Rotation.Forward * 100f;
+		_characterController.Velocity = -Body.Transform.Rotation.Forward * 100f;
 		TimeSinceDamage = 0f;
 	}
 
