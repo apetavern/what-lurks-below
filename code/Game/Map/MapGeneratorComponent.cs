@@ -58,8 +58,6 @@ public sealed class MapGeneratorComponent : BaseComponent
 
 			RoomChunkComponent closestNeighbor = null;
 
-			await GameTask.Delay( 10 );
-
 			// Check for neighboring grid points and create connections
 			foreach ( var neighbor in SpawnedRooms )
 			{
@@ -165,10 +163,10 @@ public sealed class MapGeneratorComponent : BaseComponent
 			{
 				waitframes++;
 				//Log.Info( "Waiting for hallways..." );
-				await GameTask.Delay( 50 );
+				await GameTask.Delay( 5 );
 			}
-
-			while ( room.PathPoints.Count == 1 && waitframes < 100 )
+			waitframes = 0;
+			while ( room.PathPoints.Count == 1 && waitframes < 50 )
 			{
 				waitframes++;
 				//Log.Info( "Waiting for hallways..." );
@@ -203,6 +201,7 @@ public sealed class MapGeneratorComponent : BaseComponent
 			await GameTask.Delay( 10 );
 		}
 
+		Scene.GetAllObjects( true ).Where( X => X.GetComponent<NavGenComponent>() != null ).FirstOrDefault().GetComponent<NavGenComponent>().GenerateMesh();
 	}
 
 	public override void Update()
@@ -214,7 +213,7 @@ public sealed class MapGeneratorComponent : BaseComponent
 			{
 				foreach ( var room2 in SpawnedRooms )
 				{
-					if ( room == room2 || room == SpawnedRooms[0] ) continue;
+					if ( room == room2 || room == SpawnedRooms[0] || room == null ) continue;
 
 					BBox CheckBox1 = new BBox( room.GameObject.GetBounds().Center, SnapGridSize );
 					BBox CheckBox2 = new BBox( room2.GameObject.GetBounds().Center, SnapGridSize );
@@ -223,6 +222,11 @@ public sealed class MapGeneratorComponent : BaseComponent
 					{
 						overlaps++;
 						room.Transform.Position += (room.Transform.Position - room2.Transform.Position) * Time.Delta;
+
+						if ( room.Transform.Position.Length > 5000 )
+						{
+							room.Destroy();
+						}
 					}
 				}
 			}
@@ -232,6 +236,7 @@ public sealed class MapGeneratorComponent : BaseComponent
 				Log.Info( "Rooms corrected!" );
 				foreach ( var room in SpawnedRooms )
 				{
+					if ( room == null ) continue;
 					var GridSnappedPosition = room.Transform.Position;
 					GridSnappedPosition.x = MathF.Round( GridSnappedPosition.x / SnapGridSize ) * SnapGridSize;
 					GridSnappedPosition.y = MathF.Round( GridSnappedPosition.y / SnapGridSize ) * SnapGridSize;

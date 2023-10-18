@@ -232,7 +232,7 @@ public sealed class RoomChunkComponent : BaseComponent
 	public bool connected;
 
 	// Method to add a connection to another room
-	public async void AddConnection( RoomChunkComponent otherRoom )
+	public void AddConnection( RoomChunkComponent otherRoom )
 	{
 		if ( !connected )
 		{
@@ -243,7 +243,6 @@ public sealed class RoomChunkComponent : BaseComponent
 				RoomDoorDefinition door1 = ChooseClosestDoorForConnection( this, otherRoom.Transform.Position );
 				RoomDoorDefinition door2 = ChooseClosestDoorForConnection( otherRoom, door1.Transform.Position );
 				ConnectRooms( door1, door2 );
-				await GameTask.Delay( 10 );
 			}
 		}
 	}
