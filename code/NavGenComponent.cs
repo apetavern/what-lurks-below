@@ -10,6 +10,8 @@ public sealed class NavGenComponent : BaseComponent
 
 	NavigationMesh mesh { get; set; }
 
+	public bool Initialized;
+
 	//NavigationPath path { get; set; }
 
 	public void GenerateMesh()
