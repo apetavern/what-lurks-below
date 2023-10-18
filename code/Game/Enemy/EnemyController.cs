@@ -2,6 +2,8 @@ using BrickJam.Player;
 using Sandbox;
 using System.Linq;
 using System;
+using System.Collections.Generic;
+
 namespace BrickJam.Game;
 
 [Icon( "smart_toy", "red", "white" )]
@@ -26,6 +28,12 @@ public class EnemyController : BaseComponent
 	GameObject Player;
 	CharacterController _characterController;
 
+	List<Vector3> path { get; set; } = new List<Vector3>();
+
+	int pathIndex { get; set; } = 0;
+
+	NavGenComponent navgen { get; set; }
+
 	public override void OnEnabled()
 	{
 		Player = Scene.GetAllObjects( true ).FirstOrDefault( x => x.Name == "player" );
@@ -38,6 +46,8 @@ public class EnemyController : BaseComponent
 		var rng = new Random();
 
 		Transform.Scale = Vector3.One * rng.Float( 0.9f, 1.3f );
+
+		navgen = Scene.GetAllObjects( true ).FirstOrDefault( x => x.GetComponent<NavGenComponent>() != null ).GetComponent<NavGenComponent>();
 	}
 
 	public TimeSince TimeSinceDamage;
@@ -51,12 +61,40 @@ public class EnemyController : BaseComponent
 
 	float nextAttackTime;
 
+	public async void UpdatePathToPlayer()
+	{
+		var result = await navgen.GeneratePath( Transform.Position, Player.Transform.Position );
+
+		foreach ( var item in result )
+		{
+			path.Add( item.Position );
+		}
+	}
+
 	public override void Update()
 	{
 		base.Update();
 
+		if ( path.Count == 0 && navgen.Initialized )
+		{
+			path.Add( Transform.Position );
+			UpdatePathToPlayer();
+		}
+
 		Vector3 myPosition = Transform.Position;
 		Vector3 playerPosition = Player.Transform.Position;
+
+		/*if ( path.Count > 1 )
+		{
+			playerPosition = path[pathIndex];
+
+			if ( Vector3.DistanceBetween( Transform.Position, playerPosition ) < AggroRange )
+			{
+				pathIndex++;
+				pathIndex = int.Clamp( pathIndex, 0, path.Count - 1 );
+			}
+		}*/
+
 		IsAggro = (playerPosition.Distance( myPosition ) <= AggroRange) || TimeSinceDamage < 10f;
 
 		_characterController ??= GameObject.GetComponent<CharacterController>();
