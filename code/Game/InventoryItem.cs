@@ -1,5 +1,6 @@
 ﻿using System;
 using BrickJam.Game;
+using BrickJam.Player;
 using Sandbox;
 
 namespace BrickJam;
@@ -11,6 +12,8 @@ public class InventoryItem : GameResource
 	public float Weight { get; set; }
 	public int Length { get; set; }
 	public int Height { get; set; }
+
+	public InvCoord Position { get; set; }
 
 	// public InventoryItem( string name, float weight, int length, int height )
 	// {

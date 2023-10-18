@@ -15,6 +15,11 @@ public class Inventory : BaseComponent
 	private GameObject _player;
 	private int ItemCount => _items.Count;
 	[Property] public int Slots { get; set; }
+	
+	[Property] public int SlotsX { get; set; }
+	[Property] public int SlotsY { get; set; }
+
+	private bool[,] _inventorySlots;
 
 	public InventoryItem this[int key]
 	{
@@ -25,10 +30,82 @@ public class Inventory : BaseComponent
 	{
 		if ( ItemCount >= Slots )
 			return false;
-
+	
 		Log.Info( item?.Name );
-
+	
 		_items.Add( item );
+		return true;
+	}
+
+	public (bool, InvCoord) HasFreeSpace( int length, int height )
+	{
+		for ( var i = 0; i < _inventorySlots.GetLength( 0 ); i++ )
+		{
+			for ( var j = 0; j < _inventorySlots.GetLength( 1 ); j++ )
+			{
+				var currentPos = new InvCoord( i, j );
+				var valid = CheckPositionValid( currentPos, length, height );
+				if ( valid )
+					return (true, currentPos);
+			}
+		}
+
+		return (false, InvCoord.None);
+	}
+
+	bool CheckPositionValid( InvCoord pos, int length, int height )
+	{
+		if ( pos.X < 0 || pos.X + length > _inventorySlots.GetLength( 0 ) )
+			return false;
+		if ( pos.Y < 0 || pos.Y + height > _inventorySlots.GetLength( 1 ) )
+			return false;
+
+		for ( var i = pos.X; i < pos.X + length; i++ )
+		{
+			for ( var j = pos.Y; j < pos.Y + height; j++ )
+			{
+				if ( _inventorySlots[i, j] )
+					return false;
+			}
+		}
+
+		return true;
+	}
+
+	void Rent( InvCoord pos, int length, int height )
+	{
+		for ( var i = pos.X; i < pos.X + length; i++ )
+		{
+			for ( var j = pos.Y; j < pos.Y + height; j++ )
+			{
+				_inventorySlots[i, j] = true;
+			}
+		}
+	}
+
+	void Free( InvCoord pos, int length, int height )
+	{
+		for ( var i = pos.X; i < pos.X + length; i++ )
+		{
+			for ( var j = pos.Y; j < pos.Y + height; j++ )
+			{
+				_inventorySlots[i, j] = false;
+			}
+		}
+	}
+
+	public bool PlaceItem( InventoryItem item, InvCoord pos )
+	{
+		var positionValid = CheckPositionValid( pos, item.Length, item.Height );
+		if ( !positionValid )
+			return false;
+		
+		if ( _items.Contains(item) )
+			Free( item.Position, item.Length, item.Height );
+		Rent( pos, item.Length, item.Height );
+
+		item.Position = pos;
+		
 		return true;
 	}
 
@@ -44,6 +121,7 @@ public class Inventory : BaseComponent
 
 	public override void OnStart()
 	{
+		_inventorySlots = new bool[SlotsX, SlotsY];
 		_player = Scene.GetAllObjects( true ).FirstOrDefault( p => p.Name == "player" );
 	}
 
@@ -68,5 +146,24 @@ public class Inventory : BaseComponent
 			If not, we do not equip the pistol at all. */
 			c_PlayerWeapon.Equip( new KnifeWeapon( true, "Knife" ) );
 		}
+	}
+}
+
+public struct InvCoord
+{
+	public int X { get; set; }
+	public int Y { get; set; }
+
+	public InvCoord( int x, int y )
+	{
+		X = x;
+		Y = y;
+	}
+
+	public static InvCoord None => new InvCoord( -1, 1 );
+
+	public override string ToString()
+	{
+		return $"({X}, {Y})";
 	}
 }

@@ -115,9 +115,17 @@ public class ItemPickup : BaseComponent
 		if ( inv is null )
 			return;
 		
-		var added = inv.AddItem( _pickupResource.Item );
+		var (hasSpace, invCoord) = inv.HasFreeSpace( _pickupResource.Item.Length, _pickupResource.Item.Height );
+		if ( !hasSpace )
+		{
+			Log.Warning( $"Not enough space for {_pickupResource.Item.Name} in inventory." );
+			return;
+		}
+
+		var added = inv.PlaceItem( _pickupResource.Item, invCoord );
 		if ( !added )
 			return;
+		
 		Sound.FromScreen( "item_pickup" );
 		Destroy();
 	}
