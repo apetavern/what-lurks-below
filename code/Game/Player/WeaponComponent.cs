@@ -17,7 +17,7 @@ public class WeaponComponent : BaseComponent
 
 		_player = Scene.GetAllObjects( true ).FirstOrDefault( p => p.Name == "player" );
 		_body = _player?.GetComponent<PlayerController>().Body;
-		Equip( new PistolWeapon( true, "Pistol", Scene ) );
+		Equip( new PistolWeapon( true, "Pistol" ) );
 	}
 
 	public void Equip( BaseWeapon weapon )
@@ -42,7 +42,7 @@ public class WeaponComponent : BaseComponent
 	{
 		var citizenModel = _body.GetComponent<AnimatedModelComponent>().SceneModel;
 		var helper = new CitizenAnimationHelperScene( citizenModel );
-		
+
 		var ctrl = _player?.GetComponent<PlayerController>();
 		if ( ctrl is null )
 			return;

@@ -126,7 +126,7 @@ public class Scene : GameObject
 		}
 	}
 
-	protected void Clear()
+	public override void Clear()
 	{
 		foreach ( var go in Children.ToArray() )
 		{
@@ -229,7 +229,7 @@ public class Scene : GameObject
 		HasUnsavedChanges = false;
 	}
 
-	Dictionary<Guid, GameObject> objectsById = new ();
+	Dictionary<Guid, GameObject> objectsById = new();
 
 	public int RegisteredObjectIds => objectsById.Count;
 
@@ -270,7 +270,7 @@ public class Scene : GameObject
 		{
 			Log.Warning( $"Tried to unregister wrong game object {go}, {go.Id} (was {existing})" );
 			return;
-			
+
 		}
 
 		objectsById.Remove( go.Id );

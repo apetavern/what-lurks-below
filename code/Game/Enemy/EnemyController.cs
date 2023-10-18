@@ -67,7 +67,7 @@ public class EnemyController : BaseComponent
 
 		_characterController.Move();
 
-		// Rotate body towards velocity
+		// Rotate body towards target
 		if ( _characterController.Velocity.LengthSquared > 0.1f )
 		{
 			Body.GetComponent<AnimatedModelComponent>().SceneModel.SetAnimParameter( "moving", true );

@@ -5,18 +5,18 @@ using Sandbox;
 
 namespace BrickJam.Player;
 
-[Category("Player")]
+[Category( "Player" )]
 public class Inventory : BaseComponent
 {
 	private List<InventoryItem> _items = new();
-	
+
 	public List<InventoryItem> Get => _items;
 
 	private GameObject _player;
 	private int ItemCount => _items.Count;
 	[Property] public int Slots { get; set; }
 
-	public InventoryItem this[ int key ]
+	public InventoryItem this[int key]
 	{
 		get => _items[key];
 	}
@@ -25,9 +25,9 @@ public class Inventory : BaseComponent
 	{
 		if ( ItemCount >= Slots )
 			return false;
-		
-		Log.Info(item?.Name);
-		
+
+		Log.Info( item?.Name );
+
 		_items.Add( item );
 		return true;
 	}
@@ -52,13 +52,13 @@ public class Inventory : BaseComponent
 		var c_PlayerWeapon = _player?.GetComponent<WeaponComponent>();
 		if ( c_PlayerWeapon is null )
 			return;
-		
+
 		if ( Input.Pressed( "slot1" ) )
 		{
 			/* Future: Check if we have a pistol in our inventory.
 			If so, we need to instantiate it with info from the Pistol InventoryItem. 
 			If not, we do not equip the pistol at all. */
-			c_PlayerWeapon.Equip( new PistolWeapon( true, "Pistol", Scene ) );
+			c_PlayerWeapon.Equip( new PistolWeapon( true, "Pistol" ) );
 		}
 	}
 }

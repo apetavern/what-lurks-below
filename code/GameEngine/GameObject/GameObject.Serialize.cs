@@ -12,7 +12,7 @@ public partial class GameObject
 	/// <summary>
 	/// Destroy all components and child objects
 	/// </summary>
-	public void Clear()
+	public virtual void Clear()
 	{
 		// delete all components
 		ForEachComponent( "OnDestroy", true, c => c.Destroy() );

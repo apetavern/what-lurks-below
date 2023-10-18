@@ -29,7 +29,7 @@ public class BaseWeapon : GameObject
 
 	protected AnimatedModelComponent c_AnimatedModel;
 
-	internal BaseWeapon( bool enabled, string name, Scene scene ) : base( enabled, name, scene )
+	internal BaseWeapon( bool enabled, string name ) : base( enabled, name )
 	{
 		c_AnimatedModel = AddComponent<AnimatedModelComponent>( false );
 	}
