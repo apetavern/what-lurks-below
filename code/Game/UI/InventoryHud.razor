@@ -11,6 +11,16 @@
 @code
 {
     public bool IsOpen { get; set; }
+    
+    public int SlotsX { get; set; }
+    public int SlotsY { get; set; }
+    
+    public static InventoryHud Instance { get; set; }
+
+    public InventoryHud()
+    {
+        Instance = this;
+    }
 
     void ToggleOpen()
     {

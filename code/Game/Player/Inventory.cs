@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using BrickJam.Game.UI;
 using BrickJam.Game.Weapon;
 using Sandbox;
 
@@ -123,6 +124,9 @@ public class Inventory : BaseComponent
 	{
 		_inventorySlots = new bool[SlotsX, SlotsY];
 		_player = Scene.GetAllObjects( true ).FirstOrDefault( p => p.Name == "player" );
+
+		InventoryHud.Instance.SlotsX = SlotsX;
+		InventoryHud.Instance.SlotsY = SlotsY;
 	}
 
 	public override void Update()
