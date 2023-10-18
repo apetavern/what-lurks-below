@@ -67,6 +67,15 @@
             ]
           }
         ]
+      },
+      {
+        "Id": "9d5d40fe-4973-4247-8ad2-0a89516837fb",
+        "Name": "hallway_01",
+        "Enabled": true,
+        "Position": "-64,64,0",
+        "Rotation": "0,0,0,1",
+        "Scale": "1.28,1.28,1.28",
+        "__Prefab": "prefabs/hallways/hallway_01.object"
       }
     ]
   },

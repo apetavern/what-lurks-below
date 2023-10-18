@@ -3,6 +3,7 @@ using System;
 using System.Threading;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using System.Linq;
 
 [Title( "Map Generator" )]
 [Category( "World" )]
@@ -166,7 +167,7 @@ public sealed class MapGeneratorComponent : BaseComponent
 					var tr = Physics.Trace.Ray( hall[i], hall[i] - Vector3.Up ).Run();
 					if ( !tr.Hit && hall[i] != Vector3.Zero )//|| (tr.Body.GameObject as GameObject).GetComponent<RoomChunkComponent>( false ) == null 
 					{
-						hallwayChunks.Add( SpawnPrefabFromPath( Hallways[0], hall[i], Rotation.Identity ) );
+						SpawnPrefabFromPath( Hallways[0], hall[i], Rotation.Identity );
 					}
 				}
 			}
@@ -174,8 +175,11 @@ public sealed class MapGeneratorComponent : BaseComponent
 
 		await GameTask.Delay( 200 );
 
+		hallwayChunks = Scene.GetAllObjects( true ).Where( X => X.GetComponent<HallwayChunkComponent>() != null ).ToList();
+
 		foreach ( var item in hallwayChunks )
 		{
+			item.Transform.Rotation = Rotation.Identity;
 			item.GetComponent<HallwayChunkComponent>( false ).CheckSides();
 			await GameTask.Delay( 10 );
 		}

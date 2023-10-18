@@ -69,7 +69,7 @@
         {
           "__type": "DepthOfField",
           "__enabled": true,
-          "BackBlur": true,
+          "BackBlur": false,
           "BlurSize": 200,
           "FocalDistance": 512,
           "FrontBlur": true
