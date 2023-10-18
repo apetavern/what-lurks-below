@@ -195,7 +195,7 @@ public sealed class MapGeneratorComponent : BaseComponent
 					if ( room.GameObject.GetBounds().Overlaps( room2.GameObject.GetBounds() ) )
 					{
 						overlaps++;
-						room.Transform.Position += (room.Transform.Position - room2.Transform.Position) * 0.3f;
+						room.Transform.Position += (room.Transform.Position - room2.Transform.Position) * 0.35f;
 					}
 				}
 			}
