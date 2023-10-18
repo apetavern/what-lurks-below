@@ -4,7 +4,7 @@
       "Id": "00000000-0000-0000-0000-000000000000",
       "Name": "Directional Light",
       "Enabled": true,
-      "Position": "-186.5142,0.0002112252,128",
+      "Position": "0,0.0002112252,1000",
       "Rotation": "0.4304598,0.4304592,-0.5609857,0.560985",
       "Scale": "1,1,1",
       "Components": [
@@ -21,7 +21,7 @@
       "Id": "441bdfe0-648f-4b46-8ba9-88edc38fa7fa",
       "Name": "Skybox",
       "Enabled": true,
-      "Position": "0,0,-34.30033",
+      "Position": "0,0,1000",
       "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Components": [
@@ -46,10 +46,28 @@
       "Id": "bb978bb5-b9da-45c3-935a-e3e23e64a2b3",
       "Name": "room_02a",
       "Enabled": true,
-      "Position": "0,0,0",
+      "Position": "0,1000,0",
       "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "__Prefab": "prefabs/rooms/sewer_room_02.object"
+    },
+    {
+      "Id": "5f0eca88-4431-46d4-88b6-87ebab32a059",
+      "Name": "room_03a",
+      "Enabled": true,
+      "Position": "0,-1000,0",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
+      "__Prefab": "prefabs/rooms/sewer_room_03.object"
+    },
+    {
+      "Id": "0872d607-1b5b-45d2-87a5-f341875615c2",
+      "Name": "room_04a",
+      "Enabled": true,
+      "Position": "0,0,0",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
+      "__Prefab": "prefabs/rooms/sewer_room_04.object"
     }
   ],
   "__references": []

@@ -1,0 +1,60 @@
+{
+  "RootObject": {
+    "Id": "40b84531-d739-49b6-9681-183a5454a4c4",
+    "Name": "barrel",
+    "Enabled": true,
+    "Position": "26.23622,343.1266,0.0009765625",
+    "Rotation": "-0.000000260774,0.0000002791707,-0.6250089,0.780618",
+    "Scale": "1,1,1",
+    "Components": [
+      {
+        "__type": "ModelComponent",
+        "__enabled": true,
+        "MaterialOverride": null,
+        "Model": "models/environment/breakables/barrel/barrel.vmdl",
+        "ShouldCastShadows": true,
+        "Tint": "1,1,1,1"
+      },
+      {
+        "__type": "AimableTargetComponent",
+        "__enabled": true
+      },
+      {
+        "__type": "HealthComponent",
+        "__enabled": true,
+        "InitialHealth": 12,
+        "IsPlayer": false
+      },
+      {
+        "__type": "CharacterController",
+        "__enabled": true,
+        "Acceleration": 10,
+        "GroundAngle": 45,
+        "Height": 32,
+        "Radius": 16,
+        "StepHeight": 18
+      }
+    ],
+    "Children": [
+      {
+        "Id": "a194baca-23d4-46e6-a07a-77efaa40562c",
+        "Name": "Object",
+        "Enabled": true,
+        "Position": "0,0,0",
+        "Rotation": "0,0,0,1",
+        "Scale": "1,1,1",
+        "Components": [
+          {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/breakables/barrel/barrel.vmdl",
+            "Surface": null,
+            "Tags": "solid"
+          }
+        ]
+      }
+    ]
+  },
+  "__references": []
+}
