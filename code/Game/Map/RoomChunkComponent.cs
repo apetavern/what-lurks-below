@@ -69,8 +69,8 @@ public sealed class RoomChunkComponent : BaseComponent
 	public void ConnectRooms( RoomDoorDefinition doorPosition1, RoomDoorDefinition doorPosition2 )
 	{
 		// Calculate control points for the Bézier curve
-		Vector3 controlPoint1 = doorPosition1.Transform.Position - doorPosition1.Transform.Rotation.Right * 768;
-		Vector3 controlPoint2 = doorPosition2.Transform.Position - doorPosition2.Transform.Rotation.Right * 768;
+		Vector3 controlPoint1 = doorPosition1.Transform.Position - doorPosition1.Transform.Rotation.Right * 1024;
+		Vector3 controlPoint2 = doorPosition2.Transform.Position - doorPosition2.Transform.Rotation.Right * 1024;
 
 		doorPosition1.OpenDoor();
 		doorPosition2.OpenDoor();

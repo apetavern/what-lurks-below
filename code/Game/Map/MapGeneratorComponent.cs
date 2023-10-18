@@ -157,13 +157,14 @@ public sealed class MapGeneratorComponent : BaseComponent
 
 	public async void CreateHallways()
 	{
-		await GameTask.Delay( 1000 );
+		await GameTask.Delay( RoomCount * 100 );
 		foreach ( var room in SpawnedRooms )
 		{
 			foreach ( var hall in room.PathPoints )
 			{
 				for ( int i = 0; i < hall.Count; i++ )
 				{
+					await GameTask.Delay( 5 );
 					var tr = Physics.Trace.Ray( hall[i], hall[i] - Vector3.Up ).Run();
 					if ( !tr.Hit && hall[i] != Vector3.Zero )//|| (tr.Body.GameObject as GameObject).GetComponent<RoomChunkComponent>( false ) == null 
 					{
@@ -199,7 +200,7 @@ public sealed class MapGeneratorComponent : BaseComponent
 					if ( room.GameObject.GetBounds().Overlaps( room2.GameObject.GetBounds() ) )
 					{
 						overlaps++;
-						room.Transform.Position += (room.Transform.Position - room2.Transform.Position) * 0.35f;
+						room.Transform.Position += (room.Transform.Position - room2.Transform.Position) * Time.Delta;
 					}
 				}
 			}

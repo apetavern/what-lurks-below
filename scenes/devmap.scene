@@ -223,7 +223,7 @@
         {
           "__type": "MapGeneratorComponent",
           "__enabled": true,
-          "RoomCount": 10,
+          "RoomCount": 15,
           "SnapGridSize": 1024
         }
       ]
