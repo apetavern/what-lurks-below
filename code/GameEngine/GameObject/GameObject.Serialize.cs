@@ -9,19 +9,6 @@ public partial class GameObject
 	{
 	}
 
-	/// <summary>
-	/// Destroy all components and child objects
-	/// </summary>
-	public virtual void Clear()
-	{
-		// delete all components
-		ForEachComponent( "OnDestroy", true, c => c.Destroy() );
-		Components.RemoveAll( x => x is null );
-
-		// delete all children
-		ForEachChild( "Children", true, c => c.DestroyImmediate() );
-		Children.RemoveAll( x => x is null );
-	}
 
 	//
 	// For flexibility purposes, we serialize the GameObject manually
@@ -171,6 +158,8 @@ public partial class GameObject
 		}
 
 		Enabled = (bool)(node["Enabled"] ?? Enabled);
+
+		ForEachComponent( "OnValidate", false, c => c.OnValidateInternal() );
 	}
 
 	public PrefabFile GetAsPrefab()
