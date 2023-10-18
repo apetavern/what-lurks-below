@@ -1,6 +1,6 @@
 {
   "RootObject": {
-    "Id": "3a41ea3b-78fa-4802-b49f-2b5e2cf03a25",
+    "Id": "b30cefca-4959-4587-aadd-b9c70a9bfded",
     "Name": "hallway_01",
     "Enabled": true,
     "Position": "0,0,0",
@@ -10,10 +10,10 @@
       {
         "__type": "HallwayChunkComponent",
         "__enabled": true,
-        "Back": "1298a5f8-8242-40ae-b92b-9362b60cfba7",
-        "Front": "80533bcd-3235-45a5-98d6-657fe695ca13",
-        "Left": "1c0d218c-d1f4-454e-a100-330ee766b876",
-        "Right": "3b69cbd3-6b9f-469c-9efb-eb9169c8b450"
+        "Back": "9d48927e-40f7-4e18-a2eb-bdef967af852",
+        "Front": "e1cbaa3e-d856-4f98-8e50-0abedab61e7b",
+        "Left": "751b6981-f20d-4c44-aef6-28d7d00a8732",
+        "Right": "30890618-f513-456d-8bd8-392c24953c25"
       },
       {
         "__type": "ModelComponent",
@@ -28,12 +28,13 @@
         "__enabled": true,
         "IsTrigger": false,
         "Scale": "100,100,1",
-        "Surface": null
+        "Surface": null,
+        "Tags": ""
       }
     ],
     "Children": [
       {
-        "Id": "f4b4ab6e-9fdb-4058-9258-73ecd5b460ee",
+        "Id": "f833fe98-29c5-4909-9bef-693d5f460723",
         "Name": "Ceiling",
         "Enabled": true,
         "Position": "0,0,100",
@@ -47,18 +48,11 @@
             "Model": "models/dev/plane.vmdl",
             "ShouldCastShadows": true,
             "Tint": "1,1,1,1"
-          },
-          {
-            "__type": "ColliderBoxComponent",
-            "__enabled": true,
-            "IsTrigger": false,
-            "Scale": "100,100,1",
-            "Surface": null
           }
         ]
       },
       {
-        "Id": "80533bcd-3235-45a5-98d6-657fe695ca13",
+        "Id": "e1cbaa3e-d856-4f98-8e50-0abedab61e7b",
         "Name": "forward",
         "Enabled": true,
         "Position": "50,0,50",
@@ -78,12 +72,13 @@
             "__enabled": true,
             "IsTrigger": false,
             "Scale": "100,100,1",
-            "Surface": null
+            "Surface": null,
+            "Tags": ""
           }
         ]
       },
       {
-        "Id": "1298a5f8-8242-40ae-b92b-9362b60cfba7",
+        "Id": "9d48927e-40f7-4e18-a2eb-bdef967af852",
         "Name": "back",
         "Enabled": true,
         "Position": "-50,0,50",
@@ -103,12 +98,13 @@
             "__enabled": true,
             "IsTrigger": false,
             "Scale": "100,100,1",
-            "Surface": null
+            "Surface": null,
+            "Tags": ""
           }
         ]
       },
       {
-        "Id": "3b69cbd3-6b9f-469c-9efb-eb9169c8b450",
+        "Id": "30890618-f513-456d-8bd8-392c24953c25",
         "Name": "right",
         "Enabled": true,
         "Position": "0,-50,50",
@@ -128,12 +124,13 @@
             "__enabled": true,
             "IsTrigger": false,
             "Scale": "100,100,1",
-            "Surface": null
+            "Surface": null,
+            "Tags": ""
           }
         ]
       },
       {
-        "Id": "1c0d218c-d1f4-454e-a100-330ee766b876",
+        "Id": "751b6981-f20d-4c44-aef6-28d7d00a8732",
         "Name": "left",
         "Enabled": true,
         "Position": "0,50,50",
@@ -153,7 +150,8 @@
             "__enabled": true,
             "IsTrigger": false,
             "Scale": "100,100,1",
-            "Surface": null
+            "Surface": null,
+            "Tags": ""
           }
         ]
       }
