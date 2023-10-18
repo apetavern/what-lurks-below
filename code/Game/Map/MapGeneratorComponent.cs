@@ -5,10 +5,22 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Linq;
 
+public static class Vector3Extensions
+{
+	public static Vector3 Clamp( this Vector3 vector, float min, float max )
+	{
+		float x = Math.Clamp( vector.x, min, max );
+		float y = Math.Clamp( vector.y, min, max );
+		float z = Math.Clamp( vector.z, min, max );
+
+		return new Vector3( x, y, z );
+	}
+}
+
 [Title( "Map Generator" )]
 [Category( "World" )]
 [Icon( "map", "red", "white" )]
-public sealed class MapGeneratorComponent : BaseComponent
+public partial class MapGeneratorComponent : BaseComponent
 {
 	List<string> Rooms = new List<string>() { "prefabs/rooms/sewer_room_01.object", "prefabs/rooms/sewer_room_02.object" };
 
@@ -222,11 +234,7 @@ public sealed class MapGeneratorComponent : BaseComponent
 					{
 						overlaps++;
 						room.Transform.Position += (room.Transform.Position - room2.Transform.Position) * Time.Delta;
-
-						if ( room.Transform.Position.Length > 5000 )
-						{
-							room.Destroy();
-						}
+						room.Transform.Position = Vector3Extensions.Clamp( room.Transform.Position, -3000f, 3000f );
 					}
 				}
 			}
