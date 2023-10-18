@@ -20,6 +20,11 @@ public struct CitizenAnimationHelperScene
 		Owner.SetAnimParameter( name, value );
 	}
 
+	public void SetAnimParameter( string param, float value )
+	{
+		Owner.SetAnimParameter( param, value );
+	}
+
 	/// <summary>
 	/// Have the player look at this point in the world
 	/// </summary>
