@@ -223,7 +223,7 @@
         {
           "__type": "MapGeneratorComponent",
           "__enabled": true,
-          "RoomCount": 10,
+          "RoomCount": 15,
           "SnapGridSize": 1024
         },
         {
@@ -261,7 +261,7 @@
       "Components": [
         {
           "__type": "ModelComponent",
-          "__enabled": true,
+          "__enabled": false,
           "MaterialOverride": null,
           "Model": "models/dev/plane.vmdl",
           "ShouldCastShadows": true,
