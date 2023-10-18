@@ -60,5 +60,13 @@ public class Inventory : BaseComponent
 			If not, we do not equip the pistol at all. */
 			c_PlayerWeapon.Equip( new PistolWeapon( true, "Pistol" ) );
 		}
+
+		if ( Input.Pressed( "slot2" ) )
+		{
+			/* Future: Check if we have a pistol in our inventory.
+			If so, we need to instantiate it with info from the Pistol InventoryItem. 
+			If not, we do not equip the pistol at all. */
+			c_PlayerWeapon.Equip( new KnifeWeapon( true, "Knife" ) );
+		}
 	}
 }
