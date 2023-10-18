@@ -60,7 +60,7 @@ public class BaseWeapon : GameObject
 				return;
 			}
 		}
-		if ( AmmoCount > 0 )
+		if ( AmmoCount > 0 || AmmoCount == -1 )
 		{
 			var muzzle = c_AnimatedModel.GetAttachmentTransform( "muzzle" );
 
@@ -82,7 +82,10 @@ public class BaseWeapon : GameObject
 					hitHealth.Damage( Damage );
 				}
 			}
-			AmmoCount--;
+			if ( AmmoCount > 0 )
+			{
+				AmmoCount--;
+			}
 		}
 		else
 		{
