@@ -161,7 +161,11 @@ public class PlayerController : BaseComponent
 
 			if ( Input.Pressed( "Jump" ) && cc.IsOnGround )
 			{
-				helper.TriggerJump();
+				helper.SpecialMove = CitizenAnimationHelperScene.SpecialMovement.Roll;
+			}
+			else
+			{
+				helper.SpecialMove = CitizenAnimationHelperScene.SpecialMovement.None;
 			}
 
 			Eye.Transform.Rotation = new Angles( 0, EyeAngles.yaw, 0 ).ToRotation();
@@ -218,7 +222,27 @@ public class PlayerController : BaseComponent
 			//if ( Duck.IsActive )
 			//	flMul *= 0.8f;
 
-			cc.Punch( Vector3.Up * flMul * flGroundFactor );
+			//cc.Punch( Body.Transform.Rotation.Forward * flMul * flGroundFactor );
+
+			if ( Input.Down( "Left" ) )
+			{
+				Body.Transform.Rotation *= Rotation.FromYaw( 90 );
+			}
+
+			if ( Input.Down( "Right" ) )
+			{
+				Body.Transform.Rotation *= Rotation.FromYaw( -90 );
+			}
+
+			if ( Input.Down( "Backward" ) )
+			{
+				Body.Transform.Rotation *= Rotation.FromYaw( 180 );
+			}
+
+			cc.Velocity = Body.Transform.Rotation.Forward * flMul * flGroundFactor;
+
+
+			cc.ApplyFriction( 0.1f );
 			//	cc.IsOnGround = false;
 		}
 
