@@ -72,9 +72,9 @@ public sealed class MapGeneratorComponent : BaseComponent
 				if ( (gridX == neighborGridX && Math.Abs( gridY - neighborGridY ) == 1) ||
 						(gridY == neighborGridY && Math.Abs( gridX - neighborGridX ) == 1) )
 				{
-					await GameTask.Delay( 10 );
 					// Create a connection between the two rooms
 					room.GetComponent<RoomChunkComponent>().AddConnection( neighbor.GetComponent<RoomChunkComponent>() );
+					await GameTask.Delay( 10 );
 				}
 
 				// Calculate the distance between the current room and the neighbor
@@ -90,8 +90,8 @@ public sealed class MapGeneratorComponent : BaseComponent
 			// Randomly create a connection with the closest neighbor
 			if ( closestNeighbor is not null )
 			{
-				await GameTask.Delay( 10 );
 				room.GetComponent<RoomChunkComponent>().AddConnection( closestNeighbor );
+				await GameTask.Delay( 10 );
 			}
 		}
 
@@ -131,6 +131,7 @@ public sealed class MapGeneratorComponent : BaseComponent
 
 					// Add the neighbor to the stack for further exploration
 					roomStack.Push( randomNeighbor );
+					await GameTask.Delay( 10 );
 				}
 			}
 
@@ -157,15 +158,28 @@ public sealed class MapGeneratorComponent : BaseComponent
 
 	public async void CreateHallways()
 	{
-		await GameTask.Delay( RoomCount * 100 );
+		int waitframes = 0;
 		foreach ( var room in SpawnedRooms )
 		{
+			while ( room.PathPoints.Count == 0 && waitframes < 100 )
+			{
+				waitframes++;
+				//Log.Info( "Waiting for hallways..." );
+				await GameTask.Delay( 50 );
+			}
+
+			while ( room.PathPoints.Count == 1 && waitframes < 100 )
+			{
+				waitframes++;
+				//Log.Info( "Waiting for hallways..." );
+				await GameTask.Delay( 5 );
+			}
+			waitframes = 0;
 			foreach ( var hall in room.PathPoints )
 			{
 				for ( int i = 0; i < hall.Count; i++ )
 				{
-					await GameTask.Delay( 5 );
-					var tr = Physics.Trace.Ray( hall[i], hall[i] - Vector3.Up ).Run();
+					var tr = Physics.Trace.Ray( hall[i], hall[i] - Vector3.Up * 5f ).WithoutTags( "navgen" ).Run();
 					if ( !tr.Hit && hall[i] != Vector3.Zero )//|| (tr.Body.GameObject as GameObject).GetComponent<RoomChunkComponent>( false ) == null 
 					{
 						SpawnPrefabFromPath( Hallways[0], hall[i], Rotation.Identity );
@@ -175,6 +189,10 @@ public sealed class MapGeneratorComponent : BaseComponent
 		}
 
 		await GameTask.Delay( 200 );
+
+		Scene.GetAllObjects( true ).Where( X => X.GetComponent<NavGenComponent>() != null ).FirstOrDefault().GetComponent<NavGenComponent>().GenerationPlane.Destroy();
+
+		await GameTask.Delay( 10 );
 
 		hallwayChunks = Scene.GetAllObjects( true ).Where( X => X.GetComponent<HallwayChunkComponent>() != null ).ToList();
 
@@ -197,7 +215,11 @@ public sealed class MapGeneratorComponent : BaseComponent
 				foreach ( var room2 in SpawnedRooms )
 				{
 					if ( room == room2 || room == SpawnedRooms[0] ) continue;
-					if ( room.GameObject.GetBounds().Overlaps( room2.GameObject.GetBounds() ) )
+
+					BBox CheckBox1 = new BBox( room.GameObject.GetBounds().Center, SnapGridSize );
+					BBox CheckBox2 = new BBox( room2.GameObject.GetBounds().Center, SnapGridSize );
+
+					if ( CheckBox1.Overlaps( CheckBox2 ) )
 					{
 						overlaps++;
 						room.Transform.Position += (room.Transform.Position - room2.Transform.Position) * Time.Delta;

@@ -21,7 +21,7 @@
       "Id": "7ebc391e-925e-489c-a0dd-a48345ab8d2a",
       "Name": "player",
       "Enabled": true,
-      "Position": "-61.71407,300.4412,175.4625",
+      "Position": "-61.71407,300.4412,0",
       "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "__Prefab": "prefabs/player.object"
@@ -223,8 +223,13 @@
         {
           "__type": "MapGeneratorComponent",
           "__enabled": true,
-          "RoomCount": 15,
+          "RoomCount": 10,
           "SnapGridSize": 1024
+        },
+        {
+          "__type": "NavGenComponent",
+          "__enabled": true,
+          "GenerationPlane": "bf22b81c-7a00-4179-9c12-c5698d5c35ec"
         }
       ]
     },
@@ -243,6 +248,32 @@
           "Model": "models/dev/plane.vmdl",
           "ShouldCastShadows": true,
           "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "Id": "bf22b81c-7a00-4179-9c12-c5698d5c35ec",
+      "Name": "Plane (1)",
+      "Enabled": true,
+      "Position": "0,0,0",
+      "Rotation": "0,0,0,1",
+      "Scale": "150,150,150",
+      "Components": [
+        {
+          "__type": "ModelComponent",
+          "__enabled": true,
+          "MaterialOverride": null,
+          "Model": "models/dev/plane.vmdl",
+          "ShouldCastShadows": true,
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "ColliderBoxComponent",
+          "__enabled": true,
+          "IsTrigger": false,
+          "Scale": "100,100,0.01",
+          "Surface": null,
+          "Tags": "navgen"
         }
       ]
     }

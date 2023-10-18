@@ -3,6 +3,8 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
+using System.Threading.Tasks;
 
 public sealed class RoomChunkComponent : BaseComponent
 {
@@ -34,7 +36,7 @@ public sealed class RoomChunkComponent : BaseComponent
 		//Gizmo.Draw.Line( Vector3.Zero, item.Transform.Position - Transform.Position );
 		//}
 
-		/*if ( PathPoints.Count > 0 )
+		if ( PathPoints.Count > 0 )
 		{
 			for ( int i = 0; i < PathPoints.Count; i++ )
 			{
@@ -45,7 +47,7 @@ public sealed class RoomChunkComponent : BaseComponent
 					Gizmo.Draw.Line( localstart, localend );
 				}
 			}
-		}*/
+		}
 	}
 
 	private RoomDoorDefinition ChooseClosestDoorForConnection( RoomChunkComponent room, Vector3 targetPosition )
@@ -66,19 +68,75 @@ public sealed class RoomChunkComponent : BaseComponent
 		return closestDoor;
 	}
 
-	public void ConnectRooms( RoomDoorDefinition doorPosition1, RoomDoorDefinition doorPosition2 )
+	public async void ConnectRooms( RoomDoorDefinition doorPosition1, RoomDoorDefinition doorPosition2 )
 	{
 		// Calculate control points for the Bézier curve
-		Vector3 controlPoint1 = doorPosition1.Transform.Position - doorPosition1.Transform.Rotation.Right * 1024;
-		Vector3 controlPoint2 = doorPosition2.Transform.Position - doorPosition2.Transform.Rotation.Right * 1024;
+		Vector3 controlPoint1 = doorPosition1.Transform.Position - doorPosition1.Transform.Rotation.Right * 64;//64
+		Vector3 controlPoint2 = doorPosition2.Transform.Position - doorPosition2.Transform.Rotation.Right * 64;//64
 
 		doorPosition1.OpenDoor();
 		doorPosition2.OpenDoor();
 
 		// Create a Bezier curve using the positions and control points
-		List<Vector3> curvePoints = CreateBezierCurve( doorPosition1.Transform.Position, controlPoint1, controlPoint2, doorPosition2.Transform.Position, 128f );
 
-		PathPoints.Add( EnforcePoints( curvePoints, 128f ) );
+		NavGenComponent navgen = Scene.GetAllObjects( true ).Where( X => X.GetComponent<NavGenComponent>() != null ).FirstOrDefault().GetComponent<NavGenComponent>();
+
+		var path = await navgen.GeneratePath( controlPoint1, controlPoint2 );
+
+		if ( path.Count == 0 )
+		{
+			Log.Info( "No navgen data" );
+
+			Log.Info( "Falling back to bezier curves" );
+
+			List<Vector3> curvePoints = CreateBezierCurve( doorPosition1.Transform.Position, controlPoint1, controlPoint2, doorPosition2.Transform.Position, 128f );
+
+			PathPoints.Add( EnforcePoints( curvePoints, 128f ) );
+		}
+		else
+		{
+			var PathResult = path;
+
+			ProcessPath( PathResult );
+		}
+	}
+
+	public async void ProcessPath( List<NavigationPath.Segment> PathResult )
+	{
+		var CurrentPath = new List<Vector3>();
+
+		for ( int i = 0; i < PathResult.Count; i++ )
+		{
+			var pt = PathResult[i].Position;
+
+			pt.x = MathF.Round( pt.x / 128f ) * 128f;
+			pt.y = MathF.Round( pt.y / 128f ) * 128f;
+
+			if ( CurrentPath.Count > 0 )
+			{
+				Vector3 prevPoint = CurrentPath[CurrentPath.Count - 1];
+				Vector3 diff = pt - prevPoint;
+				if ( MathF.Abs( diff.x ) >= MathF.Abs( diff.y ) )
+				{
+					pt.y = prevPoint.y;
+				}
+				else
+				{
+					pt.x = prevPoint.x;
+				}
+			}
+			else
+			{
+				CurrentPath.Add( pt );
+			}
+
+
+			if ( !CurrentPath.Contains( pt ) )
+				CurrentPath.Add( pt );
+		}
+		//CurrentPath = navgen.result;
+
+		PathPoints.Add( EnforcePoints( CurrentPath, 128f ) );
 	}
 
 	private List<Vector3> EnforcePoints( List<Vector3> list, float gridSize )
@@ -99,6 +157,10 @@ public sealed class RoomChunkComponent : BaseComponent
 				{
 					float t = j * stepSize;
 					Vector3 newPoint = Vector3.Lerp( point1, point2, t );
+
+					newPoint.x = MathF.Round( newPoint.x / gridSize ) * gridSize;
+					newPoint.y = MathF.Round( newPoint.y / gridSize ) * gridSize;
+
 					newPoints.Add( newPoint );
 				}
 			}
@@ -170,7 +232,7 @@ public sealed class RoomChunkComponent : BaseComponent
 	public bool connected;
 
 	// Method to add a connection to another room
-	public void AddConnection( RoomChunkComponent otherRoom )
+	public async void AddConnection( RoomChunkComponent otherRoom )
 	{
 		if ( !connected )
 		{
@@ -181,6 +243,7 @@ public sealed class RoomChunkComponent : BaseComponent
 				RoomDoorDefinition door1 = ChooseClosestDoorForConnection( this, otherRoom.Transform.Position );
 				RoomDoorDefinition door2 = ChooseClosestDoorForConnection( otherRoom, door1.Transform.Position );
 				ConnectRooms( door1, door2 );
+				await GameTask.Delay( 10 );
 			}
 		}
 	}
