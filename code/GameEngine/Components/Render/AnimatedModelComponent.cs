@@ -173,8 +173,8 @@ public class AnimatedModelComponent : BaseComponent, BaseComponent.ExecuteInEdit
 			parent.SceneModel.AddChild( GameObject.Name, SceneModel );
 			Transform.Position = SceneModel.Bounds.Center;
 
-			var newbounds = parent.SceneModel.Bounds;
-			newbounds.AddPoint( parent.SceneModel.Transform.Position + Vector3.Up * 64 );
+			var newbounds = SceneModel.Bounds;
+			newbounds.AddBBox( parent.SceneModel.Bounds );
 			SceneModel.Bounds = newbounds;
 		}
 	}
