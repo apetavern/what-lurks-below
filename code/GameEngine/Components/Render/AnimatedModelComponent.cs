@@ -1,5 +1,6 @@
 ﻿using Sandbox;
 using Sandbox.Diagnostics;
+using static Sandbox.VisibilityBoxEntity;
 
 [Title( "Animated Model Renderer" )]
 [Category( "Rendering" )]
@@ -102,20 +103,27 @@ public class AnimatedModelComponent : BaseComponent, BaseComponent.ExecuteInEdit
 		if ( Model is null )
 			return;
 
-		Gizmo.Hitbox.Model( Model );
+		if ( GameObject.Parent.GetComponent<AnimatedModelComponent>() == null )
+		{
+			Gizmo.Hitbox.Model( Model );
+		}
+		else
+		{
+			Gizmo.Hitbox.BBox( new BBox( Model.Bounds.Mins - Transform.LocalPosition, Model.Bounds.Maxs - Transform.LocalPosition ) );
+		}
 
 		Gizmo.Draw.Color = Color.White.WithAlpha( 0.1f );
 
 		if ( Gizmo.IsSelected )
 		{
 			Gizmo.Draw.Color = Color.White.WithAlpha( 0.9f );
-			Gizmo.Draw.LineBBox( Model.Bounds );
+			Gizmo.Draw.LineBBox( new BBox( Model.Bounds.Mins - Transform.LocalPosition, Model.Bounds.Maxs - Transform.LocalPosition ) );
 		}
 
 		if ( Gizmo.IsHovered )
 		{
 			Gizmo.Draw.Color = Color.White.WithAlpha( 0.4f );
-			Gizmo.Draw.LineBBox( Model.Bounds );
+			Gizmo.Draw.LineBBox( new BBox( Model.Bounds.Mins - Transform.LocalPosition, Model.Bounds.Maxs - Transform.LocalPosition ) );
 		}
 
 
@@ -160,7 +168,11 @@ public class AnimatedModelComponent : BaseComponent, BaseComponent.ExecuteInEdit
 
 		if ( parent is not null )
 		{
+			_sceneModel.Transform = parent.SceneModel.Transform;
+
 			parent.SceneModel.AddChild( GameObject.Name, SceneModel );
+			Transform.Position = SceneModel.Bounds.Center;
+
 			var newbounds = parent.SceneModel.Bounds;
 			newbounds.AddPoint( parent.SceneModel.Transform.Position + Vector3.Up * 64 );
 			SceneModel.Bounds = newbounds;
@@ -170,6 +182,11 @@ public class AnimatedModelComponent : BaseComponent, BaseComponent.ExecuteInEdit
 	public Transform GetAttachmentTransform( string attachmentName )
 	{
 		return SceneModel.GetAttachment( attachmentName ).Value;
+	}
+
+	public Transform GetBoneTransform( string attachmentName )
+	{
+		return SceneModel.GetBoneWorldTransform( attachmentName );
 	}
 
 	public override void Update()
