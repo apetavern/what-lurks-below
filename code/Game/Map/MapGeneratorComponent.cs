@@ -27,7 +27,7 @@ public sealed class MapGeneratorComponent : BaseComponent
 
 	public override void OnStart()
 	{
-		SpawnedRooms.Add( SpawnPrefabFromPath( Rooms[Game.Random.Int( 0, Rooms.Count - 1 )], Transform.Position, Transform.Rotation ).GetComponent<RoomChunkComponent>( false ) );
+		SpawnedRooms.Add( SpawnPrefabFromPath( Rooms[0], Transform.Position, Transform.Rotation ).GetComponent<RoomChunkComponent>( false ) );
 
 		for ( int i = 0; i < RoomCount; i++ )
 		{
