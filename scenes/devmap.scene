@@ -276,6 +276,24 @@
           "Tags": "navgen"
         }
       ]
+    },
+    {
+      "Id": "dbaff783-c10f-472c-8bb7-f292206efb25",
+      "Name": "Screen UI",
+      "Enabled": true,
+      "Position": "0,0,0",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
+      "Components": [
+        {
+          "__type": "ScreenPanel",
+          "__enabled": true,
+          "AutoScreenScale": true,
+          "Opacity": 1,
+          "Scale": 1,
+          "ZIndex": 100
+        }
+      ]
     }
   ],
   "__references": []

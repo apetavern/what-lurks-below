@@ -1,0 +1,14 @@
+﻿InventoryHud {
+  width: 1000px;
+  height: 600px;
+  background-color: rgba(#333, 80%);
+  position: absolute;
+  bottom: 100px;
+  left: 100px;
+  opacity: 0;
+  
+  &.open {
+    pointer-events: all;
+    opacity: 1;
+  }
+}

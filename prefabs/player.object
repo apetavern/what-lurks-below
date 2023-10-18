@@ -34,7 +34,9 @@
       {
         "__type": "Inventory",
         "__enabled": true,
-        "Slots": 6
+        "Slots": 6,
+        "SlotsX": 10,
+        "SlotsY": 10
       },
       {
         "__type": "WeaponComponent",

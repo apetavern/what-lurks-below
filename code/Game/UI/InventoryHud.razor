@@ -1,0 +1,41 @@
+﻿@using System
+@using Sandbox;
+@using Sandbox.UI;
+@inherits Panel
+@attribute [StyleSheet]
+
+<root>
+    
+</root>
+
+@code
+{
+    public bool IsOpen { get; set; }
+    
+    public int SlotsX { get; set; }
+    public int SlotsY { get; set; }
+    
+    public static InventoryHud Instance { get; set; }
+
+    public InventoryHud()
+    {
+        Instance = this;
+    }
+
+    void ToggleOpen()
+    {
+        IsOpen = !IsOpen;
+    }
+    
+    public override void Tick()
+    {
+        base.Tick();
+        
+        if (Input.Pressed("Inventory"))
+        {
+            ToggleOpen();
+        }
+        
+        SetClass("open", IsOpen);
+    }
+}

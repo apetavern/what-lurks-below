@@ -1,10 +1,11 @@
+using BrickJam.Game.UI;
 using Sandbox;
 using Sandbox.UI;
 
 [Title( "Screen Panel" )]
 [Category( "UI" )]
 [Icon( "desktop_windows" )]
-[EditorHandle( "materials/gizmo/ui.png" )]
+// [EditorHandle( "materials/gizmo/ui.png" )]
 [Alias( "PanelRoot" )]
 public sealed class ScreenPanel : BaseComponent, IRootPanelComponent, BaseComponent.RenderOverlay
 {
@@ -13,11 +14,11 @@ public sealed class ScreenPanel : BaseComponent, IRootPanelComponent, BaseCompon
 	[Property] public bool AutoScreenScale { get; set; } = true;
 	[Property] public int ZIndex { get; set; } = 100;
 
-	private GameRootPanel rootPanel;
+	private RootPanel rootPanel;
 
 	public override void OnAwake()
 	{
-		rootPanel = new GameRootPanel();
+		rootPanel = new BrickJamHud();
 		rootPanel.RenderedManually = true;
 		rootPanel.Style.Display = DisplayMode.None;
 	}
@@ -57,8 +58,6 @@ public sealed class ScreenPanel : BaseComponent, IRootPanelComponent, BaseCompon
 			return;
 
 		rootPanel.Style.ZIndex = ZIndex;
-		rootPanel.AutoScale = AutoScreenScale;
-		rootPanel.ManualScale = Scale;
 	}
 
 	void BaseComponent.RenderOverlay.OnRenderOverlay( SceneCamera camera )
