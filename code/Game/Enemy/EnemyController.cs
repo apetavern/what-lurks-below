@@ -11,7 +11,15 @@ public class EnemyController : BaseComponent
 	[Property] public float Friction { get; set; } = 0.5f;
 	[Property] public float AggroRange { get; set; } = 1f;
 
+	[Property] public float AttackRange { get; set; } = 64f;
+
+	[Property] public float AttackDamage { get; set; } = 1f;
+
+	[Property] public float TimeBetweenAttacks { get; set; } = 1f;
+
 	[Property] public GameObject Body { get; set; }
+
+
 
 	public bool IsAggro = false;
 
@@ -41,6 +49,8 @@ public class EnemyController : BaseComponent
 		TimeSinceDamage = 0f;
 	}
 
+	float nextAttackTime;
+
 	public override void Update()
 	{
 		base.Update();
@@ -51,13 +61,36 @@ public class EnemyController : BaseComponent
 
 		_characterController ??= GameObject.GetComponent<CharacterController>();
 
+
 		if ( IsAggro )
 		{
-			// Move towards player when in range
-			Vector3 direction = (playerPosition - myPosition).Normal;
-			Vector3 wishVelocity = (direction * Speed).WithZ( 0 );
-			_characterController.Accelerate( wishVelocity );
-			_characterController.ApplyFriction( Friction );
+			float distanceToPlayer = Vector3.DistanceBetween( myPosition, playerPosition );
+
+			// Check if the player is within attack range
+			if ( distanceToPlayer < AttackRange )
+			{
+				// Attack the player
+				if ( Time.Now >= nextAttackTime )
+				{
+					Player.GetComponent<HealthComponent>().Damage( AttackDamage );
+					Body.GetComponent<AnimatedModelComponent>().SceneModel.SetAnimParameter( "attack", true );
+					nextAttackTime = Time.Now + TimeBetweenAttacks;
+				}
+			}
+
+			//Stop a little closer than the attack range to the player
+			if ( distanceToPlayer > AttackRange - (AttackRange / 4f) )
+			{
+				// Move towards player when in range
+				Vector3 direction = (playerPosition - myPosition).Normal;
+				Vector3 wishVelocity = (direction * Speed).WithZ( 0 );
+				_characterController.Accelerate( wishVelocity );
+				_characterController.ApplyFriction( Friction );
+			}
+			else
+			{
+				_characterController.ApplyFriction( Friction / 3f );
+			}
 		}
 		else
 		{

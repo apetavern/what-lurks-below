@@ -207,6 +207,16 @@ public struct CitizenAnimationHelperScene
 		Owner.SetAnimParameter( "b_deploy", true );
 	}
 
+	public void TriggerHit()
+	{
+		Owner.SetAnimParameter( "hit_bone", 0 );
+		Owner.SetAnimParameter( "hit_direction", Vector3.Up * 10f );
+		Owner.SetAnimParameter( "hit_offset", Vector3.Forward * 60f );
+		Owner.SetAnimParameter( "hit_strength", 0.75f );
+		Owner.SetAnimParameter( "hit", true );
+
+	}
+
 	public enum MoveStyles
 	{
 		Auto,

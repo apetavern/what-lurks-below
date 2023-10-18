@@ -8,7 +8,7 @@ public class PlayerController : BaseComponent
 {
 	[Property] public Vector3 Gravity { get; set; } = new Vector3( 0, 0, 800 );
 
-	[Range( 0, 400)]
+	[Range( 0, 400 )]
 	[Property] public float CameraDistance { get; set; } = 200.0f;
 
 	public Vector3 WishVelocity { get; private set; }
@@ -41,6 +41,15 @@ public class PlayerController : BaseComponent
 		}
 
 		EyeStartPos = Eye.Transform.LocalPosition;
+
+		HealthComponent healthComponent = GameObject.GetComponent<HealthComponent>( false );
+		healthComponent.OnDamage += TakeDamage;
+	}
+
+	public void TakeDamage()
+	{
+		var helper = new CitizenAnimationHelperScene( Body.GetComponent<AnimatedModelComponent>().SceneModel );
+		helper.TriggerHit();
 	}
 
 	public override void DrawGizmos()
@@ -50,7 +59,6 @@ public class PlayerController : BaseComponent
 
 
 	}
-
 
 	public GameObject GetClosestAimableObjectInViewcone()
 	{
