@@ -7,6 +7,8 @@ using BrickJam.Player;
 public class PlayerController : BaseComponent
 {
 	[Property] public Vector3 Gravity { get; set; } = new Vector3( 0, 0, 800 );
+
+	[Range( 0, 400)]
 	[Property] public float CameraDistance { get; set; } = 200.0f;
 
 	public Vector3 WishVelocity { get; private set; }

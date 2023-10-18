@@ -1,11 +1,14 @@
 ﻿using Sandbox;
 using Sandbox.Diagnostics;
+using System.Collections.Generic;
 
 public abstract class ColliderBaseComponent : BaseComponent
 {
-	PhysicsShape shape;
+	List<PhysicsShape> shapes = new();
 	protected PhysicsBody ownBody;
 	protected PhysicsGroup group;
+
+	[Property] public Surface Surface { get; set; }
 
 	bool _isTrigger;
 	[Property]
@@ -16,7 +19,7 @@ public abstract class ColliderBaseComponent : BaseComponent
 		{
 			_isTrigger = value;
 
-			if ( shape is not null )
+			foreach ( var shape in shapes )
 			{
 				shape.IsTrigger = _isTrigger;
 			}
@@ -29,7 +32,7 @@ public abstract class ColliderBaseComponent : BaseComponent
 	public override void OnEnabled()
 	{
 		Assert.IsNull( ownBody );
-		Assert.IsNull( shape );
+		Assert.AreEqual( 0, shapes.Count );
 		Assert.NotNull( Scene );
 
 		PhysicsBody physicsBody = null;
@@ -58,12 +61,15 @@ public abstract class ColliderBaseComponent : BaseComponent
 			ownBody = physicsBody;
 		}
 
-		shape = CreatePhysicsShape( physicsBody );
-		if ( shape is not null )
+		//shape = CreatePhysicsShape( physicsBody );
+		shapes.AddRange( CreatePhysicsShapes( physicsBody ) );
+
+		foreach ( var shape in shapes )
 		{
 			shape.AddTag( "solid" );
 
-			shape.IsTrigger = IsTrigger;
+			shape.IsTrigger = _isTrigger;
+
 			if ( IsTrigger )
 			{
 				shape.AddTag( "trigger" );
@@ -81,16 +87,26 @@ public abstract class ColliderBaseComponent : BaseComponent
 				}
 				shape.AddTag( realTag );
 			}
+
+			shape.SurfaceMaterial = Surface?.ResourcePath;
 		}
+
+		physicsBody.RebuildMass();
+		physicsBody.LinearDamping = 1;
+		physicsBody.AngularDamping = 1;
 	}
 
-	protected abstract PhysicsShape CreatePhysicsShape( PhysicsBody targetBody );
+	protected abstract IEnumerable<PhysicsShape> CreatePhysicsShapes( PhysicsBody targetBody );
 
 	public override void OnDisabled()
 	{
-		//shape?.Body?.RemoveShape( shape );
-		shape?.Remove();
-		shape = null;
+		foreach ( var shape in shapes )
+		{
+			shape.Remove();
+		}
+
+		shapes.Clear();
+
 
 		ownBody?.Remove();
 		ownBody = null;
