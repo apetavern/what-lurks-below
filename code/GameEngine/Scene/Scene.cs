@@ -126,22 +126,6 @@ public class Scene : GameObject
 		}
 	}
 
-	public override void Clear()
-	{
-		foreach ( var go in Children.ToArray() )
-		{
-			go.DestroyImmediate();
-		}
-
-		ForEachComponent( "Clear", false, c =>
-		{
-			c.Destroy();
-		} );
-
-		Components.Clear();
-		Children.Clear();
-	}
-
 	public virtual void Load( GameResource resource )
 	{
 		Assert.NotNull( resource );
