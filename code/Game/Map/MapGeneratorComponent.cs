@@ -200,7 +200,9 @@ public partial class MapGeneratorComponent : BaseComponent
 
 		await GameTask.Delay( 200 );
 
-		Scene.GetAllObjects( true ).Where( X => X.GetComponent<NavGenComponent>() != null ).FirstOrDefault().GetComponent<NavGenComponent>().GenerationPlane.Destroy();
+		var navgen = Scene.GetAllObjects( true ).Where( X => X.GetComponent<NavGenComponent>() != null ).FirstOrDefault().GetComponent<NavGenComponent>();
+
+		navgen.GenerationPlane.Destroy();
 
 		await GameTask.Delay( 10 );
 
@@ -213,7 +215,8 @@ public partial class MapGeneratorComponent : BaseComponent
 			await GameTask.Delay( 10 );
 		}
 
-		Scene.GetAllObjects( true ).Where( X => X.GetComponent<NavGenComponent>() != null ).FirstOrDefault().GetComponent<NavGenComponent>().GenerateMesh();
+		navgen.GenerateMesh();
+		navgen.Initialized = true;
 	}
 
 	public override void Update()
