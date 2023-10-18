@@ -43,7 +43,7 @@ public sealed class NavGenComponent : BaseComponent
 
 		var path = new NavigationPath( mesh );
 
-		Log.Info( point1 + " " + point2 );
+		//Log.Info( point1 + " " + point2 );
 
 		path.StartPoint = point1;
 
@@ -55,7 +55,7 @@ public sealed class NavGenComponent : BaseComponent
 		while ( path.Segments.Count == 0 && waitasec < 3 )
 		{
 			waitasec++;
-			Log.Info( "waiting for path gen" );
+			//Log.Info( "waiting for path gen" );
 			await GameTask.Delay( 1000 );
 		}
 
@@ -68,12 +68,12 @@ public sealed class NavGenComponent : BaseComponent
 		while ( path.Segments.Count == 0 && waitasec < 3 )
 		{
 			waitasec++;
-			Log.Info( "waiting for path gen" );
+			//Log.Info( "waiting for path gen" );
 			await GameTask.Delay( 500 );
 		}
 
-		Log.Info( "Path took " + path.GenerationMilliseconds + "ms" );
-		Log.Info( "Path has " + path.Segments.Count + " segments" );
+		//Log.Info( "Path took " + path.GenerationMilliseconds + "ms" );
+		//Log.Info( "Path has " + path.Segments.Count + " segments" );
 
 		return path.Segments;
 	}
