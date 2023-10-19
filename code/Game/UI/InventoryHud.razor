@@ -1,41 +1,75 @@
 ﻿@using System
 @using Sandbox;
 @using Sandbox.UI;
-@inherits Panel
-@attribute [StyleSheet]
+@inherits PanelComponent
 
 <root>
     
+    <div class="test"/>
+    
+    @for (var i = 0; i < 10; i++)
+    {
+        @for (var j = 0; j < 3; j++)
+        {
+            <div class="slot"></div>
+        }
+    }
 </root>
 
 @code
 {
     public bool IsOpen { get; set; }
     
-    public int SlotsX { get; set; }
-    public int SlotsY { get; set; }
-    
-    public static InventoryHud Instance { get; set; }
+    public override void Update()
+    {
+        base.Update();
 
-    public InventoryHud()
-    {
-        Instance = this;
-    }
-
-    void ToggleOpen()
-    {
-        IsOpen = !IsOpen;
-    }
-    
-    public override void Tick()
-    {
-        base.Tick();
-        
         if (Input.Pressed("Inventory"))
         {
-            ToggleOpen();
+            IsOpen = !IsOpen;
         }
         
-        SetClass("open", IsOpen);
+        Panel.SetClass("open", IsOpen);
     }
+
+    protected override int BuildHash() => System.HashCode.Combine( Time.Now );
+    // public bool IsOpen { get; set; }
+    //
+    // public int SlotsX { get; set; }
+    // public int SlotsY { get; set; }
+    //
+    // public static InventoryHud Instance { get; set; }
+    //
+    // public InventoryHud()
+    // {
+    //     Instance = this;
+    // }
+    //
+    // void ToggleOpen()
+    // {
+    //     IsOpen = !IsOpen;
+    // }
+    //
+    // public void SetSlots(int x, int y)
+    // {
+    //     SlotsX = x;
+    //     SlotsY = y;
+    // }
+    //
+    // public override void Update()
+    // {
+    //     base.Update();
+    //     
+    //     if (Input.Pressed("Inventory"))
+    //     {
+    //         ToggleOpen();
+    //     }
+    //     
+    //     Panel.SetClass("open", IsOpen);
+    // }
+    //
+    // protected override int BuildHash()
+    // {
+    //     return HashCode.Combine(SlotsX, SlotsY);
+    // }
 }

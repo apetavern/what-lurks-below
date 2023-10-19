@@ -278,8 +278,8 @@
       ]
     },
     {
-      "Id": "dbaff783-c10f-472c-8bb7-f292206efb25",
-      "Name": "Screen UI",
+      "Id": "8045a781-3f23-48f9-9191-361a91ccb52e",
+      "Name": "UI",
       "Enabled": true,
       "Position": "0,0,0",
       "Rotation": "0,0,0,1",
@@ -292,6 +292,22 @@
           "Opacity": 1,
           "Scale": 1,
           "ZIndex": 100
+        }
+      ],
+      "Children": [
+        {
+          "Id": "bcdbb154-a577-4727-b3c3-f7c99f599d11",
+          "Name": "Object",
+          "Enabled": true,
+          "Position": "0,0,0",
+          "Rotation": "0,0,0,1",
+          "Scale": "1,1,1",
+          "Components": [
+            {
+              "__type": "InventoryHud",
+              "__enabled": true
+            }
+          ]
         }
       ]
     }

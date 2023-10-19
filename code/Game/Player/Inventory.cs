@@ -16,9 +16,9 @@ public class Inventory : BaseComponent
 	private GameObject _player;
 	private int ItemCount => _items.Count;
 	[Property] public int Slots { get; set; }
-	
-	[Property] public int SlotsX { get; set; }
-	[Property] public int SlotsY { get; set; }
+
+	public int SlotsX { get; set; } = 10;
+	public int SlotsY { get; set; } = 3;
 
 	private bool[,] _inventorySlots;
 
@@ -125,8 +125,8 @@ public class Inventory : BaseComponent
 		_inventorySlots = new bool[SlotsX, SlotsY];
 		_player = Scene.GetAllObjects( true ).FirstOrDefault( p => p.Name == "player" );
 
-		InventoryHud.Instance.SlotsX = SlotsX;
-		InventoryHud.Instance.SlotsY = SlotsY;
+		Log.Info( SlotsX );
+		// InventoryHud.Instance.SetSlots(SlotsX, SlotsY);
 	}
 
 	public override void Update()

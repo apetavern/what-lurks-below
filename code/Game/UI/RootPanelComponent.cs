@@ -4,37 +4,27 @@ using Sandbox.UI;
 
 namespace BrickJam.Game.UI;
 
-public sealed class RootPanelComponent : IRootPanelComponent
+public sealed class RootPanelComponent : BaseComponent
 {
 	private BrickJamHud _rootPanel;
 
-	// public override void OnEnabled()
-	// {
-	// 	_rootPanel = new BrickJamHud();
-	// 	_rootPanel.RenderedManually = true;
-	//
-	// 	Camera.Main.OnRenderOverlay += RenderPanel;
-	// }
-	//
-	// public override void OnDisabled()
-	// {
-	// 	Camera.Main.OnRenderOverlay -= RenderPanel;
-	// 	_rootPanel.Delete();
-	// 	_rootPanel = null;
-	// }
-	//
-	// private void RenderPanel()
-	// {
-	// 	_rootPanel.RenderManual();
-	// }
-	//
-	// public override void Update()
-	// {
-	// 	
-	// }
-
-	public Panel GetPanel()
+	public override void OnStart()
 	{
-		return _rootPanel;
+		_rootPanel = new BrickJamHud();
+		_rootPanel.RenderedManually = true;
+	
+		Camera.Main.OnRenderOverlay += RenderPanel;
+	}
+	
+	public override void OnDisabled()
+	{
+		Camera.Main.OnRenderOverlay -= RenderPanel;
+		_rootPanel.Delete();
+		_rootPanel = null;
+	}
+	
+	private void RenderPanel()
+	{
+		_rootPanel.RenderManual();
 	}
 }

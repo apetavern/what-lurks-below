@@ -14,11 +14,11 @@ public sealed class ScreenPanel : BaseComponent, IRootPanelComponent, BaseCompon
 	[Property] public bool AutoScreenScale { get; set; } = true;
 	[Property] public int ZIndex { get; set; } = 100;
 
-	private RootPanel rootPanel;
+	private GameRootPanel rootPanel;
 
 	public override void OnAwake()
 	{
-		rootPanel = new BrickJamHud();
+		rootPanel = new GameRootPanel();
 		rootPanel.RenderedManually = true;
 		rootPanel.Style.Display = DisplayMode.None;
 	}
@@ -58,6 +58,8 @@ public sealed class ScreenPanel : BaseComponent, IRootPanelComponent, BaseCompon
 			return;
 
 		rootPanel.Style.ZIndex = ZIndex;
+		rootPanel.AutoScale = AutoScreenScale;
+		rootPanel.ManualScale = Scale;
 	}
 
 	void BaseComponent.RenderOverlay.OnRenderOverlay( SceneCamera camera )
