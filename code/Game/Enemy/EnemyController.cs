@@ -199,10 +199,12 @@ public class EnemyController : BaseComponent
 
 		_characterController.Move();
 
+		model.SetAnimParameter( "moving", _characterController.Velocity.LengthSquared > 0.1f );
+
 		// Rotate body towards target
 		if ( _characterController.Velocity.LengthSquared > 0.1f )
 		{
-			model.SetAnimParameter( "moving", true );
+
 			model.SetAnimParameter( "velocity", _characterController.Velocity.LengthSquared / 8000f );
 
 			if ( path.Count > 0 )
