@@ -87,14 +87,6 @@
                 "Cookie": null,
                 "LightColor": "0.91373,0.98039,1,1",
                 "Radius": 500
-              },
-              {
-                "__type": "CameraPhysicsDebug",
-                "__enabled": true,
-                "MaxPoints": 10000,
-                "NormalLength": 10,
-                "TracesPerFrame": 500,
-                "TraceType": "Ray"
               }
             ]
           },
