@@ -1,6 +1,7 @@
 {
   "PickupType": "Ammo",
   "Scale": 1.5,
-  "Model": "weapons/rust_pistol/rust_pistol.vmdl",
+  "Model": "models/items/ammo/ammobox_01.vmdl",
+  "Item": null,
   "__references": []
 }
