@@ -45,7 +45,9 @@ public class EnemyController : BaseComponent
 
 		var rng = new Random();
 
-		Transform.Scale = Vector3.One * rng.Float( 0.9f, 1.3f );
+		Transform.Scale = Vector3.One * rng.Float( 0.8f, 1.2f );
+
+		GameObject.GetComponent<CharacterController>( false ).IsOnGround = true;
 
 		model = Body.GetComponent<AnimatedModelComponent>().SceneModel;
 
@@ -65,7 +67,19 @@ public class EnemyController : BaseComponent
 
 	public async void UpdatePathToPlayer()
 	{
+		path.Clear();
 		var result = await navgen.GeneratePath( Transform.Position, Player.Transform.Position );
+
+		foreach ( var item in result )
+		{
+			path.Add( item.Position );
+		}
+	}
+
+	public async void PathToPoint( Vector3 point )
+	{
+		path.Clear();
+		var result = await navgen.GeneratePath( Transform.Position, point );
 
 		foreach ( var item in result )
 		{
@@ -75,29 +89,46 @@ public class EnemyController : BaseComponent
 
 	bool LastAggroState;
 
+	TimeSince TimeSinceLastMove;
+
 	public override void Update()
 	{
 		base.Update();
 
-		if ( path.Count == 0 && navgen.Initialized )
+		if ( !IsAggro && TimeSinceLastMove > 5f && navgen.Initialized )
 		{
-			path.Add( Transform.Position );
-			UpdatePathToPlayer();
+			Vector2 MovePoint = Sandbox.Game.Random.VectorInCircle( 256f );
+
+			Vector3 PlacePoint = new Vector3( MovePoint.x, MovePoint.y, 0 );
+
+			PathToPoint( Transform.Position + PlacePoint );
+
+			TimeSinceLastMove = Sandbox.Game.Random.Float( 0f, 4f );
 		}
 
 		Vector3 myPosition = Transform.Position;
 		Vector3 playerPosition = Player.Transform.Position;
 
-		/*if ( path.Count > 1 )
-		{
-			playerPosition = path[pathIndex];
+		Vector3 movePosition = Vector3.Zero;
 
-			if ( Vector3.DistanceBetween( Transform.Position, playerPosition ) < AggroRange )
+		if ( path.Count > 1 )
+		{
+			pathIndex = int.Clamp( pathIndex, 0, path.Count - 1 );
+
+			movePosition = path[pathIndex];
+
+			if ( Vector3.DistanceBetween( Transform.Position, movePosition ) < AggroRange )
 			{
 				pathIndex++;
 				pathIndex = int.Clamp( pathIndex, 0, path.Count - 1 );
+
+				if ( pathIndex == path.Count - 1 )
+				{
+					path.Clear();
+					pathIndex = 0;
+				}
 			}
-		}*/
+		}
 
 		IsAggro = (playerPosition.Distance( myPosition ) <= AggroRange) || TimeSinceDamage < 10f;
 
@@ -153,6 +184,15 @@ public class EnemyController : BaseComponent
 		}
 		else
 		{
+			if ( path.Count > 0 )
+			{
+				Vector3 direction = (movePosition - myPosition).Normal;
+				Vector3 wishVelocity = (direction * Speed).WithZ( 0 );
+				_characterController.Accelerate( wishVelocity );
+				_characterController.ApplyFriction( Friction );
+			}
+
+
 			// Slow down when out of range
 			_characterController.ApplyFriction( Friction / 3f );
 		}
@@ -165,12 +205,27 @@ public class EnemyController : BaseComponent
 			model.SetAnimParameter( "moving", true );
 			model.SetAnimParameter( "velocity", _characterController.Velocity.LengthSquared / 8000f );
 
-			model.SetAnimParameter( "hastarget", true );
+			if ( path.Count > 0 )
+			{
+				if ( model.GetAttachment( "eyes" ).HasValue )
+				{
+					model.SetAnimParameter( "hastarget", false );
+				}
 
-			SetAnimLookAt( "looktarget", new Transform( Body.Transform.Position, Body.Transform.Rotation ), model.GetAttachment( "eyes" ).Value.Position, playerPosition + Vector3.Up * 64f );
+				Rotation targetRotation = Rotation.LookAt( movePosition - myPosition, Vector3.Up );
+				Body.Transform.Rotation = Rotation.Lerp( Body.Transform.Rotation, targetRotation, Time.Delta * 10f );
+			}
+			else if ( IsAggro )
+			{
+				if ( model.GetAttachment( "eyes" ).HasValue )
+				{
+					model.SetAnimParameter( "hastarget", true );
+					SetAnimLookAt( "looktarget", new Transform( Body.Transform.Position, Body.Transform.Rotation ), model.GetAttachment( "eyes" ).Value.Position, playerPosition + Vector3.Up * 64f );
+				}
 
-			Rotation targetRotation = Rotation.LookAt( playerPosition - myPosition, Vector3.Up );
-			Body.Transform.Rotation = Rotation.Lerp( Body.Transform.Rotation, targetRotation, Time.Delta * 10f );
+				Rotation targetRotation = Rotation.LookAt( playerPosition - myPosition, Vector3.Up );
+				Body.Transform.Rotation = Rotation.Lerp( Body.Transform.Rotation, targetRotation, Time.Delta * 10f );
+			}
 		}
 	}
 
