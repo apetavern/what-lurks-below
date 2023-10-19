@@ -73,6 +73,8 @@ public class EnemyController : BaseComponent
 		}
 	}
 
+	bool LastAggroState;
+
 	public override void Update()
 	{
 		base.Update();
@@ -99,14 +101,29 @@ public class EnemyController : BaseComponent
 
 		IsAggro = (playerPosition.Distance( myPosition ) <= AggroRange) || TimeSinceDamage < 10f;
 
+		if ( IsAggro != LastAggroState )
+		{
+			LastAggroState = IsAggro;
+
+			if ( IsAggro )
+			{
+				_characterController.Punch( Vector3.Up * 200f );
+			}
+		}
+
 		_characterController ??= GameObject.GetComponent<CharacterController>();
 
+		if ( !_characterController.IsOnGround )
+		{
+			_characterController.Velocity -= Vector3.Up * 800f * Time.Delta;
 
-		if ( IsAggro )
+			_characterController.Accelerate( _characterController.Velocity.ClampLength( 50 ) );
+			_characterController.ApplyFriction( 0.1f );
+		}
+
+		if ( IsAggro && _characterController.IsOnGround )
 		{
 			float distanceToPlayer = Vector3.DistanceBetween( myPosition, playerPosition );
-
-
 
 			// Check if the player is within attack range
 			if ( distanceToPlayer < AttackRange )
