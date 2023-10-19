@@ -196,7 +196,7 @@ public partial class MapGeneratorComponent : BaseComponent
 					var tr = Physics.Trace.Ray( hall[i], hall[i] - Vector3.Up * 5f ).WithoutTags( "navgen" ).Run();
 					if ( !tr.Hit && hall[i] != Vector3.Zero )//|| (tr.Body.GameObject as GameObject).GetComponent<RoomChunkComponent>( false ) == null 
 					{
-						SpawnPrefabFromPath( Hallways[0], hall[i], Rotation.Identity );
+						SpawnPrefabFromPath( Hallways[Game.Random.Int( 0, Hallways.Count - 1 )], hall[i], Rotation.Identity );
 					}
 				}
 			}
