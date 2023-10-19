@@ -1,0 +1,189 @@
+{
+  "RootObject": {
+    "Id": "df5ec290-a38c-44f1-8eeb-7ff38bb938a0",
+    "Name": "hallway_03",
+    "Enabled": true,
+    "Position": "0,0,0",
+    "Rotation": "0,0,0,1",
+    "Scale": "1,1,1",
+    "Components": [
+      {
+        "__type": "HallwayChunkComponent",
+        "__enabled": true,
+        "Back": "3577e83f-1fbc-44fd-a646-5cb64f164553",
+        "Front": "0f02c566-e7fd-4d4c-acc9-58819a7e85f3",
+        "Left": "d3f7097f-610b-4350-a3a8-f6f9ad85ad89",
+        "Right": "7b2ad5e9-fe53-466d-92d2-ce8aa51e53cc"
+      }
+    ],
+    "Children": [
+      {
+        "Id": "866329e4-332c-4ab0-aaff-5ff05e9e633c",
+        "Name": "Pivot",
+        "Enabled": true,
+        "Position": "64,-64,0",
+        "Rotation": "0,0,0,1",
+        "Scale": "1,1,1",
+        "Children": [
+          {
+            "Id": "9f86959c-59be-41dc-98d1-2a34fac7d328",
+            "Name": "Ceil",
+            "Enabled": true,
+            "Position": "-64,64,128",
+            "Rotation": "-0,1,-0,-0.0000006397578",
+            "Scale": "1.28,1.28,1.28",
+            "Components": [
+              {
+                "__type": "ModelComponent",
+                "__enabled": true,
+                "MaterialOverride": "materials/sewer/sewer_wall_01.vmat",
+                "Model": "models/dev/plane.vmdl",
+                "ShouldCastShadows": true,
+                "Tint": "1,1,1,1"
+              },
+              {
+                "__type": "ColliderBoxComponent",
+                "__enabled": true,
+                "IsTrigger": false,
+                "Scale": "100,100,10",
+                "Surface": null,
+                "Tags": ""
+              }
+            ]
+          },
+          {
+            "Id": "3577e83f-1fbc-44fd-a646-5cb64f164553",
+            "Name": "back",
+            "Enabled": true,
+            "Position": "-128,0,0.000289917",
+            "Rotation": "0,0,0,1",
+            "Scale": "1,1,1",
+            "Components": [
+              {
+                "__type": "ModelComponent",
+                "__enabled": true,
+                "MaterialOverride": null,
+                "Model": "models/environment/wall_01.vmdl",
+                "ShouldCastShadows": true,
+                "Tint": "1,1,1,1"
+              },
+              {
+                "__type": "ModelCollider",
+                "__enabled": true,
+                "IsTrigger": false,
+                "Model": "models/environment/wall_01.vmdl",
+                "Surface": null,
+                "Tags": ""
+              }
+            ]
+          },
+          {
+            "Id": "d3f7097f-610b-4350-a3a8-f6f9ad85ad89",
+            "Name": "left",
+            "Enabled": true,
+            "Position": "-128,128,0.000289917",
+            "Rotation": "0,0,0.7071061,-0.7071075",
+            "Scale": "1,1,1",
+            "Components": [
+              {
+                "__type": "ModelComponent",
+                "__enabled": true,
+                "MaterialOverride": null,
+                "Model": "models/environment/wall_01.vmdl",
+                "ShouldCastShadows": true,
+                "Tint": "1,1,1,1"
+              },
+              {
+                "__type": "ModelCollider",
+                "__enabled": true,
+                "IsTrigger": false,
+                "Model": "models/environment/wall_01.vmdl",
+                "Surface": null,
+                "Tags": ""
+              }
+            ]
+          },
+          {
+            "Id": "7b2ad5e9-fe53-466d-92d2-ce8aa51e53cc",
+            "Name": "right",
+            "Enabled": true,
+            "Position": "0,0,0.000289917",
+            "Rotation": "0,0,0.707107,0.7071065",
+            "Scale": "1,1,1",
+            "Components": [
+              {
+                "__type": "ModelComponent",
+                "__enabled": true,
+                "MaterialOverride": null,
+                "Model": "models/environment/wall_01.vmdl",
+                "ShouldCastShadows": true,
+                "Tint": "1,1,1,1"
+              },
+              {
+                "__type": "ModelCollider",
+                "__enabled": true,
+                "IsTrigger": false,
+                "Model": "models/environment/wall_01.vmdl",
+                "Surface": null,
+                "Tags": ""
+              }
+            ]
+          },
+          {
+            "Id": "0f02c566-e7fd-4d4c-acc9-58819a7e85f3",
+            "Name": "fwd",
+            "Enabled": true,
+            "Position": "0,128,0.000289917",
+            "Rotation": "0,0,1,-0.0000006397578",
+            "Scale": "1,1,1",
+            "Components": [
+              {
+                "__type": "ModelComponent",
+                "__enabled": true,
+                "MaterialOverride": null,
+                "Model": "models/environment/wall_01.vmdl",
+                "ShouldCastShadows": true,
+                "Tint": "1,1,1,1"
+              },
+              {
+                "__type": "ModelCollider",
+                "__enabled": true,
+                "IsTrigger": false,
+                "Model": "models/environment/wall_01.vmdl",
+                "Surface": null,
+                "Tags": ""
+              }
+            ]
+          },
+          {
+            "Id": "364d8472-7a7e-4496-a8dc-9e8bbf569398",
+            "Name": "floor_01",
+            "Enabled": true,
+            "Position": "0,0,0",
+            "Rotation": "0,0,0,1",
+            "Scale": "1,1,1",
+            "Components": [
+              {
+                "__type": "ModelComponent",
+                "__enabled": true,
+                "MaterialOverride": null,
+                "Model": "models/environment/floor_01.vmdl",
+                "ShouldCastShadows": true,
+                "Tint": "1,1,1,1"
+              },
+              {
+                "__type": "ModelCollider",
+                "__enabled": true,
+                "IsTrigger": false,
+                "Model": "models/environment/floor_01.vmdl",
+                "Surface": null,
+                "Tags": ""
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "__references": []
+}

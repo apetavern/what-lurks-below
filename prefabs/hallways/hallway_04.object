@@ -1,0 +1,556 @@
+{
+  "RootObject": {
+    "Id": "df5ec290-a38c-44f1-8eeb-7ff38bb938a0",
+    "Name": "hallway_04",
+    "Enabled": true,
+    "Position": "0,0,0",
+    "Rotation": "0,0,0,1",
+    "Scale": "1,1,1",
+    "Components": [
+      {
+        "__type": "HallwayChunkComponent",
+        "__enabled": true,
+        "Back": "3577e83f-1fbc-44fd-a646-5cb64f164553",
+        "Front": "0f02c566-e7fd-4d4c-acc9-58819a7e85f3",
+        "Left": "d3f7097f-610b-4350-a3a8-f6f9ad85ad89",
+        "Right": "7b2ad5e9-fe53-466d-92d2-ce8aa51e53cc"
+      }
+    ],
+    "Children": [
+      {
+        "Id": "866329e4-332c-4ab0-aaff-5ff05e9e633c",
+        "Name": "Pivot",
+        "Enabled": true,
+        "Position": "64,-64,0",
+        "Rotation": "0,0,0,1",
+        "Scale": "1,1,1",
+        "Children": [
+          {
+            "Id": "9f86959c-59be-41dc-98d1-2a34fac7d328",
+            "Name": "Ceil",
+            "Enabled": true,
+            "Position": "-64,64,128",
+            "Rotation": "-0,1,-0,-0.0000006397578",
+            "Scale": "1.28,1.28,1.28",
+            "Components": [
+              {
+                "__type": "ModelComponent",
+                "__enabled": true,
+                "MaterialOverride": "materials/sewer/sewer_wall_01.vmat",
+                "Model": "models/dev/plane.vmdl",
+                "ShouldCastShadows": true,
+                "Tint": "1,1,1,1"
+              },
+              {
+                "__type": "ColliderBoxComponent",
+                "__enabled": true,
+                "IsTrigger": false,
+                "Scale": "100,100,10",
+                "Surface": null,
+                "Tags": ""
+              }
+            ]
+          },
+          {
+            "Id": "3577e83f-1fbc-44fd-a646-5cb64f164553",
+            "Name": "back",
+            "Enabled": true,
+            "Position": "-128,0,0.000289917",
+            "Rotation": "0,0,0,1",
+            "Scale": "1,1,1",
+            "Components": [
+              {
+                "__type": "ModelComponent",
+                "__enabled": true,
+                "MaterialOverride": null,
+                "Model": "models/environment/wall_01.vmdl",
+                "ShouldCastShadows": true,
+                "Tint": "1,1,1,1"
+              },
+              {
+                "__type": "ModelCollider",
+                "__enabled": true,
+                "IsTrigger": false,
+                "Model": "models/environment/wall_01.vmdl",
+                "Surface": null,
+                "Tags": ""
+              }
+            ]
+          },
+          {
+            "Id": "d3f7097f-610b-4350-a3a8-f6f9ad85ad89",
+            "Name": "left",
+            "Enabled": true,
+            "Position": "-128,128,0.000289917",
+            "Rotation": "0,0,0.7071061,-0.7071075",
+            "Scale": "1,1,1",
+            "Components": [
+              {
+                "__type": "ModelComponent",
+                "__enabled": true,
+                "MaterialOverride": null,
+                "Model": "models/environment/wall_01.vmdl",
+                "ShouldCastShadows": true,
+                "Tint": "1,1,1,1"
+              },
+              {
+                "__type": "ModelCollider",
+                "__enabled": true,
+                "IsTrigger": false,
+                "Model": "models/environment/wall_01.vmdl",
+                "Surface": null,
+                "Tags": ""
+              }
+            ]
+          },
+          {
+            "Id": "7b2ad5e9-fe53-466d-92d2-ce8aa51e53cc",
+            "Name": "right",
+            "Enabled": true,
+            "Position": "0,0,0.000289917",
+            "Rotation": "0,0,0.707107,0.7071065",
+            "Scale": "1,1,1",
+            "Components": [
+              {
+                "__type": "ModelComponent",
+                "__enabled": true,
+                "MaterialOverride": null,
+                "Model": "models/environment/wall_02.vmdl",
+                "ShouldCastShadows": true,
+                "Tint": "1,1,1,1"
+              },
+              {
+                "__type": "ModelCollider",
+                "__enabled": true,
+                "IsTrigger": false,
+                "Model": "models/environment/wall_02.vmdl",
+                "Surface": null,
+                "Tags": ""
+              }
+            ]
+          },
+          {
+            "Id": "0f02c566-e7fd-4d4c-acc9-58819a7e85f3",
+            "Name": "fwd",
+            "Enabled": true,
+            "Position": "0,128,0.000289917",
+            "Rotation": "0,0,1,-0.0000006397578",
+            "Scale": "1,1,1",
+            "Components": [
+              {
+                "__type": "ModelComponent",
+                "__enabled": true,
+                "MaterialOverride": null,
+                "Model": "models/environment/wall_01.vmdl",
+                "ShouldCastShadows": true,
+                "Tint": "1,1,1,1"
+              },
+              {
+                "__type": "ModelCollider",
+                "__enabled": true,
+                "IsTrigger": false,
+                "Model": "models/environment/wall_01.vmdl",
+                "Surface": null,
+                "Tags": ""
+              }
+            ],
+            "Children": [
+              {
+                "Id": "d770acac-7c3d-4202-91e3-5fcd1c37b515",
+                "Name": "pipe_0a",
+                "Enabled": true,
+                "Position": "14.00015,114,-0.0003909969",
+                "Rotation": "0.7071061,-0.0000004523766,0.7071075,0.0000004523775",
+                "Scale": "0.5,0.5,0.5",
+                "Components": [
+                  {
+                    "__type": "ModelComponent",
+                    "__enabled": true,
+                    "MaterialOverride": null,
+                    "Model": "models/pipes/pipe_0a.vmdl",
+                    "ShouldCastShadows": true,
+                    "Tint": "1,1,1,1"
+                  },
+                  {
+                    "__type": "ModelCollider",
+                    "__enabled": true,
+                    "IsTrigger": false,
+                    "Model": "models/pipes/pipe_0a.vmdl",
+                    "Surface": null,
+                    "Tags": ""
+                  }
+                ],
+                "Children": [
+                  {
+                    "Id": "a0b86759-e669-4c7d-9245-dc1541c04717",
+                    "Name": "pipe_0a",
+                    "Enabled": true,
+                    "Position": "64.00078,0,-0.00005340428",
+                    "Rotation": "0,0,0,1",
+                    "Scale": "1,1,1",
+                    "Components": [
+                      {
+                        "__type": "ModelComponent",
+                        "__enabled": true,
+                        "MaterialOverride": null,
+                        "Model": "models/pipes/pipe_0a.vmdl",
+                        "ShouldCastShadows": true,
+                        "Tint": "1,1,1,1"
+                      },
+                      {
+                        "__type": "ModelCollider",
+                        "__enabled": true,
+                        "IsTrigger": false,
+                        "Model": "models/pipes/pipe_0a.vmdl",
+                        "Surface": null,
+                        "Tags": ""
+                      }
+                    ]
+                  },
+                  {
+                    "Id": "4961d396-33fd-4889-8c58-f3242cc6a2ef",
+                    "Name": "pipe_0a",
+                    "Enabled": true,
+                    "Position": "128.0008,0,-0.00007629246",
+                    "Rotation": "0,0,0,1",
+                    "Scale": "1,1,1",
+                    "Components": [
+                      {
+                        "__type": "ModelComponent",
+                        "__enabled": true,
+                        "MaterialOverride": null,
+                        "Model": "models/pipes/pipe_0a.vmdl",
+                        "ShouldCastShadows": true,
+                        "Tint": "1,1,1,1"
+                      },
+                      {
+                        "__type": "ModelCollider",
+                        "__enabled": true,
+                        "IsTrigger": false,
+                        "Model": "models/pipes/pipe_0a.vmdl",
+                        "Surface": null,
+                        "Tags": ""
+                      }
+                    ]
+                  },
+                  {
+                    "Id": "7c20dcaf-c43e-4801-9f2d-b7662cec0d8b",
+                    "Name": "pipe_0a",
+                    "Enabled": true,
+                    "Position": "192.0008,0,-0.00008392186",
+                    "Rotation": "0,0,0,1",
+                    "Scale": "1,1,1",
+                    "Components": [
+                      {
+                        "__type": "ModelComponent",
+                        "__enabled": true,
+                        "MaterialOverride": null,
+                        "Model": "models/pipes/pipe_0a.vmdl",
+                        "ShouldCastShadows": true,
+                        "Tint": "1,1,1,1"
+                      },
+                      {
+                        "__type": "ModelCollider",
+                        "__enabled": true,
+                        "IsTrigger": false,
+                        "Model": "models/pipes/pipe_0a.vmdl",
+                        "Surface": null,
+                        "Tags": ""
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "Id": "7738fdca-0734-4881-a438-c2dd43557ae9",
+                "Name": "pipe_0a",
+                "Enabled": true,
+                "Position": "8.701413,78.72013,-0.0004011033",
+                "Rotation": "0.7071061,-0.0000004523766,0.7071075,0.0000004523775",
+                "Scale": "0.4,0.4,0.4",
+                "Components": [
+                  {
+                    "__type": "ModelComponent",
+                    "__enabled": true,
+                    "MaterialOverride": null,
+                    "Model": "models/pipes/pipe_0a.vmdl",
+                    "ShouldCastShadows": true,
+                    "Tint": "1,1,1,1"
+                  },
+                  {
+                    "__type": "ModelCollider",
+                    "__enabled": true,
+                    "IsTrigger": false,
+                    "Model": "models/pipes/pipe_0a.vmdl",
+                    "Surface": null,
+                    "Tags": ""
+                  }
+                ],
+                "Children": [
+                  {
+                    "Id": "22fe2877-c38b-4937-9225-4b99dea2a36d",
+                    "Name": "pipe_0a",
+                    "Enabled": true,
+                    "Position": "64.00078,0,-0.00005340428",
+                    "Rotation": "0,0,0,1",
+                    "Scale": "1,1,1",
+                    "Components": [
+                      {
+                        "__type": "ModelComponent",
+                        "__enabled": true,
+                        "MaterialOverride": null,
+                        "Model": "models/pipes/pipe_0a.vmdl",
+                        "ShouldCastShadows": true,
+                        "Tint": "1,1,1,1"
+                      },
+                      {
+                        "__type": "ModelCollider",
+                        "__enabled": true,
+                        "IsTrigger": false,
+                        "Model": "models/pipes/pipe_0a.vmdl",
+                        "Surface": null,
+                        "Tags": ""
+                      }
+                    ]
+                  },
+                  {
+                    "Id": "fce9a29a-2d52-4f04-b2df-7c6b59780087",
+                    "Name": "pipe_0a",
+                    "Enabled": true,
+                    "Position": "128.0008,0,-0.00007629246",
+                    "Rotation": "0,0,0,1",
+                    "Scale": "1,1,1",
+                    "Components": [
+                      {
+                        "__type": "ModelComponent",
+                        "__enabled": true,
+                        "MaterialOverride": null,
+                        "Model": "models/pipes/pipe_0a.vmdl",
+                        "ShouldCastShadows": true,
+                        "Tint": "1,1,1,1"
+                      },
+                      {
+                        "__type": "ModelCollider",
+                        "__enabled": true,
+                        "IsTrigger": false,
+                        "Model": "models/pipes/pipe_0a.vmdl",
+                        "Surface": null,
+                        "Tags": ""
+                      }
+                    ]
+                  },
+                  {
+                    "Id": "b1dc57db-5c55-463b-acdd-b6bf8901e61c",
+                    "Name": "pipe_0a",
+                    "Enabled": true,
+                    "Position": "192,0,-0.00008392186",
+                    "Rotation": "0.7071061,0,-0,-0.7071075",
+                    "Scale": "1,1,1",
+                    "Components": [
+                      {
+                        "__type": "ModelComponent",
+                        "__enabled": true,
+                        "MaterialOverride": null,
+                        "Model": "models/pipes/pipe_0a_roundcorner.vmdl",
+                        "ShouldCastShadows": true,
+                        "Tint": "1,1,1,1"
+                      },
+                      {
+                        "__type": "ModelCollider",
+                        "__enabled": true,
+                        "IsTrigger": false,
+                        "Model": "models/pipes/pipe_0a_roundcorner.vmdl",
+                        "Surface": null,
+                        "Tags": ""
+                      }
+                    ]
+                  },
+                  {
+                    "Id": "64a39fac-ad7f-4ab6-bb53-7f12d6f6674c",
+                    "Name": "pipe_0a",
+                    "Enabled": true,
+                    "Position": "224,32,-0.00001215719",
+                    "Rotation": "0.5,0.5000003,0.5,0.4999996",
+                    "Scale": "1,1,1",
+                    "Components": [
+                      {
+                        "__type": "ModelComponent",
+                        "__enabled": true,
+                        "MaterialOverride": null,
+                        "Model": "models/pipes/pipe_0a_roundcorner.vmdl",
+                        "ShouldCastShadows": true,
+                        "Tint": "1,1,1,1"
+                      },
+                      {
+                        "__type": "ModelCollider",
+                        "__enabled": true,
+                        "IsTrigger": false,
+                        "Model": "models/pipes/pipe_0a_roundcorner.vmdl",
+                        "Surface": null,
+                        "Tags": ""
+                      }
+                    ]
+                  },
+                  {
+                    "Id": "1011ee5f-2d9c-4639-9905-11a55c4649da",
+                    "Name": "pipe_0a",
+                    "Enabled": true,
+                    "Position": "256,64,-0.00008201449",
+                    "Rotation": "0,0,0,1",
+                    "Scale": "1,1,1",
+                    "Components": [
+                      {
+                        "__type": "ModelComponent",
+                        "__enabled": true,
+                        "MaterialOverride": null,
+                        "Model": "models/pipes/pipe_0a.vmdl",
+                        "ShouldCastShadows": true,
+                        "Tint": "1,1,1,1"
+                      },
+                      {
+                        "__type": "ModelCollider",
+                        "__enabled": true,
+                        "IsTrigger": false,
+                        "Model": "models/pipes/pipe_0a.vmdl",
+                        "Surface": null,
+                        "Tags": ""
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "Id": "1bde9784-1c60-4d5a-a6d7-260057ec0f47",
+                "Name": "pipe_0a",
+                "Enabled": true,
+                "Position": "24,92,90",
+                "Rotation": "0,-0.7071072,0,0.7071064",
+                "Scale": "0.7,0.7,0.7",
+                "Components": [
+                  {
+                    "__type": "ModelComponent",
+                    "__enabled": true,
+                    "MaterialOverride": null,
+                    "Model": "models/pipes/pipe_0a_roundcorner.vmdl",
+                    "ShouldCastShadows": true,
+                    "Tint": "1,1,1,1"
+                  },
+                  {
+                    "__type": "ModelCollider",
+                    "__enabled": true,
+                    "IsTrigger": false,
+                    "Model": "models/pipes/pipe_0a_roundcorner.vmdl",
+                    "Surface": null,
+                    "Tags": ""
+                  }
+                ],
+                "Children": [
+                  {
+                    "Id": "4c20f13c-c7a3-4428-bb77-b95c40426464",
+                    "Name": "pipe_0a",
+                    "Enabled": true,
+                    "Position": "-64,-0.0000000001663618,-0.00004265564",
+                    "Rotation": "1,0.000000000001051603,0.0000003278255,0.0000006397578",
+                    "Scale": "1,1,1",
+                    "Components": [
+                      {
+                        "__type": "ModelComponent",
+                        "__enabled": true,
+                        "MaterialOverride": null,
+                        "Model": "models/pipes/pipe_0a.vmdl",
+                        "ShouldCastShadows": true,
+                        "Tint": "1,1,1,1"
+                      },
+                      {
+                        "__type": "ModelCollider",
+                        "__enabled": true,
+                        "IsTrigger": false,
+                        "Model": "models/pipes/pipe_0a.vmdl",
+                        "Surface": null,
+                        "Tags": ""
+                      }
+                    ]
+                  },
+                  {
+                    "Id": "868bbee5-540e-46fd-80e0-f24ea9b4dbd3",
+                    "Name": "pipe_0a",
+                    "Enabled": true,
+                    "Position": "-128,-0.0000000003196828,-0.00007571565",
+                    "Rotation": "1,0.000000000001051603,0.0000003278255,0.0000006397578",
+                    "Scale": "1,1,1",
+                    "Components": [
+                      {
+                        "__type": "ModelComponent",
+                        "__enabled": true,
+                        "MaterialOverride": null,
+                        "Model": "models/pipes/pipe_0a.vmdl",
+                        "ShouldCastShadows": true,
+                        "Tint": "1,1,1,1"
+                      },
+                      {
+                        "__type": "ModelCollider",
+                        "__enabled": true,
+                        "IsTrigger": false,
+                        "Model": "models/pipes/pipe_0a.vmdl",
+                        "Surface": null,
+                        "Tags": ""
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "Id": "d0be2dcb-7bdd-4fef-9ef9-7ce1c2ca5eab",
+                "Name": "Cubemap",
+                "Enabled": true,
+                "Position": "64.00008,63.99992,63.99971",
+                "Rotation": "0,0,-1,-0.0000006397578",
+                "Scale": "1,1,1",
+                "Components": [
+                  {
+                    "__type": "EnvmapComponent",
+                    "__enabled": true,
+                    "Bounds": {
+                      "Mins": "-75,-75,-75",
+                      "Maxs": "75,75,75"
+                    },
+                    "Projection": "Box",
+                    "Texture": "textures/cubemaps/default2.vtex",
+                    "TintColor": "1,1,1,1"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "Id": "364d8472-7a7e-4496-a8dc-9e8bbf569398",
+            "Name": "floor_01",
+            "Enabled": true,
+            "Position": "0,0,0",
+            "Rotation": "0,0,0,1",
+            "Scale": "1,1,1",
+            "Components": [
+              {
+                "__type": "ModelComponent",
+                "__enabled": true,
+                "MaterialOverride": null,
+                "Model": "models/environment/floor_01.vmdl",
+                "ShouldCastShadows": true,
+                "Tint": "1,1,1,1"
+              },
+              {
+                "__type": "ModelCollider",
+                "__enabled": true,
+                "IsTrigger": false,
+                "Model": "models/environment/floor_01.vmdl",
+                "Surface": null,
+                "Tags": ""
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "__references": []
+}

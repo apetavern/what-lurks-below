@@ -25,7 +25,7 @@ public partial class MapGeneratorComponent : BaseComponent
 {
 	List<string> Rooms = new List<string>() { "prefabs/rooms/sewer_room_01.object", "prefabs/rooms/sewer_room_02.object", "prefabs/rooms/sewer_room_03.object", "prefabs/rooms/sewer_room_04.object" };
 
-	List<string> Hallways = new List<string>() { "prefabs/hallways/hallway_01.object", "prefabs/hallways/hallway_02.object" };
+	List<string> Hallways = new List<string>() { "prefabs/hallways/hallway_01.object", "prefabs/hallways/hallway_02.object", "prefabs/hallways/hallway_03.object", "prefabs/hallways/hallway_04.object" };
 
 	List<RoomChunkComponent> SpawnedRooms = new List<RoomChunkComponent>();
 
