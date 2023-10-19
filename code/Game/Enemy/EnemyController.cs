@@ -21,7 +21,7 @@ public class EnemyController : BaseComponent
 
 	[Property] public GameObject Body { get; set; }
 
-
+	public SceneModel model;
 
 	public bool IsAggro = false;
 
@@ -47,6 +47,8 @@ public class EnemyController : BaseComponent
 
 		Transform.Scale = Vector3.One * rng.Float( 0.9f, 1.3f );
 
+		model = Body.GetComponent<AnimatedModelComponent>().SceneModel;
+
 		navgen = Scene.GetAllObjects( true ).FirstOrDefault( x => x.GetComponent<NavGenComponent>() != null ).GetComponent<NavGenComponent>();
 	}
 
@@ -54,7 +56,7 @@ public class EnemyController : BaseComponent
 
 	public void OnDamaged()
 	{
-		Body.GetComponent<AnimatedModelComponent>().SceneModel.SetAnimParameter( "hit", true );
+		model.SetAnimParameter( "hit", true );
 		_characterController.Velocity = -Body.Transform.Rotation.Forward * 100f;
 		TimeSinceDamage = 0f;
 	}
@@ -104,6 +106,8 @@ public class EnemyController : BaseComponent
 		{
 			float distanceToPlayer = Vector3.DistanceBetween( myPosition, playerPosition );
 
+
+
 			// Check if the player is within attack range
 			if ( distanceToPlayer < AttackRange )
 			{
@@ -111,7 +115,7 @@ public class EnemyController : BaseComponent
 				if ( Time.Now >= nextAttackTime )
 				{
 					Player.GetComponent<HealthComponent>().Damage( AttackDamage );
-					Body.GetComponent<AnimatedModelComponent>().SceneModel.SetAnimParameter( "attack", true );
+					model.SetAnimParameter( "attack", true );
 					nextAttackTime = Time.Now + TimeBetweenAttacks;
 				}
 			}
@@ -141,12 +145,22 @@ public class EnemyController : BaseComponent
 		// Rotate body towards target
 		if ( _characterController.Velocity.LengthSquared > 0.1f )
 		{
-			Body.GetComponent<AnimatedModelComponent>().SceneModel.SetAnimParameter( "moving", true );
-			Body.GetComponent<AnimatedModelComponent>().SceneModel.SetAnimParameter( "velocity", _characterController.Velocity.LengthSquared / 1000f );
+			model.SetAnimParameter( "moving", true );
+			model.SetAnimParameter( "velocity", _characterController.Velocity.LengthSquared / 8000f );
+
+			model.SetAnimParameter( "hastarget", true );
+
+			SetAnimLookAt( "looktarget", new Transform( Body.Transform.Position, Body.Transform.Rotation ), model.GetAttachment( "eyes" ).Value.Position, playerPosition + Vector3.Up * 64f );
 
 			Rotation targetRotation = Rotation.LookAt( playerPosition - myPosition, Vector3.Up );
 			Body.Transform.Rotation = Rotation.Lerp( Body.Transform.Rotation, targetRotation, Time.Delta * 10f );
 		}
+	}
+
+	public void SetAnimLookAt( string name, Transform origin, Vector3 eyePositionInWorld, Vector3 lookatPositionInWorld )
+	{
+		Vector3 value = (lookatPositionInWorld - eyePositionInWorld) * origin.Rotation.Inverse;
+		model.SetAnimParameter( name, value );
 	}
 
 	public override void DrawGizmos()
