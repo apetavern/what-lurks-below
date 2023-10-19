@@ -1,0 +1,85 @@
+{
+  "RootObject": {
+    "Id": "88dcd0b8-6a46-4db5-8a7f-f2be5dadbbef",
+    "Name": "gatorkid",
+    "Enabled": true,
+    "Position": "0,0,0",
+    "Rotation": "0,0,0,1",
+    "Scale": "1,1,1",
+    "Components": [
+      {
+        "__type": "CharacterController",
+        "__enabled": true,
+        "Acceleration": 10,
+        "GroundAngle": 45,
+        "Height": 24,
+        "Radius": 16,
+        "StepHeight": 18
+      },
+      {
+        "__type": "EnemyController",
+        "__enabled": true,
+        "AggroRange": 128,
+        "AttackDamage": 1,
+        "AttackRange": 64,
+        "Body": "a4d4efe4-f96b-4951-b0ad-c386280b00a0",
+        "Friction": 0.9499998,
+        "Speed": 96,
+        "TimeBetweenAttacks": 1
+      },
+      {
+        "__type": "HealthComponent",
+        "__enabled": true,
+        "InitialHealth": 25,
+        "IsPlayer": false
+      },
+      {
+        "__type": "AimableTargetComponent",
+        "__enabled": true
+      }
+    ],
+    "Children": [
+      {
+        "Id": "a4d4efe4-f96b-4951-b0ad-c386280b00a0",
+        "Name": "Epic Enemy",
+        "Enabled": true,
+        "Position": "0,0,0",
+        "Rotation": "0,0,0,1",
+        "Scale": "0.7,0.7,0.7",
+        "Components": [
+          {
+            "__type": "AnimatedModelComponent",
+            "__enabled": true,
+            "MaterialOverride": null,
+            "Model": "models/enemies/gatorkid/gatorkid.vmdl",
+            "ShouldCastShadows": true,
+            "Tint": "1,1,1,1"
+          }
+        ]
+      },
+      {
+        "Id": "b4a69439-d3c3-4ffd-af73-40555f279f8d",
+        "Name": "Collider",
+        "Enabled": true,
+        "Position": "0,0,21.54626",
+        "Rotation": "0,0,0,1",
+        "Scale": "1,1,1",
+        "Components": [
+          {
+            "__type": "ColliderBoxComponent",
+            "__enabled": true,
+            "IsTrigger": true,
+            "Scale": "32,32,42.99999",
+            "Surface": null,
+            "Tags": "enemy"
+          },
+          {
+            "__type": "AimableTargetComponent",
+            "__enabled": true
+          }
+        ]
+      }
+    ]
+  },
+  "__references": []
+}

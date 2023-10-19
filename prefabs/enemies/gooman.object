@@ -1,0 +1,85 @@
+{
+  "RootObject": {
+    "Id": "4643e42e-0280-4cdc-9bcb-b099968de18b",
+    "Name": "gooman",
+    "Enabled": true,
+    "Position": "0,0,0",
+    "Rotation": "0,0,0,1",
+    "Scale": "1,1,1",
+    "Components": [
+      {
+        "__type": "CharacterController",
+        "__enabled": true,
+        "Acceleration": 10,
+        "GroundAngle": 45,
+        "Height": 24,
+        "Radius": 16,
+        "StepHeight": 18
+      },
+      {
+        "__type": "EnemyController",
+        "__enabled": true,
+        "AggroRange": 125.050026,
+        "AttackDamage": 1,
+        "AttackRange": 64,
+        "Body": "3142addf-7994-4b5e-99ca-7332a5237188",
+        "Friction": 0.9499998,
+        "Speed": 40,
+        "TimeBetweenAttacks": 1
+      },
+      {
+        "__type": "HealthComponent",
+        "__enabled": true,
+        "InitialHealth": 25,
+        "IsPlayer": false
+      },
+      {
+        "__type": "AimableTargetComponent",
+        "__enabled": true
+      }
+    ],
+    "Children": [
+      {
+        "Id": "3142addf-7994-4b5e-99ca-7332a5237188",
+        "Name": "Epic Enemy",
+        "Enabled": true,
+        "Position": "0,0,0",
+        "Rotation": "0,0,0,1",
+        "Scale": "0.7,0.7,0.7",
+        "Components": [
+          {
+            "__type": "AnimatedModelComponent",
+            "__enabled": true,
+            "MaterialOverride": null,
+            "Model": null,
+            "ShouldCastShadows": true,
+            "Tint": "1,1,1,1"
+          }
+        ]
+      },
+      {
+        "Id": "5255d985-b906-4bfb-a936-4680708d8b77",
+        "Name": "Collider",
+        "Enabled": true,
+        "Position": "0,0,15.82238",
+        "Rotation": "0,0,0,1",
+        "Scale": "1,1,1",
+        "Components": [
+          {
+            "__type": "ColliderBoxComponent",
+            "__enabled": true,
+            "IsTrigger": true,
+            "Scale": "32,32,32",
+            "Surface": null,
+            "Tags": "enemy"
+          },
+          {
+            "__type": "AimableTargetComponent",
+            "__enabled": true
+          }
+        ]
+      }
+    ]
+  },
+  "__references": []
+}
