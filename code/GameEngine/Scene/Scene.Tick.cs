@@ -4,9 +4,14 @@ using Sandbox.Utility;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 
 public partial class Scene : GameObject
 {
+	FixedUpdate fixedUpdate = new FixedUpdate();
+
+
+
 	/// <summary>
 	/// The update loop will turn certain settings on
 	/// Here we turn them to their defaults.
@@ -28,11 +33,13 @@ public partial class Scene : GameObject
 		// The game will tick a game scene!
 		if ( IsEditor )
 		{
-			Tick();
+			Update();
 		}
 
 		ProcessDeletes();
 	}
+
+
 
 	public void GameTick()
 	{
@@ -45,23 +52,41 @@ public partial class Scene : GameObject
 			if ( GameManager.IsPaused )
 				return;
 
+			bool noFixedUpdate = true;
+
+			if ( noFixedUpdate )
+			{
+				FixedUpdate();
+			}
+			else
+			{
+				fixedUpdate.Frequency = 50;
+				fixedUpdate.MaxSteps = 3;
+				fixedUpdate.Run( FixedUpdate );
+			}
+
 			PreTickReset();
 
-			Tick();
+			Update();
 
 			ProcessDeletes();
 
-			TickPhysics();
+
 
 			ProcessDeletes();
 		}
 	}
 
-
-	void TickPhysics()
+	protected override void FixedUpdate()
 	{
-		PhysicsWorld.Gravity = Vector3.Down * 900;
-		PhysicsWorld?.Step( Time.Delta );
-		PostPhysics();
+		var idealHz = 100.0f;
+		var idealStep = 1.0f / idealHz;
+		var steps = (Time.Delta / idealStep).FloorToInt().Clamp( 1, 10 );
+
+		PhysicsWorld.Step( Time.Delta, steps );
+
+		base.FixedUpdate();
+
+		ProcessDeletes();
 	}
 }
