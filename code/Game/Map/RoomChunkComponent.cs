@@ -219,13 +219,13 @@ public sealed class RoomChunkComponent : BaseComponent
 
 		foreach ( var coll in GetComponents<ModelCollider>( false, true ) )
 		{
-			coll.Enabled = false;
+			coll.OnPhysicsChanged();
 		}
 
-		foreach ( var coll in GetComponents<ModelCollider>( false, true ) )
+		/*foreach ( var coll in GetComponents<ModelCollider>( false, true ) )
 		{
 			coll.Enabled = true;
-		}
+		}*/
 		Log.Info( "Collision fixed!" );
 	}
 

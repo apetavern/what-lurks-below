@@ -9,6 +9,8 @@ public sealed class HallwayChunkComponent : BaseComponent
 
 	public void CheckSides()
 	{
+		Transform.Rotation = Rotation.Identity;
+
 		var trFront = Physics.Trace.Ray(
 			Transform.Position + Vector3.Forward * 128f + Vector3.Up * 10f,
 			Transform.Position + Vector3.Forward * 128f + Vector3.Down * 128f
@@ -48,5 +50,11 @@ public sealed class HallwayChunkComponent : BaseComponent
 		{
 			Right.Destroy();
 		}
+
+		foreach ( var item in GetComponents<ColliderBaseComponent>( false, true ) )
+		{
+			item.OnPhysicsChanged();
+		}
+
 	}
 }

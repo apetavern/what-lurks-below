@@ -34,9 +34,7 @@
       {
         "__type": "Inventory",
         "__enabled": true,
-        "Slots": 6,
-        "SlotsX": 10,
-        "SlotsY": 10
+        "Slots": 6
       },
       {
         "__type": "WeaponComponent",
@@ -89,6 +87,14 @@
                 "Cookie": null,
                 "LightColor": "0.91373,0.98039,1,1",
                 "Radius": 500
+              },
+              {
+                "__type": "CameraPhysicsDebug",
+                "__enabled": true,
+                "MaxPoints": 10000,
+                "NormalLength": 10,
+                "TracesPerFrame": 500,
+                "TraceType": "Ray"
               }
             ]
           },

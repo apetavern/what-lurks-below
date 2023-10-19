@@ -1,6 +1,6 @@
 {
   "RootObject": {
-    "Id": "b30cefca-4959-4587-aadd-b9c70a9bfded",
+    "Id": "d98d6afb-96a7-426a-8c94-6ab4275eeda4",
     "Name": "hallway_01",
     "Enabled": true,
     "Position": "0,0,0",
@@ -10,10 +10,10 @@
       {
         "__type": "HallwayChunkComponent",
         "__enabled": true,
-        "Back": "9d48927e-40f7-4e18-a2eb-bdef967af852",
-        "Front": "e1cbaa3e-d856-4f98-8e50-0abedab61e7b",
-        "Left": "751b6981-f20d-4c44-aef6-28d7d00a8732",
-        "Right": "30890618-f513-456d-8bd8-392c24953c25"
+        "Back": "f988e93c-0e72-405c-aaa6-410544ea0523",
+        "Front": "38ffd0a3-a40c-4b37-9966-cf029c66b7a1",
+        "Left": "2613f483-c062-420f-b032-2d7ab6d0e803",
+        "Right": "492e28f7-ebc5-49c5-a4fc-71c49fd2955f"
       },
       {
         "__type": "ModelComponent",
@@ -34,7 +34,7 @@
     ],
     "Children": [
       {
-        "Id": "f833fe98-29c5-4909-9bef-693d5f460723",
+        "Id": "5367fd6d-ab02-428a-9b9e-9286eaaf6411",
         "Name": "Ceiling",
         "Enabled": true,
         "Position": "0,0,100",
@@ -52,7 +52,7 @@
         ]
       },
       {
-        "Id": "e1cbaa3e-d856-4f98-8e50-0abedab61e7b",
+        "Id": "38ffd0a3-a40c-4b37-9966-cf029c66b7a1",
         "Name": "forward",
         "Enabled": true,
         "Position": "50,0,50",
@@ -78,11 +78,11 @@
         ]
       },
       {
-        "Id": "9d48927e-40f7-4e18-a2eb-bdef967af852",
+        "Id": "f988e93c-0e72-405c-aaa6-410544ea0523",
         "Name": "back",
         "Enabled": true,
         "Position": "-50,0,50",
-        "Rotation": "0,0.7069342,0,0.7072793",
+        "Rotation": "0,0.707107,0,0.7071065",
         "Scale": "1,1,1",
         "Components": [
           {
@@ -104,11 +104,11 @@
         ]
       },
       {
-        "Id": "30890618-f513-456d-8bd8-392c24953c25",
+        "Id": "492e28f7-ebc5-49c5-a4fc-71c49fd2955f",
         "Name": "right",
         "Enabled": true,
         "Position": "0,-50,50",
-        "Rotation": "-0.5000003,-0.5,-0.5,0.4999996",
+        "Rotation": "-0.5000006,-0.4999997,-0.5000003,0.4999993",
         "Scale": "1,1,1",
         "Components": [
           {
@@ -130,11 +130,11 @@
         ]
       },
       {
-        "Id": "751b6981-f20d-4c44-aef6-28d7d00a8732",
+        "Id": "2613f483-c062-420f-b032-2d7ab6d0e803",
         "Name": "left",
         "Enabled": true,
         "Position": "0,50,50",
-        "Rotation": "0.5000003,0.5,-0.5,0.4999996",
+        "Rotation": "0.5000006,0.4999997,-0.5000003,0.4999993",
         "Scale": "1,1,1",
         "Components": [
           {

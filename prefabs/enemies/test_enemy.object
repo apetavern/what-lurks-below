@@ -20,9 +20,12 @@
         "__type": "EnemyController",
         "__enabled": true,
         "AggroRange": 125.050026,
+        "AttackDamage": 1,
+        "AttackRange": 64,
         "Body": "3142addf-7994-4b5e-99ca-7332a5237188",
         "Friction": 0.9499998,
-        "Speed": 34.799995
+        "Speed": 34.799995,
+        "TimeBetweenAttacks": 1
       },
       {
         "__type": "HealthComponent",
@@ -58,7 +61,7 @@
         "Id": "5255d985-b906-4bfb-a936-4680708d8b77",
         "Name": "Collider",
         "Enabled": true,
-        "Position": "0,0,44.80552",
+        "Position": "0,0,15.82238",
         "Rotation": "0,0,0,1",
         "Scale": "1,1,1",
         "Components": [
@@ -66,7 +69,7 @@
             "__type": "ColliderBoxComponent",
             "__enabled": true,
             "IsTrigger": true,
-            "Scale": "30,30,89.6",
+            "Scale": "32,32,32",
             "Surface": null,
             "Tags": "enemy"
           },
