@@ -1,3 +1,4 @@
+using BrickJam.Game;
 using Sandbox;
 using System;
 using System.Collections.Generic;
@@ -24,6 +25,21 @@ public sealed class RoomChunkComponent : BaseComponent
 
 		Doors = GetComponents<RoomDoorDefinition>( false, true ).ToList();
 
+	}
+
+	public void ClearEnemiesAndItems()
+	{
+		var enemies = GameObject.GetComponents<EnemyController>( false, true );
+		for ( int i = 0; i < enemies.Count(); i++ )
+		{
+			enemies.ElementAt( i ).GameObject.Destroy();
+		}
+
+		var items = GameObject.GetComponents<ItemPickup>( false, true );
+		for ( int i = 0; i < items.Count(); i++ )
+		{
+			items.ElementAt( i ).GameObject.Destroy();
+		}
 	}
 
 	public override void DrawGizmos()

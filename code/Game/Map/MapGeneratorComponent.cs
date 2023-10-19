@@ -4,6 +4,7 @@ using System.Threading;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Linq;
+using BrickJam.Game;
 
 public static class Vector3Extensions
 {
@@ -41,6 +42,8 @@ public partial class MapGeneratorComponent : BaseComponent
 	public override void OnStart()
 	{
 		SpawnedRooms.Add( SpawnPrefabFromPath( Rooms[0], Transform.Position, Transform.Rotation ).GetComponent<RoomChunkComponent>( false ) );
+
+		SpawnedRooms[0].ClearEnemiesAndItems();
 
 		for ( int i = 0; i < RoomCount; i++ )
 		{
