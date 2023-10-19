@@ -1,12 +1,11 @@
 ﻿@using System
+@using BrickJam.Player
 @using Sandbox;
 @using Sandbox.UI;
 @inherits PanelComponent
 
 <root>
-    
-    <div class="test"/>
-    
+    @* Inventory Slots *@
     @for (var i = 0; i < 10; i++)
     {
         @for (var j = 0; j < 3; j++)
@@ -14,11 +13,34 @@
             <div class="slot"></div>
         }
     }
+    @* Constants *@
+    <div class="inv-bottom">
+        <div class="subslot">Health</div>
+        <div class="subslot">Ammo</div>
+    </div>
+    @foreach (var item in Inventory.Get)
+    {
+        <InventoryGridItem Item=@item />
+    }
 </root>
 
 @code
 {
     public bool IsOpen { get; set; }
+    
+    public Inventory Inventory { get; set; }
+    
+    public static InventoryHud Instance { get; set; }
+
+    public InventoryHud()
+    {
+        Instance = this;
+    }
+
+    public void SetInventory(Inventory inventory)
+    {
+        Inventory = inventory;
+    }
     
     public override void Update()
     {

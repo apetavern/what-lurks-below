@@ -2,6 +2,7 @@
 using BrickJam.Game;
 using BrickJam.Player;
 using Sandbox;
+using Sandbox.UI;
 
 namespace BrickJam;
 
@@ -14,7 +15,11 @@ public class InventoryItem : GameResource
 	public int Height { get; set; }
 
 	public InvCoord Position { get; set; }
-
+	
+	[ResourceType( "png" )]
+	public string ImagePath { get; set; }
+	
+	
 	// public InventoryItem( string name, float weight, int length, int height )
 	// {
 	// 	Name = name;

@@ -25,17 +25,25 @@ public class ItemPickup : BaseComponent
 	}
 
 	[Property] public PickupType Type { get; set; } = PickupType.Ammo;
+	[Property] public InventoryItem Item { get; set; }
 
 	public override void OnEnabled()
 	{
 		base.OnEnabled();
 
 		var pickupResources = ResourceLibrary.GetAll<PickupResource>();
-		var pickup = pickupResources.FirstOrDefault( p => p.PickupType == Type );
 
+		PickupResource pickup;
+		if ( Type is PickupType.Item )
+			pickup = pickupResources.FirstOrDefault( p =>
+				p.PickupType == PickupType.Item && p.Item.Name == Item.Name );
+		else
+			pickup = pickupResources.FirstOrDefault( p => p.PickupType == Type );
+		// var pickup = pickupResources.FirstOrDefault( p => p.PickupType == Type );
+		//
 		if ( pickup is null )
 			return;
-
+		
 		_pickupResource = pickup;
 
 		// Setup bounds

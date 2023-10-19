@@ -1,0 +1,9 @@
+{
+  "Name": "Medkit",
+  "Weight": 3.4,
+  "Length": 2,
+  "Height": 1,
+  "Position": {},
+  "ImagePath": "tools/images/sndtool/soundentry_icon.png",
+  "__references": []
+}

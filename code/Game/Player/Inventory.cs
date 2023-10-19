@@ -101,11 +101,16 @@ public class Inventory : BaseComponent
 		if ( !positionValid )
 			return false;
 		
-		if ( _items.Contains(item) )
-			Free( item.Position, item.Length, item.Height );
-		Rent( pos, item.Length, item.Height );
-
 		item.Position = pos;
+
+		if ( _items.Contains( item ) )
+		{
+			_items.Remove( item );
+			Free( item.Position, item.Length, item.Height );
+		}
+		
+		_items.Add( item );
+		Rent( pos, item.Length, item.Height );
 		
 		return true;
 	}
@@ -125,8 +130,8 @@ public class Inventory : BaseComponent
 		_inventorySlots = new bool[SlotsX, SlotsY];
 		_player = Scene.GetAllObjects( true ).FirstOrDefault( p => p.Name == "player" );
 
-		Log.Info( SlotsX );
-		// InventoryHud.Instance.SetSlots(SlotsX, SlotsY);
+		Log.Info(InventoryHud.Instance  );
+		InventoryHud.Instance.SetInventory( this );
 	}
 
 	public override void Update()

@@ -3,5 +3,7 @@
   "Weight": 1.2,
   "Length": 1,
   "Height": 1,
+  "Position": {},
+  "ImagePath": "materials/gizmo/audiolistener.png",
   "__references": []
 }

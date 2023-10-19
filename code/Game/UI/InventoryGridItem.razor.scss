@@ -1,0 +1,9 @@
+﻿InventoryGridItem {
+  position: absolute;
+  background-color: rgba(#555, 100%);
+  z-index: 5;
+  
+  &:hover {
+    background-color: #777;
+  }
+}

@@ -139,6 +139,7 @@
         {
           "__type": "ItemPickup",
           "__enabled": true,
+          "Item": null,
           "Type": "Ammo"
         }
       ]
@@ -154,7 +155,8 @@
         {
           "__type": "ItemPickup",
           "__enabled": true,
-          "Type": "Health"
+          "Item": "assets/inventory_items/medkit.bjitem",
+          "Type": "Item"
         },
         {
           "__type": "ColliderBoxComponent",
@@ -185,6 +187,7 @@
         {
           "__type": "ItemPickup",
           "__enabled": true,
+          "Item": "assets/inventory_items/skeleton_key.bjitem",
           "Type": "Item"
         }
       ]
@@ -200,6 +203,7 @@
         {
           "__type": "ItemPickup",
           "__enabled": true,
+          "Item": null,
           "Type": "Health"
         },
         {

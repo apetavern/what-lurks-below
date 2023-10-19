@@ -1,6 +1,7 @@
 {
-  "PickupType": "Health",
+  "PickupType": "Item",
   "Scale": 1,
   "Model": "models/items/medkit/medkit.vmdl",
+  "Item": "assets/inventory_items/medkit.bjitem",
   "__references": []
 }

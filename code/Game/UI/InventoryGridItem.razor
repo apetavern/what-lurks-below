@@ -1,0 +1,13 @@
+﻿@using BrickJam;
+@using Sandbox.UI;
+@inherits Panel;
+@attribute [StyleSheet]
+
+<root style="position: absolute; left: @(Item.Position.X * 100)px; top: @(Item.Position.Y * 100)px">
+    <img src=@Item.ImagePath style="width: @(Item.Length * 100)px; height:  @(Item.Height * 100)px" />
+</root>
+
+@code
+{
+    public InventoryItem Item { get; set; }
+}
