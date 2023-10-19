@@ -85,9 +85,9 @@ public sealed class RoomChunkComponent : BaseComponent
 
 		if ( path.Count == 0 )
 		{
-			Log.Info( "No navgen data" );
+			//Log.Info( "No navgen data" );
 
-			Log.Info( "Falling back to bezier curves" );
+			//Log.Info( "Falling back to bezier curves" );
 
 			List<Vector3> curvePoints = CreateBezierCurve( doorPosition1.Transform.Position, controlPoint1, controlPoint2, doorPosition2.Transform.Position, 128f );
 
@@ -217,12 +217,12 @@ public sealed class RoomChunkComponent : BaseComponent
 	{
 		CameraTrigger.GetComponent<CameraTriggerComponent>( false ).RecalcBounds();
 
-		foreach ( var coll in GetComponents<ModelCollider>( false, true ) )
+		/*foreach ( var coll in GetComponents<ModelCollider>( false, true ) )
 		{
 			coll.OnPhysicsChanged();
 		}
 
-		/*foreach ( var coll in GetComponents<ModelCollider>( false, true ) )
+		foreach ( var coll in GetComponents<ModelCollider>( false, true ) )
 		{
 			coll.Enabled = true;
 		}*/
