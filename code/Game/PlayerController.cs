@@ -55,7 +55,7 @@ public class PlayerController : BaseComponent
 
 	public void TakeDamage()
 	{
-		var helper = new CitizenAnimationHelperScene( Body.GetComponent<AnimatedModelComponent>().SceneModel );
+		var helper = new CitizenAnimationHelperScene( Body.GetComponent<AnimatedModelComponent>().SceneObject );
 		helper.TriggerHit();
 	}
 
@@ -118,7 +118,7 @@ public class PlayerController : BaseComponent
 			}
 			cc.Move();
 			cc.IsOnGround = false;
-			var helper = new CitizenAnimationHelperScene( Body.GetComponent<AnimatedModelComponent>().SceneModel );
+			var helper = new CitizenAnimationHelperScene( Body.GetComponent<AnimatedModelComponent>().SceneObject );
 			helper.WithVelocity( cc.Velocity - Vector3.Up * Gravity );
 			helper.IsGrounded = cc.IsOnGround;
 			helper.HoldType = CitizenAnimationHelperScene.HoldTypes.None;
@@ -216,7 +216,7 @@ public class PlayerController : BaseComponent
 		{
 			Body.Transform.Rotation = new Angles( 0, EyeAngles.yaw, 0 ).ToRotation();
 
-			var helper = new CitizenAnimationHelperScene( Body.GetComponent<AnimatedModelComponent>().SceneModel );
+			var helper = new CitizenAnimationHelperScene( Body.GetComponent<AnimatedModelComponent>().SceneObject );
 			helper.WithVelocity( cc.Velocity );
 			helper.IsGrounded = cc.IsOnGround;
 

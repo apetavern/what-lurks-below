@@ -94,7 +94,7 @@
             "Id": "d74d97d6-9e8d-4152-bdbb-d2612892594d",
             "Name": "Helmet",
             "Enabled": true,
-            "Position": "1.5,0,69",
+            "Position": "0,0,0",
             "Rotation": "0,0,0,1",
             "Scale": "1,1,1",
             "Components": [
@@ -112,7 +112,7 @@
             "Id": "bfe663db-f3a7-41e5-940c-be4b50d07ffd",
             "Name": "Backpack",
             "Enabled": true,
-            "Position": "-6.5,0,44.5",
+            "Position": "0,0,0",
             "Rotation": "0,0,0,1",
             "Scale": "1,1,1",
             "Components": [

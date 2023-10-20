@@ -1,11 +1,11 @@
 ﻿using Sandbox;
 using Sandbox.Diagnostics;
+using System;
 
-[Title( "Model Renderer" )]
+[Title( "Animated Model Renderer" )]
 [Category( "Rendering" )]
-[Icon( "free_breakfast" )]
-[Alias( "ModelComponentMate" )]
-public class ModelComponent : BaseComponent, BaseComponent.ExecuteInEditor
+[Icon( "sports_martial_arts" )]
+public class AnimatedModelComponent : BaseComponent, BaseComponent.ExecuteInEditor
 {
 	Model _model;
 
@@ -22,7 +22,8 @@ public class ModelComponent : BaseComponent, BaseComponent.ExecuteInEditor
 		}
 	}
 
-	[Property] public Model Model 
+	[Property]
+	public Model Model
 	{
 		get => _model;
 		set
@@ -58,7 +59,8 @@ public class ModelComponent : BaseComponent, BaseComponent.ExecuteInEditor
 	}
 
 	Material _material;
-	[Property] public Material MaterialOverride
+	[Property]
+	public Material MaterialOverride
 	{
 		get => _material;
 		set
@@ -92,8 +94,8 @@ public class ModelComponent : BaseComponent, BaseComponent.ExecuteInEditor
 
 	public string TestString { get; set; }
 
-	SceneObject _sceneObject;
-	public SceneObject SceneObject => _sceneObject;
+	SceneModel _sceneObject;
+	public SceneModel SceneObject => _sceneObject;
 
 
 	public override void DrawGizmos()
@@ -110,7 +112,7 @@ public class ModelComponent : BaseComponent, BaseComponent.ExecuteInEditor
 			Gizmo.Draw.Color = Color.White.WithAlpha( 0.9f );
 			Gizmo.Draw.LineBBox( Model.Bounds );
 		}
-		
+
 		if ( Gizmo.IsHovered )
 		{
 			Gizmo.Draw.Color = Color.White.WithAlpha( 0.4f );
@@ -125,7 +127,7 @@ public class ModelComponent : BaseComponent, BaseComponent.ExecuteInEditor
 
 		var model = Model ?? Model.Load( "models/dev/box.vmdl" );
 
-		_sceneObject = new SceneObject( Scene.SceneWorld, model, Transform.World );
+		_sceneObject = new SceneModel( Scene.SceneWorld, model, Transform.World );
 		_sceneObject.SetMaterialOverride( MaterialOverride );
 		_sceneObject.ColorTint = Tint;
 		_sceneObject.Flags.CastShadows = _castShadows;
@@ -143,6 +145,37 @@ public class ModelComponent : BaseComponent, BaseComponent.ExecuteInEditor
 			return;
 
 		_sceneObject.Transform = Transform.World;
+		_sceneObject.Update( Time.Delta / 2f );
 	}
 
+	public void Set( string v, Vector3 value ) => _sceneObject.SetAnimParameter( v, value );
+	public void Set( string v, int value ) => _sceneObject.SetAnimParameter( v, value );
+	public void Set( string v, float value ) => _sceneObject.SetAnimParameter( v, value );
+	public void Set( string v, bool value ) => _sceneObject.SetAnimParameter( v, value );
+	//	public void Set( string v, Enum value ) => _sceneObject.SetAnimParameter( v, value );
+
+	public bool GetBool( string v ) => _sceneObject.GetBool( v );
+	public int GetInt( string v ) => _sceneObject.GetInt( v );
+	public float GetFloat( string v ) => _sceneObject.GetFloat( v );
+	public Vector3 GetVector( string v ) => _sceneObject.GetVector3( v );
+	public Rotation GetRotation( string v ) => _sceneObject.GetRotation( v );
+
+	/// <summary>
+	/// Converts value to vector local to this entity's eyepos and passes it to SetAnimVector
+	/// </summary>
+	public void SetLookDirection( string name, Vector3 eyeDirectionWorld )
+	{
+		var delta = eyeDirectionWorld * Transform.Rotation.Inverse;
+		Set( name, delta );
+	}
+
+	public Transform GetAttachmentTransform( string attachmentName )
+	{
+		return SceneObject.GetAttachment( attachmentName ).Value;
+	}
+
+	public Transform GetBoneTransform( string attachmentName )
+	{
+		return SceneObject.GetBoneWorldTransform( attachmentName );
+	}
 }

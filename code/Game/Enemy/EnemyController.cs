@@ -49,7 +49,7 @@ public class EnemyController : BaseComponent
 
 		GameObject.GetComponent<CharacterController>( false ).IsOnGround = true;
 
-		model = Body.GetComponent<AnimatedModelComponent>().SceneModel;
+		model = Body.GetComponent<AnimatedModelComponent>().SceneObject;
 
 		navgen = Scene.GetAllObjects( true ).FirstOrDefault( x => x.GetComponent<NavGenComponent>() != null ).GetComponent<NavGenComponent>();
 	}
@@ -72,11 +72,11 @@ public class EnemyController : BaseComponent
 
 		await GameTask.DelaySeconds( 0.5f );
 		var modelcomp = GetComponent<AnimatedModelComponent>( false, true );
-		while ( modelcomp.SceneModel.ColorTint.a > 0 )
+		while ( modelcomp.SceneObject.ColorTint.a > 0 )
 		{
-			var col = modelcomp.SceneModel.ColorTint;
+			var col = modelcomp.SceneObject.ColorTint;
 			col.a -= Time.Delta * 2f;
-			modelcomp.SceneModel.ColorTint = col;
+			modelcomp.SceneObject.ColorTint = col;
 			await GameTask.DelaySeconds( Time.Delta );
 		}
 

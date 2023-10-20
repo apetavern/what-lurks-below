@@ -27,7 +27,7 @@ public sealed class PlayerClothingComponent : BaseComponent
 		clothes.Clothing.Add( allclothes.Where( X => X.Category == Clothing.ClothingCategory.Skin ).OrderBy( item => Game.Random.Next() ).FirstOrDefault() );
 		clothes.Clothing.Add( allclothes.Where( X => X.Category == Clothing.ClothingCategory.Facial ).OrderBy( item => Game.Random.Next() ).FirstOrDefault() );
 
-		ClothingObjects = clothes.DressSceneObject( GetComponent<AnimatedModelComponent>().SceneModel );
+		ClothingObjects = clothes.DressSceneObject( GetComponent<AnimatedModelComponent>().SceneObject );
 	}
 
 	protected override void OnPreRender()

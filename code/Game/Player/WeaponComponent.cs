@@ -40,7 +40,7 @@ public class WeaponComponent : BaseComponent
 
 	public override void Update()
 	{
-		var citizenModel = _body.GetComponent<AnimatedModelComponent>().SceneModel;
+		var citizenModel = _body.GetComponent<AnimatedModelComponent>().SceneObject;
 		var helper = new CitizenAnimationHelperScene( citizenModel );
 
 		var ctrl = _player?.GetComponent<PlayerController>();
