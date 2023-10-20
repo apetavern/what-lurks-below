@@ -171,7 +171,7 @@ public partial class MapGeneratorComponent : BaseComponent
 
 	public async void CreateHallways()
 	{
-		await GameTask.Delay( 6000 );
+		await GameTask.Delay( 7500 );
 		int waitframes = 0;
 		foreach ( var room in SpawnedRooms )
 		{
@@ -179,7 +179,7 @@ public partial class MapGeneratorComponent : BaseComponent
 			{
 				waitframes++;
 				//Log.Info( "Waiting for hallways..." );
-				await GameTask.Delay( 5 );
+				await GameTask.Delay( 50 );
 			}
 			waitframes = 0;
 			while ( room.PathPoints.Count == 1 && waitframes < 50 )

@@ -22,7 +22,7 @@
       "Name": "player",
       "Enabled": true,
       "Position": "0,0,650",
-      "Rotation": "-0.00000002570919,-0.00000001472848,-0.0000000000000003786573,1",
+      "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "__Prefab": "prefabs/player.object"
     },
