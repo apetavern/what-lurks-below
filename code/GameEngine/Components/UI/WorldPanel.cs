@@ -13,6 +13,19 @@ public sealed class WorldPanel : BaseComponent, IRootPanelComponent
 	[Property] public bool LookAtCamera { get; set; }
 	[Property] public Vector2 PanelSize { get; set; } = new Vector2( 512 );
 
+	[Property]
+	public Vector3 Position
+	{
+		get
+		{
+			return Transform.World.Position;
+		}
+		set
+		{
+			worldPanel.Position = value;
+		}
+	}
+
 	// todo: show these as group buttons
 
 	[Property] public HAlignment HorizontalAlign { get; set; } = HAlignment.Center;
@@ -101,7 +114,7 @@ public sealed class WorldPanel : BaseComponent, IRootPanelComponent
 			currentRot = Rotation.LookAt( camDelta, Camera.Main.Rotation.Up );
 		}
 
-		worldPanel.Transform = Transform.World.WithRotation( currentRot ).WithScale( currentScale * RenderScale );
+		worldPanel.Transform = Transform.World.WithPosition( worldPanel.Position ).WithRotation( currentRot ).WithScale( currentScale * RenderScale );
 
 		var rect = CalculateRect();
 

@@ -29,6 +29,9 @@
 
         Player = Scene.GetAllObjects(true).FirstOrDefault(p => p.Name == "player");
 
-        Transform.Position = Transform.Position + Vector3.Up * 28f;
+        if (GetComponent<IRootPanelComponent>(true) is not WorldPanel worldPanel)
+            return;
+
+        worldPanel.Position += Vector3.Up * 38f;
     }
 }
