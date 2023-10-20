@@ -346,7 +346,7 @@
           "__enabled": true,
           "MaterialOverride": null,
           "Model": "models/misc/intro_pipe.vmdl",
-          "ShouldCastShadows": true,
+          "ShouldCastShadows": false,
           "Tint": "1,1,1,1"
         }
       ],
