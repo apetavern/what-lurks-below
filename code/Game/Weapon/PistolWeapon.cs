@@ -26,6 +26,8 @@ public class PistolWeapon : BaseWeapon
 		defaultAmmoCount = MaxAmmo;
 	}
 
+	public ParticleSystem muzzleflash;
+
 	public override void OnIdle( CitizenAnimationHelperScene helper )
 	{
 		helper.HoldType = HoldType;
@@ -49,6 +51,21 @@ public class PistolWeapon : BaseWeapon
 		if ( AmmoCount > 0 )
 		{
 			helper.TriggerAttack();
+			var muzzletr = GetComponent<AnimatedModelComponent>().GetAttachmentTransform( "muzzle" );
+
+			if ( muzzleflash == null )
+			{
+				muzzleflash = new GameObject( true, "flash" ).AddComponent<ParticleSystem>();
+				muzzleflash.GameObject.SetParent( this );
+			}
+
+			muzzleflash.Transform.Position = muzzletr.Position;
+			muzzleflash.Transform.Rotation = muzzletr.Rotation;
+
+			muzzleflash.Particles = Sandbox.ParticleSystem.Load( "particles/pistol_muzzleflash.vpcf" );
+
+			muzzleflash.OnEnabled();
+
 			Sound.FromWorld( "weapons/rust_pistol/sound/rust_pistol.shoot.sound", Transform.Position );
 		}
 		else
