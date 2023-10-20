@@ -23,6 +23,7 @@
     protected override void OnMouseDown(MousePanelEvent e)
     {
         Mouse.Position = Box.Rect.Position + Box.Rect.Size * 0.5f;
+        
         Selected = true;
         SetMouseCapture( true );
         InventoryPane.SelectedItem = Item;
@@ -59,7 +60,7 @@
     {
         if (Selected && HasMouseCapture)
         {
-            MouseLocation += Mouse.Delta;
+            MouseLocation += Mouse.Delta * ScaleFromScreen;
             MouseLocation = MouseLocation.Clamp(
                 Vector2.Zero, 
                 new Vector2(

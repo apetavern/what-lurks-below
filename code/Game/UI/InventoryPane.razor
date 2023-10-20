@@ -48,6 +48,9 @@
         if (e.Button != "mouseleft")
             return;
 
+        if (e.Pressed)
+            return;
+
         if (SelectedItem is null)
             return;
         

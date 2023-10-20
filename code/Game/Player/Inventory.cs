@@ -133,7 +133,6 @@ public class Inventory : BaseComponent
 		_inventorySlots = new bool[SlotsX, SlotsY];
 		_player = Scene.GetAllObjects( true ).FirstOrDefault( p => p.Name == "player" );
 
-		Log.Info(InventoryHud.Instance  );
 		InventoryHud.Instance.SetInventory( this );
 	}
 
