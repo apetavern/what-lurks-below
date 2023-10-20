@@ -1,10 +1,10 @@
 {
   "RootObject": {
     "Id": "b8b4c83c-ec68-4be3-9a97-82cfe4e4215b",
-    "Name": "barrel",
+    "Name": "barrel_01",
     "Enabled": true,
-    "Position": "63.70639,320.0157,0.0005950722",
-    "Rotation": "-0.000000001452594,0.0000003576257,-0.003481518,0.9999937",
+    "Position": "0,0,0",
+    "Rotation": "0,0,0,1",
     "Scale": "1.299553,1.299553,1.299553",
     "Components": [
       {
@@ -26,13 +26,8 @@
         "IsPlayer": false
       },
       {
-        "__type": "CharacterController",
-        "__enabled": true,
-        "Acceleration": 10,
-        "GroundAngle": 45,
-        "Height": 32,
-        "Radius": 16,
-        "StepHeight": 18
+        "__type": "DestructableComponent",
+        "__enabled": true
       }
     ],
     "Children": [
