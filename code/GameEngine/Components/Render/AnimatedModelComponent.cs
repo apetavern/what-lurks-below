@@ -145,7 +145,7 @@ public class AnimatedModelComponent : BaseComponent, BaseComponent.ExecuteInEdit
 			return;
 
 		_sceneObject.Transform = Transform.World;
-		_sceneObject.Update( Time.Delta / 2f );
+		_sceneObject.Update( Time.Delta );
 	}
 
 	public void Set( string v, Vector3 value ) => _sceneObject.SetAnimParameter( v, value );
