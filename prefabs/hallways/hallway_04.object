@@ -1,6 +1,6 @@
 {
   "RootObject": {
-    "Id": "df5ec290-a38c-44f1-8eeb-7ff38bb938a0",
+    "Id": "65c45fb9-00e2-481c-9a75-1c1a931100d1",
     "Name": "hallway_04",
     "Enabled": true,
     "Position": "0,0,0",
@@ -10,15 +10,15 @@
       {
         "__type": "HallwayChunkComponent",
         "__enabled": true,
-        "Back": "3577e83f-1fbc-44fd-a646-5cb64f164553",
-        "Front": "0f02c566-e7fd-4d4c-acc9-58819a7e85f3",
-        "Left": "d3f7097f-610b-4350-a3a8-f6f9ad85ad89",
-        "Right": "7b2ad5e9-fe53-466d-92d2-ce8aa51e53cc"
+        "Back": "64beb69e-e642-4959-b6ff-81a5423ae177",
+        "Front": "f0aedb7f-c52d-4c41-ac5b-d5abd73eb58f",
+        "Left": "46957c3c-2b7f-4bbf-8e80-56df136478f8",
+        "Right": "42d54129-24e6-4eb9-9762-707b8dfdcff6"
       }
     ],
     "Children": [
       {
-        "Id": "866329e4-332c-4ab0-aaff-5ff05e9e633c",
+        "Id": "64a8d822-7ef2-4758-8ecb-4947a1228e25",
         "Name": "Pivot",
         "Enabled": true,
         "Position": "64,-64,0",
@@ -26,7 +26,7 @@
         "Scale": "1,1,1",
         "Children": [
           {
-            "Id": "9f86959c-59be-41dc-98d1-2a34fac7d328",
+            "Id": "bc7a7b4d-c6f3-4be7-a41a-2aa357ec28b9",
             "Name": "Ceil",
             "Enabled": true,
             "Position": "-64,64,128",
@@ -52,7 +52,7 @@
             ]
           },
           {
-            "Id": "3577e83f-1fbc-44fd-a646-5cb64f164553",
+            "Id": "64beb69e-e642-4959-b6ff-81a5423ae177",
             "Name": "back",
             "Enabled": true,
             "Position": "-128,0,0.000289917",
@@ -75,10 +75,38 @@
                 "Surface": null,
                 "Tags": ""
               }
+            ],
+            "Children": [
+              {
+                "Id": "a352e9f1-f838-486c-a5b8-88d7f87da5ae",
+                "Name": "pillar_01",
+                "Enabled": true,
+                "Position": "0,0,-0.000579834",
+                "Rotation": "0,0,0.000001279516,-1",
+                "Scale": "1,1,1",
+                "Components": [
+                  {
+                    "__type": "ModelComponent",
+                    "__enabled": true,
+                    "MaterialOverride": null,
+                    "Model": "models/environment/pillar_01.vmdl",
+                    "ShouldCastShadows": true,
+                    "Tint": "1,1,1,1"
+                  },
+                  {
+                    "__type": "ModelCollider",
+                    "__enabled": true,
+                    "IsTrigger": false,
+                    "Model": "models/environment/pillar_01.vmdl",
+                    "Surface": null,
+                    "Tags": ""
+                  }
+                ]
+              }
             ]
           },
           {
-            "Id": "d3f7097f-610b-4350-a3a8-f6f9ad85ad89",
+            "Id": "46957c3c-2b7f-4bbf-8e80-56df136478f8",
             "Name": "left",
             "Enabled": true,
             "Position": "-128,128,0.000289917",
@@ -101,10 +129,38 @@
                 "Surface": null,
                 "Tags": ""
               }
+            ],
+            "Children": [
+              {
+                "Id": "8957b42f-b009-4534-a883-e4af6ea73942",
+                "Name": "pillar_01",
+                "Enabled": true,
+                "Position": "0,0,-0.000579834",
+                "Rotation": "0,0,0.7071052,0.7071084",
+                "Scale": "1,1,1",
+                "Components": [
+                  {
+                    "__type": "ModelComponent",
+                    "__enabled": true,
+                    "MaterialOverride": null,
+                    "Model": "models/environment/pillar_01.vmdl",
+                    "ShouldCastShadows": true,
+                    "Tint": "1,1,1,1"
+                  },
+                  {
+                    "__type": "ModelCollider",
+                    "__enabled": true,
+                    "IsTrigger": false,
+                    "Model": "models/environment/pillar_01.vmdl",
+                    "Surface": null,
+                    "Tags": ""
+                  }
+                ]
+              }
             ]
           },
           {
-            "Id": "7b2ad5e9-fe53-466d-92d2-ce8aa51e53cc",
+            "Id": "42d54129-24e6-4eb9-9762-707b8dfdcff6",
             "Name": "right",
             "Enabled": true,
             "Position": "0,0,0.000289917",
@@ -127,10 +183,38 @@
                 "Surface": null,
                 "Tags": ""
               }
+            ],
+            "Children": [
+              {
+                "Id": "5ed55d19-bab6-44de-9a74-cb61cd4d3c35",
+                "Name": "pillar_01",
+                "Enabled": true,
+                "Position": "0,0,-0.000579834",
+                "Rotation": "0,0,0.707108,-0.7071056",
+                "Scale": "1,1,1",
+                "Components": [
+                  {
+                    "__type": "ModelComponent",
+                    "__enabled": true,
+                    "MaterialOverride": null,
+                    "Model": "models/environment/pillar_01.vmdl",
+                    "ShouldCastShadows": true,
+                    "Tint": "1,1,1,1"
+                  },
+                  {
+                    "__type": "ModelCollider",
+                    "__enabled": true,
+                    "IsTrigger": false,
+                    "Model": "models/environment/pillar_01.vmdl",
+                    "Surface": null,
+                    "Tags": ""
+                  }
+                ]
+              }
             ]
           },
           {
-            "Id": "0f02c566-e7fd-4d4c-acc9-58819a7e85f3",
+            "Id": "f0aedb7f-c52d-4c41-ac5b-d5abd73eb58f",
             "Name": "fwd",
             "Enabled": true,
             "Position": "0,128,0.000289917",
@@ -156,10 +240,10 @@
             ],
             "Children": [
               {
-                "Id": "d770acac-7c3d-4202-91e3-5fcd1c37b515",
+                "Id": "109e4523-8374-4de3-a095-79b5e5b82b70",
                 "Name": "pipe_0a",
                 "Enabled": true,
-                "Position": "14.00015,114,-0.0003909969",
+                "Position": "14.00015,111.509,-0.0003909969",
                 "Rotation": "0.7071061,-0.0000004523766,0.7071075,0.0000004523775",
                 "Scale": "0.5,0.5,0.5",
                 "Components": [
@@ -182,7 +266,7 @@
                 ],
                 "Children": [
                   {
-                    "Id": "a0b86759-e669-4c7d-9245-dc1541c04717",
+                    "Id": "b4b39edf-031a-47e7-83c3-f60f6b478a21",
                     "Name": "pipe_0a",
                     "Enabled": true,
                     "Position": "64.00078,0,-0.00005340428",
@@ -208,7 +292,7 @@
                     ]
                   },
                   {
-                    "Id": "4961d396-33fd-4889-8c58-f3242cc6a2ef",
+                    "Id": "fb82e764-ff2c-48f2-87bc-0a56f534008c",
                     "Name": "pipe_0a",
                     "Enabled": true,
                     "Position": "128.0008,0,-0.00007629246",
@@ -234,7 +318,7 @@
                     ]
                   },
                   {
-                    "Id": "7c20dcaf-c43e-4801-9f2d-b7662cec0d8b",
+                    "Id": "5ab5246b-35ca-41bf-babf-b33c59269938",
                     "Name": "pipe_0a",
                     "Enabled": true,
                     "Position": "192.0008,0,-0.00008392186",
@@ -262,7 +346,7 @@
                 ]
               },
               {
-                "Id": "7738fdca-0734-4881-a438-c2dd43557ae9",
+                "Id": "d217515c-5165-4444-b667-fef465563146",
                 "Name": "pipe_0a",
                 "Enabled": true,
                 "Position": "8.701413,78.72013,-0.0004011033",
@@ -288,7 +372,7 @@
                 ],
                 "Children": [
                   {
-                    "Id": "22fe2877-c38b-4937-9225-4b99dea2a36d",
+                    "Id": "5f95352d-7fd7-4990-a721-1564f39d3d75",
                     "Name": "pipe_0a",
                     "Enabled": true,
                     "Position": "64.00078,0,-0.00005340428",
@@ -314,7 +398,7 @@
                     ]
                   },
                   {
-                    "Id": "fce9a29a-2d52-4f04-b2df-7c6b59780087",
+                    "Id": "6cd818a5-712d-400d-9f3c-f7a775522bb1",
                     "Name": "pipe_0a",
                     "Enabled": true,
                     "Position": "128.0008,0,-0.00007629246",
@@ -340,7 +424,7 @@
                     ]
                   },
                   {
-                    "Id": "b1dc57db-5c55-463b-acdd-b6bf8901e61c",
+                    "Id": "af68fd08-0f1b-4a78-a84b-f47f8465803e",
                     "Name": "pipe_0a",
                     "Enabled": true,
                     "Position": "192,0,-0.00008392186",
@@ -366,7 +450,7 @@
                     ]
                   },
                   {
-                    "Id": "64a39fac-ad7f-4ab6-bb53-7f12d6f6674c",
+                    "Id": "4197a1d1-088d-4502-a54b-b09dd5e8a012",
                     "Name": "pipe_0a",
                     "Enabled": true,
                     "Position": "224,32,-0.00001215719",
@@ -392,7 +476,7 @@
                     ]
                   },
                   {
-                    "Id": "1011ee5f-2d9c-4639-9905-11a55c4649da",
+                    "Id": "2fe45c81-96aa-4fa4-9cc2-ecd82fd47c54",
                     "Name": "pipe_0a",
                     "Enabled": true,
                     "Position": "256,64,-0.00008201449",
@@ -420,7 +504,7 @@
                 ]
               },
               {
-                "Id": "1bde9784-1c60-4d5a-a6d7-260057ec0f47",
+                "Id": "356c03f4-0486-498d-a15e-bc64301b414d",
                 "Name": "pipe_0a",
                 "Enabled": true,
                 "Position": "24,92,90",
@@ -446,7 +530,7 @@
                 ],
                 "Children": [
                   {
-                    "Id": "4c20f13c-c7a3-4428-bb77-b95c40426464",
+                    "Id": "903d5e9f-5410-482f-97c8-d4f3d3c6ebbb",
                     "Name": "pipe_0a",
                     "Enabled": true,
                     "Position": "-64,-0.0000000001663618,-0.00004265564",
@@ -472,7 +556,7 @@
                     ]
                   },
                   {
-                    "Id": "868bbee5-540e-46fd-80e0-f24ea9b4dbd3",
+                    "Id": "f6d1d769-9f73-49e3-91a6-d79ed5c68f2c",
                     "Name": "pipe_0a",
                     "Enabled": true,
                     "Position": "-128,-0.0000000003196828,-0.00007571565",
@@ -500,7 +584,7 @@
                 ]
               },
               {
-                "Id": "d0be2dcb-7bdd-4fef-9ef9-7ce1c2ca5eab",
+                "Id": "a7b24eee-a743-4f07-95e7-5dd4146a0372",
                 "Name": "Cubemap",
                 "Enabled": true,
                 "Position": "64.00008,63.99992,63.99971",
@@ -519,11 +603,37 @@
                     "TintColor": "1,1,1,1"
                   }
                 ]
+              },
+              {
+                "Id": "6ba5a296-ce8e-4b6e-9e03-3fbb01871451",
+                "Name": "pillar_01",
+                "Enabled": true,
+                "Position": "0,0,-0.000579834",
+                "Rotation": "0,0,1,0.000001919274",
+                "Scale": "1,1,1",
+                "Components": [
+                  {
+                    "__type": "ModelComponent",
+                    "__enabled": true,
+                    "MaterialOverride": null,
+                    "Model": "models/environment/pillar_01.vmdl",
+                    "ShouldCastShadows": true,
+                    "Tint": "1,1,1,1"
+                  },
+                  {
+                    "__type": "ModelCollider",
+                    "__enabled": true,
+                    "IsTrigger": false,
+                    "Model": "models/environment/pillar_01.vmdl",
+                    "Surface": null,
+                    "Tags": ""
+                  }
+                ]
               }
             ]
           },
           {
-            "Id": "364d8472-7a7e-4496-a8dc-9e8bbf569398",
+            "Id": "2fd722c9-1a80-49bf-bbf8-20507c0edcdf",
             "Name": "floor_01",
             "Enabled": true,
             "Position": "0,0,0",
