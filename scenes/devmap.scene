@@ -44,7 +44,7 @@
           "BackgroundColor": "0.33333,0.46275,0.52157,1",
           "ClearFlags": "Color, Depth, Stencil",
           "FieldOfView": 60,
-          "ZFar": 10000,
+          "ZFar": 3000,
           "ZNear": 10
         },
         {

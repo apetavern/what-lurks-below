@@ -269,11 +269,11 @@ public partial class MapGeneratorComponent : BaseComponent
 					if ( CheckBox1.Overlaps( CheckBox2 ) )
 					{
 						overlaps++;
-						room.Transform.Position += (room.Transform.Position - room2.Transform.Position) * Time.Delta;
+						room.Transform.Position += (room.Transform.Position - room2.Transform.Position) * (1f / 90f) * 4f;
 
 						Vector2 SpawnPoint = Game.Random.VectorInCircle( 128f );
 
-						Vector3 OffsetPoint = new Vector3( SpawnPoint.x, SpawnPoint.y, 0 ) * Time.Delta;
+						Vector3 OffsetPoint = new Vector3( SpawnPoint.x, SpawnPoint.y, 0 ) * (1f / 90f);
 
 						room.Transform.Position += OffsetPoint;
 

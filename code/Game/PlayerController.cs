@@ -113,6 +113,7 @@ public class PlayerController : BaseComponent
 			}
 			else
 			{
+				Transform.Position = Transform.Position.WithZ( 500 );
 				cc.Velocity = Vector3.Zero;
 			}
 			cc.Move();
