@@ -1,0 +1,43 @@
+{
+  "RootObject": {
+    "Id": "549dd5aa-5154-4a91-8965-3acca89cbf2c",
+    "Name": "glowstick",
+    "Enabled": true,
+    "Position": "0,0,0",
+    "Rotation": "0,0,0,1",
+    "Scale": "1,1,1",
+    "Components": [
+      {
+        "__type": "ModelComponent",
+        "__enabled": true,
+        "MaterialOverride": null,
+        "Model": "models/items/glowstick/glowstick_01.vmdl",
+        "ShouldCastShadows": true,
+        "Tint": "1,1,1,1"
+      },
+      {
+        "__type": "GlowstickComponent",
+        "__enabled": true
+      }
+    ],
+    "Children": [
+      {
+        "Id": "77ea201b-5653-43a3-92b3-201c0405258f",
+        "Name": "Point Light",
+        "Enabled": true,
+        "Position": "0,0,0",
+        "Rotation": "0,0,0,1",
+        "Scale": "1,1,1",
+        "Components": [
+          {
+            "__type": "PointLightComponent",
+            "__enabled": true,
+            "LightColor": "0.67762,1,0.56436,1",
+            "Radius": 100
+          }
+        ]
+      }
+    ]
+  },
+  "__references": []
+}
