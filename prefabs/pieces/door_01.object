@@ -38,34 +38,6 @@
             "__enabled": true,
             "ClosedMesh": "e579b134-e50d-4cc0-88f2-352a682d6635"
           }
-        ],
-        "Children": [
-          {
-            "Id": "e579b134-e50d-4cc0-88f2-352a682d6635",
-            "Name": "Plane",
-            "Enabled": true,
-            "Position": "64,0,0",
-            "Rotation": "0,0,0.707107,0.7071065",
-            "Scale": "1,1,1",
-            "Components": [
-              {
-                "__type": "ModelComponent",
-                "__enabled": true,
-                "MaterialOverride": null,
-                "Model": "models/environment/door_02.vmdl",
-                "ShouldCastShadows": true,
-                "Tint": "1,1,1,1"
-              },
-              {
-                "__type": "ModelCollider",
-                "__enabled": true,
-                "IsTrigger": false,
-                "Model": "models/environment/door_02.vmdl",
-                "Surface": null,
-                "Tags": ""
-              }
-            ]
-          }
         ]
       },
       {
@@ -76,6 +48,32 @@
         "Rotation": "0.0000006713875,0.0000004172325,-0.00000201416,0.9999999",
         "Scale": "1,1,1",
         "__Prefab": "prefabs/hallways/hallway_03.object"
+      },
+      {
+        "Id": "e579b134-e50d-4cc0-88f2-352a682d6635",
+        "Name": "Plane",
+        "Enabled": true,
+        "Position": "-0.00003814697,0.000007629395,0",
+        "Rotation": "0,0,0,0.9999999",
+        "Scale": "1,1,1",
+        "Components": [
+          {
+            "__type": "ModelComponent",
+            "__enabled": true,
+            "MaterialOverride": null,
+            "Model": "models/environment/door_02.vmdl",
+            "ShouldCastShadows": true,
+            "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/door_02.vmdl",
+            "Surface": null,
+            "Tags": ""
+          }
+        ]
       }
     ]
   },

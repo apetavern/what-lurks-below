@@ -27,19 +27,19 @@ public sealed class NavGenComponent : BaseComponent
 		base.DrawGizmos();
 		if ( mesh != null )
 		{
-			foreach ( var node in mesh.Nodes )
-			{
-				Gizmo.Draw.Color = Color.Blue.WithAlpha( 0.5f );
-				Gizmo.Draw.LineTriangle( new Triangle( node.Value.Vertices[0], node.Value.Vertices[1], node.Value.Vertices[2] ) );
-			}
+			Gizmo.Draw.Color = Color.Blue.WithAlpha( 0.5f );
+			Gizmo.Draw.LineNavigationMesh( mesh );
 		}
 	}
 
 	public async Task<List<NavigationPath.Segment>> GeneratePath( Vector3 point1, Vector3 point2 )
 	{
 		if ( mesh == null )
+		{
+			await GameTask.DelayRealtimeSeconds( Time.Delta * 2f );
 			GenerateMesh();
-		await GameTask.Delay( 10 );
+			await GameTask.DelayRealtimeSeconds( Time.Delta * 2f );
+		}
 
 		var path = new NavigationPath( mesh );
 
