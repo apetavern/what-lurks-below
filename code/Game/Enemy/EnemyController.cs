@@ -40,7 +40,7 @@ public class EnemyController : BaseComponent
 
 		// Destroy on death
 		HealthComponent healthComponent = GameObject.GetComponent<HealthComponent>();
-		healthComponent.OnDeath += () => GameObject.Destroy();
+		healthComponent.OnDeath += OnDeath;
 		healthComponent.OnDamage += OnDamaged;
 
 		var rng = new Random();
@@ -61,6 +61,28 @@ public class EnemyController : BaseComponent
 		model.SetAnimParameter( "hit", true );
 		_characterController.Velocity = -Body.Transform.Rotation.Forward * 100f;
 		TimeSinceDamage = 0f;
+	}
+
+	bool dead;
+
+	public async void OnDeath()
+	{
+		dead = true;
+		model.SetAnimParameter( "die", true );
+
+		await GameTask.DelaySeconds( 0.5f );
+		var modelcomp = GetComponent<AnimatedModelComponent>( false, true );
+		while ( modelcomp.SceneModel.ColorTint.a > 0 )
+		{
+			var col = modelcomp.SceneModel.ColorTint;
+			col.a -= Time.Delta * 2f;
+			modelcomp.SceneModel.ColorTint = col;
+			await GameTask.DelaySeconds( Time.Delta );
+		}
+
+		await GameTask.DelaySeconds( Time.Delta );
+
+		GameObject.Destroy();
 	}
 
 	float nextAttackTime;
@@ -94,6 +116,11 @@ public class EnemyController : BaseComponent
 	public override void Update()
 	{
 		base.Update();
+
+		if ( dead )
+		{
+			return;
+		}
 
 		if ( !IsAggro && TimeSinceLastMove > 5f && navgen.Initialized )
 		{
@@ -138,7 +165,7 @@ public class EnemyController : BaseComponent
 		{
 			LastAggroState = IsAggro;
 
-			if ( IsAggro )
+			if ( IsAggro && _characterController.IsOnGround )
 			{
 				_characterController.Punch( Vector3.Up * 200f );
 			}
