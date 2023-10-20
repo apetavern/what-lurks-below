@@ -17,7 +17,7 @@ public class Inventory : BaseComponent
 	private int ItemCount => _items.Count;
 	[Property] public int Slots { get; set; }
 
-	public int SlotsX { get; set; } = 10;
+	public int SlotsX { get; set; } = 6;
 	public int SlotsY { get; set; } = 3;
 
 	private bool[,] _inventorySlots;
@@ -100,14 +100,14 @@ public class Inventory : BaseComponent
 		var positionValid = CheckPositionValid( pos, item.Length, item.Height );
 		if ( !positionValid )
 			return false;
-		
-		item.Position = pos;
 
 		if ( _items.Contains( item ) )
 		{
 			_items.Remove( item );
 			Free( item.Position, item.Length, item.Height );
 		}
+		
+		item.Position = pos;
 		
 		_items.Add( item );
 		Rent( pos, item.Length, item.Height );

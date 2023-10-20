@@ -1,0 +1,97 @@
+﻿@using System
+@using System.Collections.Generic
+@using System.Linq
+@using BrickJam;
+@using BrickJam.Player
+@using Sandbox
+@using Sandbox.UI;
+@inherits Panel;
+@attribute [StyleSheet]
+
+<root>
+    <div class="pane" style="width: @(Inventory.SlotsX * 100)px; height:  @(Inventory.SlotsY * 100)px">
+        @for (var x = 0; x < Inventory.SlotsX + 1; x++)
+        {
+            <div class="grid-line-vertical"/>
+        }
+        @for (var x = 0; x < Inventory.SlotsY ; x++)
+        {
+            <div class="grid-line-horizontal" style="top: @(x * 100)px"/>
+        }
+        @foreach (var item in Inventory.Get)
+        {
+            <InventoryGridItem Item=@item InventoryPane=@this />
+        }
+        @if (SelectedItem is not null)
+        {
+            <img 
+                class="selected-item-preview" 
+                src=@SelectedItem.ImagePath 
+                style="width: @(SelectedItem.Length * 100)px; height:  @(SelectedItem.Height * 100)px; @GetLocationStyles()" />
+        }
+        
+    </div>
+    @* <div  *@
+    @*   class="preview-cell"  *@
+    @*   @ref=@PreviewCell  *@
+    @*   style="width: @(SelectedItem.Length * 100)px; height:  @(SelectedItem.Height * 100)px" /> *@
+</root>
+
+@code
+{
+    public Inventory Inventory { get; set; }
+    
+    public Vector2 MouseLocation { get; set; }
+    
+    public InventoryItem SelectedItem { get; set; }
+    
+    public Panel PreviewCell { get; set; }
+
+    protected override void OnMouseUp(MousePanelEvent e)
+    {
+        var pane = Children.FirstOrDefault();
+        if (pane is null)
+            return;
+
+        var gridItems = pane.Children.OfType<InventoryGridItem>();
+        foreach (var gridItem in gridItems)
+        {
+            gridItem.Deselect();
+        }
+    }
+
+    protected override void OnAfterTreeRender(bool firstTime)
+    {
+        base.OnAfterTreeRender(firstTime);
+
+        if (firstTime)
+            PreviewCell = AddChild<Panel>( "preview-cell" );
+    }
+
+    string GetLocationStyles()
+    {
+        return $"top: {MouseLocation.y}px; left: {MouseLocation.x}px";
+    }
+
+    public override void Tick()
+    {
+        if (PreviewCell is null)
+            return;
+        
+        PreviewCell.Style.Display = SelectedItem is not null ? DisplayMode.Flex : DisplayMode.None;
+        
+        if (SelectedItem is not null)
+        {
+            Log.Info(MouseLocation);
+            PreviewCell.Style.Width = SelectedItem.Length * 100;
+            PreviewCell.Style.Height = SelectedItem.Height * 100;
+            PreviewCell.Style.Top = MouseLocation.y - (MouseLocation.y % 100);
+            PreviewCell.Style.Left = MouseLocation.x - (MouseLocation.x % 100);
+        }
+    }
+
+    protected override int BuildHash()
+    {
+        return HashCode.Combine(Time.Now);
+    }
+}

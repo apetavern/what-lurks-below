@@ -1,13 +1,80 @@
-﻿@using BrickJam;
+﻿@using System
+@using BrickJam;
+@using BrickJam.Player
+@using Sandbox
 @using Sandbox.UI;
 @inherits Panel;
 @attribute [StyleSheet]
 
-<root style="position: absolute; left: @(Item.Position.X * 100)px; top: @(Item.Position.Y * 100)px">
+<root style="position: absolute; @GetPositionStyles(); @GetVisibleStyles()">
     <img src=@Item.ImagePath style="width: @(Item.Length * 100)px; height:  @(Item.Height * 100)px" />
 </root>
 
 @code
 {
     public InventoryItem Item { get; set; }
+    
+    public InventoryPane InventoryPane { get; set; }
+    
+    private bool Selected { get; set; }
+    
+    private Vector2 MouseLocation { get; set; }
+
+    protected override void OnMouseDown(MousePanelEvent e)
+    {
+        Selected = true;
+        SetMouseCapture( true );
+        InventoryPane.SelectedItem = Item;
+    }
+
+    public void Deselect()
+    {
+        // Attempt to move Item position.
+        if (Selected)
+        {
+            Log.Info($"Place: {MouseLocation}");
+            var inv = InventoryPane.Inventory;
+            var loc = new InvCoord((MouseLocation.x / 100).FloorToInt(), (MouseLocation.y / 100).FloorToInt());
+            Log.Info($"Place: {loc}");
+            if (inv.PlaceItem(Item, loc))
+            {
+                Log.Info("placed");
+            }
+        }
+        
+        Selected = false;
+        SetMouseCapture( false );
+        InventoryPane.SelectedItem = null;
+        Mouse.Position = Box.Rect.Position + Box.Rect.Size * 0.5f;
+    }
+
+    string GetPositionStyles()
+    {
+        return $"left: {Item.Position.X * 100}px; top: {Item.Position.Y * 100}px";
+    }
+    
+    string GetVisibleStyles()
+    {
+        return Selected ? "display: none" : "display: flex";
+    }
+
+    public override void Tick()
+    {
+        if (Selected && HasMouseCapture)
+        {
+            MouseLocation += Mouse.Delta;
+
+            InventoryPane.MouseLocation = MouseLocation;
+        }
+        else
+        {
+            // MouseLocation = new Vector2(0, 0);
+            // InventoryPane.MouseLocation = new Vector2(0, 0);
+        }
+    }
+
+    protected override int BuildHash()
+    {
+        return HashCode.Combine(Time.Now);
+    }
 }

@@ -1,27 +1,12 @@
 ﻿@using System
+@using System.Collections.Generic
 @using BrickJam.Player
 @using Sandbox;
 @using Sandbox.UI;
 @inherits PanelComponent
 
 <root>
-    @* Inventory Slots *@
-    @for (var i = 0; i < 10; i++)
-    {
-        @for (var j = 0; j < 3; j++)
-        {
-            <div class="slot"></div>
-        }
-    }
-    @* Constants *@
-    <div class="inv-bottom">
-        <div class="subslot">Health</div>
-        <div class="subslot">Ammo</div>
-    </div>
-    @foreach (var item in Inventory.Get)
-    {
-        <InventoryGridItem Item=@item />
-    }
+    <InventoryPane Inventory=@Inventory />
 </root>
 
 @code
@@ -54,44 +39,5 @@
         Panel.SetClass("open", IsOpen);
     }
 
-    protected override int BuildHash() => System.HashCode.Combine( Time.Now );
-    // public bool IsOpen { get; set; }
-    //
-    // public int SlotsX { get; set; }
-    // public int SlotsY { get; set; }
-    //
-    // public static InventoryHud Instance { get; set; }
-    //
-    // public InventoryHud()
-    // {
-    //     Instance = this;
-    // }
-    //
-    // void ToggleOpen()
-    // {
-    //     IsOpen = !IsOpen;
-    // }
-    //
-    // public void SetSlots(int x, int y)
-    // {
-    //     SlotsX = x;
-    //     SlotsY = y;
-    // }
-    //
-    // public override void Update()
-    // {
-    //     base.Update();
-    //     
-    //     if (Input.Pressed("Inventory"))
-    //     {
-    //         ToggleOpen();
-    //     }
-    //     
-    //     Panel.SetClass("open", IsOpen);
-    // }
-    //
-    // protected override int BuildHash()
-    // {
-    //     return HashCode.Combine(SlotsX, SlotsY);
-    // }
+    protected override int BuildHash() => HashCode.Combine( Time.Now );
 }
