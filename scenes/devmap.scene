@@ -227,7 +227,7 @@
         {
           "__type": "MapGeneratorComponent",
           "__enabled": true,
-          "RoomCount": 5,
+          "RoomCount": 6,
           "SnapGridSize": 1024
         },
         {
@@ -285,7 +285,7 @@
           "__type": "ColliderBoxComponent",
           "__enabled": true,
           "IsTrigger": false,
-          "Scale": "60,60,100",
+          "Scale": "70,70,100",
           "Surface": null,
           "Tags": "navgen"
         }

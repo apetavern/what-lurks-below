@@ -270,6 +270,13 @@ public partial class MapGeneratorComponent : BaseComponent
 					{
 						overlaps++;
 						room.Transform.Position += (room.Transform.Position - room2.Transform.Position) * Time.Delta;
+
+						Vector2 SpawnPoint = Game.Random.VectorInCircle( 128f );
+
+						Vector3 OffsetPoint = new Vector3( SpawnPoint.x, SpawnPoint.y, 0 ) * Time.Delta;
+
+						room.Transform.Position += OffsetPoint;
+
 						room.Transform.Position = Vector3Extensions.Clamp( room.Transform.Position, -3000f, 3000f );
 					}
 				}
