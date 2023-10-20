@@ -33,14 +33,43 @@ public partial class MapGeneratorComponent : BaseComponent
 
 	[Property] float SnapGridSize { get; set; } = 700f;
 
+	public GameObject Player { get; set; }
+
 	public GameObject SpawnPrefabFromPath( string path, Vector3 position, Rotation rotation )
 	{
 		var prefab = ResourceLibrary.Get<PrefabFile>( path );
-		return SceneUtility.Instantiate( prefab.Scene, position, rotation );
+		var go = SceneUtility.Instantiate( prefab.Scene, position, rotation );
+		go.SetParent( GameObject.Children.First() );
+		return go;
+	}
+
+	public void RegenMap()
+	{
+		var navgen = Scene.GetAllObjects( true ).FirstOrDefault( x => x.GetComponent<NavGenComponent>() != null ).GetComponent<NavGenComponent>();
+		navgen.GenerationPlane.Enabled = true;
+
+		navgen.GenerateMesh();
+
+		navgen.Initialized = false;
+
+		Player.Transform.Position = Player.GetComponent<PlayerController>().startpos;
+
+		var map = GameObject.Children.First().Children;
+		for ( int i = 0; i < map.Count; i++ )
+		{
+			map[i].Destroy();
+		}
+
+		SpawnedRooms.Clear();
+		CorrectedRooms = false;
+
+		OnStart();
 	}
 
 	public override void OnStart()
 	{
+		Player = Scene.GetAllObjects( true ).FirstOrDefault( x => x.Name == "player" );
+
 		SpawnedRooms.Add( SpawnPrefabFromPath( Rooms[0], Transform.Position, Transform.Rotation ).GetComponent<RoomChunkComponent>( false ) );
 
 		SpawnedRooms[0].ClearEnemiesAndItems();
@@ -206,7 +235,7 @@ public partial class MapGeneratorComponent : BaseComponent
 
 		var navgen = Scene.GetAllObjects( true ).Where( X => X.GetComponent<NavGenComponent>() != null ).FirstOrDefault().GetComponent<NavGenComponent>();
 
-		navgen.GenerationPlane.Destroy();
+		navgen.GenerationPlane.Enabled = false;
 
 		await GameTask.Delay( 10 );
 
@@ -248,7 +277,6 @@ public partial class MapGeneratorComponent : BaseComponent
 			if ( overlaps == 0 )
 			{
 				CorrectedRooms = true;
-				Log.Info( "Rooms corrected!" );
 				foreach ( var room in SpawnedRooms )
 				{
 					if ( room == null ) continue;
@@ -267,6 +295,11 @@ public partial class MapGeneratorComponent : BaseComponent
 
 				CreateHallways();
 			}
+		}
+
+		if ( CorrectedRooms && !Scene.GetAllObjects( true ).Where( x => x.GetComponent<EnemyController>() != null ).Any() )
+		{
+			RegenMap();
 		}
 	}
 }

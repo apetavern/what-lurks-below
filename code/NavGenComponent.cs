@@ -43,8 +43,6 @@ public sealed class NavGenComponent : BaseComponent
 
 		var path = new NavigationPath( mesh );
 
-		//Log.Info( point1 + " " + point2 );
-
 		path.StartPoint = point1;
 
 		path.EndPoint = point2;

@@ -27,9 +27,14 @@ public class PlayerController : BaseComponent
 
 	NavGenComponent navgen;
 
+	public Vector3 startpos;
+
 	public override void OnEnabled()
 	{
 		base.OnEnabled();
+
+		startpos = Transform.Position;
+
 		// Update camera position
 		Camera = Scene.GetAllObjects( true ).Where( X => X.GetComponent<CameraComponent>( false ) != null ).FirstOrDefault();
 		if ( Camera is not null )

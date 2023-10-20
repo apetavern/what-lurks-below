@@ -235,6 +235,16 @@
           "__enabled": true,
           "GenerationPlane": "bf22b81c-7a00-4179-9c12-c5698d5c35ec"
         }
+      ],
+      "Children": [
+        {
+          "Id": "eae33615-fd68-4290-b430-5ec5126d9584",
+          "Name": "generatedMap",
+          "Enabled": true,
+          "Position": "0,0,0",
+          "Rotation": "0,0,0,1",
+          "Scale": "1,1,1"
+        }
       ]
     },
     {
