@@ -132,6 +132,8 @@ public class EnemyController : BaseComponent
 
 		IsAggro = (playerPosition.Distance( myPosition ) <= AggroRange) || TimeSinceDamage < 10f;
 
+		_characterController ??= GameObject.GetComponent<CharacterController>( false );
+
 		if ( IsAggro != LastAggroState )
 		{
 			LastAggroState = IsAggro;
@@ -141,8 +143,6 @@ public class EnemyController : BaseComponent
 				_characterController.Punch( Vector3.Up * 200f );
 			}
 		}
-
-		_characterController ??= GameObject.GetComponent<CharacterController>();
 
 		if ( !_characterController.IsOnGround )
 		{
