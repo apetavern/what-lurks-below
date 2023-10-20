@@ -29,7 +29,6 @@
                 src=@SelectedItem.ImagePath 
                 style="width: @(SelectedItem.Length * 100)px; height:  @(SelectedItem.Height * 100)px; @GetLocationStyles()" />
         }
-        
     </div>
 </root>
 
@@ -70,12 +69,14 @@
         base.OnAfterTreeRender(firstTime);
 
         if (firstTime)
-            PreviewCell = AddChild<Panel>( "preview-cell" );
+        {
+            PreviewCell = Children.First().AddChild<Panel>( "preview-cell" );
+        }
     }
 
     string GetLocationStyles()
     {
-        return $"top: {MouseLocation.y}px; left: {MouseLocation.x}px";
+        return $"top: {MouseLocation.y - (MouseLocation.y % 100)}px; left: {MouseLocation.x - (MouseLocation.x % 100)}px";
     }
 
     public override void Tick()
