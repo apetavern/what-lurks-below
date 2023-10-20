@@ -1,0 +1,54 @@
+﻿ResourceBar {
+  position: absolute;
+  width: 100%;
+  height: 50px;
+  background-image: linear-gradient(to bottom, #333, #222);
+  align-items: center;
+  gap: 12px;
+  padding-left: 24px;
+  
+  .resource {
+    border: 2px #777;
+    border-radius: 2px;
+    width: 75px;
+    height: 35px;
+    color: #777;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .health {
+    gap: 8px;
+    
+    > i {
+      font-size: 16px;
+      filter: border-wrap(2px black);
+      color: darkred;
+    }
+    
+    > text {
+      font-size: 18px;
+      font-weight: bold;
+      color: #ccc;
+      text-stroke: 4px black;
+    }
+  }
+  
+  .ammo {
+    gap: 8px;
+    
+    > i {
+      
+      font-size: 16px;
+      filter: border-wrap(2px black);
+      color: yellowgreen;
+    }
+
+    > text {
+      font-size: 18px;
+      font-weight: bold;
+      color: #ccc;
+      text-stroke: 4px black;
+    }
+  }
+}

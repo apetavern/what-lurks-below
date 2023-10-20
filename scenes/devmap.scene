@@ -311,7 +311,7 @@
       "Children": [
         {
           "Id": "bcdbb154-a577-4727-b3c3-f7c99f599d11",
-          "Name": "Object",
+          "Name": "Inventory HUD",
           "Enabled": true,
           "Position": "0,0,0",
           "Rotation": "0,0,0,1",
@@ -319,6 +319,20 @@
           "Components": [
             {
               "__type": "InventoryHud",
+              "__enabled": true
+            }
+          ]
+        },
+        {
+          "Id": "7b805711-ef52-4a18-b789-24573f41dc7f",
+          "Name": "Resource Bar",
+          "Enabled": true,
+          "Position": "0,0,0",
+          "Rotation": "0,0,0,1",
+          "Scale": "1,1,1",
+          "Components": [
+            {
+              "__type": "ResourceBar",
               "__enabled": true
             }
           ]

@@ -40,11 +40,11 @@ public class Inventory : BaseComponent
 
 	public (bool, InvCoord) HasFreeSpace( int length, int height )
 	{
-		for ( var i = 0; i < _inventorySlots.GetLength( 0 ); i++ )
+		for ( var i = 0; i < _inventorySlots.GetLength( 1 ); i++ )
 		{
-			for ( var j = 0; j < _inventorySlots.GetLength( 1 ); j++ )
+			for ( var j = 0; j < _inventorySlots.GetLength( 0 ); j++ )
 			{
-				var currentPos = new InvCoord( i, j );
+				var currentPos = new InvCoord( j, i );
 				var valid = CheckPositionValid( currentPos, length, height );
 				if ( valid )
 					return (true, currentPos);

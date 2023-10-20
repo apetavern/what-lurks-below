@@ -1,0 +1,39 @@
+﻿@using System
+@using System.Collections.Generic
+@using BrickJam.Player
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+
+<root>
+    <div class="resource health">
+        <i>favorite</i>
+        <text>
+            @Health
+        </text>
+    </div>
+    <div class="resource ammo">
+        <i>commit</i>
+        <text>
+            @Ammo
+        </text>
+    </div>
+</root>
+
+@code
+{
+    public int Health { get; set; }
+    public int Ammo { get; set; }
+    
+    public static ResourceBar Instance { get; set; }
+
+    public ResourceBar()
+    {
+        Instance = this;
+    }
+
+    protected override int BuildHash()
+    {
+        return HashCode.Combine(Health, Ammo);
+    }
+}

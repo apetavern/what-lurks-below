@@ -30,8 +30,8 @@ public class HealthComponent : BaseComponent
 	{
 		base.Update();
 
-		if ( IsPlayer && Vitals.Instance is not null )
-			Vitals.Instance.Health = $"{Health:F0}";
+		if ( IsPlayer && ResourceBar.Instance is not null )
+			ResourceBar.Instance.Health = Health.CeilToInt();
 	}
 
 	public void Damage( float amount )

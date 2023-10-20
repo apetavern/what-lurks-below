@@ -1,4 +1,5 @@
-﻿using Sandbox;
+﻿using BrickJam.Game.UI;
+using Sandbox;
 
 namespace BrickJam.Game.Weapon;
 
@@ -82,5 +83,13 @@ public class PistolWeapon : BaseWeapon
 	{
 		if ( CanAimFocus )
 			helper.Handedness = AlternateHandedness;
+	}
+
+	protected override void Update()
+	{
+		base.Update();
+
+		if (ResourceBar.Instance is not null)
+			ResourceBar.Instance.Ammo = AmmoCount;
 	}
 }
