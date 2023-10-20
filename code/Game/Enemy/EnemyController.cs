@@ -59,7 +59,7 @@ public class EnemyController : BaseComponent
 	public void OnDamaged()
 	{
 		model.SetAnimParameter( "hit", true );
-		_characterController.Velocity = -Body.Transform.Rotation.Forward * 100f;
+		_characterController.Velocity = -Body.Transform.Rotation.Forward * 50f;
 		TimeSinceDamage = 0f;
 	}
 
@@ -234,7 +234,7 @@ public class EnemyController : BaseComponent
 
 			model.SetAnimParameter( "velocity", _characterController.Velocity.LengthSquared / 8000f );
 
-			if ( path.Count > 0 )
+			if ( path.Count > 0 && !IsAggro )
 			{
 				if ( model.GetAttachment( "eyes" ).HasValue )
 				{
