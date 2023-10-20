@@ -7,7 +7,7 @@ using System.Linq;
 [Icon( "widgets" )]
 public abstract class PanelComponent : BaseComponent, IPanelComponent
 {
-	Panel panel;
+	protected Panel panel;
 
 	/// <summary>
 	/// The panel. Can be null if the panel doesn't exist yet.

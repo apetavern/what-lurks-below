@@ -4,7 +4,7 @@ using Sandbox.UI;
 [Title( "World Panel" )]
 [Category( "UI" )]
 [Icon( "panorama_horizontal" )]
-[EditorHandle( "materials/gizmo/ui.png" )]
+// [EditorHandle( "materials/gizmo/ui.png" )]
 public sealed class WorldPanel : BaseComponent, IRootPanelComponent
 {
 	Sandbox.UI.WorldPanel worldPanel;
@@ -117,5 +117,4 @@ public sealed class WorldPanel : BaseComponent, IRootPanelComponent
 	{
 		return worldPanel;
 	}
-
 }

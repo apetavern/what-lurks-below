@@ -134,13 +134,38 @@
           "IsTrigger": true,
           "Scale": "50,50,50",
           "Surface": null,
-          "Tags": ""
+          "Tags": "pickup"
         },
         {
           "__type": "ItemPickup",
           "__enabled": true,
           "Item": null,
           "Type": "Ammo"
+        }
+      ],
+      "Children": [
+        {
+          "Id": "789ef5bc-f45c-44f5-b701-e8239ef749f5",
+          "Name": "Object",
+          "Enabled": true,
+          "Position": "0,0,0",
+          "Rotation": "0,0,0,1",
+          "Scale": "1,1,1",
+          "Components": [
+            {
+              "__type": "WorldPanel",
+              "__enabled": true,
+              "HorizontalAlign": "Center",
+              "LookAtCamera": false,
+              "PanelSize": "512,512",
+              "RenderScale": 1,
+              "VerticalAlign": "Center"
+            },
+            {
+              "__type": "PickupHint",
+              "__enabled": true
+            }
+          ]
         }
       ]
     },
@@ -164,7 +189,7 @@
           "IsTrigger": true,
           "Scale": "50,50,50",
           "Surface": null,
-          "Tags": ""
+          "Tags": "pickup"
         }
       ]
     },
@@ -182,7 +207,7 @@
           "IsTrigger": true,
           "Scale": "50,50,50",
           "Surface": null,
-          "Tags": ""
+          "Tags": "pickup"
         },
         {
           "__type": "ItemPickup",

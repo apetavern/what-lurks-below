@@ -2,6 +2,8 @@ using Sandbox;
 using System;
 using System.Drawing;
 using System.Linq;
+using BrickJam.Game;
+using BrickJam.Game.UI;
 using BrickJam.Player;
 
 public class PlayerController : BaseComponent
@@ -99,6 +101,21 @@ public class PlayerController : BaseComponent
 	{
 		var cc = GameObject.GetComponent<CharacterController>();
 
+		var pickups = Scene.GetAllObjects( true ).Where( x => x.GetComponent<ItemPickup>() != null );
+		pickups = pickups.Where( p => p.Transform.Position.Distance( Transform.Position ) < 50 );
+		foreach ( var pickup in pickups )
+		{
+			if ( pickup.GetComponent<WorldPanel>() is null )
+			{
+				var wp = pickup.AddComponent<WorldPanel>();
+				wp.LookAtCamera = true;
+				wp.PanelSize = new Vector2( 800, 200 );
+			}
+			
+			if (pickup.GetComponent<PickupHint>() is null )
+				pickup.AddComponent<PickupHint>();
+		}
+		
 		if ( navgen == null )
 		{
 			navgen = Scene.GetAllObjects( true ).FirstOrDefault( x => x.GetComponent<NavGenComponent>() != null ).GetComponent<NavGenComponent>();
