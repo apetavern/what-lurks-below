@@ -1,6 +1,6 @@
 {
   "RootObject": {
-    "Id": "61e9d2aa-1f57-49b8-a60f-07f276573d20",
+    "Id": "a5454272-0576-4b68-9ec7-4bfe3399da64",
     "Name": "sewer_room_02",
     "Enabled": true,
     "Position": "0,0,0",
@@ -10,12 +10,12 @@
       {
         "__type": "RoomChunkComponent",
         "__enabled": true,
-        "CameraTrigger": "94b9beb5-07aa-42a3-b577-349041255240"
+        "CameraTrigger": "0d873b2d-948d-4600-afb7-e0a8d3107b01"
       }
     ],
     "Children": [
       {
-        "Id": "4627a78e-b5c7-49c3-91b8-a5da55cf2587",
+        "Id": "4705cb88-944d-4eca-bb1a-b00d8c68e848",
         "Name": "stairs_02",
         "Enabled": true,
         "Position": "0,-128,0",
@@ -41,7 +41,7 @@
         ]
       },
       {
-        "Id": "d2b711fd-e6c5-451c-9f11-3dbd89b4d478",
+        "Id": "b8b4dccc-a63b-48bf-9fdf-2b012849a765",
         "Name": "stairs_02",
         "Enabled": true,
         "Position": "128,0,0",
@@ -67,7 +67,7 @@
         ]
       },
       {
-        "Id": "c843949e-9587-4f8a-b0a5-4f32e03805e8",
+        "Id": "e36f14bf-c512-408c-b5b9-f9a8ac079084",
         "Name": "stairs_02",
         "Enabled": true,
         "Position": "0,0,0",
@@ -93,7 +93,7 @@
         ]
       },
       {
-        "Id": "baab3b59-0e71-4af2-9fc4-06ba37363c11",
+        "Id": "3a1ee325-c0f8-4bb7-aba5-756e400be6c5",
         "Name": "door_02",
         "Enabled": true,
         "Position": "-256,-256,0.001800537",
@@ -102,7 +102,7 @@
         "__Prefab": "prefabs/pieces/door_02.object"
       },
       {
-        "Id": "89096dfb-16ac-414d-bbbd-2b88280fc4b3",
+        "Id": "aa6bf82c-60ec-473b-b648-fe83118e8bdf",
         "Name": "door_02",
         "Enabled": true,
         "Position": "-128,256,0",
@@ -111,7 +111,7 @@
         "__Prefab": "prefabs/pieces/door_02.object"
       },
       {
-        "Id": "ff7e0dc0-625a-43ce-9fe0-3ee81c15dfbd",
+        "Id": "5c2d9507-c802-40d2-9d6a-0880f2d4c678",
         "Name": "pillar_01",
         "Enabled": true,
         "Position": "-135,0,0",
@@ -126,13 +126,33 @@
             "ShouldCastShadows": true,
             "Tint": "1,1,1,1"
           }
+        ],
+        "Children": [
+          {
+            "Id": "3f46866d-e789-4818-afaa-7a07de2d757b",
+            "Name": "pillar_01",
+            "Enabled": true,
+            "Position": "0,0,128",
+            "Rotation": "0,0,0,1",
+            "Scale": "1,1,1",
+            "Components": [
+              {
+                "__type": "ModelComponent",
+                "__enabled": true,
+                "MaterialOverride": null,
+                "Model": "models/environment/pillar_01.vmdl",
+                "ShouldCastShadows": true,
+                "Tint": "1,1,1,1"
+              }
+            ]
+          }
         ]
       },
       {
-        "Id": "44343296-7eee-4cd6-a709-2deb6da94180",
+        "Id": "cd9eb4f6-b1c4-464f-ac21-30663099dd8e",
         "Name": "pillar_01",
         "Enabled": true,
-        "Position": "-135,0,128",
+        "Position": "-128,256,0",
         "Rotation": "0,0,0,1",
         "Scale": "1,1,1",
         "Components": [
@@ -144,10 +164,258 @@
             "ShouldCastShadows": true,
             "Tint": "1,1,1,1"
           }
+        ],
+        "Children": [
+          {
+            "Id": "a74c8ba7-351c-41a7-9141-06a286d1929c",
+            "Name": "pillar_01",
+            "Enabled": true,
+            "Position": "0,0,128",
+            "Rotation": "0,0,0,1",
+            "Scale": "1,1,1",
+            "Components": [
+              {
+                "__type": "ModelComponent",
+                "__enabled": true,
+                "MaterialOverride": null,
+                "Model": "models/environment/pillar_01.vmdl",
+                "ShouldCastShadows": true,
+                "Tint": "1,1,1,1"
+              }
+            ]
+          }
         ]
       },
       {
-        "Id": "135d4df6-ae4e-4c83-a66d-c5bb26a64495",
+        "Id": "05afaae8-22fb-42b3-a6c6-2509094f4f35",
+        "Name": "pillar_01",
+        "Enabled": true,
+        "Position": "0,256,0",
+        "Rotation": "0,0,0,1",
+        "Scale": "1,1,1",
+        "Components": [
+          {
+            "__type": "ModelComponent",
+            "__enabled": true,
+            "MaterialOverride": null,
+            "Model": "models/environment/pillar_01.vmdl",
+            "ShouldCastShadows": true,
+            "Tint": "1,1,1,1"
+          }
+        ],
+        "Children": [
+          {
+            "Id": "f5c7d028-bddd-45e8-9936-1f3be659013d",
+            "Name": "pillar_01",
+            "Enabled": true,
+            "Position": "0,0,128",
+            "Rotation": "0,0,0,1",
+            "Scale": "1,1,1",
+            "Components": [
+              {
+                "__type": "ModelComponent",
+                "__enabled": true,
+                "MaterialOverride": null,
+                "Model": "models/environment/pillar_01.vmdl",
+                "ShouldCastShadows": true,
+                "Tint": "1,1,1,1"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "Id": "a361e6a4-4968-48f9-bf19-3ebb214060fc",
+        "Name": "pillar_01",
+        "Enabled": true,
+        "Position": "128,256,0",
+        "Rotation": "0,0,0,1",
+        "Scale": "1,1,1",
+        "Components": [
+          {
+            "__type": "ModelComponent",
+            "__enabled": true,
+            "MaterialOverride": null,
+            "Model": "models/environment/pillar_01.vmdl",
+            "ShouldCastShadows": true,
+            "Tint": "1,1,1,1"
+          }
+        ],
+        "Children": [
+          {
+            "Id": "e30d7377-f5f3-482f-8939-9f1f5405c952",
+            "Name": "pillar_01",
+            "Enabled": true,
+            "Position": "0,0,128",
+            "Rotation": "0,0,0,1",
+            "Scale": "1,1,1",
+            "Components": [
+              {
+                "__type": "ModelComponent",
+                "__enabled": true,
+                "MaterialOverride": null,
+                "Model": "models/environment/pillar_01.vmdl",
+                "ShouldCastShadows": true,
+                "Tint": "1,1,1,1"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "Id": "f6348409-cd08-41f9-99e4-eb807ad75429",
+        "Name": "pillar_01",
+        "Enabled": true,
+        "Position": "122.4715,-240.281,0",
+        "Rotation": "0,0,1,-0.0000006397578",
+        "Scale": "1,1,1",
+        "Components": [
+          {
+            "__type": "ModelComponent",
+            "__enabled": true,
+            "MaterialOverride": null,
+            "Model": "models/environment/pillar_01.vmdl",
+            "ShouldCastShadows": true,
+            "Tint": "1,1,1,1"
+          }
+        ],
+        "Children": [
+          {
+            "Id": "697fb4de-b72d-478b-85f3-9e98cf584905",
+            "Name": "pillar_01",
+            "Enabled": true,
+            "Position": "0,0,128",
+            "Rotation": "0,0,0,1",
+            "Scale": "1,1,1",
+            "Components": [
+              {
+                "__type": "ModelComponent",
+                "__enabled": true,
+                "MaterialOverride": null,
+                "Model": "models/environment/pillar_01.vmdl",
+                "ShouldCastShadows": true,
+                "Tint": "1,1,1,1"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "Id": "ea27f5bb-ce05-458e-bbc1-77651c52596e",
+        "Name": "pillar_01",
+        "Enabled": true,
+        "Position": "-256,-256,0",
+        "Rotation": "0,0,0.7071061,-0.7071075",
+        "Scale": "1,1,1",
+        "Components": [
+          {
+            "__type": "ModelComponent",
+            "__enabled": true,
+            "MaterialOverride": null,
+            "Model": "models/environment/pillar_01.vmdl",
+            "ShouldCastShadows": true,
+            "Tint": "1,1,1,1"
+          }
+        ],
+        "Children": [
+          {
+            "Id": "5ef7ddaf-00e7-4fa8-98c4-b4946502f133",
+            "Name": "pillar_01",
+            "Enabled": true,
+            "Position": "0,0,128",
+            "Rotation": "0,0,0,1",
+            "Scale": "1,1,1",
+            "Components": [
+              {
+                "__type": "ModelComponent",
+                "__enabled": true,
+                "MaterialOverride": null,
+                "Model": "models/environment/pillar_01.vmdl",
+                "ShouldCastShadows": true,
+                "Tint": "1,1,1,1"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "Id": "0876b342-12fc-40a1-9339-c9548c4491a9",
+        "Name": "pillar_01",
+        "Enabled": true,
+        "Position": "-256.0003,-128,0",
+        "Rotation": "0,0,1,-0.0000006397578",
+        "Scale": "1,1,1",
+        "Components": [
+          {
+            "__type": "ModelComponent",
+            "__enabled": true,
+            "MaterialOverride": null,
+            "Model": "models/environment/pillar_01.vmdl",
+            "ShouldCastShadows": true,
+            "Tint": "1,1,1,1"
+          }
+        ],
+        "Children": [
+          {
+            "Id": "880d7223-391e-4657-bff6-b62d0a03a7ae",
+            "Name": "pillar_01",
+            "Enabled": true,
+            "Position": "0,0,128",
+            "Rotation": "0,0,0,1",
+            "Scale": "1,1,1",
+            "Components": [
+              {
+                "__type": "ModelComponent",
+                "__enabled": true,
+                "MaterialOverride": null,
+                "Model": "models/environment/pillar_01.vmdl",
+                "ShouldCastShadows": true,
+                "Tint": "1,1,1,1"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "Id": "6555e641-0b9a-48d4-80b0-b5ac7b124950",
+        "Name": "pillar_01",
+        "Enabled": true,
+        "Position": "-247.5942,-18.68167,0.0000005010392",
+        "Rotation": "0,0,0,1",
+        "Scale": "1,1,1",
+        "Components": [
+          {
+            "__type": "ModelComponent",
+            "__enabled": true,
+            "MaterialOverride": null,
+            "Model": "models/environment/pillar_01.vmdl",
+            "ShouldCastShadows": true,
+            "Tint": "1,1,1,1"
+          }
+        ],
+        "Children": [
+          {
+            "Id": "8e03f58f-e735-4c11-9e07-6d2977431cf8",
+            "Name": "pillar_01",
+            "Enabled": true,
+            "Position": "0,0,128",
+            "Rotation": "0,0,0,1",
+            "Scale": "1,1,1",
+            "Components": [
+              {
+                "__type": "ModelComponent",
+                "__enabled": true,
+                "MaterialOverride": null,
+                "Model": "models/environment/pillar_01.vmdl",
+                "ShouldCastShadows": true,
+                "Tint": "1,1,1,1"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "Id": "c20d43e6-4c98-441b-9461-8a0f1d7d68b4",
         "Name": "floor_01",
         "Enabled": true,
         "Position": "128,128,0",
@@ -173,7 +441,7 @@
         ]
       },
       {
-        "Id": "4ab6ceb2-5a1b-4646-80e5-bd2ca56861d2",
+        "Id": "d0a07960-7101-4e0e-97e1-d7d3dbdafc95",
         "Name": "floor_01",
         "Enabled": true,
         "Position": "128,0,0",
@@ -199,7 +467,7 @@
         ]
       },
       {
-        "Id": "3bcfa674-9bf6-490f-9e0b-25cbe8dacdbf",
+        "Id": "7804a631-cf0a-4d9e-9cf8-3cca501fc96f",
         "Name": "floor_01",
         "Enabled": true,
         "Position": "128,-256,0",
@@ -225,7 +493,7 @@
         ]
       },
       {
-        "Id": "52b01262-6550-4cba-a663-b05d03a21d33",
+        "Id": "13ad3dc0-35b5-4a42-83d5-5866fa2c2b51",
         "Name": "floor_01",
         "Enabled": true,
         "Position": "128,-128,0",
@@ -251,7 +519,7 @@
         ]
       },
       {
-        "Id": "c7d49e26-94d5-419c-80e7-466a1458b791",
+        "Id": "032acd0d-c73b-4583-a9bb-74bbad736835",
         "Name": "floor_01",
         "Enabled": true,
         "Position": "0,256,-0.00001956924",
@@ -277,7 +545,7 @@
         ]
       },
       {
-        "Id": "41d0f102-c889-4ba9-af2e-85267d0f936f",
+        "Id": "62624a9a-9877-4419-9959-4696f27d6368",
         "Name": "floor_01",
         "Enabled": true,
         "Position": "0,256,128",
@@ -303,7 +571,7 @@
         ]
       },
       {
-        "Id": "9f693a97-9092-47c1-9f53-1e1cd2e3e94d",
+        "Id": "fe394951-92a3-4df8-9f69-5a41dc3e27c5",
         "Name": "floor_01",
         "Enabled": true,
         "Position": "-128,256,128",
@@ -329,7 +597,7 @@
         ]
       },
       {
-        "Id": "c686e6dc-f80b-424b-807c-162aab4e8736",
+        "Id": "f3a363c7-78b8-4091-b409-bbb92c31ed9a",
         "Name": "floor_01",
         "Enabled": true,
         "Position": "-128,-128,0",
@@ -355,7 +623,7 @@
         ]
       },
       {
-        "Id": "3953650d-92ca-471f-bbe8-0a8dfc444ecf",
+        "Id": "839cc6aa-05eb-4275-94f4-a73bbb6e9c52",
         "Name": "floor_01",
         "Enabled": true,
         "Position": "-256,-128,-0.00001858842",
@@ -381,7 +649,7 @@
         ]
       },
       {
-        "Id": "a1c59edf-fa0e-4060-b205-b19f513f75c8",
+        "Id": "2755ea1f-904a-42a2-a499-dd1b573a339e",
         "Name": "floor_01",
         "Enabled": true,
         "Position": "-256,-128,128",
@@ -407,7 +675,7 @@
         ]
       },
       {
-        "Id": "e87f2c83-1d3f-4616-9693-ee2a176af4a0",
+        "Id": "a8f6c54c-6a64-446e-95d7-9f55aa5cfafa",
         "Name": "floor_01",
         "Enabled": true,
         "Position": "-256,-256,128",
@@ -433,7 +701,7 @@
         ]
       },
       {
-        "Id": "75417722-fb33-4d24-af03-7bbe3c54cd9f",
+        "Id": "e8aeac3d-231a-46f0-a722-45936f3735b4",
         "Name": "floor_01",
         "Enabled": true,
         "Position": "128.0001,-128,-0.00001106871",
@@ -459,7 +727,7 @@
         ]
       },
       {
-        "Id": "14427acc-e473-42ab-88fd-41b5bba0cbab",
+        "Id": "088fa715-71fe-486c-aeba-47e1f6c0069e",
         "Name": "floor_01",
         "Enabled": true,
         "Position": "128.0001,-128,128",
@@ -485,7 +753,7 @@
         ]
       },
       {
-        "Id": "624c9628-b735-45a2-a3fb-9dbf79427711",
+        "Id": "9e3ac468-6306-4139-b6f7-8f92f973dbb9",
         "Name": "floor_01",
         "Enabled": true,
         "Position": "128.0001,0,128",
@@ -511,7 +779,7 @@
         ]
       },
       {
-        "Id": "aaed9647-1158-4c23-95a9-99835b041b76",
+        "Id": "966f2526-0191-4873-b372-939c2391e935",
         "Name": "floor_01",
         "Enabled": true,
         "Position": "128,0,-0.00001106871",
@@ -522,7 +790,7 @@
             "__type": "ModelComponent",
             "__enabled": true,
             "MaterialOverride": null,
-            "Model": "models/environment/wall_02.vmdl",
+            "Model": "models/environment/wall_02_goo.vmdl",
             "ShouldCastShadows": true,
             "Tint": "1,1,1,1"
           },
@@ -537,7 +805,7 @@
         ]
       },
       {
-        "Id": "48c5aa40-e856-4580-b91e-b3bd40f527a3",
+        "Id": "585e8881-b20c-40c3-977e-9d07bd7b011a",
         "Name": "floor_01",
         "Enabled": true,
         "Position": "128,128,-0.00001106871",
@@ -563,7 +831,7 @@
         ]
       },
       {
-        "Id": "b2bcf8be-b886-4d6d-8ae7-dcbb552d0a1f",
+        "Id": "90fb2176-ec18-4337-aee2-ebd9d1882fc2",
         "Name": "floor_01",
         "Enabled": true,
         "Position": "128,128,128",
@@ -589,7 +857,7 @@
         ]
       },
       {
-        "Id": "1e25871a-9f6e-4f4c-ae7f-e623f3db8f60",
+        "Id": "2a5ceee7-c4e1-4059-a0fe-b00435552e05",
         "Name": "floor_01",
         "Enabled": true,
         "Position": "128,256,-0.00001106871",
@@ -615,7 +883,7 @@
         ]
       },
       {
-        "Id": "fae010e2-b4e3-4464-8db3-c85ea7e7b23c",
+        "Id": "eb19a47b-68f7-4447-bfcd-af90d029c55d",
         "Name": "floor_01",
         "Enabled": true,
         "Position": "128,256,128",
@@ -641,7 +909,7 @@
         ]
       },
       {
-        "Id": "a72f2621-664e-4727-bfef-4a6deb64fac6",
+        "Id": "88c5d50d-9bbb-4e85-a84c-4369be8da9f0",
         "Name": "floor_01",
         "Enabled": true,
         "Position": "-128,128,-0.00001106871",
@@ -667,7 +935,7 @@
         ]
       },
       {
-        "Id": "532ca1c4-76e3-4db4-a721-471d3cbdc804",
+        "Id": "2da2b3d6-0a72-4849-b688-17d223d8c90b",
         "Name": "floor_01",
         "Enabled": true,
         "Position": "-128,128,128",
@@ -693,7 +961,7 @@
         ]
       },
       {
-        "Id": "94b9beb5-07aa-42a3-b577-349041255240",
+        "Id": "0d873b2d-948d-4600-afb7-e0a8d3107b01",
         "Name": "Zone",
         "Enabled": true,
         "Position": "-64,0,64",
@@ -703,7 +971,7 @@
           {
             "__type": "CameraTriggerComponent",
             "__enabled": true,
-            "CameraPoint": "8e0f5778-57fb-4811-b0ba-c446b0faa13e",
+            "CameraPoint": "292c310c-f9d1-4466-8830-46d85641be02",
             "FollowPlayer": true
           },
           {
@@ -717,7 +985,7 @@
         ],
         "Children": [
           {
-            "Id": "8e0f5778-57fb-4811-b0ba-c446b0faa13e",
+            "Id": "292c310c-f9d1-4466-8830-46d85641be02",
             "Name": "Camera",
             "Enabled": true,
             "Position": "140,-230,80",
@@ -727,7 +995,7 @@
         ]
       },
       {
-        "Id": "9310ed01-d642-4775-8925-6b4d9f4fd4c7",
+        "Id": "3a4b4556-0dd4-4b4f-a63b-868d28cd2fb4",
         "Name": "floor_01",
         "Enabled": true,
         "Position": "-128,0.000211487,-0.00001106871",
@@ -753,7 +1021,7 @@
         ]
       },
       {
-        "Id": "dfbe03d3-127a-4083-9685-bb404bd53dc7",
+        "Id": "0f49995c-1512-4ed2-80f3-20ffdcf6e4f9",
         "Name": "floor_01",
         "Enabled": true,
         "Position": "-128,0.000211487,128",
@@ -779,7 +1047,7 @@
         ]
       },
       {
-        "Id": "55475629-7c61-4611-89cf-162befe77371",
+        "Id": "d59426a9-7e00-471d-bc5d-f0899a5b5e10",
         "Name": "floor_01",
         "Enabled": true,
         "Position": "-128,0,-0.000004508931",
@@ -805,7 +1073,7 @@
         ]
       },
       {
-        "Id": "c829db57-3d6e-4cc8-9f1f-0da718c43e4c",
+        "Id": "2197d850-10ab-475a-891d-8be7c003ba25",
         "Name": "floor_01",
         "Enabled": true,
         "Position": "-128,0,128",
@@ -831,7 +1099,7 @@
         ]
       },
       {
-        "Id": "6f284ed8-833e-4b39-aa2d-385e0bb8f0c0",
+        "Id": "c306ae11-bc72-434c-9427-57b04e243faa",
         "Name": "floor_01",
         "Enabled": true,
         "Position": "-256,-256.0001,0.000008291396",
@@ -857,7 +1125,7 @@
         ]
       },
       {
-        "Id": "9c3c5828-7048-4a3a-830e-2a8dca6a44d8",
+        "Id": "408fb1ae-1f44-49ea-b5da-5eb5eee25409",
         "Name": "floor_01",
         "Enabled": true,
         "Position": "-256,-256.0001,128",
@@ -883,7 +1151,7 @@
         ]
       },
       {
-        "Id": "f3cba3fd-8b71-43c7-893f-b8d488e6eb37",
+        "Id": "9a3e30c8-af0f-4bdf-bc96-745a2e9e1524",
         "Name": "floor_01",
         "Enabled": true,
         "Position": "0,-255.9997,-0.000007795794",
@@ -909,7 +1177,7 @@
         ]
       },
       {
-        "Id": "bcf317e5-ba10-41b8-889a-eb7e546b772d",
+        "Id": "b36aff44-6a42-4f60-b75c-7b5f7e6354aa",
         "Name": "floor_01",
         "Enabled": true,
         "Position": "0,-255.9997,128",
@@ -935,7 +1203,7 @@
         ]
       },
       {
-        "Id": "cb472ed7-121d-49fb-962e-56bb09bc2453",
+        "Id": "a31dfa07-5e5b-4605-9520-43ca51b9211e",
         "Name": "floor_01",
         "Enabled": true,
         "Position": "-128,-256,0",
@@ -961,7 +1229,7 @@
         ]
       },
       {
-        "Id": "f8eacedc-9a17-4497-9daa-107808b5bc14",
+        "Id": "17979d77-763d-45d0-804f-8e4ebc0c5290",
         "Name": "floor_01",
         "Enabled": true,
         "Position": "-128,-256,128",
@@ -987,7 +1255,7 @@
         ]
       },
       {
-        "Id": "fef4ffd4-014c-47bc-a278-b34b2cb3a900",
+        "Id": "286219e0-7e1b-42e9-b6f8-368665b65c94",
         "Name": "floor_01",
         "Enabled": true,
         "Position": "-128,-256,0",
@@ -1013,7 +1281,7 @@
         ]
       },
       {
-        "Id": "c25d366e-bc04-4597-86aa-5e30cd47b9a3",
+        "Id": "0e850f9f-a57a-4b3b-84a8-d4fa75a19d1b",
         "Name": "floor_01",
         "Enabled": true,
         "Position": "0,-256,0",
@@ -1039,7 +1307,7 @@
         ]
       },
       {
-        "Id": "dc299003-d271-49c3-945a-2ebaf43fc7a7",
+        "Id": "ed0b0157-bc93-439e-8235-faae9584dfc7",
         "Name": "floor_01",
         "Enabled": true,
         "Position": "0,-128,0",
@@ -1065,7 +1333,7 @@
         ]
       },
       {
-        "Id": "eda53b34-da1f-4cef-aa2b-25b97dd2d3e6",
+        "Id": "88c2ab57-c6e6-462b-94ce-2715300a6294",
         "Name": "floor_01",
         "Enabled": true,
         "Position": "0,128,0",
@@ -1091,7 +1359,7 @@
         ]
       },
       {
-        "Id": "ccf861d4-b540-42dd-9ffa-d9b296c0f1a3",
+        "Id": "9607afb9-e40e-4b00-88a4-3c3723b19856",
         "Name": "floor_01",
         "Enabled": true,
         "Position": "0,0,0",
@@ -1117,7 +1385,7 @@
         ]
       },
       {
-        "Id": "a971faf3-8cbd-4a72-a658-9af29de570db",
+        "Id": "39d4f73e-67f8-46ad-857f-9de9fcdd1646",
         "Name": "pipe_0a",
         "Enabled": true,
         "Position": "-256,-224,212",
@@ -1135,7 +1403,7 @@
         ],
         "Children": [
           {
-            "Id": "a4758ff2-78c5-4312-aa58-4e9972822eb6",
+            "Id": "71fe353c-7368-4c60-b482-6aed2cbfb8e8",
             "Name": "pipe_0a",
             "Enabled": true,
             "Position": "64,0,0",
@@ -1153,7 +1421,7 @@
             ]
           },
           {
-            "Id": "8a91b13a-1af0-44e9-b24f-4cf8bda3785a",
+            "Id": "2235170c-9f64-4488-9a68-3660264328cd",
             "Name": "pipe_0a",
             "Enabled": true,
             "Position": "128,0,0",
@@ -1171,7 +1439,7 @@
             ]
           },
           {
-            "Id": "26b51bfd-2ab2-40b7-a9aa-8821ce00b45e",
+            "Id": "7c773cbc-e251-4531-98d4-1ea3b0f092eb",
             "Name": "pipe_0a",
             "Enabled": true,
             "Position": "192,0,0",
@@ -1189,7 +1457,7 @@
             ]
           },
           {
-            "Id": "3ac11906-bd41-470e-a1f0-774d5670c8ca",
+            "Id": "7ae4b670-fd97-4176-a860-be05caa3b168",
             "Name": "pipe_0a",
             "Enabled": true,
             "Position": "256,0,0",
@@ -1207,7 +1475,7 @@
             ]
           },
           {
-            "Id": "05128b0b-508c-4215-b0d5-9011a76679e4",
+            "Id": "9495e0ca-6e43-4c28-9c63-9af66accb993",
             "Name": "pipe_0a",
             "Enabled": true,
             "Position": "352,32,0",
@@ -1225,7 +1493,7 @@
             ]
           },
           {
-            "Id": "ee79a4e8-5460-4490-b58b-842d5b2940bd",
+            "Id": "424cfbf5-0396-46ca-bb2c-76a54a3e9be8",
             "Name": "pipe_0a",
             "Enabled": true,
             "Position": "352,96,0",
@@ -1243,7 +1511,7 @@
             ]
           },
           {
-            "Id": "e6b97e2e-22eb-45c5-9405-0a906c581f0d",
+            "Id": "0131ae25-936f-486a-bdba-a7dd9176d817",
             "Name": "pipe_0a",
             "Enabled": true,
             "Position": "352,160,0",
@@ -1261,7 +1529,7 @@
             ]
           },
           {
-            "Id": "859fa454-0804-488b-a259-42da946fdaef",
+            "Id": "783e4fad-55d9-4e80-809e-33d33f47d210",
             "Name": "pipe_0a",
             "Enabled": true,
             "Position": "352,224,0",
@@ -1279,7 +1547,7 @@
             ]
           },
           {
-            "Id": "17c0d5f8-19aa-411b-9288-30d6986e15cb",
+            "Id": "067275c6-2495-4bd5-a446-2d6316fda89c",
             "Name": "pipe_0a",
             "Enabled": true,
             "Position": "352,288,0",
@@ -1297,7 +1565,7 @@
             ]
           },
           {
-            "Id": "fbf7d4ed-cd4a-44f9-9969-16441644d707",
+            "Id": "c6ac3613-987f-49c7-a4ed-36bed812a2b0",
             "Name": "pipe_0a",
             "Enabled": true,
             "Position": "352,352,0",
@@ -1315,7 +1583,7 @@
             ]
           },
           {
-            "Id": "d9e38cd7-75c8-458d-9550-50711a79b0e8",
+            "Id": "ef486932-1b3e-4530-8e3d-ce863962b18c",
             "Name": "pipe_0a",
             "Enabled": true,
             "Position": "352,416,0",
@@ -1333,7 +1601,7 @@
             ]
           },
           {
-            "Id": "08755018-5225-41d9-8ccc-cd896ccd921d",
+            "Id": "44ad72ac-9ea8-4626-9396-b4eb25ea3868",
             "Name": "pipe_0a",
             "Enabled": true,
             "Position": "320,0,0",
@@ -1353,7 +1621,7 @@
         ]
       },
       {
-        "Id": "b8fe9281-aafc-40fb-ad09-54b27e2a41d5",
+        "Id": "93ba2881-246d-44e8-9dbf-d4182e13a655",
         "Name": "Spot Light",
         "Enabled": true,
         "Position": "-80.69411,19.94875,272.2226",
@@ -1373,7 +1641,7 @@
         ]
       },
       {
-        "Id": "10814423-b7ce-49be-a35b-99a80a47435a",
+        "Id": "59371930-1213-4697-8a23-6b383b394d9f",
         "Name": "Cubemap",
         "Enabled": true,
         "Position": "0,0,64",
@@ -1394,7 +1662,7 @@
         ]
       },
       {
-        "Id": "62fde02b-bdcb-4394-9e70-6c10ccf42170",
+        "Id": "ae829b70-1aef-4e58-92ac-f35e22b921c2",
         "Name": "barrel",
         "Enabled": true,
         "Position": "96.63554,230.8358,0.002349854",
@@ -1403,7 +1671,7 @@
         "__Prefab": "prefabs/pieces/barrel_01.object"
       },
       {
-        "Id": "7d6d4e3e-8cf7-4997-9b6f-d6fd3b99be78",
+        "Id": "58f37457-553e-4c9f-8dcc-0926111574bd",
         "Name": "barrel",
         "Enabled": true,
         "Position": "102.3279,162.1695,0.003234863",
@@ -1412,7 +1680,7 @@
         "__Prefab": "prefabs/pieces/barrel_01.object"
       },
       {
-        "Id": "aa6287dd-8815-4426-8d0e-08aabc1b2368",
+        "Id": "6513a40b-a680-462c-beb4-7bce33278337",
         "Name": "barrel",
         "Enabled": true,
         "Position": "63.54526,201.5665,0.0006408691",
