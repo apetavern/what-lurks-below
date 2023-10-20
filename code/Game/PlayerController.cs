@@ -31,6 +31,19 @@ public class PlayerController : BaseComponent
 
 	public Vector3 startpos;
 
+	public GameObject SpawnGlowstick()
+	{
+		var prefab = ResourceLibrary.Get<PrefabFile>( "prefabs/glowstick.object" );
+		var bone = Body.GetComponent<AnimatedModelComponent>().GetBoneTransform( "hold_R" );
+
+		var go = SceneUtility.Instantiate( prefab.Scene, bone.Position, Rotation.FromPitch( 90 ) );
+
+		go.GetComponent<GlowstickComponent>( false, true ).Velocity = Body.Transform.Rotation.Forward * 250f + Vector3.Up * 150f;
+
+		go.SetParent( navgen.GameObject.Children.First() );
+		return go;
+	}
+
 	public override void OnEnabled()
 	{
 		base.OnEnabled();
@@ -150,6 +163,11 @@ public class PlayerController : BaseComponent
 				Camera.GetComponent<DepthOfField>().FocalDistance = Vector3.DistanceBetween( Camera.Transform.Position, Eye.Transform.Position );
 			}
 			return;
+		}
+
+		if ( Input.Pressed( "Flashlight" ) )
+		{
+			SpawnGlowstick();
 		}
 
 		// Eye input
