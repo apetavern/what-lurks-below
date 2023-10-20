@@ -21,8 +21,8 @@
       "Id": "7ebc391e-925e-489c-a0dd-a48345ab8d2a",
       "Name": "player",
       "Enabled": true,
-      "Position": "-61.71407,300.4412,0",
-      "Rotation": "0,0,0,1",
+      "Position": "0,0,650",
+      "Rotation": "-0.00000002570919,-0.00000001472848,-0.0000000000000003786573,1",
       "Scale": "1,1,1",
       "__Prefab": "prefabs/player.object"
     },
@@ -275,7 +275,7 @@
           "__type": "ColliderBoxComponent",
           "__enabled": true,
           "IsTrigger": false,
-          "Scale": "100,100,100",
+          "Scale": "60,60,100",
           "Surface": null,
           "Tags": "navgen"
         }
@@ -310,6 +310,58 @@
             {
               "__type": "InventoryHud",
               "__enabled": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "11042ac9-3dac-42e0-8355-5cb02a40e924",
+      "Name": "cam",
+      "Enabled": true,
+      "Position": "41.59829,49.16901,613.1768",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1"
+    },
+    {
+      "Id": "0dbcd692-429b-46bd-9696-eaf6e0c7d7b2",
+      "Name": "falltube",
+      "Enabled": true,
+      "Position": "0,0,650",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
+      "Components": [
+        {
+          "__type": "ModelComponent",
+          "__enabled": true,
+          "MaterialOverride": null,
+          "Model": "models/misc/intro_pipe.vmdl",
+          "ShouldCastShadows": true,
+          "Tint": "1,1,1,1"
+        }
+      ],
+      "Children": [
+        {
+          "Id": "e898ada8-8a7a-4940-ab99-e40ea6983578",
+          "Name": "camtrigger",
+          "Enabled": true,
+          "Position": "0,0,-56.10985",
+          "Rotation": "0,0,0,1",
+          "Scale": "1,1,1",
+          "Components": [
+            {
+              "__type": "ColliderBoxComponent",
+              "__enabled": true,
+              "IsTrigger": true,
+              "Scale": "160,160,1000",
+              "Surface": null,
+              "Tags": ""
+            },
+            {
+              "__type": "CameraTriggerComponent",
+              "__enabled": true,
+              "CameraPoint": "11042ac9-3dac-42e0-8355-5cb02a40e924",
+              "FollowPlayer": true
             }
           ]
         }

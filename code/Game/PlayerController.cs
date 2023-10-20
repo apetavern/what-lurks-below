@@ -25,6 +25,8 @@ public class PlayerController : BaseComponent
 
 	float AimMultiplier = 1f;
 
+	NavGenComponent navgen;
+
 	public override void OnEnabled()
 	{
 		base.OnEnabled();
@@ -56,8 +58,6 @@ public class PlayerController : BaseComponent
 	{
 		base.DrawGizmos();
 		Gizmo.Draw.Line( Eye.Transform.Position - Transform.Position, Eye.Transform.Position - Transform.Position + Eye.Transform.Rotation.Forward * 100f );
-
-
 	}
 
 	public GameObject GetClosestAimableObjectInViewcone()
@@ -92,6 +92,43 @@ public class PlayerController : BaseComponent
 
 	public override void Update()
 	{
+		var cc = GameObject.GetComponent<CharacterController>();
+
+		if ( navgen == null )
+		{
+			navgen = Scene.GetAllObjects( true ).FirstOrDefault( x => x.GetComponent<NavGenComponent>() != null ).GetComponent<NavGenComponent>();
+			return;
+		}
+
+		if ( navgen != null && !navgen.Initialized )
+		{
+			if ( Transform.Position.z > 500 )
+			{
+				cc.Velocity -= Vector3.Up * Gravity * Time.Delta;
+			}
+			else
+			{
+				cc.Velocity = Vector3.Zero;
+			}
+			cc.Move();
+			cc.IsOnGround = false;
+			var helper = new CitizenAnimationHelperScene( Body.GetComponent<AnimatedModelComponent>().SceneModel );
+			helper.WithVelocity( cc.Velocity - Vector3.Up * Gravity );
+			helper.IsGrounded = cc.IsOnGround;
+			helper.HoldType = CitizenAnimationHelperScene.HoldTypes.None;
+
+			if ( Camera == null )
+			{
+				Camera = Scene.GetAllObjects( true ).Where( X => X.GetComponent<CameraComponent>( true ) != null ).FirstOrDefault();
+			}
+
+			if ( Camera != null )
+			{
+				Camera.GetComponent<DepthOfField>().FocalDistance = Vector3.DistanceBetween( Camera.Transform.Position, Eye.Transform.Position );
+			}
+			return;
+		}
+
 		// Eye input
 		EyeAngles.pitch = 0;
 
@@ -128,7 +165,7 @@ public class PlayerController : BaseComponent
 		if ( CameraControl )
 		{
 			// Update camera position
-			Camera = Scene.GetAllObjects( true ).Where( X => X.GetComponent<CameraComponent>( true ) != null ).FirstOrDefault();
+
 			if ( Camera is not null )
 			{
 				var camPos = Eye.Transform.Position - (EyeAngles.ToRotation() * Rotation.FromPitch( 15f )).Forward * CameraDistance;
@@ -151,7 +188,6 @@ public class PlayerController : BaseComponent
 		// read inputs
 		BuildWishVelocity();
 
-		var cc = GameObject.GetComponent<CharacterController>();
 
 
 		if ( Transform.Position.z < -100f )
