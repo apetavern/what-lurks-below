@@ -57,12 +57,11 @@ public class PistolWeapon : BaseWeapon
 			{
 				muzzleflash = new GameObject( true, "flash" ).AddComponent<ParticleSystem>();
 				muzzleflash.GameObject.SetParent( this );
+				muzzleflash.Particles = Sandbox.ParticleSystem.Load( "particles/pistol_muzzleflash.vpcf" );
 			}
 
 			muzzleflash.Transform.Position = muzzletr.Position;
 			muzzleflash.Transform.Rotation = muzzletr.Rotation;
-
-			muzzleflash.Particles = Sandbox.ParticleSystem.Load( "particles/pistol_muzzleflash.vpcf" );
 
 			muzzleflash.OnEnabled();
 
