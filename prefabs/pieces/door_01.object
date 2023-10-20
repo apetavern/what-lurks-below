@@ -44,23 +44,23 @@
             "Id": "e579b134-e50d-4cc0-88f2-352a682d6635",
             "Name": "Plane",
             "Enabled": true,
-            "Position": "0.000003044932,-3.648962,64",
-            "Rotation": "0.5,0.5,-0.5000003,0.4999996",
-            "Scale": "1.28,1.28,1.28",
+            "Position": "64,0,0",
+            "Rotation": "0,0,0.707107,0.7071065",
+            "Scale": "1,1,1",
             "Components": [
               {
                 "__type": "ModelComponent",
                 "__enabled": true,
-                "MaterialOverride": "materials/sewer/sewer_wall_01.vmat",
-                "Model": "models/dev/plane.vmdl",
+                "MaterialOverride": null,
+                "Model": "models/environment/door_02.vmdl",
                 "ShouldCastShadows": true,
                 "Tint": "1,1,1,1"
               },
               {
-                "__type": "ColliderBoxComponent",
+                "__type": "ModelCollider",
                 "__enabled": true,
                 "IsTrigger": false,
-                "Scale": "100,100,3",
+                "Model": "models/environment/door_02.vmdl",
                 "Surface": null,
                 "Tags": ""
               }
@@ -69,13 +69,13 @@
         ]
       },
       {
-        "Id": "7748d57d-b7f2-4b8b-9810-6dabc8bd701e",
-        "Name": "hallway_01",
+        "Id": "6019a670-cd08-4709-b77e-f16ec6c6bfb0",
+        "Name": "hallway_03",
         "Enabled": true,
         "Position": "64,64,0",
-        "Rotation": "0,0,0,1",
-        "Scale": "1.28,1.28,1.28",
-        "__Prefab": "prefabs/hallways/hallway_01.object"
+        "Rotation": "0.0000006713875,0.0000004172325,-0.00000201416,0.9999999",
+        "Scale": "1,1,1",
+        "__Prefab": "prefabs/hallways/hallway_03.object"
       }
     ]
   },
