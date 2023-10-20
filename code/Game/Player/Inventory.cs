@@ -97,21 +97,24 @@ public class Inventory : BaseComponent
 
 	public bool PlaceItem( InventoryItem item, InvCoord pos )
 	{
-		var positionValid = CheckPositionValid( pos, item.Length, item.Height );
-		if ( !positionValid )
-			return false;
-
 		if ( _items.Contains( item ) )
 		{
 			_items.Remove( item );
 			Free( item.Position, item.Length, item.Height );
 		}
 		
-		item.Position = pos;
+		var positionValid = CheckPositionValid( pos, item.Length, item.Height );
+		if ( !positionValid )
+		{
+			_items.Add( item );
+			Rent( item.Position, item.Length, item.Height );
+			return false;
+		}
 		
+		item.Position = pos;
+	
 		_items.Add( item );
 		Rent( pos, item.Length, item.Height );
-		
 		return true;
 	}
 

@@ -22,6 +22,7 @@
 
     protected override void OnMouseDown(MousePanelEvent e)
     {
+        Mouse.Position = Box.Rect.Position + Box.Rect.Size * 0.5f;
         Selected = true;
         SetMouseCapture( true );
         InventoryPane.SelectedItem = Item;
@@ -29,23 +30,19 @@
 
     public void Deselect()
     {
+        if (!Selected)
+            return;
+        
         // Attempt to move Item position.
-        if (Selected)
-        {
-            Log.Info($"Place: {MouseLocation}");
-            var inv = InventoryPane.Inventory;
-            var loc = new InvCoord((MouseLocation.x / 100).FloorToInt(), (MouseLocation.y / 100).FloorToInt());
-            Log.Info($"Place: {loc}");
-            if (inv.PlaceItem(Item, loc))
-            {
-                Log.Info("placed");
-            }
-        }
+        var inv = InventoryPane.Inventory;
+        var loc = new InvCoord((MouseLocation.x / 100).FloorToInt(), (MouseLocation.y / 100).FloorToInt());
+        inv.PlaceItem(Item, loc);
         
         Selected = false;
         SetMouseCapture( false );
         InventoryPane.SelectedItem = null;
-        Mouse.Position = Box.Rect.Position + Box.Rect.Size * 0.5f;
+
+        Mouse.Position = Box.Rect.Position + MouseLocation;
     }
 
     string GetPositionStyles()
@@ -63,13 +60,14 @@
         if (Selected && HasMouseCapture)
         {
             MouseLocation += Mouse.Delta;
+            MouseLocation = MouseLocation.Clamp(
+                Vector2.Zero, 
+                new Vector2(
+                    InventoryPane.Inventory.SlotsX * 100 - Item.Length * 100, 
+                    InventoryPane.Inventory.SlotsY * 100 - Item.Height * 100)
+                );
 
             InventoryPane.MouseLocation = MouseLocation;
-        }
-        else
-        {
-            // MouseLocation = new Vector2(0, 0);
-            // InventoryPane.MouseLocation = new Vector2(0, 0);
         }
     }
 

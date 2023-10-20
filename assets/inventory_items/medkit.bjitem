@@ -3,7 +3,9 @@
   "Weight": 3.4,
   "Length": 2,
   "Height": 1,
-  "Position": {},
-  "ImagePath": "tools/images/sndtool/soundentry_icon.png",
+  "Position": {
+    "Y": 1
+  },
+  "ImagePath": "materials/gizmo/volumetricfogvolume.png",
   "__references": []
 }

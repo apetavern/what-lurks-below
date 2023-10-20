@@ -14,7 +14,7 @@
         {
             <div class="grid-line-vertical"/>
         }
-        @for (var x = 0; x < Inventory.SlotsY ; x++)
+        @for (var x = 0; x < Inventory.SlotsY + 1; x++)
         {
             <div class="grid-line-horizontal" style="top: @(x * 100)px"/>
         }
@@ -31,10 +31,6 @@
         }
         
     </div>
-    @* <div  *@
-    @*   class="preview-cell"  *@
-    @*   @ref=@PreviewCell  *@
-    @*   style="width: @(SelectedItem.Length * 100)px; height:  @(SelectedItem.Height * 100)px" /> *@
 </root>
 
 @code
@@ -47,8 +43,14 @@
     
     public Panel PreviewCell { get; set; }
 
-    protected override void OnMouseUp(MousePanelEvent e)
+    public override void OnButtonEvent(ButtonEvent e)
     {
+        if (e.Button != "mouseleft")
+            return;
+
+        if (SelectedItem is null)
+            return;
+        
         var pane = Children.FirstOrDefault();
         if (pane is null)
             return;
@@ -82,7 +84,6 @@
         
         if (SelectedItem is not null)
         {
-            Log.Info(MouseLocation);
             PreviewCell.Style.Width = SelectedItem.Length * 100;
             PreviewCell.Style.Height = SelectedItem.Height * 100;
             PreviewCell.Style.Top = MouseLocation.y - (MouseLocation.y % 100);
