@@ -43,7 +43,7 @@
         SetMouseCapture( false );
         InventoryPane.SelectedItem = null;
 
-        Mouse.Position = Box.Rect.Position + MouseLocation;
+        Mouse.Position = Box.Rect.Position + Box.Rect.Size * 0.5f + MouseLocation * ScaleToScreen;
     }
 
     string GetPositionStyles()
