@@ -121,12 +121,22 @@ public class BrickPlayerController : BaseComponent
 			{
 				var wp = pickup.AddComponent<WorldPanel>();
 				wp.LookAtCamera = true;
-				wp.RenderScale = 2;
-				wp.PanelSize = new Vector2( 500, 300 );
+				wp.RenderScale = 1.8f;
+				wp.PanelSize = new Vector2( 400, 500 );
 			}
 
 			if ( pickup.GetComponent<PickupHint>() is null )
-				pickup.AddComponent<PickupHint>();
+			{
+				var hint = pickup.AddComponent<PickupHint>();
+
+				if ( pickup.GetComponent<ItemPickup>() is not ItemPickup itemPickup )
+					return;
+
+				if ( itemPickup.Item is null )
+					return;
+
+				hint?.SetItem( itemPickup );
+			}
 			else
 				pickup.GetComponent<PickupHint>().TimeSincePlayerInRange = 0;
 		}
