@@ -13,18 +13,7 @@ public sealed class WorldPanel : BaseComponent, IRootPanelComponent
 	[Property] public bool LookAtCamera { get; set; }
 	[Property] public Vector2 PanelSize { get; set; } = new Vector2( 512 );
 
-	[Property]
-	public Vector3 Position
-	{
-		get
-		{
-			return Transform.World.Position;
-		}
-		set
-		{
-			worldPanel.Position = value;
-		}
-	}
+	[Property] public Vector3 Position { get; set; }
 
 	// todo: show these as group buttons
 
@@ -124,6 +113,8 @@ public sealed class WorldPanel : BaseComponent, IRootPanelComponent
 		rect.Bottom /= RenderScale;
 
 		worldPanel.PanelBounds = rect;
+
+		worldPanel.Position = Position;
 	}
 
 	public Panel GetPanel()

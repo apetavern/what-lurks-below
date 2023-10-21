@@ -1,15 +1,48 @@
-﻿@using Sandbox.UI;
+﻿@using Sandbox
+@using Sandbox.UI;
 @inherits PanelComponent
 
 <root>
-    Press Space to Descend
+    Press 
+    <InputGlyph button="Jump" size="medium" />
+    to Descend
 </root>
+
+@code
+{
+    
+    public override void Update()
+    {
+        base.Update();
+
+        if (Input.Pressed("Jump"))
+        {
+            Panel.AddClass("pressed");
+        }
+    }
+}
 
 <style>
     StartPrompt {
         font-size: 64px;
         color: white;
         font-weight: bold;
-        font-family:  Poppins;
+        font-family: Poppins;
+        justify-content: center;
+        align-items: center;
+        gap: 24px;
+        opacity: 1;
+        transition: opacity 0.15s ease-out;
+        
+        > InputGlyph {
+            max-width: 200px;
+            max-height: 100px;
+        }
+        
+        
+    }
+    
+    .pressed {
+        opacity: 0;
     }
 </style>
