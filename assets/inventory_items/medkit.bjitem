@@ -4,8 +4,13 @@
   "Length": 2,
   "Height": 1,
   "Position": {
-    "Y": 1
+    "X": 1
   },
   "ImagePath": "materials/gizmo/volumetricfogvolume.png",
+  "InventoryActions": [
+    "Equip",
+    "Drop",
+    "Use"
+  ],
   "__references": []
 }

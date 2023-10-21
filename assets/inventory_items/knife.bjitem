@@ -5,5 +5,10 @@
   "Height": 3,
   "Position": {},
   "ImagePath": "materials/gizmo/particles.png",
+  "InventoryActions": [
+    "Equip",
+    "Drop",
+    "Examine"
+  ],
   "__references": []
 }

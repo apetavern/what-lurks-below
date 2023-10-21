@@ -5,5 +5,10 @@
   "Height": 2,
   "Position": {},
   "ImagePath": "materials/gizmo/spotlight.png",
+  "InventoryActions": [
+    "Equip",
+    "Drop",
+    "Examine"
+  ],
   "__references": []
 }

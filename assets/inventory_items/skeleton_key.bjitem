@@ -5,5 +5,9 @@
   "Height": 1,
   "Position": {},
   "ImagePath": "materials/gizmo/audiolistener.png",
+  "InventoryActions": [
+    "Drop",
+    "Examine"
+  ],
   "__references": []
 }
