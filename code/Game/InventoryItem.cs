@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using BrickJam.Game;
+using BrickJam.Game.UI;
+using BrickJam.Game.Weapon;
 using BrickJam.Player;
 using Sandbox;
 using Sandbox.UI;
@@ -24,7 +27,7 @@ public class InventoryItem : GameResource
 	
 	public List<InventoryAction> InventoryActions { get; set; }
 
-	public void DoAction( InventoryAction action )
+	public void DoAction( Scene scene, InventoryAction action )
 	{
 		if ( action is InventoryAction.Examine )
 		{
@@ -38,6 +41,20 @@ public class InventoryItem : GameResource
 		{
 			// manually check item type and hardcode correlation to weapon class
 			// then equip
+			if ( Name == "Knife" )
+			{
+				var knife = new KnifeWeapon( true, "Knife" );
+				var player = scene
+					.GetAllObjects( true )
+					.FirstOrDefault( o => o.Name == "player" );
+				if ( player is null )
+					return;
+				var weaponComponent = player.GetComponent<WeaponComponent>();
+				if ( weaponComponent.ActiveWeapon is KnifeWeapon )
+					weaponComponent?.Holster();
+				else
+					weaponComponent?.Equip(knife);
+			}
 		}
 		else if ( action is InventoryAction.Use )
 		{

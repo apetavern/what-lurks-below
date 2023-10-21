@@ -35,6 +35,10 @@
         "__type": "Inventory",
         "__enabled": true,
         "Slots": 0
+      },
+      {
+        "__type": "WeaponComponent",
+        "__enabled": true
       }
     ],
     "Children": [
