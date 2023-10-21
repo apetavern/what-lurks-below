@@ -8,11 +8,12 @@
 
 <root style="position: absolute; @GetPositionStyles(); @GetVisibleStyles()">
     <img src=@Item.ImagePath style="width: @(Item.Length * 100)px; height:  @(Item.Height * 100)px" />
-    <div class="action-menu show">
+    <div class="action-menu" @ref=ActionMenu>
         @foreach (var action in Item.InventoryActions)
         {
-            <div class="action-option">@action.ToString()</div>
+            <div class="action-option" onclick=@(() => DoAction(action))>@action.ToString()</div>
         }
+        <div class="action-option" onclick=@Select>Move</div>
     </div>
 </root>
 
@@ -25,8 +26,21 @@
     private bool Selected { get; set; }
     
     private Vector2 MouseLocation { get; set; }
+    
+    public Panel ActionMenu { get; set; }
 
     protected override void OnMouseDown(MousePanelEvent e)
+    {
+        ActionMenu.AddClass("show");
+    }
+
+    public void DoAction(InventoryAction action)
+    {
+        Item.DoAction(action);
+        Deselect();
+    }
+
+    public void Select()
     {
         Mouse.Position = Box.Rect.Position + Box.Rect.Size * 0.5f;
         
@@ -37,6 +51,8 @@
 
     public void Deselect()
     {
+        ActionMenu.RemoveClass("show");
+        
         if (!Selected)
             return;
         
