@@ -16,8 +16,6 @@ public class SoundManagerComponent : BaseComponent
 
 	public override void Update()
 	{
-		Log.Info( TimeUntilWaterDrip );
-		
 		if ( TimeUntilWaterDrip < 0f )
 		{
 			Log.Info("water drip"  );
