@@ -49,6 +49,6 @@ public class HealthComponent : BaseComponent
 			Health = 0f;
 		}
 
-		Log.Info( $"Health: {Health}" );
+		//Log.Info( $"Health: {Health}" );
 	}
 }

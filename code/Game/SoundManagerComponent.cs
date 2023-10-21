@@ -18,7 +18,6 @@ public class SoundManagerComponent : BaseComponent
 	{
 		if ( TimeUntilWaterDrip < 0f )
 		{
-			Log.Info("water drip"  );
 			Sound.FromScreen( "water_drip" );
 			TimeUntilWaterDrip = Random.Shared.Float( 1.6f, 2.4f );
 		}
