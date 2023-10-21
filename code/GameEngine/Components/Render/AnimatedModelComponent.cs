@@ -139,27 +139,13 @@ public class AnimatedModelComponent : BaseComponent, BaseComponent.ExecuteInEdit
 		_sceneObject = null;
 	}
 
-	public override void Update()
+	protected override void OnPreRender()
 	{
 		if ( !_sceneObject.IsValid() )
 			return;
 
 		_sceneObject.Transform = Transform.World;
 		_sceneObject.Update( Time.Delta );
-
-		var parent = GameObject.Parent.GetComponent<AnimatedModelComponent>();
-
-		if ( parent is not null )
-		{
-			_sceneObject.Transform = parent.SceneObject.Transform;
-
-			parent.SceneObject.AddChild( GameObject.Name, SceneObject );
-			Transform.Position = SceneObject.Bounds.Center;
-
-			var newbounds = SceneObject.Bounds;
-			newbounds.AddBBox( parent.SceneObject.Bounds );
-			SceneObject.Bounds = newbounds;
-		}
 	}
 
 	public void Set( string v, Vector3 value ) => _sceneObject.SetAnimParameter( v, value );
