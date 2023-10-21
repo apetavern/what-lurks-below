@@ -9,7 +9,7 @@ public sealed class FollowAttachmentComponent : BaseComponent
 
 	[Property] public string AttachmentName { get; set; }
 
-	public override void Update()
+	protected override void OnPreRender()
 	{
 		var attachment = FollowObject.GetComponent<AnimatedModelComponent>().GetAttachmentTransform( AttachmentName );
 
