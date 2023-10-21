@@ -28,7 +28,7 @@
         {
           "__type": "SkyBox2D",
           "__enabled": true,
-          "SkyMaterial": "materials/skybox/light_test_sky_sunset.vmat",
+          "SkyMaterial": "materials/dev/default_sky.vmat",
           "Tint": "1,1,1,1"
         }
       ]
@@ -222,6 +222,27 @@
           "Model": "models/manhole/manhole_02.vmdl",
           "ShouldCastShadows": true,
           "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "Id": "f6d4562a-07e6-4d03-b3f4-f1ad0ac0757b",
+      "Name": "Object",
+      "Enabled": true,
+      "Position": "0,0,0",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
+      "Components": [
+        {
+          "__type": "EnvmapComponent",
+          "__enabled": true,
+          "Bounds": {
+            "Mins": "-512,-512,-512",
+            "Maxs": "512,512,512"
+          },
+          "Projection": "Sphere",
+          "Texture": "textures/cubemaps/default.vtex",
+          "TintColor": "1,1,1,1"
         }
       ]
     }
