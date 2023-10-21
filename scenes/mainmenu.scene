@@ -251,7 +251,7 @@
     },
     {
       "Id": "f6d4562a-07e6-4d03-b3f4-f1ad0ac0757b",
-      "Name": "Object",
+      "Name": "Envmap Probe",
       "Enabled": true,
       "Position": "0,0,0",
       "Rotation": "0,0,0,1",
@@ -267,6 +267,20 @@
           "Projection": "Sphere",
           "Texture": "textures/cubemaps/default.vtex",
           "TintColor": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "Id": "560af406-ffcf-4468-aeb2-e78c50b6f474",
+      "Name": "Camera Directional Input",
+      "Enabled": true,
+      "Position": "0,0,0",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
+      "Components": [
+        {
+          "__type": "SubtleCameraMovementComponent",
+          "__enabled": true
         }
       ]
     }
