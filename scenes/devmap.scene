@@ -158,6 +158,7 @@
               "HorizontalAlign": "Center",
               "LookAtCamera": false,
               "PanelSize": "512,512",
+              "Position": "128,0,0",
               "RenderScale": 1,
               "VerticalAlign": "Center"
             },
@@ -413,6 +414,20 @@
               "FollowPlayer": true
             }
           ]
+        }
+      ]
+    },
+    {
+      "Id": "6769b702-1414-4aae-bfcd-a4fa22ec6398",
+      "Name": "SoundMan",
+      "Enabled": true,
+      "Position": "0,0,0",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
+      "Components": [
+        {
+          "__type": "SoundManagerComponent",
+          "__enabled": true
         }
       ]
     }
