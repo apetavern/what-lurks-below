@@ -266,7 +266,7 @@ public class EnemyController : BaseComponent
 					model.SetAnimParameter( "hastarget", false );
 				}
 
-				Rotation targetRotation = Rotation.LookAt( movePosition - myPosition, Vector3.Up );
+				Rotation targetRotation = Rotation.LookAt( (movePosition - myPosition).WithZ( 0 ), Vector3.Up );
 				Body.Transform.Rotation = Rotation.Lerp( Body.Transform.Rotation, targetRotation, Time.Delta * 10f );
 			}
 			else if ( IsAggro )
@@ -277,7 +277,7 @@ public class EnemyController : BaseComponent
 					SetAnimLookAt( "looktarget", new Transform( Body.Transform.Position, Body.Transform.Rotation ), model.GetAttachment( "eyes" ).Value.Position, playerPosition + Vector3.Up * 64f );
 				}
 
-				Rotation targetRotation = Rotation.LookAt( playerPosition - myPosition, Vector3.Up );
+				Rotation targetRotation = Rotation.LookAt( (playerPosition - myPosition).WithZ( 0 ), Vector3.Up );
 				Body.Transform.Rotation = Rotation.Lerp( Body.Transform.Rotation, targetRotation, Time.Delta * 10f );
 			}
 		}
