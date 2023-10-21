@@ -47,6 +47,10 @@ public class WeaponComponent : BaseComponent
 		if ( ctrl is null )
 			return;
 
+		var charCtrl = _player?.GetComponent<CharacterController>();
+		if ( charCtrl is null || charCtrl.IsOnGround == false )
+			return;
+
 		if ( ActiveWeapon is null )
 			helper.HoldType = CitizenAnimationHelperScene.HoldTypes.None;
 
