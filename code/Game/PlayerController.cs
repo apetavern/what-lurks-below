@@ -124,11 +124,11 @@ public class PlayerController : BaseComponent
 				wp.LookAtCamera = true;
 				wp.PanelSize = new Vector2( 800, 200 );
 			}
-			
-			if (pickup.GetComponent<PickupHint>() is null )
+
+			if ( pickup.GetComponent<PickupHint>() is null )
 				pickup.AddComponent<PickupHint>();
 		}
-		
+
 		if ( navgen == null )
 		{
 			navgen = Scene.GetAllObjects( true ).FirstOrDefault( x => x.GetComponent<NavGenComponent>() != null ).GetComponent<NavGenComponent>();
@@ -216,11 +216,21 @@ public class PlayerController : BaseComponent
 				var tr = Physics.Trace.Ray( Eye.Transform.Position, camPos )
 					.WithAnyTags( "solid" )
 					.WithoutTags( "trigger" )
-					.Radius( 8 )
+					.Radius( 16 )
 					.Run();
 
-				Camera.Transform.Position = tr.EndPosition;
-				Camera.Transform.Rotation = EyeAngles.ToRotation() * Rotation.FromPitch( 15f );
+				camPos = tr.EndPosition;
+
+				var camrot = EyeAngles.ToRotation() * Rotation.FromPitch( 15f );
+
+				if ( Input.Down( "Attack2" ) )
+				{
+					camPos += Eye.Transform.Rotation.Right * 16f;
+					camrot *= Rotation.FromPitch( -5f );
+				}
+
+				Camera.Transform.Position = Vector3.Lerp( Camera.Transform.Position, camPos, Time.Delta * 10f );
+				Camera.Transform.Rotation = Rotation.Lerp( Camera.Transform.Rotation, camrot, Time.Delta * 50f );
 			}
 		}
 

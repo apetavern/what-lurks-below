@@ -26,7 +26,7 @@
         "__type": "PlayerController",
         "__enabled": true,
         "Body": "4231053c-d3a3-41ea-8f43-b8f337b05db2",
-        "CameraDistance": 200,
+        "CameraDistance": 100,
         "Eye": "22a31826-e504-41c7-bf0c-e7d1423a7ed1",
         "FirstPerson": false,
         "Gravity": "0,0,800"
