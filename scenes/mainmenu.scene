@@ -559,7 +559,7 @@
       "Scale": "1,1,1",
       "Components": [
         {
-          "__type": "SoundManagerComponent",
+          "__type": "MenuSoundComponent",
           "__enabled": true
         }
       ]
