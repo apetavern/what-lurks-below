@@ -1,6 +1,6 @@
 {
   "RootObject": {
-    "Id": "ea79b50f-149a-4843-9604-ba9402e6f9c8",
+    "Id": "dc16a161-44bf-44cb-81ee-4ff052f65177",
     "Name": "hallway_03",
     "Enabled": true,
     "Position": "0,0,0",
@@ -10,15 +10,15 @@
       {
         "__type": "HallwayChunkComponent",
         "__enabled": true,
-        "Back": "4cf18a0e-e57f-4048-86c6-0a01b4def92d",
-        "Front": "4d7cad42-a1a3-4ab9-b02c-d7f0079c1eae",
-        "Left": "029376c4-2756-4105-95c2-c37cec072ed5",
-        "Right": "0f943cca-d255-4c04-91f5-44a9c031e5cc"
+        "Back": "fb912860-5552-45fa-8c76-7e9222d0d6db",
+        "Front": "a41f54c1-54d5-4f6a-bcbf-4b3169554cee",
+        "Left": "17d28bee-f79d-45a8-b014-927bb54099bb",
+        "Right": "5f47fb65-19a8-427e-bd9c-8fa869fd1ea8"
       }
     ],
     "Children": [
       {
-        "Id": "db014b67-eccd-4a83-9d49-7b9223a9e76b",
+        "Id": "5623b9a1-687d-48ae-b2cd-5bcc416ad1ad",
         "Name": "Pivot",
         "Enabled": true,
         "Position": "64,-64,0",
@@ -26,7 +26,7 @@
         "Scale": "1,1,1",
         "Children": [
           {
-            "Id": "b44309f8-beb1-438f-abc7-0a154e2597ef",
+            "Id": "e48e59b5-06d8-4710-ac40-66dd3e851004",
             "Name": "Ceil",
             "Enabled": true,
             "Position": "-64,64,128",
@@ -52,7 +52,7 @@
             ]
           },
           {
-            "Id": "4cf18a0e-e57f-4048-86c6-0a01b4def92d",
+            "Id": "fb912860-5552-45fa-8c76-7e9222d0d6db",
             "Name": "back",
             "Enabled": true,
             "Position": "-128,0,0.000289917",
@@ -78,7 +78,7 @@
             ],
             "Children": [
               {
-                "Id": "159eff49-018b-448f-aea4-fcb374243b11",
+                "Id": "a4336950-9325-4af2-86ae-1f2d9e066061",
                 "Name": "pillar_01",
                 "Enabled": true,
                 "Position": "0,0,-0.000289917",
@@ -104,7 +104,7 @@
                 ]
               },
               {
-                "Id": "6c062aa7-e480-4051-bec8-8fc9cfdab217",
+                "Id": "173bf23b-7fc2-4795-b799-bb6ef9e52bdd",
                 "Name": "pipe_0a",
                 "Enabled": true,
                 "Position": "0,64,99.99971",
@@ -130,7 +130,7 @@
                 ]
               },
               {
-                "Id": "3c312e73-c94d-46fb-b4fd-596046168350",
+                "Id": "6145ab93-685f-4736-807f-fdc89046d9ed",
                 "Name": "pipe_0a",
                 "Enabled": true,
                 "Position": "64,64,99.99968",
@@ -156,7 +156,7 @@
                 ]
               },
               {
-                "Id": "f32bfca4-a834-49d5-8723-0bfb6a2fb223",
+                "Id": "60169777-7e53-4b9c-ba20-28d529aea3f9",
                 "Name": "Cubemap",
                 "Enabled": true,
                 "Position": "64,64,64",
@@ -179,7 +179,7 @@
             ]
           },
           {
-            "Id": "029376c4-2756-4105-95c2-c37cec072ed5",
+            "Id": "17d28bee-f79d-45a8-b014-927bb54099bb",
             "Name": "left",
             "Enabled": true,
             "Position": "-128,128,0.000289917",
@@ -205,7 +205,7 @@
             ],
             "Children": [
               {
-                "Id": "05176a4e-88b2-45a9-864a-26e6885490f1",
+                "Id": "a9e98e93-1ab8-42a7-9862-dc7cdaae6c5d",
                 "Name": "pillar_01",
                 "Enabled": true,
                 "Position": "0,0,-0.000289917",
@@ -233,7 +233,7 @@
             ]
           },
           {
-            "Id": "0f943cca-d255-4c04-91f5-44a9c031e5cc",
+            "Id": "5f47fb65-19a8-427e-bd9c-8fa869fd1ea8",
             "Name": "right",
             "Enabled": true,
             "Position": "0,0,0.000289917",
@@ -259,7 +259,7 @@
             ],
             "Children": [
               {
-                "Id": "7c1e4197-05e8-4b41-83c7-0d568b74e695",
+                "Id": "1f99ed4b-fb38-4db0-84c7-b6f82a9da2a0",
                 "Name": "pillar_01",
                 "Enabled": true,
                 "Position": "0,0,-0.000289917",
@@ -287,7 +287,7 @@
             ]
           },
           {
-            "Id": "4d7cad42-a1a3-4ab9-b02c-d7f0079c1eae",
+            "Id": "a41f54c1-54d5-4f6a-bcbf-4b3169554cee",
             "Name": "fwd",
             "Enabled": true,
             "Position": "0,128,0.000289917",
@@ -313,7 +313,7 @@
             ],
             "Children": [
               {
-                "Id": "273c8523-60c3-4ad4-9e1f-5f2fca554f20",
+                "Id": "3572b2bf-aaaf-482a-a8c6-3937dd0e9e4b",
                 "Name": "pillar_01",
                 "Enabled": true,
                 "Position": "0,0,0",
@@ -341,7 +341,7 @@
             ]
           },
           {
-            "Id": "7770050c-07bb-4f35-ad1f-28aea8dcba26",
+            "Id": "fd6148a3-a765-46e1-abe0-e85af4d12b3f",
             "Name": "floor_01",
             "Enabled": true,
             "Position": "0,0,0",
