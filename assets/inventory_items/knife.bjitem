@@ -3,6 +3,7 @@
   "Weight": 4.2,
   "Length": 1,
   "Height": 3,
+  "ExamineText": "Sharp and pointy.",
   "Position": {},
   "ImagePath": "materials/gizmo/particles.png",
   "InventoryActions": [

@@ -8,6 +8,12 @@
 
 <root style="position: absolute; @GetPositionStyles(); @GetVisibleStyles()">
     <img src=@Item.ImagePath style="width: @(Item.Length * 100)px; height:  @(Item.Height * 100)px" />
+    <div class="action-menu show">
+        @foreach (var action in Item.InventoryActions)
+        {
+            <div class="action-option">@action.ToString()</div>
+        }
+    </div>
 </root>
 
 @code

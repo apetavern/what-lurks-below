@@ -3,8 +3,10 @@
   "Weight": 3.4,
   "Length": 2,
   "Height": 1,
+  "ExamineText": "Seems like a good way feel better.",
   "Position": {
-    "X": 1
+    "X": 4,
+    "Y": 1
   },
   "ImagePath": "materials/gizmo/volumetricfogvolume.png",
   "InventoryActions": [

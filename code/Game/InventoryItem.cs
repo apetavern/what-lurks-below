@@ -14,6 +14,8 @@ public class InventoryItem : GameResource
 	public float Weight { get; set; }
 	public int Length { get; set; }
 	public int Height { get; set; }
+	
+	public string ExamineText { get; set; }
 
 	public InvCoord Position { get; set; }
 	
