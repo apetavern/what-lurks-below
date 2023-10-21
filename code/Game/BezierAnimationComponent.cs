@@ -99,8 +99,8 @@ public sealed class BezierAnimationComponent : BaseComponent, BaseComponent.Exec
 			Rotation currentRotation = animatable.Transform.Rotation;
 			animatable.Transform.Rotation = Rotation.Slerp( currentRotation, lookRotation, rotationSpeed * Time.Delta );
 
-			await GameTask.DelaySeconds( 1f / 60f );
-			currentTime += 1f / 60f;
+			await GameTask.DelaySeconds( Time.Delta );
+			currentTime += Time.Delta;
 
 			if ( currentTime >= totalTime / segments )
 			{
