@@ -43,6 +43,7 @@ public class BaseWeapon : GameObject
 		c_AnimatedModel.GameObject.Parent = parent;
 		c_AnimatedModel.Model = Model;
 		c_AnimatedModel.Enabled = true;
+		c_AnimatedModel.BoneMergeTarget = parent.GetComponent<AnimatedModelComponent>( false );
 	}
 
 	public void SetInactive()
