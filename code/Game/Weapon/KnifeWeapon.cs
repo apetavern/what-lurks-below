@@ -1,4 +1,5 @@
-﻿using Sandbox;
+﻿using BrickJam.Player;
+using Sandbox;
 
 namespace BrickJam.Game.Weapon;
 
@@ -34,6 +35,47 @@ public class KnifeWeapon : BaseWeapon
 		helper.Handedness = Handedness;
 	}
 
+	public override void PrimaryFire( Vector3 position, Vector3 direction )
+	{
+		TryHit();
+	}
+
+	public async void TryHit()
+	{
+		bool HitSomething = false;
+
+		float AnimationTime = 1f;
+		float CurrentTime = 0f;
+		while ( CurrentTime < AnimationTime && !HitSomething )
+		{
+			var muzzle = c_AnimatedModel.GetAttachmentTransform( "muzzle" );
+
+			var tr = Physics.Trace.Ray( muzzle.Position, muzzle.Position + muzzle.Rotation.Forward * TraceLength )
+				.WithAnyTags( "solid", "enemy" )
+				.Run();
+
+			if ( tr.Hit && tr.Body.GameObject is GameObject hitObject )
+			{
+				HealthComponent hitHealth = hitObject.Parent?.GetComponent<HealthComponent>() ?? null;
+
+				LastHitBbox = hitObject.GetBounds();
+
+				if ( hitHealth == null )
+				{
+					hitHealth = hitObject.GetComponent<HealthComponent>();
+				}
+
+				if ( hitHealth != null )
+				{
+					hitHealth.Damage( Damage );
+				}
+				HitSomething = true;
+			}
+			CurrentTime += Time.Delta;
+			await GameTask.DelaySeconds( Time.Delta );
+		}
+	}
+
 	public override void OnPrimaryPressed( CitizenAnimationHelperScene helper )
 	{
 		if ( AmmoCount > 0 || AmmoCount == -1 )
@@ -57,5 +99,12 @@ public class KnifeWeapon : BaseWeapon
 	{
 		if ( CanAimFocus )
 			helper.Handedness = AlternateHandedness;
+	}
+
+	protected override void Update()
+	{
+		base.Update();
+
+		Gizmo.Draw.LineBBox( LastHitBbox );
 	}
 }
