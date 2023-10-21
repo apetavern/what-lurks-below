@@ -10,33 +10,32 @@ public class WeaponComponent : BaseComponent
 	public BaseWeapon ActiveWeapon { get; set; }
 	private GameObject _player;
 	private GameObject _body;
+	
+	public static WeaponComponent Instance { get; set; }
 
 	public override void OnStart()
 	{
 		base.OnStart();
 
+		Instance = this;
+
 		_player = Scene.GetAllObjects( true ).FirstOrDefault( p => p.Name == "player" );
 		_body = _player?.GetComponent<BrickPlayerController>().Body;
-		Equip( new KnifeWeapon( true, "Knife" ) );
+		// Equip( new KnifeWeapon( true, "Knife" ) );
 	}
 
 	public void Equip( BaseWeapon weapon )
 	{
-		if ( weapon.GetType() == ActiveWeapon?.GetType() )
+		if ( ActiveWeapon is not null )
 		{
-			Holster( ActiveWeapon );
-			return;
-		}
-		else
-		{
-			Holster( ActiveWeapon );
+			Holster();
 		}
 
 		ActiveWeapon = weapon;
 		ActiveWeapon?.SetActive( _body );
 	}
 
-	public void Holster( BaseWeapon weapon )
+	public void Holster()
 	{
 		ActiveWeapon?.SetInactive();
 		ActiveWeapon = null;

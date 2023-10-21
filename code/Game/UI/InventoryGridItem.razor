@@ -1,4 +1,5 @@
 ﻿@using System
+@using System.Linq
 @using BrickJam;
 @using BrickJam.Player
 @using Sandbox
@@ -11,7 +12,16 @@
     <div class="action-menu" @ref=ActionMenu>
         @foreach (var action in Item.InventoryActions)
         {
-            <div class="action-option" onclick=@(() => DoAction(action))>@action.ToString()</div>
+            <div class="action-option" onclick=@(() => DoAction(action))>
+                @if (action is InventoryAction.Equip && ItemIsEquipped())
+                {
+                    <div>Unequip</div>
+                }
+                else
+                {
+                    @action.ToString()
+                }
+            </div>
         }
         <div class="action-option" onclick=@Select>Move</div>
     </div>
@@ -36,8 +46,18 @@
 
     public void DoAction(InventoryAction action)
     {
-        Item.DoAction(action);
+        Item.DoAction(InventoryPane.Inventory.Scene, action);
         Deselect();
+    }
+
+    bool ItemIsEquipped()
+    {
+        var scene = InventoryPane.Inventory.Scene;
+        var player = scene.GetAllObjects(true).FirstOrDefault(o => o.Name == "player");
+        if (player is null)
+            return false;
+        var weapon = player.GetComponent<WeaponComponent>();
+        return weapon.ActiveWeapon?.Name == Item.Name;
     }
 
     public void Select()
