@@ -82,6 +82,7 @@
     {
         if (Selected && HasMouseCapture)
         {
+            Mouse.Position = Box.Rect.Position + Box.Rect.Size * 0.5f + MouseLocation * ScaleToScreen;
             MouseLocation += Mouse.Delta * ScaleFromScreen;
             MouseLocation = MouseLocation.Clamp(
                 Vector2.Zero, 

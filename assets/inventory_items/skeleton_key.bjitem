@@ -5,10 +5,9 @@
   "Height": 1,
   "ExamineText": "Must unlock something...",
   "Position": {
-    "X": 4,
-    "Y": 2
+    "X": 3
   },
-  "ImagePath": "inventory_icons/key_icon.png",
+  "ImagePath": "ui/key_icon.png",
   "InventoryActions": [
     "Drop",
     "Examine"

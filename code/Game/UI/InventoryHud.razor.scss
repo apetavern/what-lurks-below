@@ -11,8 +11,6 @@
   .pane {
     justify-content: space-between;
     background-image: linear-gradient(to bottom, #333, #222);
-    bottom: 100px;
-    left: 100px;
   }
   
   .grid-line-vertical {
@@ -50,5 +48,10 @@
 .ammo {
   width: 50px;
   height: 100px;
+  left: 100px;
+}
+
+InventoryPane {
+  bottom: 100px;
   left: 100px;
 }
