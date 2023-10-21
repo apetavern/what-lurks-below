@@ -53,6 +53,7 @@
           {
             "__type": "AnimatedModelComponent",
             "__enabled": true,
+            "CreateBoneObjects": false,
             "MaterialOverride": null,
             "Model": "models/player.vmdl",
             "ShouldCastShadows": true,
@@ -94,13 +95,15 @@
             "Id": "d74d97d6-9e8d-4152-bdbb-d2612892594d",
             "Name": "Helmet",
             "Enabled": true,
-            "Position": "1.5,0,69",
+            "Position": "0,0,0",
             "Rotation": "0,0,0,1",
             "Scale": "1,1,1",
             "Components": [
               {
                 "__type": "AnimatedModelComponent",
                 "__enabled": true,
+                "BoneMergeTarget": "4231053c-d3a3-41ea-8f43-b8f337b05db2",
+                "CreateBoneObjects": false,
                 "MaterialOverride": null,
                 "Model": "models/cosmetics/miner_helmet/minster_helmet.vmdl",
                 "ShouldCastShadows": true,
@@ -112,13 +115,15 @@
             "Id": "bfe663db-f3a7-41e5-940c-be4b50d07ffd",
             "Name": "Backpack",
             "Enabled": true,
-            "Position": "-6.5,0,44.5",
+            "Position": "0,0,0",
             "Rotation": "0,0,0,1",
             "Scale": "1,1,1",
             "Components": [
               {
                 "__type": "AnimatedModelComponent",
                 "__enabled": true,
+                "BoneMergeTarget": "4231053c-d3a3-41ea-8f43-b8f337b05db2",
+                "CreateBoneObjects": false,
                 "MaterialOverride": null,
                 "Model": "models/cosmetics/caving_backpack/caving_backpack.vmdl",
                 "ShouldCastShadows": true,

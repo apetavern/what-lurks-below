@@ -1,11 +1,12 @@
 ﻿using Sandbox;
 using Sandbox.Diagnostics;
 using System;
+using System.Collections.Generic;
 
 [Title( "Animated Model Renderer" )]
 [Category( "Rendering" )]
 [Icon( "sports_martial_arts" )]
-public class AnimatedModelComponent : BaseComponent, BaseComponent.ExecuteInEditor
+public sealed partial class AnimatedModelComponent : BaseComponent, BaseComponent.ExecuteInEditor
 {
 	Model _model;
 
@@ -22,8 +23,7 @@ public class AnimatedModelComponent : BaseComponent, BaseComponent.ExecuteInEdit
 		}
 	}
 
-	[Property]
-	public Model Model
+	[Property] public Model Model 
 	{
 		get => _model;
 		set
@@ -34,6 +34,7 @@ public class AnimatedModelComponent : BaseComponent, BaseComponent.ExecuteInEdit
 			if ( _sceneObject is not null )
 			{
 				_sceneObject.Model = _model;
+				BuildBoneHeirarchy( GameObject );
 			}
 		}
 	}
@@ -59,8 +60,7 @@ public class AnimatedModelComponent : BaseComponent, BaseComponent.ExecuteInEdit
 	}
 
 	Material _material;
-	[Property]
-	public Material MaterialOverride
+	[Property] public Material MaterialOverride
 	{
 		get => _material;
 		set
@@ -92,6 +92,40 @@ public class AnimatedModelComponent : BaseComponent, BaseComponent.ExecuteInEdit
 		}
 	}
 
+	bool _createBones = false;
+	[Property]
+	public bool CreateBoneObjects
+	{
+		get => _createBones;
+		set
+		{
+			if ( _createBones == value ) return;
+			_createBones = value;
+
+			BuildBoneHeirarchy( GameObject );
+		}
+	}
+
+
+	AnimatedModelComponent _boneMergeTarget;
+
+	[Property]
+	public AnimatedModelComponent BoneMergeTarget
+	{
+		get => _boneMergeTarget;
+		set
+		{
+			if ( _boneMergeTarget == value ) return;
+
+			_boneMergeTarget?.SetBoneMerge( this, false );
+
+			_boneMergeTarget = value;
+
+			_boneMergeTarget?.SetBoneMerge( this, true );
+		}
+	}
+
+
 	public string TestString { get; set; }
 
 	SceneModel _sceneObject;
@@ -112,13 +146,30 @@ public class AnimatedModelComponent : BaseComponent, BaseComponent.ExecuteInEdit
 			Gizmo.Draw.Color = Color.White.WithAlpha( 0.9f );
 			Gizmo.Draw.LineBBox( Model.Bounds );
 		}
-
+		
 		if ( Gizmo.IsHovered )
 		{
 			Gizmo.Draw.Color = Color.White.WithAlpha( 0.4f );
 			Gizmo.Draw.LineBBox( Model.Bounds );
 		}
 	}
+
+	HashSet<AnimatedModelComponent> mergeChildren = new ();
+
+	private void SetBoneMerge( AnimatedModelComponent target, bool enabled )
+	{
+		ArgumentNullException.ThrowIfNull( target );
+
+		if ( enabled )
+		{
+			mergeChildren.Add( target );
+		}
+		else
+		{
+			mergeChildren.Remove( target );
+		}
+	}
+
 
 	public override void OnEnabled()
 	{
@@ -131,51 +182,63 @@ public class AnimatedModelComponent : BaseComponent, BaseComponent.ExecuteInEdit
 		_sceneObject.SetMaterialOverride( MaterialOverride );
 		_sceneObject.ColorTint = Tint;
 		_sceneObject.Flags.CastShadows = _castShadows;
+		_sceneObject.Update( 0.01f );
+
+		_boneMergeTarget?.SetBoneMerge( this, true );
+
+		BuildBoneHeirarchy( GameObject );
 	}
 
 	public override void OnDisabled()
 	{
+		ClearBoneProxies();
+
 		_sceneObject?.Delete();
 		_sceneObject = null;
 	}
 
-	protected override void OnPreRender()
+	public void UpdateInThread()
+	{
+		AnimationUpdate();
+	}
+
+	void AnimationUpdate()
 	{
 		if ( !_sceneObject.IsValid() )
 			return;
 
+		if ( _boneMergeTarget is not null )
+			return;
+
 		_sceneObject.Transform = Transform.World;
-		_sceneObject.Update( Time.Delta );
+		_sceneObject.Update( Scene.IsEditor ? 0.0f : Time.Delta );
+
+		MergeChildren();
 	}
 
-	public void Set( string v, Vector3 value ) => _sceneObject.SetAnimParameter( v, value );
-	public void Set( string v, int value ) => _sceneObject.SetAnimParameter( v, value );
-	public void Set( string v, float value ) => _sceneObject.SetAnimParameter( v, value );
-	public void Set( string v, bool value ) => _sceneObject.SetAnimParameter( v, value );
-	//	public void Set( string v, Enum value ) => _sceneObject.SetAnimParameter( v, value );
-
-	public bool GetBool( string v ) => _sceneObject.GetBool( v );
-	public int GetInt( string v ) => _sceneObject.GetInt( v );
-	public float GetFloat( string v ) => _sceneObject.GetFloat( v );
-	public Vector3 GetVector( string v ) => _sceneObject.GetVector3( v );
-	public Rotation GetRotation( string v ) => _sceneObject.GetRotation( v );
-
-	/// <summary>
-	/// Converts value to vector local to this entity's eyepos and passes it to SetAnimVector
-	/// </summary>
-	public void SetLookDirection( string name, Vector3 eyeDirectionWorld )
+	void MergeChildren()
 	{
-		var delta = eyeDirectionWorld * Transform.Rotation.Inverse;
-		Set( name, delta );
+		foreach ( var child in mergeChildren )
+		{
+			if ( child.SceneObject is null )
+				continue;
+
+			child.SceneObject.Transform = Transform.World;
+			child.SceneObject.MergeBones( SceneObject );
+		}
 	}
 
-	public Transform GetAttachmentTransform( string attachmentName )
+	public override void Update()
 	{
-		return SceneObject.GetAttachment( attachmentName ).Value;
+		if ( Scene.ThreadedAnimation )
+			return;
+
+		AnimationUpdate();
 	}
 
-	public Transform GetBoneTransform( string attachmentName )
+	protected override void OnPreRender()
 	{
-		return SceneObject.GetBoneWorldTransform( attachmentName );
+
 	}
+
 }

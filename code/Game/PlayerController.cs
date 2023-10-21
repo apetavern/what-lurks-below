@@ -34,7 +34,7 @@ public class PlayerController : BaseComponent
 	public GameObject SpawnGlowstick()
 	{
 		var prefab = ResourceLibrary.Get<PrefabFile>( "prefabs/glowstick.object" );
-		var bone = Body.GetComponent<AnimatedModelComponent>().GetBoneTransform( "hold_R" );
+		var bone = Body.GetComponent<AnimatedModelComponent>().SceneObject.GetBoneWorldTransform( "hold_R" );
 
 		var go = SceneUtility.Instantiate( prefab.Scene, bone.Position, Rotation.FromPitch( 90 ) );
 
