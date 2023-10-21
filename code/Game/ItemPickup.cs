@@ -1,7 +1,6 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using BrickJam.Player;
+﻿using BrickJam.Player;
 using Sandbox;
+using System.Linq;
 
 namespace BrickJam.Game;
 
@@ -11,7 +10,6 @@ namespace BrickJam.Game;
 [EditorHandle( "materials/gizmo/items.png" )]
 public class ItemPickup : BaseComponent
 {
-	private BBox Bounds;
 	private GameObject Player;
 	private BrickPlayerController Controller;
 	private SceneModel _sceneModel;
@@ -49,15 +47,9 @@ public class ItemPickup : BaseComponent
 		// Setup bounds
 		Player = Scene.GetAllObjects( true ).FirstOrDefault( p => p.Name == "player" );
 		Controller = Player?.GetComponent<BrickPlayerController>();
-		var box = new BBox();
 
 		var scale = GetComponent<ColliderBoxComponent>( false ).Scale;
 		var position = Transform.Position;
-
-		box.Mins = position - 0.5f * scale;
-		box.Maxs = position + 0.5f * scale;
-
-		Bounds = box;
 
 		// Setup scene model
 		_sceneModel = new SceneModel( Scene.SceneWorld, _pickupResource.Model ?? Model.Load( "models/dev/box.vmdl" ), Transform.World );
@@ -73,14 +65,6 @@ public class ItemPickup : BaseComponent
 
 	public override void Update()
 	{
-		if ( Player is not null )
-		{
-			if ( Bounds.Contains( Player.Transform.Position ) )
-			{
-				Triggered();
-			}
-		}
-
 		if ( _sceneModel != null )
 		{
 			_sceneModel.Rotation = Rotation.From( 0, Time.Now * 90f, 0 );
@@ -93,7 +77,7 @@ public class ItemPickup : BaseComponent
 		base.Update();
 	}
 
-	void Triggered()
+	public void Triggered()
 	{
 		switch ( Type )
 		{
