@@ -5,7 +5,7 @@
   "Height": 2,
   "ExamineText": "Rooty tooty point and shooty.",
   "Position": {},
-  "ImagePath": "materials/gizmo/spotlight.png",
+  "ImagePath": "inventory_icons/pistol_icon.png",
   "InventoryActions": [
     "Equip",
     "Drop",

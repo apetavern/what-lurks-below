@@ -5,10 +5,9 @@
   "Height": 1,
   "ExamineText": "Seems like a good way feel better.",
   "Position": {
-    "X": 4,
-    "Y": 1
+    "X": 1
   },
-  "ImagePath": "materials/gizmo/volumetricfogvolume.png",
+  "ImagePath": "inventory_icons/medkit_icon.png",
   "InventoryActions": [
     "Use",
     "Drop",

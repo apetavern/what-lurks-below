@@ -4,8 +4,10 @@
   "Length": 1,
   "Height": 3,
   "ExamineText": "Sharp and pointy.",
-  "Position": {},
-  "ImagePath": "materials/gizmo/particles.png",
+  "Position": {
+    "X": 3
+  },
+  "ImagePath": "inventory_icons/knife_icon.png",
   "InventoryActions": [
     "Equip",
     "Drop",

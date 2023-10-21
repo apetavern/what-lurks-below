@@ -5,9 +5,10 @@
   "Height": 1,
   "ExamineText": "Must unlock something...",
   "Position": {
-    "X": 4
+    "X": 4,
+    "Y": 2
   },
-  "ImagePath": "materials/gizmo/audiolistener.png",
+  "ImagePath": "inventory_icons/key_icon.png",
   "InventoryActions": [
     "Drop",
     "Examine"
