@@ -253,9 +253,6 @@ public class BrickPlayerController : BaseComponent
 			}
 		}
 
-		var c_PlayerWeapon = Player.GetComponent<WeaponComponent>();
-		var weapon = c_PlayerWeapon.ActiveWeapon;
-
 		// rotate body to look angles
 		if ( Body is not null )
 		{

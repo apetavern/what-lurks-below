@@ -30,6 +30,11 @@
         "Eye": "22a31826-e504-41c7-bf0c-e7d1423a7ed1",
         "FirstPerson": false,
         "Gravity": "0,0,800"
+      },
+      {
+        "__type": "Inventory",
+        "__enabled": true,
+        "Slots": 0
       }
     ],
     "Children": [

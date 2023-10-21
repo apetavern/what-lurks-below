@@ -8,6 +8,11 @@
 @inherits Panel;
 @attribute [StyleSheet]
 
+@if (Inventory is null)
+{
+    return;
+}
+
 <root>
     <div class="pane" style="width: @(Inventory.SlotsX * 100)px; height:  @(Inventory.SlotsY * 100)px">
         @for (var x = 0; x < Inventory.SlotsX + 1; x++)
