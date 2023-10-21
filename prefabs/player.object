@@ -35,6 +35,12 @@
         "__type": "Inventory",
         "__enabled": true,
         "Slots": 0
+      },
+      {
+        "__type": "UseComponent",
+        "__enabled": true,
+        "UseCooldown": 1,
+        "UseReach": 50.17
       }
     ],
     "Children": [
