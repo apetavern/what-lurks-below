@@ -1,10 +1,13 @@
-﻿using BrickJam.Player;
+﻿using System.Linq;
+using BrickJam.Player;
 using Sandbox;
 
 namespace BrickJam.Game.Weapon;
 
 public class KnifeWeapon : BaseWeapon
 {
+	public static InventoryItem KnifeItem => GetInventoryItem();
+	
 	public override Model Model { get; set; } = Model.Load( "models/items/knife/knife.vmdl" );
 	public override CitizenAnimationHelperScene.HoldTypes HoldType => CitizenAnimationHelperScene.HoldTypes.HoldItem;
 	public override CitizenAnimationHelperScene.Hand Handedness => CitizenAnimationHelperScene.Hand.Right;
@@ -27,6 +30,11 @@ public class KnifeWeapon : BaseWeapon
 	internal KnifeWeapon( bool enabled, string name ) : base( enabled, name )
 	{
 		defaultAmmoCount = MaxAmmo;
+	}
+
+	private static InventoryItem GetInventoryItem()
+	{
+		return ResourceLibrary.GetAll<InventoryItem>().FirstOrDefault(i => i.Name == "Knife");
 	}
 
 	public override void OnIdle( CitizenAnimationHelperScene helper )

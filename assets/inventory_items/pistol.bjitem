@@ -1,0 +1,9 @@
+{
+  "Name": "Pistol",
+  "Weight": 5.4,
+  "Length": 2,
+  "Height": 2,
+  "Position": {},
+  "ImagePath": "materials/gizmo/spotlight.png",
+  "__references": []
+}

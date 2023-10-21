@@ -133,6 +133,8 @@ public class Inventory : BaseComponent
 		_inventorySlots = new bool[SlotsX, SlotsY];
 		_player = Scene.GetAllObjects( true ).FirstOrDefault( p => p.Name == "player" );
 
+		PlaceItem( KnifeWeapon.KnifeItem, new InvCoord( 0, 0 ) );
+
 		InventoryHud.Instance.SetInventory( this );
 	}
 

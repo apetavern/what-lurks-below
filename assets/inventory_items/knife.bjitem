@@ -1,0 +1,9 @@
+{
+  "Name": "Knife",
+  "Weight": 4.2,
+  "Length": 1,
+  "Height": 3,
+  "Position": {},
+  "ImagePath": "materials/gizmo/particles.png",
+  "__references": []
+}
