@@ -1,10 +1,8 @@
+using BrickJam.Game;
+using BrickJam.Player;
 using Sandbox;
 using System;
-using System.Drawing;
 using System.Linq;
-using BrickJam.Game;
-using BrickJam.Game.UI;
-using BrickJam.Player;
 
 public class BrickPlayerController : BaseComponent
 {
@@ -116,6 +114,7 @@ public class BrickPlayerController : BaseComponent
 
 		var pickups = Scene.GetAllObjects( true ).Where( x => x.GetComponent<ItemPickup>() != null );
 		pickups = pickups.Where( p => p.Transform.Position.Distance( Transform.Position ) < 50 );
+
 		foreach ( var pickup in pickups )
 		{
 			if ( pickup.GetComponent<WorldPanel>() is null )
@@ -127,6 +126,8 @@ public class BrickPlayerController : BaseComponent
 
 			if ( pickup.GetComponent<PickupHint>() is null )
 				pickup.AddComponent<PickupHint>();
+			else
+				pickup.GetComponent<PickupHint>().TimeSincePlayerInRange = 0;
 		}
 
 		if ( navgen == null )
