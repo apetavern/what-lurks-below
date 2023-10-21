@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using BrickJam.Game;
 using BrickJam.Player;
 using Sandbox;
@@ -19,23 +20,13 @@ public class InventoryItem : GameResource
 	[ResourceType( "png" )]
 	public string ImagePath { get; set; }
 	
-	
-	// public InventoryItem( string name, float weight, int length, int height )
-	// {
-	// 	Name = name;
-	// 	Weight = weight;
-	// 	Length = length;
-	// 	Height = height;
-	// }
-	//
-	// public static InventoryItem FromPickupType( ItemPickup.PickupType pickupType )
-	// {
-	// 	return pickupType switch
-	// 	{
-	// 		ItemPickup.PickupType.Ammo => new InventoryItem( "Ammo", 0.1f, 1, 1 ),
-	// 		ItemPickup.PickupType.Health => new InventoryItem( "Health", 0.0f, 1, 1 ),
-	// 		ItemPickup.PickupType.Key => new InventoryItem( "Key", 1.2f, 1, 1 ),
-	// 		_ => new InventoryItem()
-	// 	};
-	// }
+	public List<InventoryAction> InventoryActions { get; set; }
 }
+
+public enum InventoryAction
+{
+	Use,
+	Equip,
+	Drop,
+	Examine,
+};

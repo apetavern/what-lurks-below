@@ -8,9 +8,9 @@
   },
   "ImagePath": "materials/gizmo/volumetricfogvolume.png",
   "InventoryActions": [
-    "Equip",
+    "Use",
     "Drop",
-    "Use"
+    "Examine"
   ],
   "__references": []
 }
