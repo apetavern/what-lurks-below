@@ -22,8 +22,12 @@
         "AggroRange": 125.050026,
         "AttackDamage": 1,
         "AttackRange": 64,
+        "AttackSound": "gooman-attack",
         "Body": "3142addf-7994-4b5e-99ca-7332a5237188",
+        "DeathSound": "gooman-death",
         "Friction": 0.9499998,
+        "HurtSound": "gooman-hurt",
+        "IdleSound": "gooman-idle",
         "Speed": 34,
         "TimeBetweenAttacks": 1
       },

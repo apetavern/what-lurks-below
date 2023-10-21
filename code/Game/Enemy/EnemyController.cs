@@ -19,6 +19,11 @@ public class EnemyController : BaseComponent
 
 	[Property] public float TimeBetweenAttacks { get; set; } = 1f;
 
+	[Property] public string IdleSound { get; set; } = "";
+	[Property] public string HurtSound { get; set; } = "";
+	[Property] public string AttackSound { get; set; } = "";
+	[Property] public string DeathSound { get; set; } = "";
+
 	[Property] public GameObject Body { get; set; }
 
 	public SceneModel model;
@@ -35,6 +40,8 @@ public class EnemyController : BaseComponent
 	NavGenComponent navgen { get; set; }
 
 	ColliderBaseComponent col { get; set; }
+
+	TimeUntil timerIdleSound = new Random().Float( 4f, 12f );
 
 	public override void OnEnabled()
 	{
@@ -65,6 +72,9 @@ public class EnemyController : BaseComponent
 		model.SetAnimParameter( "hit", true );
 		_characterController.Velocity = -Body.Transform.Rotation.Forward * 50f;
 		TimeSinceDamage = 0f;
+
+		if ( !string.IsNullOrEmpty( HurtSound ) )
+			Sound.FromWorld( HurtSound, Transform.Position );
 	}
 
 	bool dead;
@@ -73,6 +83,9 @@ public class EnemyController : BaseComponent
 	{
 		dead = true;
 		model.SetAnimParameter( "die", true );
+
+		if ( !string.IsNullOrEmpty( DeathSound ) )
+			Sound.FromWorld( DeathSound, Transform.Position );
 
 		await GameTask.DelaySeconds( 0.5f );
 		var modelcomp = GetComponent<AnimatedModelComponent>( false, true );
@@ -127,6 +140,8 @@ public class EnemyController : BaseComponent
 		}
 
 		col.OnPhysicsChanged();
+
+		MakeIdleSounds();
 
 		if ( !IsAggro && TimeSinceLastMove > 5f && navgen.Initialized )
 		{
@@ -198,6 +213,8 @@ public class EnemyController : BaseComponent
 					Player.GetComponent<HealthComponent>().Damage( AttackDamage );
 					model.SetAnimParameter( "attack", true );
 					nextAttackTime = Time.Now + TimeBetweenAttacks;
+					if ( !string.IsNullOrEmpty( AttackSound ) )
+						Sound.FromWorld( AttackSound, Transform.Position );
 				}
 			}
 
@@ -262,6 +279,17 @@ public class EnemyController : BaseComponent
 				Body.Transform.Rotation = Rotation.Lerp( Body.Transform.Rotation, targetRotation, Time.Delta * 10f );
 			}
 		}
+	}
+
+	void MakeIdleSounds()
+	{
+		if ( timerIdleSound > 0f ) return;
+		if ( !string.IsNullOrEmpty( IdleSound ) )
+		{
+			Sound.FromWorld( IdleSound, Transform.Position );
+		}
+
+		timerIdleSound = new Random().Float( 4f, 12f );
 	}
 
 	public void SetAnimLookAt( string name, Transform origin, Vector3 eyePositionInWorld, Vector3 lookatPositionInWorld )
