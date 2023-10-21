@@ -219,7 +219,7 @@
               "HorizontalAlign": "Center",
               "LookAtCamera": true,
               "PanelSize": "2048,512",
-              "Position": "0,0,0",
+              "Position": "-1,-22,16",
               "RenderScale": 1,
               "VerticalAlign": "Center"
             },
