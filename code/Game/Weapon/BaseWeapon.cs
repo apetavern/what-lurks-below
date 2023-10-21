@@ -29,6 +29,10 @@ public class BaseWeapon : GameObject
 
 	protected AnimatedModelComponent c_AnimatedModel;
 
+
+	public BBox LastHitBbox;
+
+
 	internal BaseWeapon( bool enabled, string name ) : base( enabled, name )
 	{
 		c_AnimatedModel = AddComponent<AnimatedModelComponent>( false );
@@ -71,6 +75,8 @@ public class BaseWeapon : GameObject
 			if ( tr.Hit && tr.Body.GameObject is GameObject hitObject )
 			{
 				HealthComponent hitHealth = hitObject.Parent?.GetComponent<HealthComponent>() ?? null;
+
+				LastHitBbox = hitObject.GetBounds();
 
 				if ( hitHealth == null )
 				{

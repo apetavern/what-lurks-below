@@ -89,7 +89,9 @@ public class PistolWeapon : BaseWeapon
 	{
 		base.Update();
 
-		if (ResourceBar.Instance is not null)
+		Gizmo.Draw.LineBBox( LastHitBbox );
+
+		if ( ResourceBar.Instance is not null )
 			ResourceBar.Instance.Ammo = AmmoCount;
 	}
 }
