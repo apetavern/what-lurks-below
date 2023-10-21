@@ -1,0 +1,32 @@
+﻿Minimap
+{
+  position: absolute;
+  top: 60px;
+  right: 8px;
+  border-radius: 50%;
+  overflow: hidden;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+
+  ScenePanel
+  {
+    width: 400px;
+    height: 400px;
+  }
+
+  .vignette
+  {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background-image: radial-gradient(rgba(0,0,0,0.2) 0%, rgba(0,0,0,1) 48%, rgba(0,0,0,1) 100%);
+  }
+
+  &.hidden
+  {
+    opacity: 0;
+  }
+}

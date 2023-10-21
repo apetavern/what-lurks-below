@@ -362,6 +362,20 @@
               "__enabled": true
             }
           ]
+        },
+        {
+          "Id": "46fb9f15-493d-4e9c-aea5-a38a6a82d09f",
+          "Name": "Minimap",
+          "Enabled": true,
+          "Position": "0,0,0",
+          "Rotation": "0,0,0,1",
+          "Scale": "1,1,1",
+          "Components": [
+            {
+              "__type": "Minimap",
+              "__enabled": true
+            }
+          ]
         }
       ]
     },

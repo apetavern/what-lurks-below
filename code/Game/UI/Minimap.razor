@@ -1,0 +1,50 @@
+﻿@using System;
+@using System.Collections.Generic;
+@using System.Linq;
+@using BrickJam.Player;
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+
+<root>
+    <ScenePanel @ref="Display" />
+    <div class="vignette" />
+</root>
+
+@code
+{    
+    public static Minimap Instance { get; set; }
+
+    ScenePanel Display;
+    GameObject Player;
+    NavGenComponent NavGen;
+
+    public Minimap()
+    {
+        Instance = this;
+    }
+    
+    public override void Update()
+    {
+        base.Update();
+
+        Player ??= Scene.GetAllObjects( true ).FirstOrDefault( p => p.Name == "player" );
+        NavGen ??= Scene.GetAllObjects( true ).Where( X => X.GetComponent<NavGenComponent>() != null ).FirstOrDefault().GetComponent<NavGenComponent>();
+
+        Panel.SetClass( "hidden", NavGen?.Initialized != true );
+
+        if ( Player == null || Display == null ) return;
+
+        var playerPos = Player.Transform.Position;
+
+        Display.Camera.Ortho = true;
+        Display.Camera.OrthoWidth = 1024;
+        Display.Camera.OrthoHeight = 1024;
+        Display.Camera.ZFar = 2000f;
+        
+        Display.World = Scene.SceneWorld;
+        Display.Camera.Position = new Vector3( playerPos.x, playerPos.y, playerPos.z + 100f);
+        Display.Camera.Rotation = Rotation.LookAt(Vector3.Down, Vector3.Up);
+    }
+}
+
