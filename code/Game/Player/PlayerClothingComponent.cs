@@ -21,11 +21,12 @@ public sealed class PlayerClothingComponent : BaseComponent
 		var allclothes = ResourceLibrary.GetAll<Clothing>();
 
 		//clothes.Clothing.Add( allclothes.Where( X => X.Category == Clothing.ClothingCategory.Hair ).OrderBy( item => Game.Random.Next() ).FirstOrDefault() );
-		clothes.Clothing.Add( allclothes.Where( X => X.Category == Clothing.ClothingCategory.Tops ).OrderBy( item => Game.Random.Next() ).FirstOrDefault() );
-		clothes.Clothing.Add( allclothes.Where( X => X.Category == Clothing.ClothingCategory.Bottoms ).OrderBy( item => Game.Random.Next() ).FirstOrDefault() );
+		clothes.Clothing.Add( ResourceLibrary.Get<Clothing>( "models/citizen_clothes/shirt/jumpsuit/blue_jumpsuit.clothing" ) );
 		clothes.Clothing.Add( allclothes.Where( X => X.Category == Clothing.ClothingCategory.Footwear ).OrderBy( item => Game.Random.Next() ).FirstOrDefault() );
 		clothes.Clothing.Add( allclothes.Where( X => X.Category == Clothing.ClothingCategory.Skin ).OrderBy( item => Game.Random.Next() ).FirstOrDefault() );
 		clothes.Clothing.Add( allclothes.Where( X => X.Category == Clothing.ClothingCategory.Facial ).OrderBy( item => Game.Random.Next() ).FirstOrDefault() );
+
+
 
 		ClothingObjects = clothes.DressSceneObject( GetComponent<AnimatedModelComponent>().SceneObject );
 	}
