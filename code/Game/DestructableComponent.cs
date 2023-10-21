@@ -13,6 +13,7 @@ public sealed class DestructableComponent : BaseComponent
 
 	public void OnDeath()
 	{
+		Sound.FromWorld( "barrel_break", Transform.Position );
 		GameObject.Destroy();
 	}
 
