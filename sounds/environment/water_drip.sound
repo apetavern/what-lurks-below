@@ -1,0 +1,18 @@
+{
+  "UI": false,
+  "Volume": "1.00,1.00,0",
+  "Pitch": "1.00,1.00,0",
+  "Decibels": 70,
+  "SelectionMode": "Random",
+  "Sounds": [
+    "sounds/environment/drip_1.vsnd",
+    "sounds/environment/drip_2.vsnd",
+    "sounds/environment/drip_3.vsnd",
+    "sounds/environment/drip_4.vsnd",
+    "sounds/environment/drip_5.vsnd",
+    "sounds/environment/drip_6.vsnd"
+  ],
+  "MaximumDistance": 1143.9335,
+  "MinimumDistance": 57.196674,
+  "__references": []
+}
