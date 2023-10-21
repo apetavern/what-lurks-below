@@ -34,6 +34,8 @@ public class EnemyController : BaseComponent
 
 	NavGenComponent navgen { get; set; }
 
+	ColliderBaseComponent col { get; set; }
+
 	public override void OnEnabled()
 	{
 		Player = Scene.GetAllObjects( true ).FirstOrDefault( x => x.Name == "player" );
@@ -42,6 +44,8 @@ public class EnemyController : BaseComponent
 		HealthComponent healthComponent = GameObject.GetComponent<HealthComponent>();
 		healthComponent.OnDeath += OnDeath;
 		healthComponent.OnDamage += OnDamaged;
+
+		col = GetComponent<ColliderBaseComponent>( false, true );
 
 		var rng = new Random();
 
@@ -121,6 +125,8 @@ public class EnemyController : BaseComponent
 		{
 			return;
 		}
+
+		col.OnPhysicsChanged();
 
 		if ( !IsAggro && TimeSinceLastMove > 5f && navgen.Initialized )
 		{
