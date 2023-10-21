@@ -39,6 +39,12 @@
       {
         "__type": "WeaponComponent",
         "__enabled": true
+      },
+      {
+        "__type": "UseComponent",
+        "__enabled": true,
+        "UseCooldown": 1,
+        "UseReach": 50.17
       }
     ],
     "Children": [
