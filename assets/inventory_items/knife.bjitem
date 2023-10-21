@@ -2,12 +2,10 @@
   "Name": "Knife",
   "Weight": 4.2,
   "Length": 1,
-  "Height": 3,
+  "Height": 2,
   "ExamineText": "Sharp and pointy.",
-  "Position": {
-    "X": 3
-  },
-  "ImagePath": "inventory_icons/knife_icon.png",
+  "Position": {},
+  "ImagePath": "ui/knife_icon.png",
   "InventoryActions": [
     "Equip",
     "Drop",
