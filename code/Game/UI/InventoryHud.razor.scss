@@ -11,6 +11,8 @@
   .pane {
     justify-content: space-between;
     background-image: linear-gradient(to bottom, #333, #222);
+    bottom: 100px;
+    left: 100px;
   }
   
   .grid-line-vertical {
@@ -52,6 +54,8 @@
 }
 
 InventoryPane {
-  bottom: 100px;
-  left: 100px;
+  width: 100%;
+  height: 100%;
+  align-items: flex-end;
+  justify-content: flex-start;
 }
