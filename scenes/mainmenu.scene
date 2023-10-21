@@ -1,0 +1,230 @@
+{
+  "GameObjects": [
+    {
+      "Id": "881e4245-43eb-4e4c-9f8d-e11f0927b87e",
+      "Name": "Directional Light",
+      "Enabled": true,
+      "Position": "10.48564,-0.000002499971,-0.0000006249927",
+      "Rotation": "0.4351622,0.4351622,-0.5573454,0.5573453",
+      "Scale": "1,1,1",
+      "Components": [
+        {
+          "__type": "DirectionalLightComponent",
+          "__enabled": true,
+          "LightColor": "0.91373,0.98039,1,1",
+          "Shadows": true,
+          "SkyColor": "0.05882,0.07451,0.08235,1"
+        }
+      ]
+    },
+    {
+      "Id": "50252a95-eb28-4c1b-84f3-cb17134ee8d8",
+      "Name": "SkyBox",
+      "Enabled": true,
+      "Position": "10.71732,0,0",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
+      "Components": [
+        {
+          "__type": "SkyBox2D",
+          "__enabled": true,
+          "SkyMaterial": "materials/skybox/light_test_sky_sunset.vmat",
+          "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "Id": "f215c0f1-e92f-4013-a59e-5fd80af07951",
+      "Name": "Camera",
+      "Enabled": true,
+      "Position": "-83.74336,-90.47919,123.8379",
+      "Rotation": "-0.147257,0.2955188,0.4209796,0.844843",
+      "Scale": "1,1,1",
+      "Components": [
+        {
+          "__type": "CameraComponent",
+          "__enabled": true,
+          "BackgroundColor": "0.33333,0.46275,0.52157,1",
+          "ClearFlags": "Color, Depth, Stencil",
+          "FieldOfView": 60,
+          "ZFar": 10000,
+          "ZNear": 10
+        },
+        {
+          "__type": "GameStartComponent",
+          "__enabled": true,
+          "bezier": "228a0acf-74a6-4b3c-be93-27381831e26f",
+          "blackFade": "368caf02-14f9-464a-9724-6c0aa4338978"
+        }
+      ],
+      "Children": [
+        {
+          "Id": "368caf02-14f9-464a-9724-6c0aa4338978",
+          "Name": "Plane",
+          "Enabled": true,
+          "Position": "12.0129,-0.000005235489,-1.80676",
+          "Rotation": "0.00000003888651,-0.6524074,0.000000000000001254819,0.7578681",
+          "Scale": "0.354076,0.354076,0.354076",
+          "Components": [
+            {
+              "__type": "ModelComponent",
+              "__enabled": true,
+              "MaterialOverride": "materials/black_matte.vmat",
+              "Model": "models/dev/plane.vmdl",
+              "ShouldCastShadows": true,
+              "Tint": "1,1,1,0"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "228a0acf-74a6-4b3c-be93-27381831e26f",
+      "Name": "Bezier",
+      "Enabled": true,
+      "Position": "2.515308,-0.000003044886,0.7659369",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
+      "Components": [
+        {
+          "__type": "BezierAnimationComponent",
+          "__enabled": true,
+          "Point1": "935ce09c-39b9-47cf-a3f0-f1a624ac937e",
+          "Point2": "fd41d1e5-54df-4544-9beb-087a55eb1e6f",
+          "segments": 20
+        }
+      ],
+      "Children": [
+        {
+          "Id": "fd41d1e5-54df-4544-9beb-087a55eb1e6f",
+          "Name": "point2",
+          "Enabled": true,
+          "Position": "-4.885577,0.7233288,-99.97002",
+          "Rotation": "-0.7414533,0.0380564,-0.6530419,-0.1494531",
+          "Scale": "150,150,150"
+        },
+        {
+          "Id": "935ce09c-39b9-47cf-a3f0-f1a624ac937e",
+          "Name": "point1",
+          "Enabled": true,
+          "Position": "-86.25867,-90.47918,123.072",
+          "Rotation": "-0.1472569,0.2955188,0.4209795,0.8448429",
+          "Scale": "1,1,1"
+        }
+      ]
+    },
+    {
+      "Id": "9d0dca31-9e08-4c35-bae2-02e93bc5acd7",
+      "Name": "Cube",
+      "Enabled": true,
+      "Position": "0,0,6.054453",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
+      "Components": [
+        {
+          "__type": "ModelComponent",
+          "__enabled": true,
+          "MaterialOverride": null,
+          "Model": "models/manhole/manhole_01.vmdl",
+          "ShouldCastShadows": true,
+          "Tint": "1,1,1,1"
+        }
+      ],
+      "Children": [
+        {
+          "Id": "674aca8a-c305-4e2d-83c2-549636b8dfa1",
+          "Name": "Cube",
+          "Enabled": true,
+          "Position": "0,0,-92.51689",
+          "Rotation": "0,0,0,1",
+          "Scale": "0.4356313,0.4356313,0.4356313",
+          "Components": [
+            {
+              "__type": "ModelComponent",
+              "__enabled": true,
+              "MaterialOverride": null,
+              "Model": "models/misc/menu_pipe.vmdl",
+              "ShouldCastShadows": true,
+              "Tint": "1,1,1,1"
+            }
+          ]
+        },
+        {
+          "Id": "16aecfe3-40ad-4ece-9027-65dbd17ec29d",
+          "Name": "Cube",
+          "Enabled": true,
+          "Position": "0,0,-230.1703",
+          "Rotation": "0,0,0,1",
+          "Scale": "1.086931,1.086931,1.086931",
+          "Components": [
+            {
+              "__type": "ModelComponent",
+              "__enabled": true,
+              "MaterialOverride": null,
+              "Model": "models/misc/menu_pipe.vmdl",
+              "ShouldCastShadows": true,
+              "Tint": "1,1,1,1"
+            }
+          ]
+        },
+        {
+          "Id": "6205b64b-2233-4239-a3dd-8f13ac493883",
+          "Name": "Plane",
+          "Enabled": true,
+          "Position": "0,0,-187.8949",
+          "Rotation": "0,0,0,1",
+          "Scale": "1,1,1",
+          "Components": [
+            {
+              "__type": "ModelComponent",
+              "__enabled": true,
+              "MaterialOverride": "materials/black_matte.vmat",
+              "Model": "models/dev/plane.vmdl",
+              "ShouldCastShadows": true,
+              "Tint": "1,1,1,1"
+            }
+          ]
+        },
+        {
+          "Id": "7bdf6f83-f8ee-4308-8945-e38f5b87008a",
+          "Name": "Object",
+          "Enabled": true,
+          "Position": "0,0,-118.1585",
+          "Rotation": "0,0,0,1",
+          "Scale": "1,1,1",
+          "Components": [
+            {
+              "__type": "GradientFog",
+              "__enabled": true,
+              "Color": "0.33129,0.4802,0.22346,1",
+              "EndDistance": 1024,
+              "FalloffExponent": 1,
+              "Height": 100,
+              "StartDistance": 0,
+              "VerticalFalloffExponent": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "f0661946-bd0f-4997-9598-aac102ecf5e6",
+      "Name": "Cube (1)",
+      "Enabled": true,
+      "Position": "0,46.64369,8.449437",
+      "Rotation": "-0.02573364,-0.03221124,-0.7806235,0.6236413",
+      "Scale": "1,1,1",
+      "Components": [
+        {
+          "__type": "ModelComponent",
+          "__enabled": true,
+          "MaterialOverride": null,
+          "Model": "models/manhole/manhole_02.vmdl",
+          "ShouldCastShadows": true,
+          "Tint": "1,1,1,1"
+        }
+      ]
+    }
+  ],
+  "__references": []
+}
