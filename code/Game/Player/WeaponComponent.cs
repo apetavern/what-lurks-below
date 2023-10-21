@@ -17,7 +17,7 @@ public class WeaponComponent : BaseComponent
 
 		_player = Scene.GetAllObjects( true ).FirstOrDefault( p => p.Name == "player" );
 		_body = _player?.GetComponent<PlayerController>().Body;
-		Equip( new PistolWeapon( true, "Pistol" ) );
+		Equip( new KnifeWeapon( true, "Knife" ) );
 	}
 
 	public void Equip( BaseWeapon weapon )
@@ -26,6 +26,10 @@ public class WeaponComponent : BaseComponent
 		{
 			Holster( ActiveWeapon );
 			return;
+		}
+		else
+		{
+			Holster( ActiveWeapon );
 		}
 
 		ActiveWeapon = weapon;
