@@ -223,9 +223,22 @@ public partial class MapGeneratorComponent : BaseComponent
 				for ( int i = 0; i < hall.Count; i++ )
 				{
 					var tr = Physics.Trace.Ray( hall[i], hall[i] - Vector3.Up * 5f ).WithoutTags( "navgen" ).Run();
-					if ( !tr.Hit && hall[i] != Vector3.Zero )//|| (tr.Body.GameObject as GameObject).GetComponent<RoomChunkComponent>( false ) == null 
+					if ( !tr.Hit && hall[i] != Vector3.Zero )
 					{
 						SpawnPrefabFromPath( Hallways[Game.Random.Int( 0, Hallways.Count - 1 )], hall[i], Rotation.Identity );
+					}
+					else if ( tr.Hit && hall[i] != Vector3.Zero )
+					{
+						List<Vector3> direction = new List<Vector3> { Vector3.Forward, Vector3.Backward, Vector3.Left, Vector3.Right };
+						for ( int dir = 0; dir < direction.Count; dir++ )
+						{
+							var pos = hall[i] + direction[dir] * 128f;
+							tr = Physics.Trace.Ray( pos, pos - Vector3.Up * 5f ).WithoutTags( "navgen" ).Run();
+							if ( !tr.Hit )
+							{
+								SpawnPrefabFromPath( Hallways[Game.Random.Int( 0, Hallways.Count - 1 )], pos, Rotation.Identity );
+							}
+						}
 					}
 				}
 			}
