@@ -128,7 +128,7 @@ public class ShotgunWeapon : BaseWeapon
 
 			muzzleflash.OnEnabled();
 
-			Sound.FromWorld( "weapons/rust_pistol/sound/rust_pistol.shoot.sound", Transform.Position );
+			Sound.FromWorld( "weapons/rust_pumpshotgun/sounds/rust_pumpshotgun.shoot.sound", Transform.Position );
 		}
 		else
 		{
