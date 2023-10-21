@@ -1,7 +1,7 @@
 {
   "RootObject": {
-    "Id": "4643e42e-0280-4cdc-9bcb-b099968de18b",
-    "Name": "test_enemy",
+    "Id": "88dcd0b8-6a46-4db5-8a7f-f2be5dadbbef",
+    "Name": "gatorman",
     "Enabled": true,
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
@@ -12,19 +12,19 @@
         "__enabled": true,
         "Acceleration": 10,
         "GroundAngle": 45,
-        "Height": 24,
+        "Height": 79.67,
         "Radius": 16,
         "StepHeight": 18
       },
       {
         "__type": "EnemyController",
         "__enabled": true,
-        "AggroRange": 125.050026,
+        "AggroRange": 128,
         "AttackDamage": 1,
         "AttackRange": 64,
-        "Body": "3142addf-7994-4b5e-99ca-7332a5237188",
+        "Body": "a4d4efe4-f96b-4951-b0ad-c386280b00a0",
         "Friction": 0.9499998,
-        "Speed": 34,
+        "Speed": 96,
         "TimeBetweenAttacks": 1
       },
       {
@@ -40,7 +40,7 @@
     ],
     "Children": [
       {
-        "Id": "3142addf-7994-4b5e-99ca-7332a5237188",
+        "Id": "a4d4efe4-f96b-4951-b0ad-c386280b00a0",
         "Name": "Epic Enemy",
         "Enabled": true,
         "Position": "0,0,0",
@@ -51,17 +51,17 @@
             "__type": "AnimatedModelComponent",
             "__enabled": true,
             "MaterialOverride": null,
-            "Model": "models/enemies/gooman/gooman.vmdl",
+            "Model": "models/enemies/gatorman/gatorman.vmdl",
             "ShouldCastShadows": true,
             "Tint": "1,1,1,1"
           }
         ]
       },
       {
-        "Id": "5255d985-b906-4bfb-a936-4680708d8b77",
+        "Id": "b4a69439-d3c3-4ffd-af73-40555f279f8d",
         "Name": "Collider",
         "Enabled": true,
-        "Position": "0,0,15.82238",
+        "Position": "0,0,41.82742",
         "Rotation": "0,0,0,1",
         "Scale": "1,1,1",
         "Components": [
@@ -69,7 +69,7 @@
             "__type": "ColliderBoxComponent",
             "__enabled": true,
             "IsTrigger": true,
-            "Scale": "32,32,32",
+            "Scale": "32,32,82.69981",
             "Surface": null,
             "Tags": "enemy"
           },
