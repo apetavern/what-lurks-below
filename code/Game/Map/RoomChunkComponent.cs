@@ -29,7 +29,7 @@ public sealed class RoomChunkComponent : BaseComponent
 
 	public void ClearEnemiesAndItems()
 	{
-		var enemies = GameObject.GetComponents<EnemySpawner>( false, true );
+		var enemies = GameObject.GetComponents<EnemyController>( false, true );
 		for ( int i = 0; i < enemies.Count(); i++ )
 		{
 			enemies.ElementAt( i ).GameObject.Destroy();
