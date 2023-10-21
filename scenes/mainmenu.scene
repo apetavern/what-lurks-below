@@ -5,7 +5,7 @@
       "Name": "Directional Light",
       "Enabled": true,
       "Position": "10.48564,-0.000002499971,-0.0000006249927",
-      "Rotation": "0.4351622,0.4351622,-0.5573454,0.5573453",
+      "Rotation": "-0.3173008,0.1551005,0.8405138,0.4108535",
       "Scale": "1,1,1",
       "Components": [
         {
@@ -115,7 +115,7 @@
     },
     {
       "Id": "9d0dca31-9e08-4c35-bae2-02e93bc5acd7",
-      "Name": "Cube",
+      "Name": "Manhole_01",
       "Enabled": true,
       "Position": "0,0,6.054453",
       "Rotation": "0,0,0,1",
@@ -133,7 +133,7 @@
       "Children": [
         {
           "Id": "674aca8a-c305-4e2d-83c2-549636b8dfa1",
-          "Name": "Cube",
+          "Name": "menu_pipe",
           "Enabled": true,
           "Position": "0,0,-92.51689",
           "Rotation": "0,0,0,1",
@@ -151,7 +151,7 @@
         },
         {
           "Id": "16aecfe3-40ad-4ece-9027-65dbd17ec29d",
-          "Name": "Cube",
+          "Name": "menu_pipe",
           "Enabled": true,
           "Position": "0,0,-230.1703",
           "Rotation": "0,0,0,1",
@@ -187,7 +187,7 @@
         },
         {
           "Id": "7bdf6f83-f8ee-4308-8945-e38f5b87008a",
-          "Name": "Object",
+          "Name": "fog",
           "Enabled": true,
           "Position": "0,0,-118.1585",
           "Rotation": "0,0,0,1",
@@ -233,7 +233,7 @@
     },
     {
       "Id": "f0661946-bd0f-4997-9598-aac102ecf5e6",
-      "Name": "Cube (1)",
+      "Name": "manhole_02",
       "Enabled": true,
       "Position": "0,46.64369,8.449437",
       "Rotation": "-0.02573364,-0.03221124,-0.7806235,0.6236413",
@@ -280,6 +280,286 @@
       "Components": [
         {
           "__type": "SubtleCameraMovementComponent",
+          "__enabled": true
+        }
+      ]
+    },
+    {
+      "Id": "a446036c-0f17-46a9-908d-9eebad6d60bf",
+      "Name": "background",
+      "Enabled": true,
+      "Position": "-81.95909,22.19058,0",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
+      "Children": [
+        {
+          "Id": "6ec45a21-1910-4dfa-95a0-3858ce4d943d",
+          "Name": "streetlight_01",
+          "Enabled": true,
+          "Position": "312,-116.4469,12",
+          "Rotation": "0.00000005956496,-0.000000001536902,1,-0.0000006397578",
+          "Scale": "1,1,1",
+          "Components": [
+            {
+              "__type": "ModelComponent",
+              "__enabled": true,
+              "MaterialOverride": null,
+              "Model": "models/environment/streetlight_01.vmdl",
+              "ShouldCastShadows": true,
+              "Tint": "1,1,1,1"
+            }
+          ],
+          "Children": [
+            {
+              "Id": "859f81e8-1ba0-441c-905f-a1037ba83990",
+              "Name": "Spot Light",
+              "Enabled": true,
+              "Position": "24.61941,0.000009745956,270",
+              "Rotation": "-0.00000004126236,0.5479383,0.00000002179707,0.8365185",
+              "Scale": "1,1,1",
+              "Components": [
+                {
+                  "__type": "SpotLightComponent",
+                  "__enabled": true,
+                  "Attenuation": 1,
+                  "ConeInner": 15,
+                  "ConeOuter": 35,
+                  "Cookie": null,
+                  "LightColor": "28.21782,29.59485,30,1",
+                  "Radius": 400
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "Id": "8d890e7d-90f2-42cf-8b69-e0295d6f92b4",
+          "Name": "floor_01",
+          "Enabled": true,
+          "Position": "128,384,4.1",
+          "Rotation": "0,0,0,1",
+          "Scale": "1,1,1",
+          "Components": [
+            {
+              "__type": "ModelComponent",
+              "__enabled": true,
+              "MaterialOverride": "materials/urban/asphalt_01.vmat",
+              "Model": "models/environment/floor_01.vmdl",
+              "ShouldCastShadows": true,
+              "Tint": "1,1,1,1"
+            }
+          ]
+        },
+        {
+          "Id": "7aa99ec4-3d98-4479-b9d1-5a1812825665",
+          "Name": "floor_01",
+          "Enabled": true,
+          "Position": "128,256,4.1",
+          "Rotation": "0,0,0,1",
+          "Scale": "1,1,1",
+          "Components": [
+            {
+              "__type": "ModelComponent",
+              "__enabled": true,
+              "MaterialOverride": "materials/urban/asphalt_01.vmat",
+              "Model": "models/environment/floor_01.vmdl",
+              "ShouldCastShadows": true,
+              "Tint": "1,1,1,1"
+            }
+          ]
+        },
+        {
+          "Id": "6c373bfb-ee0c-4aa0-9a91-ebbc246f13bd",
+          "Name": "floor_01",
+          "Enabled": true,
+          "Position": "128,128,4.1",
+          "Rotation": "0,0,0,1",
+          "Scale": "1,1,1",
+          "Components": [
+            {
+              "__type": "ModelComponent",
+              "__enabled": true,
+              "MaterialOverride": "materials/urban/asphalt_01.vmat",
+              "Model": "models/environment/floor_01.vmdl",
+              "ShouldCastShadows": true,
+              "Tint": "1,1,1,1"
+            }
+          ]
+        },
+        {
+          "Id": "6d4bf649-9867-4d84-89d4-d6f60f0d049c",
+          "Name": "drain_01",
+          "Enabled": true,
+          "Position": "224,63.71153,4",
+          "Rotation": "0,0,0,1",
+          "Scale": "1,1,1",
+          "Components": [
+            {
+              "__type": "ModelComponent",
+              "__enabled": true,
+              "MaterialOverride": null,
+              "Model": "models/manhole/drain_01.vmdl",
+              "ShouldCastShadows": true,
+              "Tint": "1,1,1,1"
+            }
+          ]
+        },
+        {
+          "Id": "8d850913-f437-4a9c-829d-37279e8965e4",
+          "Name": "Sidewalk_01",
+          "Enabled": true,
+          "Position": "-128.0001,512,12",
+          "Rotation": "0.00000005956133,-0.000000001607673,1,-0.0000006397578",
+          "Scale": "1,1,1",
+          "__Prefab": "prefabs/pieces/sidewalk_01.object"
+        },
+        {
+          "Id": "4b1885d1-8e90-4992-83db-859825b4492e",
+          "Name": "Sidewalk_01",
+          "Enabled": true,
+          "Position": "-128.0001,384,12",
+          "Rotation": "0.00000005956133,-0.000000001607673,1,-0.0000006397578",
+          "Scale": "1,1,1",
+          "__Prefab": "prefabs/pieces/sidewalk_01.object"
+        },
+        {
+          "Id": "da411f64-4c2e-443c-afd8-e19338d5473b",
+          "Name": "Sidewalk_01",
+          "Enabled": true,
+          "Position": "-128,256,12",
+          "Rotation": "0.00000005956133,-0.000000001607673,1,-0.0000006397578",
+          "Scale": "1,1,1",
+          "__Prefab": "prefabs/pieces/sidewalk_01.object"
+        },
+        {
+          "Id": "75866aa2-586e-423b-8a0a-7f25b3ba94a9",
+          "Name": "Sidewalk_01",
+          "Enabled": true,
+          "Position": "256,384,12",
+          "Rotation": "0,0,0,1",
+          "Scale": "1,1,1",
+          "__Prefab": "prefabs/pieces/sidewalk_01.object"
+        },
+        {
+          "Id": "0ad6bee9-29e4-4755-829e-ce1335f3dcf0",
+          "Name": "Sidewalk_01",
+          "Enabled": true,
+          "Position": "256,256,12",
+          "Rotation": "0,0,0,1",
+          "Scale": "1,1,1",
+          "__Prefab": "prefabs/pieces/sidewalk_01.object"
+        },
+        {
+          "Id": "884c9510-e3a6-4308-a764-67163a4e6415",
+          "Name": "Sidewalk_01",
+          "Enabled": true,
+          "Position": "256,128,12",
+          "Rotation": "0,0,0,1",
+          "Scale": "1,1,1",
+          "__Prefab": "prefabs/pieces/sidewalk_01.object"
+        },
+        {
+          "Id": "c73a9d9b-deb5-40d8-8bac-8df7fbed9b23",
+          "Name": "Sidewalk_01",
+          "Enabled": true,
+          "Position": "256,0,12",
+          "Rotation": "0,0,0,1",
+          "Scale": "1,1,1",
+          "__Prefab": "prefabs/pieces/sidewalk_01.object"
+        },
+        {
+          "Id": "9251fc82-819d-4bc4-a94c-857a9d870d40",
+          "Name": "Sidewalk_01",
+          "Enabled": true,
+          "Position": "256,-128,12",
+          "Rotation": "0,0,0,1",
+          "Scale": "1,1,1",
+          "__Prefab": "prefabs/pieces/sidewalk_01.object"
+        },
+        {
+          "Id": "5ef3e0ca-b4ae-45e4-b132-6e76c3578222",
+          "Name": "Sidewalk_01",
+          "Enabled": true,
+          "Position": "256,-256,12",
+          "Rotation": "0,0,0,1",
+          "Scale": "1,1,1",
+          "__Prefab": "prefabs/pieces/sidewalk_01.object"
+        },
+        {
+          "Id": "9ba983f4-46e7-4313-a654-b4b81e2450ed",
+          "Name": "Sidewalk_01",
+          "Enabled": true,
+          "Position": "256,-384,12",
+          "Rotation": "0,0,0,1",
+          "Scale": "1,1,1",
+          "__Prefab": "prefabs/pieces/sidewalk_01.object"
+        }
+      ]
+    },
+    {
+      "Id": "73272d74-e00f-4749-a8d4-23a3cd20695c",
+      "Name": "Plane",
+      "Enabled": true,
+      "Position": "595.9877,-399.8342,209.4918",
+      "Rotation": "-0.6761006,0.2070974,-0.6761002,-0.2070973",
+      "Scale": "5,5,5",
+      "Components": [
+        {
+          "__type": "ModelComponent",
+          "__enabled": true,
+          "MaterialOverride": "materials/urban/asphalt_02.vmat",
+          "Model": "models/dev/plane.vmdl",
+          "ShouldCastShadows": true,
+          "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "Id": "4e166187-afe1-42a2-8555-ff6a493a0c7f",
+      "Name": "Plane",
+      "Enabled": true,
+      "Position": "876.0298,35.52715,372.331",
+      "Rotation": "-0.7068491,-0.01909919,-0.7068487,0.01909906",
+      "Scale": "10,10,10",
+      "Components": [
+        {
+          "__type": "ModelComponent",
+          "__enabled": true,
+          "MaterialOverride": "materials/urban/asphalt_02.vmat",
+          "Model": "models/dev/plane.vmdl",
+          "ShouldCastShadows": true,
+          "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "Id": "2553f288-b8e2-41cf-8b3d-b889f84bebcf",
+      "Name": "Plane",
+      "Enabled": true,
+      "Position": "253.0647,-1070.536,-29.95926",
+      "Rotation": "-0.6267748,0.3273439,-0.6267742,-0.3273441",
+      "Scale": "10,10,10",
+      "Components": [
+        {
+          "__type": "ModelComponent",
+          "__enabled": true,
+          "MaterialOverride": "materials/urban/asphalt_02.vmat",
+          "Model": "models/dev/plane.vmdl",
+          "ShouldCastShadows": true,
+          "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "Id": "d03ec20d-afea-47a8-b822-42eee088feea",
+      "Name": "SoundMan",
+      "Enabled": true,
+      "Position": "0,0,0",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
+      "Components": [
+        {
+          "__type": "SoundManagerComponent",
           "__enabled": true
         }
       ]

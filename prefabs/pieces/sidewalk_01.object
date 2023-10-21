@@ -1,0 +1,85 @@
+{
+  "RootObject": {
+    "Id": "9ba983f4-46e7-4313-a654-b4b81e2450ed",
+    "Name": "sidewalk_01",
+    "Enabled": true,
+    "Position": "0,0,0",
+    "Rotation": "0,0,0,1",
+    "Scale": "1,1,1",
+    "Children": [
+      {
+        "Id": "6eeb971b-b72f-4485-9a85-606b7c82867f",
+        "Name": "floor_01",
+        "Enabled": true,
+        "Position": "0,0,-7.9",
+        "Rotation": "0,0,0,1",
+        "Scale": "1,1,1",
+        "Components": [
+          {
+            "__type": "ModelComponent",
+            "__enabled": true,
+            "MaterialOverride": "materials/urban/asphalt_01.vmat",
+            "Model": "models/environment/floor_01.vmdl",
+            "ShouldCastShadows": true,
+            "Tint": "1,1,1,1"
+          }
+        ]
+      },
+      {
+        "Id": "72c61d99-c972-4c56-88c8-b563410f4275",
+        "Name": "floor_01",
+        "Enabled": true,
+        "Position": "128,0,0",
+        "Rotation": "0,0,0,1",
+        "Scale": "1,1,1",
+        "Components": [
+          {
+            "__type": "ModelComponent",
+            "__enabled": true,
+            "MaterialOverride": "materials/urban/asphalt_02.vmat",
+            "Model": "models/environment/floor_01.vmdl",
+            "ShouldCastShadows": true,
+            "Tint": "1,1,1,1"
+          }
+        ]
+      },
+      {
+        "Id": "99fac5ea-eb54-496e-8fe1-328ca61fae54",
+        "Name": "floor_01",
+        "Enabled": true,
+        "Position": "256,0,0",
+        "Rotation": "0,0,0,1",
+        "Scale": "1,1,1",
+        "Components": [
+          {
+            "__type": "ModelComponent",
+            "__enabled": true,
+            "MaterialOverride": "materials/urban/asphalt_02.vmat",
+            "Model": "models/environment/floor_01.vmdl",
+            "ShouldCastShadows": true,
+            "Tint": "1,1,1,1"
+          }
+        ]
+      },
+      {
+        "Id": "8c72bf46-7be7-4a89-9b56-7455af0b206f",
+        "Name": "stairs_02",
+        "Enabled": true,
+        "Position": "0,0,0",
+        "Rotation": "0,0,0,1",
+        "Scale": "1,1,1",
+        "Components": [
+          {
+            "__type": "ModelComponent",
+            "__enabled": true,
+            "MaterialOverride": "materials/urban/urban_trim_01.vmat",
+            "Model": "models/environment/stairs_02.vmdl",
+            "ShouldCastShadows": true,
+            "Tint": "1,1,1,1"
+          }
+        ]
+      }
+    ]
+  },
+  "__references": []
+}
