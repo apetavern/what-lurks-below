@@ -6,7 +6,7 @@ using BrickJam.Game;
 using BrickJam.Game.UI;
 using BrickJam.Player;
 
-public class PlayerController : BaseComponent
+public class BrickPlayerController : BaseComponent
 {
 	[Property] public Vector3 Gravity { get; set; } = new Vector3( 0, 0, 800 );
 

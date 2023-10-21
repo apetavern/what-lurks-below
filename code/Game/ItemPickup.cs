@@ -13,7 +13,7 @@ public class ItemPickup : BaseComponent
 {
 	private BBox Bounds;
 	private GameObject Player;
-	private PlayerController Controller;
+	private BrickPlayerController Controller;
 	private SceneModel _sceneModel;
 	private PickupResource _pickupResource;
 
@@ -43,12 +43,12 @@ public class ItemPickup : BaseComponent
 		//
 		if ( pickup is null )
 			return;
-		
+
 		_pickupResource = pickup;
 
 		// Setup bounds
 		Player = Scene.GetAllObjects( true ).FirstOrDefault( p => p.Name == "player" );
-		Controller = Player?.GetComponent<PlayerController>();
+		Controller = Player?.GetComponent<BrickPlayerController>();
 		var box = new BBox();
 
 		var scale = GetComponent<ColliderBoxComponent>( false ).Scale;
@@ -112,7 +112,7 @@ public class ItemPickup : BaseComponent
 	{
 		var pHealth = Player.GetComponent<HealthComponent>();
 		pHealth.Health += 25f;
-		
+
 		Sound.FromScreen( "item_pickup" );
 		Destroy();
 	}
@@ -122,7 +122,7 @@ public class ItemPickup : BaseComponent
 		var inv = Player.GetComponent<Inventory>();
 		if ( inv is null )
 			return;
-		
+
 		var (hasSpace, invCoord) = inv.HasFreeSpace( _pickupResource.Item.Length, _pickupResource.Item.Height );
 		if ( !hasSpace )
 		{
@@ -133,7 +133,7 @@ public class ItemPickup : BaseComponent
 		var added = inv.PlaceItem( _pickupResource.Item, invCoord );
 		if ( !added )
 			return;
-		
+
 		Sound.FromScreen( "item_pickup" );
 		Destroy();
 	}

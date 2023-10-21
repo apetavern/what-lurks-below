@@ -11,7 +11,7 @@ public sealed class CameraTriggerComponent : BaseComponent
 
 	GameObject Player;
 
-	PlayerController Controller;
+	BrickPlayerController Controller;
 
 	[Property] GameObject CameraPoint { get; set; }
 
@@ -21,7 +21,7 @@ public sealed class CameraTriggerComponent : BaseComponent
 	{
 		base.OnEnabled();
 		Player = Scene.GetAllObjects( true ).FirstOrDefault( x => x.Name == "player" );
-		Controller = Player?.GetComponent<PlayerController>( false );
+		Controller = Player?.GetComponent<BrickPlayerController>( false );
 
 		var box = new BBox();
 		var scale = GetComponent<ColliderBoxComponent>( false ).Scale;
@@ -64,7 +64,7 @@ public sealed class CameraTriggerComponent : BaseComponent
 	{
 		Controller.Camera.Transform.Position = CameraPoint.Transform.Position;
 
-		Player.GetComponent<PlayerController>().CameraControl = false;
+		Player.GetComponent<BrickPlayerController>().CameraControl = false;
 
 		if ( !FollowPlayer )
 		{

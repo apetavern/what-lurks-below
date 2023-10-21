@@ -52,7 +52,7 @@ public partial class MapGeneratorComponent : BaseComponent
 
 		navgen.Initialized = false;
 
-		Player.Transform.Position = Player.GetComponent<PlayerController>().startpos;
+		Player.Transform.Position = Player.GetComponent<BrickPlayerController>().startpos;
 
 		var map = GameObject.Children.First().Children;
 		for ( int i = 0; i < map.Count; i++ )

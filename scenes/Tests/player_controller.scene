@@ -4,15 +4,31 @@
       "Id": "6847521e-c350-4273-a554-207b9e355843",
       "Name": "MoveHelperDebugVis",
       "Enabled": false,
-      "Position": "952.6196,597.6646,-1626.883",
-      "Rotation": "0.07155182,-0.007697098,-0.9580652,-0.2773578",
+      "Position": "1293.036,74.17367,-1596.871",
+      "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Components": [
         {
           "__type": "MoveHelperDebugVis",
           "__enabled": true,
-          "Gravity": "0,0,-5.7",
-          "Velocity": "7.950001,0,0"
+          "Gravity": "0,0,-180",
+          "Velocity": "140,0,0"
+        }
+      ]
+    },
+    {
+      "Id": "24612344-b2ef-460a-a6ac-25c300a69bc6",
+      "Name": "MoveHelperDebugVis",
+      "Enabled": false,
+      "Position": "1554.92,12.22214,-1528.38",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
+      "Components": [
+        {
+          "__type": "MoveHelperDebugVis",
+          "__enabled": true,
+          "Gravity": "0,0,-180",
+          "Velocity": "140,0,0"
         }
       ]
     },
@@ -29,22 +45,6 @@
           "__enabled": true,
           "Gravity": "0,0,-57",
           "Velocity": "194.25,0,0"
-        }
-      ]
-    },
-    {
-      "Id": "58e20959-7578-482d-80ec-9d109a3c5e4d",
-      "Name": "MoveHelperDebugVis",
-      "Enabled": false,
-      "Position": "2016.694,478.0431,-1632.491",
-      "Rotation": "-0.04875233,-0.386473,0.1152688,0.91377",
-      "Scale": "1,1,1",
-      "Components": [
-        {
-          "__type": "MoveHelperDebugVis",
-          "__enabled": true,
-          "Gravity": "0,0,-74.10001",
-          "Velocity": "508.3,0,0"
         }
       ]
     },
@@ -67,9 +67,9 @@
     {
       "Id": "e57822ac-e9df-4cf0-bba8-f8790bb22142",
       "Name": "MoveHelperDebugVis",
-      "Enabled": false,
-      "Position": "1149.363,59.6977,-1480.064",
-      "Rotation": "0.04205942,0.03163541,-0.7980621,0.6002724",
+      "Enabled": true,
+      "Position": "1158.875,56.95159,-1480.064",
+      "Rotation": "0.04778231,0.02206,-0.6536171,0.7549935",
       "Scale": "1,1,1",
       "Components": [
         {
@@ -78,6 +78,44 @@
           "BoxSize": "2,2,2",
           "SphereRadius": 4,
           "TraceLength": 1000000,
+          "Type": "Box"
+        }
+      ]
+    },
+    {
+      "Id": "b3b5ece6-cd1b-4b4d-9b36-cc88982a751d",
+      "Name": "Spot Light",
+      "Enabled": false,
+      "Position": "906.304,954.2023,-1254.256",
+      "Rotation": "0.05406565,0.2581995,-0.1976902,0.944102",
+      "Scale": "1,1,1",
+      "Components": [
+        {
+          "__type": "SpotLightComponent",
+          "__enabled": true,
+          "Attenuation": 1,
+          "ConeInner": 71.55,
+          "ConeOuter": 45.45,
+          "Cookie": "materials/effects/lightcookie.vtex",
+          "LightColor": "197.47,197.47,197.47,1",
+          "Radius": 3000
+        }
+      ]
+    },
+    {
+      "Id": "b95c2f7f-fbef-4475-9842-18769bc4c5eb",
+      "Name": "Trace Debug",
+      "Enabled": true,
+      "Position": "1638.155,42.05764,-1509.124",
+      "Rotation": "-0.00000002356131,0.3952931,0.0000000000000005460836,0.9185553",
+      "Scale": "2,2,2",
+      "Components": [
+        {
+          "__type": "TraceDebugVis",
+          "__enabled": true,
+          "BoxSize": "16,16,16",
+          "SphereRadius": 2,
+          "TraceLength": 1000,
           "Type": "Box"
         }
       ]
@@ -148,8 +186,8 @@
           "__enabled": true,
           "Acceleration": 10,
           "GroundAngle": 45,
-          "Height": 72,
-          "Radius": 16,
+          "Height": 71.05,
+          "Radius": 11.65,
           "StepHeight": 18
         },
         {
@@ -173,17 +211,44 @@
           "Id": "7daff6f8-35a7-4fa6-9d2f-3c4e693af8d7",
           "Name": "Body",
           "Enabled": true,
-          "Position": "0,-0.1896,0",
+          "Position": "0,-0.66093,0",
           "Rotation": "0,0,0,1",
           "Scale": "1,1,1",
           "Components": [
             {
               "__type": "AnimatedModelComponent",
               "__enabled": true,
+              "CreateBoneObjects": false,
               "MaterialOverride": null,
               "Model": "models/citizen/citizen.vmdl",
               "ShouldCastShadows": true,
               "Tint": "1,1,1,1"
+            }
+          ],
+          "Children": [
+            {
+              "Id": "975e3006-e7c3-46a5-9f30-c31a196c89f9",
+              "Name": "Name Tag UI",
+              "Enabled": true,
+              "Position": "-0.000001814945,0.1895752,80.7357",
+              "Rotation": "-0.00000005960058,0.000000000000005518709,-0.9999317,0.01167414",
+              "Scale": "1,1,1",
+              "Components": [
+                {
+                  "__type": "WorldPanel",
+                  "__enabled": true,
+                  "HorizontalAlign": "Center",
+                  "LookAtCamera": true,
+                  "PanelSize": "1024,256",
+                  "RenderScale": 1,
+                  "VerticalAlign": "Center"
+                },
+                {
+                  "__type": "NameTagPanel",
+                  "__enabled": true,
+                  "Name": "Prickly Pete"
+                }
+              ]
             }
           ]
         },
@@ -203,30 +268,6 @@
               "FieldOfView": 80,
               "ZFar": 10000,
               "ZNear": 1
-            },
-            {
-              "__type": "CameraPhysicsDebug",
-              "__enabled": false,
-              "MaxPoints": 10000,
-              "TracesPerFrame": 500,
-              "TraceType": "Ray"
-            },
-            {
-              "__type": "CubemapFog",
-              "__enabled": false,
-              "Blur": 0.5,
-              "EndDistance": 8000,
-              "FalloffExponent": 2,
-              "Sky": "materials/skybox/light_test_sky_sunset_2.vmat",
-              "StartDistance": 0
-            },
-            {
-              "__type": "DepthOfField",
-              "__enabled": false,
-              "BackBlur": true,
-              "BlurSize": 30,
-              "FocalDistance": 250,
-              "FrontBlur": false
             },
             {
               "__type": "FilmGrain",
@@ -257,6 +298,35 @@
             {
               "__type": "Highlight",
               "__enabled": true
+            },
+            {
+              "__type": "Bloom",
+              "__enabled": true,
+              "BloomColor": {
+                "color": [
+                  {
+                    "c": "1,1,1,1"
+                  },
+                  {
+                    "t": 1,
+                    "c": "0.5,0.5,0.5,1"
+                  }
+                ]
+              },
+              "BloomCurve": {
+                "rangey": "0,106.45",
+                "frames": [
+                  {},
+                  {
+                    "x": 1,
+                    "y": 1
+                  }
+                ]
+              },
+              "Mode": "Screen",
+              "Strength": 1,
+              "Threshold": 0.3,
+              "ThresholdWidth": 2
             }
           ]
         },
@@ -267,6 +337,46 @@
           "Position": "0,0,64",
           "Rotation": "0,0,0,1",
           "Scale": "1,1,1"
+        },
+        {
+          "Id": "258a1012-ff9e-49b5-bf1b-887d483bb0bf",
+          "Name": "Hair",
+          "Enabled": true,
+          "Position": "0,0,0",
+          "Rotation": "0,0,0,1",
+          "Scale": "1,1,1",
+          "Components": [
+            {
+              "__type": "AnimatedModelComponent",
+              "__enabled": true,
+              "BoneMergeTarget": "7daff6f8-35a7-4fa6-9d2f-3c4e693af8d7",
+              "CreateBoneObjects": false,
+              "MaterialOverride": null,
+              "Model": "models/citizen_clothes/hair/hair_fade/models/hair_fade.vmdl",
+              "ShouldCastShadows": true,
+              "Tint": "1,1,1,1"
+            }
+          ]
+        },
+        {
+          "Id": "f14d65a1-eea4-4fe5-89d7-a550ec6b8f11",
+          "Name": "Hair",
+          "Enabled": true,
+          "Position": "0,0,0",
+          "Rotation": "0,0,0,1",
+          "Scale": "1,1,1",
+          "Components": [
+            {
+              "__type": "AnimatedModelComponent",
+              "__enabled": true,
+              "BoneMergeTarget": "7daff6f8-35a7-4fa6-9d2f-3c4e693af8d7",
+              "CreateBoneObjects": false,
+              "MaterialOverride": null,
+              "Model": "models/citizen_clothes/shoes/boots/models/army_boots.vmdl",
+              "ShouldCastShadows": true,
+              "Tint": "1,1,1,1"
+            }
+          ]
         }
       ]
     },
@@ -346,7 +456,7 @@
       ]
     },
     {
-      "Id": "3892656c-65a1-4fa2-9e9a-393d70b91af9",
+      "Id": "650ce69e-04d7-427e-97eb-c2ec187a92d3",
       "Name": "Cube",
       "Enabled": true,
       "Position": "1420.439,0,535.5369",
@@ -377,7 +487,7 @@
       ]
     },
     {
-      "Id": "3c08ac0a-f166-4391-a42a-727bfa834f97",
+      "Id": "62c2a961-fa6a-4473-ba2c-821e488ac0c6",
       "Name": "Object",
       "Enabled": false,
       "Position": "979.3158,526.2988,-1513.404",
@@ -385,7 +495,7 @@
       "Scale": "1,1,1"
     },
     {
-      "Id": "3892656c-65a1-4fa2-9e9a-393d70b91af9",
+      "Id": "57ff8041-1fdf-44d8-8cd9-715d23202c73",
       "Name": "Cube",
       "Enabled": true,
       "Position": "1420.439,0,458.9947",
@@ -416,7 +526,7 @@
       ]
     },
     {
-      "Id": "3892656c-65a1-4fa2-9e9a-393d70b91af9",
+      "Id": "d50405fe-42b6-4b95-a155-697b20c2a510",
       "Name": "Cube (1)",
       "Enabled": true,
       "Position": "686.7393,322.773,-1612.719",
@@ -616,7 +726,7 @@
     },
     {
       "Id": "f34b346f-38cf-4579-85b5-914d61c607de",
-      "Name": "Cabin",
+      "Name": "Citizen Solid",
       "Enabled": true,
       "Position": "850.0305,525.2525,-1631.623",
       "Rotation": "-0.00000002114547,0.000000005928668,0.1821554,0.9832697",
@@ -636,11 +746,47 @@
           "IsTrigger": false,
           "Model": "models/citizen/citizen.vmdl",
           "Surface": null
+        },
+        {
+          "__type": "HighlightOutline",
+          "__enabled": true,
+          "Color": "86.39359,124.21,48.57718,1",
+          "InsideColor": "0,0,0,0",
+          "InsideObscuredColor": "0,0,0,0",
+          "Material": null,
+          "ObscuredColor": "0,0,0,0.4",
+          "Width": 0.3
+        }
+      ],
+      "Children": [
+        {
+          "Id": "085a5ac3-cbf3-47d8-b2c1-a8ad95345723",
+          "Name": "Name Tag UI",
+          "Enabled": true,
+          "Position": "-0.000001516925,-0.000003088577,78.34348",
+          "Rotation": "0.00000002114547,-0.000000005928669,-0.1821554,0.9832698",
+          "Scale": "1,1,1",
+          "Components": [
+            {
+              "__type": "WorldPanel",
+              "__enabled": true,
+              "HorizontalAlign": "Center",
+              "LookAtCamera": true,
+              "PanelSize": "1024,256",
+              "RenderScale": 1,
+              "VerticalAlign": "Center"
+            },
+            {
+              "__type": "NameTagPanel",
+              "__enabled": true,
+              "Name": "Terry Airfryer"
+            }
+          ]
         }
       ]
     },
     {
-      "Id": "3892656c-65a1-4fa2-9e9a-393d70b91af9",
+      "Id": "3dba2b88-af26-45ea-800c-c4539add410e",
       "Name": "Cube (2)",
       "Enabled": true,
       "Position": "686.7393,247.0549,-1612.719",
@@ -1992,6 +2138,31 @@
       ]
     },
     {
+      "Id": "d16e6a00-4b55-45a5-b63f-c12ba151512f",
+      "Name": "Cube (2)",
+      "Enabled": true,
+      "Position": "1053.762,903.7219,-1787.252",
+      "Rotation": "-0.00000003269055,0.002404885,-0.0000000000782748,0.999997",
+      "Scale": "42.1,42.1,42.1",
+      "Components": [
+        {
+          "__type": "ModelComponent",
+          "__enabled": true,
+          "MaterialOverride": null,
+          "Model": "models/soccerball.vmdl",
+          "ShouldCastShadows": true,
+          "Tint": "0.85644,0.12719,0.57932,1"
+        },
+        {
+          "__type": "ColliderSphereComponent",
+          "__enabled": true,
+          "IsTrigger": false,
+          "Radius": 4.4800053,
+          "Surface": null
+        }
+      ]
+    },
+    {
       "Id": "0c85af75-2c45-452e-a824-a4ccdf7359a4",
       "Name": "Cube (2)",
       "Enabled": true,
@@ -2798,7 +2969,7 @@
       ]
     },
     {
-      "Id": "3892656c-65a1-4fa2-9e9a-393d70b91af9",
+      "Id": "277191c1-f346-47fe-8549-a757e2b60e15",
       "Name": "Cube (3)",
       "Enabled": true,
       "Position": "686.7393,168.3942,-1612.719",
@@ -2829,7 +3000,7 @@
       ]
     },
     {
-      "Id": "3892656c-65a1-4fa2-9e9a-393d70b91af9",
+      "Id": "88fae078-25a5-4ae2-a010-01da02fc104b",
       "Name": "Cube (4)",
       "Enabled": true,
       "Position": "686.7393,91.1157,-1612.719",
@@ -2860,7 +3031,7 @@
       ]
     },
     {
-      "Id": "3892656c-65a1-4fa2-9e9a-393d70b91af9",
+      "Id": "73891137-e128-4a7d-b0ad-5e6901120470",
       "Name": "Cube (5)",
       "Enabled": true,
       "Position": "393.1795,-531.9441,1091.211",
@@ -3294,7 +3465,7 @@
       ]
     },
     {
-      "Id": "3892656c-65a1-4fa2-9e9a-393d70b91af9",
+      "Id": "3f25b320-a740-4b2c-8366-20f5a0a3a7a2",
       "Name": "Cube (6)",
       "Enabled": true,
       "Position": "686.7393,-73.5093,-1612.719",
@@ -3325,7 +3496,7 @@
       ]
     },
     {
-      "Id": "3892656c-65a1-4fa2-9e9a-393d70b91af9",
+      "Id": "fb9eb946-2d7e-4092-a43d-d888fd2671c8",
       "Name": "Cube (7)",
       "Enabled": true,
       "Position": "686.7393,-158.5866,-1612.719",
@@ -3356,7 +3527,7 @@
       ]
     },
     {
-      "Id": "3892656c-65a1-4fa2-9e9a-393d70b91af9",
+      "Id": "f9a85fdd-fc84-4253-a6cd-32dba2f53dd6",
       "Name": "Cube (8)",
       "Enabled": true,
       "Position": "686.7393,-241.4487,-1612.719",
@@ -3387,7 +3558,7 @@
       ]
     },
     {
-      "Id": "3892656c-65a1-4fa2-9e9a-393d70b91af9",
+      "Id": "e8cd7dfe-aba3-4b70-8761-af9f059373a6",
       "Name": "Cube (9)",
       "Enabled": true,
       "Position": "686.7393,-323.4224,-1612.719",
@@ -3418,7 +3589,7 @@
       ]
     },
     {
-      "Id": "3892656c-65a1-4fa2-9e9a-393d70b91af9",
+      "Id": "b7ccdb77-039b-4980-827c-7f88ea2f99e8",
       "Name": "Cube (10)",
       "Enabled": true,
       "Position": "686.7393,-276.2431,-1563.041",
@@ -3449,7 +3620,7 @@
       ]
     },
     {
-      "Id": "3892656c-65a1-4fa2-9e9a-393d70b91af9",
+      "Id": "23430def-4583-43ba-9c37-6e22aaa8ddf5",
       "Name": "Cube (11)",
       "Enabled": true,
       "Position": "686.7393,-198.8401,-1563.041",
@@ -3480,7 +3651,7 @@
       ]
     },
     {
-      "Id": "3892656c-65a1-4fa2-9e9a-393d70b91af9",
+      "Id": "e4793a24-a5d8-409f-b584-9e70ffffa811",
       "Name": "Cube (12)",
       "Enabled": true,
       "Position": "686.7393,-115.8088,-1563.041",
@@ -3511,7 +3682,7 @@
       ]
     },
     {
-      "Id": "3892656c-65a1-4fa2-9e9a-393d70b91af9",
+      "Id": "090952ee-45c0-422f-8a32-e41a26c676eb",
       "Name": "Cube (13)",
       "Enabled": true,
       "Position": "686.7393,-29.5168,-1563.041",
@@ -3542,7 +3713,7 @@
       ]
     },
     {
-      "Id": "3892656c-65a1-4fa2-9e9a-393d70b91af9",
+      "Id": "33d5d9f6-a398-4e2e-a558-63f58ddd28c3",
       "Name": "Cube (14)",
       "Enabled": true,
       "Position": "686.7393,55.9645,-1563.041",
@@ -3635,7 +3806,7 @@
       ]
     },
     {
-      "Id": "3892656c-65a1-4fa2-9e9a-393d70b91af9",
+      "Id": "aa29ab37-9d3b-48e4-8e8c-2dbeeabc0492",
       "Name": "Cube (15)",
       "Enabled": true,
       "Position": "686.7393,129.0565,-1563.041",
@@ -3666,7 +3837,7 @@
       ]
     },
     {
-      "Id": "3892656c-65a1-4fa2-9e9a-393d70b91af9",
+      "Id": "70e3b843-706c-4da2-a32d-4cd3f2e32e32",
       "Name": "Cube (16)",
       "Enabled": true,
       "Position": "686.7393,210.5549,-1563.041",
@@ -3697,7 +3868,7 @@
       ]
     },
     {
-      "Id": "3892656c-65a1-4fa2-9e9a-393d70b91af9",
+      "Id": "2f723058-7cdb-437d-bc72-39ea9b3e79c7",
       "Name": "Cube (17)",
       "Enabled": true,
       "Position": "686.7393,286.9323,-1563.041",
@@ -3759,7 +3930,7 @@
       ]
     },
     {
-      "Id": "3892656c-65a1-4fa2-9e9a-393d70b91af9",
+      "Id": "d34c3be2-c593-4133-8ebe-baede5e8453c",
       "Name": "Cube (18)",
       "Enabled": true,
       "Position": "686.7393,250.0716,-1498.417",
@@ -3790,7 +3961,7 @@
       ]
     },
     {
-      "Id": "3892656c-65a1-4fa2-9e9a-393d70b91af9",
+      "Id": "0409a5e6-5296-462b-ad80-4ee5c1053ee6",
       "Name": "Cube (19)",
       "Enabled": true,
       "Position": "686.7393,176.8109,-1404.687",
@@ -3821,7 +3992,7 @@
       ]
     },
     {
-      "Id": "3892656c-65a1-4fa2-9e9a-393d70b91af9",
+      "Id": "0d1caeb9-03ac-42ff-9365-39d99956ed10",
       "Name": "Cube (20)",
       "Enabled": true,
       "Position": "686.7393,97.5859,-1498.417",
@@ -3852,7 +4023,7 @@
       ]
     },
     {
-      "Id": "3892656c-65a1-4fa2-9e9a-393d70b91af9",
+      "Id": "14655938-aa3b-44ea-ae0c-453412e54e19",
       "Name": "Cube (22)",
       "Enabled": true,
       "Position": "686.7393,-68.0729,-1498.417",
@@ -4162,7 +4333,7 @@
       ]
     },
     {
-      "Id": "3892656c-65a1-4fa2-9e9a-393d70b91af9",
+      "Id": "cf2175d6-58af-4626-9d8b-1d933bb430fd",
       "Name": "Cube (23)",
       "Enabled": true,
       "Position": "686.7393,-151.4042,-1498.417",
@@ -4193,7 +4364,7 @@
       ]
     },
     {
-      "Id": "b3b5ece6-cd1b-4b4d-9b36-cc88982a751d",
+      "Id": "0761c615-445d-4242-852e-80485edb20f1",
       "Name": "Spot Light",
       "Enabled": false,
       "Position": "906.304,954.2023,-1254.256",
@@ -4449,7 +4620,7 @@
       "Id": "d5e8fa3e-f502-4f82-884e-f7583872d39d",
       "Name": "8hu_kultiras_smallhouse_2",
       "Enabled": true,
-      "Position": "903.0998,59.0603,-1778.223",
+      "Position": "904.275,63.32362,-1804.925",
       "Rotation": "0.08123279,-0.01099247,-0.1336513,0.9876328",
       "Scale": "1,1,1",
       "Components": [
@@ -4466,7 +4637,7 @@
           "__enabled": true,
           "IsTrigger": false,
           "Model": "models/rust_nature/rocks/rock_cliff_a.vmdl",
-          "Surface": null
+          "Surface": "bouncy.surface"
         }
       ]
     },
@@ -4819,12 +4990,12 @@
         {
           "__type": "HighlightOutline",
           "__enabled": true,
-          "Color": "0,0.46,1,1",
+          "Color": "44.05941,69.79208,100,1",
           "InsideColor": "0,0,0,0",
           "InsideObscuredColor": "0,0,0,0",
           "Material": null,
           "ObscuredColor": "0,0,0,0",
-          "Width": 0.2
+          "Width": 0.4
         }
       ]
     },
@@ -4832,7 +5003,7 @@
       "Id": "5c9ce28d-ee71-4553-bcfa-91d4d500abdf",
       "Name": "binbag_pile_a1",
       "Enabled": true,
-      "Position": "1181.392,730.5104,-1637.716",
+      "Position": "1181.392,730.0825,-1637.716",
       "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Components": [
@@ -5005,6 +5176,13 @@
           "Model": "models/rust_props/black_bin/blackbin.vmdl",
           "ShouldCastShadows": true,
           "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "ModelCollider",
+          "__enabled": true,
+          "IsTrigger": false,
+          "Model": "models/rust_props/black_bin/blackbin.vmdl",
+          "Surface": null
         }
       ]
     },
@@ -5023,6 +5201,13 @@
           "Model": "models/sbox_props/wheely_bin/wheely_bin.vmdl",
           "ShouldCastShadows": true,
           "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "ModelCollider",
+          "__enabled": true,
+          "IsTrigger": false,
+          "Model": "models/sbox_props/wheely_bin/wheely_bin.vmdl",
+          "Surface": null
         }
       ]
     },
@@ -5041,6 +5226,13 @@
           "Model": "models/sbox_props/wheely_bin/wheely_bin.vmdl",
           "ShouldCastShadows": true,
           "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "ModelCollider",
+          "__enabled": true,
+          "IsTrigger": false,
+          "Model": "models/sbox_props/wheely_bin/wheely_bin.vmdl",
+          "Surface": null
         }
       ]
     },
@@ -5073,10 +5265,37 @@
         {
           "__type": "AnimatedModelComponent",
           "__enabled": true,
+          "CreateBoneObjects": false,
           "MaterialOverride": null,
           "Model": "models/player/hazmatsuit/hazmatsuit.vmdl",
           "ShouldCastShadows": true,
           "Tint": "1,1,1,1"
+        }
+      ],
+      "Children": [
+        {
+          "Id": "913c5692-bd97-49fe-b05e-251a6b8b443c",
+          "Name": "Name Tag UI",
+          "Enabled": true,
+          "Position": "0.00004921307,0.00005028578,86.29174",
+          "Rotation": "-0.0000003800131,-0.0000001476499,-0.9107943,0.4128596",
+          "Scale": "1,1,1",
+          "Components": [
+            {
+              "__type": "NameTagPanel",
+              "__enabled": true,
+              "Name": "Emma Dongle"
+            },
+            {
+              "__type": "WorldPanel",
+              "__enabled": true,
+              "HorizontalAlign": "Center",
+              "LookAtCamera": true,
+              "PanelSize": "1024,256",
+              "RenderScale": 1,
+              "VerticalAlign": "Center"
+            }
+          ]
         }
       ]
     },
@@ -5091,10 +5310,37 @@
         {
           "__type": "AnimatedModelComponent",
           "__enabled": true,
+          "CreateBoneObjects": false,
           "MaterialOverride": null,
           "Model": "models/player/human/adam_mp.vmdl",
           "ShouldCastShadows": true,
           "Tint": "1,1,1,1"
+        }
+      ],
+      "Children": [
+        {
+          "Id": "967e37e9-b51f-43cd-a06a-dc350a8d7271",
+          "Name": "Name Tag UI",
+          "Enabled": true,
+          "Position": "0.00000006187065,-0.0000003213206,84.30791",
+          "Rotation": "0,0,0,1",
+          "Scale": "1,1,1",
+          "Components": [
+            {
+              "__type": "NameTagPanel",
+              "__enabled": true,
+              "Name": "Fred Heatsink"
+            },
+            {
+              "__type": "WorldPanel",
+              "__enabled": true,
+              "HorizontalAlign": "Center",
+              "LookAtCamera": true,
+              "PanelSize": "1024,256",
+              "RenderScale": 1,
+              "VerticalAlign": "Center"
+            }
+          ]
         }
       ]
     },
@@ -5172,31 +5418,31 @@
     }
   ],
   "__references": [
-    "rust.portacabin_300_600_b",
     "baik.soccerball",
-    "facepunch.concrete_damaged",
-    "facepunch.pine_shrub_tall_a",
-    "facepunch.tallgrass_c",
     "facepunch.beech_shrub_tall_small",
-    "fish.gt_shitty_pine_tree2",
-    "orus.8hu_kultiras_smallhouse_2",
-    "rust.rock_cliff_a",
-    "titanovsky.ufrts_resource_gold1",
-    "rust.ground_junk_a",
-    "rust.ground_junk_straight_a",
-    "facepunch.grass_clump_a",
-    "fish.gt_grass_medium_a",
-    "fish.gt_grass_medium_b",
-    "sklystuff.grass_block",
-    "facepunch.binbag_pile_a2",
     "facepunch.binbag_pile_a1",
+    "facepunch.binbag_pile_a2",
+    "facepunch.blackbin",
+    "facepunch.concrete_damaged",
     "facepunch.dirtpile_03",
     "facepunch.dirtpile_04",
     "facepunch.dirtpile_05",
-    "facepunch.blackbin",
-    "facepunch.wheely_bin",
+    "facepunch.grass_clump_a",
     "facepunch.metal_wheely_bin",
+    "facepunch.pine_shrub_tall_a",
+    "facepunch.tallgrass_c",
+    "facepunch.wheely_bin",
+    "fish.gt_grass_medium_a",
+    "fish.gt_grass_medium_b",
+    "fish.gt_shitty_pine_tree2",
+    "orus.8hu_kultiras_smallhouse_2",
+    "rust.ground_junk_a",
+    "rust.ground_junk_straight_a",
+    "rust.portacabin_300_600_b",
+    "rust.rock_cliff_a",
+    "sboxmp.adam_mp",
     "sboxmp.hazmatsuit",
-    "sboxmp.adam_mp"
+    "sklystuff.grass_block",
+    "titanovsky.ufrts_resource_gold1"
   ]
 }
