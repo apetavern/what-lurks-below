@@ -31,9 +31,9 @@ public class Inventory : BaseComponent
 	{
 		if ( ItemCount >= Slots )
 			return false;
-	
+
 		Log.Info( item?.Name );
-	
+
 		_items.Add( item );
 		return true;
 	}
@@ -102,7 +102,7 @@ public class Inventory : BaseComponent
 			_items.Remove( item );
 			Free( item.Position, item.Length, item.Height );
 		}
-		
+
 		var positionValid = CheckPositionValid( pos, item.Length, item.Height );
 		if ( !positionValid )
 		{
@@ -110,9 +110,9 @@ public class Inventory : BaseComponent
 			Rent( item.Position, item.Length, item.Height );
 			return false;
 		}
-		
+
 		item.Position = pos;
-	
+
 		_items.Add( item );
 		Rent( pos, item.Length, item.Height );
 		return true;
@@ -147,7 +147,7 @@ public class Inventory : BaseComponent
 			/* Future: Check if we have a pistol in our inventory.
 			If so, we need to instantiate it with info from the Pistol InventoryItem. 
 			If not, we do not equip the pistol at all. */
-			c_PlayerWeapon.Equip( new PistolWeapon( true, "Pistol" ) );
+			c_PlayerWeapon.Equip( new KnifeWeapon( true, "Knife" ) );
 		}
 
 		if ( Input.Pressed( "slot2" ) )
@@ -155,7 +155,15 @@ public class Inventory : BaseComponent
 			/* Future: Check if we have a pistol in our inventory.
 			If so, we need to instantiate it with info from the Pistol InventoryItem. 
 			If not, we do not equip the pistol at all. */
-			c_PlayerWeapon.Equip( new KnifeWeapon( true, "Knife" ) );
+			c_PlayerWeapon.Equip( new PistolWeapon( true, "pistol" ) );
+		}
+
+		if ( Input.Pressed( "slot3" ) )
+		{
+			/* Future: Check if we have a pistol in our inventory.
+			If so, we need to instantiate it with info from the Pistol InventoryItem. 
+			If not, we do not equip the pistol at all. */
+			c_PlayerWeapon.Equip( new ShotgunWeapon( true, "Shotgun" ) );
 		}
 	}
 }
