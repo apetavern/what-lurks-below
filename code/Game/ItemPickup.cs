@@ -121,4 +121,12 @@ public class ItemPickup : BaseComponent
 		Sound.FromScreen( "item_pickup" );
 		Destroy();
 	}
+
+	public override void OnDestroy()
+	{
+		base.OnDestroy();
+
+		// Remove the world panel immediately if we have one.
+		GetComponent<WorldPanel>()?.Destroy();
+	}
 }
