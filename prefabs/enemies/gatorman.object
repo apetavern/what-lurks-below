@@ -1,6 +1,6 @@
 {
   "RootObject": {
-    "Id": "88dcd0b8-6a46-4db5-8a7f-f2be5dadbbef",
+    "Id": "ba395828-492a-4254-b0da-e264999330bb",
     "Name": "gatorman",
     "Enabled": true,
     "Position": "0,0,0",
@@ -19,13 +19,17 @@
       {
         "__type": "EnemyController",
         "__enabled": true,
-        "AggroRange": 128,
-        "AttackDamage": 1,
+        "AggroRange": 256,
+        "AttackDamage": 30,
         "AttackRange": 64,
-        "Body": "a4d4efe4-f96b-4951-b0ad-c386280b00a0",
+        "AttackSound": "",
+        "Body": "afc78e74-3571-45e1-9862-54d09f3880b8",
+        "DeathSound": "",
         "Friction": 0.9499998,
-        "Speed": 96,
-        "TimeBetweenAttacks": 1
+        "HurtSound": "",
+        "IdleSound": "",
+        "Speed": 43,
+        "TimeBetweenAttacks": 3
       },
       {
         "__type": "HealthComponent",
@@ -40,7 +44,7 @@
     ],
     "Children": [
       {
-        "Id": "a4d4efe4-f96b-4951-b0ad-c386280b00a0",
+        "Id": "afc78e74-3571-45e1-9862-54d09f3880b8",
         "Name": "Epic Enemy",
         "Enabled": true,
         "Position": "0,0,0",
@@ -50,6 +54,7 @@
           {
             "__type": "AnimatedModelComponent",
             "__enabled": true,
+            "CreateBoneObjects": false,
             "MaterialOverride": null,
             "Model": "models/enemies/gatorman/gatorman.vmdl",
             "ShouldCastShadows": true,
@@ -58,7 +63,7 @@
         ]
       },
       {
-        "Id": "b4a69439-d3c3-4ffd-af73-40555f279f8d",
+        "Id": "243a8f78-335d-4235-a0b9-c5be88e9bd41",
         "Name": "Collider",
         "Enabled": true,
         "Position": "0,0,41.82742",

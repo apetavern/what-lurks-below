@@ -1,6 +1,6 @@
 {
   "RootObject": {
-    "Id": "4643e42e-0280-4cdc-9bcb-b099968de18b",
+    "Id": "958d000c-bc69-4ae6-9a7f-81e8e919defd",
     "Name": "goo_man",
     "Enabled": true,
     "Position": "0,0,0",
@@ -19,16 +19,16 @@
       {
         "__type": "EnemyController",
         "__enabled": true,
-        "AggroRange": 125.050026,
-        "AttackDamage": 1,
+        "AggroRange": 256,
+        "AttackDamage": 7,
         "AttackRange": 64,
         "AttackSound": "gooman-attack",
-        "Body": "3142addf-7994-4b5e-99ca-7332a5237188",
+        "Body": "2dacb14c-7d4c-4394-a383-232cebf3cb62",
         "DeathSound": "gooman-death",
         "Friction": 0.9499998,
         "HurtSound": "gooman-hurt",
         "IdleSound": "gooman-idle",
-        "Speed": 34,
+        "Speed": 50,
         "TimeBetweenAttacks": 1
       },
       {
@@ -44,7 +44,7 @@
     ],
     "Children": [
       {
-        "Id": "3142addf-7994-4b5e-99ca-7332a5237188",
+        "Id": "2dacb14c-7d4c-4394-a383-232cebf3cb62",
         "Name": "Epic Enemy",
         "Enabled": true,
         "Position": "0,0,0",
@@ -54,6 +54,7 @@
           {
             "__type": "AnimatedModelComponent",
             "__enabled": true,
+            "CreateBoneObjects": false,
             "MaterialOverride": null,
             "Model": "models/enemies/gooman/gooman.vmdl",
             "ShouldCastShadows": true,
@@ -62,7 +63,7 @@
         ]
       },
       {
-        "Id": "5255d985-b906-4bfb-a936-4680708d8b77",
+        "Id": "f412e8cf-92df-43e1-a557-1acae6798821",
         "Name": "Collider",
         "Enabled": true,
         "Position": "0,0,15.82238",

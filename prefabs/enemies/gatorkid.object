@@ -1,6 +1,6 @@
 {
   "RootObject": {
-    "Id": "88dcd0b8-6a46-4db5-8a7f-f2be5dadbbef",
+    "Id": "1fbb1b48-3c49-4bb8-8a1e-23cee61ca2c9",
     "Name": "gatorkid",
     "Enabled": true,
     "Position": "0,0,0",
@@ -19,11 +19,15 @@
       {
         "__type": "EnemyController",
         "__enabled": true,
-        "AggroRange": 128,
-        "AttackDamage": 1,
+        "AggroRange": 300,
+        "AttackDamage": 3,
         "AttackRange": 64,
-        "Body": "a4d4efe4-f96b-4951-b0ad-c386280b00a0",
+        "AttackSound": "",
+        "Body": "368419dd-231f-45ee-b220-64ffa2d67a7d",
+        "DeathSound": "",
         "Friction": 0.9499998,
+        "HurtSound": "",
+        "IdleSound": "",
         "Speed": 96,
         "TimeBetweenAttacks": 1
       },
@@ -40,7 +44,7 @@
     ],
     "Children": [
       {
-        "Id": "a4d4efe4-f96b-4951-b0ad-c386280b00a0",
+        "Id": "368419dd-231f-45ee-b220-64ffa2d67a7d",
         "Name": "Epic Enemy",
         "Enabled": true,
         "Position": "0,0,0",
@@ -50,6 +54,7 @@
           {
             "__type": "AnimatedModelComponent",
             "__enabled": true,
+            "CreateBoneObjects": false,
             "MaterialOverride": null,
             "Model": "models/enemies/gatorkid/gatorkid.vmdl",
             "ShouldCastShadows": true,
@@ -58,7 +63,7 @@
         ]
       },
       {
-        "Id": "b4a69439-d3c3-4ffd-af73-40555f279f8d",
+        "Id": "b435c4d3-43c9-41d1-8351-5fd0f99c05fe",
         "Name": "Collider",
         "Enabled": true,
         "Position": "0,0,21.54626",
