@@ -57,6 +57,15 @@
             return;
 
         Panel?.SetClass( "Hidden", TimeSincePlayerInRange > 1 );
+
+        if (GetComponent<IRootPanelComponent>(true) is not WorldPanel worldPanel)
+            return;
+
+        var pickupComponentSceneModel = GetComponent<ItemPickup>().SceneModel;
+        if (pickupComponentSceneModel is null)
+            return;
+
+        worldPanel.Position = pickupComponentSceneModel.Transform.Position + Vector3.Up * 32f;
     }
 
     public override void OnStart()
@@ -65,10 +74,7 @@
 
         Player = Scene.GetAllObjects(true).FirstOrDefault(p => p.Name == "player");
 
-        if (GetComponent<IRootPanelComponent>(true) is not WorldPanel worldPanel)
-            return;
-
-        worldPanel.Position = Transform.Position + Vector3.Up * 38f;
+        
     }
 
     public void SetItem(ItemPickup item)

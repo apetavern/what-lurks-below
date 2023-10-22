@@ -1,7 +1,7 @@
 ﻿using BrickJam.Player;
 using Sandbox;
+using System;
 using System.Linq;
-using BrickJam.Game.UI;
 
 namespace BrickJam.Game;
 
@@ -11,9 +11,12 @@ namespace BrickJam.Game;
 [EditorHandle( "materials/gizmo/items.png" )]
 public class ItemPickup : BaseComponent
 {
+	public SceneModel SceneModel;
 	private GameObject Player;
 	private BrickPlayerController Controller;
-	private SceneModel _sceneModel;
+	private float _sceneModelStartZ;
+	private float _sceneModelEndZ;
+	private float _sceneModelTargetZ;
 
 	[Property] public InventoryItem Item { get; set; }
 
@@ -29,26 +32,47 @@ public class ItemPickup : BaseComponent
 		var position = Transform.Position;
 
 		// Setup scene model
-		_sceneModel = new SceneModel( Scene.SceneWorld, Item.GroundModel ?? Model.Load( "models/dev/box.vmdl" ), Transform.World );
+		SceneModel = new SceneModel( Scene.SceneWorld, Item.GroundModel ?? Model.Load( "models/dev/box.vmdl" ), Transform.World );
+		SceneModel.Position = Transform.Position + Vector3.Up * SceneModel.Bounds.Size;
+		SceneModel.Transform = SceneModel.Transform.WithScale( Item.GroundScale );
+
+		_sceneModelStartZ = SceneModel.Transform.Position.z;
+		_sceneModelEndZ = SceneModel.Transform.Position.z + 20f;
+		_sceneModelTargetZ = _sceneModelEndZ;
 	}
 
 	public override void OnDisabled()
 	{
 		base.OnDisabled();
 
-		_sceneModel?.Delete();
-		_sceneModel = null;
+		SceneModel?.Delete();
+		SceneModel = null;
 	}
 
 	public override void Update()
 	{
-		if ( _sceneModel != null )
+		if ( SceneModel != null )
 		{
-			_sceneModel.Rotation = Rotation.From( 0, Time.Now * 90f, 0 );
-			_sceneModel.Position = Transform.Position + Vector3.Up * _sceneModel.Bounds.Size;
-			_sceneModel.Transform = _sceneModel.Transform.WithScale( Item.GroundScale );
+			SceneModel.Rotation = Rotation.From( 0, Time.Now * 50f, 0 );
+			SceneModel.Position = Vector3.Lerp( SceneModel.Position, SceneModel.Position.WithZ( _sceneModelTargetZ ), 0.15f * Time.Delta );
 
-			_sceneModel.Update( 0.1f );
+			// Calculate distance & change target
+			if ( Math.Abs( SceneModel.Position.z - _sceneModelTargetZ ) < 5 )
+			{
+				if ( Math.Abs( SceneModel.Position.z - _sceneModelEndZ ) < 5 )
+					_sceneModelTargetZ = _sceneModelStartZ;
+
+				if ( Math.Abs( SceneModel.Position.z - _sceneModelStartZ ) < 5 )
+					_sceneModelTargetZ = _sceneModelEndZ;
+			}
+
+			// Arrived bottom
+			if ( Math.Abs( SceneModel.Position.z - _sceneModelTargetZ ) < 5 )
+			{
+				_sceneModelTargetZ = _sceneModelEndZ;
+			}
+
+			SceneModel.Update( 0.1f );
 		}
 
 		base.Update();
