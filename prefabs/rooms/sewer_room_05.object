@@ -93,58 +93,6 @@
         ]
       },
       {
-        "Id": "7401d43e-9a3d-47bf-86c8-d4279f8a08b5",
-        "Name": "model",
-        "Enabled": true,
-        "Position": "128,128,0",
-        "Rotation": "0,0,0,1",
-        "Scale": "1,1,1",
-        "Components": [
-          {
-            "__type": "ModelComponent",
-            "__enabled": true,
-            "MaterialOverride": null,
-            "Model": "models/environment/floor_01.vmdl",
-            "ShouldCastShadows": true,
-            "Tint": "1,1,1,1"
-          },
-          {
-            "__type": "ModelCollider",
-            "__enabled": true,
-            "IsTrigger": false,
-            "Model": "models/environment/floor_01.vmdl",
-            "Surface": null,
-            "Tags": ""
-          }
-        ]
-      },
-      {
-        "Id": "39be1a20-b4c5-4f85-b7df-40d3c2b41a65",
-        "Name": "model",
-        "Enabled": true,
-        "Position": "0,128,0",
-        "Rotation": "0,0,0,1",
-        "Scale": "1,1,1",
-        "Components": [
-          {
-            "__type": "ModelComponent",
-            "__enabled": true,
-            "MaterialOverride": null,
-            "Model": "models/environment/floor_01.vmdl",
-            "ShouldCastShadows": true,
-            "Tint": "1,1,1,1"
-          },
-          {
-            "__type": "ModelCollider",
-            "__enabled": true,
-            "IsTrigger": false,
-            "Model": "models/environment/floor_01.vmdl",
-            "Surface": null,
-            "Tags": ""
-          }
-        ]
-      },
-      {
         "Id": "6ee04d44-0a66-4188-9352-1a794b65f49a",
         "Name": "model",
         "Enabled": true,
@@ -1393,6 +1341,51 @@
         ]
       },
       {
+        "Id": "73a37081-6089-44dd-bfcc-53cd363ef825",
+        "Name": "hallway_01",
+        "Enabled": true,
+        "Position": "-64.00012,192.0001,0.0003901861",
+        "Rotation": "-0.0000001985978,-0.000001740161,0.7071061,-0.7071075",
+        "Scale": "1,1,1",
+        "__Prefab": "prefabs/hallways/hallway_01.object"
+      },
+      {
+        "Id": "1324a089-a227-4a33-9cbd-533ec18858f4",
+        "Name": "hallway_01",
+        "Enabled": true,
+        "Position": "-192,192.0001,0.0003901861",
+        "Rotation": "-0.0000001985978,-0.000001740161,0.7071061,-0.7071075",
+        "Scale": "1,1,1",
+        "__Prefab": "prefabs/hallways/hallway_01.object"
+      },
+      {
+        "Id": "881e434d-addd-489a-91e8-c7d2da07f703",
+        "Name": "hallway_01",
+        "Enabled": true,
+        "Position": "-320,192.0001,0.0003901861",
+        "Rotation": "-0.0000001985978,-0.000001740161,0.7071061,-0.7071075",
+        "Scale": "1,1,1",
+        "__Prefab": "prefabs/hallways/hallway_01.object"
+      },
+      {
+        "Id": "3816e96f-2252-4b14-904b-19f478c0640a",
+        "Name": "hallway_01",
+        "Enabled": true,
+        "Position": "64,192.0001,0.0003901861",
+        "Rotation": "-0.0000001985978,-0.000001740161,0.7071061,-0.7071075",
+        "Scale": "1,1,1",
+        "__Prefab": "prefabs/hallways/hallway_01.object"
+      },
+      {
+        "Id": "7d15638c-b340-4158-ba44-3a5fa7523a94",
+        "Name": "hallway_01",
+        "Enabled": true,
+        "Position": "320,192.0001,0.0003901861",
+        "Rotation": "-0.0000001985978,-0.000001740161,0.7071061,-0.7071075",
+        "Scale": "1,1,1",
+        "__Prefab": "prefabs/hallways/hallway_01.object"
+      },
+      {
         "Id": "5002c4e6-c9d2-4d32-a661-405fe6956fa7",
         "Name": "doors",
         "Enabled": true,
@@ -1431,7 +1424,7 @@
             "Name": "Cube",
             "Enabled": true,
             "Position": "0.0002441403,127.9998,-0.0002528566",
-            "Rotation": "-0.0000003576287,-0.0000000000007105427,-0.0000000000001278982,1",
+            "Rotation": "0,0,0,1",
             "Scale": "1,1,1",
             "Components": [
               {
@@ -1478,6 +1471,22 @@
             "Surface": null,
             "Tags": ""
           }
+        ],
+        "Children": [
+          {
+            "Id": "7beca242-de9b-41fd-a2c5-41ab2d8fddd1",
+            "Name": "Object",
+            "Enabled": true,
+            "Position": "0.0001193469,64,0.00000000008892042",
+            "Rotation": "0,0,0.707107,0.7071065",
+            "Scale": "1,1,1",
+            "Components": [
+              {
+                "__type": "RoomDoorDefinition",
+                "__enabled": true
+              }
+            ]
+          }
         ]
       },
       {
@@ -1503,6 +1512,22 @@
             "Model": "models/environment/door_01.vmdl",
             "Surface": null,
             "Tags": ""
+          }
+        ],
+        "Children": [
+          {
+            "Id": "f6c73c1e-05c2-4d56-950a-81282bfe80db",
+            "Name": "Object",
+            "Enabled": true,
+            "Position": "-0.0001220703,64,-0.00000000009094947",
+            "Rotation": "0.00000000000002250934,0.00000000000002842171,0.7071071,0.7071065",
+            "Scale": "1,1,1",
+            "Components": [
+              {
+                "__type": "RoomDoorDefinition",
+                "__enabled": true
+              }
+            ]
           }
         ]
       },
@@ -1926,7 +1951,7 @@
         "Id": "6bc7f6b2-f301-4e8b-84fe-41fe3cd3480f",
         "Name": "Zone",
         "Enabled": true,
-        "Position": "0,-241.8998,128",
+        "Position": "0,-284.2833,128",
         "Rotation": "0,0,0,1",
         "Scale": "1,1,1",
         "Components": [
@@ -1939,7 +1964,7 @@
             "__type": "ColliderBoxComponent",
             "__enabled": true,
             "IsTrigger": true,
-            "Scale": "768,768,256",
+            "Scale": "775.7005,692.1004,256",
             "Surface": null,
             "Tags": ""
           }
@@ -1987,6 +2012,33 @@
             "roomTrigger": "6bc7f6b2-f301-4e8b-84fe-41fe3cd3480f"
           }
         ]
+      },
+      {
+        "Id": "0c3948ce-09a1-4a01-ac74-27e4bb30441d",
+        "Name": "hallway_02",
+        "Enabled": true,
+        "Position": "448,192,0",
+        "Rotation": "0.0000000003023193,0,0,1",
+        "Scale": "1,1,1",
+        "__Prefab": "prefabs/hallways/hallway_02.object"
+      },
+      {
+        "Id": "ae209200-73a5-437c-b34a-32a2f3ea74cb",
+        "Name": "hallway_02",
+        "Enabled": true,
+        "Position": "-448,192,0",
+        "Rotation": "0,0,0,1",
+        "Scale": "1,1,1",
+        "__Prefab": "prefabs/hallways/hallway_02.object"
+      },
+      {
+        "Id": "2e8e2785-f5a4-4aab-8988-5a03e26e9d4f",
+        "Name": "hallway_03",
+        "Enabled": true,
+        "Position": "192,192,0",
+        "Rotation": "0.000001037599,0.0000003576279,-0.000003112792,0.9999999",
+        "Scale": "1,1,1",
+        "__Prefab": "prefabs/hallways/hallway_03.object"
       }
     ]
   },

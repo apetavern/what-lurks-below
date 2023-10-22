@@ -6,7 +6,7 @@ public sealed class RoomDoorDefinition : BaseComponent
 	[Property] public GameObject ClosedMesh { get; set; }
 	public void OpenDoor()
 	{
-		ClosedMesh.Enabled = false;
+		if ( ClosedMesh != null ) ClosedMesh.Enabled = false;
 	}
 
 	public override void DrawGizmos()

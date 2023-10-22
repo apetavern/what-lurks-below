@@ -23,8 +23,8 @@ public sealed class GooBossSequencer : BaseComponent
 		StartedFight = true;
 		foreach ( var item in doorBlockers.Children )
 		{
-			item.GetComponent<ModelComponent>().Enabled = true;
-			item.GetComponent<ColliderBaseComponent>().Enabled = true;
+			item.GetComponent<ModelComponent>( false, true ).Enabled = true;
+			item.GetComponent<ColliderBaseComponent>( false, true ).Enabled = true;
 		}
 
 	}

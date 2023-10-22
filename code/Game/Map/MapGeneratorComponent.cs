@@ -33,6 +33,10 @@ public partial class MapGeneratorComponent : BaseComponent
 
 	[Property] float SnapGridSize { get; set; } = 700f;
 
+
+	[Property] public bool IsBossSequence { get; set; }
+
+
 	public GameObject Player { get; set; }
 
 	public GameObject SpawnPrefabFromPath( string path, Vector3 position, Rotation rotation )
@@ -68,19 +72,29 @@ public partial class MapGeneratorComponent : BaseComponent
 
 	public override void OnStart()
 	{
+
 		Player = Scene.GetAllObjects( true ).FirstOrDefault( x => x.Name == "player" );
 
 		SpawnedRooms.Add( SpawnPrefabFromPath( Rooms[0], Transform.Position, Transform.Rotation ).GetComponent<RoomChunkComponent>( false ) );
 
 		SpawnedRooms[0].ClearEnemiesAndItems();
 
-		for ( int i = 0; i < RoomCount; i++ )
+		if ( IsBossSequence )
 		{
-			Vector2 SpawnPoint = Game.Random.VectorInCircle( 800 );
+			Vector3 PlacePoint = new Vector3( 0, -2048f, 0 );
 
-			Vector3 PlacePoint = new Vector3( SpawnPoint.x, SpawnPoint.y, 0 );
+			SpawnedRooms.Add( SpawnPrefabFromPath( "prefabs/rooms/sewer_room_05.object", Transform.Position + PlacePoint, Transform.Rotation ).GetComponent<RoomChunkComponent>( false ) );
+		}
+		else
+		{
+			for ( int i = 0; i < RoomCount; i++ )
+			{
+				Vector2 SpawnPoint = Game.Random.VectorInCircle( 800 );
 
-			SpawnedRooms.Add( SpawnPrefabFromPath( Rooms[Game.Random.Int( 0, Rooms.Count - 1 )], Transform.Position + PlacePoint, Transform.Rotation ).GetComponent<RoomChunkComponent>( false ) );
+				Vector3 PlacePoint = new Vector3( SpawnPoint.x, SpawnPoint.y, 0 );
+
+				SpawnedRooms.Add( SpawnPrefabFromPath( Rooms[Game.Random.Int( 0, Rooms.Count - 1 )], Transform.Position + PlacePoint, Transform.Rotation ).GetComponent<RoomChunkComponent>( false ) );
+			}
 		}
 
 		base.OnStart();
@@ -282,7 +296,7 @@ public partial class MapGeneratorComponent : BaseComponent
 					if ( CheckBox1.Overlaps( CheckBox2 ) )
 					{
 						overlaps++;
-						room.Transform.Position += (room.Transform.Position - room2.Transform.Position) * (1f / 90f) * 4f;
+						room.Transform.Position += (room.Transform.Position - room2.Transform.Position).WithZ( 0 ) * (1f / 90f) * 4f;
 
 						Vector2 SpawnPoint = Game.Random.VectorInCircle( 128f );
 
@@ -317,7 +331,7 @@ public partial class MapGeneratorComponent : BaseComponent
 			}
 		}
 
-		if ( CorrectedRooms && !Scene.GetAllObjects( true ).Where( x => x.GetComponent<EnemyController>() != null ).Any() )
+		if ( CorrectedRooms && !IsBossSequence && !Scene.GetAllObjects( true ).Where( x => x.GetComponent<EnemyController>() != null ).Any() )
 		{
 			RegenMap();
 		}
