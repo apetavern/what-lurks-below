@@ -13,6 +13,7 @@
   "GroundModel": "models/items/ammo/ammobox_01.vmdl",
   "GroundScale": 1,
   "Stackable": true,
+  "InRandomDrops": true,
   "InventoryActions": [
     "Drop",
     "Examine"

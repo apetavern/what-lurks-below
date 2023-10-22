@@ -7,9 +7,12 @@
   "Position": {
     "X": 5
   },
+  "Quantity": 0,
   "ImagePath": "ui/key_icon.png",
   "GroundModel": "models/items/key/skeleton_key.vmdl",
   "GroundScale": 1,
+  "Stackable": false,
+  "InRandomDrops": true,
   "InventoryActions": [
     "Drop",
     "Examine"

@@ -32,6 +32,7 @@ public class InventoryItem : GameResource
 	public float GroundScale { get; set; }
 	
 	public bool Stackable { get; set; }
+	public bool InRandomDrops { get; set; }
 	
 	public List<InventoryAction> InventoryActions { get; set; }
 
