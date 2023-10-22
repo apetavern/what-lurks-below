@@ -36,8 +36,10 @@
         if (Input.Pressed("Inventory"))
         {
             IsOpen = !IsOpen;
+
+            InventoryActionMenu.Instance?.Destroy();
+            Minimap.Instance.Enabled = IsOpen;
         }
-        Minimap.Instance.Enabled = IsOpen;
         
         Panel.SetClass("open", IsOpen);
     }
