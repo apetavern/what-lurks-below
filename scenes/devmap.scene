@@ -193,30 +193,6 @@
       ]
     },
     {
-      "Id": "5f83c059-87dd-46cc-8559-e568feeae5a5",
-      "Name": "Pickup",
-      "Enabled": true,
-      "Position": "128,256,0",
-      "Rotation": "0,0,0,1",
-      "Scale": "1,1,1",
-      "Components": [
-        {
-          "__type": "ItemPickup",
-          "__enabled": true,
-          "Item": null,
-          "Type": "Health"
-        },
-        {
-          "__type": "ColliderBoxComponent",
-          "__enabled": true,
-          "IsTrigger": true,
-          "Scale": "50,50,50",
-          "Surface": null,
-          "Tags": ""
-        }
-      ]
-    },
-    {
       "Id": "278ca51d-c541-4dc6-b167-54e714179d52",
       "Name": "MapGenerator",
       "Enabled": true,
@@ -227,6 +203,7 @@
         {
           "__type": "MapGeneratorComponent",
           "__enabled": true,
+          "IsBossSequence": false,
           "RoomCount": 7,
           "SnapGridSize": 1024
         },
