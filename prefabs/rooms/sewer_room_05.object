@@ -2644,7 +2644,14 @@
           {
             "__type": "GooBossSequencer",
             "__enabled": true,
+            "AttackSound": "",
+            "DeathSound": "",
             "doorBlockers": "5002c4e6-c9d2-4d32-a661-405fe6956fa7",
+            "Enemy1": "prefabs/enemies/gatorkid.object",
+            "Enemy2": "prefabs/enemies/goo_man.object",
+            "Enemy3": "prefabs/enemies/gatorman.object",
+            "HurtSound": "",
+            "IdleSound": "",
             "roomTrigger": "6bc7f6b2-f301-4e8b-84fe-41fe3cd3480f"
           }
         ]
