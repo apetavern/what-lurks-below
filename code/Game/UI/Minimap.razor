@@ -16,9 +16,15 @@
         var pos = enemy.Transform.Position;
         // Position relative to player
         var relativePos = pos - Player.Transform.Position;
-        // Map to minimap
-        var x = (relativePos.x / Display.Camera.OrthoWidth) * 100f;
-        var y = (relativePos.y / Display.Camera.OrthoHeight) * 100f;
+        Log.Info(relativePos);
+        
+        // Clip the relative position to the minimap bounds
+        relativePos.x = Math.Clamp(relativePos.x, -1024, 1024);
+        relativePos.y = Math.Clamp(relativePos.y, -1024, 1024);
+
+        // Normalize to 0-100% scale
+        var x = ((-relativePos.y + 1024) / 2048) * 100f;
+        var y = ((-relativePos.x + 1024) / 2048) * 100f;
 
         <i class="enemy" style="transform: translate(-50%, -50%); left: @x.ToString()%; top: @y.ToString()%;">smart_toy</i>
     }
