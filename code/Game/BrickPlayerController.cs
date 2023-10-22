@@ -122,7 +122,7 @@ public class BrickPlayerController : BaseComponent
 				var wp = pickup.AddComponent<WorldPanel>();
 				wp.LookAtCamera = true;
 				wp.RenderScale = 1.8f;
-				wp.PanelSize = new Vector2( 400, 500 );
+				wp.PanelSize = new Vector2( 1200, 500 );
 			}
 
 			if ( pickup.GetComponent<PickupHint>() is null )
