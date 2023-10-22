@@ -186,6 +186,11 @@ public class BrickPlayerController : BaseComponent
 		{
 			EyeAngles.pitch += Input.MouseDelta.y * 0.1f;
 			EyeAngles.yaw -= Input.MouseDelta.x * 0.1f;
+
+			if ( Input.Pressed( "Backward" ) )
+			{
+				EyeAngles.yaw += 180f;
+			}
 		}
 		else
 		{
@@ -195,26 +200,6 @@ public class BrickPlayerController : BaseComponent
 			EyeAngles.pitch = 0;
 		}
 
-		if ( Input.Down( "Run" ) && Input.Down( "Attack2" ) )
-		{
-
-			if ( Input.Pressed( "Left" ) )
-			{
-				EyeAngles.yaw += 90f;
-			}
-
-			if ( Input.Pressed( "Right" ) )
-			{
-				EyeAngles.yaw -= 90f;
-			}
-
-			if ( Input.Pressed( "Backward" ) )
-			{
-				EyeAngles.yaw += 180f;
-			}
-		}
-
-		//EyeAngles.yaw -= Input.MouseDelta.x * 0.1f;
 		EyeAngles.roll = 0;
 
 		if ( Camera != null )
