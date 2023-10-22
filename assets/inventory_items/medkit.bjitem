@@ -3,11 +3,11 @@
   "Weight": 3.4,
   "Length": 2,
   "Height": 1,
-  "ExamineText": "Seems like a good way feel better.",
+  "ExamineText": "Seems like a good way to feel better.",
   "Position": {
-    "X": 1
+    "X": 3
   },
-  "ImagePath": "inventory_icons/medkit_icon.png",
+  "ImagePath": "ui/medkit_icon.png",
   "InventoryActions": [
     "Use",
     "Drop",

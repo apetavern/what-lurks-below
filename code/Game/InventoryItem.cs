@@ -31,7 +31,7 @@ public class InventoryItem : GameResource
 	{
 		if ( action is InventoryAction.Examine )
 		{
-			Log.Info( ExamineText );
+			MessagePanel.Instance.AddMessage( ExamineText );
 		}
 		else if ( action is InventoryAction.Drop )
 		{

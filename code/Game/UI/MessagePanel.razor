@@ -1,0 +1,52 @@
+﻿@using System
+@using System.Collections.Generic
+@using System.Linq
+@using BrickJam.Player
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+
+<root>
+    @foreach (var message in Messages)
+    {
+        <div class="message">
+            @message
+        </div>
+    }
+</root>
+
+@code
+{
+    public static MessagePanel Instance { get; set; }
+
+    private List<string> Messages { get; set; }
+    private float TimeUntilFades { get; set; } = 5f;
+    
+    public MessagePanel()
+    {
+        Instance = this;
+        Messages = new();
+        TimeUntilFades = 5f;
+    }
+
+    public void AddMessage(string message)
+    {
+        TimeUntilFades = 5f;
+        if ( Messages.Count > 4 ) 
+            Messages.RemoveAt(0);
+        Messages.Add(message);
+    }
+
+    public override void Update()
+    {
+        base.Update();
+
+        TimeUntilFades -= Time.Delta;
+        Panel.SetClass("show", TimeUntilFades > 0);
+    }
+
+    protected override int BuildHash()
+    {
+        return HashCode.Combine(Time.Now);
+    }
+}
