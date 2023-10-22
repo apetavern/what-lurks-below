@@ -29,17 +29,21 @@ public class BrickPlayerController : BaseComponent
 
 	public Vector3 startpos;
 
-	public GameObject SpawnGlowstick()
+	TimeSince TimeSinceLastGlowstick;
+
+	public void SpawnGlowstick()
 	{
-		var prefab = ResourceLibrary.Get<PrefabFile>( "prefabs/glowstick.object" );
-		var bone = Body.GetComponent<AnimatedModelComponent>().SceneObject.GetBoneWorldTransform( "hold_R" );
+		if ( TimeSinceLastGlowstick > 1f )
+		{
+			var prefab = ResourceLibrary.Get<PrefabFile>( "prefabs/glowstick.object" );
+			var bone = Body.GetComponent<AnimatedModelComponent>().SceneObject.GetBoneWorldTransform( "hold_R" );
 
-		var go = SceneUtility.Instantiate( prefab.Scene, bone.Position, Rotation.FromPitch( 90 ) );
+			var go = SceneUtility.Instantiate( prefab.Scene, bone.Position, Rotation.FromPitch( 90 ) );
 
-		go.GetComponent<GlowstickComponent>( false, true ).Velocity = Body.Transform.Rotation.Forward * 250f + Vector3.Up * 150f;
-
-		go.SetParent( navgen.GameObject.Children.First() );
-		return go;
+			go.GetComponent<GlowstickComponent>( false, true ).Velocity = Body.Transform.Rotation.Forward * 250f + Vector3.Up * 150f;
+			go.GetComponent<GlowstickComponent>( false, true ).Player = GameObject;
+			go.SetParent( navgen.GameObject.Children.First() );
+		}
 	}
 
 	public override void OnEnabled()
