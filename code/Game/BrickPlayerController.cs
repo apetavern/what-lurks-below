@@ -182,11 +182,18 @@ public class BrickPlayerController : BaseComponent
 			SpawnGlowstick();
 		}
 
-		// Eye input
-		EyeAngles.pitch = 0;
+		if ( Input.Down( "Attack2" ) )
+		{
+			EyeAngles.pitch += Input.MouseDelta.y * 0.1f;
+			EyeAngles.yaw -= Input.MouseDelta.x * 0.1f;
+		}
+		else
+		{
+			if ( Input.Down( "Left" ) ) EyeAngles.yaw += Time.Delta * 90f * AimMultiplier;
+			if ( Input.Down( "Right" ) ) EyeAngles.yaw -= Time.Delta * 90f * AimMultiplier;
 
-		if ( Input.Down( "Left" ) ) EyeAngles.yaw += Time.Delta * 90f * AimMultiplier;
-		if ( Input.Down( "Right" ) ) EyeAngles.yaw -= Time.Delta * 90f * AimMultiplier;
+			EyeAngles.pitch = 0;
+		}
 
 		if ( Input.Down( "Run" ) && Input.Down( "Attack2" ) )
 		{
@@ -283,7 +290,7 @@ public class BrickPlayerController : BaseComponent
 				helper.SpecialMove = CitizenAnimationHelperScene.SpecialMovement.None;
 			}
 
-			Eye.Transform.Rotation = new Angles( 0, EyeAngles.yaw, 0 ).ToRotation();
+			Eye.Transform.Rotation = new Angles( EyeAngles.pitch, EyeAngles.yaw, 0 ).ToRotation();
 
 			if ( Input.Down( "Attack2" ) )
 			{
