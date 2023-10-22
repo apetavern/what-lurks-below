@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System;
 using BrickJam.Player;
 using BrickJam.Game;
+using System.Linq;
 
 public enum EyeballPosition
 {
@@ -27,6 +28,8 @@ public sealed class GooBossSequencer : BaseComponent
 	[Property] public GameObject Enemy1 { get; set; }
 	[Property] public GameObject Enemy2 { get; set; }
 	[Property] public GameObject Enemy3 { get; set; }
+
+	[Property] GameObject IntroBezier { get; set; }
 
 	AnimatedModelComponent BossModel { get; set; }
 
@@ -131,10 +134,16 @@ public sealed class GooBossSequencer : BaseComponent
 		}
 	}
 
-	public void OnTriggered()
+	public async void OnTriggered()
 	{
-		StartedFight = true;
-		EyesOpen = true;
+		if ( !StartedFight )
+		{
+			Scene.GetAllObjects( true ).Where( X => X.GetComponent<CameraComponent>( false ) != null ).First().GetComponent<CameraComponent>( false ).FieldOfView = 80f;
+			await IntroBezier.GetComponent<BezierAnimationComponent>().AnimateObject( roomTrigger.GetComponent<CameraTriggerComponent>().CameraPoint, 5f, true );
+			StartedFight = true;
+			EyesOpen = true;
+		}
+
 		foreach ( var item in doorBlockers.Children )
 		{
 			item.GetComponent<ModelComponent>( false, true ).Enabled = true;

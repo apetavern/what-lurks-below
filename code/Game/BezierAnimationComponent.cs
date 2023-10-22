@@ -65,7 +65,7 @@ public sealed class BezierAnimationComponent : BaseComponent, BaseComponent.Exec
 		}
 	}
 
-	public async Task AnimateObject( GameObject animatable, float time = 2f )
+	public async Task AnimateObject( GameObject animatable, float time = 2f, bool LerpToPointAngles = false )
 	{
 		Vector3 startPoint = Point1.Transform.Position;
 		Vector3 endPoint = Point2.Transform.Position;
@@ -83,23 +83,36 @@ public sealed class BezierAnimationComponent : BaseComponent, BaseComponent.Exec
 		float currentTime = 0.0f;
 		float rotationSpeed = 25.0f; // Adjust the rotation speed as needed.
 
+		float realtime = 0f;
+
 		int currentIndex = 0;
 
 		while ( currentIndex < bezierPoints.Count - 1 )
 		{
+			realtime += Time.Delta;
 			float t = currentTime / (totalTime / segments);
 			Vector3 currentPosition = Vector3.Lerp( bezierPoints[currentIndex], bezierPoints[currentIndex + 1], t );
 			animatable.Transform.Position = currentPosition;
 
-			// Calculate the rotation to look at the next point.
-			Vector3 nextPosition = bezierPoints[currentIndex + 1];
-			Rotation lookRotation = Rotation.LookAt( nextPosition - currentPosition, Vector3.Up );
+			if ( !LerpToPointAngles )
+			{
+				// Calculate the rotation to look at the next point.
+				Vector3 nextPosition = bezierPoints[currentIndex + 1];
+				Rotation lookRotation = Rotation.LookAt( nextPosition - currentPosition, Vector3.Up );
 
-			// Smoothly interpolate the rotation.
-			Rotation currentRotation = animatable.Transform.Rotation;
-			animatable.Transform.Rotation = Rotation.Slerp( currentRotation, lookRotation, rotationSpeed * Time.Delta );
+				// Smoothly interpolate the rotation.
+				Rotation currentRotation = animatable.Transform.Rotation;
+				animatable.Transform.Rotation = Rotation.Slerp( currentRotation, lookRotation, rotationSpeed * Time.Delta );
 
+			}
+			else
+			{
+				float t2 = realtime / totalTime;
+
+				animatable.Transform.Rotation = Rotation.Slerp( Point1.Transform.Rotation * Rotation.FromYaw( 180f ), Point2.Transform.Rotation, t2 );
+			}
 			await GameTask.DelaySeconds( Time.Delta );
+
 			currentTime += Time.Delta;
 
 			if ( currentTime >= totalTime / segments )
