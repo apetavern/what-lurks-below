@@ -72,8 +72,8 @@
           {
             "__type": "ModelComponent",
             "__enabled": true,
-            "MaterialOverride": "materials/urban/urban_trim_01.vmat",
-            "Model": "models/environment/stairs_02.vmdl",
+            "MaterialOverride": null,
+            "Model": "models/environment/curb_01.vmdl",
             "ShouldCastShadows": true,
             "Tint": "1,1,1,1"
           }

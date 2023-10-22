@@ -390,7 +390,7 @@
           "Id": "6d4bf649-9867-4d84-89d4-d6f60f0d049c",
           "Name": "drain_01",
           "Enabled": true,
-          "Position": "224,63.71153,4",
+          "Position": "224,63.71153,4.5",
           "Rotation": "0,0,0,1",
           "Scale": "1,1,1",
           "Components": [
