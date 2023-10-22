@@ -1,7 +1,0 @@
-{
-  "PickupType": "Ammo",
-  "Scale": 1.5,
-  "Model": "models/items/ammo/ammobox_01.vmdl",
-  "Item": null,
-  "__references": []
-}

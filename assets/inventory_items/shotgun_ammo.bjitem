@@ -1,0 +1,18 @@
+{
+  "Name": "Shotgun Ammo",
+  "Weight": 0.8,
+  "Length": 2,
+  "Height": 1,
+  "ExamineText": "Good for shotguns.",
+  "Position": {},
+  "Quantity": 0,
+  "ImagePath": "ui/ammo2_icon.png",
+  "GroundModel": "models/items/ammo/ammobox_02.vmdl",
+  "GroundScale": 1,
+  "Stackable": true,
+  "InventoryActions": [
+    "Drop",
+    "Examine"
+  ],
+  "__references": []
+}

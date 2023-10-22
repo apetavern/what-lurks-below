@@ -1,6 +1,7 @@
 ﻿using BrickJam.Player;
 using Sandbox;
 using System.Linq;
+using BrickJam.Game.UI;
 
 namespace BrickJam.Game;
 
@@ -13,36 +14,12 @@ public class ItemPickup : BaseComponent
 	private GameObject Player;
 	private BrickPlayerController Controller;
 	private SceneModel _sceneModel;
-	private PickupResource _pickupResource;
 
-	public enum PickupType
-	{
-		Ammo,
-		Health,
-		Item
-	}
-
-	[Property] public PickupType Type { get; set; } = PickupType.Ammo;
 	[Property] public InventoryItem Item { get; set; }
 
 	public override void OnEnabled()
 	{
 		base.OnEnabled();
-
-		var pickupResources = ResourceLibrary.GetAll<PickupResource>();
-
-		PickupResource pickup;
-		if ( Type is PickupType.Item )
-			pickup = pickupResources.FirstOrDefault( p =>
-				p.PickupType == PickupType.Item && p.Item.Name == Item.Name );
-		else
-			pickup = pickupResources.FirstOrDefault( p => p.PickupType == Type );
-		// var pickup = pickupResources.FirstOrDefault( p => p.PickupType == Type );
-		//
-		if ( pickup is null )
-			return;
-
-		_pickupResource = pickup;
 
 		// Setup bounds
 		Player = Scene.GetAllObjects( true ).FirstOrDefault( p => p.Name == "player" );
@@ -52,7 +29,7 @@ public class ItemPickup : BaseComponent
 		var position = Transform.Position;
 
 		// Setup scene model
-		_sceneModel = new SceneModel( Scene.SceneWorld, _pickupResource.Model ?? Model.Load( "models/dev/box.vmdl" ), Transform.World );
+		_sceneModel = new SceneModel( Scene.SceneWorld, Item.GroundModel ?? Model.Load( "models/dev/box.vmdl" ), Transform.World );
 	}
 
 	public override void OnDisabled()
@@ -69,7 +46,7 @@ public class ItemPickup : BaseComponent
 		{
 			_sceneModel.Rotation = Rotation.From( 0, Time.Now * 90f, 0 );
 			_sceneModel.Position = Transform.Position + Vector3.Up * _sceneModel.Bounds.Size;
-			_sceneModel.Transform = _sceneModel.Transform.WithScale( _pickupResource.Scale );
+			_sceneModel.Transform = _sceneModel.Transform.WithScale( Item.GroundScale );
 
 			_sceneModel.Update( 0.1f );
 		}
@@ -79,26 +56,7 @@ public class ItemPickup : BaseComponent
 
 	public void Triggered()
 	{
-		switch ( Type )
-		{
-			case PickupType.Ammo:
-				break;
-			case PickupType.Health:
-				TriggerHealth();
-				break;
-			case PickupType.Item:
-				TriggerItem();
-				break;
-		}
-	}
-
-	void TriggerHealth()
-	{
-		var pHealth = Player.GetComponent<HealthComponent>();
-		pHealth.Health += 25f;
-
-		Sound.FromScreen( "item_pickup" );
-		Destroy();
+		TriggerItem();
 	}
 
 	void TriggerItem()
@@ -107,14 +65,14 @@ public class ItemPickup : BaseComponent
 		if ( inv is null )
 			return;
 
-		var (hasSpace, invCoord) = inv.HasFreeSpace( _pickupResource.Item.Length, _pickupResource.Item.Height );
+		var (hasSpace, invCoord) = inv.HasFreeSpace( Item.Length, Item.Height );
 		if ( !hasSpace )
 		{
-			Log.Warning( $"Not enough space for {_pickupResource.Item.Name} in inventory." );
+			MessagePanel.Instance.AddMessage( $"Not enough space for {Item.Name} in inventory." );
 			return;
 		}
 
-		var added = inv.PlaceItem( _pickupResource.Item, invCoord );
+		var added = inv.PlaceItem( Item, invCoord );
 		if ( !added )
 			return;
 

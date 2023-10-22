@@ -1,0 +1,21 @@
+{
+  "Name": "Pistol Ammo",
+  "Weight": 0.2,
+  "Length": 2,
+  "Height": 1,
+  "ExamineText": "Can\u0027t shoot your pistol without it.",
+  "Position": {
+    "X": 4,
+    "Y": 2
+  },
+  "Quantity": 0,
+  "ImagePath": "ui/ammo_icon.png",
+  "GroundModel": "models/items/ammo/ammobox_01.vmdl",
+  "GroundScale": 1,
+  "Stackable": true,
+  "InventoryActions": [
+    "Drop",
+    "Examine"
+  ],
+  "__references": []
+}

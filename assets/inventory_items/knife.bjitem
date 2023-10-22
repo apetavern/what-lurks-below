@@ -6,6 +6,8 @@
   "ExamineText": "Sharp and pointy.",
   "Position": {},
   "ImagePath": "ui/knife_icon.png",
+  "GroundModel": "models/items/knife/knife.vmdl",
+  "GroundScale": 1,
   "InventoryActions": [
     "Equip",
     "Drop",
