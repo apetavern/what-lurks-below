@@ -129,10 +129,10 @@ public sealed class GooBossSequencer : BaseComponent
 
 	public async void SpawnEnemies()
 	{
-		int amountOfEnemies = 2;
+		int amountOfEnemies = 7 - Eyeballs.Count;
 		for ( int i = 0; i < amountOfEnemies; i++ )
 		{
-			await GameTask.DelaySeconds( Game.Random.Float( 1f, 10f ) );
+			await GameTask.DelaySeconds( Game.Random.Float( 1f, 6f ) );
 
 			List<Transform> enemySpawnPositions = new()
 			{
