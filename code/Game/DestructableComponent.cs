@@ -9,9 +9,17 @@ using Sandbox;
 public sealed class DestructableComponent : BaseComponent
 {
 	private List<InventoryItem> PotentialDrops { get; set; } = new();
-	
+
 	public override void OnStart()
 	{
+		if ( Game.Random.Float() > 0.3f )
+		{
+			GetComponent<ModelComponent>().SceneObject.SetMaterialGroup( "clean" );
+		}
+		else
+		{
+			GetComponent<ModelComponent>().SceneObject.SetMaterialGroup( "painted" );
+		}
 		// Destroy on death
 		HealthComponent healthComponent = GameObject.GetComponent<HealthComponent>();
 		healthComponent.OnDeath += OnDeath;
@@ -35,14 +43,14 @@ public sealed class DestructableComponent : BaseComponent
 		pickup.Transform.Position = Transform.Position;
 		itemPickup.Enabled = true;
 		pickup.Enabled = true;
-		
+
 		// var pickup = new ItemPickup { Item = item, Transform = { Position = Transform.Position } };
 		GameObject.Destroy();
 	}
 
 	private InventoryItem GetRandomItem()
 	{
-		var item = PotentialDrops[Random.Shared.Next(0, PotentialDrops.Count - 1)];
+		var item = PotentialDrops[Random.Shared.Next( 0, PotentialDrops.Count - 1 )];
 		if ( item.Name.Contains( "Ammo" ) )
 		{
 			item.Quantity = Random.Shared.Next( 1, 4 );
