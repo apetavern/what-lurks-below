@@ -38,8 +38,8 @@
         Instance = gridItem.Parent.AddChild<InventoryActionMenu>();
         Instance.GridItem = gridItem;
 
-        Instance.Style.Left = gridItem.Parent.MousePosition.x * gridItem.Parent.ScaleFromScreen;
-        Instance.Style.Top = gridItem.Parent.MousePosition.y * gridItem.Parent.ScaleFromScreen;
+        Instance.Style.Left = (gridItem.Parent.MousePosition.x * gridItem.Parent.ScaleFromScreen);
+        Instance.Style.Top = MathF.Min(gridItem.Parent.MousePosition.y * gridItem.Parent.ScaleFromScreen, (Instance.Parent.Style.Height?.Value ?? 0f) - 150f);
 
         return Instance;
     }
