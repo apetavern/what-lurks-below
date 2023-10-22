@@ -1,6 +1,6 @@
 {
   "RootObject": {
-    "Id": "7d5472f1-f070-4ab4-906e-dc53929eb75b",
+    "Id": "78eed199-2720-4356-9279-8f48c47a5a0b",
     "Name": "goo_man",
     "Enabled": true,
     "Position": "0,0,0",
@@ -23,12 +23,12 @@
         "AttackDamage": 7,
         "AttackRange": 64,
         "AttackSound": "gooman-attack",
-        "Body": "494c3b5a-7ab8-455e-9986-880b968e0a82",
+        "Body": "40e9d222-7150-43fc-970a-feb97f92836e",
         "DeathSound": "gooman-death",
         "Friction": 0.9499998,
         "HurtSound": "gooman-hurt",
         "IdleSound": "gooman-idle",
-        "Speed": 50,
+        "Speed": 60,
         "TimeBetweenAttacks": 1
       },
       {
@@ -44,7 +44,7 @@
     ],
     "Children": [
       {
-        "Id": "494c3b5a-7ab8-455e-9986-880b968e0a82",
+        "Id": "40e9d222-7150-43fc-970a-feb97f92836e",
         "Name": "Epic Enemy",
         "Enabled": true,
         "Position": "0,0,0",
@@ -63,7 +63,7 @@
         ]
       },
       {
-        "Id": "9c7b6e2d-2b04-4e79-bd8a-fe5e989fa370",
+        "Id": "104b5976-a2ab-47e4-bad8-c17427a6b511",
         "Name": "Collider",
         "Enabled": true,
         "Position": "0,0,15.82238",

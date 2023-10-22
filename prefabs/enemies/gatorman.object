@@ -1,6 +1,6 @@
 {
   "RootObject": {
-    "Id": "2eb2fc6a-9824-44f2-b5c6-cc626d27ef16",
+    "Id": "beaa4511-0f93-486d-b7d6-9af675f334fa",
     "Name": "gatorman",
     "Enabled": true,
     "Position": "0,0,0",
@@ -23,12 +23,12 @@
         "AttackDamage": 30,
         "AttackRange": 64,
         "AttackSound": "",
-        "Body": "c26c94e8-2c31-40f0-9317-715ef252e942",
+        "Body": "322fdadd-f17d-4646-a938-8f55160a5347",
         "DeathSound": "",
         "Friction": 0.9499998,
         "HurtSound": "",
         "IdleSound": "",
-        "Speed": 43,
+        "Speed": 55,
         "TimeBetweenAttacks": 3
       },
       {
@@ -44,7 +44,7 @@
     ],
     "Children": [
       {
-        "Id": "c26c94e8-2c31-40f0-9317-715ef252e942",
+        "Id": "322fdadd-f17d-4646-a938-8f55160a5347",
         "Name": "Epic Enemy",
         "Enabled": true,
         "Position": "0,0,0",
@@ -63,7 +63,7 @@
         ]
       },
       {
-        "Id": "c84b450b-7c1c-434c-a82c-f185ca0f496c",
+        "Id": "51913d30-3907-4d7b-8ed8-0ccd4f3d28f4",
         "Name": "Collider",
         "Enabled": true,
         "Position": "0,0,41.82742",
