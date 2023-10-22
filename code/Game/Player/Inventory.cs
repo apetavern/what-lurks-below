@@ -67,6 +67,11 @@ public class Inventory : BaseComponent
 		return true;
 	}
 
+	public bool ItemInInventory( InventoryItem item )
+	{
+		return _items.Any( i => i.Name == item.Name );
+	}
+
 	public (bool, InvCoord) HasFreeSpace( int length, int height )
 	{
 		for ( var i = 0; i < _inventorySlots.GetLength( 1 ); i++ )
@@ -120,6 +125,18 @@ public class Inventory : BaseComponent
 			for ( var j = pos.Y; j < pos.Y + height; j++ )
 			{
 				_inventorySlots[i, j] = false;
+			}
+		}
+	}
+
+	public void UpdateExistingItem( InventoryItem item )
+	{
+		if ( item.Stackable )
+		{
+			var existingItem = _items.FirstOrDefault( i => i.Name == item.Name );
+			if ( existingItem is not null )
+			{
+				existingItem.Quantity += item.Quantity;
 			}
 		}
 	}

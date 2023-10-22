@@ -2,12 +2,26 @@
 @using System.Collections.Generic;
 @using System.Linq;
 @using BrickJam.Player;
+@using BrickJam.Game;
 @using Sandbox;
 @using Sandbox.UI;
 @inherits PanelComponent
 
 <root>
     <ScenePanel @ref="Display" />
+    <i class="player" style="transform: translate(-50%, -50%) rotate(@(PlayerAngle.ToString())deg);">forward</i>
+    @foreach(var enemy in Enemies)
+    {
+        if(!enemy.IsValid()) continue;
+        var pos = enemy.Transform.Position;
+        // Position relative to player
+        var relativePos = pos - Player.Transform.Position;
+        // Map to minimap
+        var x = (relativePos.x / Display.Camera.OrthoWidth) * 100f;
+        var y = (relativePos.y / Display.Camera.OrthoHeight) * 100f;
+
+        <i class="enemy" style="transform: translate(-50%, -50%); left: @x.ToString()%; top: @y.ToString()%;">smart_toy</i>
+    }
     <div class="vignette" />
 </root>
 
@@ -15,9 +29,14 @@
 {    
     public static Minimap Instance { get; set; }
 
+    float PlayerAngle => -(PlayerBody?.Transform.Rotation.Angles().yaw ?? 0f) - 90;
+
     ScenePanel Display;
     GameObject Player;
+    GameObject PlayerBody;
     NavGenComponent NavGen;
+
+    List<GameObject> Enemies = new List<GameObject>();
 
     public Minimap()
     {
@@ -28,23 +47,37 @@
     {
         base.Update();
 
-        Player ??= Scene.GetAllObjects( true ).FirstOrDefault( p => p.Name == "player" );
         NavGen ??= Scene.GetAllObjects( true ).Where( X => X.GetComponent<NavGenComponent>() != null ).FirstOrDefault().GetComponent<NavGenComponent>();
+        bool isReady = NavGen?.Initialized ?? false;
+        Panel.SetClass( "hidden", !isReady );
 
-        Panel.SetClass( "hidden", NavGen?.Initialized != true );
+        if(!isReady) return;
 
+        Player ??= Scene.GetAllObjects( true ).FirstOrDefault( p => p.Name == "player" );
+        PlayerBody ??= Player.GetComponent<BrickPlayerController>().Body;
+        
         if ( Player == null || Display == null ) return;
+
+        if(Enemies.Count == 0)
+        {
+            Enemies = Scene.GetAllObjects( true ).Where( X => X.GetComponent<EnemyController>() != null ).ToList();
+        }
 
         var playerPos = Player.Transform.Position;
 
         Display.Camera.Ortho = true;
-        Display.Camera.OrthoWidth = 1024;
-        Display.Camera.OrthoHeight = 1024;
-        Display.Camera.ZFar = 2000f;
+        Display.Camera.OrthoWidth = 2048;
+        Display.Camera.OrthoHeight = 2048;
+        Display.Camera.ZFar = 3000f;
         
         Display.World = Scene.SceneWorld;
         Display.Camera.Position = new Vector3( playerPos.x, playerPos.y, playerPos.z + 100f);
         Display.Camera.Rotation = Rotation.LookAt(Vector3.Down, Vector3.Up);
+    }
+
+    protected override int BuildHash()
+    {
+        return HashCode.Combine(Time.Now);
     }
 }
 

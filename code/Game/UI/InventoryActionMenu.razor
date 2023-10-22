@@ -67,7 +67,7 @@
         return weapon.ActiveWeapon?.Name == GridItem.Item.Name;
     }
 
-    void Destroy()
+    public void Destroy()
     {
         if(Instance is not null) Instance.GridItem.ActionMenu = null;
         Instance?.Delete();

@@ -1,0 +1,62 @@
+﻿@using System
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+
+<style>
+    DamageToast {
+        position: absolute;
+		font-size: 100px;
+		width: 100%;
+		height: 100%;
+		font-family: Poppins;
+		text-shadow: 0px 0px 5px black;
+
+		.hitMarker {
+			position: absolute;
+			bottom: 0px;
+			font-weight: bold;
+			transition: all 2s linear;
+			color: red;
+		
+			&.exit
+			{
+				bottom: 400px;
+				transition: all 2s linear;
+				opacity: 0;
+				font-size: 60px;
+			}
+		}
+    }
+</style>
+
+@code {
+	TimeSince _timeSinceCreated { get; set; }
+	Label _marker { get; set; }
+
+	public override void OnStart()
+	{
+		base.OnStart();
+
+		_timeSinceCreated = 0;
+
+		panel.Style.MarginLeft = Game.Random.Int(0, 200);
+	}
+
+	public void CreateWithDamage( float amount )
+	{
+		_marker = new Label();
+		_marker.Text = $"-{amount}";
+		_marker.AddClass( "hitMarker" );
+
+		panel.AddChild(_marker);
+	}
+
+	public override void Update()
+	{
+		_marker?.SetClass("exit", _timeSinceCreated > 0.1f);
+
+		if (_timeSinceCreated > 10)
+			Destroy();
+	}
+}

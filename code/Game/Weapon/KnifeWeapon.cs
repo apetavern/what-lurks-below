@@ -1,6 +1,6 @@
-﻿using System.Linq;
-using BrickJam.Player;
+﻿using BrickJam.Player;
 using Sandbox;
+using System.Linq;
 
 namespace BrickJam.Game.Weapon;
 
@@ -76,7 +76,10 @@ public class KnifeWeapon : BaseWeapon
 				if ( hitHealth != null )
 				{
 					hitHealth.Damage( Damage );
+
+					CreateDamageToast( hitObject, tr.HitPosition );
 				}
+
 				HitSomething = true;
 			}
 			CurrentTime += Time.Delta;

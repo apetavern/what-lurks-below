@@ -3,6 +3,7 @@
 @using BrickJam.Player
 @using Sandbox;
 @using Sandbox.UI;
+@inherits Panel
 
 <root>
     @if( InventoryHud.Instance.IsOpen )
@@ -18,6 +19,10 @@
         <div class="control">
             <InputGlyph button="Run" size="small" />
             <p>Run</p>
+        </div>
+        <div class="control">
+            <InputGlyph button="Jump" size="small" />
+            <p>Dodge</p>
         </div>
         <div class="control">
             <InputGlyph button="Flashlight" size="small" />
