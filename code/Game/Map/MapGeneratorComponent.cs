@@ -336,9 +336,9 @@ public partial class MapGeneratorComponent : BaseComponent
 			}
 		}
 
-		if ( CorrectedRooms && !IsBossSequence && !Scene.GetAllObjects( true ).Where( x => x.GetComponent<EnemyController>() != null ).Any() )
+		/*if ( CorrectedRooms && !IsBossSequence && !Scene.GetAllObjects( true ).Where( x => x.GetComponent<EnemyController>() != null ).Any() )
 		{
 			RegenMap();
-		}
+		}*/
 	}
 }
