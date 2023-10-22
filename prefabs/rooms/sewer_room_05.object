@@ -1893,6 +1893,25 @@
             "Scale": "1,1,1"
           }
         ]
+      },
+      {
+        "Id": "9bcbdb05-4509-471e-8f89-938c803b07f2",
+        "Name": "Object",
+        "Enabled": true,
+        "Position": "-0.00002672441,-447.7576,0.000002495844",
+        "Rotation": "0.00000004096694,0.000000001117304,0.707107,0.7071065",
+        "Scale": "1,1,1",
+        "Components": [
+          {
+            "__type": "AnimatedModelComponent",
+            "__enabled": true,
+            "CreateBoneObjects": false,
+            "MaterialOverride": null,
+            "Model": "models/enemies/gooboss/gooboss.vmdl",
+            "ShouldCastShadows": true,
+            "Tint": "1,1,1,1"
+          }
+        ]
       }
     ]
   },
