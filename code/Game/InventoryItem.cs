@@ -50,6 +50,7 @@ public class InventoryItem : GameResource
 			if ( player is null )
 				return;
 			_ = new PickupObject( true, $"Pickup {item.Asset.Name}", player.Transform.Position, item.Asset );
+			MessagePanel.Instance.AddMessage($"You drop your {Name}.");
 		}
 		else if ( action is InventoryAction.Equip )
 		{
@@ -63,6 +64,16 @@ public class InventoryItem : GameResource
 				var pistol = new PistolWeapon( true, "Pistol" );
 				EquipWeapon( scene, pistol );
 			}
+			else if ( Name == "Shotgun" )
+			{
+				var shotgun = new ShotgunWeapon( true, "Shotgun" );
+				EquipWeapon( scene, shotgun );
+			}
+			else
+			{
+				return;
+			}
+			MessagePanel.Instance.AddMessage($"You equip your {Name}.");
 		}
 		else if ( action is InventoryAction.Use )
 		{
