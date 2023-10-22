@@ -21,9 +21,17 @@ public class InventoryItem : GameResource
 	public string ExamineText { get; set; }
 
 	public InvCoord Position { get; set; }
+	public int Quantity { get; set; }
 	
 	[ResourceType( "png" )]
 	public string ImagePath { get; set; }
+	
+	[ResourceType("vmdl")]
+	public Model GroundModel { get; set; }
+	
+	public float GroundScale { get; set; }
+	
+	public bool Stackable { get; set; }
 	
 	public List<InventoryAction> InventoryActions { get; set; }
 

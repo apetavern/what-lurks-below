@@ -5,9 +5,12 @@
   "Height": 1,
   "ExamineText": "Seems like a good way to feel better.",
   "Position": {
-    "X": 3
+    "X": 4,
+    "Y": 1
   },
   "ImagePath": "ui/medkit_icon.png",
+  "GroundModel": "models/items/medkit/medkit.vmdl",
+  "GroundScale": 1,
   "InventoryActions": [
     "Use",
     "Drop",

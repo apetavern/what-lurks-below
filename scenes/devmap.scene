@@ -122,7 +122,7 @@
     },
     {
       "Id": "77a5ccfd-2ea5-43d0-9394-097299cd1401",
-      "Name": "Pistol Pickup",
+      "Name": "Pistol Ammo Pickup",
       "Enabled": true,
       "Position": "128,0,0",
       "Rotation": "0,0,0,1",
@@ -139,8 +139,8 @@
         {
           "__type": "ItemPickup",
           "__enabled": true,
-          "Item": null,
-          "Type": "Ammo"
+          "Item": "assets/inventory_items/pistol_ammo.bjitem",
+          "Type": "Item"
         }
       ]
     },

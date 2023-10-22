@@ -5,9 +5,11 @@
   "Height": 1,
   "ExamineText": "Must unlock something...",
   "Position": {
-    "X": 3
+    "X": 5
   },
   "ImagePath": "ui/key_icon.png",
+  "GroundModel": "models/items/key/skeleton_key.vmdl",
+  "GroundScale": 1,
   "InventoryActions": [
     "Drop",
     "Examine"
