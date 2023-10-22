@@ -75,6 +75,19 @@ public sealed class GooBossSequencer : BaseComponent
 		}
 	}
 
+	TimeUntil timerIdleSound = new Random().Float( 4f, 12f );
+
+	void MakeIdleSounds()
+	{
+		if ( timerIdleSound > 0f ) return;
+		if ( !string.IsNullOrEmpty( IdleSound ) )
+		{
+			Sound.FromWorld( IdleSound, Transform.Position );
+		}
+
+		timerIdleSound = new Random().Float( 4f, 12f );
+	}
+
 	public async void OnDeath()
 	{
 		GetComponent<AnimatedModelComponent>().Set( "die", true );
@@ -101,6 +114,9 @@ public sealed class GooBossSequencer : BaseComponent
 	public void TriggerDamage( GooBossEyeball eye, bool killingBlow = false )
 	{
 		BossModel.Set( "hit", true );
+
+		if ( !string.IsNullOrEmpty( HurtSound ) )
+			Sound.FromWorld( HurtSound, Transform.Position );
 
 		if ( killingBlow )
 		{
@@ -164,6 +180,9 @@ public sealed class GooBossSequencer : BaseComponent
 
 			await GameTask.DelaySeconds( 0.6f );
 
+			if ( !string.IsNullOrEmpty( AttackSound ) )
+				Sound.FromWorld( AttackSound, spawnpos );
+
 			List<GameObject> enemiesToSpawn = new();
 			if ( Enemy1 != null ) enemiesToSpawn.Add( Enemy1 );
 			if ( Enemy2 != null ) enemiesToSpawn.Add( Enemy2 );
@@ -188,6 +207,8 @@ public sealed class GooBossSequencer : BaseComponent
 
 	public override void Update()
 	{
+		MakeIdleSounds();
+
 		if ( !StartedFight )
 		{
 			return;
