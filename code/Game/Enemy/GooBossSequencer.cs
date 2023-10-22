@@ -195,7 +195,7 @@ public sealed class GooBossSequencer : BaseComponent
 			List<GameObject> enemiesToSpawn = new();
 			if ( Enemy1 != null ) enemiesToSpawn.Add( Enemy1 );
 			if ( Enemy2 != null ) enemiesToSpawn.Add( Enemy2 );
-			if ( Enemy3 != null ) enemiesToSpawn.Add( Enemy3 );
+			if ( Enemy3 != null && Eyeballs.Count < 4 ) enemiesToSpawn.Add( Enemy3 );
 
 			if ( enemiesToSpawn.Count > 0 )
 			{
