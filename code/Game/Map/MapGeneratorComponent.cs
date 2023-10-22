@@ -330,6 +330,11 @@ public partial class MapGeneratorComponent : BaseComponent
 					room.GetComponent<RoomChunkComponent>( false ).SetupCollision();
 				}
 
+				foreach ( var door in SpawnedRooms[0].GetComponents<RoomDoorDefinition>( false, true ) )
+				{
+					SpawnPrefabFromPath( "prefabs/pieces/barrel_01.object", door.Transform.Position, door.Transform.Rotation );
+				}
+
 				GenerateRoomConnections();
 
 				CreateHallways();
