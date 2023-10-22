@@ -90,16 +90,25 @@ public class ItemPickup : BaseComponent
 		if ( inv is null )
 			return;
 
-		var (hasSpace, invCoord) = inv.HasFreeSpace( Item.Length, Item.Height );
-		if ( !hasSpace )
+		if ( Item.Stackable && inv.ItemInInventory( Item ) )
 		{
-			MessagePanel.Instance.AddMessage( $"Not enough space for {Item.Name} in inventory." );
-			return;
+			inv.UpdateExistingItem( Item );
+		}
+		else
+		{
+			var (hasSpace, invCoord) = inv.HasFreeSpace( Item.Length, Item.Height );
+			Log.Info(hasSpace + ":" + invCoord  );
+			if ( !hasSpace )
+			{
+				MessagePanel.Instance.AddMessage( $"Not enough space for {Item.Name} in inventory." );
+				return;
+			}
+
+			var added = inv.PlaceItem( Item, invCoord );
+			if ( !added )
+				return;
 		}
 
-		var added = inv.PlaceItem( Item, invCoord );
-		if ( !added )
-			return;
 
 		Sound.FromScreen( "item_pickup" );
 		Destroy();
