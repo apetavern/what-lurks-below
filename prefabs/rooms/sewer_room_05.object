@@ -1393,6 +1393,68 @@
         ]
       },
       {
+        "Id": "5002c4e6-c9d2-4d32-a661-405fe6956fa7",
+        "Name": "doors",
+        "Enabled": true,
+        "Position": "-128,128,0.0003444097",
+        "Rotation": "-0.0000002528812,-0.0000002528817,0.7071061,-0.7071075",
+        "Scale": "1,1,1",
+        "Children": [
+          {
+            "Id": "2e4d2392-b1f6-44c7-9f22-995915646682",
+            "Name": "Cube",
+            "Enabled": true,
+            "Position": "0,0,0",
+            "Rotation": "0,0,0,1",
+            "Scale": "1,1,1",
+            "Components": [
+              {
+                "__type": "ModelComponent",
+                "__enabled": true,
+                "MaterialOverride": null,
+                "Model": "models/environment/door_02.vmdl",
+                "ShouldCastShadows": true,
+                "Tint": "1,1,1,1"
+              },
+              {
+                "__type": "ModelCollider",
+                "__enabled": true,
+                "IsTrigger": false,
+                "Model": "models/environment/door_02.vmdl",
+                "Surface": null,
+                "Tags": ""
+              }
+            ]
+          },
+          {
+            "Id": "9418c2fb-378f-45ca-93cc-5a96f1ca8715",
+            "Name": "Cube",
+            "Enabled": true,
+            "Position": "0.0002441403,127.9998,-0.0002528566",
+            "Rotation": "-0.0000003576287,-0.0000000000007105427,-0.0000000000001278982,1",
+            "Scale": "1,1,1",
+            "Components": [
+              {
+                "__type": "ModelComponent",
+                "__enabled": true,
+                "MaterialOverride": null,
+                "Model": "models/environment/door_02.vmdl",
+                "ShouldCastShadows": true,
+                "Tint": "1,1,1,1"
+              },
+              {
+                "__type": "ModelCollider",
+                "__enabled": true,
+                "IsTrigger": false,
+                "Model": "models/environment/door_02.vmdl",
+                "Surface": null,
+                "Tags": ""
+              }
+            ]
+          }
+        ]
+      },
+      {
         "Id": "39afe7b9-9d5e-43d9-820f-16b2d47a6fce",
         "Name": "door_01",
         "Enabled": true,
@@ -1871,8 +1933,7 @@
           {
             "__type": "CameraTriggerComponent",
             "__enabled": true,
-            "CameraPoint": "af3c3e15-1950-4254-a46e-bf4c8586da43",
-            "FollowPlayer": true
+            "FollowPlayer": false
           },
           {
             "__type": "ColliderBoxComponent",
@@ -1918,6 +1979,12 @@
             "Model": "models/enemies/gooboss/gooboss.vmdl",
             "Surface": null,
             "Tags": ""
+          },
+          {
+            "__type": "GooBossSequencer",
+            "__enabled": true,
+            "doorBlockers": "5002c4e6-c9d2-4d32-a661-405fe6956fa7",
+            "roomTrigger": "6bc7f6b2-f301-4e8b-84fe-41fe3cd3480f"
           }
         ]
       }
