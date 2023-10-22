@@ -1,4 +1,5 @@
-﻿using BrickJam.Player;
+﻿using System;
+using BrickJam.Player;
 using Sandbox;
 
 namespace BrickJam.Game.Weapon;
@@ -85,9 +86,10 @@ public class BaseWeapon : GameObject
 
 				if ( hitHealth != null )
 				{
-					hitHealth.Damage( Damage );
+					var damage = Damage + new Random().Int( -1, 1 );
+					hitHealth.Damage( damage );
 
-					CreateDamageToast( hitObject, tr.HitPosition );
+					CreateDamageToast( hitObject, tr.HitPosition, (damage - 0.5f).CeilToInt() );
 				}
 			}
 			if ( AmmoCount > 0 )
@@ -103,7 +105,7 @@ public class BaseWeapon : GameObject
 		}
 	}
 
-	protected void CreateDamageToast( GameObject gameObject, Vector3 hitPosition )
+	protected void CreateDamageToast( GameObject gameObject, Vector3 hitPosition, int damage )
 	{
 		if ( gameObject is null )
 			return;
@@ -122,7 +124,7 @@ public class BaseWeapon : GameObject
 		damagePanel.Position = hitPosition + Vector3.Up * verticalOffset;
 
 		var damageToast = gameObject.AddComponent<DamageToast>();
-		damageToast.CreateWithDamage( Damage );
+		damageToast.CreateWithDamage( damage );
 	}
 
 	public virtual void SecondaryFire( Vector3 position, Vector3 direction )
