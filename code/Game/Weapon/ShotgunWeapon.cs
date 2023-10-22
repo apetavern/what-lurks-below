@@ -20,7 +20,7 @@ public class ShotgunWeapon : BaseWeapon
 		}
 	}
 	public override int MaxAmmo => 6;
-	public override float Damage => 6f;
+	public override float Damage => 8f;
 	public override float ReloadTime => 0.75f;
 
 	internal ShotgunWeapon( bool enabled, string name ) : base( enabled, name )

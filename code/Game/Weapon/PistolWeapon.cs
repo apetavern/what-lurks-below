@@ -22,7 +22,7 @@ public class PistolWeapon : BaseWeapon
 		}
 	}
 	public override int MaxAmmo => 15;
-	public override float Damage => 6f;
+	public override float Damage => 15f;
 	public override float ReloadTime => 0.6f;
 
 	internal PistolWeapon( bool enabled, string name ) : base( enabled, name )

@@ -7,7 +7,7 @@ namespace BrickJam.Game.Weapon;
 public class KnifeWeapon : BaseWeapon
 {
 	public static InventoryItem KnifeItem => GetInventoryItem();
-	
+
 	public override Model Model { get; set; } = Model.Load( "models/items/knife/knife.vmdl" );
 	public override CitizenAnimationHelperScene.HoldTypes HoldType => CitizenAnimationHelperScene.HoldTypes.HoldItem;
 	public override CitizenAnimationHelperScene.Hand Handedness => CitizenAnimationHelperScene.Hand.Right;
@@ -22,7 +22,7 @@ public class KnifeWeapon : BaseWeapon
 		}
 	}
 	public override int MaxAmmo => -1;
-	public override float Damage => 12f;
+	public override float Damage => 20f;
 	public override float ReloadTime => 0.6f;
 
 	public override float TraceLength => 20f;
@@ -34,7 +34,7 @@ public class KnifeWeapon : BaseWeapon
 
 	private static InventoryItem GetInventoryItem()
 	{
-		return ResourceLibrary.GetAll<InventoryItem>().FirstOrDefault(i => i.Name == "Knife");
+		return ResourceLibrary.GetAll<InventoryItem>().FirstOrDefault( i => i.Name == "Knife" );
 	}
 
 	public override void OnIdle( CitizenAnimationHelperScene helper )

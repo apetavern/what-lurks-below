@@ -34,7 +34,7 @@
       {
         "__type": "HealthComponent",
         "__enabled": true,
-        "InitialHealth": 25,
+        "InitialHealth": 45,
         "IsPlayer": false
       },
       {
