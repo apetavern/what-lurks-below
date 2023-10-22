@@ -187,7 +187,7 @@ public class BrickPlayerController : BaseComponent
 			EyeAngles.pitch += Input.MouseDelta.y * 0.1f;
 			EyeAngles.yaw -= Input.MouseDelta.x * 0.1f;
 
-			if ( Input.Pressed( "Backward" ) )
+			if ( Input.Pressed( "Backward" ) && !CameraControl )
 			{
 				EyeAngles.yaw += 180f;
 			}
