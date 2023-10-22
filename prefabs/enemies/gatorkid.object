@@ -28,8 +28,8 @@
         "Friction": 0.9499998,
         "HurtSound": "",
         "IdleSound": "",
-        "Speed": 96,
-        "TimeBetweenAttacks": 1
+        "Speed": 100,
+        "TimeBetweenAttacks": 0.75
       },
       {
         "__type": "HealthComponent",
