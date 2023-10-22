@@ -7,12 +7,7 @@
 @inherits PanelComponent
 
 <root>
-    @foreach (var message in Messages)
-    {
-        <div class="message">
-            @message
-        </div>
-    }
+
 </root>
 
 @code
@@ -31,22 +26,7 @@
 
     public void AddMessage(string message)
     {
-        TimeUntilFades = 5f;
-        if ( Messages.Count > 4 ) 
-            Messages.RemoveAt(0);
-        Messages.Add(message);
-    }
-
-    public override void Update()
-    {
-        base.Update();
-
-        TimeUntilFades -= Time.Delta;
-        Panel.SetClass("show", TimeUntilFades > 0);
-    }
-
-    protected override int BuildHash()
-    {
-        return HashCode.Combine(Time.Now);
+        var msg = Panel.AddChild<MessagePanelMessage>();
+        msg.Message = message;
     }
 }
