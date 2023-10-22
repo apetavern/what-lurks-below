@@ -89,7 +89,7 @@ public class EnemyController : BaseComponent
 		if ( !string.IsNullOrEmpty( DeathSound ) )
 			Sound.FromWorld( DeathSound, Transform.Position );
 
-		await GameTask.DelaySeconds( 0.5f );
+		await GameTask.DelaySeconds( 3f );
 		var modelcomp = GetComponent<AnimatedModelComponent>( false, true );
 		while ( modelcomp.SceneObject.ColorTint.a > 0 )
 		{
