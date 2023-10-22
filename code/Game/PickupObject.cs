@@ -11,6 +11,8 @@ public class PickupObject : GameObject
 	
 	internal PickupObject(bool enabled, string name, Vector3 position, InventoryItem item) : base(enabled, name)
 	{
+		SetParent( Scene );
+		
 		Transform.Position = position;
 		Item = item;
 		
