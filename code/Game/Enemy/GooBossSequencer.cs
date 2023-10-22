@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System;
 using BrickJam.Player;
 using BrickJam.Game;
+using System.Linq;
 
 public enum EyeballPosition
 {
@@ -135,6 +136,7 @@ public sealed class GooBossSequencer : BaseComponent
 	{
 		StartedFight = true;
 		EyesOpen = true;
+		Scene.GetAllObjects( true ).Where( X => X.GetComponent<CameraComponent>( false ) != null ).First().GetComponent<CameraComponent>( false ).FieldOfView = 80f;
 		foreach ( var item in doorBlockers.Children )
 		{
 			item.GetComponent<ModelComponent>( false, true ).Enabled = true;
