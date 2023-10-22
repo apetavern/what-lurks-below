@@ -27,11 +27,4 @@ public class PickupObject : GameObject
 		c_ItemPickup.Item = item;
 		c_ItemPickup.Enabled = true;
 	}
-
-	protected override void Update()
-	{
-		base.Update();
-		
-		Log.Info( "test" );
-	}
 }
