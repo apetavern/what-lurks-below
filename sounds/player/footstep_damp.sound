@@ -2,12 +2,12 @@
   "UI": false,
   "Volume": "0.73,0.80,1",
   "Pitch": "0.91,1.06,1",
-  "Decibels": 35,
+  "Decibels": 60,
   "SelectionMode": "Random",
   "Sounds": [
     "sounds/player/footstep_damp.vsnd"
   ],
-  "MaximumDistance": 309.98337,
-  "MinimumDistance": 15.499168,
+  "MaximumDistance": 848.93066,
+  "MinimumDistance": 42.446533,
   "__references": []
 }

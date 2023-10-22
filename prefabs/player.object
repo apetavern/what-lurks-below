@@ -68,6 +68,15 @@
           {
             "__type": "PlayerClothingComponent",
             "__enabled": true
+          },
+          {
+            "__type": "FakeFootsteps",
+            "__enabled": true,
+            "footstepSound": "sounds/player/footstep_damp.sound",
+            "LeftFootState": "Rising",
+            "LoweredFootHeight": 1,
+            "RaisedFootHeight": 1.5,
+            "RightFootState": "Rising"
           }
         ],
         "Children": [
