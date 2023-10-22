@@ -7,7 +7,7 @@ namespace BrickJam.Game.Weapon;
 public class PistolWeapon : BaseWeapon
 {
 	public static InventoryItem PistolItem => GetInventoryItem();
-	
+
 	public override Model Model { get; set; } = Model.Load( "weapons/rust_pistol/rust_pistol.vmdl" );
 	public override CitizenAnimationHelperScene.HoldTypes HoldType => CitizenAnimationHelperScene.HoldTypes.Pistol;
 	public override CitizenAnimationHelperScene.Hand Handedness => CitizenAnimationHelperScene.Hand.Left;
@@ -29,10 +29,10 @@ public class PistolWeapon : BaseWeapon
 	{
 		defaultAmmoCount = MaxAmmo;
 	}
-	
+
 	private static InventoryItem GetInventoryItem()
 	{
-		return ResourceLibrary.GetAll<InventoryItem>().FirstOrDefault(i => i.Name == "Pistol");
+		return ResourceLibrary.GetAll<InventoryItem>().FirstOrDefault( i => i.Name == "Pistol" );
 	}
 
 	public ParticleSystem muzzleflash;
@@ -60,7 +60,7 @@ public class PistolWeapon : BaseWeapon
 		if ( AmmoCount > 0 )
 		{
 			helper.TriggerAttack();
-			var muzzletr = GetComponent<AnimatedModelComponent>().GetAttachmentTransform( "muzzle" );
+			var muzzletr = GetComponent<AnimatedModelComponent>().SceneObject.GetBoneWorldTransform( "hold_R" );
 
 			if ( muzzleflash == null )
 			{
@@ -84,7 +84,7 @@ public class PistolWeapon : BaseWeapon
 
 	public override void OnSecondaryPressed( CitizenAnimationHelperScene helper )
 	{
-		Log.Info( "Secondary Pressed - Pistol" );
+		//Log.Info( "Secondary Pressed - Pistol" );
 	}
 
 	public override void OnSecondaryHeld( CitizenAnimationHelperScene helper )
@@ -97,7 +97,7 @@ public class PistolWeapon : BaseWeapon
 	{
 		base.Update();
 
-		Gizmo.Draw.LineBBox( LastHitBbox );
+		//Gizmo.Draw.LineBBox( LastHitBbox );
 
 		if ( ResourceBar.Instance is not null )
 			ResourceBar.Instance.Ammo = AmmoCount;

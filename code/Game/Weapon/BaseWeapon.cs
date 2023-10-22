@@ -67,7 +67,7 @@ public class BaseWeapon : GameObject
 		}
 		if ( AmmoCount > 0 || AmmoCount == -1 )
 		{
-			var muzzle = c_AnimatedModel.GetAttachmentTransform( "muzzle" );
+			var muzzle = c_AnimatedModel.SceneObject.GetBoneWorldTransform( "hold_R" );
 
 			var tr = Physics.Trace.Ray( muzzle.Position, muzzle.Position + direction.Normal * TraceLength )
 				.WithAnyTags( "solid", "enemy" )
