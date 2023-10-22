@@ -2,6 +2,7 @@ using Sandbox;
 using System.Collections.Generic;
 using System;
 using BrickJam.Player;
+using BrickJam.Game;
 
 public enum EyeballPosition
 {
@@ -23,11 +24,19 @@ public sealed class GooBossSequencer : BaseComponent
 	[Property] public string AttackSound { get; set; } = "";
 	[Property] public string DeathSound { get; set; } = "";
 
+	[Property] public GameObject Enemy1 { get; set; }
+	[Property] public GameObject Enemy2 { get; set; }
+	[Property] public GameObject Enemy3 { get; set; }
+
 	AnimatedModelComponent BossModel { get; set; }
 
 	public List<GameObject> Eyeballs { get; set; } = new List<GameObject>();
 
 	public bool StartedFight = false;
+
+	public bool EyesOpen = true;
+
+	List<GameObject> ActiveEnemies { get; set; } = new List<GameObject>();
 
 	public override void OnStart()
 	{
@@ -109,6 +118,7 @@ public sealed class GooBossSequencer : BaseComponent
 	public void OnTriggered()
 	{
 		StartedFight = true;
+		EyesOpen = true;
 		foreach ( var item in doorBlockers.Children )
 		{
 			item.GetComponent<ModelComponent>( false, true ).Enabled = true;
@@ -117,11 +127,97 @@ public sealed class GooBossSequencer : BaseComponent
 
 	}
 
+	public async void SpawnEnemies()
+	{
+		int amountOfEnemies = 2;
+		for ( int i = 0; i < amountOfEnemies; i++ )
+		{
+			await GameTask.DelaySeconds( Game.Random.Float( 1f, 10f ) );
+
+			List<Transform> enemySpawnPositions = new()
+			{
+				BossModel.GetAttachmentTransform( "leftmouth" ),
+				BossModel.GetAttachmentTransform( "middlemouth" ),
+				BossModel.GetAttachmentTransform( "rightmouth" )
+			};
+
+			Vector3 spawnpos = Vector3.Zero;
+
+			int chosenspawn = Game.Random.Int( 0, enemySpawnPositions.Count - 1 );
+
+			spawnpos = enemySpawnPositions[chosenspawn].Position;
+
+			switch ( chosenspawn )
+			{
+				case 0:
+					BossModel.Set( "spitleft", true );
+					break;
+				case 1:
+					BossModel.Set( "spitmiddle", true );
+					break;
+				case 2:
+					BossModel.Set( "spitright", true );
+					break;
+				default:
+					break;
+			}
+
+			await GameTask.DelaySeconds( 0.6f );
+
+			List<GameObject> enemiesToSpawn = new();
+			if ( Enemy1 != null ) enemiesToSpawn.Add( Enemy1 );
+			if ( Enemy2 != null ) enemiesToSpawn.Add( Enemy2 );
+			if ( Enemy3 != null ) enemiesToSpawn.Add( Enemy3 );
+
+			if ( enemiesToSpawn.Count > 0 )
+			{
+				var enemy = enemiesToSpawn[Game.Random.Int( 0, enemiesToSpawn.Count - 1 )];
+				var enemyObject = SceneUtility.Instantiate( enemy, GameObject.Transform.Position, GameObject.Transform.Rotation );
+				enemyObject.Transform.Position = spawnpos;
+				enemyObject.SetParent( GameObject.Parent );
+				enemyObject.GetComponent<EnemyController>( false ).AggroRange = 1024f;
+				ActiveEnemies.Add( enemyObject );
+			}
+		}
+		Spawning = false;
+	}
+
+	TimeSince TimeSinceEyesOpened;
+
+	bool Spawning;
+
 	public override void Update()
 	{
 		if ( !StartedFight )
 		{
 			return;
 		}
+
+		BossModel.Set( "closeeyes", !EyesOpen );
+
+		if ( TimeSinceEyesOpened > 10f )
+		{
+			if ( EyesOpen )
+			{
+				Spawning = true;
+				SpawnEnemies();
+				EyesOpen = false;
+			}
+		}
+
+		if ( !EyesOpen && !Spawning )
+		{
+			if ( ActiveEnemies.Count > 0 && !ActiveEnemies[0].Active )
+			{
+				ActiveEnemies.RemoveAt( 0 );
+			}
+
+			if ( ActiveEnemies.Count == 0 )
+			{
+				TimeSinceEyesOpened = 0f;
+				EyesOpen = true;
+			}
+		}
+
 	}
 }

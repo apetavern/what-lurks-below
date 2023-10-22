@@ -50,7 +50,15 @@ public sealed class GooBossEyeball : BaseComponent
 		{
 			boss = GameObject.Parent.GetComponent<GooBossSequencer>();
 		}
-		Transform.Position = boss.GetComponent<AnimatedModelComponent>().GetAttachmentTransform( pos.ToString() ).Position;
+
+		if ( boss.EyesOpen )
+		{
+			Transform.Position = boss.GetComponent<AnimatedModelComponent>().GetAttachmentTransform( pos.ToString() ).Position;
+		}
+		else
+		{
+			Transform.Position = boss.Transform.Position;
+		}
 
 		if ( health.Health <= 0 )
 		{

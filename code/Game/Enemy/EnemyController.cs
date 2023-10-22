@@ -84,7 +84,7 @@ public class EnemyController : BaseComponent
 		dead = true;
 		model.SetAnimParameter( "die", true );
 
-		Log.Info( "Enemies left: " + (Scene.GetAllObjects( true ).Where( x => x.GetComponent<EnemyController>() != null ).Count() - 1) );
+		//Log.Info( "Enemies left: " + (Scene.GetAllObjects( true ).Where( x => x.GetComponent<EnemyController>() != null ).Count() - 1) );
 
 		if ( !string.IsNullOrEmpty( DeathSound ) )
 			Sound.FromWorld( DeathSound, Transform.Position );
