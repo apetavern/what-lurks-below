@@ -80,7 +80,7 @@ public class BrickPlayerController : BaseComponent
 
 	public GameObject GetClosestAimableObjectInViewcone()
 	{
-		var PotentialAimTargets = Scene.GetAllObjects( true ).Where( X => X.GetComponent<AimableTargetComponent>( false ) != null && Vector3.DistanceBetween( X.Transform.Position, Transform.Position ) < 256 );
+		var PotentialAimTargets = Scene.GetAllObjects( true ).Where( X => X.GetComponent<AimableTargetComponent>( false ) != null && Vector3.DistanceBetween( X.Transform.Position, Transform.Position ) < 378 );
 		GameObject closestTarget = null;
 		float closestDistance = float.MaxValue;
 
