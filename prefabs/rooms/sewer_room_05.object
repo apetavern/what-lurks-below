@@ -1,6 +1,6 @@
 {
   "RootObject": {
-    "Id": "35d057ef-f1be-463c-94b5-875b5c33c694",
+    "Id": "bc295a82-6735-474e-b8d3-d59765808037",
     "Name": "sewer_room_05",
     "Enabled": true,
     "Position": "0,0,0",
@@ -10,12 +10,12 @@
       {
         "__type": "RoomChunkComponent",
         "__enabled": true,
-        "CameraTrigger": "6bc7f6b2-f301-4e8b-84fe-41fe3cd3480f"
+        "CameraTrigger": "992b372c-5e76-4ab2-ac64-ce5a9f23fb0f"
       }
     ],
     "Children": [
       {
-        "Id": "d20f5eec-073b-4839-9255-2987e935ddce",
+        "Id": "8f194ad1-5ade-47dc-80c6-49afe0ccb804",
         "Name": "model",
         "Enabled": true,
         "Position": "128,-640,0",
@@ -41,7 +41,7 @@
         ]
       },
       {
-        "Id": "15e5bf97-6643-48da-802f-9085e2472960",
+        "Id": "16559c2e-38b2-4a70-9548-c54ab422de86",
         "Name": "model",
         "Enabled": true,
         "Position": "128,-256,0",
@@ -67,7 +67,7 @@
         ]
       },
       {
-        "Id": "ae3faa28-51c4-442e-9857-07b741043fc2",
+        "Id": "7b2a2a13-1d6e-44df-a325-089e37e776b8",
         "Name": "model",
         "Enabled": true,
         "Position": "128,0,0",
@@ -93,7 +93,7 @@
         ]
       },
       {
-        "Id": "6ee04d44-0a66-4188-9352-1a794b65f49a",
+        "Id": "eff8affa-eb94-4640-abf0-8b926ceb2dec",
         "Name": "model",
         "Enabled": true,
         "Position": "128,-128,0",
@@ -119,7 +119,7 @@
         ]
       },
       {
-        "Id": "fa574c7e-7664-417a-a694-dfeeafa47fe6",
+        "Id": "89bdc43f-6300-4f05-a9c0-ccaf5baa6f62",
         "Name": "model",
         "Enabled": true,
         "Position": "128,-384,0",
@@ -145,7 +145,7 @@
         ]
       },
       {
-        "Id": "8eecd963-f57a-4c4c-98e3-759c443335c6",
+        "Id": "96284768-1368-4b69-b000-d301d946d461",
         "Name": "model",
         "Enabled": true,
         "Position": "128,-512,0",
@@ -171,7 +171,7 @@
         ]
       },
       {
-        "Id": "fc46e8d4-0cea-449a-b1ac-bb4486b65c06",
+        "Id": "6f8766fd-250c-4ce4-99c7-d687087bb3b5",
         "Name": "model",
         "Enabled": true,
         "Position": "128,-640,0",
@@ -197,7 +197,7 @@
         ]
       },
       {
-        "Id": "af7c023c-46d9-406e-9cf0-2970c5aa7341",
+        "Id": "384b8a93-ec14-44f5-8931-3d3bfb3e3f6c",
         "Name": "model",
         "Enabled": true,
         "Position": "128,-256,0",
@@ -223,7 +223,7 @@
         ]
       },
       {
-        "Id": "8b076ae8-91b8-4a56-a9ae-59f4878ec709",
+        "Id": "1ca4564d-5d68-4877-b380-aa1c899e33a2",
         "Name": "model",
         "Enabled": true,
         "Position": "128,0,0",
@@ -249,7 +249,7 @@
         ]
       },
       {
-        "Id": "9a12e13f-4697-48af-b72a-1de60e198904",
+        "Id": "a54f0e9c-9723-4ffb-8278-1f7b1d8d426e",
         "Name": "model",
         "Enabled": true,
         "Position": "256,-128,0",
@@ -275,7 +275,7 @@
         ]
       },
       {
-        "Id": "80787131-4717-421d-ace0-679b2f856fbe",
+        "Id": "3fb04d51-532c-4cd7-8c0a-bf18f2bc18e8",
         "Name": "model",
         "Enabled": true,
         "Position": "256,-384,0",
@@ -301,7 +301,7 @@
         ]
       },
       {
-        "Id": "cb2b7e25-2f8b-42a5-9f49-4e68819f55d5",
+        "Id": "d549ab07-2ff4-4108-912a-f950f90feccf",
         "Name": "model",
         "Enabled": true,
         "Position": "256,-512,0",
@@ -327,7 +327,7 @@
         ]
       },
       {
-        "Id": "f4beb6df-6dd6-4720-9ef4-9bb036f06ea4",
+        "Id": "3cec25ed-3873-4377-95d0-120b4613d37c",
         "Name": "model",
         "Enabled": true,
         "Position": "256,-640,0",
@@ -353,7 +353,7 @@
         ]
       },
       {
-        "Id": "5fd2515b-afab-4a9b-a2ca-37b3126cb022",
+        "Id": "a3ecdcc8-1978-47ef-8ecc-39dee51ea292",
         "Name": "model",
         "Enabled": true,
         "Position": "256,-256,0",
@@ -379,7 +379,7 @@
         ]
       },
       {
-        "Id": "f77ca794-6589-493f-a4cd-187bb25bb470",
+        "Id": "c92dec61-84bf-40c4-bc37-3d175b0eb858",
         "Name": "model",
         "Enabled": true,
         "Position": "256,0,0",
@@ -405,10 +405,10 @@
         ]
       },
       {
-        "Id": "8047935c-3c40-45a5-807a-c589711acced",
+        "Id": "ee201c7b-0671-47ce-a1c3-5d216f07e60a",
         "Name": "model",
         "Enabled": true,
-        "Position": "384,-128,0",
+        "Position": "640,-128,0",
         "Rotation": "0,0,0,1",
         "Scale": "1,1,1",
         "Components": [
@@ -431,7 +431,7 @@
         ]
       },
       {
-        "Id": "db36a9de-6e4a-4feb-91fd-72d4659614c6",
+        "Id": "f151252c-1a81-4694-9881-366cb520230f",
         "Name": "model",
         "Enabled": true,
         "Position": "384,-384,0",
@@ -457,7 +457,7 @@
         ]
       },
       {
-        "Id": "c7e31610-6c5f-4fb0-b6f7-7ab510df8138",
+        "Id": "00d7e1d7-5bba-42d6-87f3-b114f2c25f40",
         "Name": "model",
         "Enabled": true,
         "Position": "384,-512,0",
@@ -483,7 +483,7 @@
         ]
       },
       {
-        "Id": "59dc8fca-2b42-4d14-9859-5bd25b1342b9",
+        "Id": "8024bf7a-d794-4eef-a3d6-d0794cdb22d1",
         "Name": "model",
         "Enabled": true,
         "Position": "384,-640,0",
@@ -509,7 +509,7 @@
         ]
       },
       {
-        "Id": "215c54d1-53ff-4532-aa03-a9e80d4ac5bd",
+        "Id": "ba1e4f2d-a0f3-4c49-b282-29dd54baded5",
         "Name": "wall",
         "Enabled": true,
         "Position": "256,-640,0",
@@ -535,7 +535,7 @@
         ]
       },
       {
-        "Id": "f11469f7-f0d0-4be7-9502-4dd63ef8e572",
+        "Id": "38201dbe-1fef-4c2f-9f29-99ab6ecca287",
         "Name": "wall",
         "Enabled": true,
         "Position": "256,-640,128",
@@ -561,7 +561,7 @@
         ]
       },
       {
-        "Id": "0f051c62-ac98-4c85-b629-7f75c6af885e",
+        "Id": "2ec03445-298f-4cf2-b03e-958e68e703c6",
         "Name": "wall",
         "Enabled": true,
         "Position": "128,-640,0",
@@ -587,7 +587,7 @@
         ]
       },
       {
-        "Id": "05f05be4-d977-4250-89d4-73d275ed7041",
+        "Id": "b524a614-b78c-42d2-8417-6208674947f7",
         "Name": "wall",
         "Enabled": true,
         "Position": "128,-640,128",
@@ -613,7 +613,7 @@
         ]
       },
       {
-        "Id": "fdaa0a74-44e7-444a-bbaa-09fd5dd4fc81",
+        "Id": "d236e195-d3ec-468c-80d1-f36b871253ec",
         "Name": "wall",
         "Enabled": true,
         "Position": "0,-640,0",
@@ -639,7 +639,7 @@
         ]
       },
       {
-        "Id": "bee4bc95-0b79-4b84-a98c-7b1890290f49",
+        "Id": "9d6180b7-d05a-41e4-858e-ad6cb5b90472",
         "Name": "wall",
         "Enabled": true,
         "Position": "0,-640,128",
@@ -665,7 +665,7 @@
         ]
       },
       {
-        "Id": "6a2501e4-77d0-43d9-b2ca-c75cd4b3887a",
+        "Id": "d1f18458-8112-41bb-8c30-5db8a993c8ea",
         "Name": "wall",
         "Enabled": true,
         "Position": "-128,-640,0",
@@ -691,7 +691,7 @@
         ]
       },
       {
-        "Id": "bb9ed447-6586-4311-9d9f-51a1567a948c",
+        "Id": "be03fde7-878c-44bd-8031-9f9cf12051e6",
         "Name": "wall",
         "Enabled": true,
         "Position": "-128,-640,128",
@@ -717,7 +717,7 @@
         ]
       },
       {
-        "Id": "131a09e2-77a1-443a-924a-b00878929e01",
+        "Id": "5166c938-ec57-40e4-84b3-0682a4d95242",
         "Name": "wall",
         "Enabled": true,
         "Position": "-256,-640,0",
@@ -743,7 +743,7 @@
         ]
       },
       {
-        "Id": "db79a22c-6332-4f89-9453-d349eaf33a51",
+        "Id": "cc99e2eb-ee20-4221-b58b-7d82b8f384aa",
         "Name": "wall",
         "Enabled": true,
         "Position": "-256,-640,128",
@@ -769,7 +769,7 @@
         ]
       },
       {
-        "Id": "e99ce753-7157-41d7-9f1e-d46597ab8029",
+        "Id": "cbc02460-c870-40e7-bf7e-5514e1b7933a",
         "Name": "wall",
         "Enabled": true,
         "Position": "-384,-640,0",
@@ -795,7 +795,7 @@
         ]
       },
       {
-        "Id": "0c8b32bd-cbda-462b-961a-d87e9a565d06",
+        "Id": "875a1250-16d1-44ef-b5e6-1374c7274359",
         "Name": "wall",
         "Enabled": true,
         "Position": "-384,-640,128",
@@ -821,7 +821,7 @@
         ]
       },
       {
-        "Id": "dafd8b22-d3ad-41a4-b1b0-e458e5148530",
+        "Id": "8c20149e-587d-4191-b970-60383045b96b",
         "Name": "model",
         "Enabled": true,
         "Position": "384,-512,0",
@@ -847,10 +847,10 @@
         ]
       },
       {
-        "Id": "15c2b028-bfde-43c4-b966-87dcd117e2bb",
+        "Id": "f862fc1e-0afa-4183-95ab-cf37de4e88e1",
         "Name": "model",
         "Enabled": true,
-        "Position": "384,-256,0",
+        "Position": "640,-256,0",
         "Rotation": "0,0,0,1",
         "Scale": "1,1,1",
         "Components": [
@@ -873,10 +873,10 @@
         ]
       },
       {
-        "Id": "ce70313f-e4a8-48f8-bf0f-0912e8f62add",
+        "Id": "a76f7597-6db5-46f3-b432-f38085c17672",
         "Name": "model",
         "Enabled": true,
-        "Position": "384,0,0",
+        "Position": "640,0,0",
         "Rotation": "0,0,0,1",
         "Scale": "1,1,1",
         "Components": [
@@ -899,7 +899,7 @@
         ]
       },
       {
-        "Id": "df223562-ecd7-42cd-acd5-bd1733747c61",
+        "Id": "945857a9-b21a-42e4-93ff-f36763118ba1",
         "Name": "model",
         "Enabled": true,
         "Position": "0,-128,0",
@@ -925,7 +925,7 @@
         ]
       },
       {
-        "Id": "d6451e8f-bbe6-4270-9ca8-20036ce76cbc",
+        "Id": "559b0cea-b90a-4e56-8e78-8edb391a941f",
         "Name": "model",
         "Enabled": true,
         "Position": "0,-384,0",
@@ -951,7 +951,7 @@
         ]
       },
       {
-        "Id": "10c09bb6-bf6f-4e4d-8946-d745fcbd963b",
+        "Id": "898235a4-fe44-477e-92d4-35681d17447d",
         "Name": "model",
         "Enabled": true,
         "Position": "0,-256,0",
@@ -977,7 +977,7 @@
         ]
       },
       {
-        "Id": "a1be9223-36b8-4282-b201-60a9ec6b692d",
+        "Id": "7a360590-a5ab-43da-8f66-fd12488efec6",
         "Name": "model",
         "Enabled": true,
         "Position": "0,-512,0",
@@ -1003,7 +1003,7 @@
         ]
       },
       {
-        "Id": "b25e9454-1474-45e1-89cb-ecf9997600a1",
+        "Id": "560317c0-65a9-4106-b17b-27a5b55a9fd1",
         "Name": "model",
         "Enabled": true,
         "Position": "0,-640,0",
@@ -1029,7 +1029,7 @@
         ]
       },
       {
-        "Id": "d4152e50-63b6-4135-ab1e-3a8dae37ae50",
+        "Id": "3e021d09-45e5-48f9-8c6c-8d2c5aa5a129",
         "Name": "model",
         "Enabled": true,
         "Position": "0,0,0",
@@ -1055,7 +1055,7 @@
         ]
       },
       {
-        "Id": "a6a6e671-6139-4459-936d-947cd25b4e8c",
+        "Id": "b50b4f88-9b26-4fa7-b9b5-2d325bedd41f",
         "Name": "model",
         "Enabled": true,
         "Position": "-128,-128,0",
@@ -1081,7 +1081,7 @@
         ]
       },
       {
-        "Id": "9fedfe00-29b1-4afc-a5c8-2d3957f290ea",
+        "Id": "523ba6bb-be00-4de5-8a11-aec814692e85",
         "Name": "model",
         "Enabled": true,
         "Position": "-128,-384,0",
@@ -1107,7 +1107,7 @@
         ]
       },
       {
-        "Id": "6ceb3517-4384-41da-b35a-fa6019b7ec69",
+        "Id": "b0c07d50-40ed-47c2-a6db-d9d77f562114",
         "Name": "model",
         "Enabled": true,
         "Position": "-128,-256,0",
@@ -1133,7 +1133,7 @@
         ]
       },
       {
-        "Id": "c1b8d78e-05e7-4147-b8b3-0561c79c504e",
+        "Id": "e0660ebd-831f-4005-b3a8-13c42c4a4de9",
         "Name": "model",
         "Enabled": true,
         "Position": "-128,-512,0",
@@ -1159,7 +1159,7 @@
         ]
       },
       {
-        "Id": "90b10f1e-6761-4f41-839f-b3eb1f7400ca",
+        "Id": "b433cb01-9628-4946-b04b-f39e3460519c",
         "Name": "model",
         "Enabled": true,
         "Position": "-128,-640,0",
@@ -1185,7 +1185,7 @@
         ]
       },
       {
-        "Id": "68f2ec6b-878e-44fb-8219-e40bd34ffc00",
+        "Id": "a254cd99-0f48-47c8-a4d8-0239e8dee7de",
         "Name": "model",
         "Enabled": true,
         "Position": "-256,-640,0",
@@ -1211,7 +1211,7 @@
         ]
       },
       {
-        "Id": "094fe1ad-af3f-41e2-95cd-77d632474eda",
+        "Id": "c93bd148-81cb-4d5c-8eaa-1113da93bbec",
         "Name": "model",
         "Enabled": true,
         "Position": "-256,-512,0",
@@ -1237,7 +1237,7 @@
         ]
       },
       {
-        "Id": "299d1648-03db-4d97-80a9-be7377e3bb50",
+        "Id": "2fa6034d-99c9-45e1-a35d-1dc86d305b33",
         "Name": "model",
         "Enabled": true,
         "Position": "-128,0,0",
@@ -1263,7 +1263,7 @@
         ]
       },
       {
-        "Id": "07b61022-3e9f-47ec-8e6f-309b4038b6cb",
+        "Id": "3074747e-83bb-45b5-b759-c7b49dcc6ec6",
         "Name": "model",
         "Enabled": true,
         "Position": "-256,-128,0",
@@ -1289,7 +1289,7 @@
         ]
       },
       {
-        "Id": "ed3b45da-d9d5-4cda-aec7-b0441ac1beb3",
+        "Id": "0cb99a46-69ce-4712-b11f-12fd0e01a778",
         "Name": "model",
         "Enabled": true,
         "Position": "-256,-384,0",
@@ -1315,7 +1315,7 @@
         ]
       },
       {
-        "Id": "c7b386ea-d475-4b6a-9b92-1d61d46c6cd7",
+        "Id": "e73781d1-585c-43bb-82f6-e2fb943557fb",
         "Name": "model",
         "Enabled": true,
         "Position": "-256,-256,0",
@@ -1341,7 +1341,345 @@
         ]
       },
       {
-        "Id": "6e5f3709-aaff-432f-91b9-06c8194f832f",
+        "Id": "48049548-0769-4fc3-819e-1afa4e4b91a3",
+        "Name": "model (1)",
+        "Enabled": true,
+        "Position": "-384,-256,0",
+        "Rotation": "0,0,0,1",
+        "Scale": "1,1,1",
+        "Components": [
+          {
+            "__type": "ModelComponent",
+            "__enabled": true,
+            "MaterialOverride": null,
+            "Model": "models/environment/floor_01.vmdl",
+            "ShouldCastShadows": true,
+            "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/floor_01.vmdl",
+            "Surface": null,
+            "Tags": ""
+          }
+        ]
+      },
+      {
+        "Id": "0f3b6c39-8c7d-4389-b4e2-ce996ccbf7a4",
+        "Name": "model (1)",
+        "Enabled": true,
+        "Position": "384,-256,0",
+        "Rotation": "0,0,0,1",
+        "Scale": "1,1,1",
+        "Components": [
+          {
+            "__type": "ModelComponent",
+            "__enabled": true,
+            "MaterialOverride": null,
+            "Model": "models/environment/floor_01.vmdl",
+            "ShouldCastShadows": true,
+            "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/floor_01.vmdl",
+            "Surface": null,
+            "Tags": ""
+          }
+        ]
+      },
+      {
+        "Id": "707a59f1-9a21-4699-a14c-720f407c7217",
+        "Name": "model (1)",
+        "Enabled": true,
+        "Position": "-384,-128,0",
+        "Rotation": "0,0,0,1",
+        "Scale": "1,1,1",
+        "Components": [
+          {
+            "__type": "ModelComponent",
+            "__enabled": true,
+            "MaterialOverride": null,
+            "Model": "models/environment/floor_01.vmdl",
+            "ShouldCastShadows": true,
+            "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/floor_01.vmdl",
+            "Surface": null,
+            "Tags": ""
+          }
+        ]
+      },
+      {
+        "Id": "c4f9ad37-e4dd-45ae-9814-465010602351",
+        "Name": "model (1)",
+        "Enabled": true,
+        "Position": "-384,0,0",
+        "Rotation": "0,0,0,1",
+        "Scale": "1,1,1",
+        "Components": [
+          {
+            "__type": "ModelComponent",
+            "__enabled": true,
+            "MaterialOverride": null,
+            "Model": "models/environment/floor_01.vmdl",
+            "ShouldCastShadows": true,
+            "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/floor_01.vmdl",
+            "Surface": null,
+            "Tags": ""
+          }
+        ]
+      },
+      {
+        "Id": "c9d397a8-4423-4197-95af-536266c9788e",
+        "Name": "model (1)",
+        "Enabled": true,
+        "Position": "384,-128,0",
+        "Rotation": "0,0,0,1",
+        "Scale": "1,1,1",
+        "Components": [
+          {
+            "__type": "ModelComponent",
+            "__enabled": true,
+            "MaterialOverride": null,
+            "Model": "models/environment/floor_01.vmdl",
+            "ShouldCastShadows": true,
+            "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/floor_01.vmdl",
+            "Surface": null,
+            "Tags": ""
+          }
+        ]
+      },
+      {
+        "Id": "6c11f070-fd19-4e7a-b0e0-ca6d39ef4a4c",
+        "Name": "model (1)",
+        "Enabled": true,
+        "Position": "-512,-256,0",
+        "Rotation": "0,0,0,1",
+        "Scale": "1,1,1",
+        "Components": [
+          {
+            "__type": "ModelComponent",
+            "__enabled": true,
+            "MaterialOverride": null,
+            "Model": "models/environment/floor_01.vmdl",
+            "ShouldCastShadows": true,
+            "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/floor_01.vmdl",
+            "Surface": null,
+            "Tags": ""
+          }
+        ]
+      },
+      {
+        "Id": "1d6abb96-30af-443c-a212-921cf2493aaa",
+        "Name": "model (1)",
+        "Enabled": true,
+        "Position": "512,-256,0",
+        "Rotation": "0,0,0,1",
+        "Scale": "1,1,1",
+        "Components": [
+          {
+            "__type": "ModelComponent",
+            "__enabled": true,
+            "MaterialOverride": null,
+            "Model": "models/environment/floor_01.vmdl",
+            "ShouldCastShadows": true,
+            "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/floor_01.vmdl",
+            "Surface": null,
+            "Tags": ""
+          }
+        ]
+      },
+      {
+        "Id": "80d8578e-63bd-4618-b7a9-33c37f974fa3",
+        "Name": "model (1)",
+        "Enabled": true,
+        "Position": "-512,-128,0",
+        "Rotation": "0,0,0,1",
+        "Scale": "1,1,1",
+        "Components": [
+          {
+            "__type": "ModelComponent",
+            "__enabled": true,
+            "MaterialOverride": null,
+            "Model": "models/environment/floor_01.vmdl",
+            "ShouldCastShadows": true,
+            "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/floor_01.vmdl",
+            "Surface": null,
+            "Tags": ""
+          }
+        ]
+      },
+      {
+        "Id": "34fcad9a-2f16-446e-b9ca-dff7417711a7",
+        "Name": "model (1)",
+        "Enabled": true,
+        "Position": "512,-128,0",
+        "Rotation": "0,0,0,1",
+        "Scale": "1,1,1",
+        "Components": [
+          {
+            "__type": "ModelComponent",
+            "__enabled": true,
+            "MaterialOverride": null,
+            "Model": "models/environment/floor_01.vmdl",
+            "ShouldCastShadows": true,
+            "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/floor_01.vmdl",
+            "Surface": null,
+            "Tags": ""
+          }
+        ]
+      },
+      {
+        "Id": "72d45def-cb23-42f4-84c8-4659e7a61a9c",
+        "Name": "model (1)",
+        "Enabled": true,
+        "Position": "-512,0,0",
+        "Rotation": "0,0,0,1",
+        "Scale": "1,1,1",
+        "Components": [
+          {
+            "__type": "ModelComponent",
+            "__enabled": true,
+            "MaterialOverride": null,
+            "Model": "models/environment/floor_01.vmdl",
+            "ShouldCastShadows": true,
+            "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/floor_01.vmdl",
+            "Surface": null,
+            "Tags": ""
+          }
+        ]
+      },
+      {
+        "Id": "16c1993e-9883-41a0-8229-7ad18e1d0399",
+        "Name": "model (1)",
+        "Enabled": true,
+        "Position": "512,0,0",
+        "Rotation": "0,0,0,1",
+        "Scale": "1,1,1",
+        "Components": [
+          {
+            "__type": "ModelComponent",
+            "__enabled": true,
+            "MaterialOverride": null,
+            "Model": "models/environment/floor_01.vmdl",
+            "ShouldCastShadows": true,
+            "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/floor_01.vmdl",
+            "Surface": null,
+            "Tags": ""
+          }
+        ]
+      },
+      {
+        "Id": "b3347392-7a5d-47b8-bb08-b70b7dfaadbe",
+        "Name": "model (1)",
+        "Enabled": true,
+        "Position": "384,0,0",
+        "Rotation": "0,0,0,1",
+        "Scale": "1,1,1",
+        "Components": [
+          {
+            "__type": "ModelComponent",
+            "__enabled": true,
+            "MaterialOverride": null,
+            "Model": "models/environment/floor_01.vmdl",
+            "ShouldCastShadows": true,
+            "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/floor_01.vmdl",
+            "Surface": null,
+            "Tags": ""
+          }
+        ]
+      },
+      {
+        "Id": "7d2f63ad-4e13-4359-9b31-3ea5c44201d6",
+        "Name": "model (1)",
+        "Enabled": true,
+        "Position": "384,0,0",
+        "Rotation": "0,0,0,1",
+        "Scale": "1,1,1",
+        "Components": [
+          {
+            "__type": "ModelComponent",
+            "__enabled": true,
+            "MaterialOverride": null,
+            "Model": "models/environment/floor_01.vmdl",
+            "ShouldCastShadows": true,
+            "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/floor_01.vmdl",
+            "Surface": null,
+            "Tags": ""
+          }
+        ]
+      },
+      {
+        "Id": "dc50eb4e-8e7d-414e-930a-1c487ea2ff24",
         "Name": "model",
         "Enabled": true,
         "Position": "-256,0,0",
@@ -1367,9 +1705,9 @@
         ]
       },
       {
-        "Id": "cf73d64d-ba4b-4a7d-8df4-d9ec351dffe8",
+        "Id": "69696ac0-6563-4e25-8027-fe3d6e0c8e19",
         "Name": "scaff2",
-        "Enabled": true,
+        "Enabled": false,
         "Position": "-128,128,0",
         "Rotation": "0.00000004343704,-0.000000001374415,0.707107,0.7071065",
         "Scale": "1,1,1",
@@ -1393,9 +1731,9 @@
         ]
       },
       {
-        "Id": "4dfff6b2-c7e9-4926-b9da-35e8ca4ac7e8",
+        "Id": "109bf167-6c1a-4f6a-9ee4-29116ab75e04",
         "Name": "scaff1",
-        "Enabled": true,
+        "Enabled": false,
         "Position": "128,128,0",
         "Rotation": "0.00000004343704,-0.000000001374415,0.707107,0.7071065",
         "Scale": "1,1,1",
@@ -1419,7 +1757,7 @@
         ]
       },
       {
-        "Id": "3fec1b86-d0f4-490d-8b12-e6ddeeb6cd93",
+        "Id": "d66eec98-e04b-479d-bc7a-e5cd85c209f4",
         "Name": "model",
         "Enabled": true,
         "Position": "128,-128,0",
@@ -1445,7 +1783,7 @@
         ]
       },
       {
-        "Id": "b7d5bd85-abb5-4d11-a083-074963979a29",
+        "Id": "8d387a40-71f2-461e-a88a-7bcba9f37bff",
         "Name": "model",
         "Enabled": true,
         "Position": "128,-384,0",
@@ -1471,7 +1809,7 @@
         ]
       },
       {
-        "Id": "4c277e6a-5503-4298-9982-13806cf23182",
+        "Id": "7407bd22-551a-45c4-b3f4-80ddf570455a",
         "Name": "model",
         "Enabled": true,
         "Position": "128,-512,0",
@@ -1497,7 +1835,7 @@
         ]
       },
       {
-        "Id": "73a37081-6089-44dd-bfcc-53cd363ef825",
+        "Id": "cdeb50f3-83bf-4768-ace0-05c6065899d3",
         "Name": "hallway_01",
         "Enabled": true,
         "Position": "-64.00012,192.0001,0.0003901861",
@@ -1506,7 +1844,7 @@
         "__Prefab": "prefabs/hallways/hallway_01.object"
       },
       {
-        "Id": "1324a089-a227-4a33-9cbd-533ec18858f4",
+        "Id": "a9d9e185-2c9c-4d47-8ba0-1d0abd56ca55",
         "Name": "hallway_01",
         "Enabled": true,
         "Position": "-192,192.0001,0.0003901861",
@@ -1515,7 +1853,7 @@
         "__Prefab": "prefabs/hallways/hallway_01.object"
       },
       {
-        "Id": "881e434d-addd-489a-91e8-c7d2da07f703",
+        "Id": "b219ecd1-efe4-401d-8290-20d7d898f22e",
         "Name": "hallway_01",
         "Enabled": true,
         "Position": "-320,192.0001,0.0003901861",
@@ -1524,7 +1862,7 @@
         "__Prefab": "prefabs/hallways/hallway_01.object"
       },
       {
-        "Id": "3816e96f-2252-4b14-904b-19f478c0640a",
+        "Id": "8544a527-5217-4b48-8b52-874a98bd603d",
         "Name": "hallway_01",
         "Enabled": true,
         "Position": "64,192.0001,0.0003901861",
@@ -1533,7 +1871,7 @@
         "__Prefab": "prefabs/hallways/hallway_01.object"
       },
       {
-        "Id": "7d15638c-b340-4158-ba44-3a5fa7523a94",
+        "Id": "0dcbbb4b-ecb5-4f51-8ec9-d1124649642b",
         "Name": "hallway_01",
         "Enabled": true,
         "Position": "320,192.0001,0.0003901861",
@@ -1542,7 +1880,7 @@
         "__Prefab": "prefabs/hallways/hallway_01.object"
       },
       {
-        "Id": "5002c4e6-c9d2-4d32-a661-405fe6956fa7",
+        "Id": "7cecc52f-a849-48af-8e70-21d34d3022c4",
         "Name": "doors",
         "Enabled": true,
         "Position": "-128,128,0.0003444097",
@@ -1550,7 +1888,7 @@
         "Scale": "1,1,1",
         "Children": [
           {
-            "Id": "2e4d2392-b1f6-44c7-9f22-995915646682",
+            "Id": "d933f693-3f3d-4535-aa34-48c4c014e001",
             "Name": "Cube",
             "Enabled": true,
             "Position": "0,0,0",
@@ -1576,7 +1914,7 @@
             ]
           },
           {
-            "Id": "9418c2fb-378f-45ca-93cc-5a96f1ca8715",
+            "Id": "f5cd0900-48dd-46b7-93be-584fb9931fd5",
             "Name": "Cube",
             "Enabled": true,
             "Position": "0.0002441403,127.9998,-0.0002528566",
@@ -1604,7 +1942,7 @@
         ]
       },
       {
-        "Id": "39afe7b9-9d5e-43d9-820f-16b2d47a6fce",
+        "Id": "4874acc6-e793-431e-a3f0-80dc6a9d6970",
         "Name": "door_01",
         "Enabled": true,
         "Position": "-128,128,0.0003444097",
@@ -1630,7 +1968,7 @@
         ],
         "Children": [
           {
-            "Id": "7beca242-de9b-41fd-a2c5-41ab2d8fddd1",
+            "Id": "d217271b-92cc-4ef4-8c5e-5f67d7a8c4fb",
             "Name": "Object",
             "Enabled": true,
             "Position": "0.0001193469,64,0.00000000008892042",
@@ -1646,7 +1984,7 @@
         ]
       },
       {
-        "Id": "ad35c903-f0f0-45c6-aace-6f0f83353004",
+        "Id": "9d68f5b2-5fbd-4a2a-b617-f0592db1a798",
         "Name": "door_01",
         "Enabled": true,
         "Position": "0,128,0.0003444097",
@@ -1672,7 +2010,7 @@
         ],
         "Children": [
           {
-            "Id": "f6c73c1e-05c2-4d56-950a-81282bfe80db",
+            "Id": "cbadbf07-22a7-4c7d-9de7-76bafba046b1",
             "Name": "Object",
             "Enabled": true,
             "Position": "-0.0001220703,64,-0.00000000009094947",
@@ -1688,7 +2026,7 @@
         ]
       },
       {
-        "Id": "7d85691c-4d55-4cd0-a86c-44b7353fb3fe",
+        "Id": "b8110622-135e-4d24-8bb1-562f21e38a0c",
         "Name": "wall",
         "Enabled": true,
         "Position": "-256,128,0.0003444097",
@@ -1714,7 +2052,7 @@
         ]
       },
       {
-        "Id": "b4da27fd-b1e8-4203-8396-d6273d359f3b",
+        "Id": "3fdeea96-f818-48db-a872-34973bed6b25",
         "Name": "wall",
         "Enabled": true,
         "Position": "-384,128,0.0003444097",
@@ -1740,7 +2078,7 @@
         ]
       },
       {
-        "Id": "62b0e73a-4630-4fff-a91f-305c1b7c716f",
+        "Id": "5e625790-9ce3-4b59-8bf0-fe4df15c9aa0",
         "Name": "wall",
         "Enabled": true,
         "Position": "256,128,0.0003444097",
@@ -1766,7 +2104,7 @@
         ]
       },
       {
-        "Id": "5497c8ed-e079-4fa2-ae3b-012fd6776802",
+        "Id": "1d68fd64-1401-484d-8fb9-69436886a256",
         "Name": "wall",
         "Enabled": true,
         "Position": "256,128,128",
@@ -1792,7 +2130,215 @@
         ]
       },
       {
-        "Id": "735ebb23-b675-41d9-b924-12224e0f6a94",
+        "Id": "bd54208e-cfc4-4e39-a5a6-b5706a6a84c7",
+        "Name": "wall",
+        "Enabled": true,
+        "Position": "384,127.9999,128",
+        "Rotation": "0.0000002528816,0.0000002528814,-0.707107,0.7071065",
+        "Scale": "1,1,1",
+        "Components": [
+          {
+            "__type": "ModelComponent",
+            "__enabled": true,
+            "MaterialOverride": null,
+            "Model": "models/environment/wall_01.vmdl",
+            "ShouldCastShadows": true,
+            "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/wall_01.vmdl",
+            "Surface": null,
+            "Tags": ""
+          }
+        ]
+      },
+      {
+        "Id": "a281a1dc-38d8-4e6f-b8a7-4845d2a53c65",
+        "Name": "wall",
+        "Enabled": true,
+        "Position": "384,127.9999,0",
+        "Rotation": "0.0000002528816,0.0000002528814,-0.707107,0.7071065",
+        "Scale": "1,1,1",
+        "Components": [
+          {
+            "__type": "ModelComponent",
+            "__enabled": true,
+            "MaterialOverride": null,
+            "Model": "models/environment/wall_01.vmdl",
+            "ShouldCastShadows": true,
+            "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/wall_01.vmdl",
+            "Surface": null,
+            "Tags": ""
+          }
+        ]
+      },
+      {
+        "Id": "cabe0e65-860c-4ce7-b2ee-84a9f30bba42",
+        "Name": "wall",
+        "Enabled": true,
+        "Position": "384,-256,-0.0002805839",
+        "Rotation": "0.0000002528816,0.0000002528814,-0.707107,0.7071065",
+        "Scale": "1,1,1",
+        "Components": [
+          {
+            "__type": "ModelComponent",
+            "__enabled": true,
+            "MaterialOverride": null,
+            "Model": "models/environment/wall_01.vmdl",
+            "ShouldCastShadows": true,
+            "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/wall_01.vmdl",
+            "Surface": null,
+            "Tags": ""
+          }
+        ]
+      },
+      {
+        "Id": "e2d3dfb6-91ba-44f1-b371-34fa7ad5e68c",
+        "Name": "wall",
+        "Enabled": true,
+        "Position": "384,-256,128",
+        "Rotation": "0.0000002528816,0.0000002528814,-0.707107,0.7071065",
+        "Scale": "1,1,1",
+        "Components": [
+          {
+            "__type": "ModelComponent",
+            "__enabled": true,
+            "MaterialOverride": null,
+            "Model": "models/environment/wall_01.vmdl",
+            "ShouldCastShadows": true,
+            "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/wall_01.vmdl",
+            "Surface": null,
+            "Tags": ""
+          }
+        ]
+      },
+      {
+        "Id": "c254ddae-dc4a-45f6-a610-1c6ce90d325e",
+        "Name": "wall",
+        "Enabled": true,
+        "Position": "512,-256,-0.0002805839",
+        "Rotation": "0.0000002528816,0.0000002528814,-0.707107,0.7071065",
+        "Scale": "1,1,1",
+        "Components": [
+          {
+            "__type": "ModelComponent",
+            "__enabled": true,
+            "MaterialOverride": null,
+            "Model": "models/environment/wall_01.vmdl",
+            "ShouldCastShadows": true,
+            "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/wall_01.vmdl",
+            "Surface": null,
+            "Tags": ""
+          }
+        ]
+      },
+      {
+        "Id": "b4e500b0-98df-4a0b-a402-a29eb83eb811",
+        "Name": "wall",
+        "Enabled": true,
+        "Position": "512,-256,128",
+        "Rotation": "0.0000002528816,0.0000002528814,-0.707107,0.7071065",
+        "Scale": "1,1,1",
+        "Components": [
+          {
+            "__type": "ModelComponent",
+            "__enabled": true,
+            "MaterialOverride": null,
+            "Model": "models/environment/wall_01.vmdl",
+            "ShouldCastShadows": true,
+            "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/wall_01.vmdl",
+            "Surface": null,
+            "Tags": ""
+          }
+        ]
+      },
+      {
+        "Id": "abaf3b07-ef29-4f4a-9fd1-171cbd673227",
+        "Name": "wall",
+        "Enabled": true,
+        "Position": "512,127.9999,128",
+        "Rotation": "0.0000002528816,0.0000002528814,-0.707107,0.7071065",
+        "Scale": "1,1,1",
+        "Components": [
+          {
+            "__type": "ModelComponent",
+            "__enabled": true,
+            "MaterialOverride": null,
+            "Model": "models/environment/wall_01.vmdl",
+            "ShouldCastShadows": true,
+            "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/wall_01.vmdl",
+            "Surface": null,
+            "Tags": ""
+          }
+        ]
+      },
+      {
+        "Id": "67c15f26-a277-4199-8692-1ea7dfb0eb75",
+        "Name": "wall",
+        "Enabled": true,
+        "Position": "512,128,0",
+        "Rotation": "0.0000002528816,0.0000002528814,-0.707107,0.7071065",
+        "Scale": "1,1,1",
+        "Components": [
+          {
+            "__type": "ModelComponent",
+            "__enabled": true,
+            "MaterialOverride": null,
+            "Model": "models/environment/wall_01.vmdl",
+            "ShouldCastShadows": true,
+            "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/wall_01.vmdl",
+            "Surface": null,
+            "Tags": ""
+          }
+        ]
+      },
+      {
+        "Id": "8ec424f0-44cc-4e94-9b1c-66d53294eda5",
         "Name": "wall",
         "Enabled": true,
         "Position": "128,128,128",
@@ -1818,7 +2364,7 @@
         ]
       },
       {
-        "Id": "e10c07a9-5258-4125-8186-5118ba440c7c",
+        "Id": "7a0bdea7-653b-4736-b9dc-4291a1c0d874",
         "Name": "wall",
         "Enabled": true,
         "Position": "0,128,128",
@@ -1844,7 +2390,7 @@
         ]
       },
       {
-        "Id": "bfb22ad1-8b07-428f-af39-e104194afdf4",
+        "Id": "cb77b4cc-568a-472b-bd54-3b774d88083e",
         "Name": "wall",
         "Enabled": true,
         "Position": "-128,128,128",
@@ -1870,7 +2416,7 @@
         ]
       },
       {
-        "Id": "26aec19b-8f4a-429d-9b3d-f6285c091b0c",
+        "Id": "77ecfb31-eeb7-45e5-b2e7-f1cb91329f4e",
         "Name": "wall",
         "Enabled": true,
         "Position": "-256,128,128",
@@ -1896,7 +2442,7 @@
         ]
       },
       {
-        "Id": "6e0c86f0-056c-4dfc-8592-5e8c37695cf2",
+        "Id": "e1914e33-dd9b-4808-b51c-64f0f94758b3",
         "Name": "wall",
         "Enabled": true,
         "Position": "-384,128,128",
@@ -1922,7 +2468,7 @@
         ]
       },
       {
-        "Id": "7ede949c-aaa2-4b43-aa72-aba9b45589cc",
+        "Id": "5e86b9fc-27ab-49ad-bfc3-8849639e380d",
         "Name": "wall",
         "Enabled": true,
         "Position": "128,128,0.0003444097",
@@ -1948,10 +2494,10 @@
         ]
       },
       {
-        "Id": "17521c4c-a621-4e63-94b0-5d2f9e52a225",
+        "Id": "02a35c84-c4fd-4eb6-9ae1-e8bf3727dcef",
         "Name": "wall",
         "Enabled": true,
-        "Position": "384,-128,0.0003444097",
+        "Position": "640,-128,0.0003444097",
         "Rotation": "0,0,0,1",
         "Scale": "1,1,1",
         "Components": [
@@ -1974,10 +2520,10 @@
         ]
       },
       {
-        "Id": "ac846219-cee9-4ed9-a6ec-e38ec1331d7e",
+        "Id": "78b54f78-b79b-45ae-b7c2-f6df03c5be53",
         "Name": "wall",
         "Enabled": true,
-        "Position": "384,-128,128",
+        "Position": "640,-128,128",
         "Rotation": "0,0,0,1",
         "Scale": "1,1,1",
         "Components": [
@@ -2000,10 +2546,10 @@
         ]
       },
       {
-        "Id": "82f95c1b-196e-4367-93f0-bd11bd58b9a8",
+        "Id": "7aa69cbf-b709-4bc2-b984-38903742d0df",
         "Name": "wall",
         "Enabled": true,
-        "Position": "384,-256,0.0003444097",
+        "Position": "640,-256,0.0003444097",
         "Rotation": "0,0,0,1",
         "Scale": "1,1,1",
         "Components": [
@@ -2026,10 +2572,10 @@
         ]
       },
       {
-        "Id": "3c6b7840-9833-477a-85e5-faa88273bd0c",
+        "Id": "805b3756-7adf-4171-afad-5176a033b2b8",
         "Name": "wall",
         "Enabled": true,
-        "Position": "384,-256,128",
+        "Position": "640,-256,128",
         "Rotation": "0,0,0,1",
         "Scale": "1,1,1",
         "Components": [
@@ -2052,7 +2598,7 @@
         ]
       },
       {
-        "Id": "c5c4c55b-cff5-4093-85eb-43f7cd541e95",
+        "Id": "3208102c-0885-49be-afc3-4dec7612f1fc",
         "Name": "wall",
         "Enabled": true,
         "Position": "384,-384,0.0003444097",
@@ -2078,7 +2624,7 @@
         ]
       },
       {
-        "Id": "2e281964-0a05-4358-adf4-07e78ebde5cc",
+        "Id": "4c69fc5e-d3a2-4603-9fc6-4d9bf2cb7d5b",
         "Name": "wall",
         "Enabled": true,
         "Position": "384,-384,128",
@@ -2104,7 +2650,7 @@
         ]
       },
       {
-        "Id": "58614c3f-a565-499d-bd38-c92706977f2e",
+        "Id": "b35a67a7-c7c0-45ea-a50f-e0030903c649",
         "Name": "wall",
         "Enabled": true,
         "Position": "384,-512,0.0003444097",
@@ -2130,7 +2676,7 @@
         ]
       },
       {
-        "Id": "e1c9afcb-7c85-4626-bdb0-1cd80dc952de",
+        "Id": "efbf0950-538c-41f7-aa22-e7862d48d7b0",
         "Name": "wall",
         "Enabled": true,
         "Position": "384,-512,128",
@@ -2156,7 +2702,7 @@
         ]
       },
       {
-        "Id": "e5bce6c5-7fb5-481f-b3fc-625781e96a04",
+        "Id": "422bec03-d00b-4675-869b-dc5a6dfa2516",
         "Name": "wall",
         "Enabled": true,
         "Position": "384,-640,0.0003444097",
@@ -2182,7 +2728,7 @@
         ]
       },
       {
-        "Id": "58a18a50-7492-4423-a6a5-06ca5b111b12",
+        "Id": "89d92f25-9e1f-4727-b938-4036f872f064",
         "Name": "wall",
         "Enabled": true,
         "Position": "384,-640,128",
@@ -2208,10 +2754,10 @@
         ]
       },
       {
-        "Id": "bd187ee7-61c8-4bf0-bb31-0b70fce89ac5",
+        "Id": "fe7912f5-6318-4882-b982-89a11e17edb0",
         "Name": "wall",
         "Enabled": true,
-        "Position": "384,0,0.0003444097",
+        "Position": "640,0,0.0003444097",
         "Rotation": "0,0,0,1",
         "Scale": "1,1,1",
         "Components": [
@@ -2234,10 +2780,10 @@
         ]
       },
       {
-        "Id": "a03973df-0dae-4ca5-9157-cd3a7dee4a29",
+        "Id": "d80f4c2d-71e4-4750-91d9-2af2174fdbba",
         "Name": "wall",
         "Enabled": true,
-        "Position": "384,0,128",
+        "Position": "640,0,128",
         "Rotation": "0,0,0,1",
         "Scale": "1,1,1",
         "Components": [
@@ -2260,10 +2806,10 @@
         ]
       },
       {
-        "Id": "2645ec4c-e3de-4a95-a101-b3c6c85b3a41",
+        "Id": "0efe6b16-53b6-4a72-bd0b-1065e1a3418b",
         "Name": "wall",
         "Enabled": true,
-        "Position": "-384,-128,0.0003444097",
+        "Position": "-640,-128,0.0003444097",
         "Rotation": "0,0,0,1",
         "Scale": "1,1,1",
         "Components": [
@@ -2286,10 +2832,10 @@
         ]
       },
       {
-        "Id": "1f06c3ee-7073-4605-aba8-0d87219341ec",
+        "Id": "c484c64a-09e8-4346-bd7d-0f7581d220a0",
         "Name": "wall",
         "Enabled": true,
-        "Position": "-384,-128,128",
+        "Position": "-640,-128,128",
         "Rotation": "0,0,0,1",
         "Scale": "1,1,1",
         "Components": [
@@ -2312,10 +2858,10 @@
         ]
       },
       {
-        "Id": "9cc4cb5d-d14e-471b-a5d5-7fb0ab215560",
+        "Id": "c8b47282-bc8f-4715-8239-f6bba4378ed7",
         "Name": "wall",
         "Enabled": true,
-        "Position": "-384,-256,0.0003444097",
+        "Position": "-640,-256,0.0003444097",
         "Rotation": "0,0,0,1",
         "Scale": "1,1,1",
         "Components": [
@@ -2338,10 +2884,10 @@
         ]
       },
       {
-        "Id": "080f4ae8-ba62-4b97-b740-7f48f662945b",
+        "Id": "5382730f-a2f5-45b4-b03d-03035ac9c1d8",
         "Name": "wall",
         "Enabled": true,
-        "Position": "-384,-256,128",
+        "Position": "-640,-256,128",
         "Rotation": "0,0,0,1",
         "Scale": "1,1,1",
         "Components": [
@@ -2364,7 +2910,7 @@
         ]
       },
       {
-        "Id": "bd5d9950-304a-4338-b332-378b93ab063e",
+        "Id": "0a5b6531-fcc3-4d5d-b0d1-4c714937b566",
         "Name": "wall",
         "Enabled": true,
         "Position": "-384,-384,0.0003444097",
@@ -2390,7 +2936,7 @@
         ]
       },
       {
-        "Id": "affc0b83-9fbb-4672-b2e8-0da7040e97d3",
+        "Id": "d0a778cf-4125-458e-9797-925f931b3533",
         "Name": "wall",
         "Enabled": true,
         "Position": "-384,-384,128",
@@ -2416,7 +2962,7 @@
         ]
       },
       {
-        "Id": "219890cf-161c-4936-aab1-2e22e3f33188",
+        "Id": "c843eb9c-1c12-43f9-b0e9-6e4b32889d6f",
         "Name": "wall",
         "Enabled": true,
         "Position": "-384,-512,0.0003444097",
@@ -2442,7 +2988,7 @@
         ]
       },
       {
-        "Id": "8da8439b-09b2-4f5e-a4bc-723d2e88d6b0",
+        "Id": "a096beea-a2a5-4d90-b156-12d437c42d20",
         "Name": "wall",
         "Enabled": true,
         "Position": "-384,-512,128",
@@ -2468,7 +3014,7 @@
         ]
       },
       {
-        "Id": "2547c67c-795d-45c6-aa0d-cf66c17fd2f4",
+        "Id": "a689f6d0-aa24-4a2f-9547-347f6794e346",
         "Name": "wall",
         "Enabled": true,
         "Position": "-384,-640,0.0003444097",
@@ -2494,7 +3040,7 @@
         ]
       },
       {
-        "Id": "5b2ad7b9-0470-4680-944e-803baf7013d7",
+        "Id": "0cad82ac-54c8-4110-a717-41887c743601",
         "Name": "wall",
         "Enabled": true,
         "Position": "-384,-640,128",
@@ -2520,10 +3066,10 @@
         ]
       },
       {
-        "Id": "30c6a260-4aab-424b-8efd-4e3ec00d6060",
+        "Id": "0f49210a-36a2-4726-afae-16ffb1df5f07",
         "Name": "wall",
         "Enabled": true,
-        "Position": "-384,0,0.0003444097",
+        "Position": "-640,0,0.0003444097",
         "Rotation": "0,0,0,1",
         "Scale": "1,1,1",
         "Components": [
@@ -2546,10 +3092,218 @@
         ]
       },
       {
-        "Id": "977a782f-0c69-4c1b-92b0-16079433f4f3",
+        "Id": "718ec742-b680-44f7-9a85-6a39894ea50c",
         "Name": "wall",
         "Enabled": true,
-        "Position": "-384,0,128",
+        "Position": "-640,128,0.000346754",
+        "Rotation": "-0.00000004070969,0.000000001345274,-0.707107,0.7071065",
+        "Scale": "1,1,1",
+        "Components": [
+          {
+            "__type": "ModelComponent",
+            "__enabled": true,
+            "MaterialOverride": null,
+            "Model": "models/environment/wall_01.vmdl",
+            "ShouldCastShadows": true,
+            "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/wall_01.vmdl",
+            "Surface": null,
+            "Tags": ""
+          }
+        ]
+      },
+      {
+        "Id": "5fcc2122-2b11-421b-afe6-9bbaa465ea55",
+        "Name": "wall",
+        "Enabled": true,
+        "Position": "-640,-256,0.000368011",
+        "Rotation": "-0.00000004070969,0.000000001345274,-0.707107,0.7071065",
+        "Scale": "1,1,1",
+        "Components": [
+          {
+            "__type": "ModelComponent",
+            "__enabled": true,
+            "MaterialOverride": null,
+            "Model": "models/environment/wall_01.vmdl",
+            "ShouldCastShadows": true,
+            "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/wall_01.vmdl",
+            "Surface": null,
+            "Tags": ""
+          }
+        ]
+      },
+      {
+        "Id": "ca28d5fb-d123-4be5-84af-63fc811387d5",
+        "Name": "wall",
+        "Enabled": true,
+        "Position": "-512,-256,0.0003603933",
+        "Rotation": "-0.00000004070969,0.000000001345274,-0.707107,0.7071065",
+        "Scale": "1,1,1",
+        "Components": [
+          {
+            "__type": "ModelComponent",
+            "__enabled": true,
+            "MaterialOverride": null,
+            "Model": "models/environment/wall_01.vmdl",
+            "ShouldCastShadows": true,
+            "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/wall_01.vmdl",
+            "Surface": null,
+            "Tags": ""
+          }
+        ]
+      },
+      {
+        "Id": "94b766d0-6896-47f9-9ae9-a39d90971ac8",
+        "Name": "wall",
+        "Enabled": true,
+        "Position": "-512,-256,128",
+        "Rotation": "-0.00000004070969,0.000000001345274,-0.707107,0.7071065",
+        "Scale": "1,1,1",
+        "Components": [
+          {
+            "__type": "ModelComponent",
+            "__enabled": true,
+            "MaterialOverride": null,
+            "Model": "models/environment/wall_01.vmdl",
+            "ShouldCastShadows": true,
+            "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/wall_01.vmdl",
+            "Surface": null,
+            "Tags": ""
+          }
+        ]
+      },
+      {
+        "Id": "6126b382-2724-4cb9-8e83-5b693c600442",
+        "Name": "wall",
+        "Enabled": true,
+        "Position": "-640,-256,128",
+        "Rotation": "-0.00000004070969,0.000000001345274,-0.707107,0.7071065",
+        "Scale": "1,1,1",
+        "Components": [
+          {
+            "__type": "ModelComponent",
+            "__enabled": true,
+            "MaterialOverride": null,
+            "Model": "models/environment/wall_01.vmdl",
+            "ShouldCastShadows": true,
+            "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/wall_01.vmdl",
+            "Surface": null,
+            "Tags": ""
+          }
+        ]
+      },
+      {
+        "Id": "0a5ec6de-c729-4b63-a837-1a424b713659",
+        "Name": "wall",
+        "Enabled": true,
+        "Position": "-640,128,128",
+        "Rotation": "-0.00000004070969,0.000000001345274,-0.707107,0.7071065",
+        "Scale": "1,1,1",
+        "Components": [
+          {
+            "__type": "ModelComponent",
+            "__enabled": true,
+            "MaterialOverride": null,
+            "Model": "models/environment/wall_01.vmdl",
+            "ShouldCastShadows": true,
+            "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/wall_01.vmdl",
+            "Surface": null,
+            "Tags": ""
+          }
+        ]
+      },
+      {
+        "Id": "39032140-68e7-4a69-9082-77b59d36556c",
+        "Name": "wall",
+        "Enabled": true,
+        "Position": "-512,128,0.0003394229",
+        "Rotation": "-0.00000004070969,0.000000001345274,-0.707107,0.7071065",
+        "Scale": "1,1,1",
+        "Components": [
+          {
+            "__type": "ModelComponent",
+            "__enabled": true,
+            "MaterialOverride": null,
+            "Model": "models/environment/wall_01.vmdl",
+            "ShouldCastShadows": true,
+            "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/wall_01.vmdl",
+            "Surface": null,
+            "Tags": ""
+          }
+        ]
+      },
+      {
+        "Id": "4c892fad-346d-4d72-b83c-92a3455c3ff8",
+        "Name": "wall",
+        "Enabled": true,
+        "Position": "-512,128,128",
+        "Rotation": "-0.00000004070969,0.000000001345274,-0.707107,0.7071065",
+        "Scale": "1,1,1",
+        "Components": [
+          {
+            "__type": "ModelComponent",
+            "__enabled": true,
+            "MaterialOverride": null,
+            "Model": "models/environment/wall_01.vmdl",
+            "ShouldCastShadows": true,
+            "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/wall_01.vmdl",
+            "Surface": null,
+            "Tags": ""
+          }
+        ]
+      },
+      {
+        "Id": "8ce9ef2c-d7e0-4773-b1af-7276ce306716",
+        "Name": "wall",
+        "Enabled": true,
+        "Position": "-640,0,128",
         "Rotation": "0,0,0,1",
         "Scale": "1,1,1",
         "Components": [
@@ -2572,35 +3326,51 @@
         ]
       },
       {
-        "Id": "6bc7f6b2-f301-4e8b-84fe-41fe3cd3480f",
+        "Id": "992b372c-5e76-4ab2-ac64-ce5a9f23fb0f",
         "Name": "Zone",
         "Enabled": true,
-        "Position": "0,-343.7366,43.06917",
+        "Position": "0,-234.8747,60.49884",
         "Rotation": "0,0,0,1",
         "Scale": "1,1,1",
         "Components": [
           {
             "__type": "CameraTriggerComponent",
             "__enabled": true,
-            "CameraPoint": "af3c3e15-1950-4254-a46e-bf4c8586da43",
+            "CameraPoint": "1bbcaefd-bc19-4e07-b7e9-128c1dd5f2fd",
             "FollowPlayer": false
           },
           {
             "__type": "ColliderBoxComponent",
             "__enabled": true,
             "IsTrigger": true,
-            "Scale": "775.7005,692.1004,99.7",
+            "Scale": "754.6007,692.1004,196.1",
             "Surface": null,
             "Tags": ""
           }
         ],
         "Children": [
           {
-            "Id": "af3c3e15-1950-4254-a46e-bf4c8586da43",
+            "Id": "1bbcaefd-bc19-4e07-b7e9-128c1dd5f2fd",
             "Name": "Camera",
             "Enabled": true,
-            "Position": "-0.00003748167,624.2106,463.813",
-            "Rotation": "0.2367212,0.2367211,-0.6663061,0.6663056",
+            "Position": "-0.0002733222,379.3668,478.7703",
+            "Rotation": "0.3645327,0.3645325,-0.6059018,0.6059014",
+            "Scale": "1,1,1"
+          },
+          {
+            "Id": "d0efb91f-2b67-4dae-8eaf-5f916e61307a",
+            "Name": "Camera",
+            "Enabled": true,
+            "Position": "603.1539,345.1074,165.8429",
+            "Rotation": "-0.2884308,-0.1304343,0.8643076,-0.390858",
+            "Scale": "1,1,1"
+          },
+          {
+            "Id": "caa1da3a-6a76-4be3-9301-6b0097a27da4",
+            "Name": "Camera",
+            "Enabled": true,
+            "Position": "-603.154,345.1074,165.8429",
+            "Rotation": "-0.1050138,-0.2986256,0.3146818,-0.8948568",
             "Scale": "1,1,1",
             "Components": [
               {
@@ -2608,7 +3378,7 @@
                 "__enabled": false,
                 "BackgroundColor": "0.33333,0.46275,0.52157,1",
                 "ClearFlags": "Color, Depth, Stencil",
-                "FieldOfView": 60,
+                "FieldOfView": 81.77,
                 "ZFar": 10000,
                 "ZNear": 10
               }
@@ -2617,7 +3387,55 @@
         ]
       },
       {
-        "Id": "9bcbdb05-4509-471e-8f89-938c803b07f2",
+        "Id": "4c22963c-f6c1-4f62-b2d6-bd8d16049cda",
+        "Name": "Zone",
+        "Enabled": true,
+        "Position": "-513.7941,-62.62209,60.49883",
+        "Rotation": "0,0,0,1",
+        "Scale": "1,1,1",
+        "Components": [
+          {
+            "__type": "CameraTriggerComponent",
+            "__enabled": true,
+            "CameraPoint": "caa1da3a-6a76-4be3-9301-6b0097a27da4",
+            "FollowPlayer": true
+          },
+          {
+            "__type": "ColliderBoxComponent",
+            "__enabled": true,
+            "IsTrigger": true,
+            "Scale": "437.2006,389.5004,196.1",
+            "Surface": null,
+            "Tags": ""
+          }
+        ]
+      },
+      {
+        "Id": "99674007-21eb-4d57-956d-05cd9def4c0b",
+        "Name": "Zone",
+        "Enabled": true,
+        "Position": "513.794,-59.80553,60.49883",
+        "Rotation": "0,0,0,1",
+        "Scale": "1,1,1",
+        "Components": [
+          {
+            "__type": "CameraTriggerComponent",
+            "__enabled": true,
+            "CameraPoint": "d0efb91f-2b67-4dae-8eaf-5f916e61307a",
+            "FollowPlayer": true
+          },
+          {
+            "__type": "ColliderBoxComponent",
+            "__enabled": true,
+            "IsTrigger": true,
+            "Scale": "437.201,389.5004,196.1",
+            "Surface": null,
+            "Tags": ""
+          }
+        ]
+      },
+      {
+        "Id": "cb5c305e-1c45-4899-876d-0b897653f19e",
         "Name": "gooboss",
         "Enabled": true,
         "Position": "-0.00002672441,-447.7576,0.000002495844",
@@ -2646,27 +3464,27 @@
             "__enabled": true,
             "AttackSound": "",
             "DeathSound": "",
-            "doorBlockers": "5002c4e6-c9d2-4d32-a661-405fe6956fa7",
+            "doorBlockers": "7cecc52f-a849-48af-8e70-21d34d3022c4",
             "Enemy1": "prefabs/enemies/gatorkid.object",
             "Enemy2": "prefabs/enemies/goo_man.object",
             "Enemy3": "prefabs/enemies/gatorman.object",
             "HurtSound": "",
             "IdleSound": "",
-            "roomTrigger": "6bc7f6b2-f301-4e8b-84fe-41fe3cd3480f"
+            "roomTrigger": "992b372c-5e76-4ab2-ac64-ce5a9f23fb0f"
           }
         ]
       },
       {
-        "Id": "0c3948ce-09a1-4a01-ac74-27e4bb30441d",
+        "Id": "b1e6bbe8-b2dc-442f-989d-c8d0c2050265",
         "Name": "hallway_02",
         "Enabled": true,
         "Position": "448,192,0",
-        "Rotation": "0.0000000003023193,0,0,1",
+        "Rotation": "0,0,0,1",
         "Scale": "1,1,1",
         "__Prefab": "prefabs/hallways/hallway_02.object"
       },
       {
-        "Id": "ae209200-73a5-437c-b34a-32a2f3ea74cb",
+        "Id": "3212d4c9-92f0-4b6b-863f-7de447081dbe",
         "Name": "hallway_02",
         "Enabled": true,
         "Position": "-448,192,0",
@@ -2675,13 +3493,103 @@
         "__Prefab": "prefabs/hallways/hallway_02.object"
       },
       {
-        "Id": "2e8e2785-f5a4-4aab-8988-5a03e26e9d4f",
+        "Id": "aacc8720-6fae-46af-b2ae-4847c1a81429",
         "Name": "hallway_03",
         "Enabled": true,
         "Position": "192,192,0",
         "Rotation": "0.000001037599,0.0000003576279,-0.000003112792,0.9999999",
         "Scale": "1,1,1",
         "__Prefab": "prefabs/hallways/hallway_03.object"
+      },
+      {
+        "Id": "4f439a1a-532c-44d8-8381-ea6bc8e88411",
+        "Name": "barrel_02",
+        "Enabled": true,
+        "Position": "-611.4513,-215.3742,0.007507324",
+        "Rotation": "0.00000004401107,0.0000003537067,-0.1476762,0.9890355",
+        "Scale": "1,1,1",
+        "__Prefab": "prefabs/pieces/barrel_02.object"
+      },
+      {
+        "Id": "0050f84c-33f7-46b3-966e-714046c9d368",
+        "Name": "barrel_01",
+        "Enabled": true,
+        "Position": "-568.0181,-216.5862,0.005371094",
+        "Rotation": "-0.000000086882,0.0000003317115,0.7848257,0.6197161",
+        "Scale": "1.299553,1.299553,1.299553",
+        "__Prefab": "prefabs/pieces/barrel_01.object"
+      },
+      {
+        "Id": "4c966bd3-f87c-4b8c-ac46-820fdde73836",
+        "Name": "barrel_01",
+        "Enabled": true,
+        "Position": "-617.2631,-169.9994,-0.0008544922",
+        "Rotation": "0,0,0,1",
+        "Scale": "1.299553,1.299553,1.299553",
+        "__Prefab": "prefabs/pieces/barrel_01.object"
+      },
+      {
+        "Id": "e25ba604-ac4e-4c5c-a21e-c7328d7fc2ab",
+        "Name": "barrel_01",
+        "Enabled": true,
+        "Position": "-598.984,68.85953,0.0002441406",
+        "Rotation": "-0.0000002466296,0.00000028846,-0.591108,0.8065921",
+        "Scale": "1.299553,1.299553,1.299553",
+        "__Prefab": "prefabs/pieces/barrel_01.object"
+      },
+      {
+        "Id": "f27c6873-d7fe-4d90-b2f1-49ed80f3d217",
+        "Name": "barrel_02",
+        "Enabled": true,
+        "Position": "-567.8946,102.2046,-0.00100708",
+        "Rotation": "0,0.0000003576279,0,1",
+        "Scale": "1,1,1",
+        "__Prefab": "prefabs/pieces/barrel_02.object"
+      },
+      {
+        "Id": "baa375ff-501c-44d9-ad1e-f02329861b4d",
+        "Name": "barrel_01",
+        "Enabled": true,
+        "Position": "581.6691,-213.2839,-0.002563477",
+        "Rotation": "-0.0000001792422,0.0000002857163,0.6014367,0.7989205",
+        "Scale": "1.299553,1.299553,1.299553",
+        "__Prefab": "prefabs/pieces/barrel_01.object"
+      },
+      {
+        "Id": "6786fb9e-95e4-40cd-b7fc-3fb6e4100a26",
+        "Name": "barrel_02",
+        "Enabled": true,
+        "Position": "528.7002,-214.0941,-0.001403809",
+        "Rotation": "0.0000001155115,0.0000003296725,-0.3875921,0.9218311",
+        "Scale": "1,1,1",
+        "__Prefab": "prefabs/pieces/barrel_02.object"
+      },
+      {
+        "Id": "c9e201c4-f5a3-43a1-95c3-f0f2affa1d64",
+        "Name": "barrel_02",
+        "Enabled": true,
+        "Position": "594.9652,96.23727,-0.002197266",
+        "Rotation": "0.0000002973803,0.00000002347495,-0.9978434,0.06564115",
+        "Scale": "1,1,1",
+        "__Prefab": "prefabs/pieces/barrel_02.object"
+      },
+      {
+        "Id": "2b643602-774d-4605-971c-ef55795f4978",
+        "Name": "barrel_01",
+        "Enabled": true,
+        "Position": "540.8113,91.54076,0.006652832",
+        "Rotation": "0.0000001938391,0.0000002716463,-0.6504158,0.7595781",
+        "Scale": "1.299553,1.299553,1.299553",
+        "__Prefab": "prefabs/pieces/barrel_01.object"
+      },
+      {
+        "Id": "c021c3fd-6fe6-4b15-8ff3-d632e46749b3",
+        "Name": "barrel_01",
+        "Enabled": true,
+        "Position": "483.0789,91.62578,0.002555965",
+        "Rotation": "0.0000001358258,-0.0000003183265,-0.4557555,-0.8901054",
+        "Scale": "1.299553,1.299553,1.299553",
+        "__Prefab": "prefabs/pieces/barrel_01.object"
       }
     ]
   },
