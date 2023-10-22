@@ -29,6 +29,8 @@ public sealed class GooBossSequencer : BaseComponent
 	[Property] public GameObject Enemy2 { get; set; }
 	[Property] public GameObject Enemy3 { get; set; }
 
+	[Property] GameObject IntroBezier { get; set; }
+
 	AnimatedModelComponent BossModel { get; set; }
 
 	public List<GameObject> Eyeballs { get; set; } = new List<GameObject>();
@@ -132,11 +134,16 @@ public sealed class GooBossSequencer : BaseComponent
 		}
 	}
 
-	public void OnTriggered()
+	public async void OnTriggered()
 	{
-		StartedFight = true;
-		EyesOpen = true;
-		Scene.GetAllObjects( true ).Where( X => X.GetComponent<CameraComponent>( false ) != null ).First().GetComponent<CameraComponent>( false ).FieldOfView = 80f;
+		if ( !StartedFight )
+		{
+			Scene.GetAllObjects( true ).Where( X => X.GetComponent<CameraComponent>( false ) != null ).First().GetComponent<CameraComponent>( false ).FieldOfView = 80f;
+			await IntroBezier.GetComponent<BezierAnimationComponent>().AnimateObject( roomTrigger.GetComponent<CameraTriggerComponent>().CameraPoint, 5f, true );
+			StartedFight = true;
+			EyesOpen = true;
+		}
+
 		foreach ( var item in doorBlockers.Children )
 		{
 			item.GetComponent<ModelComponent>( false, true ).Enabled = true;

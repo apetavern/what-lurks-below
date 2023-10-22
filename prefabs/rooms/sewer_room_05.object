@@ -1844,6 +1844,360 @@
         "__Prefab": "prefabs/hallways/hallway_01.object"
       },
       {
+        "Id": "55c8d6ba-1747-46fc-9c9d-653eb71954d1",
+        "Name": "Ceil",
+        "Enabled": true,
+        "Position": "-320,-576,256",
+        "Rotation": "-0,1,-0,-0.0000006397578",
+        "Scale": "1.28,1.28,1.28",
+        "Components": [
+          {
+            "__type": "ModelComponent",
+            "__enabled": true,
+            "MaterialOverride": "materials/sewer/sewer_wall_01.vmat",
+            "Model": "models/dev/plane.vmdl",
+            "ShouldCastShadows": true,
+            "Tint": "1,1,1,1"
+          }
+        ]
+      },
+      {
+        "Id": "cadecfbc-eee1-4357-bc23-9e07dd057250",
+        "Name": "Ceil",
+        "Enabled": true,
+        "Position": "-320,-448,256",
+        "Rotation": "-0,1,-0,-0.0000006397578",
+        "Scale": "1.28,1.28,1.28",
+        "Components": [
+          {
+            "__type": "ModelComponent",
+            "__enabled": true,
+            "MaterialOverride": "materials/sewer/sewer_wall_01.vmat",
+            "Model": "models/dev/plane.vmdl",
+            "ShouldCastShadows": true,
+            "Tint": "1,1,1,1"
+          }
+        ]
+      },
+      {
+        "Id": "88ac8800-b068-43e1-9cf1-322ca81c1fc9",
+        "Name": "Ceil",
+        "Enabled": true,
+        "Position": "-320,-320,256",
+        "Rotation": "-0,1,-0,-0.0000006397578",
+        "Scale": "1.28,1.28,1.28",
+        "Components": [
+          {
+            "__type": "ModelComponent",
+            "__enabled": true,
+            "MaterialOverride": "materials/sewer/sewer_wall_01.vmat",
+            "Model": "models/dev/plane.vmdl",
+            "ShouldCastShadows": true,
+            "Tint": "1,1,1,1"
+          }
+        ]
+      },
+      {
+        "Id": "847ada3f-75a8-42a5-9bf3-25239f509a68",
+        "Name": "Ceil",
+        "Enabled": true,
+        "Position": "320,-320,256",
+        "Rotation": "-0,1,-0,-0.0000006397578",
+        "Scale": "1.28,1.28,1.28",
+        "Children": [
+          {
+            "Id": "829fc335-5423-4843-9e93-1890b3c220f1",
+            "Name": "Ceil",
+            "Enabled": true,
+            "Position": "400,0,0.0005118062",
+            "Rotation": "0,0,0,1",
+            "Scale": "1,1,1",
+            "Components": [
+              {
+                "__type": "ModelComponent",
+                "__enabled": true,
+                "MaterialOverride": "materials/sewer/sewer_wall_01.vmat",
+                "Model": "models/dev/plane.vmdl",
+                "ShouldCastShadows": true,
+                "Tint": "1,1,1,1"
+              }
+            ]
+          },
+          {
+            "Id": "95ce4470-4660-41d1-994e-43970deb2ff0",
+            "Name": "Ceil",
+            "Enabled": true,
+            "Position": "100,0,0.0001279516",
+            "Rotation": "0,0,0,1",
+            "Scale": "1,1,1",
+            "Components": [
+              {
+                "__type": "ModelComponent",
+                "__enabled": true,
+                "MaterialOverride": "materials/sewer/sewer_wall_01.vmat",
+                "Model": "models/dev/plane.vmdl",
+                "ShouldCastShadows": true,
+                "Tint": "1,1,1,1"
+              }
+            ]
+          },
+          {
+            "Id": "1fe74032-ba1a-446a-9b6f-4653886f287b",
+            "Name": "Ceil",
+            "Enabled": true,
+            "Position": "0,0,0.000005828048",
+            "Rotation": "0,0,0,1",
+            "Scale": "1,1,1",
+            "Components": [
+              {
+                "__type": "ModelComponent",
+                "__enabled": true,
+                "MaterialOverride": "materials/sewer/sewer_wall_01.vmat",
+                "Model": "models/dev/plane.vmdl",
+                "ShouldCastShadows": true,
+                "Tint": "1,1,1,1"
+              }
+            ]
+          },
+          {
+            "Id": "932e5df8-a5e5-4c6b-98d6-e5136aead336",
+            "Name": "Ceil",
+            "Enabled": true,
+            "Position": "200,0,0.0002559031",
+            "Rotation": "0,0,0,1",
+            "Scale": "1,1,1",
+            "Components": [
+              {
+                "__type": "ModelComponent",
+                "__enabled": true,
+                "MaterialOverride": "materials/sewer/sewer_wall_01.vmat",
+                "Model": "models/dev/plane.vmdl",
+                "ShouldCastShadows": true,
+                "Tint": "1,1,1,1"
+              }
+            ]
+          },
+          {
+            "Id": "a2fe95db-8d89-407f-9ab3-fb709369dd3c",
+            "Name": "Ceil",
+            "Enabled": true,
+            "Position": "300,0,0.0003838547",
+            "Rotation": "0,0,0,1",
+            "Scale": "1,1,1",
+            "Components": [
+              {
+                "__type": "ModelComponent",
+                "__enabled": true,
+                "MaterialOverride": "materials/sewer/sewer_wall_01.vmat",
+                "Model": "models/dev/plane.vmdl",
+                "ShouldCastShadows": true,
+                "Tint": "1,1,1,1"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "Id": "afb70312-e3ad-49e9-8675-8db9301d810c",
+        "Name": "Ceil",
+        "Enabled": true,
+        "Position": "320,-448,256",
+        "Rotation": "-0,1,-0,-0.0000006397578",
+        "Scale": "1.28,1.28,1.28",
+        "Children": [
+          {
+            "Id": "ede4ec04-1ec7-4ad5-b744-256b9e0a7fd5",
+            "Name": "Ceil",
+            "Enabled": true,
+            "Position": "400,0,0.0005118062",
+            "Rotation": "0,0,0,1",
+            "Scale": "1,1,1",
+            "Components": [
+              {
+                "__type": "ModelComponent",
+                "__enabled": true,
+                "MaterialOverride": "materials/sewer/sewer_wall_01.vmat",
+                "Model": "models/dev/plane.vmdl",
+                "ShouldCastShadows": true,
+                "Tint": "1,1,1,1"
+              }
+            ]
+          },
+          {
+            "Id": "b895c303-78c9-4c1c-8029-0a13b2d85942",
+            "Name": "Ceil",
+            "Enabled": true,
+            "Position": "100,0,0.0001279516",
+            "Rotation": "0,0,0,1",
+            "Scale": "1,1,1",
+            "Components": [
+              {
+                "__type": "ModelComponent",
+                "__enabled": true,
+                "MaterialOverride": "materials/sewer/sewer_wall_01.vmat",
+                "Model": "models/dev/plane.vmdl",
+                "ShouldCastShadows": true,
+                "Tint": "1,1,1,1"
+              }
+            ]
+          },
+          {
+            "Id": "973a5675-77e0-4b6b-952d-67ac6b3e5132",
+            "Name": "Ceil",
+            "Enabled": true,
+            "Position": "0,0,0.000007352949",
+            "Rotation": "0,0,0,1",
+            "Scale": "1,1,1",
+            "Components": [
+              {
+                "__type": "ModelComponent",
+                "__enabled": true,
+                "MaterialOverride": "materials/sewer/sewer_wall_01.vmat",
+                "Model": "models/dev/plane.vmdl",
+                "ShouldCastShadows": true,
+                "Tint": "1,1,1,1"
+              }
+            ]
+          },
+          {
+            "Id": "8f6c1490-9f70-4452-953f-65ffd24c3146",
+            "Name": "Ceil",
+            "Enabled": true,
+            "Position": "200,0,0.0002559031",
+            "Rotation": "0,0,0,1",
+            "Scale": "1,1,1",
+            "Components": [
+              {
+                "__type": "ModelComponent",
+                "__enabled": true,
+                "MaterialOverride": "materials/sewer/sewer_wall_01.vmat",
+                "Model": "models/dev/plane.vmdl",
+                "ShouldCastShadows": true,
+                "Tint": "1,1,1,1"
+              }
+            ]
+          },
+          {
+            "Id": "d2adab35-6d15-4d5e-a7a7-5399f278dd36",
+            "Name": "Ceil",
+            "Enabled": true,
+            "Position": "300,0,0.0003838547",
+            "Rotation": "0,0,0,1",
+            "Scale": "1,1,1",
+            "Components": [
+              {
+                "__type": "ModelComponent",
+                "__enabled": true,
+                "MaterialOverride": "materials/sewer/sewer_wall_01.vmat",
+                "Model": "models/dev/plane.vmdl",
+                "ShouldCastShadows": true,
+                "Tint": "1,1,1,1"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "Id": "4b459409-e3f4-4c76-8d99-2c941a398dd5",
+        "Name": "Ceil",
+        "Enabled": true,
+        "Position": "320,-576,256",
+        "Rotation": "-0,1,-0,-0.0000006397578",
+        "Scale": "1.28,1.28,1.28",
+        "Children": [
+          {
+            "Id": "05ae3ec2-b5a7-4a69-820d-025fb208da94",
+            "Name": "Ceil",
+            "Enabled": true,
+            "Position": "400,0,0.0005118062",
+            "Rotation": "0,0,0,1",
+            "Scale": "1,1,1",
+            "Components": [
+              {
+                "__type": "ModelComponent",
+                "__enabled": true,
+                "MaterialOverride": "materials/sewer/sewer_wall_01.vmat",
+                "Model": "models/dev/plane.vmdl",
+                "ShouldCastShadows": true,
+                "Tint": "1,1,1,1"
+              }
+            ]
+          },
+          {
+            "Id": "f98fca43-4f6f-4889-bbc9-fcd8eb4ec491",
+            "Name": "Ceil",
+            "Enabled": true,
+            "Position": "100,0,0.0001279516",
+            "Rotation": "0,0,0,1",
+            "Scale": "1,1,1",
+            "Components": [
+              {
+                "__type": "ModelComponent",
+                "__enabled": true,
+                "MaterialOverride": "materials/sewer/sewer_wall_01.vmat",
+                "Model": "models/dev/plane.vmdl",
+                "ShouldCastShadows": true,
+                "Tint": "1,1,1,1"
+              }
+            ]
+          },
+          {
+            "Id": "530f90ef-9328-4673-893d-c04a8537a1fe",
+            "Name": "Ceil",
+            "Enabled": true,
+            "Position": "0,0,0.000003653176",
+            "Rotation": "0,0,0,1",
+            "Scale": "1,1,1",
+            "Components": [
+              {
+                "__type": "ModelComponent",
+                "__enabled": true,
+                "MaterialOverride": "materials/sewer/sewer_wall_01.vmat",
+                "Model": "models/dev/plane.vmdl",
+                "ShouldCastShadows": true,
+                "Tint": "1,1,1,1"
+              }
+            ]
+          },
+          {
+            "Id": "0249d9a9-fd2e-48cf-bdaa-8bf1e8ada92c",
+            "Name": "Ceil",
+            "Enabled": true,
+            "Position": "200,0,0.0002559031",
+            "Rotation": "0,0,0,1",
+            "Scale": "1,1,1",
+            "Components": [
+              {
+                "__type": "ModelComponent",
+                "__enabled": true,
+                "MaterialOverride": "materials/sewer/sewer_wall_01.vmat",
+                "Model": "models/dev/plane.vmdl",
+                "ShouldCastShadows": true,
+                "Tint": "1,1,1,1"
+              }
+            ]
+          },
+          {
+            "Id": "dcdff8c2-e649-460a-9baf-0fe425f2508f",
+            "Name": "Ceil",
+            "Enabled": true,
+            "Position": "300,0,0.0003838547",
+            "Rotation": "0,0,0,1",
+            "Scale": "1,1,1",
+            "Components": [
+              {
+                "__type": "ModelComponent",
+                "__enabled": true,
+                "MaterialOverride": "materials/sewer/sewer_wall_01.vmat",
+                "Model": "models/dev/plane.vmdl",
+                "ShouldCastShadows": true,
+                "Tint": "1,1,1,1"
+              }
+            ]
+          }
+        ]
+      },
+      {
         "Id": "a9d9e185-2c9c-4d47-8ba0-1d0abd56ca55",
         "Name": "hallway_01",
         "Enabled": true,
@@ -3326,6 +3680,41 @@
         ]
       },
       {
+        "Id": "74cbf224-5bec-4284-835e-4347b7c2b69c",
+        "Name": "introbezier",
+        "Enabled": true,
+        "Position": "0,0,0",
+        "Rotation": "0,0,0,1",
+        "Scale": "1,1,1",
+        "Components": [
+          {
+            "__type": "BezierAnimationComponent",
+            "__enabled": true,
+            "Point1": "a18cd22b-ef72-4830-9341-bba2b4f74b49",
+            "Point2": "04c73c69-6531-446b-9410-10c46062c7e8",
+            "segments": 14
+          }
+        ],
+        "Children": [
+          {
+            "Id": "a18cd22b-ef72-4830-9341-bba2b4f74b49",
+            "Name": "1",
+            "Enabled": true,
+            "Position": "-0.00003785312,-149.3692,55.32367",
+            "Rotation": "-0.1191521,0.1191523,0.6969957,0.6969953",
+            "Scale": "256,256,256"
+          },
+          {
+            "Id": "04c73c69-6531-446b-9410-10c46062c7e8",
+            "Name": "2",
+            "Enabled": true,
+            "Position": "0.00003125449,135.7898,409.5596",
+            "Rotation": "0.3180692,0.3180678,-0.6315324,0.6315316",
+            "Scale": "128,128,128"
+          }
+        ]
+      },
+      {
         "Id": "992b372c-5e76-4ab2-ac64-ce5a9f23fb0f",
         "Name": "Zone",
         "Enabled": true,
@@ -3353,9 +3742,20 @@
             "Id": "1bbcaefd-bc19-4e07-b7e9-128c1dd5f2fd",
             "Name": "Camera",
             "Enabled": true,
-            "Position": "-0.0002733222,379.3668,478.7703",
-            "Rotation": "0.3645327,0.3645325,-0.6059018,0.6059014",
-            "Scale": "1,1,1"
+            "Position": "-0.0002733222,379.3668,354.0523",
+            "Rotation": "0.3180687,0.3180684,-0.6315321,0.6315319",
+            "Scale": "1,1,1",
+            "Components": [
+              {
+                "__type": "CameraComponent",
+                "__enabled": false,
+                "BackgroundColor": "0.33333,0.46275,0.52157,1",
+                "ClearFlags": "Color, Depth, Stencil",
+                "FieldOfView": 80,
+                "ZFar": 10000,
+                "ZNear": 10
+              }
+            ]
           },
           {
             "Id": "d0efb91f-2b67-4dae-8eaf-5f916e61307a",
@@ -3470,6 +3870,7 @@
             "Enemy3": "prefabs/enemies/gatorman.object",
             "HurtSound": "",
             "IdleSound": "",
+            "IntroBezier": "74cbf224-5bec-4284-835e-4347b7c2b69c",
             "roomTrigger": "992b372c-5e76-4ab2-ac64-ce5a9f23fb0f"
           }
         ]

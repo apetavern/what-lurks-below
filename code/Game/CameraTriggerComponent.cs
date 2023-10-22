@@ -13,7 +13,7 @@ public sealed class CameraTriggerComponent : BaseComponent
 
 	BrickPlayerController Controller;
 
-	[Property] GameObject CameraPoint { get; set; }
+	[Property] public GameObject CameraPoint { get; set; }
 
 	[Property] bool FollowPlayer { get; set; }
 
