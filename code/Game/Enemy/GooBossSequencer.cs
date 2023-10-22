@@ -6,6 +6,8 @@ public sealed class GooBossSequencer : BaseComponent
 
 	[Property] GameObject doorBlockers { get; set; }
 
+	AnimatedModelComponent BossModel { get; set; }
+
 	public bool StartedFight = false;
 
 	public override void OnStart()
@@ -16,6 +18,9 @@ public sealed class GooBossSequencer : BaseComponent
 			item.GetComponent<ModelComponent>().Enabled = false;
 			item.GetComponent<ColliderBaseComponent>().Enabled = false;
 		}
+
+		BossModel = GetComponent<AnimatedModelComponent>();
+		BossModel.SceneObject.SetBodyGroup( "middle", 1 );
 	}
 
 	public void OnTriggered()

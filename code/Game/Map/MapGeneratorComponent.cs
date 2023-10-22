@@ -95,6 +95,11 @@ public partial class MapGeneratorComponent : BaseComponent
 
 				SpawnedRooms.Add( SpawnPrefabFromPath( Rooms[Game.Random.Int( 0, Rooms.Count - 1 )], Transform.Position + PlacePoint, Transform.Rotation ).GetComponent<RoomChunkComponent>( false ) );
 			}
+
+			//spawn bossroom
+			Vector3 BossPlacePoint = new Vector3( 0, -2048f, 0 );
+
+			SpawnedRooms.Add( SpawnPrefabFromPath( "prefabs/rooms/sewer_room_05.object", Transform.Position + BossPlacePoint, Transform.Rotation ).GetComponent<RoomChunkComponent>( false ) );
 		}
 
 		base.OnStart();
