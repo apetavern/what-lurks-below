@@ -62,7 +62,7 @@ public class EnemyController : BaseComponent
 
 		model = Body.GetComponent<AnimatedModelComponent>().SceneObject;
 
-		navgen = Scene.GetAllObjects( true ).FirstOrDefault( x => x.GetComponent<NavGenComponent>() != null ).GetComponent<NavGenComponent>();
+		navgen = Scene.GetAllObjects( true ).FirstOrDefault( x => x.GetComponent<NavGenComponent>() != null )?.GetComponent<NavGenComponent>();
 	}
 
 	public TimeSince TimeSinceDamage;
@@ -136,7 +136,7 @@ public class EnemyController : BaseComponent
 	{
 		base.Update();
 
-		if ( dead )
+		if ( dead || Player is null )
 		{
 			return;
 		}
