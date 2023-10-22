@@ -18,6 +18,8 @@ public sealed class GlowstickComponent : BaseComponent
 
 	Color initialLight;
 
+	public GameObject Player;
+
 	public override void OnStart()
 	{
 		model = GetComponent<ModelComponent>( false, true );
@@ -25,8 +27,8 @@ public sealed class GlowstickComponent : BaseComponent
 		initialLight = light.LightColor;
 	}
 
-	PhysicsTraceBuilder BuildTrace( Vector3 from, Vector3 to ) => BuildTrace( Scene.PhysicsWorld.Trace.Ray( from, to ).WithoutTags( "trigger" ) );
-	PhysicsTraceBuilder BuildTrace( PhysicsTraceBuilder source ) => source.Size( GameObject.GetBounds() ).WithoutTags( "trigger" );
+	PhysicsTraceBuilder BuildTrace( Vector3 from, Vector3 to ) => BuildTrace( Scene.PhysicsWorld.Trace.Ray( from, to ).WithoutTags( "trigger", "solid" ) );
+	PhysicsTraceBuilder BuildTrace( PhysicsTraceBuilder source ) => source.Size( GameObject.GetBounds() ).WithoutTags( "trigger", "solid" );
 
 	TimeSince TimeSinceGrounded;
 
@@ -45,31 +47,12 @@ public sealed class GlowstickComponent : BaseComponent
 			light.GameObject.Destroy();
 		}
 
-		if ( TimeSinceGrounded > 20f )
-		{
-			Destroy();
-		}
-
 		if ( StopPhysics ) return;
 
-		grounded = BuildTrace( Transform.Position, Transform.Position ).Size( 15f ).Run().Hit;
+		Gravity = -Vector3.Up * 800f * Time.Delta;
 
-		if ( !grounded )
-		{
-			TimeSinceGrounded = 0;
-			Gravity = -Vector3.Up * 800f * Time.Delta;
-		}
-		else
-		{
-			Gravity = Vector3.Zero;
-			if ( TimeSinceGrounded > 3f )
-			{
-				StopPhysics = true;
-			}
-		}
 
 		var helper = new CharacterControllerHelper( BuildTrace( Transform.Position, Transform.Position ), Transform.Position, Velocity + Gravity );
-		helper.Trace.Size( 15f );
 		helper.Bounce = 0.3f;
 		helper.TryMove( Time.Delta );
 
@@ -77,5 +60,12 @@ public sealed class GlowstickComponent : BaseComponent
 
 		Transform.Position = helper.Position;
 		Velocity = helper.Velocity;
+		var tr = Physics.Trace.Ray( Transform.Position + Vector3.Up * 15f, Transform.Position + Velocity.Normal ).WithoutTags( "trigger" ).Run();
+		if ( tr.Hit )
+		{
+			StopPhysics = true;
+			Transform.Position = tr.EndPosition + tr.Normal * 2f;
+			Transform.Rotation = Rotation.LookAt( tr.Normal, Transform.Rotation.Up );
+		}
 	}
 }
