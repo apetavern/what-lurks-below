@@ -1,0 +1,46 @@
+﻿@using System
+@using System.Collections.Generic
+@using BrickJam.Player
+@using Sandbox;
+@using Sandbox.UI;
+
+<root>
+    @if( InventoryHud.Instance.IsOpen )
+    {
+        <div class="control">
+            <InputGlyph button="attack1" size="small" />
+            <p>Attack</p>
+        </div>
+        <div class="control">
+            <InputGlyph button="attack2" size="small" />
+            <p>Aim</p>
+        </div>
+        <div class="control">
+            <InputGlyph button="Run" size="small" />
+            <p>Run</p>
+        </div>
+        <div class="control">
+            <InputGlyph button="Flashlight" size="small" />
+            <p>Glowstick</p>
+        </div>
+        <div class="control">
+            <InputGlyph button="Inventory" size="small" />
+            <p>Close Inventory</p>
+        </div>
+    }
+    else
+    {
+        <div class="control">
+            <InputGlyph button="Inventory" size="small" />
+            <p>Inventory</p>
+        </div>
+    }
+</root>
+
+@code
+{
+    protected override int BuildHash()
+    {
+        return HashCode.Combine( InventoryHud.Instance.IsOpen );
+    }
+}

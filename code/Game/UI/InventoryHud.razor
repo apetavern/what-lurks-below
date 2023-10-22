@@ -7,6 +7,7 @@
 
 <root>
     <InventoryPane Inventory=@Inventory />
+    <ControlsPane />
 </root>
 
 @code
@@ -35,6 +36,7 @@
         {
             IsOpen = !IsOpen;
         }
+        Minimap.Instance.Enabled = IsOpen;
         
         Panel.SetClass("open", IsOpen);
     }

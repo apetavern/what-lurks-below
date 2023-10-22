@@ -3,7 +3,6 @@
   height: 100%;
   position: absolute;
   flex-grow: 0;
-  opacity: 0;
   pointer-events: all;
   transition: opacity 0.2s ease;
   align-items: flex-end;
@@ -11,8 +10,12 @@
   .pane {
     justify-content: space-between;
     background-image: linear-gradient(to bottom, #333, #222);
-    bottom: 100px;
-    left: 100px;
+    bottom: 24px;
+    left: 48px;
+    opacity: 0;
+    transition: all 0.1s ease;
+    pointer-events: none;
+    z-index: 5;
   }
   
   .grid-line-vertical {
@@ -30,9 +33,59 @@
     z-index: 6;
   }
   
+  ControlsPane {
+    position: absolute;
+    bottom: 32px;
+    left: 32px;
+    color: white;
+    font-size: 24px;
+    font-family: Poppins;
+    flex-direction: column;
+    transition: opacity 0.1s ease;
+    gap: 4px;
+    
+    .control {
+      flex-direction: row;
+      align-items: center;
+      gap: 4px;
+      opacity: 1;
+      transition: opacity 0.1s ease;
+      
+      .key {
+        width: 32px;
+        height: 32px;
+        background-color: #777;
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      &:outro {
+        opacity: 0;
+      }
+
+      &:intro {
+        opacity: 0;
+      }
+    }
+    
+  }
+
   &.open {
     pointer-events: all;
     opacity: 1;
+
+    .pane {
+      opacity: 1;
+      pointer-events: all;
+      bottom: 48px;
+    }
+
+    ControlsPane {
+      left: 48px;
+      bottom: 370px;
+    }
   }
 }
 

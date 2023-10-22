@@ -139,8 +139,7 @@
         {
           "__type": "ItemPickup",
           "__enabled": true,
-          "Item": "assets/inventory_items/pistol_ammo.bjitem",
-          "Type": "Item"
+          "Item": "assets/inventory_items/pistol_ammo.bjitem"
         }
       ]
     },
@@ -155,8 +154,7 @@
         {
           "__type": "ItemPickup",
           "__enabled": true,
-          "Item": "assets/inventory_items/medkit.bjitem",
-          "Type": "Item"
+          "Item": "assets/inventory_items/medkit.bjitem"
         },
         {
           "__type": "ColliderBoxComponent",
@@ -187,8 +185,7 @@
         {
           "__type": "ItemPickup",
           "__enabled": true,
-          "Item": "assets/inventory_items/skeleton_key.bjitem",
-          "Type": "Item"
+          "Item": "assets/inventory_items/skeleton_key.bjitem"
         }
       ]
     },
@@ -296,20 +293,6 @@
           "Components": [
             {
               "__type": "InventoryHud",
-              "__enabled": true
-            }
-          ]
-        },
-        {
-          "Id": "7b805711-ef52-4a18-b789-24573f41dc7f",
-          "Name": "Resource Bar",
-          "Enabled": true,
-          "Position": "0,0,0",
-          "Rotation": "0,0,0,1",
-          "Scale": "1,1,1",
-          "Components": [
-            {
-              "__type": "ResourceBar",
               "__enabled": true
             }
           ]
