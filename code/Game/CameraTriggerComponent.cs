@@ -17,6 +17,9 @@ public sealed class CameraTriggerComponent : BaseComponent
 
 	[Property] bool FollowPlayer { get; set; }
 
+	public delegate void TriggeredEvent();
+	public event TriggeredEvent OnTriggered;
+
 	public override void OnEnabled()
 	{
 		base.OnEnabled();
@@ -56,23 +59,46 @@ public sealed class CameraTriggerComponent : BaseComponent
 			{
 				Triggered();
 			}
+			else
+			{
+				UnTrigger();
+			}
 		}
 		base.Update();
 	}
 
+	bool WasTriggered;
+
+	public void UnTrigger()
+	{
+		if ( WasTriggered )
+		{
+			WasTriggered = false;
+		}
+	}
+
 	public void Triggered()
 	{
-		Controller.Camera.Transform.Position = CameraPoint.Transform.Position;
-
-		Player.GetComponent<BrickPlayerController>().CameraControl = false;
-
-		if ( !FollowPlayer )
+		if ( !WasTriggered )
 		{
-			Controller.Camera.Transform.Rotation = CameraPoint.Transform.Rotation;
+			OnTriggered?.Invoke();
+			WasTriggered = true;
 		}
-		else
+
+		if ( CameraPoint != null )
 		{
-			Controller.Camera.Transform.Rotation = Rotation.LookAt( -(CameraPoint.Transform.Position - Player.Transform.Position) + Vector3.Up * 45f );
+			Controller.Camera.Transform.Position = CameraPoint.Transform.Position;
+
+			Player.GetComponent<BrickPlayerController>().CameraControl = false;
+
+			if ( !FollowPlayer )
+			{
+				Controller.Camera.Transform.Rotation = CameraPoint.Transform.Rotation;
+			}
+			else
+			{
+				Controller.Camera.Transform.Rotation = Rotation.LookAt( -(CameraPoint.Transform.Position - Player.Transform.Position) + Vector3.Up * 45f );
+			}
 		}
 	}
 }
