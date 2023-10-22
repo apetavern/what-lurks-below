@@ -1,0 +1,15 @@
+{
+  "UI": false,
+  "Volume": "1.00,1.00,0",
+  "Pitch": "1.00,1.26,1",
+  "Decibels": 55,
+  "SelectionMode": "Random",
+  "Sounds": [
+    "sounds/enemies/lilgator/lilgator-idle-1.vsnd",
+    "sounds/enemies/lilgator/lilgator-idle-2.vsnd",
+    "sounds/enemies/lilgator/lilgator-idle-3.vsnd"
+  ],
+  "MaximumDistance": 718.4487,
+  "MinimumDistance": 35.922436,
+  "__references": []
+}
