@@ -9,9 +9,9 @@ namespace BrickJam.Player;
 [Category( "Player" )]
 public class Inventory : BaseComponent
 {
-	private List<InventoryItem> _items = new();
+	private List<InventoryReference> _items = new();
 
-	public List<InventoryItem> Get => _items;
+	public List<InventoryReference> Get => _items;
 
 	private GameObject _player;
 	private int ItemCount => _items.Count;
@@ -24,15 +24,10 @@ public class Inventory : BaseComponent
 
 	public int PistolAmmoCount => GetPistolAmmoCount();
 	public int ShotgunAmmoCount => GetShotgunAmmoCount();
-	public InventoryItem PistolAmmoItem => _items.FirstOrDefault( i => i.Name == "Pistol Ammo" );	
-	public InventoryItem ShotgunAmmoItem =>_items.FirstOrDefault( i => i.Name == "Shotgun Ammo" );
+	public InventoryReference PistolAmmoItem => _items.FirstOrDefault( i => i.Asset.Name == "Pistol Ammo" );	
+	public InventoryReference ShotgunAmmoItem =>_items.FirstOrDefault( i => i.Asset.Name == "Shotgun Ammo" );
 	
 	public static Inventory Instance { get; set; }
-
-	public InventoryItem this[int key]
-	{
-		get => _items[key];
-	}
 
 	private int GetPistolAmmoCount()
 	{
@@ -56,20 +51,9 @@ public class Inventory : BaseComponent
 		return shotgunAmmo.Quantity;
 	}
 
-	public bool AddItem( InventoryItem item )
-	{
-		if ( ItemCount >= Slots )
-			return false;
-
-		Log.Info( item?.Name );
-
-		_items.Add( item );
-		return true;
-	}
-
 	public bool ItemInInventory( InventoryItem item )
 	{
-		return _items.Any( i => i.Name == item.Name );
+		return _items.Any( i => i.Asset.Name == item.Name );
 	}
 
 	public (bool, InvCoord) HasFreeSpace( int length, int height )
@@ -133,7 +117,7 @@ public class Inventory : BaseComponent
 	{
 		if ( item.Stackable )
 		{
-			var existingItem = _items.FirstOrDefault( i => i.Name == item.Name );
+			var existingItem = _items.FirstOrDefault( i => i.Asset.Name == item.Name );
 			if ( existingItem is not null )
 			{
 				existingItem.Quantity += item.Quantity;
@@ -141,37 +125,27 @@ public class Inventory : BaseComponent
 		}
 	}
 
-	public bool PlaceItem( InventoryItem item, InvCoord pos )
+	public bool PlaceItem( InventoryReference item, InvCoord pos )
 	{
 		if ( _items.Contains( item ) )
 		{
 			_items.Remove( item );
-			Free( item.Position, item.Length, item.Height );
+			Free( item.Position, item.Asset.Length, item.Asset.Height );
 		}
 
-		var positionValid = CheckPositionValid( pos, item.Length, item.Height );
+		var positionValid = CheckPositionValid( pos, item.Asset.Length, item.Asset.Height );
 		if ( !positionValid )
 		{
 			_items.Add( item );
-			Rent( item.Position, item.Length, item.Height );
+			Rent( item.Position, item.Asset.Length, item.Asset.Height );
 			return false;
 		}
 
 		item.Position = pos;
 
 		_items.Add( item );
-		Rent( pos, item.Length, item.Height );
+		Rent( pos, item.Asset.Length, item.Asset.Height );
 		return true;
-	}
-
-	public void RemoveItem( string itemName )
-	{
-		_items = _items.Where( i => i.Name != itemName ).ToList();
-	}
-
-	public InventoryItem GetItem( string itemName )
-	{
-		return _items.FirstOrDefault( i => i.Name == itemName );
 	}
 
 	public override void OnStart()
@@ -181,8 +155,8 @@ public class Inventory : BaseComponent
 		_inventorySlots = new bool[SlotsX, SlotsY];
 		_player = Scene.GetAllObjects( true ).FirstOrDefault( p => p.Name == "player" );
 
-		PlaceItem( KnifeWeapon.KnifeItem, new InvCoord( 0, 0 ) );
-		PlaceItem( PistolWeapon.PistolItem, new InvCoord( 1, 0 ) );
+		PlaceItem( KnifeWeapon.KnifeItem.ToReference(), new InvCoord( 0, 0 ) );
+		PlaceItem( PistolWeapon.PistolItem.ToReference(), new InvCoord( 1, 0 ) );
 
 		InventoryHud.Instance.SetInventory( this );
 	}

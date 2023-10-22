@@ -104,7 +104,7 @@ public class ItemPickup : BaseComponent
 				return;
 			}
 
-			var added = inv.PlaceItem( Item, invCoord );
+			var added = inv.PlaceItem( Item.ToReference(), invCoord );
 			if ( !added )
 				return;
 		}

@@ -19,8 +19,6 @@ public class InventoryItem : GameResource
 	public int Height { get; set; }
 	
 	public string ExamineText { get; set; }
-
-	public InvCoord Position { get; set; }
 	public int Quantity { get; set; }
 	
 	[ResourceType( "png" )]
@@ -78,6 +76,24 @@ public class InventoryItem : GameResource
 		else
 			weaponComponent?.Equip(weapon);
 	}
+
+	public InventoryReference ToReference()
+	{
+		return new InventoryReference()
+		{
+			Id = InventoryReference.IdIndex++, Asset = this, Position = InvCoord.None, Quantity = 0,
+		};
+	}
+}
+
+public class InventoryReference
+{
+	public static int IdIndex { get; set; } = 0;
+	
+	public int Id { get; set; }
+	public InventoryItem Asset { get; set; }
+	public InvCoord Position { get; set; }
+	public int Quantity { get; set; }
 }
 
 public enum InventoryAction

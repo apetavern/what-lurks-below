@@ -8,8 +8,8 @@
 @attribute [StyleSheet]
 
 <root style="position: absolute; @GetPositionStyles(); @GetVisibleStyles()">    
-    <img src=@Item.ImagePath style="width: @(Item.Length * 100)px; height:  @(Item.Height * 100)px" />
-    @if (Item.Stackable)
+    <img src=@Item.Asset.ImagePath style="width: @(Item.Asset.Length * 100)px; height:  @(Item.Asset.Height * 100)px" />
+    @if (Item.Asset.Stackable)
     {
         <div class="quantity">@Item.Quantity</div>
     }
@@ -17,7 +17,7 @@
 
 @code
 {
-    public InventoryItem Item { get; set; }
+    public InventoryReference Item { get; set; }
     
     public InventoryPane InventoryPane { get; set; }
     
@@ -81,8 +81,8 @@
             MouseLocation = MouseLocation.Clamp(
                 Vector2.Zero, 
                 new Vector2(
-                    InventoryPane.Inventory.SlotsX * 100 - Item.Length * 100, 
-                    InventoryPane.Inventory.SlotsY * 100 - Item.Height * 100)
+                    InventoryPane.Inventory.SlotsX * 100 - Item.Asset.Length * 100, 
+                    InventoryPane.Inventory.SlotsY * 100 - Item.Asset.Height * 100)
                 );
 
             InventoryPane.MouseLocation = MouseLocation;

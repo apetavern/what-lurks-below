@@ -31,8 +31,8 @@
         {
             <img 
                 class="selected-item-preview" 
-                src=@SelectedItem.ImagePath 
-                style="width: @(SelectedItem.Length * 100)px; height:  @(SelectedItem.Height * 100)px; @GetLocationStyles()" />
+                src=@SelectedItem.Asset.ImagePath 
+                style="width: @(SelectedItem.Asset.Length * 100)px; height:  @(SelectedItem.Asset.Height * 100)px; @GetLocationStyles()" />
         }
     </div>
 </root>
@@ -43,7 +43,7 @@
     
     public Vector2 MouseLocation { get; set; }
     
-    public InventoryItem SelectedItem { get; set; }
+    public InventoryReference SelectedItem { get; set; }
     
     public Panel PreviewCell { get; set; }
 
@@ -93,8 +93,8 @@
         
         if (SelectedItem is not null)
         {
-            PreviewCell.Style.Width = SelectedItem.Length * 100;
-            PreviewCell.Style.Height = SelectedItem.Height * 100;
+            PreviewCell.Style.Width = SelectedItem.Asset.Length * 100;
+            PreviewCell.Style.Height = SelectedItem.Asset.Height * 100;
             PreviewCell.Style.Top = MouseLocation.y - (MouseLocation.y % 100);
             PreviewCell.Style.Left = MouseLocation.x - (MouseLocation.x % 100);
         }

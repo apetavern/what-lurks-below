@@ -4,9 +4,6 @@
   "Length": 1,
   "Height": 1,
   "ExamineText": "Must unlock something...",
-  "Position": {
-    "X": 5
-  },
   "Quantity": 0,
   "ImagePath": "ui/key_icon.png",
   "GroundModel": "models/items/key/skeleton_key.vmdl",

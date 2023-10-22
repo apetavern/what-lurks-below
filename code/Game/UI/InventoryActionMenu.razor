@@ -8,7 +8,7 @@
 @attribute [StyleSheet]
  
 <root>
-    @foreach (var action in GridItem.Item.InventoryActions)
+    @foreach (var action in GridItem.Item.Asset.InventoryActions)
     {
         <div class="action-option" onclick=@(() => DoAction(action))>
             @if ((action is InventoryAction.Equip) && ItemIsEquipped())
@@ -47,7 +47,7 @@
     public void DoAction(InventoryAction action)
     {
         GridItem.Deselect(); 
-        GridItem.Item.DoAction(GridItem.InventoryPane.Inventory.Scene, action);
+        GridItem.Item.Asset.DoAction(GridItem.InventoryPane.Inventory.Scene, action);
         Instance?.Destroy();
     }
 
@@ -64,7 +64,7 @@
         if (player is null)
             return false;
         var weapon = player.GetComponent<WeaponComponent>();
-        return weapon.ActiveWeapon?.Name == GridItem.Item.Name;
+        return weapon.ActiveWeapon?.Name == GridItem.Item.Asset.Name;
     }
 
     public void Destroy()
