@@ -1,0 +1,29 @@
+﻿@using System
+@using Sandbox;
+@using Sandbox.UI;
+@inherits Panel
+@attribute [StyleSheet]
+
+<root>
+    <div class="healthbar">
+        <div class="healthbar-fill-container">
+            <div class="healthbar-fill" style="width: @(HealthHud.Instance.Health.CeilToInt().ToString())%;"></div>
+        </div>
+    </div>
+</root>
+
+@code
+{
+    public static HealthHud Instance;
+    public float Health { get; set; }
+
+    public HealthHud()
+    {
+        Instance = this;
+    }
+
+    protected override int BuildHash()
+    {
+        return HashCode.Combine(Health);
+    }
+}
