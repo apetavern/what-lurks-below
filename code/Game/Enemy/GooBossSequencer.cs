@@ -90,17 +90,17 @@ public sealed class GooBossSequencer : BaseComponent
 
 	public async void OnDeath()
 	{
-		GetComponent<AnimatedModelComponent>().Set( "die", true );
+		BossModel.Set( "die", true );
 
 		if ( !string.IsNullOrEmpty( DeathSound ) )
 			Sound.FromWorld( DeathSound, Transform.Position );
 
-		await GameTask.DelaySeconds( 2f );
+		await GameTask.DelaySeconds( 10f );
 		var modelcomp = GetComponent<AnimatedModelComponent>( false, true );
 		while ( modelcomp.SceneObject.ColorTint.a > 0 )
 		{
 			var col = modelcomp.SceneObject.ColorTint;
-			col.a -= Time.Delta * 2f;
+			col.a -= Time.Delta;
 			modelcomp.SceneObject.ColorTint = col;
 			await GameTask.DelaySeconds( Time.Delta );
 		}
