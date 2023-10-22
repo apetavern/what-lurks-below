@@ -97,7 +97,6 @@ public class ItemPickup : BaseComponent
 		else
 		{
 			var (hasSpace, invCoord) = inv.HasFreeSpace( Item.Length, Item.Height );
-			Log.Info(hasSpace + ":" + invCoord  );
 			if ( !hasSpace )
 			{
 				MessagePanel.Instance.AddMessage( $"Not enough space for {Item.Name} in inventory." );

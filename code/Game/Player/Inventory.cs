@@ -148,6 +148,12 @@ public class Inventory : BaseComponent
 		return true;
 	}
 
+	public void RemoveItem( InventoryReference item )
+	{
+		Free( item.Position, item.Asset.Length, item.Asset.Height );
+		_items.Remove( item );
+	}
+
 	public override void OnStart()
 	{
 		Instance = this;

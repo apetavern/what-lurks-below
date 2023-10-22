@@ -34,7 +34,7 @@ public class InventoryItem : GameResource
 	
 	public List<InventoryAction> InventoryActions { get; set; }
 
-	public void DoAction( Scene scene, InventoryAction action )
+	public void DoAction( Scene scene, InventoryAction action, InventoryReference item )
 	{
 		if ( action is InventoryAction.Examine )
 		{
@@ -43,6 +43,13 @@ public class InventoryItem : GameResource
 		else if ( action is InventoryAction.Drop )
 		{
 			// make all items droppable without requiring a unique pickup
+			Inventory.Instance.RemoveItem( item );
+			var player = scene
+				.GetAllObjects( true )
+				.FirstOrDefault( o => o.Name == "player" );
+			if ( player is null )
+				return;
+			_ = new PickupObject( true, $"Pickup {item.Asset.Name}", player.Transform.Position, item.Asset );
 		}
 		else if ( action is InventoryAction.Equip )
 		{
@@ -60,6 +67,18 @@ public class InventoryItem : GameResource
 		else if ( action is InventoryAction.Use )
 		{
 			// manually check item type and hardcode behaviour
+			if ( Name == "Medkit" )
+			{
+				var player = scene
+					.GetAllObjects( true )
+					.FirstOrDefault( o => o.Name == "player" );
+				if ( player is null )
+					return;
+				var healthComponent = player.GetComponent<HealthComponent>();
+				healthComponent.Health += 25f;
+				MessagePanel.Instance.AddMessage("You carefully heal your wounds a bit with the medkit.");
+				Inventory.Instance.RemoveItem( item );
+			} 
 		}
 	}
 

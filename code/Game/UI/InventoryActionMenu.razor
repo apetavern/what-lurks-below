@@ -47,7 +47,7 @@
     public void DoAction(InventoryAction action)
     {
         GridItem.Deselect(); 
-        GridItem.Item.Asset.DoAction(GridItem.InventoryPane.Inventory.Scene, action);
+        GridItem.Item.Asset.DoAction(GridItem.InventoryPane.Inventory.Scene, action, GridItem.Item);
         Instance?.Destroy();
     }
 
