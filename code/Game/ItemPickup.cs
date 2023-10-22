@@ -2,6 +2,7 @@
 using Sandbox;
 using System;
 using System.Linq;
+using BrickJam.Game.UI;
 
 namespace BrickJam.Game;
 

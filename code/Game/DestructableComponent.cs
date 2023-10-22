@@ -33,18 +33,7 @@ public sealed class DestructableComponent : BaseComponent
 	{
 		Sound.FromWorld( "barrel_break", Transform.Position );
 		var item = GetRandomItem();
-		var pickup = new GameObject( false, $"Pickup {item.Name}" );
-		var itemPickup = pickup.AddComponent<ItemPickup>( false );
-		var collider = pickup.AddComponent<ColliderBoxComponent>();
-		collider.IsTrigger = true;
-		collider.Scale = new Vector3( 50 );
-		collider.Tags += "pickup ";
-		itemPickup.Item = item;
-		pickup.Transform.Position = Transform.Position;
-		itemPickup.Enabled = true;
-		pickup.Enabled = true;
-
-		// var pickup = new ItemPickup { Item = item, Transform = { Position = Transform.Position } };
+		var pickupObject = new PickupObject( true, $"Pickup {item.Name}", Transform.Position, item );
 		GameObject.Destroy();
 	}
 
