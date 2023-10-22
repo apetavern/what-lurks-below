@@ -39,27 +39,35 @@ public class InventoryItem : GameResource
 		}
 		else if ( action is InventoryAction.Equip )
 		{
-			// manually check item type and hardcode correlation to weapon class
-			// then equip
 			if ( Name == "Knife" )
 			{
 				var knife = new KnifeWeapon( true, "Knife" );
-				var player = scene
-					.GetAllObjects( true )
-					.FirstOrDefault( o => o.Name == "player" );
-				if ( player is null )
-					return;
-				var weaponComponent = player.GetComponent<WeaponComponent>();
-				if ( weaponComponent.ActiveWeapon is KnifeWeapon )
-					weaponComponent?.Holster();
-				else
-					weaponComponent?.Equip(knife);
+				EquipWeapon( scene, knife );
+			}
+			else if ( Name == "Pistol" )
+			{
+				var pistol = new PistolWeapon( true, "Pistol" );
+				EquipWeapon( scene, pistol );
 			}
 		}
 		else if ( action is InventoryAction.Use )
 		{
 			// manually check item type and hardcode behaviour
 		}
+	}
+
+	void EquipWeapon( Scene scene, Game.Weapon.BaseWeapon weapon )
+	{
+		var player = scene
+			.GetAllObjects( true )
+			.FirstOrDefault( o => o.Name == "player" );
+		if ( player is null )
+			return;
+		var weaponComponent = player.GetComponent<WeaponComponent>();
+		if ( weaponComponent.ActiveWeapon?.GetType() == weapon.GetType() )
+			weaponComponent?.Holster();
+		else
+			weaponComponent?.Equip(weapon);
 	}
 }
 

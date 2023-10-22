@@ -1,10 +1,13 @@
-﻿using BrickJam.Game.UI;
+﻿using System.Linq;
+using BrickJam.Game.UI;
 using Sandbox;
 
 namespace BrickJam.Game.Weapon;
 
 public class PistolWeapon : BaseWeapon
 {
+	public static InventoryItem PistolItem => GetInventoryItem();
+	
 	public override Model Model { get; set; } = Model.Load( "weapons/rust_pistol/rust_pistol.vmdl" );
 	public override CitizenAnimationHelperScene.HoldTypes HoldType => CitizenAnimationHelperScene.HoldTypes.Pistol;
 	public override CitizenAnimationHelperScene.Hand Handedness => CitizenAnimationHelperScene.Hand.Left;
@@ -25,6 +28,11 @@ public class PistolWeapon : BaseWeapon
 	internal PistolWeapon( bool enabled, string name ) : base( enabled, name )
 	{
 		defaultAmmoCount = MaxAmmo;
+	}
+	
+	private static InventoryItem GetInventoryItem()
+	{
+		return ResourceLibrary.GetAll<InventoryItem>().FirstOrDefault(i => i.Name == "Pistol");
 	}
 
 	public ParticleSystem muzzleflash;

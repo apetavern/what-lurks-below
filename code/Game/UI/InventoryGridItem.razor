@@ -7,8 +7,7 @@
 @inherits Panel;
 @attribute [StyleSheet]
 
-<root style="position: absolute; @GetPositionStyles(); @GetVisibleStyles()">
-    <img src=@Item.ImagePath style="width: @(Item.Length * 100)px; height:  @(Item.Height * 100)px" />
+<root style="position: absolute; @GetPositionStyles(); @GetVisibleStyles()">    
     <div class="action-menu" @ref=ActionMenu>
         @foreach (var action in Item.InventoryActions)
         {
@@ -25,6 +24,7 @@
         }
         <div class="action-option" onclick=@Select>Move</div>
     </div>
+    <img src=@Item.ImagePath style="width: @(Item.Length * 100)px; height:  @(Item.Height * 100)px" />
 </root>
 
 @code
@@ -46,8 +46,8 @@
 
     public void DoAction(InventoryAction action)
     {
+        Deselect(); 
         Item.DoAction(InventoryPane.Inventory.Scene, action);
-        Deselect();
     }
 
     bool ItemIsEquipped()
