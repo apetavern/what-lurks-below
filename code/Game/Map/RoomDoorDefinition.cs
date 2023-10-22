@@ -4,8 +4,11 @@ using Sandbox;
 public sealed class RoomDoorDefinition : BaseComponent
 {
 	[Property] public GameObject ClosedMesh { get; set; }
+
+	public bool Connected;
 	public void OpenDoor()
 	{
+		Connected = true;
 		if ( ClosedMesh != null ) ClosedMesh.Enabled = false;
 	}
 
