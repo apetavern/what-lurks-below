@@ -88,11 +88,11 @@
           "__type": "GradientFog",
           "__enabled": true,
           "Color": "0.18699,0.5396,0.26457,1",
-          "EndDistance": 1026.1,
-          "FalloffExponent": 1,
-          "Height": 212.35,
+          "EndDistance": 1024,
+          "FalloffExponent": 2,
+          "Height": 256,
           "StartDistance": 0,
-          "VerticalFalloffExponent": 1.6
+          "VerticalFalloffExponent": 1.5
         }
       ]
     },
