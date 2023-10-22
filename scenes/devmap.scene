@@ -200,7 +200,7 @@
         {
           "__type": "MapGeneratorComponent",
           "__enabled": true,
-          "IsBossSequence": false,
+          "IsBossSequence": true,
           "RoomCount": 7,
           "SnapGridSize": 1024
         },

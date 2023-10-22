@@ -28,7 +28,7 @@ public class BaseWeapon : GameObject
 	public virtual float ReloadTime => 1f;
 
 	protected AnimatedModelComponent c_AnimatedModel;
-	
+
 	public BBox LastHitBbox;
 
 
@@ -66,7 +66,7 @@ public class BaseWeapon : GameObject
 		}
 		if ( AmmoCount > 0 || AmmoCount == -1 )
 		{
-			var muzzle = c_AnimatedModel.SceneObject.GetBoneWorldTransform( "hold_R" );
+			var muzzle = c_AnimatedModel.GetAttachmentTransform( "muzzle" );
 
 			var tr = Physics.Trace.Ray( muzzle.Position, muzzle.Position + direction.Normal * TraceLength )
 				.WithAnyTags( "solid", "enemy" )

@@ -15,7 +15,7 @@
 						[
 							{
 								from = "models/weapons/sbox_pistol_usp/w_usp.vmat"
-								to = "models/weapons/sbox_pistol_usp/w_usp.vmat"
+								to = "materials/models/solids/black.vmat"
 							},
 						]
 						use_global_default = false

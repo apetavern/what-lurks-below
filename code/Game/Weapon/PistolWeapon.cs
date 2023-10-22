@@ -9,7 +9,7 @@ public class PistolWeapon : BaseWeapon
 {
 	public static InventoryItem PistolItem => GetInventoryItem();
 
-	public override Model Model { get; set; } = Model.Load( "weapons/rust_pistol/rust_pistol.vmdl" );
+	public override Model Model { get; set; } = Model.Load( "models/weapons/usp/usp.vmdl" );
 	public override CitizenAnimationHelperScene.HoldTypes HoldType => CitizenAnimationHelperScene.HoldTypes.Pistol;
 	public override CitizenAnimationHelperScene.Hand Handedness => CitizenAnimationHelperScene.Hand.Left;
 	public override CitizenAnimationHelperScene.Hand AlternateHandedness => CitizenAnimationHelperScene.Hand.Both;
@@ -62,7 +62,7 @@ public class PistolWeapon : BaseWeapon
 		if ( AmmoCount > 0 )
 		{
 			helper.TriggerAttack();
-			var muzzletr = GetComponent<AnimatedModelComponent>().SceneObject.GetBoneWorldTransform( "hold_R" );
+			var muzzletr = GetComponent<AnimatedModelComponent>().GetAttachmentTransform( "muzzle" );//.SceneObject.GetBoneWorldTransform( "hold_R" );
 
 			if ( muzzleflash == null )
 			{
