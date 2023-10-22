@@ -9,6 +9,10 @@
 
 <root style="position: absolute; @GetPositionStyles(); @GetVisibleStyles()">    
     <img src=@Item.ImagePath style="width: @(Item.Length * 100)px; height:  @(Item.Height * 100)px" />
+    @if (Item.Stackable)
+    {
+        <div class="quantity">@Item.Quantity</div>
+    }
 </root>
 
 @code

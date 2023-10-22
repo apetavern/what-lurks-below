@@ -28,8 +28,7 @@ public class BaseWeapon : GameObject
 	public virtual float ReloadTime => 1f;
 
 	protected AnimatedModelComponent c_AnimatedModel;
-
-
+	
 	public BBox LastHitBbox;
 
 

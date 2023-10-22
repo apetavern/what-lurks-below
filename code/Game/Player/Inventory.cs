@@ -22,9 +22,38 @@ public class Inventory : BaseComponent
 
 	private bool[,] _inventorySlots;
 
+	public int PistolAmmoCount => GetPistolAmmoCount();
+	public int ShotgunAmmoCount => GetShotgunAmmoCount();
+	public InventoryItem PistolAmmoItem => _items.FirstOrDefault( i => i.Name == "Pistol Ammo" );	
+	public InventoryItem ShotgunAmmoItem =>_items.FirstOrDefault( i => i.Name == "Shotgun Ammo" );
+	
+	public static Inventory Instance { get; set; }
+
 	public InventoryItem this[int key]
 	{
 		get => _items[key];
+	}
+
+	private int GetPistolAmmoCount()
+	{
+		var pistolAmmo = PistolAmmoItem;
+		if ( pistolAmmo is null )
+		{
+			return 0;
+		}
+
+		return pistolAmmo.Quantity;
+	}
+	
+	private int GetShotgunAmmoCount()
+	{
+		var shotgunAmmo = ShotgunAmmoItem;
+		if ( shotgunAmmo is null )
+		{
+			return 0;
+		}
+
+		return shotgunAmmo.Quantity;
 	}
 
 	public bool AddItem( InventoryItem item )
@@ -130,6 +159,8 @@ public class Inventory : BaseComponent
 
 	public override void OnStart()
 	{
+		Instance = this;
+		
 		_inventorySlots = new bool[SlotsX, SlotsY];
 		_player = Scene.GetAllObjects( true ).FirstOrDefault( p => p.Name == "player" );
 

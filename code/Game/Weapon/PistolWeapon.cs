@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using BrickJam.Game.UI;
+using BrickJam.Player;
 using Sandbox;
 
 namespace BrickJam.Game.Weapon;
@@ -15,10 +16,11 @@ public class PistolWeapon : BaseWeapon
 	public override bool CanAimFocus => true;
 	public override int AmmoCount
 	{
-		get => base.AmmoCount;
+		get => Inventory.Instance.PistolAmmoCount;
 		set
 		{
-			base.AmmoCount = value;
+			if ( Inventory.Instance.PistolAmmoItem is not null )
+				Inventory.Instance.PistolAmmoItem.Quantity = value;
 		}
 	}
 	public override int MaxAmmo => 15;

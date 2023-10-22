@@ -13,10 +13,11 @@ public class ShotgunWeapon : BaseWeapon
 	public override bool CanAimFocus => true;
 	public override int AmmoCount
 	{
-		get => base.AmmoCount;
+		get => Inventory.Instance.ShotgunAmmoCount;
 		set
 		{
-			base.AmmoCount = value;
+			if ( Inventory.Instance.ShotgunAmmoItem is not null )
+				Inventory.Instance.ShotgunAmmoItem.Quantity = value;
 		}
 	}
 	public override int MaxAmmo => 6;

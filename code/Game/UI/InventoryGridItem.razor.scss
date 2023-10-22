@@ -30,3 +30,14 @@
     opacity: 1;
   }
 }
+
+.quantity {
+  position: absolute;
+  font-size: 32px;
+  text-stroke: 4px black;
+  font-weight: bold;
+  color: #ccc;
+  padding: 4px;
+  top: 1px;
+  right: 1px;
+}
