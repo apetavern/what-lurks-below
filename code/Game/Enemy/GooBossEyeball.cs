@@ -1,5 +1,6 @@
 using BrickJam.Player;
 using Sandbox;
+using System.Linq;
 
 public sealed class GooBossEyeball : BaseComponent
 {
@@ -16,6 +17,7 @@ public sealed class GooBossEyeball : BaseComponent
 
 	public void OnTakeDamage()
 	{
+		Log.Info( "shot" );
 		if ( boss != null )
 		{
 			boss.TriggerDamage( this );
@@ -36,8 +38,10 @@ public sealed class GooBossEyeball : BaseComponent
 		else
 		{
 			boss = GameObject.Parent.GetComponent<GooBossSequencer>();
-			boss.TriggerDamage( this );
+			boss.TriggerDamage( this, true );
 		}
+
+		GameObject.Destroy();
 	}
 
 	public override void Update()
@@ -47,5 +51,13 @@ public sealed class GooBossEyeball : BaseComponent
 			boss = GameObject.Parent.GetComponent<GooBossSequencer>();
 		}
 		Transform.Position = boss.GetComponent<AnimatedModelComponent>().GetAttachmentTransform( pos.ToString() ).Position;
+
+		if ( health.Health <= 0 )
+		{
+			GameObject.Destroy();
+			return;
+		}
+
+		GetComponent<ColliderBaseComponent>().OnPhysicsChanged();
 	}
 }

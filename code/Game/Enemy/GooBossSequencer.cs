@@ -18,9 +18,14 @@ public sealed class GooBossSequencer : BaseComponent
 
 	[Property] GameObject doorBlockers { get; set; }
 
+	[Property] public string IdleSound { get; set; } = "";
+	[Property] public string HurtSound { get; set; } = "";
+	[Property] public string AttackSound { get; set; } = "";
+	[Property] public string DeathSound { get; set; } = "";
+
 	AnimatedModelComponent BossModel { get; set; }
 
-	public List<GameObject> Eyeballs { get; set; }
+	public List<GameObject> Eyeballs { get; set; } = new List<GameObject>();
 
 	public bool StartedFight = false;
 
@@ -38,14 +43,51 @@ public sealed class GooBossSequencer : BaseComponent
 		foreach ( var eye in Enum.GetValues<EyeballPosition>() )
 		{
 			var ball = new GameObject( true, eye.ToString() );
-			ball.SetParent( GameObject );
-			ball.AddComponent<HealthComponent>().Health = 100;
+
+			ball.AddComponent<HealthComponent>();
+			if ( eye == EyeballPosition.right2 || eye == EyeballPosition.left2 )
+			{
+				ball.GetComponent<HealthComponent>().InitialHealth = 50f;
+				ball.GetComponent<HealthComponent>().Health = 50f;
+			}
+			else
+			{
+				ball.GetComponent<HealthComponent>().InitialHealth = 100f;
+				ball.GetComponent<HealthComponent>().Health = 100f;
+			}
+
 			ball.AddComponent<GooBossEyeball>().pos = eye;
+			ball.GetComponent<GooBossEyeball>( false ).boss = this;
 			ball.AddComponent<ColliderBoxComponent>().Tags = "enemy";
 			ball.AddComponent<AimableTargetComponent>();
-			ball.AddComponent<ModelComponent>();
+
+			ball.SetParent( Scene );
+			Eyeballs.Add( ball );
 		}
 	}
+
+	public async void OnDeath()
+	{
+		GetComponent<AnimatedModelComponent>().Set( "die", true );
+
+		if ( !string.IsNullOrEmpty( DeathSound ) )
+			Sound.FromWorld( DeathSound, Transform.Position );
+
+		await GameTask.DelaySeconds( 2f );
+		var modelcomp = GetComponent<AnimatedModelComponent>( false, true );
+		while ( modelcomp.SceneObject.ColorTint.a > 0 )
+		{
+			var col = modelcomp.SceneObject.ColorTint;
+			col.a -= Time.Delta * 2f;
+			modelcomp.SceneObject.ColorTint = col;
+			await GameTask.DelaySeconds( Time.Delta );
+		}
+
+		await GameTask.DelaySeconds( Time.Delta );
+
+		GameObject.Destroy();
+	}
+
 
 	public void TriggerDamage( GooBossEyeball eye, bool killingBlow = false )
 	{
@@ -57,7 +99,10 @@ public sealed class GooBossSequencer : BaseComponent
 
 			Eyeballs.Remove( eye.GameObject );
 
-			eye.GameObject.Destroy();
+			if ( Eyeballs.Count == 0 )
+			{
+				OnDeath();
+			}
 		}
 	}
 
