@@ -4,14 +4,14 @@
       "Id": "881e4245-43eb-4e4c-9f8d-e11f0927b87e",
       "Name": "Directional Light",
       "Enabled": true,
-      "Position": "10.48564,-0.000002499971,-0.0000006249927",
-      "Rotation": "-0.3173008,0.1551005,0.8405138,0.4108535",
+      "Position": "0,-0.000002499971,64",
+      "Rotation": "-0.3220992,0.157098,0.8390967,0.4092543",
       "Scale": "1,1,1",
       "Components": [
         {
           "__type": "DirectionalLightComponent",
           "__enabled": true,
-          "LightColor": "0.91373,0.98039,1,1",
+          "LightColor": "0.16572,0.22259,0.24257,1",
           "Shadows": true,
           "SkyColor": "0.05882,0.07451,0.08235,1"
         }
@@ -21,14 +21,14 @@
       "Id": "50252a95-eb28-4c1b-84f3-cb17134ee8d8",
       "Name": "SkyBox",
       "Enabled": true,
-      "Position": "10.71732,0,0",
+      "Position": "0,0,32",
       "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Components": [
         {
           "__type": "SkyBox2D",
           "__enabled": true,
-          "SkyMaterial": "materials/dev/default_sky.vmat",
+          "SkyMaterial": "materials/skybox/light_test_sky_sunset.vmat",
           "Tint": "1,1,1,1"
         }
       ]
@@ -493,6 +493,91 @@
           "Rotation": "0,0,0,1",
           "Scale": "1,1,1",
           "__Prefab": "prefabs/pieces/sidewalk_01.object"
+        },
+        {
+          "Id": "5a880709-4d47-4112-9d50-92f6fa0aec47",
+          "Name": "decal",
+          "Enabled": true,
+          "Position": "237.5704,-213.144,0",
+          "Rotation": "0,0.7071072,0,0.7071064",
+          "Scale": "1,1,1",
+          "Components": [
+            {
+              "__type": "DecalComponent",
+              "__enabled": true,
+              "DecalScale": "512,50,9",
+              "Material": "materials/urban/road_lines.vmat",
+              "TintColor": "0.92157,0.72941,0.04706,1"
+            }
+          ]
+        },
+        {
+          "Id": "26793025-d01d-45ab-b430-4efb79de9bcd",
+          "Name": "decal",
+          "Enabled": true,
+          "Position": "237.5704,339.7363,0",
+          "Rotation": "0,0.7071072,0,0.7071064",
+          "Scale": "1,1,1",
+          "Components": [
+            {
+              "__type": "DecalComponent",
+              "__enabled": true,
+              "DecalScale": "512,50,9",
+              "Material": "materials/urban/road_lines.vmat",
+              "TintColor": "0.92079,0.72925,0.05014,1"
+            }
+          ]
+        },
+        {
+          "Id": "de22c615-84e4-4ab8-8564-ffd7d63f11c4",
+          "Name": "decal",
+          "Enabled": true,
+          "Position": "-6.819191,183.646,-8.198177",
+          "Rotation": "0.00000001036872,0.5114172,-0.00000001036873,0.8593332",
+          "Scale": "1,1,1",
+          "Components": [
+            {
+              "__type": "DecalComponent",
+              "__enabled": true,
+              "DecalScale": "256,64,9",
+              "Material": "materials/urban/road_lines.vmat",
+              "TintColor": "1,1,1,1"
+            }
+          ]
+        },
+        {
+          "Id": "5bf87581-5e6d-4d3a-a7ed-1c70253a9892",
+          "Name": "decal",
+          "Enabled": true,
+          "Position": "-6.819191,548.2199,-8.198177",
+          "Rotation": "0.00000001036872,0.5114172,-0.00000001036873,0.8593332",
+          "Scale": "1,1,1",
+          "Components": [
+            {
+              "__type": "DecalComponent",
+              "__enabled": true,
+              "DecalScale": "256,64,9",
+              "Material": "materials/urban/road_lines.vmat",
+              "TintColor": "1,1,1,1"
+            }
+          ]
+        },
+        {
+          "Id": "24e3cf05-879d-4a1d-8ec0-f9d91761e2fb",
+          "Name": "decal",
+          "Enabled": true,
+          "Position": "39.18759,-192.6023,-8.198177",
+          "Rotation": "-0.5114182,-0.0000003206836,0.859332,-0.0000005458959",
+          "Scale": "1,1,1",
+          "Components": [
+            {
+              "__type": "DecalComponent",
+              "__enabled": true,
+              "DecalScale": "256,64,9",
+              "Material": "materials/urban/road_lines.vmat",
+              "TintColor": "1,1,1,1"
+            }
+          ]
         }
       ]
     },

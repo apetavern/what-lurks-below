@@ -19,7 +19,7 @@
 							},
 							{
 								from = "concrete.vmat"
-								to = "materials/urban/asphalt_01.vmat"
+								to = "materials/urban/asphalt_03.vmat"
 							},
 						]
 						use_global_default = false
