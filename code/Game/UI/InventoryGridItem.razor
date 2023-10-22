@@ -8,22 +8,6 @@
 @attribute [StyleSheet]
 
 <root style="position: absolute; @GetPositionStyles(); @GetVisibleStyles()">    
-    <div class="action-menu" @ref=ActionMenu>
-        @foreach (var action in Item.InventoryActions)
-        {
-            <div class="action-option" onclick=@(() => DoAction(action))>
-                @if (action is InventoryAction.Equip && ItemIsEquipped())
-                {
-                    <div>Unequip</div>
-                }
-                else
-                {
-                    @action.ToString()
-                }
-            </div>
-        }
-        <div class="action-option" onclick=@Select>Move</div>
-    </div>
     <img src=@Item.ImagePath style="width: @(Item.Length * 100)px; height:  @(Item.Height * 100)px" />
 </root>
 
@@ -37,27 +21,13 @@
     
     private Vector2 MouseLocation { get; set; }
     
-    public Panel ActionMenu { get; set; }
+    public InventoryActionMenu ActionMenu { get; set; }
 
     protected override void OnMouseDown(MousePanelEvent e)
     {
-        ActionMenu.AddClass("show");
-    }
-
-    public void DoAction(InventoryAction action)
-    {
-        Deselect(); 
-        Item.DoAction(InventoryPane.Inventory.Scene, action);
-    }
-
-    bool ItemIsEquipped()
-    {
-        var scene = InventoryPane.Inventory.Scene;
-        var player = scene.GetAllObjects(true).FirstOrDefault(o => o.Name == "player");
-        if (player is null)
-            return false;
-        var weapon = player.GetComponent<WeaponComponent>();
-        return weapon.ActiveWeapon?.Name == Item.Name;
+        if(HasMouseCapture) return;
+        
+        ActionMenu = InventoryActionMenu.Create(this);
     }
 
     public void Select()
@@ -71,7 +41,7 @@
 
     public void Deselect()
     {
-        ActionMenu.RemoveClass("show");
+        ActionMenu?.Delete();
         
         if (!Selected)
             return;

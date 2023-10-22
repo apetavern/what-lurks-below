@@ -1,0 +1,27 @@
+﻿InventoryActionMenu {
+  position: absolute;
+  opacity: 0;
+  flex-direction: column;
+  background-image: linear-gradient(to bottom, #333, #222);
+  color: #ccc;
+  border: 2px #ccc;
+  padding: 4px;
+  gap: 8px;
+  font-size: 22px;
+  z-index: 14;
+  opacity: 1;
+  
+  .action-option {
+    &:hover {
+      background-color: #777;
+    }
+  }
+  
+  &:intro {
+    opacity: 0;
+  }
+
+  &:outro {
+    opacity: 0;
+  }
+}

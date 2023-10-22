@@ -1,0 +1,81 @@
+﻿@using System;
+@using System.Linq;
+@using BrickJam;
+@using BrickJam.Player;
+@using Sandbox;
+@using Sandbox.UI;
+@inherits Panel;
+@attribute [StyleSheet]
+ 
+<root>
+    @foreach (var action in GridItem.Item.InventoryActions)
+    {
+        <div class="action-option" onclick=@(() => DoAction(action))>
+            @if ((action is InventoryAction.Equip) && ItemIsEquipped())
+            {
+                <div>Unequip</div>
+            }
+            else
+            {
+                @action.ToString()
+            }
+        </div>
+    }
+    <div class="action-option" onclick=@DoMove>Move</div>
+</root>
+
+@code
+{
+    public static InventoryActionMenu Instance;
+
+    public InventoryGridItem GridItem;
+
+    public static InventoryActionMenu Create(InventoryGridItem gridItem)
+    {
+        if(Instance is not null && Instance.GridItem == gridItem) return Instance;
+
+        Instance?.Destroy();
+        Instance = gridItem.Parent.AddChild<InventoryActionMenu>();
+        Instance.GridItem = gridItem;
+
+        Instance.Style.Left = gridItem.Parent.MousePosition.x * gridItem.Parent.ScaleFromScreen;
+        Instance.Style.Top = gridItem.Parent.MousePosition.y * gridItem.Parent.ScaleFromScreen;
+
+        return Instance;
+    }
+
+    public void DoAction(InventoryAction action)
+    {
+        GridItem.Deselect(); 
+        GridItem.Item.DoAction(GridItem.InventoryPane.Inventory.Scene, action);
+        Instance?.Destroy();
+    }
+
+    public void DoMove()
+    {
+        GridItem.Select();
+        Instance?.Destroy();
+    }
+
+    bool ItemIsEquipped()
+    {
+        var scene = GridItem.InventoryPane.Inventory.Scene;
+        var player = scene.GetAllObjects(true).FirstOrDefault(o => o.Name == "player");
+        if (player is null)
+            return false;
+        var weapon = player.GetComponent<WeaponComponent>();
+        return weapon.ActiveWeapon?.Name == GridItem.Item.Name;
+    }
+
+    void Destroy()
+    {
+        if(Instance is not null) Instance.GridItem.ActionMenu = null;
+        Instance?.Delete();
+        Instance = null;
+    }
+
+    protected override int BuildHash()
+    {
+        return HashCode.Combine(Time.Now);
+    }
+}
