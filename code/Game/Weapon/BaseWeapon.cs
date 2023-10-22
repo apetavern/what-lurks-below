@@ -28,7 +28,7 @@ public class BaseWeapon : GameObject
 	public virtual float ReloadTime => 1f;
 
 	protected AnimatedModelComponent c_AnimatedModel;
-	
+
 	public BBox LastHitBbox;
 
 
@@ -86,6 +86,8 @@ public class BaseWeapon : GameObject
 				if ( hitHealth != null )
 				{
 					hitHealth.Damage( Damage );
+
+					CreateDamageToast( hitObject, tr.HitPosition );
 				}
 			}
 			if ( AmmoCount > 0 )
@@ -99,6 +101,28 @@ public class BaseWeapon : GameObject
 			TimeSinceReloadStart = 0f;
 			Reloading = true;
 		}
+	}
+
+	protected void CreateDamageToast( GameObject gameObject, Vector3 hitPosition )
+	{
+		if ( gameObject is null )
+			return;
+
+		var damagePanel = gameObject.GetComponent<WorldPanel>();
+
+		if ( damagePanel is null )
+		{
+			damagePanel = gameObject.AddComponent<WorldPanel>();
+			damagePanel.LookAtCamera = true;
+			damagePanel.RenderScale = 1f;
+			damagePanel.PanelSize = new Vector2( 500, 1000 );
+		}
+
+		var verticalOffset = 20f;
+		damagePanel.Position = hitPosition + Vector3.Up * verticalOffset;
+
+		var damageToast = gameObject.AddComponent<DamageToast>();
+		damageToast.CreateWithDamage( Damage );
 	}
 
 	public virtual void SecondaryFire( Vector3 position, Vector3 direction )
