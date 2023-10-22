@@ -182,7 +182,7 @@ public sealed class GooBossSequencer : BaseComponent
 		Spawning = false;
 	}
 
-	TimeSince TimeSinceEyesOpened;
+	public TimeSince TimeSinceEyesOpened;
 
 	bool Spawning;
 
@@ -195,13 +195,17 @@ public sealed class GooBossSequencer : BaseComponent
 
 		BossModel.Set( "closeeyes", !EyesOpen );
 
-		if ( TimeSinceEyesOpened > 10f )
+		if ( TimeSinceEyesOpened > 15f )
 		{
 			if ( EyesOpen )
 			{
 				Spawning = true;
 				SpawnEnemies();
 				EyesOpen = false;
+				foreach ( var eye in Eyeballs )
+				{
+					eye.GetComponent<GooBossEyeball>().HitsThisCycle = 0;
+				}
 			}
 		}
 

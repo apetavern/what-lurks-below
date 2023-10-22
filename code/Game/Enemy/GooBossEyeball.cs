@@ -7,6 +7,9 @@ public sealed class GooBossEyeball : BaseComponent
 	public EyeballPosition pos { get; set; }
 	public GooBossSequencer boss { get; set; }
 	HealthComponent health { get; set; }
+
+	public int HitsThisCycle;
+
 	public override void OnStart()
 	{
 		health = GetComponent<HealthComponent>();
@@ -17,7 +20,7 @@ public sealed class GooBossEyeball : BaseComponent
 
 	public void OnTakeDamage()
 	{
-		Log.Info( "shot" );
+		HitsThisCycle++;
 		if ( boss != null )
 		{
 			boss.TriggerDamage( this );
@@ -26,6 +29,11 @@ public sealed class GooBossEyeball : BaseComponent
 		{
 			boss = GameObject.Parent.GetComponent<GooBossSequencer>();
 			boss.TriggerDamage( this );
+		}
+		if ( HitsThisCycle >= 3 )
+		{
+			boss.TimeSinceEyesOpened = 15f;
+			HitsThisCycle = 0;
 		}
 	}
 
