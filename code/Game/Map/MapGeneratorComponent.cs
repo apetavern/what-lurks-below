@@ -282,6 +282,11 @@ public partial class MapGeneratorComponent : BaseComponent
 
 		navgen.GenerateMesh();
 		navgen.Initialized = true;
+
+		foreach ( var door in SpawnedRooms[0].GetComponents<RoomDoorDefinition>( false, true ).Where( X => X.Connected ) )
+		{
+			SpawnPrefabFromPath( "prefabs/pieces/barrel_01.object", door.Transform.Position, door.Transform.Rotation );
+		}
 	}
 
 	public override void Update()
@@ -328,11 +333,6 @@ public partial class MapGeneratorComponent : BaseComponent
 
 					room.Transform.Position = GridSnappedPosition;
 					room.GetComponent<RoomChunkComponent>( false ).SetupCollision();
-				}
-
-				foreach ( var door in SpawnedRooms[0].GetComponents<RoomDoorDefinition>( false, true ).Where( X => X.Connected ) )
-				{
-					SpawnPrefabFromPath( "prefabs/pieces/barrel_01.object", door.Transform.Position, door.Transform.Rotation );
 				}
 
 				GenerateRoomConnections();
