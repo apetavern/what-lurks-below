@@ -307,7 +307,7 @@
           "Components": [
             {
               "__type": "Minimap",
-              "__enabled": true
+              "__enabled": false
             }
           ]
         },
