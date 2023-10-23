@@ -1,0 +1,14 @@
+{
+  "UI": false,
+  "Volume": "1.00,1.00,0",
+  "Pitch": "0.95,1.05,1",
+  "Decibels": 120,
+  "SelectionMode": "Random",
+  "Sounds": [
+    "sounds/enemies/gooboss/boss-hurt-1.vsnd",
+    "sounds/enemies/gooboss/boss-hurt-2.vsnd"
+  ],
+  "MaximumDistance": 3299.7227,
+  "MinimumDistance": 164.98613,
+  "__references": []
+}
