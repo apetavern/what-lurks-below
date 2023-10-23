@@ -92,6 +92,8 @@ public class EnemyController : BaseComponent
 		var flags = Player?.GetComponent<PlayerFlagsComponent>();
 		if ( flags is null )
 			return;
+
+		// Key spawn takes precedence over weapon spawns since more enemies will spawn in the boss
 		if ( !flags.KilledFirstEnemy )
 		{
 			flags.KilledFirstEnemy = true;
@@ -99,12 +101,15 @@ public class EnemyController : BaseComponent
 		}
 		else
 		{
+			var droppedShotgun = false;
+
 			if ( GameObject.Name == "gatorman" )
 			{
 				if ( !flags.HasShotgun )
 				{
 					flags.HasShotgun = true;
 					_ = new PickupObject( true, "Shotgun", Transform.Position, ShotgunWeapon.ShotgunItem.ToReference() );
+					droppedShotgun = true;
 				}
 				else
 				{
@@ -114,6 +119,15 @@ public class EnemyController : BaseComponent
 						var item = DestructableComponent.GetRandomItem();
 						_ = new PickupObject( true, "Drop", Transform.Position, item );
 					}
+				}
+			}
+
+			// Drop something else if the shotgun wasn't dropped (jank ik but we have 30 mins left lol)
+			if ( !droppedShotgun )
+			{
+				if ( !flags.HasBossKey && GameObject.GetAllObjects( true ).Where( X => X.GetComponent<EnemyController>() != null ).Count() == 1 )
+				{
+					_ = new PickupObject( true, "Key", Transform.Position, ResourceLibrary.GetAll<InventoryItem>().FirstOrDefault( i => i.Name == "Key" ).ToReference() );
 				}
 			}
 		}
