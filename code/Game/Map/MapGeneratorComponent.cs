@@ -304,7 +304,7 @@ public partial class MapGeneratorComponent : BaseComponent
 			SpawnPrefabFromPath( "prefabs/pieces/barrel_01.object", door.Transform.Position, door.Transform.Rotation );
 		}
 
-		await GameTask.Delay( 20 );
+		await GameTask.Delay( 200 );
 
 		SpawnedRooms[0].ClearEnemiesAndItems();
 	}
