@@ -58,6 +58,7 @@ public class SoundManagerComponent : BaseComponent
 	{
 		base.OnDestroy();
 
+		BossMusic.Stop();
 		Music.Stop();
 	}
 }
