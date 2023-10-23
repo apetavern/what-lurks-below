@@ -32,7 +32,7 @@ public class SoundManagerComponent : BaseComponent
 			Sound.FromScreen( "water_drip" );
 			TimeUntilWaterDrip = Random.Shared.Float( 1.6f, 2.4f );
 		}
-		
+
 		if ( _flags is null )
 			return;
 
@@ -43,6 +43,11 @@ public class SoundManagerComponent : BaseComponent
 			BossMusic.SetVolume( 1f );
 			Music.SetVolume( 0f );
 			return;
+		}
+		else
+		{
+			if ( BossMusic.IsPlaying )
+				BossMusic.Stop();
 		}
 
 		BossMusic.SetVolume( 0f );
