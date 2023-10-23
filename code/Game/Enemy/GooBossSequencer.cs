@@ -109,7 +109,7 @@ public sealed class GooBossSequencer : BaseComponent
 		}
 
 		await GameTask.DelaySeconds( Time.Delta );
-		
+
 		var flags = Scene.GetAllObjects( true ).FirstOrDefault( o => o.Name == "player" )?
 			.GetComponent<PlayerFlagsComponent>();
 		if ( flags is not null )
@@ -118,6 +118,18 @@ public sealed class GooBossSequencer : BaseComponent
 		}
 
 		GameObject.Destroy();
+	}
+
+	public override void OnDestroy()
+	{
+		var flags = Scene.GetAllObjects( true ).FirstOrDefault( o => o.Name == "player" )?
+	.GetComponent<PlayerFlagsComponent>();
+		if ( flags is not null )
+		{
+			flags.InBossSequence = false;
+		}
+
+		base.OnDestroy();
 	}
 
 

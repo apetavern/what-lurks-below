@@ -27,7 +27,6 @@ public sealed class GooBossEyeball : BaseComponent
 		}
 		else
 		{
-			boss = GameObject.Parent.GetComponent<GooBossSequencer>();
 			boss.TriggerDamage( this );
 		}
 		if ( HitsThisCycle >= 3 )
@@ -45,7 +44,6 @@ public sealed class GooBossEyeball : BaseComponent
 		}
 		else
 		{
-			boss = GameObject.Parent.GetComponent<GooBossSequencer>();
 			boss.TriggerDamage( this, true );
 		}
 
@@ -56,7 +54,7 @@ public sealed class GooBossEyeball : BaseComponent
 	{
 		if ( boss == null )
 		{
-			boss = GameObject.Parent.GetComponent<GooBossSequencer>();
+			return;
 		}
 
 		if ( boss.EyesOpen )
