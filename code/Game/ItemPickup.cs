@@ -52,7 +52,6 @@ public class ItemPickup : BaseComponent
 
 	public override void Update()
 	{
-		Log.Info( $"{Item.Asset.Name}: {SceneModel}" );
 		if ( SceneModel != null )
 		{
 			SceneModel.Rotation = Rotation.From( 0, Time.Now * 50f, 0 );
