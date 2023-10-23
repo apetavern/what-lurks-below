@@ -49,15 +49,6 @@ public partial class MapGeneratorComponent : BaseComponent
 
 	public void RegenMap()
 	{
-		var navgen = Scene.GetAllObjects( true ).FirstOrDefault( x => x.GetComponent<NavGenComponent>() != null ).GetComponent<NavGenComponent>();
-		navgen.GenerationPlane.Enabled = true;
-
-		navgen.GenerateMesh();
-
-		navgen.Initialized = false;
-
-		Player.Transform.Position = Player.GetComponent<BrickPlayerController>().startpos;
-
 		var map = GameObject.Children.First().Children;
 		for ( int i = 0; i < map.Count; i++ )
 		{
@@ -66,6 +57,15 @@ public partial class MapGeneratorComponent : BaseComponent
 
 		SpawnedRooms.Clear();
 		CorrectedRooms = false;
+
+		var navgen = Scene.GetAllObjects( true ).FirstOrDefault( x => x.GetComponent<NavGenComponent>() != null ).GetComponent<NavGenComponent>();
+		navgen.GenerationPlane.Enabled = true;
+
+		navgen.GenerateMesh();
+
+		navgen.Initialized = false;
+
+		Player.Transform.Position = Player.GetComponent<BrickPlayerController>().startpos;
 
 		OnStart();
 	}
