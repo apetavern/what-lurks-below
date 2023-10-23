@@ -147,7 +147,7 @@ public class ShotgunWeapon : BaseWeapon
 
 	public override void OnSecondaryPressed( CitizenAnimationHelperScene helper )
 	{
-		Log.Info( "Secondary Pressed - Pistol" );
+		// Log.Info( "Secondary Pressed - Pistol" );
 	}
 
 	public override void OnSecondaryHeld( CitizenAnimationHelperScene helper )

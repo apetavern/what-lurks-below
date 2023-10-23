@@ -45,6 +45,10 @@
         "__enabled": true,
         "UseCooldown": 1,
         "UseReach": 50.17
+      },
+      {
+        "__type": "PlayerFlagsComponent",
+        "__enabled": true
       }
     ],
     "Children": [

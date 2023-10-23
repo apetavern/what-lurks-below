@@ -3,6 +3,7 @@ using Sandbox;
 using System.Linq;
 using System;
 using System.Collections.Generic;
+using BrickJam.Game.Weapon;
 
 namespace BrickJam.Game;
 
@@ -85,6 +86,35 @@ public class EnemyController : BaseComponent
 		model.SetAnimParameter( "die", true );
 
 		//Log.Info( "Enemies left: " + (Scene.GetAllObjects( true ).Where( x => x.GetComponent<EnemyController>() != null ).Count() - 1) );
+		
+		var flags = Player?.GetComponent<PlayerFlagsComponent>();
+		if ( flags is null )
+			return;
+		if ( !flags.KilledFirstEnemy )
+		{
+			flags.KilledFirstEnemy = true;
+			_ = new PickupObject( true, "Pistol", Transform.Position, PistolWeapon.PistolItem );
+		}
+		else
+		{
+			if ( GameObject.Name == "gatorman" )
+			{
+				if ( !flags.HasShotgun )
+				{
+					flags.HasShotgun = true;
+					_ = new PickupObject( true, "Shotgun", Transform.Position, ShotgunWeapon.ShotgunItem );
+				}
+				else
+				{
+					var drop = Random.Shared.Float( 0f, 1f );
+					if ( drop > 0.5f )
+					{
+						var item = DestructableComponent.GetRandomItem();
+						_ = new PickupObject( true, "Drop", Transform.Position, item );
+					}
+				}
+			}
+		}
 
 		if ( !string.IsNullOrEmpty( DeathSound ) )
 			Sound.FromWorld( DeathSound, Transform.Position );
