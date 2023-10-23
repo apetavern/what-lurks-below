@@ -87,6 +87,8 @@ public class EnemyController : BaseComponent
 
 		//Log.Info( "Enemies left: " + (Scene.GetAllObjects( true ).Where( x => x.GetComponent<EnemyController>() != null ).Count() - 1) );
 
+		Stats.EnemiesKilled++;
+
 		var flags = Player?.GetComponent<PlayerFlagsComponent>();
 		if ( flags is null )
 			return;

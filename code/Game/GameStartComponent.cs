@@ -1,5 +1,7 @@
 using Sandbox;
 
+namespace BrickJam.Game;
+
 public sealed class GameStartComponent : BaseComponent
 {
 	[Property] public GameObject bezier { get; set; }
@@ -21,6 +23,7 @@ public sealed class GameStartComponent : BaseComponent
 	{
 		await bezier.GetComponent<BezierAnimationComponent>( false ).AnimateObject( GameObject, 2f );
 		var model = blackFade.GetComponent<ModelComponent>();
+		Stats.Reset();
 		while ( model.Tint.a < 0.99f )
 		{
 			var col = model.Tint;
