@@ -5,6 +5,7 @@ using BrickJam;
 using BrickJam.Game;
 using BrickJam.Player;
 using Sandbox;
+using Sandbox.UI;
 
 public sealed class DestructableComponent : BaseComponent
 {
@@ -72,10 +73,17 @@ public sealed class DestructableComponent : BaseComponent
 
 		return item;
 	}
-
+	public GameObject barrelbreak;
 	public void OnDamaged()
 	{
-		// Log.Info( "Barrel damage" );
+		//Log.Info( "Barrel damage" );
+		if ( barrelbreak == null ) ;
+		{
+			barrelbreak = new GameObject( true, "break" );
+			barrelbreak.Transform.Position = Transform.Position;
+			var sharticles = barrelbreak.AddComponent<ParticleSystem>();
+			sharticles.Particles = Sandbox.ParticleSystem.Load( "particles/explosion/barrel_explosion/explosion_barrel.vpcf" );
+		}
 	}
 
 	static T GetRandomFromArray<T>( List<T> items, List<float> weights )
