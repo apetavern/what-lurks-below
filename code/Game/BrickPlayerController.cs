@@ -86,7 +86,7 @@ public class BrickPlayerController : BaseComponent
 		Body.GetComponent<ModelPhysics>().Model = Body.GetComponent<AnimatedModelComponent>().Model;
 		Body.GetComponent<ModelPhysics>().OnEnabled();
 
-
+		Stats.Save();
 
 		IsDead = true;
 	}
