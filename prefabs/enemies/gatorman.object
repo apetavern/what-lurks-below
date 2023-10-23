@@ -1,6 +1,6 @@
 {
   "RootObject": {
-    "Id": "beaa4511-0f93-486d-b7d6-9af675f334fa",
+    "Id": "ab5d4bc3-5689-4fdd-92c7-af9d0de9bf63",
     "Name": "gatorman",
     "Enabled": true,
     "Position": "0,0,0",
@@ -22,12 +22,12 @@
         "AggroRange": 256,
         "AttackDamage": 30,
         "AttackRange": 64,
-        "AttackSound": "",
-        "Body": "322fdadd-f17d-4646-a938-8f55160a5347",
-        "DeathSound": "",
+        "AttackSound": "gator-attack",
+        "Body": "ad1f47d0-944c-4260-8e7d-873d1f4714ca",
+        "DeathSound": "gator-death",
         "Friction": 0.9499998,
-        "HurtSound": "",
-        "IdleSound": "",
+        "HurtSound": "gator-hurt",
+        "IdleSound": "gator-idle",
         "Speed": 55,
         "TimeBetweenAttacks": 3
       },
@@ -44,7 +44,7 @@
     ],
     "Children": [
       {
-        "Id": "322fdadd-f17d-4646-a938-8f55160a5347",
+        "Id": "ad1f47d0-944c-4260-8e7d-873d1f4714ca",
         "Name": "Epic Enemy",
         "Enabled": true,
         "Position": "0,0,0",
@@ -63,7 +63,7 @@
         ]
       },
       {
-        "Id": "51913d30-3907-4d7b-8ed8-0ccd4f3d28f4",
+        "Id": "16ecf445-83cb-4513-88f6-c45978f28145",
         "Name": "Collider",
         "Enabled": true,
         "Position": "0,0,41.82742",

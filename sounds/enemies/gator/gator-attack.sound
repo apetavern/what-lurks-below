@@ -1,0 +1,14 @@
+{
+  "UI": false,
+  "Volume": "1.00,1.00,0",
+  "Pitch": "0.74,1.00,1",
+  "Decibels": 90,
+  "SelectionMode": "Random",
+  "Sounds": [
+    "sounds/enemies/gator/gator-attack-1.vsnd",
+    "sounds/enemies/gator/gator-attack-2.vsnd"
+  ],
+  "MaximumDistance": 1870.0942,
+  "MinimumDistance": 93.504715,
+  "__references": []
+}
