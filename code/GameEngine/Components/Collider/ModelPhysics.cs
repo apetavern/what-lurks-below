@@ -8,7 +8,7 @@ public class ModelPhysics : BaseComponent
 {
 	[Property] public Model Model { get; set; }
 
-	PhysicsGroup PhysicsGroup;
+	public PhysicsGroup PhysicsGroup;
 
 	public override void DrawGizmos()
 	{
@@ -49,7 +49,7 @@ public class ModelPhysics : BaseComponent
 
 		// TODO - draw physics models from Model
 	}
-	
+
 	public override void OnEnabled()
 	{
 		if ( Model is null )
