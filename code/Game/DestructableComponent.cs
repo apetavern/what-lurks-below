@@ -9,6 +9,7 @@ using Sandbox;
 public sealed class DestructableComponent : BaseComponent
 {
 	public static List<InventoryItem> PotentialDrops { get; set; } = new();
+	public static List<float> PotentialDropWeights { get; set; } = new();
 
 	public override void OnStart()
 	{
@@ -25,15 +26,21 @@ public sealed class DestructableComponent : BaseComponent
 		healthComponent.OnDeath += OnDeath;
 		healthComponent.OnDamage += OnDamaged;
 
-		var invItems = ResourceLibrary.GetAll<InventoryItem>().Where( i => i.InRandomDrops );
-		PotentialDrops.AddRange( invItems );
+		PotentialDrops.Clear();
+		PotentialDropWeights.Clear();
+		var invItems = ResourceLibrary.GetAll<InventoryItem>().Where( i => i.SpawnWeight > 0f ).ToList();
+		foreach ( var item in invItems )
+		{
+			PotentialDrops.Add( item );
+			PotentialDropWeights.Add( item.SpawnWeight );
+		}
 	}
 
 	public void OnDeath()
 	{
 		Sound.FromWorld( "barrel_break", Transform.Position );
 		var drop = Random.Shared.Float( 0f, 1f );
-		if ( drop > 0.5f )
+		if ( drop > 0.55f )
 		{
 			var item = GetRandomItem();
 			_ = new PickupObject( true, $"Pickup {item.Name}", Transform.Position, item );
@@ -43,7 +50,7 @@ public sealed class DestructableComponent : BaseComponent
 
 	public static InventoryItem GetRandomItem()
 	{
-		var item = PotentialDrops[Random.Shared.Next( 0, PotentialDrops.Count - 1 )];
+		var item = GetRandomFromArray( PotentialDrops, PotentialDropWeights );
 		var name = item.Name.ToLower();
 		if ( name == "pistol_ammo" )
 		{
@@ -64,5 +71,34 @@ public sealed class DestructableComponent : BaseComponent
 	public void OnDamaged()
 	{
 		// Log.Info( "Barrel damage" );
+	}
+
+	static T GetRandomFromArray<T>( List<T> items, List<float> weights )
+	{
+		if ( items.Count != weights.Count )
+		{
+			Log.Error( "Items and weights must be the same length" );
+			return default;
+		}
+
+		float totalWeight = 0;
+		foreach ( var weight in weights )
+		{
+			totalWeight += MathF.Abs( weight );
+		}
+
+		float randomValue = Random.Shared.Float( 0f, totalWeight );
+		float cumulativeWeight = 0;
+
+		for ( int i = 0; i < items.Count; i++ )
+		{
+			cumulativeWeight += weights[i];
+			if ( randomValue < cumulativeWeight )
+			{
+				return items[i];
+			}
+		}
+
+		return default;
 	}
 }

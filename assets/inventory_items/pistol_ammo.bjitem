@@ -1,15 +1,15 @@
 {
   "Name": "Pistol Ammo",
   "Weight": 0.2,
+  "SpawnWeight": 1.25,
   "Length": 2,
   "Height": 1,
   "ExamineText": "Can\u0027t shoot your pistol without it.",
-  "Quantity": 12,
+  "Quantity": 1,
   "ImagePath": "ui/ammo_icon.png",
   "GroundModel": "models/items/ammo/ammobox_01.vmdl",
   "GroundScale": 1,
   "Stackable": true,
-  "InRandomDrops": true,
   "InventoryActions": [
     "Drop",
     "Examine"

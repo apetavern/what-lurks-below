@@ -121,7 +121,6 @@ public class Inventory : BaseComponent
 			if ( existingItem is not null )
 			{
 				existingItem.Quantity += item.Quantity;
-				Log.Info( existingItem.Quantity );
 			}
 		}
 	}

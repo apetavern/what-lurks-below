@@ -10,28 +10,28 @@ using Sandbox.UI;
 
 namespace BrickJam;
 
-[GameResource("Inventory Item Asset", "bjitem", "Describes an item")]
+[GameResource( "Inventory Item Asset", "bjitem", "Describes an item" )]
 public class InventoryItem : GameResource
 {
 	public string Name { get; set; }
 	public float Weight { get; set; }
+	public float SpawnWeight { get; set; } = 1f;
 	public int Length { get; set; }
 	public int Height { get; set; }
-	
+
 	public string ExamineText { get; set; }
 	public int Quantity { get; set; }
-	
+
 	[ResourceType( "png" )]
 	public string ImagePath { get; set; }
-	
-	[ResourceType("vmdl")]
+
+	[ResourceType( "vmdl" )]
 	public Model GroundModel { get; set; }
-	
+
 	public float GroundScale { get; set; }
-	
+
 	public bool Stackable { get; set; }
-	public bool InRandomDrops { get; set; }
-	
+
 	public List<InventoryAction> InventoryActions { get; set; }
 
 	public void DoAction( Scene scene, InventoryAction action, InventoryReference item )
@@ -50,7 +50,7 @@ public class InventoryItem : GameResource
 			if ( player is null )
 				return;
 			_ = new PickupObject( true, $"Pickup {item.Asset.Name}", player.Transform.Position, item.Asset );
-			MessagePanel.Instance.AddMessage($"You drop your {Name}.");
+			MessagePanel.Instance.AddMessage( $"You drop your {Name}." );
 		}
 		else if ( action is InventoryAction.Equip )
 		{
@@ -73,7 +73,7 @@ public class InventoryItem : GameResource
 			{
 				return;
 			}
-			MessagePanel.Instance.AddMessage($"You equip your {Name}.");
+			MessagePanel.Instance.AddMessage( $"You equip your {Name}." );
 		}
 		else if ( action is InventoryAction.Use )
 		{
@@ -87,9 +87,9 @@ public class InventoryItem : GameResource
 					return;
 				var healthComponent = player.GetComponent<HealthComponent>();
 				healthComponent.Health += 25f;
-				MessagePanel.Instance.AddMessage("You carefully heal your wounds a bit with the medkit.");
+				MessagePanel.Instance.AddMessage( "You carefully heal your wounds a bit with the medkit." );
 				Inventory.Instance.RemoveItem( item );
-			} 
+			}
 		}
 	}
 
@@ -104,14 +104,17 @@ public class InventoryItem : GameResource
 		if ( weaponComponent.ActiveWeapon?.GetType() == weapon.GetType() )
 			weaponComponent?.Holster();
 		else
-			weaponComponent?.Equip(weapon);
+			weaponComponent?.Equip( weapon );
 	}
 
 	public InventoryReference ToReference()
 	{
 		return new InventoryReference()
 		{
-			Id = InventoryReference.IdIndex++, Asset = this, Position = InvCoord.None, Quantity = 0,
+			Id = InventoryReference.IdIndex++,
+			Asset = this,
+			Position = InvCoord.None,
+			Quantity = 0,
 		};
 	}
 }
@@ -119,7 +122,7 @@ public class InventoryItem : GameResource
 public class InventoryReference
 {
 	public static int IdIndex { get; set; } = 0;
-	
+
 	public int Id { get; set; }
 	public InventoryItem Asset { get; set; }
 	public InvCoord Position { get; set; }

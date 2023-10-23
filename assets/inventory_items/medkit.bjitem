@@ -1,19 +1,15 @@
 {
   "Name": "Medkit",
   "Weight": 3.4,
+  "SpawnWeight": 1,
   "Length": 2,
   "Height": 1,
   "ExamineText": "Seems like a good way to feel better.",
-  "Position": {
-    "X": 4,
-    "Y": 1
-  },
   "Quantity": 0,
   "ImagePath": "ui/medkit_icon.png",
   "GroundModel": "models/items/medkit/medkit.vmdl",
   "GroundScale": 1,
   "Stackable": false,
-  "InRandomDrops": true,
   "InventoryActions": [
     "Use",
     "Drop",

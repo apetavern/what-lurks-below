@@ -1,6 +1,7 @@
 {
   "Name": "Shotgun",
   "Weight": 12.2,
+  "SpawnWeight": 0,
   "Length": 4,
   "Height": 2,
   "ExamineText": "This thing really packs a punch!",
@@ -9,7 +10,6 @@
   "GroundModel": "weapons/rust_shotgun/rust_shotgun.vmdl",
   "GroundScale": 0,
   "Stackable": false,
-  "InRandomDrops": false,
   "InventoryActions": [
     "Equip",
     "Drop",
