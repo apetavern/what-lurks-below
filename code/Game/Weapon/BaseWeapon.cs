@@ -96,9 +96,15 @@ public class BaseWeapon : GameObject
 				if ( hitHealth != null )
 				{
 					var damage = Damage + new Random().Int( -1, 1 );
+
+					if ( hitHealth.Health > 0 )
+					{
+						CreateDamageToast( hitObject, tr.HitPosition, (damage - 0.5f).CeilToInt() );
+					}
+
 					hitHealth.Damage( damage );
 
-					CreateDamageToast( hitObject, tr.HitPosition, (damage - 0.5f).CeilToInt() );
+
 				}
 			}
 			CurrentClip--;

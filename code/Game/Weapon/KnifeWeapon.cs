@@ -77,9 +77,13 @@ public class KnifeWeapon : BaseWeapon
 				if ( hitHealth != null )
 				{
 					var damage = Damage + new Random().Int( -1, 1 );
-					hitHealth.Damage( damage );
 
-					CreateDamageToast( hitObject, tr.HitPosition, (damage - 0.5f).CeilToInt() );
+					if ( hitHealth.Health > 0 )
+					{
+						CreateDamageToast( hitObject, tr.HitPosition, (damage - 0.5f).CeilToInt() );
+					}
+
+					hitHealth.Damage( damage );
 				}
 
 				HitSomething = true;

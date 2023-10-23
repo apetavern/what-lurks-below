@@ -90,7 +90,14 @@ public class ShotgunWeapon : BaseWeapon
 
 					if ( hitHealth != null )
 					{
-						hitHealth.Damage( Damage );
+						var damage = Damage + new Random().Int( -1, 1 );
+
+						if ( hitHealth.Health > 0 )
+						{
+							CreateDamageToast( hitObject, tr.HitPosition, (damage - 0.5f).CeilToInt() );
+						}
+
+						hitHealth.Damage( damage );
 					}
 				}
 			}
