@@ -175,7 +175,7 @@ public class Inventory : BaseComponent
 
 		PlaceItem( KnifeWeapon.KnifeItem.ToReference(), new InvCoord( 0, 0 ) );
 
-		InventoryHud.Instance.SetInventory( this );
+		GameHud.Instance.SetInventory( this );
 	}
 
 	public override void Update()

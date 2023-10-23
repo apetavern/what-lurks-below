@@ -6,7 +6,7 @@
 @inherits Panel
 
 <root>
-    @if( InventoryHud.Instance.IsOpen )
+    @if( GameHud.Instance.IsOpen )
     {
         <div class="control">
             <InputGlyph button="attack1" size="small" />
@@ -54,6 +54,6 @@
 {
     protected override int BuildHash()
     {
-        return HashCode.Combine( InventoryHud.Instance.IsOpen );
+        return HashCode.Combine( GameHud.Instance.IsOpen );
     }
 }

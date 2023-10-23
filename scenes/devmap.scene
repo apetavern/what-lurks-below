@@ -237,14 +237,14 @@
       "Children": [
         {
           "Id": "bcdbb154-a577-4727-b3c3-f7c99f599d11",
-          "Name": "Inventory HUD",
+          "Name": "Game HUD",
           "Enabled": true,
           "Position": "0,0,0",
           "Rotation": "0,0,0,1",
           "Scale": "1,1,1",
           "Components": [
             {
-              "__type": "InventoryHud",
+              "__type": "GameHud",
               "__enabled": true
             }
           ]
