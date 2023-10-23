@@ -87,8 +87,15 @@
     color: white;
     font-weight: black;
     background-color: rgba(black, 0.5);
+    flex-direction: column;
+    gap: 16px;
     opacity: 1;
     transition: opacity 1s ease;
+
+    i {
+      font-size: 150px;
+      animation: infinite-rotate 1s linear infinite;
+    }
 
     &.hidden {
       opacity: 0;
@@ -135,4 +142,14 @@ InventoryPane {
   height: 100%;
   align-items: flex-end;
   justify-content: flex-start;
+}
+
+@keyframes infinite-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+  
 }
