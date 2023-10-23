@@ -43,6 +43,7 @@ public sealed class DestructableComponent : BaseComponent
 		if ( drop > 0.55f )
 		{
 			var item = GetRandomItem();
+			//Log.Info( item );
 			_ = new PickupObject( true, $"Pickup {item.Asset.Name}", Transform.Position, item );
 		}
 		GameObject.Destroy();
@@ -50,7 +51,9 @@ public sealed class DestructableComponent : BaseComponent
 
 	public static InventoryReference GetRandomItem()
 	{
-		var item = GetRandomFromArray( PotentialDrops, PotentialDropWeights ).ToReference();
+		var itemResource = GetRandomFromArray( PotentialDrops, PotentialDropWeights );
+		//Log.Info( itemResource );
+		var item = itemResource.ToReference();
 		var name = item.Asset.Name.ToLower();
 
 		//Don't know why but these random values need +1 to be in range, might be an off by one error somewhere
