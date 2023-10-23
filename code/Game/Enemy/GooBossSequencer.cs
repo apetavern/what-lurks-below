@@ -109,6 +109,13 @@ public sealed class GooBossSequencer : BaseComponent
 		}
 
 		await GameTask.DelaySeconds( Time.Delta );
+		
+		var flags = Scene.GetAllObjects( true ).FirstOrDefault( o => o.Name == "player" )?
+			.GetComponent<PlayerFlagsComponent>();
+		if ( flags is not null )
+		{
+			flags.InBossSequence = false;
+		}
 
 		GameObject.Destroy();
 	}
@@ -142,6 +149,12 @@ public sealed class GooBossSequencer : BaseComponent
 			await IntroBezier.GetComponent<BezierAnimationComponent>().AnimateObject( roomTrigger.GetComponent<CameraTriggerComponent>().CameraPoint, 5f, true );
 			StartedFight = true;
 			EyesOpen = true;
+			var flags = Scene.GetAllObjects( true ).FirstOrDefault( o => o.Name == "player" )?
+				.GetComponent<PlayerFlagsComponent>();
+			if ( flags is not null )
+			{
+				flags.InBossSequence = true;
+			}
 		}
 
 		foreach ( var item in doorBlockers.Children )

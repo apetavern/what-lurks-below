@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using Sandbox;
 
 namespace BrickJam.Game;
@@ -7,6 +8,9 @@ public class SoundManagerComponent : BaseComponent
 {
 	private TimeUntil TimeUntilWaterDrip { get; set; } = 1.0f;
 	private Sound Music { get; set; }
+	private Sound BossMusic { get; set; }
+
+	private PlayerFlagsComponent _flags;
 
 	public override void OnStart()
 	{
@@ -16,6 +20,9 @@ public class SoundManagerComponent : BaseComponent
 
 		Music = Sound.FromScreen( "spoop" );
 		Music.SetVolume( 0f );
+
+		_flags = Scene.GetAllObjects( true ).FirstOrDefault( o => o.Name == "player" )?
+			.GetComponent<PlayerFlagsComponent>();
 	}
 
 	public override void Update()
@@ -25,7 +32,20 @@ public class SoundManagerComponent : BaseComponent
 			Sound.FromScreen( "water_drip" );
 			TimeUntilWaterDrip = Random.Shared.Float( 1.6f, 2.4f );
 		}
+		
+		if ( _flags is null )
+			return;
 
+		if ( _flags.InBossSequence )
+		{
+			if ( !BossMusic.IsPlaying )
+				BossMusic = Sound.FromScreen( "boss" );
+			BossMusic.SetVolume( 1f );
+			Music.SetVolume( 0f );
+			return;
+		}
+
+		BossMusic.SetVolume( 0f );
 		Music.SetVolume( 1f );
 	}
 
