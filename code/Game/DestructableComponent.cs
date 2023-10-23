@@ -44,7 +44,16 @@ public sealed class DestructableComponent : BaseComponent
 	public static InventoryItem GetRandomItem()
 	{
 		var item = PotentialDrops[Random.Shared.Next( 0, PotentialDrops.Count - 1 )];
-		if ( item.Name.Contains( "Ammo" ) )
+		var name = item.Name.ToLower();
+		if ( name == "pistol_ammo" )
+		{
+			item.Quantity = Random.Shared.Next( 4, 8 );
+		}
+		if ( name == "shotgun_ammo" )
+		{
+			item.Quantity = Random.Shared.Next( 2, 4 );
+		}
+		else if ( name.Contains( "ammo" ) )
 		{
 			item.Quantity = Random.Shared.Next( 1, 4 );
 		}

@@ -4,7 +4,7 @@
   "Length": 2,
   "Height": 1,
   "ExamineText": "Good for shotguns.",
-  "Quantity": 1,
+  "Quantity": 8,
   "ImagePath": "ui/ammo2_icon.png",
   "GroundModel": "models/items/ammo/ammobox_02.vmdl",
   "GroundScale": 1,

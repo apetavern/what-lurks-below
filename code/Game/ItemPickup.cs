@@ -103,7 +103,9 @@ public class ItemPickup : BaseComponent
 				return;
 			}
 
-			var added = inv.PlaceItem( Item.ToReference(), invCoord );
+			var newItem = Item.ToReference();
+			newItem.Quantity = Item.Quantity;
+			var added = inv.PlaceItem( newItem, invCoord );
 			if ( !added )
 				return;
 		}

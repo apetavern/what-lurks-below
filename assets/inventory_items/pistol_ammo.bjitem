@@ -4,7 +4,7 @@
   "Length": 2,
   "Height": 1,
   "ExamineText": "Can\u0027t shoot your pistol without it.",
-  "Quantity": 14,
+  "Quantity": 12,
   "ImagePath": "ui/ammo_icon.png",
   "GroundModel": "models/items/ammo/ammobox_01.vmdl",
   "GroundScale": 1,

@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using BrickJam.Game.UI;
 using BrickJam.Player;
 using Sandbox;
@@ -47,19 +48,7 @@ public class PistolWeapon : BaseWeapon
 
 	public override void OnPrimaryPressed( CitizenAnimationHelperScene helper )
 	{
-		if ( Reloading )
-		{
-			if ( TimeSinceReloadStart > ReloadTime )
-			{
-				AmmoCount = MaxAmmo;
-				Reloading = false;
-			}
-			else
-			{
-				return;
-			}
-		}
-		if ( AmmoCount > 0 )
+		if ( CurrentClip > 0 )
 		{
 			helper.TriggerAttack();
 			var muzzletr = GetComponent<AnimatedModelComponent>().GetAttachmentTransform( "muzzle" );//.SceneObject.GetBoneWorldTransform( "hold_R" );
@@ -78,7 +67,7 @@ public class PistolWeapon : BaseWeapon
 
 			Sound.FromWorld( "weapons/rust_pistol/sound/rust_pistol.shoot.sound", Transform.Position );
 		}
-		else
+		else if ( AmmoCount > 0 )
 		{
 			helper.TriggerReload();
 		}
@@ -102,6 +91,6 @@ public class PistolWeapon : BaseWeapon
 		//Gizmo.Draw.LineBBox( LastHitBbox );
 
 		if ( ResourceBar.Instance is not null )
-			ResourceBar.Instance.Ammo = AmmoCount;
+			ResourceBar.Instance.Ammo = CurrentClip;
 	}
 }

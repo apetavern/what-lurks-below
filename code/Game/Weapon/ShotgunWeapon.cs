@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using BrickJam.Game.UI;
 using BrickJam.Player;
 using Sandbox;
@@ -8,7 +9,7 @@ namespace BrickJam.Game.Weapon;
 public class ShotgunWeapon : BaseWeapon
 {
 	public static InventoryItem ShotgunItem => GetInventoryItem();
-	
+
 	public override Model Model { get; set; } = Model.Load( "weapons/rust_pumpshotgun/rust_pumpshotgun.vmdl" );
 	public override CitizenAnimationHelperScene.HoldTypes HoldType => CitizenAnimationHelperScene.HoldTypes.Shotgun;
 	public override CitizenAnimationHelperScene.Hand Handedness => CitizenAnimationHelperScene.Hand.Both;
@@ -31,7 +32,7 @@ public class ShotgunWeapon : BaseWeapon
 	{
 		defaultAmmoCount = MaxAmmo;
 	}
-	
+
 	private static InventoryItem GetInventoryItem()
 	{
 		return ResourceLibrary.GetAll<InventoryItem>().FirstOrDefault( i => i.Name == "Shotgun" );
@@ -51,7 +52,8 @@ public class ShotgunWeapon : BaseWeapon
 		{
 			if ( TimeSinceReloadStart > ReloadTime )
 			{
-				AmmoCount = MaxAmmo;
+				CurrentClip += Math.Min( AmmoCount, MaxAmmo ) + 1;
+				AmmoCount -= CurrentClip;
 				Reloading = false;
 			}
 			else
@@ -59,7 +61,7 @@ public class ShotgunWeapon : BaseWeapon
 				return;
 			}
 		}
-		if ( AmmoCount > 0 || AmmoCount == -1 )
+		if ( CurrentClip > 0 || AmmoCount == -1 )
 		{
 			var muzzle = c_AnimatedModel.GetAttachmentTransform( "muzzle" );
 
@@ -93,12 +95,9 @@ public class ShotgunWeapon : BaseWeapon
 				}
 			}
 
-			if ( AmmoCount > 0 )
-			{
-				AmmoCount--;
-			}
+			CurrentClip--;
 		}
-		else
+		else if ( AmmoCount > 0 )
 		{
 			//reload
 			TimeSinceReloadStart = 0f;
@@ -108,19 +107,7 @@ public class ShotgunWeapon : BaseWeapon
 
 	public override void OnPrimaryPressed( CitizenAnimationHelperScene helper )
 	{
-		if ( Reloading )
-		{
-			if ( TimeSinceReloadStart > ReloadTime )
-			{
-				AmmoCount = MaxAmmo;
-				Reloading = false;
-			}
-			else
-			{
-				return;
-			}
-		}
-		if ( AmmoCount > 0 )
+		if ( CurrentClip > 0 )
 		{
 			helper.TriggerAttack();
 			var muzzletr = GetComponent<AnimatedModelComponent>().GetAttachmentTransform( "muzzle" );
@@ -139,7 +126,7 @@ public class ShotgunWeapon : BaseWeapon
 
 			Sound.FromWorld( "weapons/rust_pumpshotgun/sounds/rust_pumpshotgun.shoot.sound", Transform.Position );
 		}
-		else
+		else if ( AmmoCount > 0 )
 		{
 			helper.TriggerReload();
 		}

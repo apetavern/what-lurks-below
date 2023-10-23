@@ -4,6 +4,13 @@ using Sandbox;
 
 namespace BrickJam.Game.Weapon;
 
+public enum WeaponAmmoType
+{
+	None,
+	Pistol,
+	Shotgun
+}
+
 public class BaseWeapon : GameObject
 {
 	public virtual Model Model { get; set; }
@@ -14,6 +21,7 @@ public class BaseWeapon : GameObject
 
 	public int defaultAmmoCount = 6;
 
+	public int CurrentClip = 0;
 	public virtual int AmmoCount
 	{
 		get => defaultAmmoCount;
@@ -57,7 +65,8 @@ public class BaseWeapon : GameObject
 		{
 			if ( TimeSinceReloadStart > ReloadTime )
 			{
-				AmmoCount = MaxAmmo;
+				CurrentClip += Math.Min( AmmoCount, MaxAmmo ) + 1;
+				AmmoCount -= CurrentClip;
 				Reloading = false;
 			}
 			else
@@ -65,7 +74,7 @@ public class BaseWeapon : GameObject
 				return;
 			}
 		}
-		if ( AmmoCount > 0 || AmmoCount == -1 )
+		if ( CurrentClip > 0 || MaxAmmo == -1 )
 		{
 			var muzzle = c_AnimatedModel.GetAttachmentTransform( "muzzle" );
 
@@ -92,12 +101,9 @@ public class BaseWeapon : GameObject
 					CreateDamageToast( hitObject, tr.HitPosition, (damage - 0.5f).CeilToInt() );
 				}
 			}
-			if ( AmmoCount > 0 )
-			{
-				AmmoCount--;
-			}
+			CurrentClip--;
 		}
-		else
+		else if ( AmmoCount > 0 )
 		{
 			//reload
 			TimeSinceReloadStart = 0f;

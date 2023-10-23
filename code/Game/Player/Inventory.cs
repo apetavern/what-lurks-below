@@ -24,9 +24,9 @@ public class Inventory : BaseComponent
 
 	public int PistolAmmoCount => GetPistolAmmoCount();
 	public int ShotgunAmmoCount => GetShotgunAmmoCount();
-	public InventoryReference PistolAmmoItem => _items.FirstOrDefault( i => i.Asset.Name == "Pistol Ammo" );	
-	public InventoryReference ShotgunAmmoItem =>_items.FirstOrDefault( i => i.Asset.Name == "Shotgun Ammo" );
-	
+	public InventoryReference PistolAmmoItem => _items.FirstOrDefault( i => i.Asset.Name == "Pistol Ammo" );
+	public InventoryReference ShotgunAmmoItem => _items.FirstOrDefault( i => i.Asset.Name == "Shotgun Ammo" );
+
 	public static Inventory Instance { get; set; }
 
 	private int GetPistolAmmoCount()
@@ -39,7 +39,7 @@ public class Inventory : BaseComponent
 
 		return pistolAmmo.Quantity;
 	}
-	
+
 	private int GetShotgunAmmoCount()
 	{
 		var shotgunAmmo = ShotgunAmmoItem;
@@ -121,6 +121,7 @@ public class Inventory : BaseComponent
 			if ( existingItem is not null )
 			{
 				existingItem.Quantity += item.Quantity;
+				Log.Info( existingItem.Quantity );
 			}
 		}
 	}
@@ -157,7 +158,7 @@ public class Inventory : BaseComponent
 	public override void OnStart()
 	{
 		Instance = this;
-		
+
 		_inventorySlots = new bool[SlotsX, SlotsY];
 		_player = Scene.GetAllObjects( true ).FirstOrDefault( p => p.Name == "player" );
 

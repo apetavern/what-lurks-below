@@ -121,75 +121,6 @@
       "Scale": "1,1,1"
     },
     {
-      "Id": "77a5ccfd-2ea5-43d0-9394-097299cd1401",
-      "Name": "Pistol Ammo Pickup",
-      "Enabled": true,
-      "Position": "128,0,0",
-      "Rotation": "0,0,0,1",
-      "Scale": "1,1,1",
-      "Components": [
-        {
-          "__type": "ColliderBoxComponent",
-          "__enabled": true,
-          "IsTrigger": true,
-          "Scale": "50,50,50",
-          "Surface": null,
-          "Tags": "pickup"
-        },
-        {
-          "__type": "ItemPickup",
-          "__enabled": true,
-          "Item": "assets/inventory_items/pistol_ammo.bjitem"
-        }
-      ]
-    },
-    {
-      "Id": "da014a80-0f8b-4fbd-9a28-eeddb8199414",
-      "Name": "Medkit Pickup",
-      "Enabled": true,
-      "Position": "128,-128,0",
-      "Rotation": "0,0,0,1",
-      "Scale": "1,1,1",
-      "Components": [
-        {
-          "__type": "ItemPickup",
-          "__enabled": true,
-          "Item": "assets/inventory_items/medkit.bjitem"
-        },
-        {
-          "__type": "ColliderBoxComponent",
-          "__enabled": true,
-          "IsTrigger": true,
-          "Scale": "50,50,50",
-          "Surface": null,
-          "Tags": "pickup"
-        }
-      ]
-    },
-    {
-      "Id": "44acedcd-527b-43d2-9ae7-069f98b70ed5",
-      "Name": "Key Pickup",
-      "Enabled": true,
-      "Position": "0,-128,0",
-      "Rotation": "0,0,0,1",
-      "Scale": "1,1,1",
-      "Components": [
-        {
-          "__type": "ColliderBoxComponent",
-          "__enabled": true,
-          "IsTrigger": true,
-          "Scale": "50,50,50",
-          "Surface": null,
-          "Tags": "pickup"
-        },
-        {
-          "__type": "ItemPickup",
-          "__enabled": true,
-          "Item": "assets/inventory_items/skeleton_key.bjitem"
-        }
-      ]
-    },
-    {
       "Id": "278ca51d-c541-4dc6-b167-54e714179d52",
       "Name": "MapGenerator",
       "Enabled": true,
@@ -200,7 +131,7 @@
         {
           "__type": "MapGeneratorComponent",
           "__enabled": true,
-          "IsBossSequence": false,
+          "IsBossSequence": true,
           "RoomCount": 7,
           "SnapGridSize": 1024
         },
