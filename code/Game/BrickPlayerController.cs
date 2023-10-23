@@ -310,14 +310,6 @@ public class BrickPlayerController : BaseComponent
 				Eye.Transform.LocalPosition = EyeStartPos / 2f;
 
 				helper.DuckLevel = 1f;
-				if ( Input.Pressed( "Jump" ) )
-				{
-					helper.SpecialMove = CitizenAnimationHelperScene.SpecialMovement.Roll;
-				}
-				else
-				{
-					helper.SpecialMove = CitizenAnimationHelperScene.SpecialMovement.None;
-				}
 			}
 			else
 			{
@@ -327,7 +319,7 @@ public class BrickPlayerController : BaseComponent
 			}
 		}
 
-		if ( cc.IsOnGround && Input.Down( "Jump" ) && !Input.Down( "Duck" ) )
+		if ( cc.IsOnGround && Input.Down( "Jump" ) )
 		{
 			float flGroundFactor = 1.0f;
 			float flMul = 268.3281572999747f * 1.2f;
@@ -349,6 +341,12 @@ public class BrickPlayerController : BaseComponent
 			if ( Input.Down( "Backward" ) )
 			{
 				Body.Transform.Rotation *= Rotation.FromYaw( 180 );
+
+				if ( !CameraControl )
+				{
+					EyeAngles.yaw += 180;
+					Eye.Transform.Rotation *= Rotation.FromYaw( 180 );
+				}
 			}
 
 			cc.Velocity = Body.Transform.Rotation.Forward * flMul * flGroundFactor;
