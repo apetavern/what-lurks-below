@@ -34,46 +34,46 @@
       ]
     },
     {
-      "Id": "f5c8b7fa-4229-4ccb-bc14-af858f819a4a",
-      "Name": "room_01a",
+      "Id": "eb5c616a-6ef6-40ad-8946-d4e1a289ece0",
+      "Name": "sewer_room_01",
       "Enabled": true,
-      "Position": "1000,750,0",
-      "Rotation": "0,0,0,1",
+      "Position": "0,0,0",
+      "Rotation": "0,0.000001400709,0,0.9999999",
       "Scale": "1,1,1",
       "__Prefab": "prefabs/rooms/sewer_room_01.object"
     },
     {
-      "Id": "bb978bb5-b9da-45c3-935a-e3e23e64a2b3",
-      "Name": "room_02a",
+      "Id": "1aa45890-ae98-4dd4-862a-b64e1ac91884",
+      "Name": "sewer_room_02",
       "Enabled": true,
-      "Position": "0,1000,0",
-      "Rotation": "0,0,0,1",
+      "Position": "1000,0,0",
+      "Rotation": "0,0.00000295043,0,0.9999999",
       "Scale": "1,1,1",
       "__Prefab": "prefabs/rooms/sewer_room_02.object"
     },
     {
-      "Id": "5f0eca88-4431-46d4-88b6-87ebab32a059",
-      "Name": "room_03a",
+      "Id": "9666d7d2-d038-4c2f-9814-d977f56b2793",
+      "Name": "sewer_room_03",
       "Enabled": true,
-      "Position": "0,-1000,0",
+      "Position": "0,1000,0",
       "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "__Prefab": "prefabs/rooms/sewer_room_03.object"
     },
     {
-      "Id": "0872d607-1b5b-45d2-87a5-f341875615c2",
-      "Name": "room_04a",
+      "Id": "1ff533a3-9323-4c89-8e87-8e0890b6683e",
+      "Name": "sewer_room_04",
       "Enabled": true,
-      "Position": "-1000,750,0",
+      "Position": "-1000,0,0",
       "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "__Prefab": "prefabs/rooms/sewer_room_04.object"
     },
     {
-      "Id": "35d057ef-f1be-463c-94b5-875b5c33c694",
-      "Name": "room_05a",
+      "Id": "fc0163bc-80c7-4431-96b3-0c0b27142823",
+      "Name": "sewer_room_05",
       "Enabled": true,
-      "Position": "0,0,0",
+      "Position": "0,-1000,0",
       "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "__Prefab": "prefabs/rooms/sewer_room_05.object"
