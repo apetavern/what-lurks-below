@@ -1,5 +1,6 @@
 ﻿@using System
 @using System.Collections.Generic
+@using System.Linq
 @using BrickJam.Player
 @using Sandbox;
 @using Sandbox.UI;
@@ -10,6 +11,7 @@
     <InventoryPane Inventory=@Inventory />
     <ControlsPane />
     <NavgenLoadingPane />
+    <GameOverPane />
 </root>
 
 @code
@@ -20,6 +22,7 @@
     
     public static GameHud Instance { get; set; }
 
+    BrickPlayerController Player;
     
     int fixCounter = 0;
 
@@ -36,6 +39,18 @@
     public override void Update()
     {
         base.Update();
+        
+        Player ??= GameManager.ActiveScene.GetAllObjects( true ).FirstOrDefault( X => X.GetComponent<BrickPlayerController>() != null ).GetComponent<BrickPlayerController>();
+
+        if(Player != null)
+        {
+            Panel.SetClass("dead", Player.IsDead);
+            if(Player.IsDead && Input.Released("Jump"))
+            {
+                Scene.LoadFromFile( "scenes/mainmenu.scene" );
+                return;
+            }
+        }
 
         if(fixCounter < 3)
         {

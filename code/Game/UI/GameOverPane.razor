@@ -1,0 +1,42 @@
+﻿@using System
+@using System.Collections.Generic
+@using BrickJam.Game
+@using BrickJam.Player
+@using Sandbox;
+@using Sandbox.UI;
+@inherits Panel
+@attribute [StyleSheet]
+
+<root>
+    <h1>GAME OVER</h1>
+
+    <div class="info">
+        <div class="kills">
+            <h2>Enemies Killed</h2>
+            <p>@Stats.EnemiesKilled</p>
+        </div>
+        <div class="floors">
+            <h2>Floors Traversed</h2>
+            <p>@Stats.FloorsCompleted</p>
+        </div>
+    </div>
+    <div class="buttons">
+        <InputGlyph button="Jump" size="medium" />
+        <p>Return to Menu</p>
+    </div>
+</root>
+
+@code
+{
+    public override void Tick()
+    {
+        base.Tick();
+        
+        
+    }
+
+    protected override int BuildHash()
+    {
+        return HashCode.Combine( Time.Now );
+    }
+}

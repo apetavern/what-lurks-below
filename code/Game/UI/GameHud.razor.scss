@@ -106,6 +106,11 @@
     }
   }
 
+  GameOverPane {
+    opacity: 0;
+    pointer-events: all;
+  }
+
   &.open {
     pointer-events: all;
     opacity: 1;
@@ -119,6 +124,33 @@
     ControlsPane {
       left: 48px;
       bottom: 370px;
+    }
+  }
+
+  &.dead {
+    ControlsPane {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .pane {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    NavgenLoadingPane {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    HealthHud {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    GameOverPane {
+      opacity: 1;
+      pointer-events: all;
     }
   }
 

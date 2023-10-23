@@ -59,9 +59,11 @@
         if(!isReady) return;
 
         Player ??= Scene.GetAllObjects( true ).FirstOrDefault( p => p.Name == "player" );
-        PlayerBody ??= Player.GetComponent<BrickPlayerController>().Body;
-        
-        if ( Player == null || Display == null ) return;
+        var pc = Player.GetComponent<BrickPlayerController>();
+        if(pc == null) return;
+
+        PlayerBody ??= pc.Body;
+        if(pc.IsDead) Instance.Enabled = false;
 
         if(Enemies.Count == 0)
         {
