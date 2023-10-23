@@ -250,7 +250,7 @@ public class BrickPlayerController : BaseComponent
 
 
 
-		if ( Transform.Position.z < -100f )
+		if ( Transform.Position.z < -300f )
 		{
 			var room = Scene.GetAllObjects( true ).Where( X => X.GetComponent<RoomChunkComponent>( false ) != null ).FirstOrDefault();
 
