@@ -69,12 +69,26 @@ public class BrickPlayerController : BaseComponent
 
 		HealthComponent healthComponent = GameObject.GetComponent<HealthComponent>( false );
 		healthComponent.OnDamage += TakeDamage;
+		healthComponent.OnDeath += OnDeath;
 	}
 
 	public void TakeDamage()
 	{
 		var helper = new CitizenAnimationHelperScene( Body.GetComponent<AnimatedModelComponent>().SceneObject );
 		helper.TriggerHit();
+	}
+
+	public bool IsDead;
+
+	public void OnDeath()
+	{
+		Body.AddComponent<ModelPhysics>();
+		Body.GetComponent<ModelPhysics>().Model = Body.GetComponent<AnimatedModelComponent>().Model;
+		Body.GetComponent<ModelPhysics>().OnEnabled();
+
+
+
+		IsDead = true;
 	}
 
 	public override void DrawGizmos()
@@ -113,8 +127,25 @@ public class BrickPlayerController : BaseComponent
 
 	public bool CameraControl;
 
+	protected override void OnPreRender()
+	{
+		if ( IsDead )
+		{
+			Body.Transform.Position = Body.GetComponent<ModelPhysics>().PhysicsGroup.GetBody( 0 ).Position;
+			for ( int i = 0; i < Body.GetComponent<ModelPhysics>().PhysicsGroup.BodyCount; i++ )
+			{
+				Body.GetComponent<AnimatedModelComponent>().SceneObject.SetBoneWorldTransform( i, Body.GetComponent<ModelPhysics>().PhysicsGroup.GetBody( i ).Transform );
+			}
+		}
+		base.OnPreRender();
+	}
+
 	public override void Update()
 	{
+		if ( IsDead )
+		{
+			return;
+		}
 		var cc = GameObject.GetComponent<CharacterController>();
 
 		var pickups = Scene.GetAllObjects( true ).Where( x => x.GetComponent<ItemPickup>() != null );

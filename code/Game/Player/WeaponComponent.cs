@@ -10,7 +10,7 @@ public class WeaponComponent : BaseComponent
 	public BaseWeapon ActiveWeapon { get; set; }
 	private GameObject _player;
 	private GameObject _body;
-	
+
 	public static WeaponComponent Instance { get; set; }
 
 	public override void OnStart()
@@ -47,7 +47,7 @@ public class WeaponComponent : BaseComponent
 		var helper = new CitizenAnimationHelperScene( citizenModel );
 
 		var ctrl = _player?.GetComponent<BrickPlayerController>();
-		if ( ctrl is null )
+		if ( ctrl is null || ctrl.IsDead )
 			return;
 
 		var charCtrl = _player?.GetComponent<CharacterController>();
