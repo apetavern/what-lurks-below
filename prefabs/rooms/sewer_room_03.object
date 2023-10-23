@@ -9,8 +9,7 @@
     "Components": [
       {
         "__type": "RoomChunkComponent",
-        "__enabled": true,
-        "CameraTrigger": "7a3892ac-420a-4580-965a-a6a5cdefdd28"
+        "__enabled": true
       }
     ],
     "Children": [
@@ -613,32 +612,6 @@
         ]
       },
       {
-        "Id": "192912ee-85a3-4418-9f62-0720526d66cd",
-        "Name": "floor_01",
-        "Enabled": true,
-        "Position": "0,-128,0",
-        "Rotation": "0,0,0,1",
-        "Scale": "1,1,1",
-        "Components": [
-          {
-            "__type": "ModelComponent",
-            "__enabled": true,
-            "MaterialOverride": null,
-            "Model": "models/environment/floor_02.vmdl",
-            "ShouldCastShadows": true,
-            "Tint": "1,1,1,1"
-          },
-          {
-            "__type": "ModelCollider",
-            "__enabled": true,
-            "IsTrigger": false,
-            "Model": "models/environment/floor_02.vmdl",
-            "Surface": null,
-            "Tags": ""
-          }
-        ]
-      },
-      {
         "Id": "2791a92c-c6e7-4314-b7fd-719c05bd1809",
         "Name": "floor_01",
         "Enabled": true,
@@ -659,110 +632,6 @@
             "__enabled": true,
             "IsTrigger": false,
             "Model": "models/environment/floor_01.vmdl",
-            "Surface": null,
-            "Tags": ""
-          }
-        ]
-      },
-      {
-        "Id": "54848935-5355-4550-b2a6-13b92a75b0e0",
-        "Name": "floor_01",
-        "Enabled": true,
-        "Position": "0,0,0",
-        "Rotation": "0,0,0.707107,0.7071065",
-        "Scale": "1,1,1",
-        "Components": [
-          {
-            "__type": "ModelComponent",
-            "__enabled": true,
-            "MaterialOverride": null,
-            "Model": "models/environment/stairs_03.vmdl",
-            "ShouldCastShadows": true,
-            "Tint": "1,1,1,1"
-          },
-          {
-            "__type": "ModelCollider",
-            "__enabled": true,
-            "IsTrigger": false,
-            "Model": "models/environment/stairs_03.vmdl",
-            "Surface": null,
-            "Tags": ""
-          }
-        ]
-      },
-      {
-        "Id": "15905ea4-cf46-408c-8b8b-31b8fc25797a",
-        "Name": "floor_01",
-        "Enabled": true,
-        "Position": "-128,-0.0001609354,0",
-        "Rotation": "0,0,1,-0.0000006397578",
-        "Scale": "1,1,1",
-        "Components": [
-          {
-            "__type": "ModelComponent",
-            "__enabled": true,
-            "MaterialOverride": null,
-            "Model": "models/environment/stairs_03.vmdl",
-            "ShouldCastShadows": true,
-            "Tint": "1,1,1,1"
-          },
-          {
-            "__type": "ModelCollider",
-            "__enabled": true,
-            "IsTrigger": false,
-            "Model": "models/environment/stairs_03.vmdl",
-            "Surface": null,
-            "Tags": ""
-          }
-        ]
-      },
-      {
-        "Id": "3f83dea8-dcee-4eb4-9d28-b1f24cba41f9",
-        "Name": "floor_01",
-        "Enabled": true,
-        "Position": "-127.9999,-128,0",
-        "Rotation": "-0.000000005189063,0.00000003516114,0.7071061,-0.7071075",
-        "Scale": "1,1,1",
-        "Components": [
-          {
-            "__type": "ModelComponent",
-            "__enabled": true,
-            "MaterialOverride": null,
-            "Model": "models/environment/stairs_03.vmdl",
-            "ShouldCastShadows": true,
-            "Tint": "1,1,1,1"
-          },
-          {
-            "__type": "ModelCollider",
-            "__enabled": true,
-            "IsTrigger": false,
-            "Model": "models/environment/stairs_03.vmdl",
-            "Surface": null,
-            "Tags": ""
-          }
-        ]
-      },
-      {
-        "Id": "dbfb5d47-1130-4241-8854-b9c764101da7",
-        "Name": "floor_01",
-        "Enabled": true,
-        "Position": "0,-128,0",
-        "Rotation": "0,0,0,1",
-        "Scale": "1,1,1",
-        "Components": [
-          {
-            "__type": "ModelComponent",
-            "__enabled": true,
-            "MaterialOverride": null,
-            "Model": "models/environment/stairs_03.vmdl",
-            "ShouldCastShadows": true,
-            "Tint": "1,1,1,1"
-          },
-          {
-            "__type": "ModelCollider",
-            "__enabled": true,
-            "IsTrigger": false,
-            "Model": "models/environment/stairs_03.vmdl",
             "Surface": null,
             "Tags": ""
           }
@@ -799,6 +668,32 @@
         "Name": "floor_01",
         "Enabled": true,
         "Position": "-128,-128,0",
+        "Rotation": "0,0,0,1",
+        "Scale": "1,1,1",
+        "Components": [
+          {
+            "__type": "ModelComponent",
+            "__enabled": true,
+            "MaterialOverride": null,
+            "Model": "models/environment/floor_01.vmdl",
+            "ShouldCastShadows": true,
+            "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "ModelCollider",
+            "__enabled": true,
+            "IsTrigger": false,
+            "Model": "models/environment/floor_01.vmdl",
+            "Surface": null,
+            "Tags": ""
+          }
+        ]
+      },
+      {
+        "Id": "4cb0f12e-006a-4051-8194-4e832095c6b2",
+        "Name": "floor_01",
+        "Enabled": true,
+        "Position": "0,-128,0",
         "Rotation": "0,0,0,1",
         "Scale": "1,1,1",
         "Components": [
@@ -1087,7 +982,7 @@
             "Id": "601c08bc-80f1-4495-8bdf-9aaecb5ef0a0",
             "Name": "Camera",
             "Enabled": true,
-            "Position": "104.6351,-134.0051,80.00001",
+            "Position": "145.2508,-159.8223,128",
             "Rotation": "0,0,0,1",
             "Scale": "1,1,1"
           }
@@ -1730,6 +1625,33 @@
             ]
           }
         ]
+      },
+      {
+        "Id": "60c2f789-5e76-482d-93fb-63dd72ebf049",
+        "Name": "box_01",
+        "Enabled": true,
+        "Position": "-116.0033,-24.634,-0.0009765625",
+        "Rotation": "0.00000003641295,0.0000003549485,-0.1221815,0.9925079",
+        "Scale": "2,2,2",
+        "__Prefab": "prefabs/pieces/box_01.object"
+      },
+      {
+        "Id": "cf152cef-21ac-45f7-9566-491cd2212f5e",
+        "Name": "box_01",
+        "Enabled": true,
+        "Position": "-44.53363,-46.18432,-0.0005481524",
+        "Rotation": "0.000000008651354,-0.00000000000000003772645,0.1451456,0.9894103",
+        "Scale": "2,2,2",
+        "__Prefab": "prefabs/pieces/box_01.object"
+      },
+      {
+        "Id": "cbe658be-7978-48d1-92fe-430220aebb89",
+        "Name": "barrel_02",
+        "Enabled": true,
+        "Position": "-83.47543,-84.06447,0.0004272461",
+        "Rotation": "0.00000003815536,0.0000000000000002790564,0.6401406,-0.7682576",
+        "Scale": "1.2,1.2,1.2",
+        "__Prefab": "prefabs/pieces/barrel_02.object"
       }
     ]
   },

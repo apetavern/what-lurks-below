@@ -1,19 +1,19 @@
 {
   "RootObject": {
-    "Id": "3f875be4-b1c3-4c64-a1bb-5b58492989e6",
-    "Name": "barrel_01",
+    "Id": "7643101e-80e5-44b6-b537-0c369815a465",
+    "Name": "box_01",
     "Enabled": true,
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
-    "Scale": "1.4,1.4,1.4",
+    "Scale": "2,2,2",
     "Components": [
       {
         "__type": "ModelComponent",
         "__enabled": true,
         "MaterialOverride": null,
-        "Model": "models/environment/breakables/barrel/barrel.vmdl",
+        "Model": "models/environment/breakables/crate/crate_01.vmdl",
         "ShouldCastShadows": true,
-        "Tint": "1,1,1,1"
+        "Tint": "0.58416,0.48294,0.38173,1"
       },
       {
         "__type": "AimableTargetComponent",
@@ -32,7 +32,7 @@
     ],
     "Children": [
       {
-        "Id": "d10ebeae-35c9-4c0d-95e7-38ef703897bf",
+        "Id": "5b1e4eb8-0cdd-4846-9e88-c6373e0a505e",
         "Name": "Object",
         "Enabled": true,
         "Position": "0,0,0",

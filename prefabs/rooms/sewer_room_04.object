@@ -9,8 +9,7 @@
     "Components": [
       {
         "__type": "RoomChunkComponent",
-        "__enabled": true,
-        "CameraTrigger": "133dcda3-e7c7-4ff7-b05c-9337c898fc8d"
+        "__enabled": true
       }
     ],
     "Children": [
@@ -1672,7 +1671,7 @@
         "Enabled": true,
         "Position": "-200.4012,-208.3507,0",
         "Rotation": "0.0000001615823,0.0000003297209,0.3872716,0.9219658",
-        "Scale": "1.299553,1.299553,1.299553",
+        "Scale": "1.4,1.4,1.4",
         "__Prefab": "prefabs/pieces/barrel_01.object"
       },
       {
@@ -1681,7 +1680,7 @@
         "Enabled": true,
         "Position": "-215.6533,-164.2537,0",
         "Rotation": "-0.0000002763148,-0.000000267963,-0.6622565,-0.7492785",
-        "Scale": "1,1,1",
+        "Scale": "1.2,1.2,1.2",
         "__Prefab": "prefabs/pieces/barrel_02.object"
       },
       {
@@ -1690,7 +1689,7 @@
         "Enabled": true,
         "Position": "-225.1198,-113.4545,-0.00002655946",
         "Rotation": "-0.000000008101594,-0.00000000000000003815316,-0.1359222,0.9907198",
-        "Scale": "1.299553,1.299553,1.299553",
+        "Scale": "1.4,1.4,1.4",
         "__Prefab": "prefabs/pieces/barrel_01.object"
       },
       {

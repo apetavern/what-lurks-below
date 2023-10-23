@@ -9,8 +9,7 @@
     "Components": [
       {
         "__type": "RoomChunkComponent",
-        "__enabled": true,
-        "CameraTrigger": "1a0e6954-1d53-42b2-8f0b-33b4134dd0e0"
+        "__enabled": true
       }
     ],
     "Children": [
@@ -1168,8 +1167,8 @@
             "Id": "56e0380e-d913-4525-b2e7-52945bdad2ba",
             "Name": "Camera",
             "Enabled": true,
-            "Position": "140,-230,80",
-            "Rotation": "-0.09904581,0.2391177,0.369644,0.892399",
+            "Position": "110.5968,-190.1622,178.943",
+            "Rotation": "0,0,0,1",
             "Scale": "1,1,1"
           }
         ]
@@ -2001,27 +2000,27 @@
         "Id": "30a9e4d0-b133-4229-8dd8-e8288bb83b3a",
         "Name": "barrel",
         "Enabled": true,
-        "Position": "96.63554,230.8358,0.002349854",
+        "Position": "94.59495,228.1703,0.002290831",
         "Rotation": "-0.0000000561797,-0.0000000000000009412308,-0.9425386,0.3340974",
-        "Scale": "1.299553,1.299553,1.299553",
+        "Scale": "1.4,1.4,1.4",
         "__Prefab": "prefabs/pieces/barrel_01.object"
       },
       {
         "Id": "89d90007-11c3-4a73-a8ac-dffb9b0a0871",
         "Name": "barrel",
         "Enabled": true,
-        "Position": "102.3279,162.1695,0.003234863",
+        "Position": "102.9758,176.4962,0.003234823",
         "Rotation": "0.0000002979473,-0.000000008080855,-0.9997446,-0.02259584",
-        "Scale": "1.299553,1.299553,1.299553",
+        "Scale": "1.4,1.4,1.4",
         "__Prefab": "prefabs/pieces/barrel_01.object"
       },
       {
         "Id": "62e45c92-e383-4ec7-9242-34a57d4c97eb",
         "Name": "barrel",
         "Enabled": true,
-        "Position": "63.54526,201.5665,0.0006408691",
+        "Position": "59.33147,196.4805,0.000641514",
         "Rotation": "-0.00000005394117,-0.000000000000004812273,-0.9049827,0.4254484",
-        "Scale": "1,1,1",
+        "Scale": "1.2,1.2,1.2",
         "__Prefab": "prefabs/pieces/barrel_02.object"
       },
       {
