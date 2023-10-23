@@ -64,7 +64,7 @@ public sealed class DestructableComponent : BaseComponent
 		}
 		else if ( name.Contains( "ammo" ) )
 		{
-			item.Quantity = Game.Random.Next( 1, 4 ) + 1;
+			item.Quantity = Game.Random.Next( 2, 8 ) + 1;
 		}
 
 		return item;

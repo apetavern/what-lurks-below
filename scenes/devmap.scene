@@ -131,6 +131,8 @@
         {
           "__type": "MapGeneratorComponent",
           "__enabled": true,
+          "Breakables1": "prefabs/pieces/barrel_01.object",
+          "Breakables2": "prefabs/pieces/barrel_02.object",
           "IsBossSequence": false,
           "RoomCount": 7,
           "SnapGridSize": 1024

@@ -36,6 +36,9 @@ public partial class MapGeneratorComponent : BaseComponent
 
 	[Property] public bool IsBossSequence { get; set; }
 
+	[Property] public GameObject Breakables1 { get; set; }
+	[Property] public GameObject Breakables2 { get; set; }
+	[Property] public GameObject Breakables3 { get; set; }
 
 	public GameObject Player { get; set; }
 
@@ -254,6 +257,21 @@ public partial class MapGeneratorComponent : BaseComponent
 							if ( !tr.Hit )
 							{
 								SpawnPrefabFromPath( Hallways[Game.Random.Int( 0, Hallways.Count - 1 )], pos, Rotation.Identity );
+
+								if ( Game.Random.Float() > 0.95f )
+								{
+									List<GameObject> breakablesToSpawn = new();
+									if ( Breakables1 != null ) breakablesToSpawn.Add( Breakables1 );
+									if ( Breakables2 != null ) breakablesToSpawn.Add( Breakables2 );
+									if ( Breakables3 != null ) breakablesToSpawn.Add( Breakables3 );
+
+									if ( breakablesToSpawn.Count > 0 )
+									{
+										var breakable = breakablesToSpawn[new Random().Int( 0, breakablesToSpawn.Count - 1 )];
+										var breaky = SceneUtility.Instantiate( breakable, pos + Vector3.Random.WithZ( 0 ) * 64f, Rotation.LookAt( Vector3.Random.WithZ( 0 ) * 64f ) );
+										breaky.SetParent( GameObject.Children.First() );
+									}
+								}
 							}
 						}
 					}
