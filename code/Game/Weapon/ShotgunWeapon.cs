@@ -53,7 +53,7 @@ public class ShotgunWeapon : BaseWeapon
 			if ( TimeSinceReloadStart > ReloadTime )
 			{
 				CurrentClip += Math.Min( AmmoCount, MaxAmmo ) + 1;
-				AmmoCount -= CurrentClip;
+				AmmoCount -= CurrentClip - 1;
 				Reloading = false;
 			}
 			else
