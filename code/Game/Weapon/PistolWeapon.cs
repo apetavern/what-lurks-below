@@ -67,6 +67,10 @@ public class PistolWeapon : BaseWeapon
 
 			Sound.FromWorld( "weapons/rust_pistol/sound/rust_pistol.shoot.sound", Transform.Position );
 		}
+		if ( CurrentClip == 0 )
+		{
+			Sound.FromWorld( "sounds/player/gun_empty.sound", Transform.Position );
+		}
 		else if ( AmmoCount > 0 )
 		{
 			helper.TriggerReload();
