@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using BrickJam.Game;
 using BrickJam.Game.UI;
 using BrickJam.Game.Weapon;
 using Sandbox;
@@ -54,6 +55,11 @@ public class Inventory : BaseComponent
 	public bool ItemInInventory( InventoryItem item )
 	{
 		return _items.Any( i => i.Asset.Name == item.Name );
+	}
+
+	public bool ItemInInventory( string itemName )
+	{
+		return _items.Any( i => i.Asset.Name == itemName );
 	}
 
 	public (bool, InvCoord) HasFreeSpace( int length, int height )
@@ -151,7 +157,13 @@ public class Inventory : BaseComponent
 	public void RemoveItem( InventoryReference item )
 	{
 		Free( item.Position, item.Asset.Length, item.Asset.Height );
+
 		_items.Remove( item );
+
+		if ( !ItemInInventory( "Key" ) )
+		{
+			GetComponent<PlayerFlagsComponent>().HasBossKey = false;
+		}
 	}
 
 	public override void OnStart()

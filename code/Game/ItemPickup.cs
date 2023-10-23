@@ -105,9 +105,19 @@ public class ItemPickup : BaseComponent
 
 			var newItem = Item.ToReference();
 			newItem.Quantity = Item.Quantity;
+
 			var added = inv.PlaceItem( newItem, invCoord );
 			if ( !added )
+			{
 				return;
+			}
+			else
+			{
+				if ( Item.Name == "Key" )
+				{
+					Player.GetComponent<PlayerFlagsComponent>().HasBossKey = true;
+				}
+			}
 		}
 
 
