@@ -25,7 +25,6 @@ public sealed class DestructableComponent : BaseComponent
 		// Destroy on death
 		HealthComponent healthComponent = GameObject.GetComponent<HealthComponent>();
 		healthComponent.OnDeath += OnDeath;
-		healthComponent.OnDamage += OnDamaged;
 
 		PotentialDrops.Clear();
 		PotentialDropWeights.Clear();
@@ -47,6 +46,13 @@ public sealed class DestructableComponent : BaseComponent
 			//Log.Info( item );
 			_ = new PickupObject( true, $"Pickup {item.Asset.Name}", Transform.Position, item );
 		}
+
+		var barrelbreak = new GameObject( true, "break" );
+		barrelbreak.Transform.Position = GameObject.GetBounds().Center;
+		var sharticles = barrelbreak.AddComponent<ParticleSystem>();
+		sharticles.Particles = Sandbox.ParticleSystem.Load( "particles/wood_break.vpcf" );
+		barrelbreak.SetParent( Scene.GetAllObjects( true ).Where( X => X.Name == "MapGenerator" ).FirstOrDefault().Children[0] );
+
 		GameObject.Destroy();
 	}
 
@@ -72,18 +78,6 @@ public sealed class DestructableComponent : BaseComponent
 		}
 
 		return item;
-	}
-	public GameObject barrelbreak;
-	public void OnDamaged()
-	{
-		//Log.Info( "Barrel damage" );
-		if ( barrelbreak == null ) ;
-		{
-			barrelbreak = new GameObject( true, "break" );
-			barrelbreak.Transform.Position = Transform.Position;
-			var sharticles = barrelbreak.AddComponent<ParticleSystem>();
-			sharticles.Particles = Sandbox.ParticleSystem.Load( "particles/explosion/barrel_explosion/explosion_barrel.vpcf" );
-		}
 	}
 
 	static T GetRandomFromArray<T>( List<T> items, List<float> weights )
