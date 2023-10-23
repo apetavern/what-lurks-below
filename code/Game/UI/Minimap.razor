@@ -16,7 +16,6 @@
         var pos = enemy.Transform.Position;
         // Position relative to player
         var relativePos = pos - Player.Transform.Position;
-        Log.Info(relativePos);
         
         // Clip the relative position to the minimap bounds
         relativePos.x = Math.Clamp(relativePos.x, -1024, 1024);

@@ -8,7 +8,7 @@ using Sandbox;
 
 public sealed class DestructableComponent : BaseComponent
 {
-	private List<InventoryItem> PotentialDrops { get; set; } = new();
+	public static List<InventoryItem> PotentialDrops { get; set; } = new();
 
 	public override void OnStart()
 	{
@@ -32,12 +32,16 @@ public sealed class DestructableComponent : BaseComponent
 	public void OnDeath()
 	{
 		Sound.FromWorld( "barrel_break", Transform.Position );
-		var item = GetRandomItem();
-		var pickupObject = new PickupObject( true, $"Pickup {item.Name}", Transform.Position, item );
+		var drop = Random.Shared.Float( 0f, 1f );
+		if ( drop > 0.5f )
+		{
+			var item = GetRandomItem();
+			_ = new PickupObject( true, $"Pickup {item.Name}", Transform.Position, item );
+		}
 		GameObject.Destroy();
 	}
 
-	private InventoryItem GetRandomItem()
+	public static InventoryItem GetRandomItem()
 	{
 		var item = PotentialDrops[Random.Shared.Next( 0, PotentialDrops.Count - 1 )];
 		if ( item.Name.Contains( "Ammo" ) )
@@ -50,6 +54,6 @@ public sealed class DestructableComponent : BaseComponent
 
 	public void OnDamaged()
 	{
-		Log.Info( "Barrel damage" );
+		// Log.Info( "Barrel damage" );
 	}
 }

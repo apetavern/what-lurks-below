@@ -242,7 +242,7 @@ public sealed class RoomChunkComponent : BaseComponent
 		{
 			coll.Enabled = true;
 		}*/
-		Log.Info( "Collision fixed!" );
+		// Log.Info( "Collision fixed!" );
 	}
 
 	public bool connected;
