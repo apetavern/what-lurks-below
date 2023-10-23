@@ -10,8 +10,8 @@
 
   ScenePanel
   {
-    width: 400px;
-    height: 400px;
+    width: 600px;
+    height: 600px;
   }
 
   i
@@ -43,7 +43,7 @@
     height: 100%;
     z-index: 100;
 
-    background-image: radial-gradient(rgba(0,0,0,0.2) 0%, rgba(0,0,0,1) 48%, rgba(0,0,0,1) 100%);
+    background-image: radial-gradient(rgba(0,0,0,0.6) 0%, rgba(0,0,0,1) 50%, rgba(0,0,0,1) 100%);
   }
 
   &.hidden
