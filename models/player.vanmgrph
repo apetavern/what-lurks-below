@@ -47260,7 +47260,7 @@
 					m_networkMode = "ClientPredicted"
 					m_sNote = ""
 					m_tagSpans = [  ]
-					m_sequenceName = "Dab"
+					m_sequenceName = "player_death"
 					m_playbackSpeed = 1.0
 					m_bLoop = false
 				}
@@ -62433,7 +62433,7 @@
 	}
 	m_previewModels = 
 	[
-		"models/citizen/citizen.vmdl",
+		"models/player.vmdl",
 	]
 	m_boneMergeModels = 
 	[
