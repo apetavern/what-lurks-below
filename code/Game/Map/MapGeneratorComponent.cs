@@ -50,7 +50,7 @@ public partial class MapGeneratorComponent : BaseComponent
 		return go;
 	}
 
-	public void RegenMap()
+	public async void RegenMap()
 	{
 		var map = GameObject.Children.First().Children;
 		for ( int i = 0; i < map.Count; i++ )
@@ -60,6 +60,8 @@ public partial class MapGeneratorComponent : BaseComponent
 
 		SpawnedRooms.Clear();
 		CorrectedRooms = false;
+
+		await GameTask.Delay( 100 );
 
 		var navgen = Scene.GetAllObjects( true ).FirstOrDefault( x => x.GetComponent<NavGenComponent>() != null ).GetComponent<NavGenComponent>();
 		navgen.GenerationPlane.Enabled = true;
