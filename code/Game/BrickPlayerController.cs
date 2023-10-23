@@ -71,6 +71,8 @@ public class BrickPlayerController : BaseComponent
 		HealthComponent healthComponent = GameObject.GetComponent<HealthComponent>( false );
 		healthComponent.OnDamage += TakeDamage;
 		healthComponent.OnDeath += OnDeath;
+
+		Body.GetComponent<AnimatedModelComponent>( false ).Set( "holdtype_pose_hand", 0.07f );
 	}
 
 	public void TakeDamage()
