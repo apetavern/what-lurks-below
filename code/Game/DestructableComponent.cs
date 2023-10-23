@@ -39,7 +39,7 @@ public sealed class DestructableComponent : BaseComponent
 	public void OnDeath()
 	{
 		Sound.FromWorld( "barrel_break", Transform.Position );
-		var drop = Random.Shared.Float( 0f, 1f );
+		var drop = Game.Random.Float( 0f, 1f );
 		if ( drop > 0.55f )
 		{
 			var item = GetRandomItem();
@@ -52,17 +52,19 @@ public sealed class DestructableComponent : BaseComponent
 	{
 		var item = GetRandomFromArray( PotentialDrops, PotentialDropWeights );
 		var name = item.Name.ToLower();
-		if ( name == "pistol_ammo" )
+
+		//Don't know why but these random values need +1 to be in range, might be an off by one error somewhere
+		if ( name == "pistol ammo" )
 		{
-			item.Quantity = Random.Shared.Next( 4, 8 );
+			item.Quantity = Game.Random.Next( 4, 8 ) + 1;
 		}
-		if ( name == "shotgun_ammo" )
+		if ( name == "shotgun ammo" )
 		{
-			item.Quantity = Random.Shared.Next( 2, 4 );
+			item.Quantity = Game.Random.Next( 2, 4 ) + 1;
 		}
 		else if ( name.Contains( "ammo" ) )
 		{
-			item.Quantity = Random.Shared.Next( 1, 4 );
+			item.Quantity = Game.Random.Next( 1, 4 ) + 1;
 		}
 
 		return item;
@@ -87,7 +89,7 @@ public sealed class DestructableComponent : BaseComponent
 			totalWeight += MathF.Abs( weight );
 		}
 
-		float randomValue = Random.Shared.Float( 0f, totalWeight );
+		float randomValue = Game.Random.Float( 0f, totalWeight );
 		float cumulativeWeight = 0;
 
 		for ( int i = 0; i < items.Count; i++ )
