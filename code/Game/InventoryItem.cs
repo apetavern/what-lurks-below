@@ -49,7 +49,7 @@ public class InventoryItem : GameResource
 				.FirstOrDefault( o => o.Name == "player" );
 			if ( player is null )
 				return;
-			_ = new PickupObject( true, $"Pickup {item.Asset.Name}", player.Transform.Position, item.Asset );
+			_ = new PickupObject( true, $"Pickup {item.Asset.Name}", player.Transform.Position, item );
 			MessagePanel.Instance.AddMessage( $"You drop your {Name}." );
 		}
 		else if ( action is InventoryAction.Equip )

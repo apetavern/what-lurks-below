@@ -6,16 +6,16 @@ public class PickupObject : GameObject
 {
 	protected ColliderBoxComponent c_BoxCollider;
 	protected ItemPickup c_ItemPickup;
-	
-	public InventoryItem Item { get; set; }
-	
-	internal PickupObject(bool enabled, string name, Vector3 position, InventoryItem item) : base(enabled, name)
+
+	public InventoryReference Item { get; set; }
+
+	internal PickupObject( bool enabled, string name, Vector3 position, InventoryReference item ) : base( enabled, name )
 	{
 		SetParent( Scene );
-		
+
 		Transform.Position = position;
 		Item = item;
-		
+
 		c_BoxCollider = AddComponent<ColliderBoxComponent>( false );
 		c_ItemPickup = AddComponent<ItemPickup>( false );
 

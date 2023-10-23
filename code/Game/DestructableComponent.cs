@@ -43,15 +43,15 @@ public sealed class DestructableComponent : BaseComponent
 		if ( drop > 0.55f )
 		{
 			var item = GetRandomItem();
-			_ = new PickupObject( true, $"Pickup {item.Name}", Transform.Position, item );
+			_ = new PickupObject( true, $"Pickup {item.Asset.Name}", Transform.Position, item );
 		}
 		GameObject.Destroy();
 	}
 
-	public static InventoryItem GetRandomItem()
+	public static InventoryReference GetRandomItem()
 	{
-		var item = GetRandomFromArray( PotentialDrops, PotentialDropWeights );
-		var name = item.Name.ToLower();
+		var item = GetRandomFromArray( PotentialDrops, PotentialDropWeights ).ToReference();
+		var name = item.Asset.Name.ToLower();
 
 		//Don't know why but these random values need +1 to be in range, might be an off by one error somewhere
 		if ( name == "pistol ammo" )

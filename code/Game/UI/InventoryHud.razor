@@ -20,6 +20,9 @@
     
     public static InventoryHud Instance { get; set; }
 
+    
+    int fixCounter = 0;
+
     public InventoryHud()
     {
         Instance = this;
@@ -34,15 +37,40 @@
     {
         base.Update();
 
+        if(fixCounter < 3)
+        {
+            fixCounter++;
+            if(fixCounter == 2)
+            {
+                SetOpen(true);
+            }
+            else if(fixCounter == 3)
+            {
+                SetOpen(false);
+            }
+            return;
+        }
+
+        var loading = NavgenLoadingPane.Loading;
+        Panel.SetClass("loading", loading);
+
         if (Input.Pressed("Inventory"))
         {
-            IsOpen = !IsOpen;
+            SetOpen(!IsOpen);
+        }
+    }
 
+    public void SetOpen(bool open)
+    {
+        bool wasOpen = IsOpen;
+        IsOpen = open;
+        Panel.SetClass("open", IsOpen);
+
+        if( IsOpen != wasOpen )
+        {
             InventoryActionMenu.Instance?.Destroy();
             Minimap.Instance.Enabled = IsOpen;
         }
-        
-        Panel.SetClass("open", IsOpen);
     }
 
     protected override int BuildHash() => HashCode.Combine( Time.Now );

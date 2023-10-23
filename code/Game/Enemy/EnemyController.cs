@@ -86,14 +86,14 @@ public class EnemyController : BaseComponent
 		model.SetAnimParameter( "die", true );
 
 		//Log.Info( "Enemies left: " + (Scene.GetAllObjects( true ).Where( x => x.GetComponent<EnemyController>() != null ).Count() - 1) );
-		
+
 		var flags = Player?.GetComponent<PlayerFlagsComponent>();
 		if ( flags is null )
 			return;
 		if ( !flags.KilledFirstEnemy )
 		{
 			flags.KilledFirstEnemy = true;
-			_ = new PickupObject( true, "Pistol", Transform.Position, PistolWeapon.PistolItem );
+			_ = new PickupObject( true, "Pistol", Transform.Position, PistolWeapon.PistolItem.ToReference() );
 		}
 		else
 		{
@@ -102,7 +102,7 @@ public class EnemyController : BaseComponent
 				if ( !flags.HasShotgun )
 				{
 					flags.HasShotgun = true;
-					_ = new PickupObject( true, "Shotgun", Transform.Position, ShotgunWeapon.ShotgunItem );
+					_ = new PickupObject( true, "Shotgun", Transform.Position, ShotgunWeapon.ShotgunItem.ToReference() );
 				}
 				else
 				{

@@ -119,11 +119,11 @@ public class Inventory : BaseComponent
 		}
 	}
 
-	public void UpdateExistingItem( InventoryItem item )
+	public void UpdateExistingItem( InventoryReference item )
 	{
-		if ( item.Stackable )
+		if ( item.Asset.Stackable )
 		{
-			var existingItem = _items.FirstOrDefault( i => i.Asset.Name == item.Name );
+			var existingItem = _items.FirstOrDefault( i => i.Asset.Name == item.Asset.Name );
 			if ( existingItem is not null )
 			{
 				existingItem.Quantity += item.Quantity;

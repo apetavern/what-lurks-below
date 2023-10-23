@@ -19,7 +19,7 @@ public class ItemPickup : BaseComponent
 	private float _sceneModelEndZ;
 	private float _sceneModelTargetZ;
 
-	[Property] public InventoryItem Item { get; set; }
+	[Property] public InventoryReference Item { get; set; }
 
 	public override void OnEnabled()
 	{
@@ -33,9 +33,9 @@ public class ItemPickup : BaseComponent
 		var position = Transform.Position;
 
 		// Setup scene model
-		SceneModel = new SceneModel( Scene.SceneWorld, Item.GroundModel ?? Model.Load( "models/dev/box.vmdl" ), Transform.World );
+		SceneModel = new SceneModel( Scene.SceneWorld, Item.Asset.GroundModel ?? Model.Load( "models/dev/box.vmdl" ), Transform.World );
 		SceneModel.Position = Transform.Position + Vector3.Up * SceneModel.Bounds.Size;
-		SceneModel.Transform = SceneModel.Transform.WithScale( Item.GroundScale );
+		SceneModel.Transform = SceneModel.Transform.WithScale( Item.Asset.GroundScale );
 
 		_sceneModelStartZ = SceneModel.Transform.Position.z;
 		_sceneModelEndZ = SceneModel.Transform.Position.z + 20f;
@@ -52,6 +52,7 @@ public class ItemPickup : BaseComponent
 
 	public override void Update()
 	{
+		Log.Info( $"{Item.Asset.Name}: {SceneModel}" );
 		if ( SceneModel != null )
 		{
 			SceneModel.Rotation = Rotation.From( 0, Time.Now * 50f, 0 );
@@ -90,30 +91,27 @@ public class ItemPickup : BaseComponent
 		if ( inv is null )
 			return;
 
-		if ( Item.Stackable && inv.ItemInInventory( Item ) )
+		if ( Item.Asset.Stackable && inv.ItemInInventory( Item.Asset ) )
 		{
 			inv.UpdateExistingItem( Item );
 		}
 		else
 		{
-			var (hasSpace, invCoord) = inv.HasFreeSpace( Item.Length, Item.Height );
+			var (hasSpace, invCoord) = inv.HasFreeSpace( Item.Asset.Length, Item.Asset.Height );
 			if ( !hasSpace )
 			{
-				MessagePanel.Instance.AddMessage( $"Not enough space for {Item.Name} in inventory." );
+				MessagePanel.Instance.AddMessage( $"Not enough space for {Item.Asset.Name} in inventory." );
 				return;
 			}
 
-			var newItem = Item.ToReference();
-			newItem.Quantity = Item.Quantity;
-
-			var added = inv.PlaceItem( newItem, invCoord );
+			var added = inv.PlaceItem( Item, invCoord );
 			if ( !added )
 			{
 				return;
 			}
 			else
 			{
-				if ( Item.Name == "Key" )
+				if ( Item.Asset.Name == "Key" )
 				{
 					Player.GetComponent<PlayerFlagsComponent>().HasBossKey = true;
 				}

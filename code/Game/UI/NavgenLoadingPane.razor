@@ -17,10 +17,13 @@
 
     NavGenComponent NavGen;
 
+    public static bool Loading = false;
+
     public override void Tick()
     {
         NavGen ??= GameManager.ActiveScene.GetAllObjects( true ).Where( X => X.GetComponent<NavGenComponent>() != null ).FirstOrDefault().GetComponent<NavGenComponent>();
-        SetClass( "hidden", NavGen?.Initialized ?? false );
+        Loading = !(NavGen?.Initialized ?? false);
+        SetClass( "hidden", !Loading );
     }
     
 
