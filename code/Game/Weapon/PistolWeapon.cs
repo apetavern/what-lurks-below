@@ -92,8 +92,6 @@ public class PistolWeapon : BaseWeapon
 	{
 		base.Update();
 
-		//Gizmo.Draw.LineBBox( LastHitBbox );
-
 		if ( ResourceBar.Instance is not null )
 			ResourceBar.Instance.Ammo = CurrentClip;
 	}

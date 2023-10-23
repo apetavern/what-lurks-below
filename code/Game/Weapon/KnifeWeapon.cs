@@ -117,7 +117,5 @@ public class KnifeWeapon : BaseWeapon
 	protected override void Update()
 	{
 		base.Update();
-
-		Gizmo.Draw.LineBBox( LastHitBbox );
 	}
 }

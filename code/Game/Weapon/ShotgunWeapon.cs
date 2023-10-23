@@ -147,8 +147,6 @@ public class ShotgunWeapon : BaseWeapon
 	{
 		base.Update();
 
-		Gizmo.Draw.LineBBox( LastHitBbox );
-
 		if ( ResourceBar.Instance is not null )
 			ResourceBar.Instance.Ammo = AmmoCount;
 	}
