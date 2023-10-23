@@ -35,17 +35,17 @@
         "Id": "5b1e4eb8-0cdd-4846-9e88-c6373e0a505e",
         "Name": "Object",
         "Enabled": true,
-        "Position": "0,0,0",
+        "Position": "0,0,12",
         "Rotation": "0,0,0,1",
         "Scale": "1,1,1",
         "Components": [
           {
-            "__type": "ModelCollider",
+            "__type": "ColliderBoxComponent",
             "__enabled": true,
             "IsTrigger": false,
-            "Model": "models/environment/breakables/barrel/barrel.vmdl",
+            "Scale": "24,24,24",
             "Surface": null,
-            "Tags": "solid"
+            "Tags": ""
           }
         ]
       }
