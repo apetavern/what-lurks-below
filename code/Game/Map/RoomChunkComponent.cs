@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 public sealed class RoomChunkComponent : BaseComponent
 {
-	[Property] GameObject CameraTrigger { get; set; }
+	//[Property] GameObject CameraTrigger { get; set; }
 	public List<RoomChunkComponent> ConnectedRooms { get; private set; } = new List<RoomChunkComponent>(); // List to store connected rooms
 
 	Color ThisColor;
@@ -231,7 +231,11 @@ public sealed class RoomChunkComponent : BaseComponent
 
 	public void SetupCollision()
 	{
-		CameraTrigger.GetComponent<CameraTriggerComponent>( false ).RecalcBounds();
+		foreach ( var childtrigger in GameObject.Children.Where( X => X.GetComponent<CameraTriggerComponent>( false, true ) != null ) )
+		{
+			childtrigger.GetComponent<CameraTriggerComponent>( false, true ).RecalcBounds();
+		}
+		//CameraTrigger.GetComponent<CameraTriggerComponent>( false ).RecalcBounds();
 
 		/*foreach ( var coll in GetComponents<ModelCollider>( false, true ) )
 		{
