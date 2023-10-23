@@ -61,6 +61,7 @@ public class KnifeWeapon : BaseWeapon
 
 			var tr = Physics.Trace.Ray( muzzle.Position, muzzle.Position + muzzle.Rotation.Forward * TraceLength )
 				.WithAnyTags( "solid", "enemy" )
+				.Size( 5f )
 				.Run();
 
 			if ( tr.Hit && tr.Body.GameObject is GameObject hitObject )
