@@ -77,8 +77,6 @@ public partial class MapGeneratorComponent : BaseComponent
 
 		SpawnedRooms.Add( SpawnPrefabFromPath( Rooms[0], Transform.Position, Transform.Rotation ).GetComponent<RoomChunkComponent>( false ) );
 
-		SpawnedRooms[0].ClearEnemiesAndItems();
-
 		if ( IsBossSequence )
 		{
 			Vector3 PlacePoint = new Vector3( 0, -2048f, 0 );
@@ -287,6 +285,10 @@ public partial class MapGeneratorComponent : BaseComponent
 		{
 			SpawnPrefabFromPath( "prefabs/pieces/barrel_01.object", door.Transform.Position, door.Transform.Rotation );
 		}
+
+		await GameTask.Delay( 20 );
+
+		SpawnedRooms[0].ClearEnemiesAndItems();
 	}
 
 	public override void Update()
