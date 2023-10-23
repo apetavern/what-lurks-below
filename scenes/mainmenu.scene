@@ -55,6 +55,21 @@
           "__enabled": true,
           "bezier": "228a0acf-74a6-4b3c-be93-27381831e26f",
           "blackFade": "368caf02-14f9-464a-9724-6c0aa4338978"
+        },
+        {
+          "__type": "Vignette",
+          "__enabled": true,
+          "Center": "0.5,0.5",
+          "Color": "0,0,0,1",
+          "Intensity": 0.5,
+          "Roundness": 0,
+          "Smoothness": 1
+        },
+        {
+          "__type": "FilmGrain",
+          "__enabled": true,
+          "Intensity": 0.02,
+          "Response": 0.5
         }
       ],
       "Children": [
@@ -233,7 +248,7 @@
           "Id": "55acf76f-bfa7-448c-a368-f2b55293f3fb",
           "Name": "UI",
           "Enabled": true,
-          "Position": "0,0,64",
+          "Position": "0,0,50",
           "Rotation": "0,0,0,1",
           "Scale": "1,1,1",
           "Components": [
@@ -243,7 +258,7 @@
               "HorizontalAlign": "Center",
               "LookAtCamera": true,
               "PanelSize": "1500,1500",
-              "Position": "0,0,50",
+              "Position": "0,0,45",
               "RenderScale": 1,
               "VerticalAlign": "Center"
             },
