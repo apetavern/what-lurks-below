@@ -4,6 +4,7 @@ using Sandbox;
 using System;
 using System.Linq;
 using BrickJam.Game.UI;
+using System.Collections.Generic;
 
 public class BrickPlayerController : BaseComponent
 {
@@ -80,13 +81,39 @@ public class BrickPlayerController : BaseComponent
 
 	public bool IsDead;
 
+	IEnumerable<BoneCollection.Bone> ExcludedBones;
+
+	List<Transform> LocalExcludedTransforms = new List<Transform>();
+
 	public void OnDeath()
 	{
-		Body.AddComponent<ModelPhysics>();
+		Stats.Save();
+		/*Body.AddComponent<ModelPhysics>();
 		Body.GetComponent<ModelPhysics>().Model = Body.GetComponent<AnimatedModelComponent>().Model;
 		Body.GetComponent<ModelPhysics>().OnEnabled();
 
-		Stats.Save();
+		
+
+		var physicsbones = new List<string>();
+
+		for ( int i = 0; i < Body.GetComponent<ModelPhysics>().PhysicsGroup.BodyCount; i++ )
+		{
+			physicsbones.Add( Body.GetComponent<ModelPhysics>().PhysicsGroup.GetBody( i ).GroupName );
+		}
+
+		ExcludedBones = Body.GetComponent<AnimatedModelComponent>().Model.Bones.AllBones.Where( X => !physicsbones.Contains( X.Name ) );
+
+		foreach ( var bone in ExcludedBones )
+		{
+			if ( bone.Parent != null )
+			{
+				LocalExcludedTransforms.Add( bone.Parent.LocalTransform.ToLocal( bone.LocalTransform ) );
+			}
+			else
+			{
+				LocalExcludedTransforms.Add( bone.LocalTransform );
+			}
+		}*/
 
 		IsDead = true;
 	}
@@ -127,18 +154,32 @@ public class BrickPlayerController : BaseComponent
 
 	public bool CameraControl;
 
-	protected override void OnPreRender()
+	public int BoneNameToIndex( string name )
+	{
+		return Body.GetComponent<AnimatedModelComponent>().Model.Bones.GetBone( name ).Index;
+	}
+
+	/*protected override void OnPreRender()
 	{
 		if ( IsDead )
 		{
-			Body.Transform.Position = Body.GetComponent<ModelPhysics>().PhysicsGroup.GetBody( 0 ).Position;
 			for ( int i = 0; i < Body.GetComponent<ModelPhysics>().PhysicsGroup.BodyCount; i++ )
 			{
-				Body.GetComponent<AnimatedModelComponent>().SceneObject.SetBoneWorldTransform( i, Body.GetComponent<ModelPhysics>().PhysicsGroup.GetBody( i ).Transform );
+				Body.GetComponent<AnimatedModelComponent>().SceneObject.SetBoneWorldTransform( BoneNameToIndex( Body.GetComponent<ModelPhysics>().PhysicsGroup.GetBody( i ).GroupName ), Body.GetComponent<ModelPhysics>().PhysicsGroup.GetBody( i ).Transform );
+			}
+
+			for ( int i = 0; i < LocalExcludedTransforms.Count; i++ )
+			{
+				var bonename = ExcludedBones.ElementAt( i ).Name;
+				Transform trans = Body.GetComponent<AnimatedModelComponent>().SceneObject.GetBoneWorldTransform( bonename );
+				trans.Position = trans.PointToWorld( LocalExcludedTransforms.ElementAt( i ).Position );
+				trans.Rotation = trans.RotationToWorld( LocalExcludedTransforms.ElementAt( i ).Rotation );
+				Body.GetComponent<AnimatedModelComponent>().SceneObject.SetBoneWorldTransform( BoneNameToIndex( bonename ), trans );
+				Log.Info( bonename );
 			}
 		}
 		base.OnPreRender();
-	}
+	}*/
 
 	public override void Update()
 	{
