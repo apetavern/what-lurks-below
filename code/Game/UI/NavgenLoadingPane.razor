@@ -1,0 +1,29 @@
+﻿@using System
+@using System.Collections.Generic
+@using System.Linq
+@using BrickJam.Player
+@using Sandbox;
+@using Sandbox.UI;
+@inherits Panel
+
+<root>
+    Generating Level...
+</root>
+
+@code
+{
+
+    NavGenComponent NavGen;
+
+    public override void Tick()
+    {
+        NavGen ??= GameManager.ActiveScene.GetAllObjects( true ).Where( X => X.GetComponent<NavGenComponent>() != null ).FirstOrDefault().GetComponent<NavGenComponent>();
+        SetClass( "hidden", NavGen?.Initialized ?? false );
+    }
+    
+
+    protected override int BuildHash()
+    {
+        return HashCode.Combine( Time.Now );
+    }
+}

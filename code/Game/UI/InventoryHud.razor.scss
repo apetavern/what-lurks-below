@@ -72,6 +72,29 @@
     
   }
 
+  NavgenLoadingPane {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    z-index: 1000;
+    font-family: Poppins;
+    font-size: 92px;
+    color: white;
+    font-weight: black;
+    background-color: rgba(black, 0.5);
+    opacity: 1;
+    transition: opacity 1s ease;
+
+    &.hidden {
+      opacity: 0;
+    }
+  }
+
   &.open {
     pointer-events: all;
     opacity: 1;
@@ -87,6 +110,7 @@
       bottom: 370px;
     }
   }
+
 }
 
 .selected-item-preview {
