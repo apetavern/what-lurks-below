@@ -133,6 +133,7 @@
           "__enabled": true,
           "Breakables1": "prefabs/pieces/barrel_01.object",
           "Breakables2": "prefabs/pieces/barrel_02.object",
+          "Breakables3": "prefabs/pieces/box_01.object",
           "IsBossSequence": false,
           "RoomCount": 7,
           "SnapGridSize": 1024
@@ -195,6 +196,24 @@
           "Scale": "70,70,100",
           "Surface": null,
           "Tags": "navgen"
+        }
+      ]
+    },
+    {
+      "Id": "edb83c28-be22-4dcc-85cf-8d7a478733f7",
+      "Name": "Plane (2)",
+      "Enabled": true,
+      "Position": "0,0,-100",
+      "Rotation": "0,0,0,1",
+      "Scale": "100,100,100",
+      "Components": [
+        {
+          "__type": "ModelComponent",
+          "__enabled": true,
+          "MaterialOverride": "materials/black_matte.vmat",
+          "Model": "models/dev/plane.vmdl",
+          "ShouldCastShadows": true,
+          "Tint": "1,1,1,1"
         }
       ]
     },
