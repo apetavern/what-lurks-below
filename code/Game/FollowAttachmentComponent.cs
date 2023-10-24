@@ -1,5 +1,7 @@
 using Sandbox;
 
+namespace BrickJam.Components;
+
 [Title( "Follow Attachment" )]
 [Category( "Render" )]
 [Icon( "videocam", "red", "white" )]

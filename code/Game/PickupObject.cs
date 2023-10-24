@@ -1,4 +1,6 @@
-﻿namespace BrickJam.Game;
+﻿using BrickJam.Components;
+
+namespace BrickJam;
 
 public class PickupObject : GameObject
 {

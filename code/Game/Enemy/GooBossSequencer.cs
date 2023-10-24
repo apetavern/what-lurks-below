@@ -2,8 +2,10 @@ using Sandbox;
 using System.Collections.Generic;
 using System;
 using BrickJam.Player;
-using BrickJam.Game;
 using System.Linq;
+using BrickJam.Components;
+
+namespace BrickJam;
 
 public enum EyeballPosition
 {

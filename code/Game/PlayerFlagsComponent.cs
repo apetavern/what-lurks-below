@@ -1,4 +1,4 @@
-﻿namespace BrickJam.Game;
+﻿namespace BrickJam.Components;
 
 public class PlayerFlagsComponent : BaseComponent
 {

@@ -1,6 +1,6 @@
 using Sandbox;
 
-namespace BrickJam.Game;
+namespace BrickJam.Components;
 
 public sealed class GameStartComponent : BaseComponent
 {

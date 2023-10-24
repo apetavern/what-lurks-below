@@ -1,4 +1,4 @@
-﻿using BrickJam.Game;
+﻿using BrickJam.Components;
 using Sandbox;
 using System.Linq;
 

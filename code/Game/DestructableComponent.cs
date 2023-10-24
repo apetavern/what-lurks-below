@@ -1,10 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using BrickJam;
-using BrickJam.Game;
 using BrickJam.Player;
 using Sandbox;
+
+namespace BrickJam.Components;
 
 public sealed class DestructableComponent : BaseComponent
 {

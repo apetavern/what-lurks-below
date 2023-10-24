@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 using Sandbox;
-using BaseWeapon = BrickJam.Game.Weapon.BaseWeapon;
+using BaseWeapon = BrickJam.Weapons.BaseWeapon;
 
 namespace BrickJam.Player;
 

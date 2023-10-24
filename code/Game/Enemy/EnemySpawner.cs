@@ -2,8 +2,9 @@ using Sandbox;
 using System.Linq;
 using System;
 using System.Collections.Generic;
+using BrickJam.Map;
 
-namespace BrickJam.Game;
+namespace BrickJam;
 
 [Icon( "adjust", "red", "white" )]
 [EditorHandle( "materials/gizmo/charactercontroller.png" )]

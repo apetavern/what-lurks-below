@@ -1,6 +1,8 @@
+using BrickJam.Components;
+using BrickJam.Map;
 using System.Linq;
 
-namespace BrickJam.Game;
+namespace BrickJam;
 
 public sealed class RegenGameTrigger : BaseComponent
 {

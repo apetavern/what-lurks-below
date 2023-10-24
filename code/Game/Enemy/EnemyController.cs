@@ -3,9 +3,11 @@ using Sandbox;
 using System.Linq;
 using System;
 using System.Collections.Generic;
-using BrickJam.Game.Weapon;
+using BrickJam.Weapons;
+using BrickJam.Components;
+using BrickJam.Map;
 
-namespace BrickJam.Game;
+namespace BrickJam;
 
 [Icon( "smart_toy", "red", "white" )]
 public class EnemyController : BaseComponent

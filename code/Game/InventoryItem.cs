@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using BrickJam.Game;
-using BrickJam.Game.Weapon;
 using BrickJam.Player;
+using BrickJam.Weapons;
 using Sandbox;
+using BaseWeapon = BrickJam.Weapons.BaseWeapon;
 
 namespace BrickJam;
 
@@ -90,7 +90,7 @@ public class InventoryItem : GameResource
 		}
 	}
 
-	void EquipWeapon( Scene scene, Game.Weapon.BaseWeapon weapon )
+	void EquipWeapon( Scene scene, BaseWeapon weapon )
 	{
 		var player = scene
 			.GetAllObjects( true )

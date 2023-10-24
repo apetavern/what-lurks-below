@@ -3,7 +3,7 @@ using Sandbox;
 using System;
 using System.Linq;
 
-namespace BrickJam.Game;
+namespace BrickJam.Components;
 
 [Title( "ItemPickup" )]
 [Category( "Map" )]

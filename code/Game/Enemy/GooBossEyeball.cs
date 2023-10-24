@@ -1,5 +1,7 @@
 using BrickJam.Player;
 
+namespace BrickJam;
+
 public sealed class GooBossEyeball : BaseComponent
 {
 	public EyeballPosition pos { get; set; }

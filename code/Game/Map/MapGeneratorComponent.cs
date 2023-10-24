@@ -3,6 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Collections.Immutable;
+using BrickJam.Player;
+
+namespace BrickJam.Map;
 
 public static class Vector3Extensions
 {

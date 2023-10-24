@@ -1,6 +1,6 @@
 using Sandbox;
 
-namespace BrickJam.Game.UI;
+namespace BrickJam.UI;
 
 public sealed class RootPanelComponent : BaseComponent
 {

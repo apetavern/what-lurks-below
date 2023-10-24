@@ -1,6 +1,8 @@
 using Sandbox;
 using System.Collections.Generic;
 
+namespace BrickJam.Map;
+
 public sealed class NavGenComponent : BaseComponent
 {
 	[Property] public GameObject GenerationPlane { get; set; }

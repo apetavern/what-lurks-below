@@ -1,9 +1,11 @@
-using BrickJam.Game;
-using BrickJam.Player;
 using Sandbox;
 using System;
 using System.Linq;
 using System.Collections.Generic;
+using BrickJam.Components;
+using BrickJam.Map;
+
+namespace BrickJam.Player;
 
 public class BrickPlayerController : BaseComponent
 {

@@ -1,4 +1,4 @@
-namespace BrickJam.Game;
+namespace BrickJam;
 
 public static class Stats
 {

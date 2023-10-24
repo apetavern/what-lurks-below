@@ -1,5 +1,7 @@
 using Sandbox;
 
+namespace BrickJam.Map;
+
 public sealed class HallwayChunkComponent : BaseComponent
 {
 	[Property] public GameObject Front { get; set; }
