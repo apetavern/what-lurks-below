@@ -47,9 +47,6 @@ public partial class MapGeneratorComponent : BaseComponent
 
 	public MapGeneratorComponent()
 	{
-		if ( Instance is not null )
-			Log.Error( $"An instance of {nameof( MapGeneratorComponent )} already exists" );
-
 		Instance = this;
 	}
 
