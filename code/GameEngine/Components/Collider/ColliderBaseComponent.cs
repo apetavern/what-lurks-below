@@ -125,7 +125,17 @@ public abstract class ColliderBaseComponent : BaseComponent, BaseComponent.Execu
 			shape.AddTag( "solid" );
 
 			shape.IsTrigger = _isTrigger;
-
+			shape.SurfaceMaterial = Surface?.ResourcePath;
+			
+			// this sucks, implement ITagSet
+			shape.ClearTags();
+			
+			foreach ( var tag in GameObject.Tags.TryGetAll() )
+			{
+				shape.AddTag( tag );
+			}
+			
+			//our temporary tags system still supported while we work through shit
 			if ( IsTrigger )
 			{
 				shape.AddTag( "trigger" );
@@ -143,8 +153,6 @@ public abstract class ColliderBaseComponent : BaseComponent, BaseComponent.Execu
 				}
 				shape.AddTag( realTag );
 			}
-
-			shape.SurfaceMaterial = Surface?.ResourcePath;
 		}
 	}
 
