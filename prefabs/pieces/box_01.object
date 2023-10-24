@@ -27,7 +27,8 @@
       },
       {
         "__type": "DestructableComponent",
-        "__enabled": true
+        "__enabled": true,
+        "BreakParticle": "410bb594-c522-4cc5-9a6f-db786b5dbb05"
       }
     ],
     "Children": [
@@ -46,6 +47,23 @@
             "Scale": "24,24,24",
             "Surface": null,
             "Tags": ""
+          }
+        ]
+      },
+      {
+        "Id": "410bb594-c522-4cc5-9a6f-db786b5dbb05",
+        "Name": "particles",
+        "Enabled": false,
+        "Position": "0,0,17.03379",
+        "Rotation": "0,0,0,1",
+        "Scale": "1,1,1",
+        "Components": [
+          {
+            "__type": "ParticleSystem",
+            "__enabled": true,
+            "Looped": false,
+            "Particles": "particles/wood_break.vpcf",
+            "PlaybackSpeed": 1
           }
         ]
       }

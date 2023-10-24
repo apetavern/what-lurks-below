@@ -12,6 +12,8 @@ public sealed class DestructableComponent : BaseComponent
 	public static List<InventoryItem> PotentialDrops { get; set; } = new();
 	public static List<float> PotentialDropWeights { get; set; } = new();
 
+	[Property] public GameObject BreakParticle { get; set; }
+
 	public override void OnStart()
 	{
 		if ( Game.Random.Float() > 0.3f )
@@ -47,11 +49,8 @@ public sealed class DestructableComponent : BaseComponent
 			_ = new PickupObject( true, $"Pickup {item.Asset.Name}", Transform.Position, item );
 		}
 
-		var barrelbreak = new GameObject( true, "break" );
-		barrelbreak.Transform.Position = GameObject.GetBounds().Center;
-		var sharticles = barrelbreak.AddComponent<ParticleSystem>();
-		sharticles.Particles = Sandbox.ParticleSystem.Load( "particles/wood_break.vpcf" );
-		barrelbreak.SetParent( Scene.GetAllObjects( true ).Where( X => X.Name == "MapGenerator" ).FirstOrDefault().Children[0] );
+		BreakParticle.SetParent( Scene.GetAllObjects( true ).Where( X => X.Name == "MapGenerator" ).FirstOrDefault().Children[0] );
+		BreakParticle.Enabled = true;
 
 		GameObject.Destroy();
 	}
