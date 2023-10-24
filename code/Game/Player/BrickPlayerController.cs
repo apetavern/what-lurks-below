@@ -193,8 +193,8 @@ public class BrickPlayerController : BaseComponent
 		}
 		var cc = GameObject.GetComponent<CharacterController>();
 
-		var pickups = Scene.GetAllObjects( true ).Where( x => x.GetComponent<ItemPickup>() != null );
-		pickups = pickups.Where( p => p.Transform.Position.Distance( Transform.Position ) < 50 );
+		// FIXME: S&box whitelist moment
+		var pickups = ((IEnumerable<GameObject>)MapGeneratorComponent.Instance.BreakableObjects).Where( p => p.Transform.Position.Distance( Transform.Position ) < 50 );
 
 		foreach ( var pickup in pickups )
 		{
