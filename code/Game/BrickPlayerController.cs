@@ -3,7 +3,6 @@ using BrickJam.Player;
 using Sandbox;
 using System;
 using System.Linq;
-using BrickJam.Game.UI;
 using System.Collections.Generic;
 
 public class BrickPlayerController : BaseComponent

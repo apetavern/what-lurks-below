@@ -1,6 +1,4 @@
-﻿using System;
-using System.Linq;
-using BrickJam.Game.UI;
+﻿using System.Linq;
 using BrickJam.Player;
 using Sandbox;
 

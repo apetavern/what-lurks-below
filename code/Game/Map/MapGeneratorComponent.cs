@@ -1,10 +1,7 @@
 using Sandbox;
 using System;
-using System.Threading;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 using System.Linq;
-using BrickJam.Game;
 using System.Collections.Immutable;
 
 public static class Vector3Extensions

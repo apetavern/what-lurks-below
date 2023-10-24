@@ -5,7 +5,6 @@ using BrickJam;
 using BrickJam.Game;
 using BrickJam.Player;
 using Sandbox;
-using Sandbox.UI;
 
 public sealed class DestructableComponent : BaseComponent
 {

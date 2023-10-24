@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using BrickJam.Game;
-using BrickJam.Game.UI;
 using BrickJam.Game.Weapon;
 using Sandbox;
 

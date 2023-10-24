@@ -1,6 +1,4 @@
-﻿using BrickJam.Game.UI;
-
-namespace BrickJam.Game;
+﻿namespace BrickJam.Game;
 
 public class PickupObject : GameObject
 {

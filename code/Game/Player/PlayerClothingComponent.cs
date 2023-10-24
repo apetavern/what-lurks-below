@@ -1,9 +1,6 @@
 using Sandbox;
-using Sandbox.UI;
-using System.ComponentModel.Design;
 using System.Linq;
 using System.Collections.Generic;
-using System;
 
 [Icon( "checkroom", "red", "white" )]
 public sealed class PlayerClothingComponent : BaseComponent

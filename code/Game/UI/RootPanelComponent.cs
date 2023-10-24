@@ -1,6 +1,4 @@
-using BrickJam.Game.UI;
 using Sandbox;
-using Sandbox.UI;
 
 namespace BrickJam.Game.UI;
 

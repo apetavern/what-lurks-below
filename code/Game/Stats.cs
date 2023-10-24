@@ -1,6 +1,3 @@
-using System;
-using Sandbox;
-
 namespace BrickJam.Game;
 
 public static class Stats

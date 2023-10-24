@@ -1,5 +1,3 @@
-using Sandbox;
-
 [Icon( "ads_click", "red", "white" )]
 public sealed class AimableTargetComponent : BaseComponent
 {
