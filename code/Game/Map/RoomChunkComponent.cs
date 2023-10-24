@@ -19,9 +19,11 @@ public sealed class RoomChunkComponent : BaseComponent
 
 	public override void OnAwake()
 	{
-		ThisColor = Color.Random.WithAlpha( 1 );
+		base.OnAwake();
+		ThisColor = new Color( Game.Random.Float(), Game.Random.Float(), Game.Random.Float() ).WithAlpha( 1 );
 
 		Doors = GetComponents<RoomDoorDefinition>( false, true ).ToList();
+
 	}
 
 	public void ClearEnemiesAndItems()
