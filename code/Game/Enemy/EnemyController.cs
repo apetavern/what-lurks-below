@@ -195,13 +195,13 @@ public class EnemyController : BaseComponent
 
 		if ( !IsAggro && TimeSinceLastMove > 5f && navgen.Initialized )
 		{
-			Vector2 MovePoint = Sandbox.Game.Random.VectorInCircle( 256f );
+			Vector2 MovePoint = Game.Random.VectorInCircle( 256f );
 
 			Vector3 PlacePoint = new Vector3( MovePoint.x, MovePoint.y, 0 );
 
 			PathToPoint( Transform.Position + PlacePoint );
 
-			TimeSinceLastMove = Sandbox.Game.Random.Float( 0f, 4f );
+			TimeSinceLastMove = Game.Random.Float( 0f, 4f );
 		}
 
 		Vector3 myPosition = Transform.Position;
