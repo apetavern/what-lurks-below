@@ -4,20 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Collections.Immutable;
 using BrickJam.Player;
+using BrickJam.Util;
 
 namespace BrickJam.Map;
-
-public static class Vector3Extensions
-{
-	public static Vector3 Clamp( this Vector3 vector, float min, float max )
-	{
-		float x = Math.Clamp( vector.x, min, max );
-		float y = Math.Clamp( vector.y, min, max );
-		float z = Math.Clamp( vector.z, min, max );
-
-		return new Vector3( x, y, z );
-	}
-}
 
 [Title( "Map Generator" )]
 [Category( "World" )]
@@ -343,7 +332,7 @@ public partial class MapGeneratorComponent : BaseComponent
 
 						room.Transform.Position += OffsetPoint;
 
-						room.Transform.Position = Vector3Extensions.Clamp( room.Transform.Position, -3000f, 3000f );
+						room.Transform.Position = room.Transform.Position.Clamp( -3000, 3000 );
 					}
 				}
 			}
