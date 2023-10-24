@@ -124,7 +124,7 @@ public partial class MapGeneratorComponent : BaseComponent
 
 	public async void GenerateRoomConnections()
 	{
-		Random random = new Random(); // Create a random number generator
+		Random random = new Random( (int)Time.Now ); // Create a random number generator
 
 		foreach ( var room in spawnedRooms )
 		{
