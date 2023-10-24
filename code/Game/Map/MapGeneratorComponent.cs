@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Collections.Immutable;
 using BrickJam.Player;
-using BrickJam.Util;
 
 namespace BrickJam.Map;
 
@@ -27,8 +26,6 @@ public partial class MapGeneratorComponent : BaseComponent
 		"prefabs/hallways/hallway_03.object",
 		"prefabs/hallways/hallway_04.object" );
 
-	private ImmutableArray<RoomChunkComponent> spawnedRooms = ImmutableArray<RoomChunkComponent>.Empty;
-
 	[Property] int RoomCount { get; set; } = 10;
 
 	[Property] float SnapGridSize { get; set; } = 700f;
@@ -40,7 +37,11 @@ public partial class MapGeneratorComponent : BaseComponent
 	[Property] public GameObject Breakables2 { get; set; }
 	[Property] public GameObject Breakables3 { get; set; }
 
-	public GameObject Player { get; set; }
+	private ImmutableArray<RoomChunkComponent> spawnedRooms = ImmutableArray<RoomChunkComponent>.Empty;
+	private ImmutableArray<GameObject> hallwayChunks = ImmutableArray<GameObject>.Empty;
+
+	private GameObject player;
+	private bool correctedRooms;
 
 	public GameObject SpawnPrefabFromPath( string path, Vector3 position, Rotation rotation )
 	{
@@ -59,7 +60,7 @@ public partial class MapGeneratorComponent : BaseComponent
 		}
 
 		spawnedRooms = ImmutableArray<RoomChunkComponent>.Empty;
-		CorrectedRooms = false;
+		correctedRooms = false;
 
 		await GameTask.Delay( 100 );
 
@@ -70,15 +71,14 @@ public partial class MapGeneratorComponent : BaseComponent
 
 		navgen.Initialized = false;
 
-		Player.Transform.Position = Player.GetComponent<BrickPlayerController>().startpos;
+		player.Transform.Position = player.GetComponent<BrickPlayerController>().startpos;
 
 		OnStart();
 	}
 
 	public override void OnStart()
 	{
-
-		Player = Scene.GetAllObjects( true ).FirstOrDefault( x => x.Name == "player" );
+		player = Scene.GetAllObjects( true ).FirstOrDefault( x => x.Name == "player" );
 
 		var spawnedRoomsBuilder = ImmutableArray.CreateBuilder<RoomChunkComponent>();
 		spawnedRoomsBuilder.Add( SpawnPrefabFromPath( rooms[0], Transform.Position, Transform.Rotation ).GetComponent<RoomChunkComponent>( false ) );
@@ -108,10 +108,7 @@ public partial class MapGeneratorComponent : BaseComponent
 
 		spawnedRoomsBuilder.Capacity = spawnedRoomsBuilder.Count;
 		spawnedRooms = spawnedRoomsBuilder.MoveToImmutable();
-		base.OnStart();
 	}
-
-	bool CorrectedRooms;
 
 	public void GenerateRoomConnections()
 	{
@@ -216,8 +213,6 @@ public partial class MapGeneratorComponent : BaseComponent
 		return unconnectedNeighbors;
 	}
 
-	List<GameObject> hallwayChunks = new List<GameObject>();
-
 	public async void CreateHallways()
 	{
 		int waitframes = 0;
@@ -236,7 +231,7 @@ public partial class MapGeneratorComponent : BaseComponent
 				//Log.Info( "Waiting for hallways..." );
 				await GameTask.Delay( 5 );
 			}
-			waitframes = 0;
+
 			foreach ( var hall in room.PathPoints )
 			{
 				for ( int i = 0; i < hall.Count; i++ )
@@ -245,34 +240,35 @@ public partial class MapGeneratorComponent : BaseComponent
 					if ( !tr.Hit && hall[i] != Vector3.Zero )
 					{
 						SpawnPrefabFromPath( hallways[Game.Random.Int( 0, hallways.Length - 1 )], hall[i], Rotation.Identity );
+						continue;
 					}
-					else if ( tr.Hit && hall[i] != Vector3.Zero )
+
+					if ( !tr.Hit || hall[i] == Vector3.Zero )
+						continue;
+
+					List<Vector3> direction = new List<Vector3> { Vector3.Forward, Vector3.Backward, Vector3.Left, Vector3.Right };
+					for ( int dir = 0; dir < direction.Count; dir++ )
 					{
-						List<Vector3> direction = new List<Vector3> { Vector3.Forward, Vector3.Backward, Vector3.Left, Vector3.Right };
-						for ( int dir = 0; dir < direction.Count; dir++ )
-						{
-							var pos = hall[i] + direction[dir] * 128f;
-							tr = Physics.Trace.Ray( pos, pos - Vector3.Up * 18f ).WithoutTags( "navgen" ).Run();
-							if ( !tr.Hit )
-							{
-								SpawnPrefabFromPath( hallways[Game.Random.Int( 0, hallways.Length - 1 )], pos, Rotation.Identity );
+						var pos = hall[i] + direction[dir] * 128f;
+						tr = Physics.Trace.Ray( pos, pos - Vector3.Up * 18f ).WithoutTags( "navgen" ).Run();
+						if ( tr.Hit )
+							continue;
 
-								if ( Game.Random.Float() > 0.95f )
-								{
-									List<GameObject> breakablesToSpawn = new();
-									if ( Breakables1 != null ) breakablesToSpawn.Add( Breakables1 );
-									if ( Breakables2 != null ) breakablesToSpawn.Add( Breakables2 );
-									if ( Breakables3 != null ) breakablesToSpawn.Add( Breakables3 );
+						SpawnPrefabFromPath( hallways[Game.Random.Int( 0, hallways.Length - 1 )], pos, Rotation.Identity );
+						if ( Game.Random.Float() <= 0.95f )
+							continue;
 
-									if ( breakablesToSpawn.Count > 0 )
-									{
-										var breakable = breakablesToSpawn[new Random().Int( 0, breakablesToSpawn.Count - 1 )];
-										var breaky = SceneUtility.Instantiate( breakable, pos + Vector3.Random.WithZ( 0 ) * 64f, Rotation.LookAt( Vector3.Random.WithZ( 0 ) * 64f ) );
-										breaky.SetParent( GameObject.Children.First() );
-									}
-								}
-							}
-						}
+						List<GameObject> breakablesToSpawn = new();
+						if ( Breakables1 != null ) breakablesToSpawn.Add( Breakables1 );
+						if ( Breakables2 != null ) breakablesToSpawn.Add( Breakables2 );
+						if ( Breakables3 != null ) breakablesToSpawn.Add( Breakables3 );
+
+						if ( breakablesToSpawn.Count <= 0 )
+							continue;
+
+						var breakable = breakablesToSpawn[new Random().Int( 0, breakablesToSpawn.Count - 1 )];
+						var breaky = SceneUtility.Instantiate( breakable, pos + Vector3.Random.WithZ( 0 ) * 64f, Rotation.LookAt( Vector3.Random.WithZ( 0 ) * 64f ) );
+						breaky.SetParent( GameObject.Children.First() );
 					}
 				}
 			}
@@ -282,7 +278,7 @@ public partial class MapGeneratorComponent : BaseComponent
 
 		navgen.GenerationPlane.Enabled = false;
 
-		hallwayChunks = Scene.GetAllObjects( true ).Where( X => X.GetComponent<HallwayChunkComponent>() != null ).ToList();
+		hallwayChunks = Scene.GetAllObjects( true ).Where( X => X.GetComponent<HallwayChunkComponent>() != null ).ToImmutableArray();
 
 		foreach ( var item in hallwayChunks )
 		{
@@ -309,7 +305,7 @@ public partial class MapGeneratorComponent : BaseComponent
 
 	public override void Update()
 	{
-		if ( !CorrectedRooms )
+		if ( !correctedRooms )
 		{
 			int overlaps = 0;
 			foreach ( var room in spawnedRooms )
@@ -338,7 +334,7 @@ public partial class MapGeneratorComponent : BaseComponent
 			}
 			if ( overlaps == 0 )
 			{
-				CorrectedRooms = true;
+				correctedRooms = true;
 				foreach ( var room in spawnedRooms )
 				{
 					if ( room == null ) continue;
