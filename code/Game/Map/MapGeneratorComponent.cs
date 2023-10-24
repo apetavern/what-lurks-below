@@ -12,6 +12,8 @@ namespace BrickJam.Map;
 [Icon( "map", "red", "white" )]
 public partial class MapGeneratorComponent : BaseComponent
 {
+	public static MapGeneratorComponent Instance { get; private set; }
+
 	private const string BossRoom = "prefabs/rooms/sewer_room_05.object";
 
 	private static readonly ImmutableArray<string> rooms = ImmutableArray.Create(
@@ -26,6 +28,9 @@ public partial class MapGeneratorComponent : BaseComponent
 		"prefabs/hallways/hallway_03.object",
 		"prefabs/hallways/hallway_04.object" );
 
+	public Random RandomGenerator { get; private set; }
+
+	[Property] private int Seed { get; set; } = 1;
 	[Property] private int RoomCount { get; set; } = 10;
 	[Property] private float SnapGridSize { get; set; } = 700f;
 	[Property] private bool IsBossSequence { get; set; }
@@ -40,8 +45,19 @@ public partial class MapGeneratorComponent : BaseComponent
 	private GameObject player;
 	private bool correctedRooms;
 
+	public MapGeneratorComponent()
+	{
+		if ( Instance is not null )
+			Log.Error( $"An instance of {nameof( MapGeneratorComponent )} already exists" );
+
+		Instance = this;
+	}
+
 	public override void OnStart()
 	{
+		// FIXME: Allow user to input starting seed?
+		Seed = Game.Random.Int( int.MinValue, int.MaxValue );
+		RandomGenerator = new Random( Seed );
 		player = Scene.GetAllObjects( true ).FirstOrDefault( x => x.Name == "player" );
 
 		var spawnedRoomsBuilder = ImmutableArray.CreateBuilder<RoomChunkComponent>();
@@ -57,11 +73,11 @@ public partial class MapGeneratorComponent : BaseComponent
 		{
 			for ( int i = 0; i < RoomCount; i++ )
 			{
-				Vector2 SpawnPoint = Game.Random.VectorInCircle( 800 );
+				Vector2 SpawnPoint = RandomGenerator.VectorInCircle( 800 );
 
 				Vector3 PlacePoint = new Vector3( SpawnPoint.x, SpawnPoint.y, 0 );
 
-				spawnedRoomsBuilder.Add( SpawnPrefabFromPath( rooms[Game.Random.Int( 0, rooms.Length - 1 )], Transform.Position + PlacePoint, Transform.Rotation ).GetComponent<RoomChunkComponent>( false ) );
+				spawnedRoomsBuilder.Add( SpawnPrefabFromPath( rooms[RandomGenerator.Int( 0, rooms.Length - 1 )], Transform.Position + PlacePoint, Transform.Rotation ).GetComponent<RoomChunkComponent>( false ) );
 			}
 
 			//spawn bossroom
@@ -95,7 +111,7 @@ public partial class MapGeneratorComponent : BaseComponent
 				overlaps++;
 				room.Transform.Position += (room.Transform.Position - room2.Transform.Position).WithZ( 0 ) * (1f / 90f) * 4f;
 
-				Vector2 SpawnPoint = Game.Random.VectorInCircle( 128f );
+				Vector2 SpawnPoint = RandomGenerator.VectorInCircle( 128f );
 
 				Vector3 OffsetPoint = new Vector3( SpawnPoint.x, SpawnPoint.y, 0 ) * (1f / 90f);
 
@@ -158,8 +174,6 @@ public partial class MapGeneratorComponent : BaseComponent
 
 	private void GenerateRoomConnections()
 	{
-		Random random = new Random( (int)Time.Now ); // Create a random number generator
-
 		foreach ( var room in spawnedRooms )
 		{
 			var position = room.Transform.Position;
@@ -208,7 +222,7 @@ public partial class MapGeneratorComponent : BaseComponent
 		while ( unconnectedRooms.Count > 0 )
 		{
 			// Start with a random unconnected room
-			var startingRoom = unconnectedRooms[random.Next( unconnectedRooms.Count )];
+			var startingRoom = unconnectedRooms[RandomGenerator.Next( unconnectedRooms.Count )];
 
 			List<RoomChunkComponent> connectedRooms = new List<RoomChunkComponent>();
 			Stack<RoomChunkComponent> roomStack = new Stack<RoomChunkComponent>();
@@ -227,7 +241,7 @@ public partial class MapGeneratorComponent : BaseComponent
 				if ( unconnectedNeighbors.Length > 0 )
 				{
 					// Randomly select one unconnected neighbor
-					var randomIndex = random.Next( unconnectedNeighbors.Length );
+					var randomIndex = RandomGenerator.Next( unconnectedNeighbors.Length );
 					var randomNeighbor = unconnectedNeighbors[randomIndex];
 
 					// Connect the current room to the selected neighbor
@@ -270,7 +284,7 @@ public partial class MapGeneratorComponent : BaseComponent
 					var tr = Physics.Trace.Ray( hall[i], hall[i] - Vector3.Up * 18f ).WithoutTags( "navgen" ).Run();
 					if ( !tr.Hit && hall[i] != Vector3.Zero )
 					{
-						SpawnPrefabFromPath( hallways[Game.Random.Int( 0, hallways.Length - 1 )], hall[i], Rotation.Identity );
+						SpawnPrefabFromPath( hallways[RandomGenerator.Int( 0, hallways.Length - 1 )], hall[i], Rotation.Identity );
 						continue;
 					}
 
@@ -285,8 +299,8 @@ public partial class MapGeneratorComponent : BaseComponent
 						if ( tr.Hit )
 							continue;
 
-						SpawnPrefabFromPath( hallways[Game.Random.Int( 0, hallways.Length - 1 )], pos, Rotation.Identity );
-						if ( Game.Random.Float() <= 0.95f )
+						SpawnPrefabFromPath( hallways[RandomGenerator.Int( 0, hallways.Length - 1 )], pos, Rotation.Identity );
+						if ( RandomGenerator.Float() <= 0.95f )
 							continue;
 
 						List<GameObject> breakablesToSpawn = new();
@@ -297,8 +311,8 @@ public partial class MapGeneratorComponent : BaseComponent
 						if ( breakablesToSpawn.Count <= 0 )
 							continue;
 
-						var breakable = breakablesToSpawn[new Random().Int( 0, breakablesToSpawn.Count - 1 )];
-						var breaky = SceneUtility.Instantiate( breakable, pos + Vector3.Random.WithZ( 0 ) * 64f, Rotation.LookAt( Vector3.Random.WithZ( 0 ) * 64f ) );
+						var breakable = breakablesToSpawn[RandomGenerator.Int( 0, breakablesToSpawn.Count - 1 )];
+						var breaky = SceneUtility.Instantiate( breakable, pos + RandomGenerator.VectorInSphere().WithZ( 0 ) * 64f, Rotation.LookAt( RandomGenerator.VectorInSphere().WithZ( 0 ) * 64f ) );
 						breaky.SetParent( GameObject.Children.First() );
 					}
 				}
