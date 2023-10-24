@@ -5,7 +5,7 @@ namespace BrickJam.Game;
 public class MenuSoundComponent : BaseComponent
 {
 	private Sound _sound;
-	
+
 	public override void OnStart()
 	{
 		base.OnStart();

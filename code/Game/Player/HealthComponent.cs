@@ -30,7 +30,7 @@ public class HealthComponent : BaseComponent
 		base.Update();
 
 		Health = Health.Clamp( 0, 100 );
-		
+
 		if ( IsPlayer && HealthHud.Instance is not null )
 			HealthHud.Instance.Health = Health;
 	}
