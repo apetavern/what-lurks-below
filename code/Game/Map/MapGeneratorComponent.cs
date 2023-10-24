@@ -231,7 +231,6 @@ public partial class MapGeneratorComponent : BaseComponent
 
 	public async void CreateHallways()
 	{
-		await GameTask.Delay( 7500 );
 		int waitframes = 0;
 		foreach ( var room in spawnedRooms )
 		{
@@ -290,13 +289,9 @@ public partial class MapGeneratorComponent : BaseComponent
 			}
 		}
 
-		await GameTask.Delay( 200 );
-
 		var navgen = Scene.GetAllObjects( true ).Where( X => X.GetComponent<NavGenComponent>() != null ).FirstOrDefault().GetComponent<NavGenComponent>();
 
 		navgen.GenerationPlane.Enabled = false;
-
-		await GameTask.Delay( 10 );
 
 		hallwayChunks = Scene.GetAllObjects( true ).Where( X => X.GetComponent<HallwayChunkComponent>() != null ).ToList();
 
@@ -304,7 +299,6 @@ public partial class MapGeneratorComponent : BaseComponent
 		{
 			item.Transform.Rotation = Rotation.Identity;
 			item.GetComponent<HallwayChunkComponent>( false ).CheckSides();
-			await GameTask.Delay( 10 );
 		}
 
 		navgen.GenerateMesh();
@@ -314,8 +308,6 @@ public partial class MapGeneratorComponent : BaseComponent
 		{
 			SpawnPrefabFromPath( "prefabs/pieces/barrel_01.object", door.Transform.Position, door.Transform.Rotation );
 		}
-
-		await GameTask.Delay( 200 );
 
 		spawnedRooms[0].ClearEnemiesAndItems();
 	}

@@ -155,7 +155,7 @@ public class EnemyController : BaseComponent
 	public async void UpdatePathToPlayer()
 	{
 		path.Clear();
-		var result = await navgen.GeneratePath( Transform.Position, Player.Transform.Position );
+		var result = navgen.GeneratePath( Transform.Position, Player.Transform.Position );
 
 		foreach ( var item in result )
 		{
@@ -166,7 +166,7 @@ public class EnemyController : BaseComponent
 	public async void PathToPoint( Vector3 point )
 	{
 		path.Clear();
-		var result = await navgen.GeneratePath( Transform.Position, point );
+		var result = navgen.GeneratePath( Transform.Position, point );
 
 		foreach ( var item in result )
 		{

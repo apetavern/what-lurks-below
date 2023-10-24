@@ -84,7 +84,7 @@ public sealed class RoomChunkComponent : BaseComponent
 		return closestDoor;
 	}
 
-	public async void ConnectRooms( RoomDoorDefinition doorPosition1, RoomDoorDefinition doorPosition2 )
+	public void ConnectRooms( RoomDoorDefinition doorPosition1, RoomDoorDefinition doorPosition2 )
 	{
 		// Calculate control points for the Bézier curve
 		Vector3 controlPoint1 = doorPosition1.Transform.Position - doorPosition1.Transform.Rotation.Right * 64;//64
@@ -97,7 +97,7 @@ public sealed class RoomChunkComponent : BaseComponent
 
 		NavGenComponent navgen = Scene.GetAllObjects( true ).Where( X => X.GetComponent<NavGenComponent>() != null ).FirstOrDefault().GetComponent<NavGenComponent>();
 
-		var path = await navgen.GeneratePath( controlPoint1, controlPoint2 );
+		var path = navgen.GeneratePath( controlPoint1, controlPoint2 );
 
 		if ( path.Count == 0 )
 		{
@@ -117,7 +117,7 @@ public sealed class RoomChunkComponent : BaseComponent
 		}
 	}
 
-	public async void ProcessPath( List<NavigationPath.Segment> PathResult )
+	public void ProcessPath( List<NavigationPath.Segment> PathResult )
 	{
 		var CurrentPath = new List<Vector3>();
 
