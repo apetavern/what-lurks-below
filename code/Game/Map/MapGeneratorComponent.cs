@@ -124,7 +124,7 @@ public partial class MapGeneratorComponent : BaseComponent
 
 	bool CorrectedRooms;
 
-	public async void GenerateRoomConnections()
+	public void GenerateRoomConnections()
 	{
 		Random random = new Random( (int)Time.Now ); // Create a random number generator
 
@@ -152,7 +152,6 @@ public partial class MapGeneratorComponent : BaseComponent
 				{
 					// Create a connection between the two rooms
 					room.GetComponent<RoomChunkComponent>().AddConnection( neighbor.GetComponent<RoomChunkComponent>() );
-					await GameTask.Delay( 10 );
 				}
 
 				// Calculate the distance between the current room and the neighbor
@@ -169,7 +168,6 @@ public partial class MapGeneratorComponent : BaseComponent
 			if ( closestNeighbor is not null )
 			{
 				room.GetComponent<RoomChunkComponent>().AddConnection( closestNeighbor );
-				await GameTask.Delay( 10 );
 			}
 		}
 
@@ -209,11 +207,8 @@ public partial class MapGeneratorComponent : BaseComponent
 
 					// Add the neighbor to the stack for further exploration
 					roomStack.Push( randomNeighbor );
-					await GameTask.Delay( 10 );
 				}
 			}
-
-			await GameTask.Delay( 10 );
 		}
 	}
 
