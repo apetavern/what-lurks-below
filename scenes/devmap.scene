@@ -206,8 +206,7 @@
           "__enabled": true,
           "IsTrigger": false,
           "Scale": "70,70,100",
-          "Surface": null,
-          "Tags": "navgen"
+          "Surface": null
         }
       ]
     },
@@ -340,8 +339,7 @@
               "__enabled": true,
               "IsTrigger": true,
               "Scale": "160,160,1000",
-              "Surface": null,
-              "Tags": ""
+              "Surface": null
             },
             {
               "__type": "CameraTriggerComponent",
