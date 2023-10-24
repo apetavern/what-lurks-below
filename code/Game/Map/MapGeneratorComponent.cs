@@ -310,6 +310,12 @@ public partial class MapGeneratorComponent : BaseComponent
 		}
 
 		spawnedRooms[0].ClearEnemiesAndItems();
+
+		// FIXME: For some reason hallway chunks sometimes get their Z value mangled.
+		foreach ( var hallwayChunk in hallwayChunks )
+		{
+			hallwayChunk.Transform.Position = new Vector3( hallwayChunk.Transform.Position.x, hallwayChunk.Transform.Position.y, 0 );
+		}
 	}
 
 	public override void Update()
