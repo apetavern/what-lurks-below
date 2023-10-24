@@ -24,6 +24,8 @@ public static class Vector3Extensions
 [Icon( "map", "red", "white" )]
 public partial class MapGeneratorComponent : BaseComponent
 {
+	private const string BossRoom = "prefabs/rooms/sewer_room_05.object";
+
 	private static readonly ImmutableArray<string> rooms = ImmutableArray.Create(
 		"prefabs/rooms/sewer_room_01.object",
 		"prefabs/rooms/sewer_room_02.object",
@@ -96,7 +98,7 @@ public partial class MapGeneratorComponent : BaseComponent
 		{
 			Vector3 PlacePoint = new Vector3( 0, -2048f, 0 );
 
-			spawnedRoomsBuilder.Add( SpawnPrefabFromPath( "prefabs/rooms/sewer_room_05.object", Transform.Position + PlacePoint, Transform.Rotation ).GetComponent<RoomChunkComponent>( false ) );
+			spawnedRoomsBuilder.Add( SpawnPrefabFromPath( BossRoom, Transform.Position + PlacePoint, Transform.Rotation ).GetComponent<RoomChunkComponent>( false ) );
 		}
 		else
 		{
@@ -112,7 +114,7 @@ public partial class MapGeneratorComponent : BaseComponent
 			//spawn bossroom
 			Vector3 BossPlacePoint = new Vector3( 0, -2048f, 0 );
 
-			spawnedRoomsBuilder.Add( SpawnPrefabFromPath( "prefabs/rooms/sewer_room_05.object", Transform.Position + BossPlacePoint, Transform.Rotation ).GetComponent<RoomChunkComponent>( false ) );
+			spawnedRoomsBuilder.Add( SpawnPrefabFromPath( BossRoom, Transform.Position + BossPlacePoint, Transform.Rotation ).GetComponent<RoomChunkComponent>( false ) );
 		}
 
 		spawnedRoomsBuilder.Capacity = spawnedRoomsBuilder.Count;
