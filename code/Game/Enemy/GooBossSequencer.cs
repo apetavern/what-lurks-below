@@ -158,6 +158,12 @@ public sealed class GooBossSequencer : BaseComponent
 	{
 		if ( !StartedFight )
 		{
+			foreach ( var item in doorBlockers.Children )
+			{
+				item.GetComponent<ModelComponent>( false, true ).Enabled = true;
+				item.GetComponent<ColliderBaseComponent>( false, true ).Enabled = true;
+			}
+
 			Scene.GetAllObjects( true ).Where( X => X.GetComponent<CameraComponent>( false ) != null ).First().GetComponent<CameraComponent>( false ).FieldOfView = 80f;
 			await IntroBezier.GetComponent<BezierAnimationComponent>().AnimateObject( roomTrigger.GetComponent<CameraTriggerComponent>().CameraPoint, 5f, true );
 			StartedFight = true;
@@ -169,13 +175,6 @@ public sealed class GooBossSequencer : BaseComponent
 				flags.InBossSequence = true;
 			}
 		}
-
-		foreach ( var item in doorBlockers.Children )
-		{
-			item.GetComponent<ModelComponent>( false, true ).Enabled = true;
-			item.GetComponent<ColliderBaseComponent>( false, true ).Enabled = true;
-		}
-
 	}
 
 	public async void SpawnEnemies()
