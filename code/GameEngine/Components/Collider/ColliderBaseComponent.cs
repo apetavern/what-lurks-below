@@ -4,15 +4,13 @@ using System.Collections.Generic;
 
 public abstract class ColliderBaseComponent : BaseComponent, BaseComponent.ExecuteInEditor
 {
-
 	List<PhysicsShape> shapes = new();
 	protected PhysicsBody keyframeBody;
 
 	[Property] public Surface Surface { get; set; }
 
 	bool _isTrigger;
-	[Property]
-	public bool IsTrigger
+	[Property] public bool IsTrigger
 	{
 		get => _isTrigger;
 		set
@@ -26,8 +24,6 @@ public abstract class ColliderBaseComponent : BaseComponent, BaseComponent.Execu
 		}
 	}
 
-	[Property]
-	public string Tags { get; set; } = "";
 
 	/// <summary>
 	/// Overridable in derived component to create shapes
@@ -122,36 +118,15 @@ public abstract class ColliderBaseComponent : BaseComponent, BaseComponent.Execu
 	{
 		foreach ( var shape in shapes )
 		{
-			shape.AddTag( "solid" );
-
 			shape.IsTrigger = _isTrigger;
 			shape.SurfaceMaterial = Surface?.ResourcePath;
-			
+
 			// this sucks, implement ITagSet
 			shape.ClearTags();
-			
+
 			foreach ( var tag in GameObject.Tags.TryGetAll() )
 			{
 				shape.AddTag( tag );
-			}
-			
-			//our temporary tags system still supported while we work through shit
-			if ( IsTrigger )
-			{
-				shape.AddTag( "trigger" );
-				shape.RemoveTag( "solid" );
-			}
-
-			var tags = Tags.Split( ',' );
-			foreach ( var tag in tags )
-			{
-				string realTag = tag.Trim();
-				if ( realTag.StartsWith( '-' ) )
-				{
-					shape.RemoveTag( realTag.Substring( 1 ) );
-					continue;
-				}
-				shape.AddTag( realTag );
 			}
 		}
 	}

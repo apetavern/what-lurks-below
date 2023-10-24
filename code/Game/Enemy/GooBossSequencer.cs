@@ -70,7 +70,8 @@ public sealed class GooBossSequencer : BaseComponent
 
 			ball.AddComponent<GooBossEyeball>().pos = eye;
 			ball.GetComponent<GooBossEyeball>( false ).boss = this;
-			ball.AddComponent<ColliderBoxComponent>().Tags = "enemy";
+			ball.AddComponent<ColliderBoxComponent>();
+			ball.Tags.Add( "enemy" );
 			ball.AddComponent<AimableTargetComponent>();
 
 			ball.SetParent( Scene );

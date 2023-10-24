@@ -1,15 +1,17 @@
 {
   "RootObject": {
-    "Id": "40b84531-d739-49b6-9681-183a5454a4c4",
+    "Id": "b933503e-d287-4d58-9601-f7494e193d6c",
     "Name": "barrel_02",
     "Enabled": true,
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1.2,1.2,1.2",
+    "Tags": "",
     "Components": [
       {
         "__type": "ModelComponent",
         "__enabled": true,
+        "BodyGroups": 18446744073709551615,
         "MaterialOverride": null,
         "Model": "models/environment/breakables/barrel/barrel.vmdl",
         "ShouldCastShadows": true,
@@ -28,17 +30,18 @@
       {
         "__type": "DestructableComponent",
         "__enabled": true,
-        "BreakParticle": "410bb594-c522-4cc5-9a6f-db786b5dbb05"
+        "BreakParticle": "7e3ca582-42d5-4001-8fb4-e3a59b289fae"
       }
     ],
     "Children": [
       {
-        "Id": "a194baca-23d4-46e6-a07a-77efaa40562c",
+        "Id": "711875a3-0b2a-4b78-8d2d-8cdb8b58fb27",
         "Name": "Object",
         "Enabled": true,
         "Position": "0,0,0",
         "Rotation": "0,0,0,1",
         "Scale": "1,1,1",
+        "Tags": "solid",
         "Components": [
           {
             "__type": "ModelCollider",
@@ -51,12 +54,13 @@
         ]
       },
       {
-        "Id": "410bb594-c522-4cc5-9a6f-db786b5dbb05",
+        "Id": "7e3ca582-42d5-4001-8fb4-e3a59b289fae",
         "Name": "particles",
         "Enabled": false,
         "Position": "0,0,13.57207",
         "Rotation": "0,0,0,1",
         "Scale": "1,1,1",
+        "Tags": "",
         "Components": [
           {
             "__type": "ParticleSystem",

@@ -7,6 +7,7 @@
       "Position": "-186.5142,0.0002112252,128",
       "Rotation": "0.4304598,0.4304592,-0.5609857,0.560985",
       "Scale": "1,1,1",
+      "Tags": "",
       "Components": [
         {
           "__type": "DirectionalLightComponent",
@@ -24,6 +25,7 @@
       "Position": "0,0,650",
       "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
+      "Tags": "",
       "__Prefab": "prefabs/player.object"
     },
     {
@@ -33,6 +35,7 @@
       "Position": "497.1481,-422.6899,425.4719",
       "Rotation": "-0.2601569,0.1942207,0.7579172,0.5658249",
       "Scale": "1,1,1",
+      "Tags": "",
       "Components": [
         {
           "__type": "SoundListenerComponent",
@@ -83,6 +86,7 @@
       "Position": "0,0,-97.12166",
       "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
+      "Tags": "",
       "Components": [
         {
           "__type": "GradientFog",
@@ -103,6 +107,7 @@
       "Position": "0,0,-34.30033",
       "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
+      "Tags": "",
       "Components": [
         {
           "__type": "SkyBox2D",
@@ -118,7 +123,8 @@
       "Enabled": true,
       "Position": "0,0,0",
       "Rotation": "0,0,0,1",
-      "Scale": "1,1,1"
+      "Scale": "1,1,1",
+      "Tags": ""
     },
     {
       "Id": "278ca51d-c541-4dc6-b167-54e714179d52",
@@ -127,6 +133,7 @@
       "Position": "0,0,0",
       "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
+      "Tags": "",
       "Components": [
         {
           "__type": "MapGeneratorComponent",
@@ -151,7 +158,8 @@
           "Enabled": true,
           "Position": "0,0,0",
           "Rotation": "0,0,0,1",
-          "Scale": "1,1,1"
+          "Scale": "1,1,1",
+          "Tags": ""
         }
       ]
     },
@@ -162,10 +170,12 @@
       "Position": "0,0,673.3181",
       "Rotation": "0,0,0,1",
       "Scale": "100,100,100",
+      "Tags": "",
       "Components": [
         {
           "__type": "ModelComponent",
           "__enabled": false,
+          "BodyGroups": 18446744073709551615,
           "MaterialOverride": null,
           "Model": "models/dev/plane.vmdl",
           "ShouldCastShadows": true,
@@ -180,10 +190,12 @@
       "Position": "0,0,-5000",
       "Rotation": "0,0,0,1",
       "Scale": "100,100,100",
+      "Tags": "navgen",
       "Components": [
         {
           "__type": "ModelComponent",
           "__enabled": false,
+          "BodyGroups": 18446744073709551615,
           "MaterialOverride": null,
           "Model": "models/dev/plane.vmdl",
           "ShouldCastShadows": true,
@@ -206,10 +218,12 @@
       "Position": "0,0,-100",
       "Rotation": "0,0,0,1",
       "Scale": "100,100,100",
+      "Tags": "",
       "Components": [
         {
           "__type": "ModelComponent",
           "__enabled": true,
+          "BodyGroups": 18446744073709551615,
           "MaterialOverride": "materials/black_matte.vmat",
           "Model": "models/dev/plane.vmdl",
           "ShouldCastShadows": true,
@@ -224,6 +238,7 @@
       "Position": "0,0,0",
       "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
+      "Tags": "",
       "Components": [
         {
           "__type": "ScreenPanel",
@@ -242,6 +257,7 @@
           "Position": "0,0,0",
           "Rotation": "0,0,0,1",
           "Scale": "1,1,1",
+          "Tags": "",
           "Components": [
             {
               "__type": "GameHud",
@@ -256,6 +272,7 @@
           "Position": "0,0,0",
           "Rotation": "0,0,0,1",
           "Scale": "1,1,1",
+          "Tags": "",
           "Components": [
             {
               "__type": "Minimap",
@@ -270,6 +287,7 @@
           "Position": "0,0,0",
           "Rotation": "0,0,0,1",
           "Scale": "1,1,1",
+          "Tags": "",
           "Components": [
             {
               "__type": "MessagePanel",
@@ -285,7 +303,8 @@
       "Enabled": true,
       "Position": "41.59829,49.16901,613.1768",
       "Rotation": "0,0,0,1",
-      "Scale": "1,1,1"
+      "Scale": "1,1,1",
+      "Tags": ""
     },
     {
       "Id": "0dbcd692-429b-46bd-9696-eaf6e0c7d7b2",
@@ -294,10 +313,12 @@
       "Position": "0,0,650",
       "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
+      "Tags": "",
       "Components": [
         {
           "__type": "ModelComponent",
           "__enabled": true,
+          "BodyGroups": 18446744073709551615,
           "MaterialOverride": null,
           "Model": "models/misc/intro_pipe.vmdl",
           "ShouldCastShadows": false,
@@ -312,6 +333,7 @@
           "Position": "0,0,-56.10985",
           "Rotation": "0,0,0,1",
           "Scale": "1,1,1",
+          "Tags": "trigger",
           "Components": [
             {
               "__type": "ColliderBoxComponent",
@@ -338,6 +360,7 @@
       "Position": "0,0,0",
       "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
+      "Tags": "",
       "Components": [
         {
           "__type": "SoundManagerComponent",

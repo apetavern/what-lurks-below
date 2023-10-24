@@ -1,15 +1,17 @@
 {
   "RootObject": {
-    "Id": "7643101e-80e5-44b6-b537-0c369815a465",
+    "Id": "b048cb5e-d1fd-4043-a131-3c341eec688b",
     "Name": "box_01",
     "Enabled": true,
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "2,2,2",
+    "Tags": "",
     "Components": [
       {
         "__type": "ModelComponent",
         "__enabled": true,
+        "BodyGroups": 18446744073709551615,
         "MaterialOverride": null,
         "Model": "models/environment/breakables/crate/crate_01.vmdl",
         "ShouldCastShadows": true,
@@ -28,17 +30,18 @@
       {
         "__type": "DestructableComponent",
         "__enabled": true,
-        "BreakParticle": "410bb594-c522-4cc5-9a6f-db786b5dbb05"
+        "BreakParticle": "2ae57680-de9c-4334-966f-1abcfb96d166"
       }
     ],
     "Children": [
       {
-        "Id": "5b1e4eb8-0cdd-4846-9e88-c6373e0a505e",
+        "Id": "852edfe6-2d1a-4a93-9547-80e492951a1b",
         "Name": "Object",
         "Enabled": true,
         "Position": "0,0,12",
         "Rotation": "0,0,0,1",
         "Scale": "1,1,1",
+        "Tags": "solid",
         "Components": [
           {
             "__type": "ColliderBoxComponent",
@@ -51,12 +54,13 @@
         ]
       },
       {
-        "Id": "410bb594-c522-4cc5-9a6f-db786b5dbb05",
+        "Id": "2ae57680-de9c-4334-966f-1abcfb96d166",
         "Name": "particles",
         "Enabled": false,
         "Position": "0,0,17.03379",
         "Rotation": "0,0,0,1",
         "Scale": "1,1,1",
+        "Tags": "",
         "Components": [
           {
             "__type": "ParticleSystem",

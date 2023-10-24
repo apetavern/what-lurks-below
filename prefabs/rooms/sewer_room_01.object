@@ -6,6 +6,7 @@
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
+    "Tags": "",
     "Components": [
       {
         "__type": "RoomChunkComponent",
@@ -20,6 +21,7 @@
         "Position": "128,256,0",
         "Rotation": "0,0,0,1",
         "Scale": "1,1,1",
+        "Tags": "",
         "Components": [
           {
             "__type": "ModelCollider",
@@ -32,6 +34,7 @@
           {
             "__type": "ModelComponent",
             "__enabled": true,
+            "BodyGroups": 18446744073709551615,
             "MaterialOverride": null,
             "Model": "models/environment/floor_01.vmdl",
             "ShouldCastShadows": true,
@@ -46,6 +49,7 @@
         "Position": "-128,256,0",
         "Rotation": "0,0,0,1",
         "Scale": "1,1,1",
+        "Tags": "",
         "Components": [
           {
             "__type": "ModelCollider",
@@ -58,6 +62,7 @@
           {
             "__type": "ModelComponent",
             "__enabled": true,
+            "BodyGroups": 18446744073709551615,
             "MaterialOverride": null,
             "Model": "models/environment/floor_01.vmdl",
             "ShouldCastShadows": true,
@@ -72,6 +77,7 @@
         "Position": "0,256,0",
         "Rotation": "0,0,0,1",
         "Scale": "1,1,1",
+        "Tags": "",
         "Components": [
           {
             "__type": "ModelCollider",
@@ -84,6 +90,7 @@
           {
             "__type": "ModelComponent",
             "__enabled": true,
+            "BodyGroups": 18446744073709551615,
             "MaterialOverride": null,
             "Model": "models/environment/floor_02.vmdl",
             "ShouldCastShadows": true,
@@ -98,6 +105,7 @@
         "Position": "0,128,0",
         "Rotation": "0,0,0,1",
         "Scale": "1,1,1",
+        "Tags": "",
         "Components": [
           {
             "__type": "ModelCollider",
@@ -110,6 +118,7 @@
           {
             "__type": "ModelComponent",
             "__enabled": true,
+            "BodyGroups": 18446744073709551615,
             "MaterialOverride": null,
             "Model": "models/environment/floor_02.vmdl",
             "ShouldCastShadows": true,
@@ -124,6 +133,7 @@
         "Position": "128,-256,0",
         "Rotation": "0,0,0,1",
         "Scale": "1,1,1",
+        "Tags": "",
         "Components": [
           {
             "__type": "ModelCollider",
@@ -136,6 +146,7 @@
           {
             "__type": "ModelComponent",
             "__enabled": true,
+            "BodyGroups": 18446744073709551615,
             "MaterialOverride": null,
             "Model": "models/environment/floor_01.vmdl",
             "ShouldCastShadows": true,
@@ -150,6 +161,7 @@
         "Position": "128,0,0",
         "Rotation": "0,0,0,1",
         "Scale": "1,1,1",
+        "Tags": "",
         "Components": [
           {
             "__type": "ModelCollider",
@@ -162,6 +174,7 @@
           {
             "__type": "ModelComponent",
             "__enabled": true,
+            "BodyGroups": 18446744073709551615,
             "MaterialOverride": null,
             "Model": "models/environment/floor_01.vmdl",
             "ShouldCastShadows": true,
@@ -176,10 +189,12 @@
         "Position": "128,128,0",
         "Rotation": "0,0,0,1",
         "Scale": "1,1,1",
+        "Tags": "",
         "Components": [
           {
             "__type": "ModelComponent",
             "__enabled": true,
+            "BodyGroups": 18446744073709551615,
             "MaterialOverride": null,
             "Model": "models/environment/floor_01.vmdl",
             "ShouldCastShadows": true,
@@ -202,6 +217,7 @@
         "Position": "128,-128,0",
         "Rotation": "0,0,0,1",
         "Scale": "1,1,1",
+        "Tags": "",
         "Components": [
           {
             "__type": "ModelCollider",
@@ -214,6 +230,7 @@
           {
             "__type": "ModelComponent",
             "__enabled": true,
+            "BodyGroups": 18446744073709551615,
             "MaterialOverride": null,
             "Model": "models/environment/floor_01.vmdl",
             "ShouldCastShadows": true,
@@ -228,6 +245,7 @@
         "Position": "-128,128,0",
         "Rotation": "0,0,0,1",
         "Scale": "1,1,1",
+        "Tags": "",
         "Components": [
           {
             "__type": "ModelCollider",
@@ -240,6 +258,7 @@
           {
             "__type": "ModelComponent",
             "__enabled": true,
+            "BodyGroups": 18446744073709551615,
             "MaterialOverride": null,
             "Model": "models/environment/floor_01.vmdl",
             "ShouldCastShadows": true,
@@ -254,6 +273,7 @@
         "Position": "-128,-256,0",
         "Rotation": "0,0,0,1",
         "Scale": "1,1,1",
+        "Tags": "",
         "Components": [
           {
             "__type": "ModelCollider",
@@ -266,6 +286,7 @@
           {
             "__type": "ModelComponent",
             "__enabled": true,
+            "BodyGroups": 18446744073709551615,
             "MaterialOverride": null,
             "Model": "models/environment/floor_01.vmdl",
             "ShouldCastShadows": true,
@@ -280,6 +301,7 @@
         "Position": "-128,-128,0",
         "Rotation": "0,0,0,1",
         "Scale": "1,1,1",
+        "Tags": "",
         "Components": [
           {
             "__type": "ModelCollider",
@@ -292,6 +314,7 @@
           {
             "__type": "ModelComponent",
             "__enabled": true,
+            "BodyGroups": 18446744073709551615,
             "MaterialOverride": null,
             "Model": "models/environment/floor_02.vmdl",
             "ShouldCastShadows": true,
@@ -306,6 +329,7 @@
         "Position": "-256,-128,0",
         "Rotation": "0,0,0,1",
         "Scale": "1,1,1",
+        "Tags": "",
         "Components": [
           {
             "__type": "ModelCollider",
@@ -318,6 +342,7 @@
           {
             "__type": "ModelComponent",
             "__enabled": true,
+            "BodyGroups": 18446744073709551615,
             "MaterialOverride": null,
             "Model": "models/environment/floor_01.vmdl",
             "ShouldCastShadows": true,
@@ -332,6 +357,7 @@
         "Position": "-256,-256,0",
         "Rotation": "0,0,0,1",
         "Scale": "1,1,1",
+        "Tags": "",
         "Components": [
           {
             "__type": "ModelCollider",
@@ -344,6 +370,7 @@
           {
             "__type": "ModelComponent",
             "__enabled": true,
+            "BodyGroups": 18446744073709551615,
             "MaterialOverride": null,
             "Model": "models/environment/floor_01.vmdl",
             "ShouldCastShadows": true,
@@ -358,6 +385,7 @@
         "Position": "-256,0,0",
         "Rotation": "0,0,0,1",
         "Scale": "1,1,1",
+        "Tags": "",
         "Components": [
           {
             "__type": "ModelCollider",
@@ -370,6 +398,7 @@
           {
             "__type": "ModelComponent",
             "__enabled": true,
+            "BodyGroups": 18446744073709551615,
             "MaterialOverride": null,
             "Model": "models/environment/floor_01.vmdl",
             "ShouldCastShadows": true,
@@ -384,10 +413,12 @@
         "Position": "128,128,0",
         "Rotation": "0,0,0,1",
         "Scale": "1,1,1",
+        "Tags": "",
         "Components": [
           {
             "__type": "ModelComponent",
             "__enabled": true,
+            "BodyGroups": 18446744073709551615,
             "MaterialOverride": null,
             "Model": "models/environment/pillar_01.vmdl",
             "ShouldCastShadows": true,
@@ -410,10 +441,12 @@
             "Position": "0,0,128",
             "Rotation": "0,0,0,1",
             "Scale": "1,1,1",
+            "Tags": "",
             "Components": [
               {
                 "__type": "ModelComponent",
                 "__enabled": true,
+                "BodyGroups": 18446744073709551615,
                 "MaterialOverride": null,
                 "Model": "models/environment/pillar_01.vmdl",
                 "ShouldCastShadows": true,
@@ -438,10 +471,12 @@
         "Position": "128,0,0",
         "Rotation": "0,0,0.707107,0.7071065",
         "Scale": "1,1,1",
+        "Tags": "",
         "Components": [
           {
             "__type": "ModelComponent",
             "__enabled": true,
+            "BodyGroups": 18446744073709551615,
             "MaterialOverride": null,
             "Model": "models/environment/pillar_01.vmdl",
             "ShouldCastShadows": true,
@@ -464,10 +499,12 @@
             "Position": "0,0,128",
             "Rotation": "0,0,0,1",
             "Scale": "1,1,1",
+            "Tags": "",
             "Components": [
               {
                 "__type": "ModelComponent",
                 "__enabled": true,
+                "BodyGroups": 18446744073709551615,
                 "MaterialOverride": null,
                 "Model": "models/environment/pillar_01.vmdl",
                 "ShouldCastShadows": true,
@@ -492,10 +529,12 @@
         "Position": "-384,0,0",
         "Rotation": "0,0,0,1",
         "Scale": "1,1,1",
+        "Tags": "",
         "Components": [
           {
             "__type": "ModelComponent",
             "__enabled": true,
+            "BodyGroups": 18446744073709551615,
             "MaterialOverride": null,
             "Model": "models/environment/pillar_01.vmdl",
             "ShouldCastShadows": true,
@@ -518,10 +557,12 @@
             "Position": "0,0,128",
             "Rotation": "0,0,0,1",
             "Scale": "1,1,1",
+            "Tags": "",
             "Components": [
               {
                 "__type": "ModelComponent",
                 "__enabled": true,
+                "BodyGroups": 18446744073709551615,
                 "MaterialOverride": null,
                 "Model": "models/environment/pillar_01.vmdl",
                 "ShouldCastShadows": true,
@@ -546,10 +587,12 @@
         "Position": "-378.9845,375.0806,-0.0000005316331",
         "Rotation": "0,0,0.707107,0.7071065",
         "Scale": "1,1,1",
+        "Tags": "",
         "Components": [
           {
             "__type": "ModelComponent",
             "__enabled": true,
+            "BodyGroups": 18446744073709551615,
             "MaterialOverride": null,
             "Model": "models/environment/pillar_01.vmdl",
             "ShouldCastShadows": true,
@@ -572,10 +615,12 @@
             "Position": "0,0,128",
             "Rotation": "0,0,-0.7071071,0.7071066",
             "Scale": "1,1,1",
+            "Tags": "",
             "Components": [
               {
                 "__type": "ModelComponent",
                 "__enabled": true,
+                "BodyGroups": 18446744073709551615,
                 "MaterialOverride": null,
                 "Model": "models/environment/pillar_01.vmdl",
                 "ShouldCastShadows": true,
@@ -600,10 +645,12 @@
         "Position": "-382.7007,128,-0.0000005316331",
         "Rotation": "0,0,0.707107,0.7071065",
         "Scale": "1,1,1",
+        "Tags": "",
         "Components": [
           {
             "__type": "ModelComponent",
             "__enabled": true,
+            "BodyGroups": 18446744073709551615,
             "MaterialOverride": null,
             "Model": "models/environment/pillar_01.vmdl",
             "ShouldCastShadows": true,
@@ -626,10 +673,12 @@
             "Position": "0,0,128",
             "Rotation": "0,0,-0.7071071,0.7071066",
             "Scale": "1,1,1",
+            "Tags": "",
             "Components": [
               {
                 "__type": "ModelComponent",
                 "__enabled": true,
+                "BodyGroups": 18446744073709551615,
                 "MaterialOverride": null,
                 "Model": "models/environment/pillar_01.vmdl",
                 "ShouldCastShadows": true,
@@ -654,10 +703,12 @@
         "Position": "123.9982,256,-0.0000005316331",
         "Rotation": "0,0,0.707107,0.7071065",
         "Scale": "1,1,1",
+        "Tags": "",
         "Components": [
           {
             "__type": "ModelComponent",
             "__enabled": true,
+            "BodyGroups": 18446744073709551615,
             "MaterialOverride": null,
             "Model": "models/environment/pillar_01.vmdl",
             "ShouldCastShadows": true,
@@ -680,10 +731,12 @@
             "Position": "0,0,128",
             "Rotation": "0,0,-0.7071071,0.7071066",
             "Scale": "1,1,1",
+            "Tags": "",
             "Components": [
               {
                 "__type": "ModelComponent",
                 "__enabled": true,
+                "BodyGroups": 18446744073709551615,
                 "MaterialOverride": null,
                 "Model": "models/environment/pillar_01.vmdl",
                 "ShouldCastShadows": true,
@@ -708,10 +761,12 @@
         "Position": "-128,384,0",
         "Rotation": "0,0,0.707107,0.7071065",
         "Scale": "1,1,1",
+        "Tags": "",
         "Components": [
           {
             "__type": "ModelComponent",
             "__enabled": true,
+            "BodyGroups": 18446744073709551615,
             "MaterialOverride": null,
             "Model": "models/environment/pillar_01.vmdl",
             "ShouldCastShadows": true,
@@ -734,10 +789,12 @@
             "Position": "0,0,128",
             "Rotation": "-0,0,1,-0.0000006397578",
             "Scale": "1,1,1",
+            "Tags": "",
             "Components": [
               {
                 "__type": "ModelComponent",
                 "__enabled": true,
+                "BodyGroups": 18446744073709551615,
                 "MaterialOverride": null,
                 "Model": "models/environment/pillar_01.vmdl",
                 "ShouldCastShadows": true,
@@ -762,10 +819,12 @@
         "Position": "0,384,0",
         "Rotation": "0,0,0.707107,0.7071065",
         "Scale": "1,1,1",
+        "Tags": "",
         "Components": [
           {
             "__type": "ModelComponent",
             "__enabled": true,
+            "BodyGroups": 18446744073709551615,
             "MaterialOverride": null,
             "Model": "models/environment/pillar_01.vmdl",
             "ShouldCastShadows": true,
@@ -788,10 +847,12 @@
             "Position": "0,0,128",
             "Rotation": "0,0,0,1",
             "Scale": "1,1,1",
+            "Tags": "",
             "Components": [
               {
                 "__type": "ModelComponent",
                 "__enabled": true,
+                "BodyGroups": 18446744073709551615,
                 "MaterialOverride": null,
                 "Model": "models/environment/pillar_01.vmdl",
                 "ShouldCastShadows": true,
@@ -816,10 +877,12 @@
         "Position": "116.7095,377.5933,-0.000001327115",
         "Rotation": "0,0,1,-0.0000006397578",
         "Scale": "1,1,1",
+        "Tags": "",
         "Components": [
           {
             "__type": "ModelComponent",
             "__enabled": true,
+            "BodyGroups": 18446744073709551615,
             "MaterialOverride": null,
             "Model": "models/environment/pillar_01.vmdl",
             "ShouldCastShadows": true,
@@ -842,10 +905,12 @@
             "Position": "0,0,128",
             "Rotation": "0,0,-0.7071071,0.7071066",
             "Scale": "1,1,1",
+            "Tags": "",
             "Components": [
               {
                 "__type": "ModelComponent",
                 "__enabled": true,
+                "BodyGroups": 18446744073709551615,
                 "MaterialOverride": null,
                 "Model": "models/environment/pillar_01.vmdl",
                 "ShouldCastShadows": true,
@@ -870,10 +935,12 @@
         "Position": "112.4371,-249.1506,0",
         "Rotation": "0,0,0.707107,0.7071065",
         "Scale": "1,1,1",
+        "Tags": "",
         "Components": [
           {
             "__type": "ModelComponent",
             "__enabled": true,
+            "BodyGroups": 18446744073709551615,
             "MaterialOverride": null,
             "Model": "models/environment/pillar_01.vmdl",
             "ShouldCastShadows": true,
@@ -896,10 +963,12 @@
             "Position": "0,0,128",
             "Rotation": "0,0,-0.7071071,0.7071066",
             "Scale": "1,1,1",
+            "Tags": "",
             "Components": [
               {
                 "__type": "ModelComponent",
                 "__enabled": true,
+                "BodyGroups": 18446744073709551615,
                 "MaterialOverride": null,
                 "Model": "models/environment/pillar_01.vmdl",
                 "ShouldCastShadows": true,
@@ -924,10 +993,12 @@
         "Position": "-375.0386,-248.9034,0.0000001153563",
         "Rotation": "0,0,0.707107,0.7071065",
         "Scale": "1,1,1",
+        "Tags": "",
         "Components": [
           {
             "__type": "ModelComponent",
             "__enabled": true,
+            "BodyGroups": 18446744073709551615,
             "MaterialOverride": null,
             "Model": "models/environment/pillar_01.vmdl",
             "ShouldCastShadows": true,
@@ -950,10 +1021,12 @@
             "Position": "0,0,128",
             "Rotation": "0,0,-0.7071071,0.7071066",
             "Scale": "1,1,1",
+            "Tags": "",
             "Components": [
               {
                 "__type": "ModelComponent",
                 "__enabled": true,
+                "BodyGroups": 18446744073709551615,
                 "MaterialOverride": null,
                 "Model": "models/environment/pillar_01.vmdl",
                 "ShouldCastShadows": true,
@@ -978,10 +1051,12 @@
         "Position": "-128,-256,0.0000001153563",
         "Rotation": "0,0,0.707107,0.7071065",
         "Scale": "1,1,1",
+        "Tags": "",
         "Components": [
           {
             "__type": "ModelComponent",
             "__enabled": true,
+            "BodyGroups": 18446744073709551615,
             "MaterialOverride": null,
             "Model": "models/environment/pillar_01.vmdl",
             "ShouldCastShadows": true,
@@ -1004,10 +1079,12 @@
             "Position": "0,0,128",
             "Rotation": "0,0,-0.7071071,0.7071066",
             "Scale": "1,1,1",
+            "Tags": "",
             "Components": [
               {
                 "__type": "ModelComponent",
                 "__enabled": true,
+                "BodyGroups": 18446744073709551615,
                 "MaterialOverride": null,
                 "Model": "models/environment/pillar_01.vmdl",
                 "ShouldCastShadows": true,
@@ -1032,10 +1109,12 @@
         "Position": "-384,-128,0",
         "Rotation": "0,0,1,-0.0000006397578",
         "Scale": "1,1,1",
+        "Tags": "",
         "Components": [
           {
             "__type": "ModelComponent",
             "__enabled": true,
+            "BodyGroups": 18446744073709551615,
             "MaterialOverride": null,
             "Model": "models/environment/pillar_01.vmdl",
             "ShouldCastShadows": true,
@@ -1058,10 +1137,12 @@
             "Position": "0,0,128",
             "Rotation": "0,0,0,1",
             "Scale": "1,1,1",
+            "Tags": "",
             "Components": [
               {
                 "__type": "ModelComponent",
                 "__enabled": true,
+                "BodyGroups": 18446744073709551615,
                 "MaterialOverride": null,
                 "Model": "models/environment/pillar_01.vmdl",
                 "ShouldCastShadows": true,
@@ -1086,6 +1167,7 @@
         "Position": "-256,128,0",
         "Rotation": "0,0,0,1",
         "Scale": "1,1,1",
+        "Tags": "",
         "Components": [
           {
             "__type": "ModelCollider",
@@ -1098,6 +1180,7 @@
           {
             "__type": "ModelComponent",
             "__enabled": true,
+            "BodyGroups": 18446744073709551615,
             "MaterialOverride": null,
             "Model": "models/environment/floor_01.vmdl",
             "ShouldCastShadows": true,
@@ -1112,6 +1195,7 @@
         "Position": "-256,256,0",
         "Rotation": "0,0,0,1",
         "Scale": "1,1,1",
+        "Tags": "",
         "Components": [
           {
             "__type": "ModelCollider",
@@ -1124,6 +1208,7 @@
           {
             "__type": "ModelComponent",
             "__enabled": true,
+            "BodyGroups": 18446744073709551615,
             "MaterialOverride": null,
             "Model": "models/environment/floor_01.vmdl",
             "ShouldCastShadows": true,
@@ -1138,6 +1223,7 @@
         "Position": "-128,0,0",
         "Rotation": "0,0,0,1",
         "Scale": "1,1,1",
+        "Tags": "",
         "Components": [
           {
             "__type": "ModelCollider",
@@ -1150,6 +1236,7 @@
           {
             "__type": "ModelComponent",
             "__enabled": true,
+            "BodyGroups": 18446744073709551615,
             "MaterialOverride": null,
             "Model": "models/environment/floor_02.vmdl",
             "ShouldCastShadows": true,
@@ -1164,6 +1251,7 @@
         "Position": "0,-256,0",
         "Rotation": "0,0,0,1",
         "Scale": "1,1,1",
+        "Tags": "",
         "Components": [
           {
             "__type": "ModelCollider",
@@ -1176,6 +1264,7 @@
           {
             "__type": "ModelComponent",
             "__enabled": true,
+            "BodyGroups": 18446744073709551615,
             "MaterialOverride": null,
             "Model": "models/environment/floor_01.vmdl",
             "ShouldCastShadows": true,
@@ -1190,6 +1279,7 @@
         "Position": "0,-128,0",
         "Rotation": "0,0,0,1",
         "Scale": "1,1,1",
+        "Tags": "",
         "Components": [
           {
             "__type": "ModelCollider",
@@ -1202,6 +1292,7 @@
           {
             "__type": "ModelComponent",
             "__enabled": true,
+            "BodyGroups": 18446744073709551615,
             "MaterialOverride": null,
             "Model": "models/environment/floor_02.vmdl",
             "ShouldCastShadows": true,
@@ -1216,6 +1307,7 @@
         "Position": "0,0,0",
         "Rotation": "0,0,0,1",
         "Scale": "1,1,1",
+        "Tags": "",
         "Components": [
           {
             "__type": "ModelCollider",
@@ -1228,6 +1320,7 @@
           {
             "__type": "ModelComponent",
             "__enabled": true,
+            "BodyGroups": 18446744073709551615,
             "MaterialOverride": null,
             "Model": "models/environment/floor_02.vmdl",
             "ShouldCastShadows": true,
@@ -1242,6 +1335,7 @@
         "Position": "128,256,0",
         "Rotation": "0,0,0,1",
         "Scale": "1,1,1",
+        "Tags": "",
         "Components": [
           {
             "__type": "ModelCollider",
@@ -1254,6 +1348,7 @@
           {
             "__type": "ModelComponent",
             "__enabled": true,
+            "BodyGroups": 18446744073709551615,
             "MaterialOverride": null,
             "Model": "models/environment/wall_01.vmdl",
             "ShouldCastShadows": true,
@@ -1268,10 +1363,12 @@
         "Position": "128,256,128",
         "Rotation": "0,0,0,1",
         "Scale": "1,1,1",
+        "Tags": "",
         "Components": [
           {
             "__type": "ModelComponent",
             "__enabled": true,
+            "BodyGroups": 18446744073709551615,
             "MaterialOverride": null,
             "Model": "models/environment/wall_01.vmdl",
             "ShouldCastShadows": true,
@@ -1294,6 +1391,7 @@
         "Position": "128,128,0",
         "Rotation": "0,0,0,1",
         "Scale": "1,1,1",
+        "Tags": "",
         "Components": [
           {
             "__type": "ModelCollider",
@@ -1306,6 +1404,7 @@
           {
             "__type": "ModelComponent",
             "__enabled": true,
+            "BodyGroups": 18446744073709551615,
             "MaterialOverride": null,
             "Model": "models/environment/wall_01.vmdl",
             "ShouldCastShadows": true,
@@ -1320,10 +1419,12 @@
         "Position": "128,128,128",
         "Rotation": "0,0,0,1",
         "Scale": "1,1,1",
+        "Tags": "",
         "Components": [
           {
             "__type": "ModelComponent",
             "__enabled": true,
+            "BodyGroups": 18446744073709551615,
             "MaterialOverride": null,
             "Model": "models/environment/wall_01.vmdl",
             "ShouldCastShadows": true,
@@ -1346,6 +1447,7 @@
         "Position": "128,0,128",
         "Rotation": "0,0,0,1",
         "Scale": "1,1,1",
+        "Tags": "",
         "Components": [
           {
             "__type": "ModelCollider",
@@ -1358,6 +1460,7 @@
           {
             "__type": "ModelComponent",
             "__enabled": true,
+            "BodyGroups": 18446744073709551615,
             "MaterialOverride": null,
             "Model": "models/environment/wall_01.vmdl",
             "ShouldCastShadows": true,
@@ -1372,10 +1475,12 @@
         "Position": "128,-128,0",
         "Rotation": "0,0,0,1",
         "Scale": "1,1,1",
+        "Tags": "",
         "Components": [
           {
             "__type": "ModelComponent",
             "__enabled": true,
+            "BodyGroups": 18446744073709551615,
             "MaterialOverride": null,
             "Model": "models/environment/wall_01.vmdl",
             "ShouldCastShadows": true,
@@ -1398,6 +1503,7 @@
         "Position": "128,-128,128",
         "Rotation": "0,0,0,1",
         "Scale": "1,1,1",
+        "Tags": "",
         "Components": [
           {
             "__type": "ModelCollider",
@@ -1410,6 +1516,7 @@
           {
             "__type": "ModelComponent",
             "__enabled": true,
+            "BodyGroups": 18446744073709551615,
             "MaterialOverride": null,
             "Model": "models/environment/wall_01.vmdl",
             "ShouldCastShadows": true,
@@ -1424,6 +1531,7 @@
         "Position": "128,0,0",
         "Rotation": "0,0,0,1",
         "Scale": "1,1,1",
+        "Tags": "",
         "__Prefab": "prefabs/pieces/door_01.object"
       },
       {
@@ -1433,6 +1541,7 @@
         "Position": "128,-256,0",
         "Rotation": "0,0,0,1",
         "Scale": "1,1,1",
+        "Tags": "",
         "Components": [
           {
             "__type": "ModelCollider",
@@ -1445,6 +1554,7 @@
           {
             "__type": "ModelComponent",
             "__enabled": true,
+            "BodyGroups": 18446744073709551615,
             "MaterialOverride": null,
             "Model": "models/environment/wall_01.vmdl",
             "ShouldCastShadows": true,
@@ -1459,10 +1569,12 @@
         "Position": "128,-256,128",
         "Rotation": "0,0,0,1",
         "Scale": "1,1,1",
+        "Tags": "",
         "Components": [
           {
             "__type": "ModelComponent",
             "__enabled": true,
+            "BodyGroups": 18446744073709551615,
             "MaterialOverride": null,
             "Model": "models/environment/wall_01.vmdl",
             "ShouldCastShadows": true,
@@ -1485,10 +1597,12 @@
         "Position": "-384,-256,0",
         "Rotation": "0,0,0,1",
         "Scale": "1,1,1",
+        "Tags": "",
         "Components": [
           {
             "__type": "ModelComponent",
             "__enabled": true,
+            "BodyGroups": 18446744073709551615,
             "MaterialOverride": null,
             "Model": "models/environment/wall_01.vmdl",
             "ShouldCastShadows": true,
@@ -1511,6 +1625,7 @@
         "Position": "-256,-256,0",
         "Rotation": "0,0,0.707107,0.7071065",
         "Scale": "1,1,1",
+        "Tags": "",
         "Components": [
           {
             "__type": "ModelCollider",
@@ -1523,6 +1638,7 @@
           {
             "__type": "ModelComponent",
             "__enabled": true,
+            "BodyGroups": 18446744073709551615,
             "MaterialOverride": null,
             "Model": "models/environment/wall_01.vmdl",
             "ShouldCastShadows": true,
@@ -1537,10 +1653,12 @@
         "Position": "-256,-256,128",
         "Rotation": "0,0,0.707107,0.7071065",
         "Scale": "1,1,1",
+        "Tags": "",
         "Components": [
           {
             "__type": "ModelComponent",
             "__enabled": true,
+            "BodyGroups": 18446744073709551615,
             "MaterialOverride": null,
             "Model": "models/environment/wall_01.vmdl",
             "ShouldCastShadows": true,
@@ -1563,10 +1681,12 @@
         "Position": "-128,-256,0",
         "Rotation": "0,0,0.707107,0.7071065",
         "Scale": "1,1,1",
+        "Tags": "",
         "Components": [
           {
             "__type": "ModelComponent",
             "__enabled": true,
+            "BodyGroups": 18446744073709551615,
             "MaterialOverride": null,
             "Model": "models/environment/wall_01.vmdl",
             "ShouldCastShadows": true,
@@ -1589,6 +1709,7 @@
         "Position": "-128,-256,128",
         "Rotation": "0,0,0.707107,0.7071065",
         "Scale": "1,1,1",
+        "Tags": "",
         "Components": [
           {
             "__type": "ModelCollider",
@@ -1601,6 +1722,7 @@
           {
             "__type": "ModelComponent",
             "__enabled": true,
+            "BodyGroups": 18446744073709551615,
             "MaterialOverride": null,
             "Model": "models/environment/wall_01.vmdl",
             "ShouldCastShadows": true,
@@ -1615,6 +1737,7 @@
         "Position": "0,-256,0",
         "Rotation": "0,0,0.707107,0.7071065",
         "Scale": "1,1,1",
+        "Tags": "",
         "Components": [
           {
             "__type": "ModelCollider",
@@ -1627,6 +1750,7 @@
           {
             "__type": "ModelComponent",
             "__enabled": true,
+            "BodyGroups": 18446744073709551615,
             "MaterialOverride": null,
             "Model": "models/environment/wall_01.vmdl",
             "ShouldCastShadows": true,
@@ -1641,10 +1765,12 @@
         "Position": "0,-256,128",
         "Rotation": "0,0,0.707107,0.7071065",
         "Scale": "1,1,1",
+        "Tags": "",
         "Components": [
           {
             "__type": "ModelComponent",
             "__enabled": true,
+            "BodyGroups": 18446744073709551615,
             "MaterialOverride": null,
             "Model": "models/environment/wall_01.vmdl",
             "ShouldCastShadows": true,
@@ -1667,10 +1793,12 @@
         "Position": "128,-256,0",
         "Rotation": "0,0,0.707107,0.7071065",
         "Scale": "1,1,1",
+        "Tags": "",
         "Components": [
           {
             "__type": "ModelComponent",
             "__enabled": true,
+            "BodyGroups": 18446744073709551615,
             "MaterialOverride": null,
             "Model": "models/environment/wall_01.vmdl",
             "ShouldCastShadows": true,
@@ -1693,6 +1821,7 @@
         "Position": "128,-256,128",
         "Rotation": "0,0,0.707107,0.7071065",
         "Scale": "1,1,1",
+        "Tags": "",
         "Components": [
           {
             "__type": "ModelCollider",
@@ -1705,6 +1834,7 @@
           {
             "__type": "ModelComponent",
             "__enabled": true,
+            "BodyGroups": 18446744073709551615,
             "MaterialOverride": null,
             "Model": "models/environment/wall_01.vmdl",
             "ShouldCastShadows": true,
@@ -1719,6 +1849,7 @@
         "Position": "-384,0,0",
         "Rotation": "0,0,0,1",
         "Scale": "1,1,1",
+        "Tags": "",
         "Components": [
           {
             "__type": "ModelCollider",
@@ -1731,6 +1862,7 @@
           {
             "__type": "ModelComponent",
             "__enabled": true,
+            "BodyGroups": 18446744073709551615,
             "MaterialOverride": null,
             "Model": "models/environment/wall_01.vmdl",
             "ShouldCastShadows": true,
@@ -1745,10 +1877,12 @@
         "Position": "-384,0,128",
         "Rotation": "0,0,0,1",
         "Scale": "1,1,1",
+        "Tags": "",
         "Components": [
           {
             "__type": "ModelComponent",
             "__enabled": true,
+            "BodyGroups": 18446744073709551615,
             "MaterialOverride": null,
             "Model": "models/environment/wall_01.vmdl",
             "ShouldCastShadows": true,
@@ -1771,6 +1905,7 @@
         "Position": "-384,128,128",
         "Rotation": "0,0,0,1",
         "Scale": "1,1,1",
+        "Tags": "",
         "Components": [
           {
             "__type": "ModelCollider",
@@ -1783,6 +1918,7 @@
           {
             "__type": "ModelComponent",
             "__enabled": true,
+            "BodyGroups": 18446744073709551615,
             "MaterialOverride": null,
             "Model": "models/environment/wall_01.vmdl",
             "ShouldCastShadows": true,
@@ -1797,10 +1933,12 @@
         "Position": "-384,256,128",
         "Rotation": "0,0,0,1",
         "Scale": "1,1,1",
+        "Tags": "",
         "Components": [
           {
             "__type": "ModelComponent",
             "__enabled": true,
+            "BodyGroups": 18446744073709551615,
             "MaterialOverride": null,
             "Model": "models/environment/wall_01.vmdl",
             "ShouldCastShadows": true,
@@ -1823,6 +1961,7 @@
         "Position": "-384,-128,128",
         "Rotation": "0,0,0,1",
         "Scale": "1,1,1",
+        "Tags": "",
         "Components": [
           {
             "__type": "ModelCollider",
@@ -1835,6 +1974,7 @@
           {
             "__type": "ModelComponent",
             "__enabled": true,
+            "BodyGroups": 18446744073709551615,
             "MaterialOverride": null,
             "Model": "models/environment/wall_01.vmdl",
             "ShouldCastShadows": true,
@@ -1849,10 +1989,12 @@
         "Position": "-384,-256,128",
         "Rotation": "0,0,0,1",
         "Scale": "1,1,1",
+        "Tags": "",
         "Components": [
           {
             "__type": "ModelComponent",
             "__enabled": true,
+            "BodyGroups": 18446744073709551615,
             "MaterialOverride": null,
             "Model": "models/environment/wall_01.vmdl",
             "ShouldCastShadows": true,
@@ -1875,10 +2017,12 @@
         "Position": "-384,128,0",
         "Rotation": "0,0,0,1",
         "Scale": "1,1,1",
+        "Tags": "",
         "Components": [
           {
             "__type": "ModelComponent",
             "__enabled": true,
+            "BodyGroups": 18446744073709551615,
             "MaterialOverride": null,
             "Model": "models/environment/wall_01.vmdl",
             "ShouldCastShadows": true,
@@ -1901,6 +2045,7 @@
         "Position": "-384,256,0",
         "Rotation": "0,0,0,1",
         "Scale": "1,1,1",
+        "Tags": "",
         "Components": [
           {
             "__type": "ModelCollider",
@@ -1913,6 +2058,7 @@
           {
             "__type": "ModelComponent",
             "__enabled": true,
+            "BodyGroups": 18446744073709551615,
             "MaterialOverride": null,
             "Model": "models/environment/wall_01.vmdl",
             "ShouldCastShadows": true,
@@ -1927,10 +2073,12 @@
         "Position": "-384,384,0",
         "Rotation": "0,0,0.7071061,-0.7071075",
         "Scale": "1,1,1",
+        "Tags": "",
         "Components": [
           {
             "__type": "ModelComponent",
             "__enabled": true,
+            "BodyGroups": 18446744073709551615,
             "MaterialOverride": null,
             "Model": "models/environment/wall_01.vmdl",
             "ShouldCastShadows": true,
@@ -1953,6 +2101,7 @@
         "Position": "-384,384,128",
         "Rotation": "0,0,0.7071061,-0.7071075",
         "Scale": "1,1,1",
+        "Tags": "",
         "Components": [
           {
             "__type": "ModelCollider",
@@ -1965,6 +2114,7 @@
           {
             "__type": "ModelComponent",
             "__enabled": true,
+            "BodyGroups": 18446744073709551615,
             "MaterialOverride": null,
             "Model": "models/environment/wall_01.vmdl",
             "ShouldCastShadows": true,
@@ -1979,6 +2129,7 @@
         "Position": "-256,384.0002,0",
         "Rotation": "0,0,0.7071061,-0.7071075",
         "Scale": "1,1,1",
+        "Tags": "",
         "Components": [
           {
             "__type": "ModelCollider",
@@ -1991,6 +2142,7 @@
           {
             "__type": "ModelComponent",
             "__enabled": true,
+            "BodyGroups": 18446744073709551615,
             "MaterialOverride": null,
             "Model": "models/environment/wall_01.vmdl",
             "ShouldCastShadows": true,
@@ -2005,10 +2157,12 @@
         "Position": "-256,384.0002,128",
         "Rotation": "0,0,0.7071061,-0.7071075",
         "Scale": "1,1,1",
+        "Tags": "",
         "Components": [
           {
             "__type": "ModelComponent",
             "__enabled": true,
+            "BodyGroups": 18446744073709551615,
             "MaterialOverride": null,
             "Model": "models/environment/wall_01.vmdl",
             "ShouldCastShadows": true,
@@ -2031,10 +2185,12 @@
         "Position": "-128,384,0",
         "Rotation": "0,0,0.7071061,-0.7071075",
         "Scale": "1,1,1",
+        "Tags": "",
         "Components": [
           {
             "__type": "ModelComponent",
             "__enabled": true,
+            "BodyGroups": 18446744073709551615,
             "MaterialOverride": null,
             "Model": "models/environment/wall_02_goo.vmdl",
             "ShouldCastShadows": true,
@@ -2057,6 +2213,7 @@
         "Position": "-128,384,128",
         "Rotation": "0,0,0.7071061,-0.7071075",
         "Scale": "1,1,1",
+        "Tags": "",
         "Components": [
           {
             "__type": "ModelCollider",
@@ -2069,6 +2226,7 @@
           {
             "__type": "ModelComponent",
             "__enabled": true,
+            "BodyGroups": 18446744073709551615,
             "MaterialOverride": null,
             "Model": "models/environment/wall_01.vmdl",
             "ShouldCastShadows": true,
@@ -2083,6 +2241,7 @@
         "Position": "0,384,0",
         "Rotation": "0,0,0.7071061,-0.7071075",
         "Scale": "1,1,1",
+        "Tags": "",
         "Components": [
           {
             "__type": "ModelCollider",
@@ -2095,6 +2254,7 @@
           {
             "__type": "ModelComponent",
             "__enabled": true,
+            "BodyGroups": 18446744073709551615,
             "MaterialOverride": null,
             "Model": "models/environment/wall_01.vmdl",
             "ShouldCastShadows": true,
@@ -2109,10 +2269,12 @@
         "Position": "0,384,128",
         "Rotation": "0,0,0.7071061,-0.7071075",
         "Scale": "1,1,1",
+        "Tags": "",
         "Components": [
           {
             "__type": "ModelComponent",
             "__enabled": true,
+            "BodyGroups": 18446744073709551615,
             "MaterialOverride": null,
             "Model": "models/environment/wall_01.vmdl",
             "ShouldCastShadows": true,
@@ -2135,6 +2297,7 @@
         "Position": "-384,-128,0",
         "Rotation": "0,0,0,1",
         "Scale": "1,1,1",
+        "Tags": "",
         "__Prefab": "prefabs/pieces/door_02.object"
       },
       {
@@ -2144,10 +2307,12 @@
         "Position": "0,0,0",
         "Rotation": "0,0,0,1",
         "Scale": "1,1,1",
+        "Tags": "",
         "Components": [
           {
             "__type": "ModelComponent",
             "__enabled": true,
+            "BodyGroups": 18446744073709551615,
             "MaterialOverride": null,
             "Model": "models/environment/stairs_02.vmdl",
             "ShouldCastShadows": true,
@@ -2170,6 +2335,7 @@
         "Position": "0,128,0",
         "Rotation": "0,0,0,1",
         "Scale": "1,1,1",
+        "Tags": "",
         "Components": [
           {
             "__type": "ModelCollider",
@@ -2182,6 +2348,7 @@
           {
             "__type": "ModelComponent",
             "__enabled": true,
+            "BodyGroups": 18446744073709551615,
             "MaterialOverride": null,
             "Model": "models/environment/stairs_02.vmdl",
             "ShouldCastShadows": true,
@@ -2196,10 +2363,12 @@
         "Position": "-128,256,0",
         "Rotation": "0,0,1,-0.0000006397578",
         "Scale": "1,1,1",
+        "Tags": "",
         "Components": [
           {
             "__type": "ModelComponent",
             "__enabled": true,
+            "BodyGroups": 18446744073709551615,
             "MaterialOverride": null,
             "Model": "models/environment/stairs_02.vmdl",
             "ShouldCastShadows": true,
@@ -2222,6 +2391,7 @@
         "Position": "-127.9999,128,0",
         "Rotation": "0,0,0.707107,0.7071065",
         "Scale": "1,1,1",
+        "Tags": "",
         "Components": [
           {
             "__type": "ModelCollider",
@@ -2234,6 +2404,7 @@
           {
             "__type": "ModelComponent",
             "__enabled": true,
+            "BodyGroups": 18446744073709551615,
             "MaterialOverride": null,
             "Model": "models/environment/stairs_03.vmdl",
             "ShouldCastShadows": true,
@@ -2248,10 +2419,12 @@
         "Position": "-127.9999,128,0",
         "Rotation": "0,0,1,-0.0000006397578",
         "Scale": "1,1,1",
+        "Tags": "",
         "Components": [
           {
             "__type": "ModelComponent",
             "__enabled": true,
+            "BodyGroups": 18446744073709551615,
             "MaterialOverride": null,
             "Model": "models/environment/stairs_04.vmdl",
             "ShouldCastShadows": true,
@@ -2274,6 +2447,7 @@
         "Position": "-128,384,0",
         "Rotation": "0,0,1,-0.0000006397578",
         "Scale": "1,1,1",
+        "Tags": "",
         "Components": [
           {
             "__type": "ModelCollider",
@@ -2286,6 +2460,7 @@
           {
             "__type": "ModelComponent",
             "__enabled": true,
+            "BodyGroups": 18446744073709551615,
             "MaterialOverride": null,
             "Model": "models/environment/stairs_02.vmdl",
             "ShouldCastShadows": true,
@@ -2300,10 +2475,12 @@
         "Position": "0,256,0",
         "Rotation": "0,0,0,1",
         "Scale": "1,1,1",
+        "Tags": "",
         "Components": [
           {
             "__type": "ModelComponent",
             "__enabled": true,
+            "BodyGroups": 18446744073709551615,
             "MaterialOverride": null,
             "Model": "models/environment/stairs_02.vmdl",
             "ShouldCastShadows": true,
@@ -2326,6 +2503,7 @@
         "Position": "0,-128,0",
         "Rotation": "0,0,0,1",
         "Scale": "1,1,1",
+        "Tags": "",
         "Components": [
           {
             "__type": "ModelCollider",
@@ -2338,6 +2516,7 @@
           {
             "__type": "ModelComponent",
             "__enabled": true,
+            "BodyGroups": 18446744073709551615,
             "MaterialOverride": null,
             "Model": "models/environment/stairs_02.vmdl",
             "ShouldCastShadows": true,
@@ -2352,10 +2531,12 @@
         "Position": "-128,-128.0001,0",
         "Rotation": "0,0,0.7071061,-0.7071075",
         "Scale": "1,1,1",
+        "Tags": "",
         "Components": [
           {
             "__type": "ModelComponent",
             "__enabled": true,
+            "BodyGroups": 18446744073709551615,
             "MaterialOverride": null,
             "Model": "models/environment/stairs_03.vmdl",
             "ShouldCastShadows": true,
@@ -2378,6 +2559,7 @@
         "Position": "-256,-128.0001,0",
         "Rotation": "0,0,0.7071061,-0.7071075",
         "Scale": "1,1,1",
+        "Tags": "",
         "Components": [
           {
             "__type": "ModelCollider",
@@ -2390,6 +2572,7 @@
           {
             "__type": "ModelComponent",
             "__enabled": true,
+            "BodyGroups": 18446744073709551615,
             "MaterialOverride": null,
             "Model": "models/environment/stairs_02.vmdl",
             "ShouldCastShadows": true,
@@ -2404,6 +2587,7 @@
         "Position": "-256,0,0",
         "Rotation": "0,0,1,-0.0000006397578",
         "Scale": "1,1,1",
+        "Tags": "",
         "Components": [
           {
             "__type": "ModelCollider",
@@ -2416,6 +2600,7 @@
           {
             "__type": "ModelComponent",
             "__enabled": true,
+            "BodyGroups": 18446744073709551615,
             "MaterialOverride": null,
             "Model": "models/environment/stairs_03.vmdl",
             "ShouldCastShadows": true,
@@ -2430,10 +2615,12 @@
         "Position": "-256,128,0",
         "Rotation": "0,0,1,-0.0000006397578",
         "Scale": "1,1,1",
+        "Tags": "",
         "Components": [
           {
             "__type": "ModelComponent",
             "__enabled": true,
+            "BodyGroups": 18446744073709551615,
             "MaterialOverride": null,
             "Model": "models/environment/stairs_02.vmdl",
             "ShouldCastShadows": true,
@@ -2456,6 +2643,7 @@
         "Position": "-128,64,0",
         "Rotation": "0,0,0,1",
         "Scale": "1,1,1",
+        "Tags": "trigger",
         "Components": [
           {
             "__type": "CameraTriggerComponent",
@@ -2479,7 +2667,8 @@
             "Enabled": true,
             "Position": "0,-302.8788,193.0658",
             "Rotation": "0,0,0,1",
-            "Scale": "1,1,1"
+            "Scale": "1,1,1",
+            "Tags": ""
           }
         ]
       },
@@ -2490,6 +2679,7 @@
         "Position": "-115.8027,366.332,231.2855",
         "Rotation": "0.2778698,0.1458304,-0.7117662,0.628419",
         "Scale": "1,1,1",
+        "Tags": "",
         "Components": [
           {
             "__type": "SpotLightComponent",
@@ -2510,6 +2700,7 @@
         "Position": "26.23622,343.1266,0.0009765625",
         "Rotation": "-0.000000260774,0.0000002791707,-0.6250089,0.780618",
         "Scale": "1.2,1.2,1.2",
+        "Tags": "",
         "__Prefab": "prefabs/pieces/barrel_02.object"
       },
       {
@@ -2519,6 +2710,7 @@
         "Position": "63.70639,320.0157,0.0005950722",
         "Rotation": "-0.000000001452594,0.0000003576257,-0.003481518,0.9999937",
         "Scale": "1.4,1.4,1.4",
+        "Tags": "",
         "__Prefab": "prefabs/pieces/barrel_01.object"
       },
       {
@@ -2528,6 +2720,7 @@
         "Position": "0,-15.33467,64",
         "Rotation": "0,0,0,1",
         "Scale": "1,1,1",
+        "Tags": "",
         "Components": [
           {
             "__type": "EnvmapComponent",
@@ -2549,6 +2742,7 @@
         "Position": "0,0,0",
         "Rotation": "0,0,0,1",
         "Scale": "1,1,1",
+        "Tags": "",
         "Children": [
           {
             "Id": "895374ff-4152-46b7-baaf-dcf60f5bc028",
@@ -2557,6 +2751,7 @@
             "Position": "-297.0699,251.9034,8",
             "Rotation": "-0.00000003141323,0.00000000000000003606589,-0.5270266,0.8498485",
             "Scale": "1,1,1",
+            "Tags": "",
             "Components": [
               {
                 "__type": "EnemySpawner",
@@ -2575,6 +2770,7 @@
             "Position": "81.87382,-199.1402,0.000286877",
             "Rotation": "0.00000005512635,-0.0000000000000099914,0.9248666,0.3802896",
             "Scale": "1,1,1",
+            "Tags": "",
             "Components": [
               {
                 "__type": "EnemySpawner",
@@ -2594,6 +2790,7 @@
         "Position": "-253.4762,-163.7397,-0.003753662",
         "Rotation": "-0.000000004784894,-0.0000000000000001248937,-0.08027723,0.9967726",
         "Scale": "2,2,2",
+        "Tags": "",
         "__Prefab": "prefabs/pieces/box_01.object"
       },
       {
@@ -2603,6 +2800,7 @@
         "Position": "-189.4855,-189.5348,-0.003282303",
         "Rotation": "0.00000003357384,0.000000000000002101122,0.5632756,-0.826269",
         "Scale": "2,2,2",
+        "Tags": "",
         "__Prefab": "prefabs/pieces/box_01.object"
       },
       {
@@ -2612,10 +2810,12 @@
         "Position": "-350.9532,359.9312,-0.0005950928",
         "Rotation": "0,-0.707107,0,0.7071065",
         "Scale": "1,1,1",
+        "Tags": "",
         "Components": [
           {
             "__type": "ModelComponent",
             "__enabled": true,
+            "BodyGroups": 18446744073709551615,
             "MaterialOverride": null,
             "Model": "models/pipes/pipe_0a.vmdl",
             "ShouldCastShadows": true,
@@ -2636,12 +2836,14 @@
             "Name": "pipe_0a",
             "Enabled": true,
             "Position": "64.0006,0.00006103516,-0.00002288867",
-            "Rotation": "0,-0.00000002980232,0,1",
+            "Rotation": "0,0,0,1",
             "Scale": "1,1,1",
+            "Tags": "",
             "Components": [
               {
                 "__type": "ModelComponent",
                 "__enabled": true,
+                "BodyGroups": 18446744073709551615,
                 "MaterialOverride": null,
                 "Model": "models/pipes/pipe_0a_valve.vmdl",
                 "ShouldCastShadows": true,
@@ -2664,10 +2866,12 @@
             "Position": "192,0.00006103516,-64",
             "Rotation": "0,0,0,1",
             "Scale": "1,1,1",
+            "Tags": "",
             "Components": [
               {
                 "__type": "ModelComponent",
                 "__enabled": true,
+                "BodyGroups": 18446744073709551615,
                 "MaterialOverride": null,
                 "Model": "models/pipes/pipe_0a.vmdl",
                 "ShouldCastShadows": true,
@@ -2690,10 +2894,12 @@
             "Position": "128.0006,0.00006103516,-0.00007629444",
             "Rotation": "1,0,-0.0000006556511,-0.0000006397579",
             "Scale": "1,1,1",
+            "Tags": "",
             "Components": [
               {
                 "__type": "ModelComponent",
                 "__enabled": true,
+                "BodyGroups": 18446744073709551615,
                 "MaterialOverride": null,
                 "Model": "models/pipes/pipe_0a_roundcorner.vmdl",
                 "ShouldCastShadows": true,
@@ -2716,10 +2922,12 @@
             "Position": "160,0.00006103516,-32",
             "Rotation": "-0.0000000000003166991,0.707107,0.0000000000003166989,0.7071065",
             "Scale": "1,1,1",
+            "Tags": "",
             "Components": [
               {
                 "__type": "ModelComponent",
                 "__enabled": true,
+                "BodyGroups": 18446744073709551615,
                 "MaterialOverride": null,
                 "Model": "models/pipes/pipe_0a_roundcorner.vmdl",
                 "ShouldCastShadows": true,
@@ -2744,10 +2952,12 @@
         "Position": "-316.4404,359.9312,-0.0005950928",
         "Rotation": "0,-0.707107,0,0.7071065",
         "Scale": "0.8,0.8,0.8",
+        "Tags": "",
         "Components": [
           {
             "__type": "ModelComponent",
             "__enabled": true,
+            "BodyGroups": 18446744073709551615,
             "MaterialOverride": null,
             "Model": "models/pipes/pipe_0a.vmdl",
             "ShouldCastShadows": true,
@@ -2770,10 +2980,12 @@
             "Position": "64.0006,0.00006103516,-0.00002288867",
             "Rotation": "0,0,0,1",
             "Scale": "1,1,1",
+            "Tags": "",
             "Components": [
               {
                 "__type": "ModelComponent",
                 "__enabled": true,
+                "BodyGroups": 18446744073709551615,
                 "MaterialOverride": null,
                 "Model": "models/pipes/pipe_0a.vmdl",
                 "ShouldCastShadows": true,
@@ -2796,10 +3008,12 @@
             "Position": "160,0.00006103516,-32",
             "Rotation": "0,0.707107,0,0.7071065",
             "Scale": "1,1,1",
+            "Tags": "",
             "Components": [
               {
                 "__type": "ModelComponent",
                 "__enabled": true,
+                "BodyGroups": 18446744073709551615,
                 "MaterialOverride": null,
                 "Model": "models/pipes/pipe_0a.vmdl",
                 "ShouldCastShadows": true,
@@ -2820,12 +3034,14 @@
             "Name": "pipe_0a",
             "Enabled": true,
             "Position": "192,0.00008138021,-128",
-            "Rotation": "0.00000002903287,-0.0000000000000008429079,-0.00000002903289,1",
+            "Rotation": "0,0,0,1",
             "Scale": "1,1,1",
+            "Tags": "",
             "Components": [
               {
                 "__type": "ModelComponent",
                 "__enabled": true,
+                "BodyGroups": 18446744073709551615,
                 "MaterialOverride": null,
                 "Model": "models/pipes/pipe_0a.vmdl",
                 "ShouldCastShadows": true,
@@ -2846,12 +3062,14 @@
             "Name": "pipe_0a",
             "Enabled": true,
             "Position": "256,0.00008138021,-128",
-            "Rotation": "0.00000002903287,0,-0.00000002903289,1",
+            "Rotation": "0,0,0,1",
             "Scale": "1,1,1",
+            "Tags": "",
             "Components": [
               {
                 "__type": "ModelComponent",
                 "__enabled": true,
+                "BodyGroups": 18446744073709551615,
                 "MaterialOverride": null,
                 "Model": "models/pipes/pipe_0a.vmdl",
                 "ShouldCastShadows": true,
@@ -2874,10 +3092,12 @@
             "Position": "160,0.00008138021,-96",
             "Rotation": "0,0.707107,0,0.7071065",
             "Scale": "1,1,1",
+            "Tags": "",
             "Components": [
               {
                 "__type": "ModelComponent",
                 "__enabled": true,
+                "BodyGroups": 18446744073709551615,
                 "MaterialOverride": null,
                 "Model": "models/pipes/pipe_0a_roundcorner.vmdl",
                 "ShouldCastShadows": true,
@@ -2900,10 +3120,12 @@
             "Position": "128.0006,0.00006103516,-0.00007629444",
             "Rotation": "1,0,-0.0000006556511,-0.0000006397579",
             "Scale": "1,1,1",
+            "Tags": "",
             "Components": [
               {
                 "__type": "ModelComponent",
                 "__enabled": true,
+                "BodyGroups": 18446744073709551615,
                 "MaterialOverride": null,
                 "Model": "models/pipes/pipe_0a_roundcorner.vmdl",
                 "ShouldCastShadows": true,

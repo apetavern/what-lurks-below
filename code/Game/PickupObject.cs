@@ -21,7 +21,8 @@ public class PickupObject : GameObject
 
 		c_BoxCollider.Scale = new Vector3( 50f );
 		c_BoxCollider.IsTrigger = true;
-		c_BoxCollider.Tags = "pickup";
+		Tags.Add( "pickup" );
+		Tags.Add( "trigger" );
 		c_BoxCollider.Enabled = true;
 
 		c_ItemPickup.Item = item;

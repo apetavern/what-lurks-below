@@ -6,6 +6,7 @@
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
+    "Tags": "",
     "Children": [
       {
         "Id": "5afc941e-2594-40dc-bee4-54dc1b4f12f7",
@@ -14,10 +15,12 @@
         "Position": "0,0,0",
         "Rotation": "0,0,0,1",
         "Scale": "1,1,1",
+        "Tags": "",
         "Components": [
           {
             "__type": "ModelComponent",
             "__enabled": true,
+            "BodyGroups": 18446744073709551615,
             "MaterialOverride": null,
             "Model": "models/environment/door_03.vmdl",
             "ShouldCastShadows": true,
@@ -40,6 +43,7 @@
         "Position": "0,0,0",
         "Rotation": "0,0,0,1",
         "Scale": "1,1,1",
+        "Tags": "",
         "Components": [
           {
             "__type": "BezierAnimationComponent",
@@ -56,7 +60,8 @@
             "Enabled": true,
             "Position": "0,0,0",
             "Rotation": "-0,0,-1,-0.0000006397578",
-            "Scale": "1,1,1"
+            "Scale": "1,1,1",
+            "Tags": ""
           },
           {
             "Id": "bea747be-cd20-4e98-a51a-2863aadc73c2",
@@ -64,7 +69,8 @@
             "Enabled": true,
             "Position": "0,0,0",
             "Rotation": "-0.00000004250227,-0.0000000003615028,-0.707107,0.7071065",
-            "Scale": "1,1,1"
+            "Scale": "1,1,1",
+            "Tags": ""
           }
         ]
       },
@@ -75,6 +81,7 @@
         "Position": "25.02071,31.46987,24.73355",
         "Rotation": "0,0,0,1",
         "Scale": "1,1,1",
+        "Tags": "trigger",
         "Components": [
           {
             "__type": "ColliderBoxComponent",

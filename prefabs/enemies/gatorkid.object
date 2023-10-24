@@ -1,11 +1,12 @@
 {
   "RootObject": {
-    "Id": "a0683a07-33ce-446a-8727-59c833c9fb93",
+    "Id": "d282f87c-2703-4b43-93be-3d83b5cff16b",
     "Name": "gatorkid",
     "Enabled": true,
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
+    "Tags": "",
     "Components": [
       {
         "__type": "CharacterController",
@@ -23,7 +24,7 @@
         "AttackDamage": 3,
         "AttackRange": 64,
         "AttackSound": "lilgator-attack",
-        "Body": "159d2fbc-6c49-4b51-95cc-1ca2dfae4361",
+        "Body": "466fe400-4f49-47ed-bebf-fa5e955aab01",
         "DeathSound": "lilgator-death",
         "Friction": 0.9499998,
         "HurtSound": "lilgator-hurt",
@@ -44,17 +45,20 @@
     ],
     "Children": [
       {
-        "Id": "159d2fbc-6c49-4b51-95cc-1ca2dfae4361",
+        "Id": "466fe400-4f49-47ed-bebf-fa5e955aab01",
         "Name": "Epic Enemy",
         "Enabled": true,
         "Position": "0,0,0",
         "Rotation": "0,0,0,1",
         "Scale": "0.7,0.7,0.7",
+        "Tags": "",
         "Components": [
           {
             "__type": "AnimatedModelComponent",
             "__enabled": true,
+            "BodyGroups": 18446744073709551615,
             "CreateBoneObjects": false,
+            "MaterialGroup": null,
             "MaterialOverride": null,
             "Model": "models/enemies/gatorkid/gatorkid.vmdl",
             "ShouldCastShadows": true,
@@ -63,12 +67,13 @@
         ]
       },
       {
-        "Id": "3960a266-607f-417d-82d7-86df50be07dd",
+        "Id": "03dd079a-eaaa-4fb2-bcd3-ac171b48e6a2",
         "Name": "Collider",
         "Enabled": true,
         "Position": "0,0,21.54626",
         "Rotation": "0,0,0,1",
         "Scale": "1,1,1",
+        "Tags": "trigger,enemy",
         "Components": [
           {
             "__type": "ColliderBoxComponent",
