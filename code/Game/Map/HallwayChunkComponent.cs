@@ -33,22 +33,22 @@ public sealed class HallwayChunkComponent : BaseComponent
 			Transform.Position + Vector3.Right * 128f + Vector3.Down * 128f
 		).Run();
 
-		if ( trFront.Hit && trFront.Body.GameObject != null && (trFront.Body.GameObject as GameObject).GetComponent<RoomChunkComponent>( false ) == null )
+		if ( trFront.Hit && trFront.Body.GameObject is GameObject goFront && goFront.GetComponent<RoomChunkComponent>( false ) is null )
 		{
 			Front.Destroy();
 		}
 
-		if ( trBack.Hit && trBack.Body.GameObject != null && (trBack.Body.GameObject as GameObject).GetComponent<RoomChunkComponent>( false ) == null )
+		if ( trBack.Hit && trBack.Body.GameObject is GameObject goBack && goBack.GetComponent<RoomChunkComponent>( false ) is null )
 		{
 			Back.Destroy();
 		}
 
-		if ( trLeft.Hit && trLeft.Body.GameObject != null && (trLeft.Body.GameObject as GameObject).GetComponent<RoomChunkComponent>( false ) == null )
+		if ( trLeft.Hit && trLeft.Body.GameObject is GameObject goLeft && goLeft.GetComponent<RoomChunkComponent>(false) is null )
 		{
 			Left.Destroy();
 		}
 
-		if ( trRight.Hit && trRight.Body.GameObject != null && (trRight.Body.GameObject as GameObject).GetComponent<RoomChunkComponent>( false ) == null )
+		if ( trRight.Hit && trRight.Body.GameObject is GameObject goRight && goRight.GetComponent<RoomChunkComponent>(false) is null )
 		{
 			Right.Destroy();
 		}
