@@ -97,14 +97,14 @@ public partial class MapGeneratorComponent : BaseComponent
 		int overlaps = 0;
 		foreach ( var room in spawnedRooms )
 		{
+			BBox checkBox1 = new BBox( room.GameObject.GetBounds().Center, SnapGridSize );
+
 			foreach ( var room2 in spawnedRooms )
 			{
 				if ( room == room2 || room == spawnedRooms[0] || room == null ) continue;
 
-				BBox CheckBox1 = new BBox( room.GameObject.GetBounds().Center, SnapGridSize );
-				BBox CheckBox2 = new BBox( room2.GameObject.GetBounds().Center, SnapGridSize );
-
-				if ( !CheckBox1.Overlaps( CheckBox2 ) )
+				BBox checkBox2 = new BBox( room2.GameObject.GetBounds().Center, SnapGridSize );
+				if ( !checkBox1.Overlaps( checkBox2 ) )
 					continue;
 
 				overlaps++;
@@ -117,6 +117,8 @@ public partial class MapGeneratorComponent : BaseComponent
 				room.Transform.Position += OffsetPoint;
 
 				room.Transform.Position = room.Transform.Position.Clamp( -3000, 3000 );
+
+				checkBox1 = new BBox( room.GameObject.GetBounds().Center, SnapGridSize );
 			}
 		}
 
