@@ -28,17 +28,11 @@ public sealed class RoomChunkComponent : BaseComponent
 
 	public void ClearEnemiesAndItems()
 	{
-		var enemies = GameObject.GetComponents<EnemyController>( false, true );
-		for ( int i = 0; i < enemies.Count(); i++ )
-		{
-			enemies.ElementAt( i ).GameObject.Destroy();
-		}
+		foreach ( var enemy in GameObject.GetComponents<EnemyController>( false, true ) )
+			enemy.GameObject.Destroy();
 
-		var items = GameObject.GetComponents<ItemPickup>( false, true );
-		for ( int i = 0; i < items.Count(); i++ )
-		{
-			items.ElementAt( i ).GameObject.Destroy();
-		}
+		foreach ( var item in GameObject.GetComponents<ItemPickup>( false, true ) )
+			item.GameObject.Destroy();
 	}
 
 	public override void DrawGizmos()
