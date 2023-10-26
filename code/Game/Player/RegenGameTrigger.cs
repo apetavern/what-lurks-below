@@ -14,6 +14,6 @@ public sealed class RegenGameTrigger : BaseComponent
 	public void RegenMap()
 	{
 		Stats.FloorsCompleted++;
-		Scene.GetAllObjects( true ).Where( X => X.GetComponent<MapGeneratorComponent>() != null ).FirstOrDefault().GetComponent<MapGeneratorComponent>().RegenMap();
+		MapGeneratorComponent.Instance.RegenMap();
 	}
 }

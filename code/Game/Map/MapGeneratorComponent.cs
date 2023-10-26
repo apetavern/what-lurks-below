@@ -32,6 +32,8 @@ public partial class MapGeneratorComponent : SingletonComponent<MapGeneratorComp
 	public ImmutableArray<GameObject> Containers { get; private set; } = ImmutableArray<GameObject>.Empty;
 	public List<PickupObject> Pickups { get; private set; } = new();
 
+	[Property] public GameObject GeneratedMapParent { get; set; }
+
 	[Property] private int Seed { get; set; } = 1;
 	[Property] private int RoomCount { get; set; } = 10;
 	[Property] private float SnapGridSize { get; set; } = 700f;
@@ -309,7 +311,7 @@ public partial class MapGeneratorComponent : SingletonComponent<MapGeneratorComp
 
 						var breakable = breakablesToSpawn[RandomGenerator.Int( 0, breakablesToSpawn.Count - 1 )];
 						var breaky = SceneUtility.Instantiate( breakable, pos + RandomGenerator.VectorInSphere().WithZ( 0 ) * 64f, Rotation.LookAt( RandomGenerator.VectorInSphere().WithZ( 0 ) * 64f ) );
-						breaky.SetParent( GameObject.Children.First() );
+						breaky.SetParent( GeneratedMapParent );
 					}
 				}
 			}
@@ -351,7 +353,7 @@ public partial class MapGeneratorComponent : SingletonComponent<MapGeneratorComp
 	{
 		var prefab = ResourceLibrary.Get<PrefabFile>( path );
 		var go = SceneUtility.Instantiate( prefab.Scene, position, rotation );
-		go.SetParent( GameObject.Children.First() );
+		go.SetParent( GeneratedMapParent );
 		return go;
 	}
 

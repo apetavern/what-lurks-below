@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using BrickJam.Map;
 using BrickJam.Player;
 using Sandbox;
 
@@ -48,7 +49,7 @@ public sealed class DestructableComponent : BaseComponent
 			_ = new PickupObject( true, $"Pickup {item.Asset.Name}", Transform.Position, item );
 		}
 
-		BreakParticle.SetParent( Scene.GetAllObjects( true ).Where( X => X.Name == "MapGenerator" ).FirstOrDefault().Children[0] );
+		BreakParticle.SetParent( MapGeneratorComponent.Instance.GeneratedMapParent );
 		BreakParticle.Enabled = true;
 
 		GameObject.Destroy();

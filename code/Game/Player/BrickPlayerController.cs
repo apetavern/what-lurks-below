@@ -43,7 +43,7 @@ public class BrickPlayerController : BaseComponent
 
 			go.GetComponent<GlowstickComponent>( false, true ).Velocity = Body.Transform.Rotation.Forward * 250f + Vector3.Up * 150f;
 			go.GetComponent<GlowstickComponent>( false, true ).Player = GameObject;
-			go.SetParent( NavGenComponent.Instance.GameObject.Children.First() );
+			go.SetParent( MapGeneratorComponent.Instance.GeneratedMapParent );
 		}
 	}
 
