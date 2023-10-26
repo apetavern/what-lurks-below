@@ -11,10 +11,8 @@ namespace BrickJam.Map;
 [Title( "Map Generator" )]
 [Category( "World" )]
 [Icon( "map", "red", "white" )]
-public partial class MapGeneratorComponent : BaseComponent
+public partial class MapGeneratorComponent : SingletonComponent<MapGeneratorComponent>
 {
-	public static MapGeneratorComponent Instance { get; private set; }
-
 	private const string BossRoom = "prefabs/rooms/sewer_room_05.object";
 
 	private static readonly ImmutableArray<string> rooms = ImmutableArray.Create(
@@ -48,11 +46,6 @@ public partial class MapGeneratorComponent : BaseComponent
 
 	private GameObject player;
 	private bool correctedRooms;
-
-	public MapGeneratorComponent()
-	{
-		Instance = this;
-	}
 
 	public override void OnStart()
 	{
