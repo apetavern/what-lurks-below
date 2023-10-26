@@ -1,6 +1,6 @@
 {
   "RootObject": {
-    "Id": "b048cb5e-d1fd-4043-a131-3c341eec688b",
+    "Id": "9cc009cd-3d74-494c-b2ca-847b9ebd2d43",
     "Name": "box_01",
     "Enabled": true,
     "Position": "0,0,0",
@@ -30,12 +30,16 @@
       {
         "__type": "DestructableComponent",
         "__enabled": true,
-        "BreakParticle": "2ae57680-de9c-4334-966f-1abcfb96d166"
+        "BreakParticle": "55451ac6-966d-422c-9f40-99df7044c260"
+      },
+      {
+        "__type": "ItemContainer",
+        "__enabled": true
       }
     ],
     "Children": [
       {
-        "Id": "852edfe6-2d1a-4a93-9547-80e492951a1b",
+        "Id": "00efa9a4-9295-4092-a04a-13fdaa1413ee",
         "Name": "Object",
         "Enabled": true,
         "Position": "0,0,12",
@@ -48,13 +52,12 @@
             "__enabled": true,
             "IsTrigger": false,
             "Scale": "24,24,24",
-            "Surface": null,
-            "Tags": ""
+            "Surface": null
           }
         ]
       },
       {
-        "Id": "2ae57680-de9c-4334-966f-1abcfb96d166",
+        "Id": "55451ac6-966d-422c-9f40-99df7044c260",
         "Name": "particles",
         "Enabled": false,
         "Position": "0,0,17.03379",

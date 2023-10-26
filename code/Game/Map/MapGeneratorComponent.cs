@@ -30,7 +30,7 @@ public partial class MapGeneratorComponent : BaseComponent
 
 	public Random RandomGenerator { get; private set; }
 
-	public ImmutableArray<GameObject> BreakableObjects { get; private set; } = ImmutableArray<GameObject>.Empty;
+	public ImmutableArray<GameObject> Containers { get; private set; } = ImmutableArray<GameObject>.Empty;
 
 	[Property] private int Seed { get; set; } = 1;
 	[Property] private int RoomCount { get; set; } = 10;
@@ -261,8 +261,6 @@ public partial class MapGeneratorComponent : BaseComponent
 
 	private async void CreateHallways()
 	{
-		var breakablesBuilder = ImmutableArray.CreateBuilder<GameObject>();
-
 		int waitframes = 0;
 		foreach ( var room in spawnedRooms )
 		{
@@ -317,14 +315,14 @@ public partial class MapGeneratorComponent : BaseComponent
 						var breakable = breakablesToSpawn[RandomGenerator.Int( 0, breakablesToSpawn.Count - 1 )];
 						var breaky = SceneUtility.Instantiate( breakable, pos + RandomGenerator.VectorInSphere().WithZ( 0 ) * 64f, Rotation.LookAt( RandomGenerator.VectorInSphere().WithZ( 0 ) * 64f ) );
 						breaky.SetParent( GameObject.Children.First() );
-						breakablesBuilder.Add( breaky );
 					}
 				}
 			}
 		}
 
-		breakablesBuilder.Capacity = breakablesBuilder.Count;
-		BreakableObjects = breakablesBuilder.MoveToImmutable();
+		Containers = Scene.GetAllObjects( true )
+			.Where( x => x.GetComponent<ItemContainer>() is not null )
+			.ToImmutableArray();
 
 		var navgen = Scene.GetAllObjects( true ).Where( X => X.GetComponent<NavGenComponent>() != null ).FirstOrDefault().GetComponent<NavGenComponent>();
 
