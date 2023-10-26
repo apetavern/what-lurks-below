@@ -5,6 +5,9 @@ using System.Linq;
 using System.Collections.Immutable;
 using BrickJam.Player;
 using BrickJam.Components;
+using Coroutines.Stallers;
+using Coroutines;
+using System.Threading.Tasks;
 
 namespace BrickJam.Map;
 
@@ -138,13 +141,7 @@ public partial class MapGeneratorComponent : SingletonComponent<MapGeneratorComp
 		}
 
 		GenerateRoomConnections();
-
-		CreateHallways();
-
-		/*if ( CorrectedRooms && !IsBossSequence && !Scene.GetAllObjects( true ).Where( x => x.GetComponent<EnemyController>() != null ).Any() )
-		{
-			RegenMap();
-		}*/
+		Coroutine.Start( CreateHallways );
 	}
 
 	public async void RegenMap()
@@ -256,7 +253,7 @@ public partial class MapGeneratorComponent : SingletonComponent<MapGeneratorComp
 		}
 	}
 
-	private async void CreateHallways()
+	private CoroutineMethod CreateHallways()
 	{
 		int waitframes = 0;
 		foreach ( var room in spawnedRooms )
@@ -264,15 +261,13 @@ public partial class MapGeneratorComponent : SingletonComponent<MapGeneratorComp
 			while ( room.PathPoints.Count == 0 && waitframes < 100 )
 			{
 				waitframes++;
-				//Log.Info( "Waiting for hallways..." );
-				await GameTask.Delay( 50 );
+				yield return new WaitForSeconds( 0.05f );
 			}
 			waitframes = 0;
 			while ( room.PathPoints.Count == 1 && waitframes < 50 )
 			{
 				waitframes++;
-				//Log.Info( "Waiting for hallways..." );
-				await GameTask.Delay( 5 );
+				yield return new WaitForSeconds( 0.005f );
 			}
 
 			foreach ( var hall in room.PathPoints )

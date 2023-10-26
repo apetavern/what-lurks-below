@@ -1,7 +1,7 @@
 using BrickJam.Util;
+using Coroutines.Stallers;
 using Sandbox;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace BrickJam.Components;
 
@@ -34,7 +34,7 @@ public sealed class BezierAnimationComponent : BaseComponent, BaseComponent.Exec
 		}
 	}
 
-	public async Task AnimateObject( GameObject animatable, float time = 2f, bool LerpToPointAngles = false )
+	public CoroutineMethod AnimateObject( GameObject animatable, float time = 2f, bool LerpToPointAngles = false )
 	{
 		Vector3 startPoint = Point1.Transform.Position;
 		Vector3 endPoint = Point2.Transform.Position;
@@ -45,7 +45,7 @@ public sealed class BezierAnimationComponent : BaseComponent, BaseComponent.Exec
 
 		if ( bezierPoints.Count < 2 )
 		{
-			return;
+			yield break;
 		}
 
 		float totalTime = time; // Total time for the animation (adjust as needed).
@@ -80,7 +80,8 @@ public sealed class BezierAnimationComponent : BaseComponent, BaseComponent.Exec
 
 				animatable.Transform.Rotation = Rotation.Slerp( Point1.Transform.Rotation * Rotation.FromYaw( 180f ), Point2.Transform.Rotation, t2 );
 			}
-			await GameTask.DelaySeconds( Time.Delta );
+
+			yield return new WaitForNextFrame();
 
 			currentTime += Time.Delta;
 

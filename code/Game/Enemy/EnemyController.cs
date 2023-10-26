@@ -150,7 +150,7 @@ public class EnemyController : BaseComponent
 
 	float nextAttackTime;
 
-	public async void UpdatePathToPlayer()
+	public void UpdatePathToPlayer()
 	{
 		path.Clear();
 		var result = NavGenComponent.Instance.GeneratePath( Transform.Position, Player.Transform.Position );
@@ -161,7 +161,7 @@ public class EnemyController : BaseComponent
 		}
 	}
 
-	public async void PathToPoint( Vector3 point )
+	public void PathToPoint( Vector3 point )
 	{
 		path.Clear();
 		var result = NavGenComponent.Instance.GeneratePath( Transform.Position, point );

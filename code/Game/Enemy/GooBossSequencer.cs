@@ -4,6 +4,8 @@ using System;
 using BrickJam.Player;
 using System.Linq;
 using BrickJam.Components;
+using Coroutines;
+using Coroutines.Stallers;
 
 namespace BrickJam;
 
@@ -156,7 +158,7 @@ public sealed class GooBossSequencer : BaseComponent
 		}
 	}
 
-	public async void OnTriggered()
+	public void OnTriggered()
 	{
 		if ( !StartedFight )
 		{
@@ -167,15 +169,23 @@ public sealed class GooBossSequencer : BaseComponent
 			}
 
 			Scene.GetAllObjects( true ).Where( X => X.GetComponent<CameraComponent>( false ) != null ).First().GetComponent<CameraComponent>( false ).FieldOfView = 80f;
-			await IntroBezier.GetComponent<BezierAnimationComponent>().AnimateObject( roomTrigger.GetComponent<CameraTriggerComponent>().CameraPoint, 5f, true );
-			StartedFight = true;
-			EyesOpen = true;
-			var flags = Scene.GetAllObjects( true ).FirstOrDefault( o => o.Name == "player" )?
-				.GetComponent<PlayerFlagsComponent>();
-			if ( flags is not null )
-			{
-				flags.InBossSequence = true;
-			}
+			Coroutine.Start( FinishTrigger );
+		}
+	}
+
+	private CoroutineMethod FinishTrigger()
+	{
+		var animateCoroutine = Coroutine.Start( IntroBezier.GetComponent<BezierAnimationComponent>().AnimateObject,
+			roomTrigger.GetComponent<CameraTriggerComponent>().CameraPoint, 5f, true );
+		yield return new WaitForCoroutine( animateCoroutine );
+
+		StartedFight = true;
+		EyesOpen = true;
+		var flags = Scene.GetAllObjects( true ).FirstOrDefault( o => o.Name == "player" )?
+			.GetComponent<PlayerFlagsComponent>();
+		if ( flags is not null )
+		{
+			flags.InBossSequence = true;
 		}
 	}
 
