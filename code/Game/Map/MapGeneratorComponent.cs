@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Collections.Immutable;
 using BrickJam.Player;
+using BrickJam.Components;
 
 namespace BrickJam.Map;
 
@@ -31,6 +32,7 @@ public partial class MapGeneratorComponent : BaseComponent
 	public Random RandomGenerator { get; private set; }
 
 	public ImmutableArray<GameObject> Containers { get; private set; } = ImmutableArray<GameObject>.Empty;
+	public List<PickupObject> Pickups { get; private set; } = new();
 
 	[Property] private int Seed { get; set; } = 1;
 	[Property] private int RoomCount { get; set; } = 10;
