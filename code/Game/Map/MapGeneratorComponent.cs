@@ -10,6 +10,7 @@ using Coroutines;
 
 namespace BrickJam.Map;
 
+// FIXME: "Make map gen and enemy spawn deterministic by seed" (Commit f8391da) causes problems
 [Title( "Map Generator" )]
 [Category( "World" )]
 [Icon( "map", "red", "white" )]
