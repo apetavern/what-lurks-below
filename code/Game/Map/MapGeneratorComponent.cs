@@ -54,8 +54,6 @@ public partial class MapGeneratorComponent : SingletonComponent<MapGeneratorComp
 
 	public override void OnStart()
 	{
-		// FIXME: Allow user to input starting seed?
-		Seed = Game.Random.Int( int.MinValue, int.MaxValue );
 		RandomGenerator = new Random( Seed );
 		player = Scene.GetAllObjects( true ).FirstOrDefault( x => x.Name == "player" );
 
