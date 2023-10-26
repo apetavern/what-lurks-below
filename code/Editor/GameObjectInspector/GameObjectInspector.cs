@@ -6,7 +6,7 @@ using System.Collections.Generic;
 namespace Editor.Inspectors;
 
 
-[CanEdit( typeof( GameObject ) )]
+[CanEdit( typeof(GameObject) )]
 public class GameObjectInspector : Widget
 {
 	GameObject TargetObject;
@@ -67,9 +67,9 @@ public class GameObjectInspector : Widget
 		Layout.AddStretchCell();
 
 		var footer = Layout.AddRow();
-		////	footer.Margin = 8;
-		//	footer.AddStretchCell();
-		//	footer.Add( new Button.Primary( "Add Component", "add" ) { Clicked = AddComponentDialog } );
+	////	footer.Margin = 8;
+	//	footer.AddStretchCell();
+	//	footer.Add( new Button.Primary( "Add Component", "add" ) { Clicked = AddComponentDialog } );
 	}
 
 	void PropertyEdited( SerializedProperty property, GameObject go )
