@@ -14,6 +14,7 @@
         "Acceleration": 10,
         "GroundAngle": 45,
         "Height": 79.67,
+        "IgnoreLayers": "trigger",
         "Radius": 16,
         "StepHeight": 18
       },
@@ -80,8 +81,7 @@
             "__enabled": true,
             "IsTrigger": true,
             "Scale": "32,32,82.69981",
-            "Surface": null,
-            "Tags": "enemy"
+            "Surface": null
           },
           {
             "__type": "AimableTargetComponent",

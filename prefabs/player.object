@@ -20,6 +20,7 @@
         "Acceleration": 10,
         "GroundAngle": 45,
         "Height": 64,
+        "IgnoreLayers": "trigger",
         "Radius": 16,
         "StepHeight": 18
       },
