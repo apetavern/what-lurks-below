@@ -23,6 +23,8 @@ public class CharacterController : BaseComponent
 	[Range( 0, 20 )]
 	[Property] public float Acceleration { get; set; } = 10.0f;
 
+	[Property] public TagSet IgnoreLayers { get; set; } = new ();
+
 	public BBox BoundingBox => new BBox( new Vector3( -Radius, -Radius, 0 ), new Vector3( Radius, Radius, Height ) );
 
 	public Vector3 Velocity { get; set; }
@@ -91,9 +93,9 @@ public class CharacterController : BaseComponent
 		Velocity *= newspeed;
 	}
 
-	PhysicsTraceBuilder BuildTrace( Vector3 from, Vector3 to ) => BuildTrace( Scene.PhysicsWorld.Trace.Ray( from, to ).WithoutTags( "trigger" ) );
-
-	PhysicsTraceBuilder BuildTrace( PhysicsTraceBuilder source ) => source.Size( BoundingBox ).WithoutTags( "trigger" );
+	PhysicsTraceBuilder BuildTrace( Vector3 from, Vector3 to ) => BuildTrace( Scene.PhysicsWorld.Trace.Ray( from, to ) );
+	
+	PhysicsTraceBuilder BuildTrace( PhysicsTraceBuilder source ) => source.Size( BoundingBox ).WithoutTags( IgnoreLayers );
 
 	void Move( bool step )
 	{
