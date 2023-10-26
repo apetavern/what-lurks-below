@@ -1,7 +1,7 @@
-﻿global using System.Linq;
+global using CoroutineMethod = System.Collections.Generic.IEnumerator<Coroutines.ICoroutineStaller>;
+global using System.Linq;
 global using System;
 using Sandbox;
-
 
 public static class Program
 {

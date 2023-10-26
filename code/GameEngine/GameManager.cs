@@ -12,6 +12,8 @@ public static class GameManager
 	[Event( "frame" )]
 	public static void Frame()
 	{
+		Coroutines.Coroutine.IsSceneSystem = true;
+
 		if ( !GameManager.IsPlaying )
 			return;
 
