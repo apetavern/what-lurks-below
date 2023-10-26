@@ -28,8 +28,6 @@ public class BrickPlayerController : BaseComponent
 
 	float AimMultiplier = 1f;
 
-	NavGenComponent navgen;
-
 	public Vector3 startpos;
 
 	TimeSince TimeSinceLastGlowstick;
@@ -45,7 +43,7 @@ public class BrickPlayerController : BaseComponent
 
 			go.GetComponent<GlowstickComponent>( false, true ).Velocity = Body.Transform.Rotation.Forward * 250f + Vector3.Up * 150f;
 			go.GetComponent<GlowstickComponent>( false, true ).Player = GameObject;
-			go.SetParent( navgen.GameObject.Children.First() );
+			go.SetParent( NavGenComponent.Instance.GameObject.Children.First() );
 		}
 	}
 
@@ -223,13 +221,11 @@ public class BrickPlayerController : BaseComponent
 				pickup.GetComponent<PickupHint>().TimeSincePlayerInRange = 0;
 		}
 
-		if ( navgen == null )
-		{
-			navgen = Scene.GetAllObjects( true ).FirstOrDefault( x => x.GetComponent<NavGenComponent>() != null ).GetComponent<NavGenComponent>();
+		var navgen = NavGenComponent.Instance;
+		if ( navgen is null )
 			return;
-		}
 
-		if ( navgen != null && !navgen.Initialized )
+		if ( !navgen.Initialized )
 		{
 			if ( Transform.Position.z > 500 )
 			{

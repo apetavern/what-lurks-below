@@ -40,8 +40,6 @@ public class EnemyController : BaseComponent
 
 	int pathIndex { get; set; } = 0;
 
-	NavGenComponent navgen { get; set; }
-
 	Collider col { get; set; }
 
 	TimeUntil timerIdleSound = new Random().Float( 4f, 12f );
@@ -64,8 +62,6 @@ public class EnemyController : BaseComponent
 		GameObject.GetComponent<CharacterController>( false ).IsOnGround = true;
 
 		model = Body.GetComponent<AnimatedModelComponent>().SceneObject;
-
-		navgen = Scene.GetAllObjects( true ).FirstOrDefault( x => x.GetComponent<NavGenComponent>() != null )?.GetComponent<NavGenComponent>();
 	}
 
 	public TimeSince TimeSinceDamage;
@@ -157,7 +153,7 @@ public class EnemyController : BaseComponent
 	public async void UpdatePathToPlayer()
 	{
 		path.Clear();
-		var result = navgen.GeneratePath( Transform.Position, Player.Transform.Position );
+		var result = NavGenComponent.Instance.GeneratePath( Transform.Position, Player.Transform.Position );
 
 		foreach ( var item in result )
 		{
@@ -168,7 +164,7 @@ public class EnemyController : BaseComponent
 	public async void PathToPoint( Vector3 point )
 	{
 		path.Clear();
-		var result = navgen.GeneratePath( Transform.Position, point );
+		var result = NavGenComponent.Instance.GeneratePath( Transform.Position, point );
 
 		foreach ( var item in result )
 		{
@@ -193,7 +189,7 @@ public class EnemyController : BaseComponent
 
 		MakeIdleSounds();
 
-		if ( !IsAggro && TimeSinceLastMove > 5f && navgen.Initialized )
+		if ( !IsAggro && TimeSinceLastMove > 5f && NavGenComponent.Instance.Initialized )
 		{
 			Vector2 MovePoint = Game.Random.VectorInCircle( 256f );
 

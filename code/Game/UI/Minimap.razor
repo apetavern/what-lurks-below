@@ -41,7 +41,6 @@
     ScenePanel Display;
     GameObject Player;
     GameObject PlayerBody;
-    NavGenComponent NavGen;
 
     List<GameObject> Enemies = new List<GameObject>();
 
@@ -54,8 +53,7 @@
     {
         base.Update();
 
-        NavGen ??= Scene.GetAllObjects( true ).Where( X => X.GetComponent<NavGenComponent>() != null ).FirstOrDefault().GetComponent<NavGenComponent>();
-        bool isReady = NavGen?.Initialized ?? false;
+        bool isReady = NavGenComponent.Instance?.Initialized ?? false;
         Panel.SetClass( "hidden", !isReady );
 
         if(!isReady) return;

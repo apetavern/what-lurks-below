@@ -165,7 +165,7 @@ public partial class MapGeneratorComponent : BaseComponent
 
 		await GameTask.Delay( 100 );
 
-		var navgen = Scene.GetAllObjects( true ).FirstOrDefault( x => x.GetComponent<NavGenComponent>() != null ).GetComponent<NavGenComponent>();
+		var navgen = NavGenComponent.Instance;
 		navgen.GenerationPlane.Enabled = true;
 		navgen.GenerateMesh();
 		navgen.Initialized = false;
@@ -326,8 +326,7 @@ public partial class MapGeneratorComponent : BaseComponent
 			.Where( x => x.GetComponent<ItemContainer>() is not null )
 			.ToImmutableArray();
 
-		var navgen = Scene.GetAllObjects( true ).Where( X => X.GetComponent<NavGenComponent>() != null ).FirstOrDefault().GetComponent<NavGenComponent>();
-
+		var navgen = NavGenComponent.Instance;
 		navgen.GenerationPlane.Enabled = false;
 
 		hallwayChunks = Scene.GetAllObjects( true ).Where( X => X.GetComponent<HallwayChunkComponent>() != null ).ToImmutableArray();

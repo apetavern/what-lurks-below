@@ -17,16 +17,13 @@ public class EnemySpawner : BaseComponent
 	[Property] private GameObject Enemy2 { get; set; }
 	[Property] private GameObject Enemy3 { get; set; }
 
-	public NavGenComponent navGen { get; set; }
-
 	public override void OnEnabled()
 	{
-		navGen = Scene.GetAllObjects( true ).Where( X => X.GetComponent<NavGenComponent>() != null ).FirstOrDefault().GetComponent<NavGenComponent>();
 		SpawnEnemies();
 	}
 	public async void SpawnEnemies()
 	{
-		while ( !navGen.Initialized )
+		while ( !NavGenComponent.Instance.Initialized )
 		{
 			await GameTask.DelaySeconds( Time.Delta );
 		}

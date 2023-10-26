@@ -22,8 +22,7 @@
 
     public override void Tick()
     {
-        NavGen ??= GameManager.ActiveScene.GetAllObjects( true ).Where( X => X.GetComponent<NavGenComponent>() != null ).FirstOrDefault().GetComponent<NavGenComponent>();
-        Loading = !(NavGen?.Initialized ?? false);
+        Loading = !(NavGenComponent.Instance?.Initialized ?? false);
         SetClass( "hidden", !Loading );
     }
     

@@ -88,9 +88,7 @@ public sealed class RoomChunkComponent : BaseComponent
 
 		// Create a Bezier curve using the positions and control points
 
-		NavGenComponent navgen = Scene.GetAllObjects( true ).Where( X => X.GetComponent<NavGenComponent>() != null ).FirstOrDefault().GetComponent<NavGenComponent>();
-
-		var path = navgen.GeneratePath( controlPoint1, controlPoint2 );
+		var path = NavGenComponent.Instance.GeneratePath( controlPoint1, controlPoint2 );
 
 		if ( path.Count == 0 )
 		{

@@ -5,6 +5,8 @@ namespace BrickJam.Map;
 
 public sealed class NavGenComponent : BaseComponent
 {
+	public static NavGenComponent Instance { get; private set; }
+
 	[Property] public GameObject GenerationPlane { get; set; }
 
 	NavigationMesh mesh { get; set; }
@@ -12,6 +14,11 @@ public sealed class NavGenComponent : BaseComponent
 	public bool Initialized;
 
 	//NavigationPath path { get; set; }
+
+	public NavGenComponent()
+	{
+		Instance = this;
+	}
 
 	public void GenerateMesh()
 	{
