@@ -51,7 +51,7 @@ public sealed class HallwayChunkComponent : BaseComponent
 			Right.Destroy();
 		}
 
-		foreach ( var item in GetComponents<ColliderBaseComponent>( false, true ) )
+		foreach ( var item in GetComponents<Collider>( false, true ) )
 		{
 			item.OnPhysicsChanged();
 		}

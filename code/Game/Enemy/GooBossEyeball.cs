@@ -72,6 +72,6 @@ public sealed class GooBossEyeball : BaseComponent
 			return;
 		}
 
-		GetComponent<ColliderBaseComponent>().OnPhysicsChanged();
+		GetComponent<Collider>().OnPhysicsChanged();
 	}
 }

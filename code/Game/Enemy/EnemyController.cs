@@ -40,7 +40,7 @@ public class EnemyController : BaseComponent
 
 	NavGenComponent navgen { get; set; }
 
-	ColliderBaseComponent col { get; set; }
+	Collider col { get; set; }
 
 	TimeUntil timerIdleSound = new Random().Float( 4f, 12f );
 
@@ -53,7 +53,7 @@ public class EnemyController : BaseComponent
 		healthComponent.OnDeath += OnDeath;
 		healthComponent.OnDamage += OnDamaged;
 
-		col = GetComponent<ColliderBaseComponent>( false, true );
+		col = GetComponent<Collider>( false, true );
 
 		var rng = new Random();
 

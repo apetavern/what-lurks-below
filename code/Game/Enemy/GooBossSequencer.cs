@@ -47,7 +47,7 @@ public sealed class GooBossSequencer : BaseComponent
 		foreach ( var item in doorBlockers.Children )
 		{
 			item.GetComponent<ModelComponent>().Enabled = false;
-			item.GetComponent<ColliderBaseComponent>().Enabled = false;
+			item.GetComponent<Collider>().Enabled = false;
 		}
 
 		BossModel = GetComponent<AnimatedModelComponent>();
@@ -161,7 +161,7 @@ public sealed class GooBossSequencer : BaseComponent
 			foreach ( var item in doorBlockers.Children )
 			{
 				item.GetComponent<ModelComponent>( false, true ).Enabled = true;
-				item.GetComponent<ColliderBaseComponent>( false, true ).Enabled = true;
+				item.GetComponent<Collider>( false, true ).Enabled = true;
 			}
 
 			Scene.GetAllObjects( true ).Where( X => X.GetComponent<CameraComponent>( false ) != null ).First().GetComponent<CameraComponent>( false ).FieldOfView = 80f;
