@@ -1,4 +1,9 @@
-﻿public static class Program
+﻿global using System.Linq;
+global using System;
+using Sandbox;
+
+
+public static class Program
 {
 	public static void Main()
 	{
