@@ -1,10 +1,9 @@
-using BrickJam.Player;
 using Sandbox;
-using System.Linq;
 using System;
 using System.Collections.Generic;
+using BrickJam.Map;
 
-namespace BrickJam.Game;
+namespace BrickJam;
 
 [Icon( "adjust", "red", "white" )]
 [EditorHandle( "materials/gizmo/charactercontroller.png" )]
@@ -17,16 +16,13 @@ public class EnemySpawner : BaseComponent
 	[Property] private GameObject Enemy2 { get; set; }
 	[Property] private GameObject Enemy3 { get; set; }
 
-	public NavGenComponent navGen { get; set; }
-
 	public override void OnEnabled()
 	{
-		navGen = Scene.GetAllObjects( true ).Where( X => X.GetComponent<NavGenComponent>() != null ).FirstOrDefault().GetComponent<NavGenComponent>();
 		SpawnEnemies();
 	}
 	public async void SpawnEnemies()
 	{
-		while ( !navGen.Initialized )
+		while ( !NavGenComponent.Instance.Initialized )
 		{
 			await GameTask.DelaySeconds( Time.Delta );
 		}

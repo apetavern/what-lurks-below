@@ -1,5 +1,7 @@
 using Sandbox;
 
+namespace BrickJam.Player;
+
 public sealed class GlowstickComponent : BaseComponent
 {
 	float brightness = 4f;

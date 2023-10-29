@@ -1,5 +1,7 @@
 using Sandbox;
 
+namespace BrickJam.Map;
+
 [EditorHandle( "materials/gizmo/door.png" )]
 public sealed class RoomDoorDefinition : BaseComponent
 {

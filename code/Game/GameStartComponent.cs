@@ -1,6 +1,8 @@
+using Coroutines;
+using Coroutines.Stallers;
 using Sandbox;
 
-namespace BrickJam.Game;
+namespace BrickJam.Components;
 
 public sealed class GameStartComponent : BaseComponent
 {
@@ -14,25 +16,30 @@ public sealed class GameStartComponent : BaseComponent
 	{
 		if ( !Started && Input.Pressed( "Jump" ) )
 		{
-			StartGame();
+			Coroutines.Coroutine.Start( StartGame );
 			Started = true;
 		}
 	}
 
-	public async void StartGame()
+	public CoroutineMethod StartGame()
 	{
-		await bezier.GetComponent<BezierAnimationComponent>( false ).AnimateObject( GameObject, 2f );
+		var bezierAnimation = bezier.GetComponent<BezierAnimationComponent>( false );
+		var animateCoroutine = Coroutine.Start( bezierAnimation.AnimateObject, GameObject, 2f, false );
+		yield return new WaitForCoroutine( animateCoroutine, ExecutionStrategy.Frame );
+
 		var model = blackFade.GetComponent<ModelComponent>();
 		Stats.Reset();
+
 		while ( model.Tint.a < 0.99f )
 		{
 			var col = model.Tint;
 			col.a += Time.Delta * 2f;
 			model.Tint = col;
-			await GameTask.DelaySeconds( Time.Delta );
+			yield return new WaitForNextFrame();
 		}
 		model.Tint = Color.White.WithAlpha( 1f );
-		await GameTask.DelaySeconds( Time.Delta );
+
+		yield return new WaitForNextFrame();
 		Scene.LoadFromFile( "scenes/devmap.scene" );
 	}
 }

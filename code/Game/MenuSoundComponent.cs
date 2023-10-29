@@ -1,11 +1,11 @@
 ﻿using Sandbox;
 
-namespace BrickJam.Game;
+namespace BrickJam.Components;
 
 public class MenuSoundComponent : BaseComponent
 {
 	private Sound _sound;
-	
+
 	public override void OnStart()
 	{
 		base.OnStart();

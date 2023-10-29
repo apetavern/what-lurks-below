@@ -1,10 +1,11 @@
-using BrickJam.Game;
-using BrickJam.Player;
 using Sandbox;
 using System;
 using System.Linq;
-using BrickJam.Game.UI;
 using System.Collections.Generic;
+using BrickJam.Components;
+using BrickJam.Map;
+
+namespace BrickJam.Player;
 
 public class BrickPlayerController : BaseComponent
 {
@@ -27,8 +28,6 @@ public class BrickPlayerController : BaseComponent
 
 	float AimMultiplier = 1f;
 
-	NavGenComponent navgen;
-
 	public Vector3 startpos;
 
 	TimeSince TimeSinceLastGlowstick;
@@ -44,7 +43,7 @@ public class BrickPlayerController : BaseComponent
 
 			go.GetComponent<GlowstickComponent>( false, true ).Velocity = Body.Transform.Rotation.Forward * 250f + Vector3.Up * 150f;
 			go.GetComponent<GlowstickComponent>( false, true ).Player = GameObject;
-			go.SetParent( navgen.GameObject.Children.First() );
+			go.SetParent( MapGeneratorComponent.Instance.GeneratedMapParent );
 		}
 	}
 
@@ -192,8 +191,9 @@ public class BrickPlayerController : BaseComponent
 		}
 		var cc = GameObject.GetComponent<CharacterController>();
 
-		var pickups = Scene.GetAllObjects( true ).Where( x => x.GetComponent<ItemPickup>() != null );
-		pickups = pickups.Where( p => p.Transform.Position.Distance( Transform.Position ) < 50 );
+		// FIXME: S&box whitelist moment
+		var pickups = MapGeneratorComponent.Instance.Pickups
+			.Where( p => p.IsValid && p.Transform.Position.Distance( Transform.Position ) < 50 );
 
 		foreach ( var pickup in pickups )
 		{
@@ -221,13 +221,11 @@ public class BrickPlayerController : BaseComponent
 				pickup.GetComponent<PickupHint>().TimeSincePlayerInRange = 0;
 		}
 
-		if ( navgen == null )
-		{
-			navgen = Scene.GetAllObjects( true ).FirstOrDefault( x => x.GetComponent<NavGenComponent>() != null ).GetComponent<NavGenComponent>();
+		var navgen = NavGenComponent.Instance;
+		if ( navgen is null )
 			return;
-		}
 
-		if ( navgen != null && !navgen.Initialized )
+		if ( !navgen.Initialized )
 		{
 			if ( Transform.Position.z > 500 )
 			{

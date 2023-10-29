@@ -1,11 +1,10 @@
-using BrickJam.Game;
+using BrickJam.Components;
 using Sandbox;
 using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Linq;
-using System.Security.Cryptography;
-using System.Threading.Tasks;
+
+namespace BrickJam.Map;
 
 public sealed class RoomChunkComponent : BaseComponent
 {
@@ -29,17 +28,11 @@ public sealed class RoomChunkComponent : BaseComponent
 
 	public void ClearEnemiesAndItems()
 	{
-		var enemies = GameObject.GetComponents<EnemyController>( false, true );
-		for ( int i = 0; i < enemies.Count(); i++ )
-		{
-			enemies.ElementAt( i ).GameObject.Destroy();
-		}
+		foreach ( var enemy in GameObject.GetComponents<EnemyController>( false, true ) )
+			enemy.GameObject.Destroy();
 
-		var items = GameObject.GetComponents<ItemPickup>( false, true );
-		for ( int i = 0; i < items.Count(); i++ )
-		{
-			items.ElementAt( i ).GameObject.Destroy();
-		}
+		foreach ( var item in GameObject.GetComponents<ItemPickup>( false, true ) )
+			item.GameObject.Destroy();
 	}
 
 	public override void DrawGizmos()
@@ -84,7 +77,7 @@ public sealed class RoomChunkComponent : BaseComponent
 		return closestDoor;
 	}
 
-	public async void ConnectRooms( RoomDoorDefinition doorPosition1, RoomDoorDefinition doorPosition2 )
+	public void ConnectRooms( RoomDoorDefinition doorPosition1, RoomDoorDefinition doorPosition2 )
 	{
 		// Calculate control points for the Bézier curve
 		Vector3 controlPoint1 = doorPosition1.Transform.Position - doorPosition1.Transform.Rotation.Right * 64;//64
@@ -95,9 +88,7 @@ public sealed class RoomChunkComponent : BaseComponent
 
 		// Create a Bezier curve using the positions and control points
 
-		NavGenComponent navgen = Scene.GetAllObjects( true ).Where( X => X.GetComponent<NavGenComponent>() != null ).FirstOrDefault().GetComponent<NavGenComponent>();
-
-		var path = await navgen.GeneratePath( controlPoint1, controlPoint2 );
+		var path = NavGenComponent.Instance.GeneratePath( controlPoint1, controlPoint2 );
 
 		if ( path.Count == 0 )
 		{
@@ -117,7 +108,7 @@ public sealed class RoomChunkComponent : BaseComponent
 		}
 	}
 
-	public async void ProcessPath( List<NavigationPath.Segment> PathResult )
+	public void ProcessPath( List<NavigationPath.Segment> PathResult )
 	{
 		var CurrentPath = new List<Vector3>();
 

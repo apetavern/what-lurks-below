@@ -3,7 +3,7 @@ using System;
 using Sandbox;
 using System.Linq;
 
-namespace BrickJam.Game.Weapon;
+namespace BrickJam.Weapons;
 
 public class KnifeWeapon : BaseWeapon
 {

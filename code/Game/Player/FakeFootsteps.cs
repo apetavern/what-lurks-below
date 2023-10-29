@@ -1,5 +1,7 @@
 using Sandbox;
 
+namespace BrickJam.Player;
+
 public sealed class FakeFootsteps : BaseComponent
 {
 	[Property] public string footstepSound { get; set; }

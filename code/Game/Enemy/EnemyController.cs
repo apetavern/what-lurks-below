@@ -3,9 +3,11 @@ using Sandbox;
 using System.Linq;
 using System;
 using System.Collections.Generic;
-using BrickJam.Game.Weapon;
+using BrickJam.Weapons;
+using BrickJam.Components;
+using BrickJam.Map;
 
-namespace BrickJam.Game;
+namespace BrickJam;
 
 [Icon( "smart_toy", "red", "white" )]
 public class EnemyController : BaseComponent
@@ -38,8 +40,6 @@ public class EnemyController : BaseComponent
 
 	int pathIndex { get; set; } = 0;
 
-	NavGenComponent navgen { get; set; }
-
 	Collider col { get; set; }
 
 	TimeUntil timerIdleSound = new Random().Float( 4f, 12f );
@@ -62,8 +62,6 @@ public class EnemyController : BaseComponent
 		GameObject.GetComponent<CharacterController>( false ).IsOnGround = true;
 
 		model = Body.GetComponent<AnimatedModelComponent>().SceneObject;
-
-		navgen = Scene.GetAllObjects( true ).FirstOrDefault( x => x.GetComponent<NavGenComponent>() != null )?.GetComponent<NavGenComponent>();
 	}
 
 	public TimeSince TimeSinceDamage;
@@ -152,10 +150,10 @@ public class EnemyController : BaseComponent
 
 	float nextAttackTime;
 
-	public async void UpdatePathToPlayer()
+	public void UpdatePathToPlayer()
 	{
 		path.Clear();
-		var result = await navgen.GeneratePath( Transform.Position, Player.Transform.Position );
+		var result = NavGenComponent.Instance.GeneratePath( Transform.Position, Player.Transform.Position );
 
 		foreach ( var item in result )
 		{
@@ -163,10 +161,10 @@ public class EnemyController : BaseComponent
 		}
 	}
 
-	public async void PathToPoint( Vector3 point )
+	public void PathToPoint( Vector3 point )
 	{
 		path.Clear();
-		var result = await navgen.GeneratePath( Transform.Position, point );
+		var result = NavGenComponent.Instance.GeneratePath( Transform.Position, point );
 
 		foreach ( var item in result )
 		{
@@ -191,15 +189,15 @@ public class EnemyController : BaseComponent
 
 		MakeIdleSounds();
 
-		if ( !IsAggro && TimeSinceLastMove > 5f && navgen.Initialized )
+		if ( !IsAggro && TimeSinceLastMove > 5f && NavGenComponent.Instance.Initialized )
 		{
-			Vector2 MovePoint = Sandbox.Game.Random.VectorInCircle( 256f );
+			Vector2 MovePoint = Game.Random.VectorInCircle( 256f );
 
 			Vector3 PlacePoint = new Vector3( MovePoint.x, MovePoint.y, 0 );
 
 			PathToPoint( Transform.Position + PlacePoint );
 
-			TimeSinceLastMove = Sandbox.Game.Random.Float( 0f, 4f );
+			TimeSinceLastMove = Game.Random.Float( 0f, 4f );
 		}
 
 		Vector3 myPosition = Transform.Position;

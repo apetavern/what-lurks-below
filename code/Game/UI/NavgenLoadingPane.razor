@@ -1,6 +1,7 @@
 ﻿@using System
 @using System.Collections.Generic
 @using System.Linq
+@using BrickJam.Map;
 @using BrickJam.Player
 @using Sandbox;
 @using Sandbox.UI;
@@ -21,8 +22,7 @@
 
     public override void Tick()
     {
-        NavGen ??= GameManager.ActiveScene.GetAllObjects( true ).Where( X => X.GetComponent<NavGenComponent>() != null ).FirstOrDefault().GetComponent<NavGenComponent>();
-        Loading = !(NavGen?.Initialized ?? false);
+        Loading = !(NavGenComponent.Instance?.Initialized ?? false);
         SetClass( "hidden", !Loading );
     }
     

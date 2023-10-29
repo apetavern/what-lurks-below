@@ -1,9 +1,8 @@
 using Sandbox;
-using Sandbox.UI;
-using System.ComponentModel.Design;
 using System.Linq;
 using System.Collections.Generic;
-using System;
+
+namespace BrickJam.Player;
 
 [Icon( "checkroom", "red", "white" )]
 public sealed class PlayerClothingComponent : BaseComponent

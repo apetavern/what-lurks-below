@@ -2,9 +2,8 @@
 using Sandbox;
 using System;
 using System.Linq;
-using BrickJam.Game.UI;
 
-namespace BrickJam.Game;
+namespace BrickJam.Components;
 
 [Title( "ItemPickup" )]
 [Category( "Map" )]

@@ -2,7 +2,7 @@
 using System.Linq;
 using Sandbox;
 
-namespace BrickJam.Game;
+namespace BrickJam.Components;
 
 public class SoundManagerComponent : BaseComponent
 {

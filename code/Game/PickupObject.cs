@@ -1,6 +1,7 @@
-﻿using BrickJam.Game.UI;
+﻿using BrickJam.Components;
+using BrickJam.Map;
 
-namespace BrickJam.Game;
+namespace BrickJam;
 
 public class PickupObject : GameObject
 {
@@ -27,5 +28,7 @@ public class PickupObject : GameObject
 
 		c_ItemPickup.Item = item;
 		c_ItemPickup.Enabled = true;
+
+		MapGeneratorComponent.Instance.Pickups.Add( this );
 	}
 }

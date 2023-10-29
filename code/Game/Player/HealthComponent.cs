@@ -1,5 +1,4 @@
-﻿using BrickJam.Game.UI;
-using Sandbox;
+﻿using Sandbox;
 
 namespace BrickJam.Player;
 
@@ -31,7 +30,7 @@ public class HealthComponent : BaseComponent
 		base.Update();
 
 		Health = Health.Clamp( 0, 100 );
-		
+
 		if ( IsPlayer && HealthHud.Instance is not null )
 			HealthHud.Instance.Health = Health;
 	}

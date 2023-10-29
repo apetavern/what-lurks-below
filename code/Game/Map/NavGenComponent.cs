@@ -1,10 +1,10 @@
+using BrickJam.Components;
 using Sandbox;
 using System.Collections.Generic;
-using System.IO;
-using System.Threading;
-using System.Threading.Tasks;
 
-public sealed class NavGenComponent : BaseComponent
+namespace BrickJam.Map;
+
+public sealed class NavGenComponent : SingletonComponent<NavGenComponent>
 {
 	[Property] public GameObject GenerationPlane { get; set; }
 
@@ -32,13 +32,11 @@ public sealed class NavGenComponent : BaseComponent
 		}
 	}
 
-	public async Task<List<NavigationPath.Segment>> GeneratePath( Vector3 point1, Vector3 point2 )
+	public List<NavigationPath.Segment> GeneratePath( Vector3 point1, Vector3 point2 )
 	{
 		if ( mesh == null )
 		{
-			await GameTask.DelayRealtimeSeconds( Time.Delta * 2f );
 			GenerateMesh();
-			await GameTask.DelayRealtimeSeconds( Time.Delta * 2f );
 		}
 
 		var path = new NavigationPath( mesh );
@@ -54,7 +52,6 @@ public sealed class NavGenComponent : BaseComponent
 		{
 			waitasec++;
 			//Log.Info( "waiting for path gen" );
-			await GameTask.Delay( 1000 );
 		}
 
 		if ( path.Segments.Count == 0 )
@@ -67,7 +64,6 @@ public sealed class NavGenComponent : BaseComponent
 		{
 			waitasec++;
 			//Log.Info( "waiting for path gen" );
-			await GameTask.Delay( 500 );
 		}
 
 		//Log.Info( "Path took " + path.GenerationMilliseconds + "ms" );

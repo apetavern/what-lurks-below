@@ -1,6 +1,6 @@
 using BrickJam.Player;
-using Sandbox;
-using System.Linq;
+
+namespace BrickJam;
 
 public sealed class GooBossEyeball : BaseComponent
 {

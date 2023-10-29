@@ -1,8 +1,8 @@
 ﻿@using System
 @using System.Collections.Generic
 @using System.Linq
+@using BrickJam.Components;
 @using BrickJam.Player
-@using BrickJam.Game
 @using Sandbox;
 @using Sandbox.UI;
 @inherits PanelComponent
@@ -61,8 +61,11 @@
         if (GetComponent<IRootPanelComponent>(true) is not WorldPanel worldPanel)
             return;
 
-        var pickupComponentSceneModel = GetComponent<ItemPickup>().SceneModel;
-        if (pickupComponentSceneModel is null)
+        if (!TryGetComponent<ItemPickup>(out var itemPickup))
+            return;
+
+        var pickupComponentSceneModel = itemPickup.SceneModel;
+        if (pickupComponentSceneModel is null || !pickupComponentSceneModel.IsValid())
             return;
 
         worldPanel.Position = pickupComponentSceneModel.Transform.Position + Vector3.Up * 32f;

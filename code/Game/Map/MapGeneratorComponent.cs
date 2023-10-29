@@ -1,53 +1,141 @@
 using Sandbox;
 using System;
-using System.Threading;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 using System.Linq;
-using BrickJam.Game;
+using System.Collections.Immutable;
+using BrickJam.Player;
+using BrickJam.Components;
+using Coroutines.Stallers;
+using Coroutines;
 
-public static class Vector3Extensions
-{
-	public static Vector3 Clamp( this Vector3 vector, float min, float max )
-	{
-		float x = Math.Clamp( vector.x, min, max );
-		float y = Math.Clamp( vector.y, min, max );
-		float z = Math.Clamp( vector.z, min, max );
+namespace BrickJam.Map;
 
-		return new Vector3( x, y, z );
-	}
-}
-
+// FIXME: "Make map gen and enemy spawn deterministic by seed" (Commit f8391da) causes problems
 [Title( "Map Generator" )]
 [Category( "World" )]
 [Icon( "map", "red", "white" )]
-public partial class MapGeneratorComponent : BaseComponent
+public partial class MapGeneratorComponent : SingletonComponent<MapGeneratorComponent>
 {
-	List<string> Rooms = new List<string>() { "prefabs/rooms/sewer_room_01.object", "prefabs/rooms/sewer_room_02.object", "prefabs/rooms/sewer_room_03.object", "prefabs/rooms/sewer_room_04.object" };
+	private const string BossRoom = "prefabs/rooms/sewer_room_05.object";
 
-	List<string> Hallways = new List<string>() { "prefabs/hallways/hallway_01.object", "prefabs/hallways/hallway_02.object", "prefabs/hallways/hallway_03.object", "prefabs/hallways/hallway_04.object" };
+	private static readonly ImmutableArray<string> rooms = ImmutableArray.Create(
+		"prefabs/rooms/sewer_room_01.object",
+		"prefabs/rooms/sewer_room_02.object",
+		"prefabs/rooms/sewer_room_03.object",
+		"prefabs/rooms/sewer_room_04.object" );
 
-	List<RoomChunkComponent> SpawnedRooms = new List<RoomChunkComponent>();
+	private static readonly ImmutableArray<string> hallways = ImmutableArray.Create(
+		"prefabs/hallways/hallway_01.object",
+		"prefabs/hallways/hallway_02.object",
+		"prefabs/hallways/hallway_03.object",
+		"prefabs/hallways/hallway_04.object" );
 
-	[Property] int RoomCount { get; set; } = 10;
+	public ImmutableArray<GameObject> Containers { get; private set; } = ImmutableArray<GameObject>.Empty;
+	public List<PickupObject> Pickups { get; private set; } = new();
 
-	[Property] float SnapGridSize { get; set; } = 700f;
+	[Property] public GameObject GeneratedMapParent { get; set; }
 
+	[Property] private int RoomCount { get; set; } = 10;
+	[Property] private float SnapGridSize { get; set; } = 700f;
+	[Property] private bool IsBossSequence { get; set; }
 
-	[Property] public bool IsBossSequence { get; set; }
+	[Property] private GameObject Breakables1 { get; set; }
+	[Property] private GameObject Breakables2 { get; set; }
+	[Property] private GameObject Breakables3 { get; set; }
 
-	[Property] public GameObject Breakables1 { get; set; }
-	[Property] public GameObject Breakables2 { get; set; }
-	[Property] public GameObject Breakables3 { get; set; }
+	private ImmutableArray<RoomChunkComponent> spawnedRooms = ImmutableArray<RoomChunkComponent>.Empty;
+	private ImmutableArray<GameObject> hallwayChunks = ImmutableArray<GameObject>.Empty;
 
-	public GameObject Player { get; set; }
+	private GameObject player;
+	private bool correctedRooms;
 
-	public GameObject SpawnPrefabFromPath( string path, Vector3 position, Rotation rotation )
+	public override void OnStart()
 	{
-		var prefab = ResourceLibrary.Get<PrefabFile>( path );
-		var go = SceneUtility.Instantiate( prefab.Scene, position, rotation );
-		go.SetParent( GameObject.Children.First() );
-		return go;
+		player = Scene.GetAllObjects( true ).FirstOrDefault( x => x.Name == "player" );
+
+		var spawnedRoomsBuilder = ImmutableArray.CreateBuilder<RoomChunkComponent>();
+		spawnedRoomsBuilder.Add( SpawnPrefabFromPath( rooms[0], Transform.Position, Transform.Rotation ).GetComponent<RoomChunkComponent>( false ) );
+
+		if ( IsBossSequence )
+		{
+			Vector3 PlacePoint = new Vector3( 0, -2048f, 0 );
+
+			spawnedRoomsBuilder.Add( SpawnPrefabFromPath( BossRoom, Transform.Position + PlacePoint, Transform.Rotation ).GetComponent<RoomChunkComponent>( false ) );
+		}
+		else
+		{
+			for ( int i = 0; i < RoomCount; i++ )
+			{
+				Vector2 SpawnPoint = Game.Random.VectorInCircle( 800 );
+
+				Vector3 PlacePoint = new Vector3( SpawnPoint.x, SpawnPoint.y, 0 );
+
+				spawnedRoomsBuilder.Add( SpawnPrefabFromPath( rooms[Game.Random.Int( 0, rooms.Length - 1 )], Transform.Position + PlacePoint, Transform.Rotation ).GetComponent<RoomChunkComponent>( false ) );
+			}
+
+			//spawn bossroom
+			Vector3 BossPlacePoint = new Vector3( 0, -2048f, 0 );
+
+			spawnedRoomsBuilder.Add( SpawnPrefabFromPath( BossRoom, Transform.Position + BossPlacePoint, Transform.Rotation ).GetComponent<RoomChunkComponent>( false ) );
+		}
+
+		spawnedRoomsBuilder.Capacity = spawnedRoomsBuilder.Count;
+		spawnedRooms = spawnedRoomsBuilder.MoveToImmutable();
+	}
+
+	public override void Update()
+	{
+		if ( correctedRooms )
+			return;
+
+		int overlaps = 0;
+		foreach ( var room in spawnedRooms )
+		{
+			BBox checkBox1 = new BBox( room.GameObject.GetBounds().Center, SnapGridSize );
+
+			foreach ( var room2 in spawnedRooms )
+			{
+				if ( room == room2 || room == spawnedRooms[0] || room == null ) continue;
+
+				BBox checkBox2 = new BBox( room2.GameObject.GetBounds().Center, SnapGridSize );
+				if ( !checkBox1.Overlaps( checkBox2 ) )
+					continue;
+
+				overlaps++;
+				room.Transform.Position += (room.Transform.Position - room2.Transform.Position).WithZ( 0 ) * (1f / 90f) * 4f;
+
+				Vector2 SpawnPoint = Game.Random.VectorInCircle( 128f );
+
+				Vector3 OffsetPoint = new Vector3( SpawnPoint.x, SpawnPoint.y, 0 ) * (1f / 90f);
+
+				room.Transform.Position += OffsetPoint;
+
+				room.Transform.Position = room.Transform.Position.Clamp( -3000, 3000 );
+
+				checkBox1 = new BBox( room.GameObject.GetBounds().Center, SnapGridSize );
+			}
+		}
+
+		if ( overlaps != 0 )
+			return;
+
+		correctedRooms = true;
+		foreach ( var room in spawnedRooms )
+		{
+			if ( room == null ) continue;
+			var GridSnappedPosition = room.Transform.Position;
+			GridSnappedPosition.x = MathF.Round( GridSnappedPosition.x / SnapGridSize ) * SnapGridSize;
+			GridSnappedPosition.y = MathF.Round( GridSnappedPosition.y / SnapGridSize ) * SnapGridSize;
+
+			GridSnappedPosition.x += 64f;
+			GridSnappedPosition.y += 64f;
+
+			room.Transform.Position = GridSnappedPosition;
+			room.GetComponent<RoomChunkComponent>( false ).SetupCollision();
+		}
+
+		GenerateRoomConnections();
+		Coroutine.Start( CreateHallways );
 	}
 
 	public async void RegenMap()
@@ -58,63 +146,26 @@ public partial class MapGeneratorComponent : BaseComponent
 			map[i].Destroy();
 		}
 
-		SpawnedRooms.Clear();
-		CorrectedRooms = false;
+		spawnedRooms = ImmutableArray<RoomChunkComponent>.Empty;
+		correctedRooms = false;
 
 		await GameTask.Delay( 100 );
 
-		var navgen = Scene.GetAllObjects( true ).FirstOrDefault( x => x.GetComponent<NavGenComponent>() != null ).GetComponent<NavGenComponent>();
+		var navgen = NavGenComponent.Instance;
 		navgen.GenerationPlane.Enabled = true;
-
 		navgen.GenerateMesh();
-
 		navgen.Initialized = false;
 
-		Player.Transform.Position = Player.GetComponent<BrickPlayerController>().startpos;
+		player.Transform.Position = player.GetComponent<BrickPlayerController>().startpos;
 
 		OnStart();
 	}
 
-	public override void OnStart()
+	private void GenerateRoomConnections()
 	{
+		var random = new Random( (int)Time.Now );
 
-		Player = Scene.GetAllObjects( true ).FirstOrDefault( x => x.Name == "player" );
-
-		SpawnedRooms.Add( SpawnPrefabFromPath( Rooms[0], Transform.Position, Transform.Rotation ).GetComponent<RoomChunkComponent>( false ) );
-
-		if ( IsBossSequence )
-		{
-			Vector3 PlacePoint = new Vector3( 0, -2048f, 0 );
-
-			SpawnedRooms.Add( SpawnPrefabFromPath( "prefabs/rooms/sewer_room_05.object", Transform.Position + PlacePoint, Transform.Rotation ).GetComponent<RoomChunkComponent>( false ) );
-		}
-		else
-		{
-			for ( int i = 0; i < RoomCount; i++ )
-			{
-				Vector2 SpawnPoint = Game.Random.VectorInCircle( 800 );
-
-				Vector3 PlacePoint = new Vector3( SpawnPoint.x, SpawnPoint.y, 0 );
-
-				SpawnedRooms.Add( SpawnPrefabFromPath( Rooms[Game.Random.Int( 0, Rooms.Count - 1 )], Transform.Position + PlacePoint, Transform.Rotation ).GetComponent<RoomChunkComponent>( false ) );
-			}
-
-			//spawn bossroom
-			Vector3 BossPlacePoint = new Vector3( 0, -2048f, 0 );
-
-			SpawnedRooms.Add( SpawnPrefabFromPath( "prefabs/rooms/sewer_room_05.object", Transform.Position + BossPlacePoint, Transform.Rotation ).GetComponent<RoomChunkComponent>( false ) );
-		}
-
-		base.OnStart();
-	}
-
-	bool CorrectedRooms;
-
-	public async void GenerateRoomConnections()
-	{
-		Random random = new Random(); // Create a random number generator
-
-		foreach ( var room in SpawnedRooms )
+		foreach ( var room in spawnedRooms )
 		{
 			var position = room.Transform.Position;
 			var gridX = MathF.Floor( position.x / SnapGridSize );
@@ -125,7 +176,7 @@ public partial class MapGeneratorComponent : BaseComponent
 			RoomChunkComponent closestNeighbor = null;
 
 			// Check for neighboring grid points and create connections
-			foreach ( var neighbor in SpawnedRooms )
+			foreach ( var neighbor in spawnedRooms )
 			{
 				if ( neighbor == room || neighbor.ConnectedRooms.Contains( room ) ) continue; // Skip self and already-connected rooms
 
@@ -138,7 +189,6 @@ public partial class MapGeneratorComponent : BaseComponent
 				{
 					// Create a connection between the two rooms
 					room.GetComponent<RoomChunkComponent>().AddConnection( neighbor.GetComponent<RoomChunkComponent>() );
-					await GameTask.Delay( 10 );
 				}
 
 				// Calculate the distance between the current room and the neighbor
@@ -155,11 +205,10 @@ public partial class MapGeneratorComponent : BaseComponent
 			if ( closestNeighbor is not null )
 			{
 				room.GetComponent<RoomChunkComponent>().AddConnection( closestNeighbor );
-				await GameTask.Delay( 10 );
 			}
 		}
 
-		List<RoomChunkComponent> unconnectedRooms = new List<RoomChunkComponent>( SpawnedRooms );
+		List<RoomChunkComponent> unconnectedRooms = new List<RoomChunkComponent>( spawnedRooms );
 
 		while ( unconnectedRooms.Count > 0 )
 		{
@@ -180,10 +229,10 @@ public partial class MapGeneratorComponent : BaseComponent
 				// Find unconnected neighboring rooms
 				var unconnectedNeighbors = GetUnconnectedNeighbors( currentRoom, unconnectedRooms );
 
-				if ( unconnectedNeighbors.Count > 0 )
+				if ( unconnectedNeighbors.Length > 0 )
 				{
 					// Randomly select one unconnected neighbor
-					var randomIndex = random.Next( unconnectedNeighbors.Count );
+					var randomIndex = random.Next( unconnectedNeighbors.Length );
 					var randomNeighbor = unconnectedNeighbors[randomIndex];
 
 					// Connect the current room to the selected neighbor
@@ -195,51 +244,28 @@ public partial class MapGeneratorComponent : BaseComponent
 
 					// Add the neighbor to the stack for further exploration
 					roomStack.Push( randomNeighbor );
-					await GameTask.Delay( 10 );
 				}
 			}
-
-			await GameTask.Delay( 10 );
 		}
 	}
 
-	private List<RoomChunkComponent> GetUnconnectedNeighbors( RoomChunkComponent room, List<RoomChunkComponent> unconnectedRooms )
+	private CoroutineMethod CreateHallways()
 	{
-		List<RoomChunkComponent> unconnectedNeighbors = new List<RoomChunkComponent>();
-
-		foreach ( var neighbor in room.GetComponent<RoomChunkComponent>().ConnectedRooms )
-		{
-			if ( unconnectedRooms.Contains( neighbor ) )
-			{
-				unconnectedNeighbors.Add( neighbor );
-			}
-		}
-
-		return unconnectedNeighbors;
-	}
-
-	List<GameObject> hallwayChunks = new List<GameObject>();
-
-	public async void CreateHallways()
-	{
-		await GameTask.Delay( 7500 );
 		int waitframes = 0;
-		foreach ( var room in SpawnedRooms )
+		foreach ( var room in spawnedRooms )
 		{
 			while ( room.PathPoints.Count == 0 && waitframes < 100 )
 			{
 				waitframes++;
-				//Log.Info( "Waiting for hallways..." );
-				await GameTask.Delay( 50 );
+				yield return new WaitForSeconds( 0.05f );
 			}
 			waitframes = 0;
 			while ( room.PathPoints.Count == 1 && waitframes < 50 )
 			{
 				waitframes++;
-				//Log.Info( "Waiting for hallways..." );
-				await GameTask.Delay( 5 );
+				yield return new WaitForSeconds( 0.005f );
 			}
-			waitframes = 0;
+
 			foreach ( var hall in room.PathPoints )
 			{
 				for ( int i = 0; i < hall.Count; i++ )
@@ -247,125 +273,92 @@ public partial class MapGeneratorComponent : BaseComponent
 					var tr = Physics.Trace.Ray( hall[i], hall[i] - Vector3.Up * 18f ).WithoutTags( "navgen" ).Run();
 					if ( !tr.Hit && hall[i] != Vector3.Zero )
 					{
-						SpawnPrefabFromPath( Hallways[Game.Random.Int( 0, Hallways.Count - 1 )], hall[i], Rotation.Identity );
+						SpawnPrefabFromPath( hallways[Game.Random.Int( 0, hallways.Length - 1 )], hall[i], Rotation.Identity );
+						continue;
 					}
-					else if ( tr.Hit && hall[i] != Vector3.Zero )
+
+					if ( !tr.Hit || hall[i] == Vector3.Zero )
+						continue;
+
+					List<Vector3> direction = new List<Vector3> { Vector3.Forward, Vector3.Backward, Vector3.Left, Vector3.Right };
+					for ( int dir = 0; dir < direction.Count; dir++ )
 					{
-						List<Vector3> direction = new List<Vector3> { Vector3.Forward, Vector3.Backward, Vector3.Left, Vector3.Right };
-						for ( int dir = 0; dir < direction.Count; dir++ )
-						{
-							var pos = hall[i] + direction[dir] * 128f;
-							tr = Physics.Trace.Ray( pos, pos - Vector3.Up * 18f ).WithoutTags( "navgen" ).Run();
-							if ( !tr.Hit )
-							{
-								SpawnPrefabFromPath( Hallways[Game.Random.Int( 0, Hallways.Count - 1 )], pos, Rotation.Identity );
+						var pos = hall[i] + direction[dir] * 128f;
+						tr = Physics.Trace.Ray( pos, pos - Vector3.Up * 18f ).WithoutTags( "navgen" ).Run();
+						if ( tr.Hit )
+							continue;
 
-								if ( Game.Random.Float() > 0.95f )
-								{
-									List<GameObject> breakablesToSpawn = new();
-									if ( Breakables1 != null ) breakablesToSpawn.Add( Breakables1 );
-									if ( Breakables2 != null ) breakablesToSpawn.Add( Breakables2 );
-									if ( Breakables3 != null ) breakablesToSpawn.Add( Breakables3 );
+						SpawnPrefabFromPath( hallways[Game.Random.Int( 0, hallways.Length - 1 )], pos, Rotation.Identity );
+						if ( Game.Random.Float() <= 0.95f )
+							continue;
 
-									if ( breakablesToSpawn.Count > 0 )
-									{
-										var breakable = breakablesToSpawn[new Random().Int( 0, breakablesToSpawn.Count - 1 )];
-										var breaky = SceneUtility.Instantiate( breakable, pos + Vector3.Random.WithZ( 0 ) * 64f, Rotation.LookAt( Vector3.Random.WithZ( 0 ) * 64f ) );
-										breaky.SetParent( GameObject.Children.First() );
-									}
-								}
-							}
-						}
+						List<GameObject> breakablesToSpawn = new();
+						if ( Breakables1 != null ) breakablesToSpawn.Add( Breakables1 );
+						if ( Breakables2 != null ) breakablesToSpawn.Add( Breakables2 );
+						if ( Breakables3 != null ) breakablesToSpawn.Add( Breakables3 );
+
+						if ( breakablesToSpawn.Count <= 0 )
+							continue;
+
+						var breakable = breakablesToSpawn[new Random().Int( 0, breakablesToSpawn.Count - 1 )];
+						var breaky = SceneUtility.Instantiate( breakable, pos + Vector3.Random.WithZ( 0 ) * 64f, Rotation.LookAt( Vector3.Random.WithZ( 0 ) * 64f ) );
+						breaky.SetParent( GeneratedMapParent );
 					}
 				}
 			}
 		}
 
-		await GameTask.Delay( 200 );
+		Containers = Scene.GetAllObjects( true )
+			.Where( x => x.GetComponent<ItemContainer>() is not null )
+			.ToImmutableArray();
 
-		var navgen = Scene.GetAllObjects( true ).Where( X => X.GetComponent<NavGenComponent>() != null ).FirstOrDefault().GetComponent<NavGenComponent>();
-
+		var navgen = NavGenComponent.Instance;
 		navgen.GenerationPlane.Enabled = false;
 
-		await GameTask.Delay( 10 );
-
-		hallwayChunks = Scene.GetAllObjects( true ).Where( X => X.GetComponent<HallwayChunkComponent>() != null ).ToList();
+		hallwayChunks = Scene.GetAllObjects( true ).Where( X => X.GetComponent<HallwayChunkComponent>() != null ).ToImmutableArray();
 
 		foreach ( var item in hallwayChunks )
 		{
 			item.Transform.Rotation = Rotation.Identity;
 			item.GetComponent<HallwayChunkComponent>( false ).CheckSides();
-			await GameTask.Delay( 10 );
 		}
 
 		navgen.GenerateMesh();
 		navgen.Initialized = true;
 
-		foreach ( var door in SpawnedRooms[0].GetComponents<RoomDoorDefinition>( false, true ).Where( X => X.Connected ) )
+		foreach ( var door in spawnedRooms[0].GetComponents<RoomDoorDefinition>( false, true ).Where( X => X.Connected ) )
 		{
 			SpawnPrefabFromPath( "prefabs/pieces/barrel_01.object", door.Transform.Position, door.Transform.Rotation );
 		}
 
-		await GameTask.Delay( 200 );
+		spawnedRooms[0].ClearEnemiesAndItems();
 
-		SpawnedRooms[0].ClearEnemiesAndItems();
+		// FIXME: For some reason hallway chunks sometimes get their Z value mangled.
+		foreach ( var hallwayChunk in hallwayChunks )
+		{
+			hallwayChunk.Transform.Position = new Vector3( hallwayChunk.Transform.Position.x, hallwayChunk.Transform.Position.y, 0 );
+		}
 	}
 
-	public override void Update()
+	private GameObject SpawnPrefabFromPath( string path, Vector3 position, Rotation rotation )
 	{
-		if ( !CorrectedRooms )
+		var prefab = ResourceLibrary.Get<PrefabFile>( path );
+		var go = SceneUtility.Instantiate( prefab.Scene, position, rotation );
+		go.SetParent( GeneratedMapParent );
+		return go;
+	}
+
+	private static ImmutableArray<RoomChunkComponent> GetUnconnectedNeighbors( RoomChunkComponent room, IEnumerable<RoomChunkComponent> unconnectedRooms )
+	{
+		var unconnectedNeighbors = ImmutableArray.CreateBuilder<RoomChunkComponent>();
+
+		foreach ( var neighbor in room.GetComponent<RoomChunkComponent>().ConnectedRooms )
 		{
-			int overlaps = 0;
-			foreach ( var room in SpawnedRooms )
-			{
-				foreach ( var room2 in SpawnedRooms )
-				{
-					if ( room == room2 || room == SpawnedRooms[0] || room == null ) continue;
-
-					BBox CheckBox1 = new BBox( room.GameObject.GetBounds().Center, SnapGridSize );
-					BBox CheckBox2 = new BBox( room2.GameObject.GetBounds().Center, SnapGridSize );
-
-					if ( CheckBox1.Overlaps( CheckBox2 ) )
-					{
-						overlaps++;
-						room.Transform.Position += (room.Transform.Position - room2.Transform.Position).WithZ( 0 ) * (1f / 90f) * 4f;
-
-						Vector2 SpawnPoint = Game.Random.VectorInCircle( 128f );
-
-						Vector3 OffsetPoint = new Vector3( SpawnPoint.x, SpawnPoint.y, 0 ) * (1f / 90f);
-
-						room.Transform.Position += OffsetPoint;
-
-						room.Transform.Position = Vector3Extensions.Clamp( room.Transform.Position, -3000f, 3000f );
-					}
-				}
-			}
-			if ( overlaps == 0 )
-			{
-				CorrectedRooms = true;
-				foreach ( var room in SpawnedRooms )
-				{
-					if ( room == null ) continue;
-					var GridSnappedPosition = room.Transform.Position;
-					GridSnappedPosition.x = MathF.Round( GridSnappedPosition.x / SnapGridSize ) * SnapGridSize;
-					GridSnappedPosition.y = MathF.Round( GridSnappedPosition.y / SnapGridSize ) * SnapGridSize;
-
-					GridSnappedPosition.x += 64f;
-					GridSnappedPosition.y += 64f;
-
-					room.Transform.Position = GridSnappedPosition;
-					room.GetComponent<RoomChunkComponent>( false ).SetupCollision();
-				}
-
-				GenerateRoomConnections();
-
-				CreateHallways();
-			}
+			if ( unconnectedRooms.Contains( neighbor ) )
+				unconnectedNeighbors.Add( neighbor );
 		}
 
-		/*if ( CorrectedRooms && !IsBossSequence && !Scene.GetAllObjects( true ).Where( x => x.GetComponent<EnemyController>() != null ).Any() )
-		{
-			RegenMap();
-		}*/
+		unconnectedNeighbors.Capacity = unconnectedNeighbors.Count;
+		return unconnectedNeighbors.MoveToImmutable();
 	}
 }

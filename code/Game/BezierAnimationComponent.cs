@@ -1,40 +1,9 @@
+using BrickJam.Util;
+using Coroutines.Stallers;
 using Sandbox;
-using System;
 using System.Collections.Generic;
-using System.Numerics;
-using System.Threading.Tasks;
-public static class BezierCurveGenerator
-{
-	public static List<Vector3> GenerateBezierCurve( Vector3 startPoint, Vector3 endPoint, Vector3 controlPoint1, Vector3 controlPoint2, int segments )
-	{
-		List<Vector3> points = new List<Vector3>();
 
-		for ( int i = 0; i <= segments; i++ )
-		{
-			float t = i / (float)segments;
-			Vector3 point = CalculateBezierPoint( t, startPoint, endPoint, controlPoint1, controlPoint2 );
-			points.Add( point );
-		}
-
-		return points;
-	}
-
-	private static Vector3 CalculateBezierPoint( float t, Vector3 p0, Vector3 p3, Vector3 p1, Vector3 p2 )
-	{
-		float u = 1 - t;
-		float tt = t * t;
-		float uu = u * u;
-		float uuu = uu * u;
-		float ttt = tt * t;
-
-		Vector3 p = uuu * p0; // (1-t)^3 * P0
-		p += 3 * uu * t * p1; // 3 * (1-t)^2 * t * P1
-		p += 3 * u * tt * p2; // 3 * (1-t) * t^2 * P2
-		p += ttt * p3; // t^3 * P3
-
-		return p;
-	}
-}
+namespace BrickJam.Components;
 
 public sealed class BezierAnimationComponent : BaseComponent, BaseComponent.ExecuteInEditor
 {
@@ -65,7 +34,7 @@ public sealed class BezierAnimationComponent : BaseComponent, BaseComponent.Exec
 		}
 	}
 
-	public async Task AnimateObject( GameObject animatable, float time = 2f, bool LerpToPointAngles = false )
+	public CoroutineMethod AnimateObject( GameObject animatable, float time = 2f, bool LerpToPointAngles = false )
 	{
 		Vector3 startPoint = Point1.Transform.Position;
 		Vector3 endPoint = Point2.Transform.Position;
@@ -76,7 +45,7 @@ public sealed class BezierAnimationComponent : BaseComponent, BaseComponent.Exec
 
 		if ( bezierPoints.Count < 2 )
 		{
-			return;
+			yield break;
 		}
 
 		float totalTime = time; // Total time for the animation (adjust as needed).
@@ -111,7 +80,8 @@ public sealed class BezierAnimationComponent : BaseComponent, BaseComponent.Exec
 
 				animatable.Transform.Rotation = Rotation.Slerp( Point1.Transform.Rotation * Rotation.FromYaw( 180f ), Point2.Transform.Rotation, t2 );
 			}
-			await GameTask.DelaySeconds( Time.Delta );
+
+			yield return new WaitForNextFrame();
 
 			currentTime += Time.Delta;
 

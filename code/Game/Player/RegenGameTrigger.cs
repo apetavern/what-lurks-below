@@ -1,7 +1,7 @@
-using Sandbox;
-using System.Linq;
+using BrickJam.Components;
+using BrickJam.Map;
 
-namespace BrickJam.Game;
+namespace BrickJam;
 
 public sealed class RegenGameTrigger : BaseComponent
 {
@@ -13,6 +13,6 @@ public sealed class RegenGameTrigger : BaseComponent
 	public void RegenMap()
 	{
 		Stats.FloorsCompleted++;
-		Scene.GetAllObjects( true ).Where( X => X.GetComponent<MapGeneratorComponent>() != null ).FirstOrDefault().GetComponent<MapGeneratorComponent>().RegenMap();
+		MapGeneratorComponent.Instance.RegenMap();
 	}
 }

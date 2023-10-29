@@ -141,8 +141,10 @@
           "Breakables1": "prefabs/pieces/barrel_01.object",
           "Breakables2": "prefabs/pieces/barrel_02.object",
           "Breakables3": "prefabs/pieces/box_01.object",
+          "GeneratedMapParent": "eae33615-fd68-4290-b430-5ec5126d9584",
           "IsBossSequence": false,
           "RoomCount": 7,
+          "Seed": 1,
           "SnapGridSize": 1024
         },
         {

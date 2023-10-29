@@ -1,5 +1,8 @@
+using BrickJam.Player;
 using Sandbox;
 using System.Linq;
+
+namespace BrickJam.Components;
 
 [Title( "CameraTrigger" )]
 [Category( "Render" )]

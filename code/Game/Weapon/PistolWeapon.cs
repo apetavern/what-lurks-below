@@ -1,10 +1,8 @@
-﻿using System;
-using System.Linq;
-using BrickJam.Game.UI;
+﻿using System.Linq;
 using BrickJam.Player;
 using Sandbox;
 
-namespace BrickJam.Game.Weapon;
+namespace BrickJam.Weapons;
 
 public class PistolWeapon : BaseWeapon
 {

@@ -1,6 +1,6 @@
 ﻿using Sandbox;
 
-namespace BrickJam.Game;
+namespace BrickJam.Components;
 
 public class SubtleCameraMovementComponent : BaseComponent
 {

@@ -1,6 +1,6 @@
-using BrickJam.Game;
-using Sandbox;
 using System.Linq;
+
+namespace BrickJam.Components;
 
 public sealed class OpenDoorOnTrigger : BaseComponent
 {
