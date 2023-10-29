@@ -133,7 +133,7 @@
                 "CreateBoneObjects": false,
                 "MaterialGroup": null,
                 "MaterialOverride": null,
-                "Model": "models/cosmetics/miner_helmet/miner_helmet.vmdl",
+                "Model": "models/cosmetics/miner_helmet/minster_helmet.vmdl",
                 "ShouldCastShadows": true,
                 "Tint": "1,1,1,1"
               }
