@@ -295,8 +295,8 @@ public class BrickPlayerController : BaseComponent
 
 				if ( FirstPerson ) camPos = Eye.Transform.Position + EyeAngles.ToRotation().Forward * 8;
 
-				var tr = Physics.Trace.Ray( Eye.Transform.Position, camPos )
-					.WithAnyTags( "solid" )
+				var tr = Scene.PhysicsWorld.Trace.Ray( Eye.Transform.Position, camPos )
+					//.WithAnyTags( "solid" )//Add this back in later maybe, cba to go through and add solid tags everywhere
 					.WithoutTags( "trigger" )
 					.Radius( 16 )
 					.Run();
