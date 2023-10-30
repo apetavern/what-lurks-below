@@ -7,7 +7,7 @@ using Sandbox;
 namespace BrickJam.Player;
 
 [Category( "Player" )]
-public class Inventory : BaseComponent
+public class Inventory : SingletonComponent<Inventory>
 {
 	private List<InventoryReference> _items = new();
 
@@ -26,8 +26,6 @@ public class Inventory : BaseComponent
 	public int ShotgunAmmoCount => GetShotgunAmmoCount();
 	public InventoryReference PistolAmmoItem => _items.FirstOrDefault( i => i.Asset.Name == "Pistol Ammo" );
 	public InventoryReference ShotgunAmmoItem => _items.FirstOrDefault( i => i.Asset.Name == "Shotgun Ammo" );
-
-	public static Inventory Instance { get; set; }
 
 	private int GetPistolAmmoCount()
 	{
@@ -167,8 +165,6 @@ public class Inventory : BaseComponent
 
 	public override void OnStart()
 	{
-		Instance = this;
-
 		_inventorySlots = new bool[SlotsX, SlotsY];
 		_player = BrickPlayerController.Instance.Player;
 
