@@ -84,7 +84,7 @@ public partial class MapGeneratorComponent : SingletonComponent<MapGeneratorComp
 
 	public override void Update()
 	{
-		if ( correctedRooms )
+		if ( correctedRooms || spawnedRooms.IsEmpty )
 			return;
 
 		int overlaps = 0;
