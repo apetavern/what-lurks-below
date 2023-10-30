@@ -1,5 +1,6 @@
 using BrickJam.Components;
 using BrickJam.Map;
+using Coroutines;
 
 namespace BrickJam;
 
@@ -13,6 +14,6 @@ public sealed class RegenGameTrigger : BaseComponent
 	public void RegenMap()
 	{
 		Stats.FloorsCompleted++;
-		MapGeneratorComponent.Instance.RegenMap();
+		Coroutine.Start( MapGeneratorComponent.Instance.RegenMapCoroutine );
 	}
 }

@@ -2,6 +2,8 @@ using Sandbox;
 using System;
 using System.Collections.Generic;
 using BrickJam.Map;
+using Coroutines;
+using Coroutines.Stallers;
 
 namespace BrickJam;
 
@@ -18,14 +20,14 @@ public class EnemySpawner : BaseComponent
 
 	public override void OnEnabled()
 	{
-		SpawnEnemies();
+		Coroutine.Start( SpawnEnemiesCoroutine );
 	}
-	public async void SpawnEnemies()
+
+	private CoroutineMethod SpawnEnemiesCoroutine()
 	{
 		while ( !NavGenComponent.Instance.Initialized )
-		{
-			await GameTask.DelaySeconds( Time.Delta );
-		}
+			yield return new WaitForNextFrame();
+
 		List<GameObject> enemiesToSpawn = new();
 		if ( Enemy1 != null ) enemiesToSpawn.Add( Enemy1 );
 		if ( Enemy2 != null ) enemiesToSpawn.Add( Enemy2 );

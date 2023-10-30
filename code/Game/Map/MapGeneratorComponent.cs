@@ -137,9 +137,9 @@ public partial class MapGeneratorComponent : SingletonComponent<MapGeneratorComp
 		Coroutine.Start( CreateHallwaysCoroutine );
 	}
 
-	public async void RegenMap()
+	public CoroutineMethod RegenMapCoroutine()
 	{
-		var map = GameObject.Children.First().Children;
+		var map = GeneratedMapParent.Children;
 		for ( int i = 0; i < map.Count; i++ )
 		{
 			map[i].Destroy();
@@ -148,7 +148,7 @@ public partial class MapGeneratorComponent : SingletonComponent<MapGeneratorComp
 		spawnedRooms = ImmutableArray<RoomChunkComponent>.Empty;
 		correctedRooms = false;
 
-		await GameTask.Delay( 100 );
+		yield return new WaitForSeconds( 0.1f );
 
 		var navgen = NavGenComponent.Instance;
 		navgen.GenerationPlane.Enabled = true;

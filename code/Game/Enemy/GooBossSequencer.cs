@@ -85,7 +85,7 @@ public sealed class GooBossSequencer : BaseComponent
 
 	TimeUntil timerIdleSound = new Random().Float( 4f, 12f );
 
-	void MakeIdleSounds()
+	private void MakeIdleSounds()
 	{
 		if ( timerIdleSound > 0f ) return;
 		if ( !string.IsNullOrEmpty( IdleSound ) )
@@ -96,24 +96,30 @@ public sealed class GooBossSequencer : BaseComponent
 		timerIdleSound = new Random().Float( 4f, 12f );
 	}
 
-	public async void OnDeath()
+	private void OnDeath()
 	{
 		BossModel.Set( "die", true );
 
 		if ( !string.IsNullOrEmpty( DeathSound ) )
 			Sound.FromWorld( DeathSound, Transform.Position );
 
-		await GameTask.DelaySeconds( 10f );
+		Coroutine.Start( OnDeathCoroutine );
+	}
+
+	private CoroutineMethod OnDeathCoroutine()
+	{
+		yield return new WaitForSeconds( 10 );
+
 		var modelcomp = GetComponent<AnimatedModelComponent>( false, true );
 		while ( modelcomp.SceneObject.ColorTint.a > 0 )
 		{
 			var col = modelcomp.SceneObject.ColorTint;
 			col.a -= Time.Delta;
 			modelcomp.SceneObject.ColorTint = col;
-			await GameTask.DelaySeconds( Time.Delta );
+			yield return new WaitForNextFrame();
 		}
 
-		await GameTask.DelaySeconds( Time.Delta );
+		yield return new WaitForNextFrame();
 
 		var flags = Scene.GetAllObjects( true ).FirstOrDefault( o => o.Name == "player" )?
 			.GetComponent<PlayerFlagsComponent>();
@@ -189,12 +195,12 @@ public sealed class GooBossSequencer : BaseComponent
 		}
 	}
 
-	public async void SpawnEnemies()
+	private CoroutineMethod SpawnEnemiesCoroutine()
 	{
 		int amountOfEnemies = 7 - Eyeballs.Count;
 		for ( int i = 0; i < amountOfEnemies; i++ )
 		{
-			await GameTask.DelaySeconds( Game.Random.Float( 1f, 6f ) );
+			yield return new WaitForSeconds( Game.Random.Float( 1, 6 ) );
 
 			List<Transform> enemySpawnPositions = new()
 			{
@@ -224,7 +230,7 @@ public sealed class GooBossSequencer : BaseComponent
 					break;
 			}
 
-			await GameTask.DelaySeconds( 0.6f );
+			yield return new WaitForSeconds( 0.6f );
 
 			if ( !string.IsNullOrEmpty( AttackSound ) )
 				Sound.FromWorld( AttackSound, spawnpos );
@@ -267,7 +273,7 @@ public sealed class GooBossSequencer : BaseComponent
 			if ( EyesOpen )
 			{
 				Spawning = true;
-				SpawnEnemies();
+				Coroutine.Start( SpawnEnemiesCoroutine );
 				EyesOpen = false;
 				foreach ( var eye in Eyeballs )
 				{

@@ -46,10 +46,10 @@ public class KnifeWeapon : BaseWeapon
 
 	public override void PrimaryFire( Vector3 position, Vector3 direction )
 	{
-		TryHit();
+		Coroutine.Start( TryHitCoroutine );
 	}
 
-	public async void TryHit()
+	public CoroutineMethod TryHitCoroutine()
 	{
 		bool HitSomething = false;
 
@@ -89,8 +89,9 @@ public class KnifeWeapon : BaseWeapon
 
 				HitSomething = true;
 			}
+
 			CurrentTime += Time.Delta;
-			await GameTask.DelaySeconds( Time.Delta );
+			yield return new WaitForNextFrame();
 		}
 	}
 

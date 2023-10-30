@@ -6,6 +6,8 @@ using System.Collections.Generic;
 using BrickJam.Weapons;
 using BrickJam.Components;
 using BrickJam.Map;
+using Coroutines;
+using Coroutines.Stallers;
 
 namespace BrickJam;
 
@@ -78,7 +80,7 @@ public class EnemyController : BaseComponent
 
 	bool dead;
 
-	public async void OnDeath()
+	private void OnDeath()
 	{
 		dead = true;
 		model.SetAnimParameter( "die", true );
@@ -133,17 +135,22 @@ public class EnemyController : BaseComponent
 		if ( !string.IsNullOrEmpty( DeathSound ) )
 			Sound.FromWorld( DeathSound, Transform.Position );
 
-		await GameTask.DelaySeconds( 3f );
+		Coroutine.Start( OnDeathCoroutine );
+	}
+
+	private CoroutineMethod OnDeathCoroutine()
+	{
+		yield return new WaitForSeconds( 3 );
 		var modelcomp = GetComponent<AnimatedModelComponent>( false, true );
 		while ( modelcomp.SceneObject.ColorTint.a > 0 )
 		{
 			var col = modelcomp.SceneObject.ColorTint;
 			col.a -= Time.Delta * 2f;
 			modelcomp.SceneObject.ColorTint = col;
-			await GameTask.DelaySeconds( Time.Delta );
+			yield return new WaitForNextFrame();
 		}
 
-		await GameTask.DelaySeconds( Time.Delta );
+		yield return new WaitForNextFrame();
 
 		GameObject.Destroy();
 	}
