@@ -144,13 +144,13 @@ public class BaseWeapon : GameObject
 
 	}
 
-	public virtual void OnIdle( CitizenAnimationHelperScene helper ) { }
+	public virtual void OnIdle( ref CitizenAnimationHelperScene helper ) { }
 
-	public virtual void OnPrimaryPressed( CitizenAnimationHelperScene helper ) { }
+	public virtual void OnPrimaryPressed( ref CitizenAnimationHelperScene helper ) { }
 
-	public virtual void OnPrimaryHeld( CitizenAnimationHelperScene helper ) { }
+	public virtual void OnPrimaryHeld( ref CitizenAnimationHelperScene helper ) { }
 
-	public virtual void OnSecondaryPressed( CitizenAnimationHelperScene helper ) { }
+	public virtual void OnSecondaryPressed( ref CitizenAnimationHelperScene helper ) { }
 
-	public virtual void OnSecondaryHeld( CitizenAnimationHelperScene helper ) { }
+	public virtual void OnSecondaryHeld( ref CitizenAnimationHelperScene helper ) { }
 }

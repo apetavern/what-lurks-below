@@ -52,26 +52,26 @@ public class WeaponComponent : BaseComponent
 		if ( ActiveWeapon is null )
 			helper.HoldType = CitizenAnimationHelperScene.HoldTypes.None;
 
-		ActiveWeapon?.OnIdle( helper );
+		ActiveWeapon?.OnIdle( ref helper );
 
 		if ( Input.Pressed( "attack1" ) )
 		{
 			ActiveWeapon?.PrimaryFire( ctrl.Eye.Transform.Position, ctrl.Eye.Transform.Rotation.Forward );
-			ActiveWeapon?.OnPrimaryPressed( helper );
+			ActiveWeapon?.OnPrimaryPressed( ref helper );
 		}
 		if ( Input.Pressed( "attack2" ) )
 		{
 			ActiveWeapon?.SecondaryFire( ctrl.Eye.Transform.Position, ctrl.Eye.Transform.Rotation.Forward );
-			ActiveWeapon?.OnSecondaryPressed( helper );
+			ActiveWeapon?.OnSecondaryPressed( ref helper );
 		}
 
 		if ( Input.Down( "attack1" ) )
 		{
-			ActiveWeapon?.OnPrimaryHeld( helper );
+			ActiveWeapon?.OnPrimaryHeld( ref helper );
 		}
 		if ( Input.Down( "attack2" ) )
 		{
-			ActiveWeapon?.OnSecondaryHeld( helper );
+			ActiveWeapon?.OnSecondaryHeld( ref helper );
 		}
 	}
 }

@@ -38,13 +38,13 @@ public class PistolWeapon : BaseWeapon
 
 	public ParticleSystem muzzleflash;
 
-	public override void OnIdle( CitizenAnimationHelperScene helper )
+	public override void OnIdle( ref CitizenAnimationHelperScene helper )
 	{
 		helper.HoldType = HoldType;
 		helper.Handedness = Handedness;
 	}
 
-	public override void OnPrimaryPressed( CitizenAnimationHelperScene helper )
+	public override void OnPrimaryPressed( ref CitizenAnimationHelperScene helper )
 	{
 		if ( CurrentClip > 0 )
 		{
@@ -75,12 +75,12 @@ public class PistolWeapon : BaseWeapon
 		}
 	}
 
-	public override void OnSecondaryPressed( CitizenAnimationHelperScene helper )
+	public override void OnSecondaryPressed( ref CitizenAnimationHelperScene helper )
 	{
 		//Log.Info( "Secondary Pressed - Pistol" );
 	}
 
-	public override void OnSecondaryHeld( CitizenAnimationHelperScene helper )
+	public override void OnSecondaryHeld( ref CitizenAnimationHelperScene helper )
 	{
 		if ( CanAimFocus )
 			helper.Handedness = AlternateHandedness;

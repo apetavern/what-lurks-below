@@ -40,7 +40,7 @@ public class KnifeWeapon : BaseWeapon
 		return ResourceLibrary.GetAll<InventoryItem>().FirstOrDefault( i => i.Name == "Knife" );
 	}
 
-	public override void OnIdle( CitizenAnimationHelperScene helper )
+	public override void OnIdle( ref CitizenAnimationHelperScene helper )
 	{
 		helper.HoldType = HoldType;
 		helper.Handedness = Handedness;
@@ -100,7 +100,7 @@ public class KnifeWeapon : BaseWeapon
 		}
 	}
 
-	public override void OnPrimaryPressed( CitizenAnimationHelperScene helper )
+	public override void OnPrimaryPressed( ref CitizenAnimationHelperScene helper )
 	{
 		if ( AmmoCount > 0 || AmmoCount == -1 )
 		{
@@ -114,12 +114,12 @@ public class KnifeWeapon : BaseWeapon
 		}
 	}
 
-	public override void OnSecondaryPressed( CitizenAnimationHelperScene helper )
+	public override void OnSecondaryPressed( ref CitizenAnimationHelperScene helper )
 	{
 
 	}
 
-	public override void OnSecondaryHeld( CitizenAnimationHelperScene helper )
+	public override void OnSecondaryHeld( ref CitizenAnimationHelperScene helper )
 	{
 		if ( CanAimFocus )
 			helper.Handedness = AlternateHandedness;
