@@ -30,6 +30,8 @@ public class KnifeWeapon : BaseWeapon
 
 	public override float TraceLength => 20f;
 
+	private CoroutineBucket KnifeCoroutines { get; } = new();
+
 	internal KnifeWeapon( bool enabled, string name ) : base( enabled, name )
 	{
 		defaultAmmoCount = MaxAmmo;
@@ -40,6 +42,11 @@ public class KnifeWeapon : BaseWeapon
 		return ResourceLibrary.GetAll<InventoryItem>().FirstOrDefault( i => i.Name == "Knife" );
 	}
 
+	public override void OnHolster()
+	{
+		KnifeCoroutines.StopAll();
+	}
+
 	public override void OnIdle( ref CitizenAnimationHelperScene helper )
 	{
 		helper.HoldType = HoldType;
@@ -48,7 +55,7 @@ public class KnifeWeapon : BaseWeapon
 
 	public override void PrimaryFire( Vector3 position, Vector3 direction )
 	{
-		Coroutine.Start( TryHitCoroutine );
+		KnifeCoroutines.Start( TryHitCoroutine );
 	}
 
 	public CoroutineMethod TryHitCoroutine()
@@ -94,9 +101,6 @@ public class KnifeWeapon : BaseWeapon
 
 			CurrentTime += Time.Delta;
 			yield return new WaitForNextFrame();
-
-			if ( !c_AnimatedModel.Enabled )
-				break;
 		}
 	}
 
