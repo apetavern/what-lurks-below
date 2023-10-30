@@ -158,7 +158,7 @@ public sealed class GooBossSequencer : BaseComponent
 		}
 	}
 
-	public void OnTriggered()
+	private void OnTriggered()
 	{
 		if ( !StartedFight )
 		{
@@ -169,13 +169,13 @@ public sealed class GooBossSequencer : BaseComponent
 			}
 
 			Scene.GetAllObjects( true ).Where( X => X.GetComponent<CameraComponent>( false ) != null ).First().GetComponent<CameraComponent>( false ).FieldOfView = 80f;
-			Coroutine.Start( FinishTrigger );
+			Coroutine.Start( OnTriggeredCoroutine );
 		}
 	}
 
-	private CoroutineMethod FinishTrigger()
+	private CoroutineMethod OnTriggeredCoroutine()
 	{
-		var animateCoroutine = Coroutine.Start( IntroBezier.GetComponent<BezierAnimationComponent>().AnimateObject,
+		var animateCoroutine = Coroutine.Start( IntroBezier.GetComponent<BezierAnimationComponent>().AnimateObjectCoroutine,
 			roomTrigger.GetComponent<CameraTriggerComponent>().CameraPoint, 5f, true );
 		yield return new WaitForCoroutine( animateCoroutine );
 

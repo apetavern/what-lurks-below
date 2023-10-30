@@ -16,15 +16,15 @@ public sealed class GameStartComponent : BaseComponent
 	{
 		if ( !Started && Input.Pressed( "Jump" ) )
 		{
-			Coroutines.Coroutine.Start( StartGame );
+			Coroutines.Coroutine.Start( StartGameCoroutine );
 			Started = true;
 		}
 	}
 
-	public CoroutineMethod StartGame()
+	public CoroutineMethod StartGameCoroutine()
 	{
 		var bezierAnimation = bezier.GetComponent<BezierAnimationComponent>( false );
-		var animateCoroutine = Coroutine.Start( bezierAnimation.AnimateObject, GameObject, 2f, false );
+		var animateCoroutine = Coroutine.Start( bezierAnimation.AnimateObjectCoroutine, GameObject, 2f, false );
 		yield return new WaitForCoroutine( animateCoroutine, ExecutionStrategy.Frame );
 
 		var model = blackFade.GetComponent<ModelComponent>();

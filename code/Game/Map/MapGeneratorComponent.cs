@@ -134,7 +134,7 @@ public partial class MapGeneratorComponent : SingletonComponent<MapGeneratorComp
 		}
 
 		GenerateRoomConnections();
-		Coroutine.Start( CreateHallways );
+		Coroutine.Start( CreateHallwaysCoroutine );
 	}
 
 	public async void RegenMap()
@@ -248,7 +248,7 @@ public partial class MapGeneratorComponent : SingletonComponent<MapGeneratorComp
 		}
 	}
 
-	private CoroutineMethod CreateHallways()
+	private CoroutineMethod CreateHallwaysCoroutine()
 	{
 		int waitframes = 0;
 		foreach ( var room in spawnedRooms )

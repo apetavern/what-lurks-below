@@ -34,7 +34,7 @@ public sealed class BezierAnimationComponent : BaseComponent, BaseComponent.Exec
 		}
 	}
 
-	public CoroutineMethod AnimateObject( GameObject animatable, float time = 2f, bool LerpToPointAngles = false )
+	public CoroutineMethod AnimateObjectCoroutine( GameObject animatable, float time = 2f, bool LerpToPointAngles = false )
 	{
 		Vector3 startPoint = Point1.Transform.Position;
 		Vector3 endPoint = Point2.Transform.Position;

@@ -19,7 +19,7 @@ public sealed class OpenDoorOnTrigger : BaseComponent
 			if ( player.GetComponent<PlayerFlagsComponent>().HasBossKey )
 			{
 				OpenedDoor = true;
-				Coroutine.Start( GameObject.Parent.GetComponent<BezierAnimationComponent>( false, true ).AnimateObject( GameObject.Parent.GetComponent<ModelComponent>( false, true ).GameObject, 2f, true ) );
+				Coroutine.Start( GameObject.Parent.GetComponent<BezierAnimationComponent>( false, true ).AnimateObjectCoroutine( GameObject.Parent.GetComponent<ModelComponent>( false, true ).GameObject, 2f, true ) );
 				Destroy();
 			}
 		}
