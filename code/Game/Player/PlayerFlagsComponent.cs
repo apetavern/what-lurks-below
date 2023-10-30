@@ -1,4 +1,6 @@
-﻿namespace BrickJam.Components;
+﻿using BrickJam.Components;
+
+namespace BrickJam.Player;
 
 public class PlayerFlagsComponent : SingletonComponent<PlayerFlagsComponent>
 {
