@@ -52,11 +52,13 @@ public class BaseWeapon : GameObject
 		c_AnimatedModel.Model = Model;
 		c_AnimatedModel.Enabled = true;
 		c_AnimatedModel.BoneMergeTarget = parent.GetComponent<AnimatedModelComponent>( false );
+		OnEquip();
 	}
 
 	public void SetInactive()
 	{
 		c_AnimatedModel.Enabled = false;
+		OnHolster();
 	}
 
 	public virtual void PrimaryFire( Vector3 position, Vector3 direction )
@@ -143,6 +145,10 @@ public class BaseWeapon : GameObject
 	{
 
 	}
+
+	public virtual void OnEquip() { }
+
+	public virtual void OnHolster() { }
 
 	public virtual void OnIdle( ref CitizenAnimationHelperScene helper ) { }
 
