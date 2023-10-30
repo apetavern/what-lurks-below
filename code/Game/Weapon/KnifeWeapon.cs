@@ -2,6 +2,8 @@
 using System;
 using Sandbox;
 using System.Linq;
+using Coroutines.Stallers;
+using Coroutines;
 
 namespace BrickJam.Weapons;
 
@@ -92,6 +94,9 @@ public class KnifeWeapon : BaseWeapon
 
 			CurrentTime += Time.Delta;
 			yield return new WaitForNextFrame();
+
+			if ( !c_AnimatedModel.Enabled )
+				break;
 		}
 	}
 
