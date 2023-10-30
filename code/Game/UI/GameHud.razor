@@ -41,7 +41,7 @@
     {
         base.Update();
         
-        Player ??= GameManager.ActiveScene.GetAllObjects( true ).FirstOrDefault( X => X.GetComponent<BrickPlayerController>() != null ).GetComponent<BrickPlayerController>();
+        Player ??= BrickPlayerController.Instance;
 
         if(Player != null)
         {

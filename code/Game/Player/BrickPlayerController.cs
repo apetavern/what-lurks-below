@@ -7,7 +7,7 @@ using BrickJam.Map;
 
 namespace BrickJam.Player;
 
-public class BrickPlayerController : BaseComponent
+public class BrickPlayerController : SingletonComponent<BrickPlayerController>
 {
 	[Property] public Vector3 Gravity { get; set; } = new Vector3( 0, 0, 800 );
 

@@ -58,7 +58,7 @@
 
         if(!isReady) return;
 
-        Player ??= Scene.GetAllObjects( true ).FirstOrDefault( p => p.Name == "player" );
+        Player ??= BrickPlayerController.Instance.Player;
         var pc = Player.GetComponent<BrickPlayerController>();
         if(pc == null) return;
 

@@ -18,7 +18,7 @@ public class WeaponComponent : BaseComponent
 
 		Instance = this;
 
-		_player = Scene.GetAllObjects( true ).FirstOrDefault( p => p.Name == "player" );
+		_player = BrickPlayerController.Instance.Player;
 		_body = _player?.GetComponent<BrickPlayerController>().Body;
 		// Equip( new KnifeWeapon( true, "Knife" ) );
 	}

@@ -26,7 +26,7 @@ public sealed class CameraTriggerComponent : BaseComponent
 	public override void OnEnabled()
 	{
 		base.OnEnabled();
-		Player = Scene.GetAllObjects( true ).FirstOrDefault( x => x.Name == "player" );
+		Player = BrickPlayerController.Instance.Player;
 		Controller = Player?.GetComponent<BrickPlayerController>( false );
 
 		var box = new BBox();

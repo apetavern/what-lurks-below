@@ -161,7 +161,7 @@ public class Inventory : BaseComponent
 
 		if ( !ItemInInventory( "Key" ) )
 		{
-			GetComponent<PlayerFlagsComponent>().HasBossKey = false;
+			PlayerFlagsComponent.Instance.HasBossKey = false;
 		}
 	}
 
@@ -170,7 +170,7 @@ public class Inventory : BaseComponent
 		Instance = this;
 
 		_inventorySlots = new bool[SlotsX, SlotsY];
-		_player = Scene.GetAllObjects( true ).FirstOrDefault( p => p.Name == "player" );
+		_player = BrickPlayerController.Instance.Player;
 
 		PlaceItem( KnifeWeapon.KnifeItem.ToReference(), new InvCoord( 0, 0 ) );
 

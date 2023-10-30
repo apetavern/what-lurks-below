@@ -1,4 +1,5 @@
 using System.Linq;
+using BrickJam.Player;
 using Coroutines;
 namespace BrickJam.Components;
 
@@ -15,8 +16,8 @@ public sealed class OpenDoorOnTrigger : BaseComponent
 	{
 		if ( !OpenedDoor )
 		{
-			var player = Scene.GetAllObjects( true ).Where( X => X.Name == "player" ).FirstOrDefault();
-			if ( player.GetComponent<PlayerFlagsComponent>().HasBossKey )
+			var player = BrickPlayerController.Instance.Player;
+			if ( PlayerFlagsComponent.Instance.HasBossKey )
 			{
 				OpenedDoor = true;
 				Coroutine.Start( GameObject.Parent.GetComponent<BezierAnimationComponent>( false, true ).AnimateObjectCoroutine( GameObject.Parent.GetComponent<ModelComponent>( false, true ).GameObject, 2f, true ) );

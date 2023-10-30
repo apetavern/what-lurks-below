@@ -48,7 +48,7 @@ public class EnemyController : BaseComponent
 
 	public override void OnEnabled()
 	{
-		Player = Scene.GetAllObjects( true ).FirstOrDefault( x => x.Name == "player" );
+		Player = BrickPlayerController.Instance.Player;
 
 		// Destroy on death
 		HealthComponent healthComponent = GameObject.GetComponent<HealthComponent>();
@@ -85,11 +85,9 @@ public class EnemyController : BaseComponent
 		dead = true;
 		model.SetAnimParameter( "die", true );
 
-		//Log.Info( "Enemies left: " + (Scene.GetAllObjects( true ).Where( x => x.GetComponent<EnemyController>() != null ).Count() - 1) );
-
 		Stats.EnemiesKilled++;
 
-		var flags = Player?.GetComponent<PlayerFlagsComponent>();
+		var flags = PlayerFlagsComponent.Instance;
 		if ( flags is null )
 			return;
 

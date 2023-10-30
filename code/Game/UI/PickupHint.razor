@@ -75,9 +75,7 @@
     {
         base.OnStart();
 
-        Player = Scene.GetAllObjects(true).FirstOrDefault(p => p.Name == "player");
-
-        
+        Player = BrickPlayerController.Instance.Player;
     }
 
     public void SetItem(ItemPickup item)

@@ -1,6 +1,6 @@
 ﻿namespace BrickJam.Components;
 
-public class PlayerFlagsComponent : BaseComponent
+public class PlayerFlagsComponent : SingletonComponent<PlayerFlagsComponent>
 {
 	public bool KilledFirstEnemy { get; set; } = false;
 	public bool InBossSequence { get; set; } = false;

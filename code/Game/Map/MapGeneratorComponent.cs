@@ -50,7 +50,7 @@ public partial class MapGeneratorComponent : SingletonComponent<MapGeneratorComp
 
 	public override void OnStart()
 	{
-		player = Scene.GetAllObjects( true ).FirstOrDefault( x => x.Name == "player" );
+		player = BrickPlayerController.Instance.Player;
 
 		var spawnedRoomsBuilder = ImmutableArray.CreateBuilder<RoomChunkComponent>();
 		spawnedRoomsBuilder.Add( SpawnPrefabFromPath( rooms[0], Transform.Position, Transform.Rotation ).GetComponent<RoomChunkComponent>( false ) );

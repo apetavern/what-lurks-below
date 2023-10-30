@@ -25,7 +25,7 @@ public class ItemPickup : BaseComponent
 		base.OnEnabled();
 
 		// Setup bounds
-		Player = Scene.GetAllObjects( true ).FirstOrDefault( p => p.Name == "player" );
+		Player = BrickPlayerController.Instance.Player;
 		Controller = Player?.GetComponent<BrickPlayerController>();
 
 		var scale = GetComponent<ColliderBoxComponent>( false ).Scale;
@@ -111,7 +111,7 @@ public class ItemPickup : BaseComponent
 			{
 				if ( Item.Asset.Name == "Key" )
 				{
-					Player.GetComponent<PlayerFlagsComponent>().HasBossKey = true;
+					PlayerFlagsComponent.Instance.HasBossKey = true;
 				}
 			}
 		}

@@ -60,7 +60,7 @@
     bool ItemIsEquipped()
     {
         var scene = GridItem.InventoryPane.Inventory.Scene;
-        var player = scene.GetAllObjects(true).FirstOrDefault(o => o.Name == "player");
+        var player = BrickPlayerController.Instance.Player;
         if (player is null)
             return false;
         var weapon = player.GetComponent<WeaponComponent>();

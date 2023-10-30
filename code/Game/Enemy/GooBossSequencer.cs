@@ -121,8 +121,7 @@ public sealed class GooBossSequencer : BaseComponent
 
 		yield return new WaitForNextFrame();
 
-		var flags = Scene.GetAllObjects( true ).FirstOrDefault( o => o.Name == "player" )?
-			.GetComponent<PlayerFlagsComponent>();
+		var flags = PlayerFlagsComponent.Instance;
 		if ( flags is not null )
 		{
 			flags.InBossSequence = false;
@@ -133,8 +132,7 @@ public sealed class GooBossSequencer : BaseComponent
 
 	public override void OnDestroy()
 	{
-		var flags = Scene.GetAllObjects( true ).FirstOrDefault( o => o.Name == "player" )?
-	.GetComponent<PlayerFlagsComponent>();
+		var flags = PlayerFlagsComponent.Instance;
 		if ( flags is not null )
 		{
 			flags.InBossSequence = false;
@@ -187,8 +185,7 @@ public sealed class GooBossSequencer : BaseComponent
 
 		StartedFight = true;
 		EyesOpen = true;
-		var flags = Scene.GetAllObjects( true ).FirstOrDefault( o => o.Name == "player" )?
-			.GetComponent<PlayerFlagsComponent>();
+		var flags = PlayerFlagsComponent.Instance;
 		if ( flags is not null )
 		{
 			flags.InBossSequence = true;

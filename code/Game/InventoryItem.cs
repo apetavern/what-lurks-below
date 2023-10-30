@@ -41,9 +41,7 @@ public class InventoryItem : GameResource
 		{
 			// make all items droppable without requiring a unique pickup
 			Inventory.Instance.RemoveItem( item );
-			var player = scene
-				.GetAllObjects( true )
-				.FirstOrDefault( o => o.Name == "player" );
+			var player = BrickPlayerController.Instance.Player;
 			if ( player is null )
 				return;
 			_ = new PickupObject( true, $"Pickup {item.Asset.Name}", player.Transform.Position, item );
@@ -77,9 +75,7 @@ public class InventoryItem : GameResource
 			// manually check item type and hardcode behaviour
 			if ( Name == "Medkit" )
 			{
-				var player = scene
-					.GetAllObjects( true )
-					.FirstOrDefault( o => o.Name == "player" );
+				var player = BrickPlayerController.Instance.Player;
 				if ( player is null )
 					return;
 				var healthComponent = player.GetComponent<HealthComponent>();
@@ -92,9 +88,7 @@ public class InventoryItem : GameResource
 
 	void EquipWeapon( Scene scene, BaseWeapon weapon )
 	{
-		var player = scene
-			.GetAllObjects( true )
-			.FirstOrDefault( o => o.Name == "player" );
+		var player = BrickPlayerController.Instance.Player;
 		if ( player is null )
 			return;
 		var weaponComponent = player.GetComponent<WeaponComponent>();
