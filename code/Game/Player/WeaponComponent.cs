@@ -10,13 +10,9 @@ public class WeaponComponent : BaseComponent
 	private GameObject _player;
 	private GameObject _body;
 
-	public static WeaponComponent Instance { get; set; }
-
 	public override void OnStart()
 	{
 		base.OnStart();
-
-		Instance = this;
 
 		_player = BrickPlayerController.Instance.Player;
 		_body = _player?.GetComponent<BrickPlayerController>().Body;
