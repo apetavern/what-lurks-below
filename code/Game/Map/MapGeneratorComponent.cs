@@ -337,6 +337,29 @@ public partial class MapGeneratorComponent : SingletonComponent<MapGeneratorComp
 		{
 			hallwayChunk.Transform.Position = new Vector3( hallwayChunk.Transform.Position.x, hallwayChunk.Transform.Position.y, 0 );
 		}
+
+		MakeStatic( GeneratedMapParent );
+	}
+
+	private void MakeStatic( GameObject parent )
+	{
+		parent.ForEachChild( "Make static", false, child =>
+		{
+			// Visual elements.
+			if ( child.Name.StartsWith( "floor" ) ||
+				child.Name.StartsWith( "wall" ) ||
+				child.Name.StartsWith( "pillar" ) ||
+				child.Name.StartsWith( "stairs" ) ||
+				child.Name.StartsWith( "pipe" ) ||
+				child.Name.StartsWith( "Ceil" ) )
+				child.Static = true;
+
+			// Should only be visual elements with no children.
+			if ( child.Components.Count == 2 && child.TryGetComponent<ModelComponent>( out _ ) && child.TryGetComponent<ModelCollider>( out _ ) )
+				child.Static = true;
+
+			MakeStatic( child );
+		} );
 	}
 
 	private GameObject SpawnPrefabFromPath( string path, Vector3 position, Rotation rotation )
