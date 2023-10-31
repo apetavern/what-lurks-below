@@ -37,6 +37,9 @@ public partial class GameObject
 		}
 	}
 
+	[Property]
+	public bool Static { get; set; } = false;
+
 	public GameObject( bool enabled, string name )
 	{
 		Transform = new GameTransform( this );

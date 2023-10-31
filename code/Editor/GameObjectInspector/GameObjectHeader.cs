@@ -24,6 +24,7 @@
 		targetObject.GetProperty( nameof( GameObject.Transform ) ).TryGetAsObject( out var txo );
 
 		cs.AddRow( targetObject.GetProperty( nameof( GameObject.Tags ) ) );
+		cs.AddRow( targetObject.GetProperty( nameof( GameObject.Static ) ) );
 		cs.AddRow( txo.GetProperty( nameof( GameTransform.LocalPosition ) ) );
 		cs.AddRow( txo.GetProperty( nameof( GameTransform.LocalRotation ) ) );
 		cs.AddRow( txo.GetProperty( nameof( GameTransform.LocalScale ) ) );
