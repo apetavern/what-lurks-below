@@ -1,4 +1,5 @@
 ﻿using BrickJam.Components;
+using BrickJam.Map;
 using Sandbox;
 using System.Linq;
 
@@ -23,13 +24,11 @@ public class UseComponent : BaseComponent
 		{
 			_timeSinceLastUsed = 0;
 
-			var objectsInRange = GameObject.Scene.GetAllObjects( true )
-				.Where( x => x.GetComponent<ItemPickup>() != null
-				&& Vector3.DistanceBetween( Transform.Position, x.Transform.Position ) < UseReach
-				)
+			var pickupsInRange = MapGeneratorComponent.Instance.Pickups
+				.Where( x => Vector3.DistanceBetween( Transform.Position, x.Transform.Position ) < UseReach )
 				.Select( x => x.GetComponent<ItemPickup>() );
 
-			foreach ( var itemPickup in objectsInRange )
+			foreach ( var itemPickup in pickupsInRange )
 			{
 				itemPickup.Triggered();
 			};
