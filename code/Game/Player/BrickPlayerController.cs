@@ -32,6 +32,9 @@ public class BrickPlayerController : SingletonComponent<BrickPlayerController>
 
 	TimeSince TimeSinceLastGlowstick;
 
+	private AnimatedModelComponent modelComponent;
+	private CharacterController characterController;
+
 	public void SpawnGlowstick()
 	{
 		if ( TimeSinceLastGlowstick > 1f )
@@ -71,7 +74,10 @@ public class BrickPlayerController : SingletonComponent<BrickPlayerController>
 		healthComponent.OnDamage += TakeDamage;
 		healthComponent.OnDeath += OnDeath;
 
-		Body.GetComponent<AnimatedModelComponent>( false ).Set( "holdtype_pose_hand", 0.07f );
+		modelComponent = Body.GetComponent<AnimatedModelComponent>();
+		characterController = GetComponent<CharacterController>();
+
+		modelComponent.Set( "holdtype_pose_hand", 0.07f );
 	}
 
 	public void TakeDamage()
@@ -189,7 +195,6 @@ public class BrickPlayerController : SingletonComponent<BrickPlayerController>
 		{
 			return;
 		}
-		var cc = GameObject.GetComponent<CharacterController>();
 
 		var pickups = MapGeneratorComponent.Instance.Pickups
 			.Where( p => p.IsValid && p.Transform.Position.Distance( Transform.Position ) < 50 );
@@ -228,18 +233,18 @@ public class BrickPlayerController : SingletonComponent<BrickPlayerController>
 		{
 			if ( Transform.Position.z > 500 )
 			{
-				cc.Velocity -= Vector3.Up * Gravity * Time.Delta;
+				characterController.Velocity -= Vector3.Up * Gravity * Time.Delta;
 			}
 			else
 			{
 				Transform.Position = Transform.Position.WithZ( 500 );
-				cc.Velocity = Vector3.Zero;
+				characterController.Velocity = Vector3.Zero;
 			}
-			cc.Move();
-			cc.IsOnGround = false;
+			characterController.Move();
+			characterController.IsOnGround = false;
 			var helper = new CitizenAnimationHelperScene( Body.GetComponent<AnimatedModelComponent>().SceneObject );
-			helper.WithVelocity( cc.Velocity - Vector3.Up * Gravity );
-			helper.IsGrounded = cc.IsOnGround;
+			helper.WithVelocity( characterController.Velocity - Vector3.Up * Gravity );
+			helper.IsGrounded = characterController.IsOnGround;
 			helper.HoldType = CitizenAnimationHelperScene.HoldTypes.None;
 
 			if ( Camera == null )
@@ -330,7 +335,7 @@ public class BrickPlayerController : SingletonComponent<BrickPlayerController>
 			{
 				Transform.Position = room.Transform.Position.WithZ( 0 );
 				WishVelocity = Vector3.Zero;
-				cc.Velocity = Vector3.Zero;
+				characterController.Velocity = Vector3.Zero;
 			}
 		}
 
@@ -340,10 +345,10 @@ public class BrickPlayerController : SingletonComponent<BrickPlayerController>
 			Body.Transform.Rotation = new Angles( 0, EyeAngles.yaw, 0 ).ToRotation();
 
 			var helper = new CitizenAnimationHelperScene( Body.GetComponent<AnimatedModelComponent>().SceneObject );
-			helper.WithVelocity( cc.Velocity );
-			helper.IsGrounded = cc.IsOnGround;
+			helper.WithVelocity( characterController.Velocity );
+			helper.IsGrounded = characterController.IsOnGround;
 
-			if ( Input.Pressed( "Jump" ) && cc.IsOnGround )
+			if ( Input.Pressed( "Jump" ) && characterController.IsOnGround )
 			{
 				helper.SpecialMove = CitizenAnimationHelperScene.SpecialMovement.Roll;
 			}
@@ -391,7 +396,7 @@ public class BrickPlayerController : SingletonComponent<BrickPlayerController>
 			}
 		}
 
-		if ( cc.IsOnGround && Input.Down( "Jump" ) )
+		if ( characterController.IsOnGround && Input.Down( "Jump" ) )
 		{
 			float flGroundFactor = 1.0f;
 			float flMul = 268.3281572999747f * 1.2f;
@@ -421,35 +426,35 @@ public class BrickPlayerController : SingletonComponent<BrickPlayerController>
 				}
 			}
 
-			cc.Velocity = Body.Transform.Rotation.Forward * flMul * flGroundFactor;
+			characterController.Velocity = Body.Transform.Rotation.Forward * flMul * flGroundFactor;
 
 
-			cc.ApplyFriction( 0.1f );
+			characterController.ApplyFriction( 0.1f );
 			//	cc.IsOnGround = false;
 		}
 
-		if ( cc.IsOnGround )
+		if ( characterController.IsOnGround )
 		{
-			cc.Velocity = cc.Velocity.WithZ( 0 );
-			cc.Accelerate( WishVelocity );
-			cc.ApplyFriction( 4.0f );
+			characterController.Velocity = characterController.Velocity.WithZ( 0 );
+			characterController.Accelerate( WishVelocity );
+			characterController.ApplyFriction( 4.0f );
 		}
 		else
 		{
-			cc.Velocity -= Gravity * Time.Delta * 0.5f;
-			cc.Accelerate( WishVelocity.ClampLength( 50 ) );
-			cc.ApplyFriction( 0.1f );
+			characterController.Velocity -= Gravity * Time.Delta * 0.5f;
+			characterController.Accelerate( WishVelocity.ClampLength( 50 ) );
+			characterController.ApplyFriction( 0.1f );
 		}
 
-		cc.Move();
+		characterController.Move();
 
-		if ( !cc.IsOnGround )
+		if ( !characterController.IsOnGround )
 		{
-			cc.Velocity -= Gravity * Time.Delta * 0.5f;
+			characterController.Velocity -= Gravity * Time.Delta * 0.5f;
 		}
 		else
 		{
-			cc.Velocity = cc.Velocity.WithZ( 0 );
+			characterController.Velocity = characterController.Velocity.WithZ( 0 );
 		}
 	}
 
