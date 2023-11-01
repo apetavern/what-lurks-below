@@ -9,14 +9,19 @@ public class WeaponComponent : BaseComponent
 	public BaseWeapon ActiveWeapon { get; set; }
 	private GameObject _player;
 	private GameObject _body;
+	private AnimatedModelComponent modelComponent;
+	private BrickPlayerController playerController;
+	private CharacterController characterController;
 
 	public override void OnStart()
 	{
 		base.OnStart();
 
 		_player = BrickPlayerController.Instance.Player;
-		_body = _player?.GetComponent<BrickPlayerController>().Body;
-		// Equip( new KnifeWeapon( true, "Knife" ) );
+		playerController = _player.GetComponent<BrickPlayerController>();
+		characterController = _player.GetComponent<CharacterController>();
+		_body = playerController.Body;
+		modelComponent = _body.GetComponent<AnimatedModelComponent>();
 	}
 
 	public void Equip( BaseWeapon weapon )
@@ -38,15 +43,12 @@ public class WeaponComponent : BaseComponent
 
 	public override void Update()
 	{
-		var citizenModel = _body.GetComponent<AnimatedModelComponent>().SceneObject;
-		var helper = new CitizenAnimationHelperScene( citizenModel );
+		var helper = new CitizenAnimationHelperScene( modelComponent.SceneObject );
 
-		var ctrl = _player?.GetComponent<BrickPlayerController>();
-		if ( ctrl is null || ctrl.IsDead )
+		if ( playerController is null || playerController.IsDead )
 			return;
 
-		var charCtrl = _player?.GetComponent<CharacterController>();
-		if ( charCtrl is null || charCtrl.IsOnGround == false )
+		if ( characterController is null || characterController.IsOnGround == false )
 			return;
 
 		if ( ActiveWeapon is null )
@@ -56,12 +58,12 @@ public class WeaponComponent : BaseComponent
 
 		if ( Input.Pressed( "attack1" ) )
 		{
-			ActiveWeapon?.PrimaryFire( ctrl.Eye.Transform.Position, ctrl.Eye.Transform.Rotation.Forward );
+			ActiveWeapon?.PrimaryFire( playerController.Eye.Transform.Position, playerController.Eye.Transform.Rotation.Forward );
 			ActiveWeapon?.OnPrimaryPressed( ref helper );
 		}
 		if ( Input.Pressed( "attack2" ) )
 		{
-			ActiveWeapon?.SecondaryFire( ctrl.Eye.Transform.Position, ctrl.Eye.Transform.Rotation.Forward );
+			ActiveWeapon?.SecondaryFire( playerController.Eye.Transform.Position, playerController.Eye.Transform.Rotation.Forward );
 			ActiveWeapon?.OnSecondaryPressed( ref helper );
 		}
 
