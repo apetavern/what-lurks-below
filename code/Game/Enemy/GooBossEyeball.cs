@@ -10,6 +10,8 @@ public sealed class GooBossEyeball : BaseComponent
 
 	public int HitsThisCycle;
 
+	private AnimatedModelComponent modelComponent;
+
 	public override void OnStart()
 	{
 		health = GetComponent<HealthComponent>();
@@ -58,9 +60,12 @@ public sealed class GooBossEyeball : BaseComponent
 			return;
 		}
 
+		if ( modelComponent is null )
+			modelComponent = boss.GetComponent<AnimatedModelComponent>();
+
 		if ( boss.EyesOpen )
 		{
-			Transform.Position = boss.GetComponent<AnimatedModelComponent>().GetAttachmentTransform( pos.ToString() ).Position;
+			Transform.Position = modelComponent.GetAttachmentTransform( pos.ToString() ).Position;
 		}
 		else
 		{
