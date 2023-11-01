@@ -114,8 +114,17 @@ public partial class GameObject
 
 	internal void PreRender()
 	{
+		if ( Static )
+			return;
+
 		ForEachComponent( "PreRender", true, c => c.PreRender() );
-		ForEachChild( "PreRender", true, c => c.PreRender() );
+		ForEachChild( "PreRender", true, c =>
+		{
+			if ( c.Static )
+				return;
+
+			c.PreRender();
+		} );
 	}
 
 	internal void ForEachChild( string name, bool activeOnly, Action<GameObject> action )
