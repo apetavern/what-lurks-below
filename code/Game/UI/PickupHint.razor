@@ -48,34 +48,29 @@
     private GameObject PickupTarget { get; set; }
     private GameObject Player { get; set; }
     private string ItemName { get; set; }
-
-    public override void Update()
-    {
-        base.Update();
-
-        if (Player is null)
-            return;
-
-        Panel?.SetClass( "Hidden", TimeSincePlayerInRange > 1 );
-
-        if (GetComponent<IRootPanelComponent>(true) is not WorldPanel worldPanel)
-            return;
-
-        if (!TryGetComponent<ItemPickup>(out var itemPickup))
-            return;
-
-        var pickupComponentSceneModel = itemPickup.SceneModel;
-        if (pickupComponentSceneModel is null || !pickupComponentSceneModel.IsValid())
-            return;
-
-        worldPanel.Position = pickupComponentSceneModel.Transform.Position + Vector3.Up * 32f;
-    }
+    private WorldPanel worldPanel;
+    private ItemPickup itemPickup;
 
     public override void OnStart()
     {
         base.OnStart();
 
         Player = BrickPlayerController.Instance.Player;
+        worldPanel = GetComponent<WorldPanel>();
+        itemPickup = GetComponent<ItemPickup>();
+    }
+
+    public override void Update()
+    {
+        base.Update();
+
+        Panel?.SetClass( "Hidden", TimeSincePlayerInRange > 1 );
+
+        var pickupComponentSceneModel = itemPickup.SceneModel;
+        if (pickupComponentSceneModel is null || !pickupComponentSceneModel.IsValid())
+            return;
+
+        worldPanel.Position = pickupComponentSceneModel.Transform.Position + Vector3.Up * 32f;
     }
 
     public void SetItem(ItemPickup item)
