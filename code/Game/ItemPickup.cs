@@ -19,6 +19,7 @@ public class ItemPickup : BaseComponent
 	private float _sceneModelTargetZ;
 
 	[Property] public InventoryReference Item { get; set; }
+	[Property] public GameObject GlintParticle { get; set; }
 
 	public override void OnEnabled()
 	{
@@ -39,6 +40,13 @@ public class ItemPickup : BaseComponent
 		_sceneModelStartZ = SceneModel.Transform.Position.z;
 		_sceneModelEndZ = SceneModel.Transform.Position.z + 20f;
 		_sceneModelTargetZ = _sceneModelEndZ;
+
+		// Spawn particle
+		GlintParticle = new GameObject( true, "particles" );
+		GlintParticle.SetParent( GameObject, false );
+		GlintParticle.Transform.LocalPosition = Vector3.Up * SceneModel.Bounds.Size * 3f;
+		GlintParticle.AddComponent<ParticleSystem>( true ).Looped=true;
+
 	}
 
 	public override void OnDisabled()
@@ -47,6 +55,7 @@ public class ItemPickup : BaseComponent
 
 		SceneModel?.Delete();
 		SceneModel = null;
+		GlintParticle.Enabled= false;
 	}
 
 	public override void Update()
