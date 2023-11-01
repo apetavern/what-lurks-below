@@ -191,7 +191,6 @@ public class BrickPlayerController : SingletonComponent<BrickPlayerController>
 		}
 		var cc = GameObject.GetComponent<CharacterController>();
 
-		// FIXME: S&box whitelist moment
 		var pickups = MapGeneratorComponent.Instance.Pickups
 			.Where( p => p.IsValid && p.Transform.Position.Distance( Transform.Position ) < 50 );
 
