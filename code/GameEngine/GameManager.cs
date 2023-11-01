@@ -1,4 +1,5 @@
-﻿using Sandbox;
+﻿using Coroutines;
+using Sandbox;
 using System.Linq;
 
 public static class GameManager
@@ -12,14 +13,16 @@ public static class GameManager
 	[Event( "frame" )]
 	public static void Frame()
 	{
-		Coroutines.Coroutine.IsSceneSystem = true;
-
 		if ( !GameManager.IsPlaying )
+		{
+			Coroutine.StopAll();
 			return;
+		}
 
 		if ( ActiveScene is null )
 			return;
 
+		Coroutine.IsSceneSystem = true;
 		using ( Sandbox.Utility.Superluminal.Scope( "Scene.GameTick", Color.Cyan ) )
 		{
 			ActiveScene.GameTick();
