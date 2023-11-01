@@ -56,6 +56,7 @@ public class EnemyController : BaseComponent
 		healthComponent.OnDamage += OnDamaged;
 
 		col = GetComponent<Collider>( false, true );
+		col.OnPhysicsChanged();
 
 		var rng = new Random();
 
@@ -189,8 +190,6 @@ public class EnemyController : BaseComponent
 		{
 			return;
 		}
-
-		col.OnPhysicsChanged();
 
 		MakeIdleSounds();
 

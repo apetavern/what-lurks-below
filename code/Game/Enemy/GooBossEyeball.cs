@@ -15,6 +15,7 @@ public sealed class GooBossEyeball : BaseComponent
 		health = GetComponent<HealthComponent>();
 		health.OnDamage += OnTakeDamage;
 		health.OnDeath += OnEyeballDestroyed;
+		GetComponent<Collider>().OnPhysicsChanged();
 		base.OnStart();
 	}
 
@@ -71,7 +72,5 @@ public sealed class GooBossEyeball : BaseComponent
 			GameObject.Destroy();
 			return;
 		}
-
-		GetComponent<Collider>().OnPhysicsChanged();
 	}
 }
