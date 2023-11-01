@@ -30,5 +30,26 @@ public class PickupObject : GameObject
 		c_ItemPickup.Enabled = true;
 
 		MapGeneratorComponent.Instance.Pickups.Add( this );
+
+		if ( GetComponent<WorldPanel>() is null )
+		{
+			var wp = AddComponent<WorldPanel>();
+			wp.LookAtCamera = true;
+			wp.RenderScale = 1.8f;
+			wp.PanelSize = new Vector2( 1200, 500 );
+		}
+
+		if ( GetComponent<PickupHint>() is null )
+		{
+			var hint = AddComponent<PickupHint>();
+
+			if ( GetComponent<ItemPickup>() is not ItemPickup itemPickup )
+				return;
+
+			if ( itemPickup.Item is null )
+				return;
+
+			hint?.SetItem( itemPickup );
+		}
 	}
 }

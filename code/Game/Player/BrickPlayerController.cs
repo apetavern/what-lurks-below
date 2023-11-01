@@ -196,34 +196,9 @@ public class BrickPlayerController : SingletonComponent<BrickPlayerController>
 			return;
 		}
 
-		var pickups = MapGeneratorComponent.Instance.Pickups
-			.Where( p => p.IsValid && p.Transform.Position.Distance( Transform.Position ) < 50 );
-
-		foreach ( var pickup in pickups )
-		{
-			if ( pickup.GetComponent<WorldPanel>() is null )
-			{
-				var wp = pickup.AddComponent<WorldPanel>();
-				wp.LookAtCamera = true;
-				wp.RenderScale = 1.8f;
-				wp.PanelSize = new Vector2( 1200, 500 );
-			}
-
-			if ( pickup.GetComponent<PickupHint>() is null )
-			{
-				var hint = pickup.AddComponent<PickupHint>();
-
-				if ( pickup.GetComponent<ItemPickup>() is not ItemPickup itemPickup )
-					return;
-
-				if ( itemPickup.Item is null )
-					return;
-
-				hint?.SetItem( itemPickup );
-			}
-			else
-				pickup.GetComponent<PickupHint>().TimeSincePlayerInRange = 0;
-		}
+		foreach ( var pickup in MapGeneratorComponent.Instance.Pickups
+			.Where( p => p.IsValid && p.Transform.Position.Distance( Transform.Position ) < 50 ) )
+			pickup.GetComponent<PickupHint>().TimeSincePlayerInRange = 0;
 
 		var navgen = NavGenComponent.Instance;
 		if ( navgen is null )
@@ -242,7 +217,7 @@ public class BrickPlayerController : SingletonComponent<BrickPlayerController>
 			}
 			characterController.Move();
 			characterController.IsOnGround = false;
-			var helper = new CitizenAnimationHelperScene( Body.GetComponent<AnimatedModelComponent>().SceneObject );
+			var helper = new CitizenAnimationHelperScene( modelComponent.SceneObject );
 			helper.WithVelocity( characterController.Velocity - Vector3.Up * Gravity );
 			helper.IsGrounded = characterController.IsOnGround;
 			helper.HoldType = CitizenAnimationHelperScene.HoldTypes.None;
@@ -344,7 +319,7 @@ public class BrickPlayerController : SingletonComponent<BrickPlayerController>
 		{
 			Body.Transform.Rotation = new Angles( 0, EyeAngles.yaw, 0 ).ToRotation();
 
-			var helper = new CitizenAnimationHelperScene( Body.GetComponent<AnimatedModelComponent>().SceneObject );
+			var helper = new CitizenAnimationHelperScene( modelComponent.SceneObject );
 			helper.WithVelocity( characterController.Velocity );
 			helper.IsGrounded = characterController.IsOnGround;
 
