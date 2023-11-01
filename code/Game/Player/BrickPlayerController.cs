@@ -75,7 +75,6 @@ public class BrickPlayerController : SingletonComponent<BrickPlayerController>
 		healthComponent.OnDeath += OnDeath;
 
 		modelComponent = Body.GetComponent<AnimatedModelComponent>();
-		characterController = GetComponent<CharacterController>();
 
 		modelComponent.Set( "holdtype_pose_hand", 0.07f );
 	}
@@ -195,6 +194,9 @@ public class BrickPlayerController : SingletonComponent<BrickPlayerController>
 		{
 			return;
 		}
+
+		if ( characterController is null )
+			characterController = GetComponent<CharacterController>();
 
 		foreach ( var pickup in MapGeneratorComponent.Instance.Pickups
 			.Where( p => p.IsValid && p.Transform.Position.Distance( Transform.Position ) < 50 ) )
