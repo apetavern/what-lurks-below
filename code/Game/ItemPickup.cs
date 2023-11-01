@@ -2,6 +2,7 @@
 using Sandbox;
 using System;
 using System.Linq;
+using System.Resources;
 
 namespace BrickJam.Components;
 
@@ -45,7 +46,11 @@ public class ItemPickup : BaseComponent
 		GlintParticle = new GameObject( true, "particles" );
 		GlintParticle.SetParent( GameObject, false );
 		GlintParticle.Transform.LocalPosition = Vector3.Up * SceneModel.Bounds.Size * 3f;
-		GlintParticle.AddComponent<ParticleSystem>( true ).Looped=true;
+		ParticleSystem particleSystemComponent = GlintParticle.AddComponent<ParticleSystem>();
+		particleSystemComponent.Looped = true;
+		string particleResourcePath = "particles/glint_01.vpcf";
+		Sandbox.ParticleSystem particleSystem = Sandbox.ParticleSystem.Load( particleResourcePath );
+		particleSystemComponent.Particles = particleSystem;
 
 	}
 
