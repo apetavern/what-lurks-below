@@ -30,6 +30,9 @@ public class UseComponent : BaseComponent
 
 			foreach ( var itemPickup in pickupsInRange )
 			{
+				if ( itemPickup is null )
+					continue;
+
 				itemPickup.Triggered();
 			};
 		}
