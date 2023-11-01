@@ -92,7 +92,7 @@ public sealed class CameraTriggerComponent : BaseComponent
 		{
 			Controller.Camera.Transform.Position = CameraPoint.Transform.Position;
 
-			Player.GetComponent<BrickPlayerController>().CameraControl = false;
+			Controller.CameraControl = false;
 
 			if ( !FollowPlayer )
 			{
