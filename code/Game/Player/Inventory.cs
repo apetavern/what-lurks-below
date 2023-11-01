@@ -27,6 +27,8 @@ public class Inventory : SingletonComponent<Inventory>
 	public InventoryReference PistolAmmoItem => _items.FirstOrDefault( i => i.Asset.Name == "Pistol Ammo" );
 	public InventoryReference ShotgunAmmoItem => _items.FirstOrDefault( i => i.Asset.Name == "Shotgun Ammo" );
 
+	private WeaponComponent weaponComponent;
+
 	private int GetPistolAmmoCount()
 	{
 		var pistolAmmo = PistolAmmoItem;
@@ -167,6 +169,7 @@ public class Inventory : SingletonComponent<Inventory>
 	{
 		_inventorySlots = new bool[SlotsX, SlotsY];
 		_player = BrickPlayerController.Instance.Player;
+		weaponComponent = _player.GetComponent<WeaponComponent>();
 
 		PlaceItem( KnifeWeapon.KnifeItem.ToReference(), new InvCoord( 0, 0 ) );
 
@@ -175,29 +178,25 @@ public class Inventory : SingletonComponent<Inventory>
 
 	public override void Update()
 	{
-		var c_PlayerWeapon = _player?.GetComponent<WeaponComponent>();
-		if ( c_PlayerWeapon is null )
-			return;
-
 		if ( Input.Pressed( "slot1" ) )
 		{
 			if ( _items.All( i => i.Asset.Name != "Knife" ) )
 				return;
-			c_PlayerWeapon.Equip( new KnifeWeapon( true, "Knife" ) );
+			weaponComponent.Equip( new KnifeWeapon( true, "Knife" ) );
 		}
 
 		if ( Input.Pressed( "slot2" ) )
 		{
 			if ( _items.All( i => i.Asset.Name != "Pistol" ) )
 				return;
-			c_PlayerWeapon.Equip( new PistolWeapon( true, "pistol" ) );
+			weaponComponent.Equip( new PistolWeapon( true, "pistol" ) );
 		}
 
 		if ( Input.Pressed( "slot3" ) )
 		{
 			if ( _items.All( i => i.Asset.Name != "Shotgun" ) )
 				return;
-			c_PlayerWeapon.Equip( new ShotgunWeapon( true, "Shotgun" ) );
+			weaponComponent.Equip( new ShotgunWeapon( true, "Shotgun" ) );
 		}
 	}
 }
