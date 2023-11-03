@@ -105,7 +105,7 @@ public abstract partial class BaseComponent
 
 			if ( Guid.TryParse( guidString, out Guid guid ) )
 			{
-				onAwake += () =>
+				onPostDeserialize += () =>
 				{
 					var go = Scene.Directory.FindByGuid( guid );
 					if ( go is null ) Log.Warning( $"GameObject - {guid} was not found for {GetType().Name}.{prop.Name}" );
@@ -129,7 +129,7 @@ public abstract partial class BaseComponent
 
 			if ( Guid.TryParse( guidString, out Guid guid ) )
 			{
-				onAwake += () =>
+				onPostDeserialize += () =>
 				{
 					var go = Scene.Directory.FindByGuid( guid );
 					if ( go is null ) Log.Warning( $"GameObject - {guid} was not found for {GetType().Name}.{prop.Name}" );
