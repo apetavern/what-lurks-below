@@ -45,8 +45,11 @@
           "__type": "CameraComponent",
           "__enabled": true,
           "BackgroundColor": "0.33333,0.46275,0.52157,1",
-          "ClearFlags": "Color, Depth, Stencil",
+          "ClearFlags": "All",
           "FieldOfView": 60,
+          "Orthographic": false,
+          "OrthographicHeight": 1204,
+          "TargetEye": "None",
           "ZFar": 3000,
           "ZNear": 10
         },
@@ -142,9 +145,20 @@
           "Breakables2": "prefabs/pieces/barrel_02.object",
           "Breakables3": "prefabs/pieces/box_01.object",
           "GeneratedMapParent": "eae33615-fd68-4290-b430-5ec5126d9584",
+          "Hallways": [
+            "prefabs/hallways/hallway_01.object",
+            "prefabs/hallways/hallway_02.object",
+            "prefabs/hallways/hallway_03.object",
+            "prefabs/hallways/hallway_04.object"
+          ],
           "IsBossSequence": false,
           "RoomCount": 7,
-          "Seed": 1,
+          "Rooms": [
+            "prefabs/rooms/sewer_room_01.object",
+            "prefabs/rooms/sewer_room_02.object",
+            "prefabs/rooms/sewer_room_03.object",
+            "prefabs/rooms/sewer_room_04.object"
+          ],
           "SnapGridSize": 1024
         },
         {

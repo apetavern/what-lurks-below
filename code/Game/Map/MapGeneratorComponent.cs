@@ -17,17 +17,8 @@ public partial class MapGeneratorComponent : SingletonComponent<MapGeneratorComp
 {
 	private const string BossRoom = "prefabs/rooms/sewer_room_05.object";
 
-	private static readonly ImmutableArray<string> rooms = ImmutableArray.Create(
-		"prefabs/rooms/sewer_room_01.object",
-		"prefabs/rooms/sewer_room_02.object",
-		"prefabs/rooms/sewer_room_03.object",
-		"prefabs/rooms/sewer_room_04.object" );
-
-	private static readonly ImmutableArray<string> hallways = ImmutableArray.Create(
-		"prefabs/hallways/hallway_01.object",
-		"prefabs/hallways/hallway_02.object",
-		"prefabs/hallways/hallway_03.object",
-		"prefabs/hallways/hallway_04.object" );
+	[Property] private string[] Rooms { get; set; }
+	[Property] private string[] Hallways { get; set; }
 
 	public ImmutableArray<GameObject> Containers { get; private set; } = ImmutableArray<GameObject>.Empty;
 	public List<PickupObject> Pickups { get; private set; } = new();
@@ -53,7 +44,7 @@ public partial class MapGeneratorComponent : SingletonComponent<MapGeneratorComp
 		player = BrickPlayerController.Instance.Player;
 
 		var spawnedRoomsBuilder = ImmutableArray.CreateBuilder<RoomChunkComponent>();
-		spawnedRoomsBuilder.Add( SpawnPrefabFromPath( rooms[0], Transform.Position, Transform.Rotation ).GetComponent<RoomChunkComponent>( false ) );
+		spawnedRoomsBuilder.Add( SpawnPrefabFromPath( Rooms[0], Transform.Position, Transform.Rotation ).GetComponent<RoomChunkComponent>( false ) );
 
 		if ( IsBossSequence )
 		{
@@ -69,7 +60,7 @@ public partial class MapGeneratorComponent : SingletonComponent<MapGeneratorComp
 
 				Vector3 PlacePoint = new Vector3( SpawnPoint.x, SpawnPoint.y, 0 );
 
-				spawnedRoomsBuilder.Add( SpawnPrefabFromPath( rooms[Game.Random.Int( 0, rooms.Length - 1 )], Transform.Position + PlacePoint, Transform.Rotation ).GetComponent<RoomChunkComponent>( false ) );
+				spawnedRoomsBuilder.Add( SpawnPrefabFromPath( Rooms[Game.Random.Int( 0, Rooms.Length - 1 )], Transform.Position + PlacePoint, Transform.Rotation ).GetComponent<RoomChunkComponent>( false ) );
 			}
 
 			//spawn bossroom
@@ -272,7 +263,7 @@ public partial class MapGeneratorComponent : SingletonComponent<MapGeneratorComp
 					var tr = Physics.Trace.Ray( hall[i], hall[i] - Vector3.Up * 18f ).WithoutTags( "navgen" ).Run();
 					if ( !tr.Hit && hall[i] != Vector3.Zero )
 					{
-						SpawnPrefabFromPath( hallways[Game.Random.Int( 0, hallways.Length - 1 )], hall[i], Rotation.Identity );
+						SpawnPrefabFromPath( Hallways[Game.Random.Int( 0, Hallways.Length - 1 )], hall[i], Rotation.Identity );
 						continue;
 					}
 
@@ -287,7 +278,7 @@ public partial class MapGeneratorComponent : SingletonComponent<MapGeneratorComp
 						if ( tr.Hit )
 							continue;
 
-						SpawnPrefabFromPath( hallways[Game.Random.Int( 0, hallways.Length - 1 )], pos, Rotation.Identity );
+						SpawnPrefabFromPath( Hallways[Game.Random.Int( 0, Hallways.Length - 1 )], pos, Rotation.Identity );
 						if ( Game.Random.Float() <= 0.95f )
 							continue;
 
