@@ -46,7 +46,7 @@
 	{
 		e.Accepted = true;
 
-		var m = new Menu();
+		var m = new Menu( this );
 
 		var clipText = EditorUtility.Clipboard.Paste();
 
@@ -88,7 +88,7 @@
 			EditorUtility.Clipboard.Copy( Json.Serialize( tx ) );
 		} );
 
-		m.OpenAtCursor();
+		m.OpenAtCursor( true );
 	}
 }
 
