@@ -151,7 +151,7 @@ public abstract partial class BaseComponent
 
 			if ( Guid.TryParse( guidString, out Guid guid ) )
 			{
-				onAwake += () =>
+				/*OnAwake += () =>
 				{
 					var go = Scene.Directory.FindByGuid( guid );
 					if ( go is null ) Log.Warning( $"GameObject - {guid} was not found for {GetType().Name}.{prop.Name}" );
@@ -160,7 +160,7 @@ public abstract partial class BaseComponent
 					if ( component is null ) Log.Warning( $"Component - Unable to find {prop.PropertyType} on {go} for {GetType().Name}.{prop.Name}" );
 
 					prop.SetValue( this, component );
-				};
+				};*/
 				return;
 			}
 
