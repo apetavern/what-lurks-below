@@ -7,6 +7,7 @@
       "Position": "0,-0.000002499971,64",
       "Rotation": "-0.3220992,0.157098,0.8390967,0.4092543",
       "Scale": "1,1,1",
+      "Tags": "",
       "Components": [
         {
           "__type": "DirectionalLightComponent",
@@ -24,6 +25,7 @@
       "Position": "0,0,32",
       "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
+      "Tags": "",
       "Components": [
         {
           "__type": "SkyBox2D",
@@ -40,13 +42,17 @@
       "Position": "-83.74336,-90.47919,123.8379",
       "Rotation": "-0.147257,0.2955188,0.4209796,0.844843",
       "Scale": "1,1,1",
+      "Tags": "",
       "Components": [
         {
           "__type": "CameraComponent",
           "__enabled": true,
           "BackgroundColor": "0.33333,0.46275,0.52157,1",
-          "ClearFlags": "Color, Depth, Stencil",
+          "ClearFlags": "All",
           "FieldOfView": 60,
+          "Orthographic": false,
+          "OrthographicHeight": 1204,
+          "TargetEye": "None",
           "ZFar": 10000,
           "ZNear": 10
         },
@@ -80,10 +86,12 @@
           "Position": "12.0129,-0.000005235489,-1.80676",
           "Rotation": "0.00000003888651,-0.6524074,0.000000000000001254819,0.7578681",
           "Scale": "0.354076,0.354076,0.354076",
+          "Tags": "",
           "Components": [
             {
               "__type": "ModelComponent",
               "__enabled": true,
+              "BodyGroups": 18446744073709551615,
               "MaterialOverride": "materials/black_matte.vmat",
               "Model": "models/dev/plane.vmdl",
               "ShouldCastShadows": true,
@@ -100,6 +108,7 @@
       "Position": "2.515308,-0.000003044886,0.7659369",
       "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
+      "Tags": "",
       "Components": [
         {
           "__type": "BezierAnimationComponent",
@@ -116,7 +125,8 @@
           "Enabled": true,
           "Position": "-4.885577,0.7233288,-99.97002",
           "Rotation": "-0.7414533,0.0380564,-0.6530419,-0.1494531",
-          "Scale": "150,150,150"
+          "Scale": "150,150,150",
+          "Tags": ""
         },
         {
           "Id": "935ce09c-39b9-47cf-a3f0-f1a624ac937e",
@@ -124,7 +134,8 @@
           "Enabled": true,
           "Position": "-86.25867,-90.47918,123.072",
           "Rotation": "-0.1472569,0.2955188,0.4209795,0.8448429",
-          "Scale": "1,1,1"
+          "Scale": "1,1,1",
+          "Tags": ""
         }
       ]
     },
@@ -135,10 +146,12 @@
       "Position": "0,0,6.054453",
       "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
+      "Tags": "",
       "Components": [
         {
           "__type": "ModelComponent",
           "__enabled": true,
+          "BodyGroups": 18446744073709551615,
           "MaterialOverride": null,
           "Model": "models/manhole/manhole_01.vmdl",
           "ShouldCastShadows": true,
@@ -153,10 +166,12 @@
           "Position": "0,0,-92.51689",
           "Rotation": "0,0,0,1",
           "Scale": "0.4356313,0.4356313,0.4356313",
+          "Tags": "",
           "Components": [
             {
               "__type": "ModelComponent",
               "__enabled": true,
+              "BodyGroups": 18446744073709551615,
               "MaterialOverride": null,
               "Model": "models/misc/menu_pipe.vmdl",
               "ShouldCastShadows": true,
@@ -171,10 +186,12 @@
           "Position": "0,0,-230.1703",
           "Rotation": "0,0,0,1",
           "Scale": "1.086931,1.086931,1.086931",
+          "Tags": "",
           "Components": [
             {
               "__type": "ModelComponent",
               "__enabled": true,
+              "BodyGroups": 18446744073709551615,
               "MaterialOverride": null,
               "Model": "models/misc/menu_pipe.vmdl",
               "ShouldCastShadows": true,
@@ -189,10 +206,12 @@
           "Position": "0,0,-187.8949",
           "Rotation": "0,0,0,1",
           "Scale": "1,1,1",
+          "Tags": "",
           "Components": [
             {
               "__type": "ModelComponent",
               "__enabled": true,
+              "BodyGroups": 18446744073709551615,
               "MaterialOverride": "materials/black_matte.vmat",
               "Model": "models/dev/plane.vmdl",
               "ShouldCastShadows": true,
@@ -207,6 +226,7 @@
           "Position": "0,0,-118.1585",
           "Rotation": "0,0,0,1",
           "Scale": "1,1,1",
+          "Tags": "",
           "Components": [
             {
               "__type": "GradientFog",
@@ -227,6 +247,7 @@
           "Position": "0,0,-6.054453",
           "Rotation": "0,0,0,1",
           "Scale": "1,1,1",
+          "Tags": "",
           "Components": [
             {
               "__type": "WorldPanel",
@@ -251,6 +272,7 @@
           "Position": "0,0,50",
           "Rotation": "0,0,0,1",
           "Scale": "1,1,1",
+          "Tags": "",
           "Components": [
             {
               "__type": "WorldPanel",
@@ -277,10 +299,12 @@
       "Position": "0,46.64369,8.449437",
       "Rotation": "-0.02573364,-0.03221124,-0.7806235,0.6236413",
       "Scale": "1,1,1",
+      "Tags": "",
       "Components": [
         {
           "__type": "ModelComponent",
           "__enabled": true,
+          "BodyGroups": 18446744073709551615,
           "MaterialOverride": null,
           "Model": "models/manhole/manhole_02.vmdl",
           "ShouldCastShadows": true,
@@ -295,6 +319,7 @@
       "Position": "0,0,0",
       "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
+      "Tags": "",
       "Components": [
         {
           "__type": "EnvmapComponent",
@@ -316,6 +341,7 @@
       "Position": "0,0,0",
       "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
+      "Tags": "",
       "Components": [
         {
           "__type": "SubtleCameraMovementComponent",
@@ -330,6 +356,7 @@
       "Position": "-81.95909,22.19058,0",
       "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
+      "Tags": "",
       "Children": [
         {
           "Id": "6ec45a21-1910-4dfa-95a0-3858ce4d943d",
@@ -338,10 +365,12 @@
           "Position": "312,-116.4469,12",
           "Rotation": "0.00000005956496,-0.000000001536902,1,-0.0000006397578",
           "Scale": "1,1,1",
+          "Tags": "",
           "Components": [
             {
               "__type": "ModelComponent",
               "__enabled": true,
+              "BodyGroups": 18446744073709551615,
               "MaterialOverride": null,
               "Model": "models/environment/streetlight_01.vmdl",
               "ShouldCastShadows": true,
@@ -356,6 +385,7 @@
               "Position": "24.61941,0.000009745956,270",
               "Rotation": "-0.00000004126236,0.5479383,0.00000002179707,0.8365185",
               "Scale": "1,1,1",
+              "Tags": "",
               "Components": [
                 {
                   "__type": "SpotLightComponent",
@@ -378,10 +408,12 @@
           "Position": "128,384,4.1",
           "Rotation": "0,0,0,1",
           "Scale": "1,1,1",
+          "Tags": "",
           "Components": [
             {
               "__type": "ModelComponent",
               "__enabled": true,
+              "BodyGroups": 18446744073709551615,
               "MaterialOverride": "materials/urban/asphalt_01.vmat",
               "Model": "models/environment/floor_01.vmdl",
               "ShouldCastShadows": true,
@@ -396,10 +428,12 @@
           "Position": "128,256,4.1",
           "Rotation": "0,0,0,1",
           "Scale": "1,1,1",
+          "Tags": "",
           "Components": [
             {
               "__type": "ModelComponent",
               "__enabled": true,
+              "BodyGroups": 18446744073709551615,
               "MaterialOverride": "materials/urban/asphalt_01.vmat",
               "Model": "models/environment/floor_01.vmdl",
               "ShouldCastShadows": true,
@@ -414,10 +448,12 @@
           "Position": "128,128,4.1",
           "Rotation": "0,0,0,1",
           "Scale": "1,1,1",
+          "Tags": "",
           "Components": [
             {
               "__type": "ModelComponent",
               "__enabled": true,
+              "BodyGroups": 18446744073709551615,
               "MaterialOverride": "materials/urban/asphalt_01.vmat",
               "Model": "models/environment/floor_01.vmdl",
               "ShouldCastShadows": true,
@@ -432,10 +468,12 @@
           "Position": "224,63.71153,4.5",
           "Rotation": "0,0,0,1",
           "Scale": "1,1,1",
+          "Tags": "",
           "Components": [
             {
               "__type": "ModelComponent",
               "__enabled": true,
+              "BodyGroups": 18446744073709551615,
               "MaterialOverride": null,
               "Model": "models/manhole/drain_01.vmdl",
               "ShouldCastShadows": true,
@@ -450,6 +488,7 @@
           "Position": "-128.0001,512,12",
           "Rotation": "0.00000005956133,-0.000000001607673,1,-0.0000006397578",
           "Scale": "1,1,1",
+          "Tags": "",
           "__Prefab": "prefabs/pieces/sidewalk_01.object"
         },
         {
@@ -459,6 +498,7 @@
           "Position": "-128.0001,384,12",
           "Rotation": "0.00000005956133,-0.000000001607673,1,-0.0000006397578",
           "Scale": "1,1,1",
+          "Tags": "",
           "__Prefab": "prefabs/pieces/sidewalk_01.object"
         },
         {
@@ -468,6 +508,7 @@
           "Position": "-128,256,12",
           "Rotation": "0.00000005956133,-0.000000001607673,1,-0.0000006397578",
           "Scale": "1,1,1",
+          "Tags": "",
           "__Prefab": "prefabs/pieces/sidewalk_01.object"
         },
         {
@@ -477,6 +518,7 @@
           "Position": "256,384,12",
           "Rotation": "0,0,0,1",
           "Scale": "1,1,1",
+          "Tags": "",
           "__Prefab": "prefabs/pieces/sidewalk_01.object"
         },
         {
@@ -486,6 +528,7 @@
           "Position": "256,256,12",
           "Rotation": "0,0,0,1",
           "Scale": "1,1,1",
+          "Tags": "",
           "__Prefab": "prefabs/pieces/sidewalk_01.object"
         },
         {
@@ -495,6 +538,7 @@
           "Position": "256,128,12",
           "Rotation": "0,0,0,1",
           "Scale": "1,1,1",
+          "Tags": "",
           "__Prefab": "prefabs/pieces/sidewalk_01.object"
         },
         {
@@ -504,6 +548,7 @@
           "Position": "256,0,12",
           "Rotation": "0,0,0,1",
           "Scale": "1,1,1",
+          "Tags": "",
           "__Prefab": "prefabs/pieces/sidewalk_01.object"
         },
         {
@@ -513,6 +558,7 @@
           "Position": "256,-128,12",
           "Rotation": "0,0,0,1",
           "Scale": "1,1,1",
+          "Tags": "",
           "__Prefab": "prefabs/pieces/sidewalk_01.object"
         },
         {
@@ -522,6 +568,7 @@
           "Position": "256,-256,12",
           "Rotation": "0,0,0,1",
           "Scale": "1,1,1",
+          "Tags": "",
           "__Prefab": "prefabs/pieces/sidewalk_01.object"
         },
         {
@@ -531,21 +578,23 @@
           "Position": "256,-384,12",
           "Rotation": "0,0,0,1",
           "Scale": "1,1,1",
+          "Tags": "",
           "__Prefab": "prefabs/pieces/sidewalk_01.object"
         },
         {
           "Id": "5a880709-4d47-4112-9d50-92f6fa0aec47",
           "Name": "decal",
           "Enabled": true,
-          "Position": "237.5704,-213.144,0",
-          "Rotation": "0,0.7071072,0,0.7071064",
+          "Position": "239.0039,-213.344,0.00000008906063",
+          "Rotation": "0.5000005,0.5000002,-0.4999999,0.4999995",
           "Scale": "1,1,1",
+          "Tags": "",
           "Components": [
             {
               "__type": "DecalComponent",
               "__enabled": true,
-              "DecalScale": "512,50,9",
               "Material": "materials/urban/road_lines.vmat",
+              "Size": "12,32,256",
               "TintColor": "0.92157,0.72941,0.04706,1"
             }
           ]
@@ -554,15 +603,16 @@
           "Id": "26793025-d01d-45ab-b430-4efb79de9bcd",
           "Name": "decal",
           "Enabled": true,
-          "Position": "237.5704,339.7363,0",
-          "Rotation": "0,0.7071072,0,0.7071064",
+          "Position": "240,341.136,-0.0000002101485",
+          "Rotation": "-0.5000006,0.4999997,0.5000003,0.4999993",
           "Scale": "1,1,1",
+          "Tags": "",
           "Components": [
             {
               "__type": "DecalComponent",
               "__enabled": true,
-              "DecalScale": "512,50,9",
               "Material": "materials/urban/road_lines.vmat",
+              "Size": "10,32,256",
               "TintColor": "0.92079,0.72925,0.05014,1"
             }
           ]
@@ -571,15 +621,16 @@
           "Id": "de22c615-84e4-4ab8-8564-ffd7d63f11c4",
           "Name": "decal",
           "Enabled": true,
-          "Position": "-6.819191,183.646,-8.198177",
-          "Rotation": "0.00000001036872,0.5114172,-0.00000001036873,0.8593332",
+          "Position": "54,100,-5",
+          "Rotation": "0.4449973,0.5495248,-0.549525,0.4449968",
           "Scale": "1,1,1",
+          "Tags": "",
           "Components": [
             {
               "__type": "DecalComponent",
               "__enabled": true,
-              "DecalScale": "256,64,9",
               "Material": "materials/urban/road_lines.vmat",
+              "Size": "12,64,256",
               "TintColor": "1,1,1,1"
             }
           ]
@@ -591,12 +642,13 @@
           "Position": "-6.819191,548.2199,-8.198177",
           "Rotation": "0.00000001036872,0.5114172,-0.00000001036873,0.8593332",
           "Scale": "1,1,1",
+          "Tags": "",
           "Components": [
             {
               "__type": "DecalComponent",
               "__enabled": true,
-              "DecalScale": "256,64,9",
               "Material": "materials/urban/road_lines.vmat",
+              "Size": "32,32,256",
               "TintColor": "1,1,1,1"
             }
           ]
@@ -605,15 +657,16 @@
           "Id": "24e3cf05-879d-4a1d-8ec0-f9d91761e2fb",
           "Name": "decal",
           "Enabled": true,
-          "Position": "39.18759,-192.6023,-8.198177",
-          "Rotation": "-0.5114182,-0.0000003206836,0.859332,-0.0000005458959",
+          "Position": "54,-300,-5",
+          "Rotation": "-0.4449966,-0.5495253,0.5495243,-0.4449976",
           "Scale": "1,1,1",
+          "Tags": "",
           "Components": [
             {
               "__type": "DecalComponent",
               "__enabled": true,
-              "DecalScale": "256,64,9",
               "Material": "materials/urban/road_lines.vmat",
+              "Size": "12,64,256",
               "TintColor": "1,1,1,1"
             }
           ]
@@ -627,10 +680,12 @@
       "Position": "595.9877,-399.8342,209.4918",
       "Rotation": "-0.6761006,0.2070974,-0.6761002,-0.2070973",
       "Scale": "5,5,5",
+      "Tags": "",
       "Components": [
         {
           "__type": "ModelComponent",
           "__enabled": true,
+          "BodyGroups": 18446744073709551615,
           "MaterialOverride": "materials/urban/asphalt_02.vmat",
           "Model": "models/dev/plane.vmdl",
           "ShouldCastShadows": true,
@@ -645,10 +700,12 @@
       "Position": "876.0298,35.52715,372.331",
       "Rotation": "-0.7068491,-0.01909919,-0.7068487,0.01909906",
       "Scale": "10,10,10",
+      "Tags": "",
       "Components": [
         {
           "__type": "ModelComponent",
           "__enabled": true,
+          "BodyGroups": 18446744073709551615,
           "MaterialOverride": "materials/urban/asphalt_02.vmat",
           "Model": "models/dev/plane.vmdl",
           "ShouldCastShadows": true,
@@ -663,10 +720,12 @@
       "Position": "253.0647,-1070.536,-29.95926",
       "Rotation": "-0.6267748,0.3273439,-0.6267742,-0.3273441",
       "Scale": "10,10,10",
+      "Tags": "",
       "Components": [
         {
           "__type": "ModelComponent",
           "__enabled": true,
+          "BodyGroups": 18446744073709551615,
           "MaterialOverride": "materials/urban/asphalt_02.vmat",
           "Model": "models/dev/plane.vmdl",
           "ShouldCastShadows": true,
@@ -681,13 +740,77 @@
       "Position": "0,0,0",
       "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
+      "Tags": "",
       "Components": [
         {
           "__type": "MenuSoundComponent",
           "__enabled": true
         }
       ]
+    },
+    {
+      "Id": "4aee2334-6bd1-4306-b40b-3667d4c5749e",
+      "Name": "Particle loader",
+      "Enabled": true,
+      "Position": "-380.539,-408.6913,-55.33958",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
+      "Tags": "",
+      "Components": [
+        {
+          "__type": "ParticleSystem",
+          "__enabled": true,
+          "Looped": false,
+          "Particles": "particles/glint_01.vpcf",
+          "PlaybackSpeed": 1
+        },
+        {
+          "__type": "ParticleSystem",
+          "__enabled": true,
+          "Looped": false,
+          "Particles": "particles/wood_break.vpcf",
+          "PlaybackSpeed": 1
+        },
+        {
+          "__type": "ParticleSystem",
+          "__enabled": true,
+          "Looped": false,
+          "Particles": "particles/steam_01.vpcf",
+          "PlaybackSpeed": 1
+        },
+        {
+          "__type": "ParticleSystem",
+          "__enabled": true,
+          "Looped": false,
+          "Particles": "particles/bullet_trail_01.vpcf",
+          "PlaybackSpeed": 1
+        },
+        {
+          "__type": "ParticleSystem",
+          "__enabled": true,
+          "Looped": false,
+          "Particles": "particles/laser_pointer_01.vpcf",
+          "PlaybackSpeed": 1
+        },
+        {
+          "__type": "ParticleSystem",
+          "__enabled": true,
+          "Looped": false,
+          "Particles": "particles/splash_01.vpcf",
+          "PlaybackSpeed": 1
+        }
+      ]
     }
   ],
+  "SceneProperties": {
+    "FixedUpdateFrequency": 50,
+    "MaxFixedUpdates": 5,
+    "TimeScale": 1,
+    "ThreadedAnimation": true,
+    "UseFixedUpdate": true,
+    "Static": false
+  },
+  "Title": "mainmenu",
+  "Description": "",
   "__references": []
 }
