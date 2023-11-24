@@ -3,11 +3,9 @@
     {
       "Id": "00000000-0000-0000-0000-000000000000",
       "Name": "Directional Light",
-      "Enabled": true,
       "Position": "-186.5142,0.0002112252,128",
       "Rotation": "0.4304598,0.4304592,-0.5609857,0.560985",
-      "Scale": "1,1,1",
-      "Tags": "",
+      "Enabled": true,
       "Components": [
         {
           "__type": "DirectionalLightComponent",
@@ -19,23 +17,11 @@
       ]
     },
     {
-      "Id": "7ebc391e-925e-489c-a0dd-a48345ab8d2a",
-      "Name": "player",
-      "Enabled": true,
-      "Position": "0,0,650",
-      "Rotation": "0,0,0,1",
-      "Scale": "1,1,1",
-      "Tags": "",
-      "__Prefab": "prefabs/player.object"
-    },
-    {
       "Id": "b87e8bdf-9559-4b22-817d-0e9af9983c9c",
       "Name": "Camera",
-      "Enabled": true,
       "Position": "497.1481,-422.6899,425.4719",
       "Rotation": "-0.2601569,0.1942207,0.7579172,0.5658249",
-      "Scale": "1,1,1",
-      "Tags": "",
+      "Enabled": true,
       "Components": [
         {
           "__type": "SoundListenerComponent",
@@ -49,6 +35,8 @@
           "FieldOfView": 60,
           "Orthographic": false,
           "OrthographicHeight": 1204,
+          "RenderExcludeTags": "",
+          "RenderTags": "",
           "TargetEye": "None",
           "ZFar": 3000,
           "ZNear": 10
@@ -85,11 +73,8 @@
     {
       "Id": "a035ffaf-a7d0-4e6e-8ca4-7a398e29ad08",
       "Name": "Fog",
-      "Enabled": true,
       "Position": "0,0,-97.12166",
-      "Rotation": "0,0,0,1",
-      "Scale": "1,1,1",
-      "Tags": "",
+      "Enabled": true,
       "Components": [
         {
           "__type": "GradientFog",
@@ -106,11 +91,8 @@
     {
       "Id": "441bdfe0-648f-4b46-8ba9-88edc38fa7fa",
       "Name": "Skybox",
-      "Enabled": true,
       "Position": "0,0,-34.30033",
-      "Rotation": "0,0,0,1",
-      "Scale": "1,1,1",
-      "Tags": "",
+      "Enabled": true,
       "Components": [
         {
           "__type": "SkyBox2D",
@@ -123,20 +105,13 @@
     {
       "Id": "e52ba547-7741-4f69-8bdb-c9f1df0e5871",
       "Name": "Object",
-      "Enabled": true,
-      "Position": "0,0,0",
-      "Rotation": "0,0,0,1",
-      "Scale": "1,1,1",
-      "Tags": ""
+      "Enabled": true
     },
     {
       "Id": "278ca51d-c541-4dc6-b167-54e714179d52",
       "Name": "MapGenerator",
+      "Networked": true,
       "Enabled": true,
-      "Position": "0,0,0",
-      "Rotation": "0,0,0,1",
-      "Scale": "1,1,1",
-      "Tags": "",
       "Components": [
         {
           "__type": "MapGeneratorComponent",
@@ -171,22 +146,16 @@
         {
           "Id": "eae33615-fd68-4290-b430-5ec5126d9584",
           "Name": "generatedMap",
-          "Enabled": true,
-          "Position": "0,0,0",
-          "Rotation": "0,0,0,1",
-          "Scale": "1,1,1",
-          "Tags": ""
+          "Enabled": true
         }
       ]
     },
     {
       "Id": "c02125d1-191d-463e-bf65-c1b71adfd1a0",
       "Name": "Plane",
-      "Enabled": true,
       "Position": "0,0,673.3181",
-      "Rotation": "0,0,0,1",
       "Scale": "100,100,100",
-      "Tags": "",
+      "Enabled": true,
       "Components": [
         {
           "__type": "ModelComponent",
@@ -202,11 +171,10 @@
     {
       "Id": "bf22b81c-7a00-4179-9c12-c5698d5c35ec",
       "Name": "Plane (1)",
-      "Enabled": true,
       "Position": "0,0,-5000",
-      "Rotation": "0,0,0,1",
       "Scale": "100,100,100",
       "Tags": "navgen",
+      "Enabled": true,
       "Components": [
         {
           "__type": "ModelComponent",
@@ -222,6 +190,7 @@
           "__enabled": true,
           "IsTrigger": false,
           "Scale": "70,70,100",
+          "Static": false,
           "Surface": null
         }
       ]
@@ -229,11 +198,9 @@
     {
       "Id": "edb83c28-be22-4dcc-85cf-8d7a478733f7",
       "Name": "Plane (2)",
-      "Enabled": true,
       "Position": "0,0,-100",
-      "Rotation": "0,0,0,1",
       "Scale": "100,100,100",
-      "Tags": "",
+      "Enabled": true,
       "Components": [
         {
           "__type": "ModelComponent",
@@ -250,10 +217,6 @@
       "Id": "8045a781-3f23-48f9-9191-361a91ccb52e",
       "Name": "UI",
       "Enabled": true,
-      "Position": "0,0,0",
-      "Rotation": "0,0,0,1",
-      "Scale": "1,1,1",
-      "Tags": "",
       "Components": [
         {
           "__type": "ScreenPanel",
@@ -269,10 +232,6 @@
           "Id": "bcdbb154-a577-4727-b3c3-f7c99f599d11",
           "Name": "Game HUD",
           "Enabled": true,
-          "Position": "0,0,0",
-          "Rotation": "0,0,0,1",
-          "Scale": "1,1,1",
-          "Tags": "",
           "Components": [
             {
               "__type": "GameHud",
@@ -284,10 +243,6 @@
           "Id": "46fb9f15-493d-4e9c-aea5-a38a6a82d09f",
           "Name": "Minimap",
           "Enabled": true,
-          "Position": "0,0,0",
-          "Rotation": "0,0,0,1",
-          "Scale": "1,1,1",
-          "Tags": "",
           "Components": [
             {
               "__type": "Minimap",
@@ -299,10 +254,6 @@
           "Id": "97da907f-32f3-46d8-a967-9e6034362f9a",
           "Name": "MessagePanel",
           "Enabled": true,
-          "Position": "0,0,0",
-          "Rotation": "0,0,0,1",
-          "Scale": "1,1,1",
-          "Tags": "",
           "Components": [
             {
               "__type": "MessagePanel",
@@ -315,20 +266,14 @@
     {
       "Id": "11042ac9-3dac-42e0-8355-5cb02a40e924",
       "Name": "cam",
-      "Enabled": true,
       "Position": "41.59829,49.16901,613.1768",
-      "Rotation": "0,0,0,1",
-      "Scale": "1,1,1",
-      "Tags": ""
+      "Enabled": true
     },
     {
       "Id": "0dbcd692-429b-46bd-9696-eaf6e0c7d7b2",
       "Name": "falltube",
-      "Enabled": true,
       "Position": "0,0,650",
-      "Rotation": "0,0,0,1",
-      "Scale": "1,1,1",
-      "Tags": "",
+      "Enabled": true,
       "Components": [
         {
           "__type": "ModelComponent",
@@ -344,17 +289,16 @@
         {
           "Id": "e898ada8-8a7a-4940-ab99-e40ea6983578",
           "Name": "camtrigger",
-          "Enabled": true,
           "Position": "0,0,-56.10985",
-          "Rotation": "0,0,0,1",
-          "Scale": "1,1,1",
           "Tags": "trigger",
+          "Enabled": true,
           "Components": [
             {
               "__type": "ColliderBoxComponent",
               "__enabled": true,
               "IsTrigger": true,
               "Scale": "160,160,1000",
+              "Static": false,
               "Surface": null
             },
             {
@@ -371,17 +315,48 @@
       "Id": "6769b702-1414-4aae-bfcd-a4fa22ec6398",
       "Name": "SoundMan",
       "Enabled": true,
-      "Position": "0,0,0",
-      "Rotation": "0,0,0,1",
-      "Scale": "1,1,1",
-      "Tags": "",
       "Components": [
         {
           "__type": "SoundManagerComponent",
           "__enabled": true
         }
       ]
+    },
+    {
+      "Id": "ba5b8d85-fdf8-4ad3-ac7e-ff7eda4a5796",
+      "Name": "Networking Components",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "NetworkSession",
+          "__enabled": true
+        },
+        {
+          "__type": "GameNetworkManager",
+          "__enabled": true,
+          "PlayerPrefab": "prefabs/player.object",
+          "SpawnPoint": "332f3303-441a-439d-886a-61cac88b282d"
+        }
+      ]
+    },
+    {
+      "Id": "332f3303-441a-439d-886a-61cac88b282d",
+      "Name": "Spawnpoint",
+      "Position": "0,0,650",
+      "Enabled": true
     }
   ],
+  "SceneProperties": {
+    "NetworkFrequency": 60,
+    "FixedUpdateFrequency": 50,
+    "Lerping": true,
+    "MaxFixedUpdates": 5,
+    "TimeScale": 1,
+    "ThreadedAnimation": true,
+    "UseFixedUpdate": true,
+    "Static": false
+  },
+  "Title": "devmap",
+  "Description": "",
   "__references": []
 }

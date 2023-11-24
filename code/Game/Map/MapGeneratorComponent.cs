@@ -41,6 +41,10 @@ public partial class MapGeneratorComponent : SingletonComponent<MapGeneratorComp
 
 	public override void OnStart()
 	{
+		if ( IsProxy )
+		{
+			return;
+		}
 		player = BrickPlayerController.Instance.Player;
 
 		var spawnedRoomsBuilder = ImmutableArray.CreateBuilder<RoomChunkComponent>();
@@ -75,6 +79,11 @@ public partial class MapGeneratorComponent : SingletonComponent<MapGeneratorComp
 
 	public override void Update()
 	{
+		if ( IsProxy )
+		{
+			correctedRooms = true;
+			return;
+		}
 		if ( correctedRooms || spawnedRooms.IsEmpty )
 			return;
 
@@ -314,6 +323,7 @@ public partial class MapGeneratorComponent : SingletonComponent<MapGeneratorComp
 		}
 
 		navgen.GenerateMesh();
+		navgen.SetInitialize();
 		navgen.Initialized = true;
 
 		foreach ( var door in spawnedRooms[0].GetComponents<RoomDoorDefinition>( false, true ).Where( X => X.Connected ) )
@@ -358,6 +368,7 @@ public partial class MapGeneratorComponent : SingletonComponent<MapGeneratorComp
 		var prefab = ResourceLibrary.Get<PrefabFile>( path );
 		var go = SceneUtility.Instantiate( prefab.Scene, position, rotation );
 		go.SetParent( GeneratedMapParent );
+		go.Network.Spawn();
 		return go;
 	}
 

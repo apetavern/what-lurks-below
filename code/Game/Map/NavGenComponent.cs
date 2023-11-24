@@ -22,6 +22,12 @@ public sealed class NavGenComponent : SingletonComponent<NavGenComponent>
 		//path = new NavigationPath( mesh );
 	}
 
+	[Broadcast]
+	public void SetInitialize()
+	{
+		Initialized = true;
+	}
+
 	public override void DrawGizmos()
 	{
 		base.DrawGizmos();

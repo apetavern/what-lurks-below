@@ -218,6 +218,7 @@
         {
           "Id": "2d88ef41-0495-4eab-bc18-8b9bae081b6a",
           "Name": "UI",
+          "Position": "0,0,0",
           "Enabled": true,
           "Components": [
             {

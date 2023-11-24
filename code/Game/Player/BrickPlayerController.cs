@@ -7,7 +7,7 @@ using BrickJam.Map;
 
 namespace BrickJam.Player;
 
-public class BrickPlayerController : SingletonComponent<BrickPlayerController>
+public class BrickPlayerController : SingletonComponent<BrickPlayerController>, INetworkSerializable
 {
 	[Property] public Vector3 Gravity { get; set; } = new Vector3( 0, 0, 800 );
 
@@ -35,6 +35,7 @@ public class BrickPlayerController : SingletonComponent<BrickPlayerController>
 	private AnimatedModelComponent modelComponent;
 	private CharacterController characterController;
 
+	[Broadcast]
 	public void SpawnGlowstick()
 	{
 		if ( TimeSinceLastGlowstick > 1f )
@@ -53,6 +54,9 @@ public class BrickPlayerController : SingletonComponent<BrickPlayerController>
 	public override void OnEnabled()
 	{
 		base.OnEnabled();
+
+		if ( IsProxy )
+			return;
 
 		startpos = Transform.Position;
 
@@ -95,32 +99,6 @@ public class BrickPlayerController : SingletonComponent<BrickPlayerController>
 	{
 		Stats.Save();
 		Body.GetComponent<AnimatedModelComponent>().Set( "die", true );
-		/*Body.AddComponent<ModelPhysics>();
-		Body.GetComponent<ModelPhysics>().Model = Body.GetComponent<AnimatedModelComponent>().Model;
-		Body.GetComponent<ModelPhysics>().OnEnabled();
-
-		
-
-		var physicsbones = new List<string>();
-
-		for ( int i = 0; i < Body.GetComponent<ModelPhysics>().PhysicsGroup.BodyCount; i++ )
-		{
-			physicsbones.Add( Body.GetComponent<ModelPhysics>().PhysicsGroup.GetBody( i ).GroupName );
-		}
-
-		ExcludedBones = Body.GetComponent<AnimatedModelComponent>().Model.Bones.AllBones.Where( X => !physicsbones.Contains( X.Name ) );
-
-		foreach ( var bone in ExcludedBones )
-		{
-			if ( bone.Parent != null )
-			{
-				LocalExcludedTransforms.Add( bone.Parent.LocalTransform.ToLocal( bone.LocalTransform ) );
-			}
-			else
-			{
-				LocalExcludedTransforms.Add( bone.LocalTransform );
-			}
-		}*/
 
 		IsDead = true;
 	}
@@ -166,30 +144,13 @@ public class BrickPlayerController : SingletonComponent<BrickPlayerController>
 		return Body.GetComponent<AnimatedModelComponent>().Model.Bones.GetBone( name ).Index;
 	}
 
-	/*protected override void OnPreRender()
-	{
-		if ( IsDead )
-		{
-			for ( int i = 0; i < Body.GetComponent<ModelPhysics>().PhysicsGroup.BodyCount; i++ )
-			{
-				Body.GetComponent<AnimatedModelComponent>().SceneObject.SetBoneWorldTransform( BoneNameToIndex( Body.GetComponent<ModelPhysics>().PhysicsGroup.GetBody( i ).GroupName ), Body.GetComponent<ModelPhysics>().PhysicsGroup.GetBody( i ).Transform );
-			}
-
-			for ( int i = 0; i < LocalExcludedTransforms.Count; i++ )
-			{
-				var bonename = ExcludedBones.ElementAt( i ).Name;
-				Transform trans = Body.GetComponent<AnimatedModelComponent>().SceneObject.GetBoneWorldTransform( bonename );
-				trans.Position = trans.PointToWorld( LocalExcludedTransforms.ElementAt( i ).Position );
-				trans.Rotation = trans.RotationToWorld( LocalExcludedTransforms.ElementAt( i ).Rotation );
-				Body.GetComponent<AnimatedModelComponent>().SceneObject.SetBoneWorldTransform( BoneNameToIndex( bonename ), trans );
-				Log.Info( bonename );
-			}
-		}
-		base.OnPreRender();
-	}*/
-
 	public override void Update()
 	{
+		if ( IsProxy )
+		{
+			return;
+		}
+
 		if ( IsDead )
 		{
 			return;
@@ -198,9 +159,12 @@ public class BrickPlayerController : SingletonComponent<BrickPlayerController>
 		if ( characterController is null )
 			characterController = GetComponent<CharacterController>();
 
-		foreach ( var pickup in MapGeneratorComponent.Instance.Pickups
-			.Where( p => p.IsValid && p.Transform.Position.Distance( Transform.Position ) < 50 ) )
-			pickup.GetComponent<PickupHint>().TimeSincePlayerInRange = 0;
+		if ( MapGeneratorComponent.Instance.Pickups.Count > 0 )
+		{
+			foreach ( var pickup in MapGeneratorComponent.Instance.Pickups
+				.Where( p => p.IsValid && p.Transform.Position.Distance( Transform.Position ) < 50 ) )
+				pickup.GetComponent<PickupHint>().TimeSincePlayerInRange = 0;
+		}
 
 		var navgen = NavGenComponent.Instance;
 		if ( navgen is null )
@@ -234,6 +198,10 @@ public class BrickPlayerController : SingletonComponent<BrickPlayerController>
 				Camera.GetComponent<DepthOfField>().FocalDistance = Vector3.DistanceBetween( Camera.Transform.Position, Eye.Transform.Position );
 			}
 			return;
+		}
+		else
+		{
+			navgen.SetInitialize();
 		}
 
 		if ( Input.Pressed( "Flashlight" ) )
@@ -451,5 +419,15 @@ public class BrickPlayerController : SingletonComponent<BrickPlayerController>
 
 		if ( Input.Down( "Run" ) ) WishVelocity *= 150.0f * AimMultiplier;
 		else WishVelocity *= 85.0f * AimMultiplier;
+	}
+
+	public void Write( ref ByteStream stream )
+	{
+		stream.Write( EyeAngles );
+	}
+
+	public void Read( ByteStream stream )
+	{
+		EyeAngles = stream.Read<Angles>();
 	}
 }

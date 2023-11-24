@@ -56,8 +56,11 @@ public sealed class CameraTriggerComponent : BaseComponent
 
 	public override void Update()
 	{
-		if ( Player is not null )
+		if ( IsProxy )
+			return;
+		if ( Player is not null && Player.IsValid() )
 		{
+			Player = BrickPlayerController.Instance.Player;
 			if ( Bounds.Contains( Player.Transform.Position + Vector3.Up * 28f ) )
 			{
 				Triggered();
@@ -88,7 +91,7 @@ public sealed class CameraTriggerComponent : BaseComponent
 			WasTriggered = true;
 		}
 
-		if ( CameraPoint != null )
+		/*if ( CameraPoint != null )
 		{
 			Controller.Camera.Transform.Position = CameraPoint.Transform.Position;
 
@@ -102,6 +105,6 @@ public sealed class CameraTriggerComponent : BaseComponent
 			{
 				Controller.Camera.Transform.Rotation = Rotation.LookAt( -(CameraPoint.Transform.Position - Player.Transform.Position) + Vector3.Up * 45f );
 			}
-		}
+		}*/
 	}
 }
