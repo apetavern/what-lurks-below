@@ -1,0 +1,90 @@
+@using Sandbox;
+@using Sandbox.UI;
+@using Sandbox.Network;
+@inherits PanelComponent
+
+<div class="lobby-list">
+
+    <div class="header">
+        <div class="title">Server List</div>
+    </div>
+
+    @if (refreshing)
+    {
+        <div>Refreshing..</div>
+    }
+    else if (list.Count == 0)
+    {
+        <div>No lobbies were found</div>
+    }
+    else
+    {
+        @foreach (var lobby in list)
+        {
+            <div class="button" onclick=@(() => OpenLobby( lobby ) )>
+
+                <div class="title">
+                    @lobby.Name
+                </div>
+
+                <div class="meta">
+
+                    <div class="map">
+                        @lobby.Map
+                    </div>
+
+                    <div class="count">
+                        @lobby.Members / @lobby.MaxMembers
+                    </div>
+
+                </div>
+
+            </div>
+        }
+    }
+</div>
+
+@code
+{
+	/// <summary>
+    /// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
+    /// </summary>
+    protected override int BuildHash() => System.HashCode.Combine(list.Count);
+
+    bool refreshing;
+    List<LobbyInformation> list = new();
+
+    public override void OnEnabled()
+    {
+        base.OnEnabled();
+
+        _ = RefreshLobbyList();
+    }
+
+    async Task RefreshLobbyList()
+    {
+        while (true)
+        {
+            refreshing = true;
+            StateHasChanged();
+
+            list = await GameNetworkSystem.QueryLobbies();
+
+            if (!GameObject.IsValid())
+                return;
+
+            refreshing = false;
+            StateHasChanged();
+
+            await Task.Delay(5000);
+
+            if (!GameObject.IsValid())
+                return;
+        }
+    }
+
+    void OpenLobby(LobbyInformation lobby)
+    {
+        GameNetworkSystem.Connect(lobby.LobbyId);
+    }
+}

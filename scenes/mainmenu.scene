@@ -3,11 +3,9 @@
     {
       "Id": "881e4245-43eb-4e4c-9f8d-e11f0927b87e",
       "Name": "Directional Light",
-      "Enabled": true,
       "Position": "0,-0.000002499971,64",
       "Rotation": "-0.3220992,0.157098,0.8390967,0.4092543",
-      "Scale": "1,1,1",
-      "Tags": "",
+      "Enabled": true,
       "Components": [
         {
           "__type": "DirectionalLightComponent",
@@ -21,11 +19,8 @@
     {
       "Id": "50252a95-eb28-4c1b-84f3-cb17134ee8d8",
       "Name": "SkyBox",
-      "Enabled": true,
       "Position": "0,0,32",
-      "Rotation": "0,0,0,1",
-      "Scale": "1,1,1",
-      "Tags": "",
+      "Enabled": true,
       "Components": [
         {
           "__type": "SkyBox2D",
@@ -38,11 +33,9 @@
     {
       "Id": "f215c0f1-e92f-4013-a59e-5fd80af07951",
       "Name": "Camera",
-      "Enabled": true,
       "Position": "-83.74336,-90.47919,123.8379",
       "Rotation": "-0.147257,0.2955188,0.4209796,0.844843",
-      "Scale": "1,1,1",
-      "Tags": "",
+      "Enabled": true,
       "Components": [
         {
           "__type": "CameraComponent",
@@ -52,6 +45,8 @@
           "FieldOfView": 60,
           "Orthographic": false,
           "OrthographicHeight": 1204,
+          "RenderExcludeTags": "",
+          "RenderTags": "",
           "TargetEye": "None",
           "ZFar": 10000,
           "ZNear": 10
@@ -82,11 +77,10 @@
         {
           "Id": "368caf02-14f9-464a-9724-6c0aa4338978",
           "Name": "Plane",
-          "Enabled": true,
           "Position": "12.0129,-0.000005235489,-1.80676",
           "Rotation": "0.00000003888651,-0.6524074,0.000000000000001254819,0.7578681",
           "Scale": "0.354076,0.354076,0.354076",
-          "Tags": "",
+          "Enabled": true,
           "Components": [
             {
               "__type": "ModelComponent",
@@ -104,11 +98,8 @@
     {
       "Id": "228a0acf-74a6-4b3c-be93-27381831e26f",
       "Name": "Bezier",
-      "Enabled": true,
       "Position": "2.515308,-0.000003044886,0.7659369",
-      "Rotation": "0,0,0,1",
-      "Scale": "1,1,1",
-      "Tags": "",
+      "Enabled": true,
       "Components": [
         {
           "__type": "BezierAnimationComponent",
@@ -122,31 +113,25 @@
         {
           "Id": "fd41d1e5-54df-4544-9beb-087a55eb1e6f",
           "Name": "point2",
-          "Enabled": true,
           "Position": "-4.885577,0.7233288,-99.97002",
           "Rotation": "-0.7414533,0.0380564,-0.6530419,-0.1494531",
           "Scale": "150,150,150",
-          "Tags": ""
+          "Enabled": true
         },
         {
           "Id": "935ce09c-39b9-47cf-a3f0-f1a624ac937e",
           "Name": "point1",
-          "Enabled": true,
           "Position": "-86.25867,-90.47918,123.072",
           "Rotation": "-0.1472569,0.2955188,0.4209795,0.8448429",
-          "Scale": "1,1,1",
-          "Tags": ""
+          "Enabled": true
         }
       ]
     },
     {
       "Id": "9d0dca31-9e08-4c35-bae2-02e93bc5acd7",
       "Name": "Manhole_01",
-      "Enabled": true,
       "Position": "0,0,6.054453",
-      "Rotation": "0,0,0,1",
-      "Scale": "1,1,1",
-      "Tags": "",
+      "Enabled": true,
       "Components": [
         {
           "__type": "ModelComponent",
@@ -162,11 +147,9 @@
         {
           "Id": "674aca8a-c305-4e2d-83c2-549636b8dfa1",
           "Name": "menu_pipe",
-          "Enabled": true,
           "Position": "0,0,-92.51689",
-          "Rotation": "0,0,0,1",
           "Scale": "0.4356313,0.4356313,0.4356313",
-          "Tags": "",
+          "Enabled": true,
           "Components": [
             {
               "__type": "ModelComponent",
@@ -182,11 +165,9 @@
         {
           "Id": "16aecfe3-40ad-4ece-9027-65dbd17ec29d",
           "Name": "menu_pipe",
-          "Enabled": true,
           "Position": "0,0,-230.1703",
-          "Rotation": "0,0,0,1",
           "Scale": "1.086931,1.086931,1.086931",
-          "Tags": "",
+          "Enabled": true,
           "Components": [
             {
               "__type": "ModelComponent",
@@ -202,11 +183,8 @@
         {
           "Id": "6205b64b-2233-4239-a3dd-8f13ac493883",
           "Name": "Plane",
-          "Enabled": true,
           "Position": "0,0,-187.8949",
-          "Rotation": "0,0,0,1",
-          "Scale": "1,1,1",
-          "Tags": "",
+          "Enabled": true,
           "Components": [
             {
               "__type": "ModelComponent",
@@ -222,11 +200,8 @@
         {
           "Id": "7bdf6f83-f8ee-4308-8945-e38f5b87008a",
           "Name": "fog",
-          "Enabled": true,
           "Position": "0,0,-118.1585",
-          "Rotation": "0,0,0,1",
-          "Scale": "1,1,1",
-          "Tags": "",
+          "Enabled": true,
           "Components": [
             {
               "__type": "GradientFog",
@@ -244,10 +219,6 @@
           "Id": "2d88ef41-0495-4eab-bc18-8b9bae081b6a",
           "Name": "UI",
           "Enabled": true,
-          "Position": "0,0,-6.054453",
-          "Rotation": "0,0,0,1",
-          "Scale": "1,1,1",
-          "Tags": "",
           "Components": [
             {
               "__type": "WorldPanel",
@@ -268,11 +239,8 @@
         {
           "Id": "55acf76f-bfa7-448c-a368-f2b55293f3fb",
           "Name": "UI",
-          "Enabled": true,
           "Position": "0,0,50",
-          "Rotation": "0,0,0,1",
-          "Scale": "1,1,1",
-          "Tags": "",
+          "Enabled": true,
           "Components": [
             {
               "__type": "WorldPanel",
@@ -295,11 +263,9 @@
     {
       "Id": "f0661946-bd0f-4997-9598-aac102ecf5e6",
       "Name": "manhole_02",
-      "Enabled": true,
       "Position": "0,46.64369,8.449437",
       "Rotation": "-0.02573364,-0.03221124,-0.7806235,0.6236413",
-      "Scale": "1,1,1",
-      "Tags": "",
+      "Enabled": true,
       "Components": [
         {
           "__type": "ModelComponent",
@@ -316,10 +282,6 @@
       "Id": "f6d4562a-07e6-4d03-b3f4-f1ad0ac0757b",
       "Name": "Envmap Probe",
       "Enabled": true,
-      "Position": "0,0,0",
-      "Rotation": "0,0,0,1",
-      "Scale": "1,1,1",
-      "Tags": "",
       "Components": [
         {
           "__type": "EnvmapComponent",
@@ -338,10 +300,6 @@
       "Id": "560af406-ffcf-4468-aeb2-e78c50b6f474",
       "Name": "Camera Directional Input",
       "Enabled": true,
-      "Position": "0,0,0",
-      "Rotation": "0,0,0,1",
-      "Scale": "1,1,1",
-      "Tags": "",
       "Components": [
         {
           "__type": "SubtleCameraMovementComponent",
@@ -352,20 +310,15 @@
     {
       "Id": "a446036c-0f17-46a9-908d-9eebad6d60bf",
       "Name": "background",
-      "Enabled": true,
       "Position": "-81.95909,22.19058,0",
-      "Rotation": "0,0,0,1",
-      "Scale": "1,1,1",
-      "Tags": "",
+      "Enabled": true,
       "Children": [
         {
           "Id": "6ec45a21-1910-4dfa-95a0-3858ce4d943d",
           "Name": "streetlight_01",
-          "Enabled": true,
           "Position": "312,-116.4469,12",
           "Rotation": "0.00000005956496,-0.000000001536902,1,-0.0000006397578",
-          "Scale": "1,1,1",
-          "Tags": "",
+          "Enabled": true,
           "Components": [
             {
               "__type": "ModelComponent",
@@ -381,11 +334,9 @@
             {
               "Id": "859f81e8-1ba0-441c-905f-a1037ba83990",
               "Name": "Spot Light",
-              "Enabled": true,
               "Position": "24.61941,0.000009745956,270",
               "Rotation": "-0.00000004126236,0.5479383,0.00000002179707,0.8365185",
-              "Scale": "1,1,1",
-              "Tags": "",
+              "Enabled": true,
               "Components": [
                 {
                   "__type": "SpotLightComponent",
@@ -404,11 +355,8 @@
         {
           "Id": "8d890e7d-90f2-42cf-8b69-e0295d6f92b4",
           "Name": "floor_01",
-          "Enabled": true,
           "Position": "128,384,4.1",
-          "Rotation": "0,0,0,1",
-          "Scale": "1,1,1",
-          "Tags": "",
+          "Enabled": true,
           "Components": [
             {
               "__type": "ModelComponent",
@@ -424,11 +372,8 @@
         {
           "Id": "7aa99ec4-3d98-4479-b9d1-5a1812825665",
           "Name": "floor_01",
-          "Enabled": true,
           "Position": "128,256,4.1",
-          "Rotation": "0,0,0,1",
-          "Scale": "1,1,1",
-          "Tags": "",
+          "Enabled": true,
           "Components": [
             {
               "__type": "ModelComponent",
@@ -444,11 +389,8 @@
         {
           "Id": "6c373bfb-ee0c-4aa0-9a91-ebbc246f13bd",
           "Name": "floor_01",
-          "Enabled": true,
           "Position": "128,128,4.1",
-          "Rotation": "0,0,0,1",
-          "Scale": "1,1,1",
-          "Tags": "",
+          "Enabled": true,
           "Components": [
             {
               "__type": "ModelComponent",
@@ -464,11 +406,8 @@
         {
           "Id": "6d4bf649-9867-4d84-89d4-d6f60f0d049c",
           "Name": "drain_01",
-          "Enabled": true,
           "Position": "224,63.71153,4.5",
-          "Rotation": "0,0,0,1",
-          "Scale": "1,1,1",
-          "Tags": "",
+          "Enabled": true,
           "Components": [
             {
               "__type": "ModelComponent",
@@ -484,111 +423,82 @@
         {
           "Id": "8d850913-f437-4a9c-829d-37279e8965e4",
           "Name": "Sidewalk_01",
-          "Enabled": true,
           "Position": "-128.0001,512,12",
           "Rotation": "0.00000005956133,-0.000000001607673,1,-0.0000006397578",
-          "Scale": "1,1,1",
-          "Tags": "",
+          "Enabled": true,
           "__Prefab": "prefabs/pieces/sidewalk_01.object"
         },
         {
           "Id": "4b1885d1-8e90-4992-83db-859825b4492e",
           "Name": "Sidewalk_01",
-          "Enabled": true,
           "Position": "-128.0001,384,12",
           "Rotation": "0.00000005956133,-0.000000001607673,1,-0.0000006397578",
-          "Scale": "1,1,1",
-          "Tags": "",
+          "Enabled": true,
           "__Prefab": "prefabs/pieces/sidewalk_01.object"
         },
         {
           "Id": "da411f64-4c2e-443c-afd8-e19338d5473b",
           "Name": "Sidewalk_01",
-          "Enabled": true,
           "Position": "-128,256,12",
           "Rotation": "0.00000005956133,-0.000000001607673,1,-0.0000006397578",
-          "Scale": "1,1,1",
-          "Tags": "",
+          "Enabled": true,
           "__Prefab": "prefabs/pieces/sidewalk_01.object"
         },
         {
           "Id": "75866aa2-586e-423b-8a0a-7f25b3ba94a9",
           "Name": "Sidewalk_01",
-          "Enabled": true,
           "Position": "256,384,12",
-          "Rotation": "0,0,0,1",
-          "Scale": "1,1,1",
-          "Tags": "",
+          "Enabled": true,
           "__Prefab": "prefabs/pieces/sidewalk_01.object"
         },
         {
           "Id": "0ad6bee9-29e4-4755-829e-ce1335f3dcf0",
           "Name": "Sidewalk_01",
-          "Enabled": true,
           "Position": "256,256,12",
-          "Rotation": "0,0,0,1",
-          "Scale": "1,1,1",
-          "Tags": "",
+          "Enabled": true,
           "__Prefab": "prefabs/pieces/sidewalk_01.object"
         },
         {
           "Id": "884c9510-e3a6-4308-a764-67163a4e6415",
           "Name": "Sidewalk_01",
-          "Enabled": true,
           "Position": "256,128,12",
-          "Rotation": "0,0,0,1",
-          "Scale": "1,1,1",
-          "Tags": "",
+          "Enabled": true,
           "__Prefab": "prefabs/pieces/sidewalk_01.object"
         },
         {
           "Id": "c73a9d9b-deb5-40d8-8bac-8df7fbed9b23",
           "Name": "Sidewalk_01",
-          "Enabled": true,
           "Position": "256,0,12",
-          "Rotation": "0,0,0,1",
-          "Scale": "1,1,1",
-          "Tags": "",
+          "Enabled": true,
           "__Prefab": "prefabs/pieces/sidewalk_01.object"
         },
         {
           "Id": "9251fc82-819d-4bc4-a94c-857a9d870d40",
           "Name": "Sidewalk_01",
-          "Enabled": true,
           "Position": "256,-128,12",
-          "Rotation": "0,0,0,1",
-          "Scale": "1,1,1",
-          "Tags": "",
+          "Enabled": true,
           "__Prefab": "prefabs/pieces/sidewalk_01.object"
         },
         {
           "Id": "5ef3e0ca-b4ae-45e4-b132-6e76c3578222",
           "Name": "Sidewalk_01",
-          "Enabled": true,
           "Position": "256,-256,12",
-          "Rotation": "0,0,0,1",
-          "Scale": "1,1,1",
-          "Tags": "",
+          "Enabled": true,
           "__Prefab": "prefabs/pieces/sidewalk_01.object"
         },
         {
           "Id": "9ba983f4-46e7-4313-a654-b4b81e2450ed",
           "Name": "Sidewalk_01",
-          "Enabled": true,
           "Position": "256,-384,12",
-          "Rotation": "0,0,0,1",
-          "Scale": "1,1,1",
-          "Tags": "",
+          "Enabled": true,
           "__Prefab": "prefabs/pieces/sidewalk_01.object"
         },
         {
           "Id": "5a880709-4d47-4112-9d50-92f6fa0aec47",
           "Name": "decal",
-          "Enabled": true,
           "Position": "239.0039,-213.344,0.00000008906063",
           "Rotation": "0.5000005,0.5000002,-0.4999999,0.4999995",
-          "Scale": "1,1,1",
-          "Tags": "",
+          "Enabled": true,
           "Components": [
             {
               "__type": "DecalComponent",
@@ -602,11 +512,9 @@
         {
           "Id": "26793025-d01d-45ab-b430-4efb79de9bcd",
           "Name": "decal",
-          "Enabled": true,
           "Position": "240,341.136,-0.0000002101485",
           "Rotation": "-0.5000006,0.4999997,0.5000003,0.4999993",
-          "Scale": "1,1,1",
-          "Tags": "",
+          "Enabled": true,
           "Components": [
             {
               "__type": "DecalComponent",
@@ -620,11 +528,9 @@
         {
           "Id": "de22c615-84e4-4ab8-8564-ffd7d63f11c4",
           "Name": "decal",
-          "Enabled": true,
           "Position": "54,100,-5",
           "Rotation": "0.4449973,0.5495248,-0.549525,0.4449968",
-          "Scale": "1,1,1",
-          "Tags": "",
+          "Enabled": true,
           "Components": [
             {
               "__type": "DecalComponent",
@@ -638,11 +544,9 @@
         {
           "Id": "5bf87581-5e6d-4d3a-a7ed-1c70253a9892",
           "Name": "decal",
-          "Enabled": true,
           "Position": "-6.819191,548.2199,-8.198177",
           "Rotation": "0.00000001036872,0.5114172,-0.00000001036873,0.8593332",
-          "Scale": "1,1,1",
-          "Tags": "",
+          "Enabled": true,
           "Components": [
             {
               "__type": "DecalComponent",
@@ -656,11 +560,9 @@
         {
           "Id": "24e3cf05-879d-4a1d-8ec0-f9d91761e2fb",
           "Name": "decal",
-          "Enabled": true,
           "Position": "54,-300,-5",
           "Rotation": "-0.4449966,-0.5495253,0.5495243,-0.4449976",
-          "Scale": "1,1,1",
-          "Tags": "",
+          "Enabled": true,
           "Components": [
             {
               "__type": "DecalComponent",
@@ -676,11 +578,10 @@
     {
       "Id": "73272d74-e00f-4749-a8d4-23a3cd20695c",
       "Name": "Plane",
-      "Enabled": true,
       "Position": "595.9877,-399.8342,209.4918",
       "Rotation": "-0.6761006,0.2070974,-0.6761002,-0.2070973",
       "Scale": "5,5,5",
-      "Tags": "",
+      "Enabled": true,
       "Components": [
         {
           "__type": "ModelComponent",
@@ -696,11 +597,10 @@
     {
       "Id": "4e166187-afe1-42a2-8555-ff6a493a0c7f",
       "Name": "Plane",
-      "Enabled": true,
       "Position": "876.0298,35.52715,372.331",
       "Rotation": "-0.7068491,-0.01909919,-0.7068487,0.01909906",
       "Scale": "10,10,10",
-      "Tags": "",
+      "Enabled": true,
       "Components": [
         {
           "__type": "ModelComponent",
@@ -716,11 +616,10 @@
     {
       "Id": "2553f288-b8e2-41cf-8b3d-b889f84bebcf",
       "Name": "Plane",
-      "Enabled": true,
       "Position": "253.0647,-1070.536,-29.95926",
       "Rotation": "-0.6267748,0.3273439,-0.6267742,-0.3273441",
       "Scale": "10,10,10",
-      "Tags": "",
+      "Enabled": true,
       "Components": [
         {
           "__type": "ModelComponent",
@@ -737,10 +636,6 @@
       "Id": "d03ec20d-afea-47a8-b822-42eee088feea",
       "Name": "SoundMan",
       "Enabled": true,
-      "Position": "0,0,0",
-      "Rotation": "0,0,0,1",
-      "Scale": "1,1,1",
-      "Tags": "",
       "Components": [
         {
           "__type": "MenuSoundComponent",
@@ -751,11 +646,8 @@
     {
       "Id": "4aee2334-6bd1-4306-b40b-3667d4c5749e",
       "Name": "Particle loader",
-      "Enabled": true,
       "Position": "-380.539,-408.6913,-55.33958",
-      "Rotation": "0,0,0,1",
-      "Scale": "1,1,1",
-      "Tags": "",
+      "Enabled": true,
       "Components": [
         {
           "__type": "ParticleSystem",
@@ -800,10 +692,40 @@
           "PlaybackSpeed": 1
         }
       ]
+    },
+    {
+      "Id": "530b210b-0832-4180-beef-c0af1081aa73",
+      "Name": "Screen UI",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ScreenPanel",
+          "__enabled": true,
+          "AutoScreenScale": true,
+          "Opacity": 1,
+          "Scale": 1,
+          "ZIndex": 100
+        }
+      ],
+      "Children": [
+        {
+          "Id": "5371a2be-94d6-4988-b7ce-b9b1b82b958e",
+          "Name": "LobbyList",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "LobbyList",
+              "__enabled": true
+            }
+          ]
+        }
+      ]
     }
   ],
   "SceneProperties": {
+    "NetworkFrequency": 60,
     "FixedUpdateFrequency": 50,
+    "Lerping": true,
     "MaxFixedUpdates": 5,
     "TimeScale": 1,
     "ThreadedAnimation": true,

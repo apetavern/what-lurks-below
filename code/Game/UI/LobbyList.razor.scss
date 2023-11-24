@@ -1,0 +1,64 @@
+LobbyList {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    justify-content: left;
+    align-items: flex-start;
+    font-weight: bold;
+    border-radius: 20px;
+    background-color: transparent;
+    height: 100%;
+    pointer-events: all;
+
+    .title {
+        font-size: 25px;
+        font-family: Poppins;
+        color: #fff;
+    }
+
+    .lobby-list {
+        width: 500px;
+        flex-direction: column;
+        margin: 20px;
+        overflow: scroll;
+        gap: 5px;
+    }
+}
+
+.lobby-list > .button {
+    background-color: transparent;
+    color: #aaa;
+    padding: 10px;
+    border-radius: 8px;
+    gap: 2px;
+    width: 280px;
+    cursor: pointer;
+    width: 100%;
+    flex-direction: column;
+
+    .title {
+        flex-grow: 1;
+        font-weight: bold;
+        font-size: 16px;
+    }
+
+    .meta {
+        gap: 10px;
+        font-size: 12px;
+
+        .map {
+            flex-grow: 1;
+        }
+
+        .count {
+            white-space: nowrap;
+        }
+    }
+
+    &:hover {
+        background-color: #f13edc;
+        color: #fff;
+    }
+}
