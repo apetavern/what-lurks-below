@@ -1,6 +1,8 @@
 global using CoroutineMethod = System.Collections.Generic.IEnumerator<Coroutines.ICoroutineStaller>;
 global using System.Linq;
 global using System;
+global using System.Collections.Generic;
+global using System.Threading.Tasks;
 using Sandbox;
 
 public static class Program
