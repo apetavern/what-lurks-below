@@ -48,7 +48,7 @@ public class PistolWeapon : BaseWeapon
 	{
 		if ( CurrentClip > 0 )
 		{
-			helper.TriggerAttack();
+			BrickPlayerController.Instance.TriggerAttack();
 			var muzzletr = GetComponent<AnimatedModelComponent>().GetAttachmentTransform( "muzzle" );//.SceneObject.GetBoneWorldTransform( "hold_R" );
 
 			if ( muzzleflash == null )

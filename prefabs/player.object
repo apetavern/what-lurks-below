@@ -1,12 +1,9 @@
 {
   "RootObject": {
-    "Id": "8a6e1d7e-62f3-4208-9c5a-182dbd775293",
+    "Id": "b0fd42a5-0e47-4539-8962-e8c5d86fa122",
     "Name": "player",
+    "Position": "99.77042,-294.2368,31.99988",
     "Enabled": true,
-    "Position": "0,0,0",
-    "Rotation": "0,0,0,1",
-    "Scale": "1,1,1",
-    "Tags": "",
     "Components": [
       {
         "__type": "HealthComponent",
@@ -27,9 +24,9 @@
       {
         "__type": "BrickPlayerController",
         "__enabled": true,
-        "Body": "4231053c-d3a3-41ea-8f43-b8f337b05db2",
+        "Body": "0c14cac3-7cb3-47ca-9f93-f55f893be640",
         "CameraDistance": 100,
-        "Eye": "22a31826-e504-41c7-bf0c-e7d1423a7ed1",
+        "Eye": "e217f5ff-41f2-43c6-a33a-d99e30cedfa8",
         "FirstPerson": false,
         "Gravity": "0,0,800"
       },
@@ -55,13 +52,10 @@
     ],
     "Children": [
       {
-        "Id": "4231053c-d3a3-41ea-8f43-b8f337b05db2",
+        "Id": "0c14cac3-7cb3-47ca-9f93-f55f893be640",
         "Name": "graphics",
-        "Enabled": true,
         "Position": "0,0,0",
-        "Rotation": "0,0,0,1",
-        "Scale": "1,1,1",
-        "Tags": "",
+        "Enabled": true,
         "Components": [
           {
             "__type": "AnimatedModelComponent",
@@ -76,7 +70,7 @@
           },
           {
             "__type": "PlayerClothingComponent",
-            "__enabled": true
+            "__enabled": false
           },
           {
             "__type": "FakeFootsteps",
@@ -90,19 +84,17 @@
         ],
         "Children": [
           {
-            "Id": "9bc07488-f235-4735-8469-b5f39f501ebe",
+            "Id": "71589bfe-a6c5-4e81-93f5-4aa10ed662ef",
             "Name": "Spot Light",
-            "Enabled": true,
-            "Position": "12.33928,-0.008733193,70.31702",
+            "Position": "12.33927,-0.008758545,70.31702",
             "Rotation": "-0.706876,0.001099638,0.0004287066,0.7073365",
-            "Scale": "1,1,1",
-            "Tags": "",
+            "Enabled": true,
             "Components": [
               {
                 "__type": "FollowAttachmentComponent",
                 "__enabled": true,
                 "AttachmentName": "light",
-                "FollowObject": "d74d97d6-9e8d-4152-bdbb-d2612892594d"
+                "FollowObject": "20e04941-9f70-4de4-9639-8bc1409e41d5"
               },
               {
                 "__type": "SpotLightComponent",
@@ -117,19 +109,16 @@
             ]
           },
           {
-            "Id": "d74d97d6-9e8d-4152-bdbb-d2612892594d",
+            "Id": "20e04941-9f70-4de4-9639-8bc1409e41d5",
             "Name": "Helmet",
-            "Enabled": true,
             "Position": "0,0,0",
-            "Rotation": "0,0,0,1",
-            "Scale": "1,1,1",
-            "Tags": "",
+            "Enabled": true,
             "Components": [
               {
                 "__type": "AnimatedModelComponent",
                 "__enabled": true,
                 "BodyGroups": 18446744073709551615,
-                "BoneMergeTarget": "4231053c-d3a3-41ea-8f43-b8f337b05db2",
+                "BoneMergeTarget": "0c14cac3-7cb3-47ca-9f93-f55f893be640",
                 "CreateBoneObjects": false,
                 "MaterialGroup": null,
                 "MaterialOverride": null,
@@ -140,19 +129,16 @@
             ]
           },
           {
-            "Id": "bfe663db-f3a7-41e5-940c-be4b50d07ffd",
+            "Id": "dd4cff70-6170-4c71-b4be-bed4f7774958",
             "Name": "Backpack",
-            "Enabled": true,
             "Position": "0,0,0",
-            "Rotation": "0,0,0,1",
-            "Scale": "1,1,1",
-            "Tags": "",
+            "Enabled": true,
             "Components": [
               {
                 "__type": "AnimatedModelComponent",
                 "__enabled": true,
                 "BodyGroups": 18446744073709551615,
-                "BoneMergeTarget": "4231053c-d3a3-41ea-8f43-b8f337b05db2",
+                "BoneMergeTarget": "0c14cac3-7cb3-47ca-9f93-f55f893be640",
                 "CreateBoneObjects": false,
                 "MaterialGroup": null,
                 "MaterialOverride": null,
@@ -163,13 +149,10 @@
             ]
           },
           {
-            "Id": "22a31826-e504-41c7-bf0c-e7d1423a7ed1",
+            "Id": "e217f5ff-41f2-43c6-a33a-d99e30cedfa8",
             "Name": "eye",
-            "Enabled": true,
             "Position": "0,0,63.62214",
-            "Rotation": "0,0,0,1",
-            "Scale": "1,1,1",
-            "Tags": ""
+            "Enabled": true
           }
         ]
       }

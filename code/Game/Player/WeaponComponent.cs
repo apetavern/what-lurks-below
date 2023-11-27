@@ -54,12 +54,13 @@ public class WeaponComponent : BaseComponent
 		if ( ActiveWeapon is null )
 			helper.HoldType = CitizenAnimationHelperScene.HoldTypes.None;
 
+
+		ActiveWeapon?.OnIdle( ref helper );
+
 		if ( IsProxy )
 		{
 			return;
 		}
-
-		ActiveWeapon?.OnIdle( ref helper );
 
 		if ( Input.Pressed( "attack1" ) )
 		{

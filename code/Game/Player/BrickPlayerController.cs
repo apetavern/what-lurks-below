@@ -53,14 +53,28 @@ public class BrickPlayerController : SingletonComponent<BrickPlayerController>, 
 		}
 	}
 
-	public override void OnEnabled()
+	public override void OnStart()
 	{
-		base.OnEnabled();
+		modelComponent = Body.GetComponent<AnimatedModelComponent>();
+
+		modelComponent.Set( "holdtype_pose_hand", 0.07f );
+
+		HealthComponent healthComponent = GameObject.GetComponent<HealthComponent>( false );
+		healthComponent.OnDamage += TakeDamage;
+		healthComponent.OnDeath += OnDeath;
+
+		EyeStartPos = Eye.Transform.LocalPosition;
+
+		startpos = Transform.Position;
+
+		foreach ( var item in Body.Children.Where( X => X.GetComponent<AnimatedModelComponent>() != null ) )
+		{
+			item.GetComponent<AnimatedModelComponent>().BoneMergeTarget = modelComponent;
+		}
 
 		if ( IsProxy )
 			return;
 
-		startpos = Transform.Position;
 
 		// Update camera position
 		Camera = Scene.GetAllObjects( true ).Where( X => X.GetComponent<CameraComponent>( false ) != null ).FirstOrDefault();
@@ -74,15 +88,6 @@ public class BrickPlayerController : SingletonComponent<BrickPlayerController>, 
 			Camera.Transform.Rotation = EyeAngles.ToRotation();
 		}
 
-		EyeStartPos = Eye.Transform.LocalPosition;
-
-		HealthComponent healthComponent = GameObject.GetComponent<HealthComponent>( false );
-		healthComponent.OnDamage += TakeDamage;
-		healthComponent.OnDeath += OnDeath;
-
-		modelComponent = Body.GetComponent<AnimatedModelComponent>();
-
-		modelComponent.Set( "holdtype_pose_hand", 0.07f );
 	}
 
 	public void TakeDamage()
@@ -153,14 +158,13 @@ public class BrickPlayerController : SingletonComponent<BrickPlayerController>, 
 
 		BuildWishVelocity();
 
-
 		if ( characterController is null )
 			characterController = GetComponent<CharacterController>();
 
 		var navgen = NavGenComponent.Instance;
 		if ( navgen is null || !navgen.GameObject.IsValid() )
 		{
-			return;
+			navgen = Scene.GetAllObjects( false ).Where( X => X.GetComponent<NavGenComponent>() != null ).First().GetComponent<NavGenComponent>();
 		}
 
 		if ( !navgen.Initialized )
@@ -233,8 +237,6 @@ public class BrickPlayerController : SingletonComponent<BrickPlayerController>, 
 
 
 			characterController.ApplyFriction( 0.1f );
-			//	cc.IsOnGround = false;
-
 		}
 
 		if ( characterController.IsOnGround )
@@ -267,6 +269,25 @@ public class BrickPlayerController : SingletonComponent<BrickPlayerController>, 
 	bool helperInitialized;
 
 	Vector3 LookAtPos;
+
+	[Broadcast]
+	public void TriggerRoll()
+	{
+		helper.SpecialMove = CitizenAnimationHelperScene.SpecialMovement.Roll;
+	}
+
+	[Broadcast]
+	public void TriggerAttack()
+	{
+		helper.SetAnimParameter( "holdtype_attack", 2f );
+		helper.TriggerAttack();
+	}
+
+	[Broadcast]
+	public void UnRoll()
+	{
+		helper.SpecialMove = CitizenAnimationHelperScene.SpecialMovement.None;
+	}
 
 	public override void Update()
 	{
@@ -358,16 +379,21 @@ public class BrickPlayerController : SingletonComponent<BrickPlayerController>, 
 
 			Eye.Transform.Rotation = new Angles( EyeAngles.pitch, EyeAngles.yaw, 0 ).ToRotation();
 
+			if ( LookAtPos != Vector3.Zero )
+			{
+				helper.WithLookAt( Body.Transform.World, Eye.Transform.Position, LookAtPos );
+			}
+
 			if ( !IsProxy )
 			{
 
 				if ( Input.Pressed( "Jump" ) && characterController.IsOnGround )
 				{
-					helper.SpecialMove = CitizenAnimationHelperScene.SpecialMovement.Roll;
+					TriggerRoll();
 				}
 				else
 				{
-					helper.SpecialMove = CitizenAnimationHelperScene.SpecialMovement.None;
+					UnRoll();
 				}
 
 				if ( Input.Down( "Attack2" ) )
@@ -382,21 +408,16 @@ public class BrickPlayerController : SingletonComponent<BrickPlayerController>, 
 						Eye.Transform.Rotation = Rotation.LookAt( targetPos - Eye.Transform.Position, Vector3.Up );
 
 						LookAtPos = targetPos;
-
-						helper.WithLookAt( Body.Transform.World, Eye.Transform.Position, LookAtPos );
 					}
 					else
 					{
 						LookAtPos = Eye.Transform.Position + Eye.Transform.Rotation.Forward * 100f;
-
-						helper.WithLookAt( Body.Transform.World, Eye.Transform.Position, LookAtPos );
 					}
 				}
 				else
 				{
 					LookAtPos = Eye.Transform.Position + Eye.Transform.Rotation.Forward * 100f;
 					AimMultiplier = 1f;
-					helper.WithLookAt( Body.Transform.World, Eye.Transform.Position, LookAtPos );
 				}
 
 				if ( Input.Down( "Duck" ) )
@@ -412,6 +433,10 @@ public class BrickPlayerController : SingletonComponent<BrickPlayerController>, 
 					helper.DuckLevel = 0f;
 				}
 			}
+		}
+		else
+		{
+			Body = GameObject.Children[0];
 		}
 	}
 
@@ -439,18 +464,21 @@ public class BrickPlayerController : SingletonComponent<BrickPlayerController>, 
 	public void Write( ref ByteStream stream )
 	{
 		stream.Write( EyeAngles );
+
 		if ( characterController is null )
 		{
 			characterController = GetComponent<CharacterController>();
 		}
+
 		stream.Write( WishVelocity );
-		stream.Write( helper.DuckLevel > 0f );
+		stream.Write( Input.Down( "Duck" ) );
 		stream.Write( LookAtPos );
+		if ( helperInitialized )
+			stream.Write( helper.HoldType );
 	}
 
 	public void Read( ByteStream stream )
 	{
-
 		EyeAngles = stream.Read<Angles>();
 
 		if ( Body.IsValid() )
@@ -463,8 +491,11 @@ public class BrickPlayerController : SingletonComponent<BrickPlayerController>, 
 			float ducklevel = stream.Read<bool>() ? 1f : 0f;
 			helper.DuckLevel = ducklevel;
 
-			Vector3 lookpos = stream.Read<Vector3>();
-			helper.WithLookAt( Body.Transform.World, Body.Transform.Position + Vector3.Up * 64f, lookpos );
+			LookAtPos = Eye.Transform.Position + EyeAngles.ToRotation().Forward * 100f;
+
+			var look = stream.Read<Vector3>();
+
+			helper.HoldType = stream.Read<CitizenAnimationHelperScene.HoldTypes>();
 		}
 	}
 }

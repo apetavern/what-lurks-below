@@ -176,27 +176,53 @@ public class Inventory : SingletonComponent<Inventory>
 		GameHud.Instance.SetInventory( this );
 	}
 
+	[Broadcast]
+	public void Equip( string weaponname )
+	{
+		if ( weaponname == "Knife" )
+		{
+			weaponComponent.Equip( new KnifeWeapon( true, "Knife" ) );
+		}
+
+		if ( weaponname == "Pistol" )
+		{
+			weaponComponent.Equip( new PistolWeapon( true, "Pistol" ) );
+		}
+
+		if ( weaponname == "Shotgun" )
+		{
+			weaponComponent.Equip( new ShotgunWeapon( true, "Shotgun" ) );
+		}
+	}
+
 	public override void Update()
 	{
+		if ( IsProxy )
+		{
+			return;
+		}
 		if ( Input.Pressed( "slot1" ) )
 		{
 			if ( _items.All( i => i.Asset.Name != "Knife" ) )
 				return;
-			weaponComponent.Equip( new KnifeWeapon( true, "Knife" ) );
+			//weaponComponent.Equip( new KnifeWeapon( true, "Knife" ) );
+			Equip( "Knife" );
 		}
 
 		if ( Input.Pressed( "slot2" ) )
 		{
 			if ( _items.All( i => i.Asset.Name != "Pistol" ) )
 				return;
-			weaponComponent.Equip( new PistolWeapon( true, "pistol" ) );
+			//weaponComponent.Equip( new PistolWeapon( true, "Pistol" ) );
+			Equip( "Pistol" );
 		}
 
 		if ( Input.Pressed( "slot3" ) )
 		{
 			if ( _items.All( i => i.Asset.Name != "Shotgun" ) )
 				return;
-			weaponComponent.Equip( new ShotgunWeapon( true, "Shotgun" ) );
+			//weaponComponent.Equip( new ShotgunWeapon( true, "Shotgun" ) );
+			Equip( "Shotgun" );
 		}
 	}
 }

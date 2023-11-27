@@ -108,8 +108,9 @@ public class KnifeWeapon : BaseWeapon
 	{
 		if ( AmmoCount > 0 || AmmoCount == -1 )
 		{
-			helper.SetAnimParameter( "holdtype_attack", 2f );//Heavy attack
-			helper.TriggerAttack();
+			BrickPlayerController.Instance.TriggerAttack();
+			//helper.SetAnimParameter( "holdtype_attack", 2f );//Heavy attack
+			//helper.TriggerAttack();
 			//Sound.FromWorld( "weapons/rust_pistol/sound/rust_pistol.shoot.sound", Transform.Position );
 		}
 		else

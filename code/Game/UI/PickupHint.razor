@@ -65,7 +65,7 @@
         base.Update();
         
 
-        if (!itemPickup.GameObject.IsValid() || !worldPanel.GameObject.IsValid)
+        if (itemPickup == null || worldPanel == null)
         {
             return;
         }

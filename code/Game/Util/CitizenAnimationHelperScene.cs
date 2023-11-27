@@ -170,7 +170,7 @@ public struct CitizenAnimationHelperScene
 
 	public HoldTypes HoldType
 	{
-		get => 0;
+		get => (HoldTypes)Owner.GetInt( "holdtype" );
 		set => Owner.SetAnimParameter( "holdtype", (int)value );
 	}
 
@@ -183,7 +183,7 @@ public struct CitizenAnimationHelperScene
 
 	public Hand Handedness
 	{
-		get => 0;
+		get => (Hand)Owner.GetInt( "holdtype_handedness" );
 		set => Owner.SetAnimParameter( "holdtype_handedness", (int)value );
 	}
 

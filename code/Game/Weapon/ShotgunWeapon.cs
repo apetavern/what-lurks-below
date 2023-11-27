@@ -115,7 +115,7 @@ public class ShotgunWeapon : BaseWeapon
 	{
 		if ( CurrentClip > 0 )
 		{
-			helper.TriggerAttack();
+			BrickPlayerController.Instance.TriggerAttack();
 			var muzzletr = GetComponent<AnimatedModelComponent>().GetAttachmentTransform( "muzzle" );
 
 			if ( muzzleflash == null )
