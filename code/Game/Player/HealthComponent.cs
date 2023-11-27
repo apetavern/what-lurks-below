@@ -35,6 +35,7 @@ public class HealthComponent : BaseComponent
 			HealthHud.Instance.Health = Health;
 	}
 
+	[Broadcast]
 	public void Damage( float amount )
 	{
 		if ( IsDead ) return;

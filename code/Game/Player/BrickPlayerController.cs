@@ -53,6 +53,7 @@ public class BrickPlayerController : SingletonComponent<BrickPlayerController>, 
 		}
 	}
 
+
 	public override void OnStart()
 	{
 		modelComponent = Body.GetComponent<AnimatedModelComponent>();
@@ -73,7 +74,9 @@ public class BrickPlayerController : SingletonComponent<BrickPlayerController>, 
 		}
 
 		if ( IsProxy )
+		{
 			return;
+		}
 
 
 		// Update camera position

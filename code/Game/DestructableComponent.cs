@@ -16,6 +16,7 @@ public sealed class DestructableComponent : BaseComponent
 
 	public override void OnStart()
 	{
+		Network.Spawn();
 		if ( Game.Random.Float() > 0.3f )
 		{
 			GetComponent<ModelComponent>().SceneObject.SetMaterialGroup( "clean" );

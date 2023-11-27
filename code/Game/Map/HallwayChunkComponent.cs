@@ -9,6 +9,33 @@ public sealed class HallwayChunkComponent : BaseComponent
 	[Property] public GameObject Left { get; set; }
 	[Property] public GameObject Right { get; set; }
 
+	float SpawnTime = 0f;
+
+	bool FixedWalls;
+
+	public override void OnStart()
+	{
+		base.OnStart();
+		if ( IsProxy )
+		{
+			SpawnTime = Time.Now;
+		}
+	}
+
+	public override void Update()
+	{
+		if ( !IsProxy )
+		{
+			return;
+		}
+
+		if ( !FixedWalls && SpawnTime != 0f && Time.Now - SpawnTime > 1f && NavGenComponent.Instance.Initialized )
+		{
+			CheckSides();
+			FixedWalls = true;
+		}
+	}
+
 	public void CheckSides()
 	{
 		Transform.Rotation = Rotation.Identity;
@@ -43,12 +70,12 @@ public sealed class HallwayChunkComponent : BaseComponent
 			Back.Destroy();
 		}
 
-		if ( trLeft.Hit && trLeft.Body.GameObject is GameObject goLeft && goLeft.GetComponent<RoomChunkComponent>(false) is null )
+		if ( trLeft.Hit && trLeft.Body.GameObject is GameObject goLeft && goLeft.GetComponent<RoomChunkComponent>( false ) is null )
 		{
 			Left.Destroy();
 		}
 
-		if ( trRight.Hit && trRight.Body.GameObject is GameObject goRight && goRight.GetComponent<RoomChunkComponent>(false) is null )
+		if ( trRight.Hit && trRight.Body.GameObject is GameObject goRight && goRight.GetComponent<RoomChunkComponent>( false ) is null )
 		{
 			Right.Destroy();
 		}
