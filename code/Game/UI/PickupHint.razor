@@ -63,6 +63,13 @@
     public override void Update()
     {
         base.Update();
+        
+
+        if (!itemPickup.GameObject.IsValid() || !worldPanel.GameObject.IsValid)
+        {
+            return;
+        }
+
 
         Panel?.SetClass( "Hidden", TimeSincePlayerInRange > 1 );
 

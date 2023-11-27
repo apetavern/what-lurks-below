@@ -8,11 +8,26 @@ public abstract class SingletonComponent<T> : BaseComponent where T : SingletonC
 
 	protected virtual bool ThrowOnDuplicate => false;
 
+	protected virtual bool NonProxyOnly => true;
+
 	public SingletonComponent()
+	{
+
+	}
+
+	public override void OnAwake()
 	{
 		if ( Instance is not null && ThrowOnDuplicate )
 			throw new InvalidOperationException( $"An instance of the {typeof( T ).Name} component already exists" );
 
-		Instance = (T)this;
+		if ( NonProxyOnly && !IsProxy )
+		{
+			Instance = (T)this;
+		}
+		else if ( !NonProxyOnly )
+		{
+			Instance = (T)this;
+		}
+
 	}
 }

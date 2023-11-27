@@ -13,9 +13,12 @@ public sealed class FollowAttachmentComponent : BaseComponent
 
 	protected override void OnPreRender()
 	{
-		var attachment = FollowObject.GetComponent<AnimatedModelComponent>().GetAttachmentTransform( AttachmentName );
+		if ( FollowObject != null )
+		{
+			var attachment = FollowObject.GetComponent<AnimatedModelComponent>().GetAttachmentTransform( AttachmentName );
 
-		Transform.Position = attachment.Position;
-		Transform.Rotation = attachment.Rotation;
+			Transform.Position = attachment.Position;
+			Transform.Rotation = attachment.Rotation;
+		}
 	}
 }
