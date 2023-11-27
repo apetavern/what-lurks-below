@@ -48,6 +48,8 @@ public class BrickPlayerController : SingletonComponent<BrickPlayerController>, 
 			go.GetComponent<GlowstickComponent>( false, true ).Velocity = Body.Transform.Rotation.Forward * 250f + Vector3.Up * 150f;
 			go.GetComponent<GlowstickComponent>( false, true ).Player = GameObject;
 			go.SetParent( MapGeneratorComponent.Instance.GeneratedMapParent );
+
+			go.Network.Spawn();
 		}
 	}
 
@@ -144,29 +146,16 @@ public class BrickPlayerController : SingletonComponent<BrickPlayerController>, 
 		return Body.GetComponent<AnimatedModelComponent>().Model.Bones.GetBone( name ).Index;
 	}
 
-	public override void Update()
+	public override void FixedUpdate()
 	{
 		if ( IsProxy )
-		{
 			return;
-		}
 
-		if ( IsDead )
-		{
-			return;
-		}
+		BuildWishVelocity();
+
 
 		if ( characterController is null )
 			characterController = GetComponent<CharacterController>();
-
-		characterController.Move();
-
-		if ( MapGeneratorComponent.Instance.Pickups.Count > 0 )
-		{
-			foreach ( var pickup in MapGeneratorComponent.Instance.Pickups
-				.Where( p => p.IsValid && p.Transform.Position.Distance( Transform.Position ) < 50 ) )
-				pickup.GetComponent<PickupHint>().TimeSincePlayerInRange = 0;
-		}
 
 		var navgen = NavGenComponent.Instance;
 		if ( navgen is null || !navgen.GameObject.IsValid() )
@@ -208,142 +197,7 @@ public class BrickPlayerController : SingletonComponent<BrickPlayerController>, 
 			navgen.SetInitialize();
 		}
 
-		if ( Input.Pressed( "Flashlight" ) )
-		{
-			SpawnGlowstick();
-		}
-
-		if ( true )//Input.Down( "Attack2" )
-		{
-			EyeAngles.pitch += Input.MouseDelta.y * 0.1f;
-			EyeAngles.yaw -= Input.MouseDelta.x * 0.1f;
-
-			/*if ( Input.Pressed( "Backward" ) && !CameraControl )
-			{
-				EyeAngles.yaw += 180f;
-			}*/
-		}
-		else
-		{
-			if ( Input.Down( "Left" ) ) EyeAngles.yaw += Time.Delta * 90f * AimMultiplier;
-			if ( Input.Down( "Right" ) ) EyeAngles.yaw -= Time.Delta * 90f * AimMultiplier;
-
-			EyeAngles.pitch = 0;
-		}
-
-		EyeAngles.roll = 0;
-
-		if ( Camera.IsValid() )
-		{
-			Camera.GetComponent<DepthOfField>().FocalDistance = Vector3.DistanceBetween( Camera.Transform.Position, Eye.Transform.Position );
-		}
-
-		if ( CameraControl )
-		{
-			// Update camera position
-
-			if ( Camera.IsValid() )
-			{
-				var camPos = Eye.Transform.Position - (EyeAngles.ToRotation() * Rotation.FromPitch( 15f )).Forward * CameraDistance;
-
-				if ( FirstPerson ) camPos = Eye.Transform.Position + EyeAngles.ToRotation().Forward * 8;
-
-				var tr = Scene.PhysicsWorld.Trace.Ray( Eye.Transform.Position, camPos )
-					//.WithAnyTags( "solid" )//Add this back in later maybe, cba to go through and add solid tags everywhere
-					.WithoutTags( "trigger" )
-					.Radius( 16 )
-					.Run();
-
-				camPos = tr.EndPosition;
-
-				var camrot = EyeAngles.ToRotation() * Rotation.FromPitch( 15f );
-
-				//if ( Input.Down( "Attack2" ) )
-				//{
-				camPos += Eye.Transform.Rotation.Right * 16f;
-				camrot *= Rotation.FromPitch( -5f );
-				//}
-
-				Camera.Transform.Position = camPos;// Vector3.Lerp( Camera.Transform.Position, camPos, Time.Delta * 10f );
-				Camera.Transform.Rotation = camrot;// Rotation.Lerp( Camera.Transform.Rotation, camrot, Time.Delta * 50f );
-			}
-		}
-
-		CameraControl = true;
-
-		// read inputs
-		BuildWishVelocity();
-
-
-
-		if ( Transform.Position.z < -300f )
-		{
-			var room = Scene.GetAllObjects( true ).Where( X => X.GetComponent<RoomChunkComponent>( false ) != null ).FirstOrDefault();
-
-			if ( room is not null )
-			{
-				Transform.Position = room.Transform.Position.WithZ( 0 );
-				WishVelocity = Vector3.Zero;
-				characterController.Velocity = Vector3.Zero;
-			}
-		}
-
-		// rotate body to look angles
-		if ( Body is not null )
-		{
-			Body.Transform.Rotation = new Angles( 0, EyeAngles.yaw, 0 ).ToRotation();
-
-			var helper = new CitizenAnimationHelperScene( modelComponent.SceneObject );
-			helper.WithVelocity( characterController.Velocity );
-			helper.IsGrounded = characterController.IsOnGround;
-
-			if ( Input.Pressed( "Jump" ) && characterController.IsOnGround )
-			{
-				helper.SpecialMove = CitizenAnimationHelperScene.SpecialMovement.Roll;
-			}
-			else
-			{
-				helper.SpecialMove = CitizenAnimationHelperScene.SpecialMovement.None;
-			}
-
-			Eye.Transform.Rotation = new Angles( EyeAngles.pitch, EyeAngles.yaw, 0 ).ToRotation();
-
-			if ( Input.Down( "Attack2" ) )
-			{
-				AimMultiplier = 0.5f;
-
-				var closest = GetClosestAimableObjectInViewcone();
-
-				if ( closest != null )
-				{
-					Vector3 targetPos = closest.GetBounds().Center;
-					Eye.Transform.Rotation = Rotation.LookAt( targetPos - Eye.Transform.Position, Vector3.Up );
-					helper.WithLookAt( new Transform( Body.Transform.Position, Body.Transform.Rotation ), Eye.Transform.Position, targetPos );
-				}
-				else
-				{
-					helper.WithLookAt( new Transform( Body.Transform.Position, Body.Transform.Rotation ), Eye.Transform.Position, Eye.Transform.Position + Eye.Transform.Rotation.Forward * 100f );
-				}
-			}
-			else
-			{
-				AimMultiplier = 1f;
-				helper.WithLookAt( new Transform( Body.Transform.Position, Body.Transform.Rotation ), Eye.Transform.Position, Eye.Transform.Position + Eye.Transform.Rotation.Forward * 100f );
-			}
-
-			if ( Input.Down( "Duck" ) )
-			{
-				Eye.Transform.LocalPosition = EyeStartPos / 2f;
-
-				helper.DuckLevel = 1f;
-			}
-			else
-			{
-				Eye.Transform.LocalPosition = EyeStartPos;
-
-				helper.DuckLevel = 0f;
-			}
-		}
+		characterController = GetComponent<CharacterController>();
 
 		if ( characterController.IsOnGround && Input.Down( "Jump" ) )
 		{
@@ -380,6 +234,7 @@ public class BrickPlayerController : SingletonComponent<BrickPlayerController>, 
 
 			characterController.ApplyFriction( 0.1f );
 			//	cc.IsOnGround = false;
+
 		}
 
 		if ( characterController.IsOnGround )
@@ -407,6 +262,159 @@ public class BrickPlayerController : SingletonComponent<BrickPlayerController>, 
 		}
 	}
 
+	CitizenAnimationHelperScene helper;
+
+	bool helperInitialized;
+
+	Vector3 LookAtPos;
+
+	public override void Update()
+	{
+		if ( IsDead )
+		{
+			return;
+		}
+
+		if ( MapGeneratorComponent.Instance != null && MapGeneratorComponent.Instance.Pickups.Count > 0 )
+		{
+			foreach ( var pickup in MapGeneratorComponent.Instance.Pickups
+				.Where( p => p.IsValid && p.Transform.Position.Distance( Transform.Position ) < 50 ) )
+				pickup.GetComponent<PickupHint>().TimeSincePlayerInRange = 0;
+		}
+
+
+		if ( !IsProxy )
+		{
+			if ( Input.Pressed( "Flashlight" ) )
+			{
+				SpawnGlowstick();
+			}
+
+
+			EyeAngles.pitch += Input.MouseDelta.y * 0.1f;
+			EyeAngles.yaw -= Input.MouseDelta.x * 0.1f;
+
+			EyeAngles.roll = 0;
+
+			if ( Camera.IsValid() )
+			{
+				Camera.GetComponent<DepthOfField>().FocalDistance = Vector3.DistanceBetween( Camera.Transform.Position, Eye.Transform.Position );
+			}
+
+			// Update camera position
+
+			if ( Camera.IsValid() )
+			{
+				var camPos = Eye.Transform.Position - (EyeAngles.ToRotation() * Rotation.FromPitch( 15f )).Forward * CameraDistance;
+
+				if ( FirstPerson ) camPos = Eye.Transform.Position + EyeAngles.ToRotation().Forward * 8;
+
+				var tr = Scene.PhysicsWorld.Trace.Ray( Eye.Transform.Position, camPos )
+					//.WithAnyTags( "solid" )//Add this back in later maybe, cba to go through and add solid tags everywhere
+					.WithoutTags( "trigger" )
+					.Radius( 16 )
+					.Run();
+
+				camPos = tr.EndPosition;
+
+				var camrot = EyeAngles.ToRotation() * Rotation.FromPitch( 15f );
+
+				//if ( Input.Down( "Attack2" ) )
+				//{
+				camPos += Eye.Transform.Rotation.Right * 16f;
+				camrot *= Rotation.FromPitch( -5f );
+				//}
+
+				Camera.Transform.Position = camPos;// Vector3.Lerp( Camera.Transform.Position, camPos, Time.Delta * 10f );
+				Camera.Transform.Rotation = camrot;// Rotation.Lerp( Camera.Transform.Rotation, camrot, Time.Delta * 50f );
+			}
+
+			if ( Transform.Position.z < -300f )
+			{
+				var room = Scene.GetAllObjects( true ).Where( X => X.GetComponent<RoomChunkComponent>( false ) != null ).FirstOrDefault();
+
+				if ( room is not null )
+				{
+					Transform.Position = room.Transform.Position.WithZ( 0 );
+					WishVelocity = Vector3.Zero;
+					characterController.Velocity = Vector3.Zero;
+				}
+			}
+		}
+
+		// rotate body to look angles
+		if ( Body is not null )
+		{
+			Body.Transform.Rotation = new Angles( 0, EyeAngles.yaw, 0 ).ToRotation();
+
+			if ( !helperInitialized )
+			{
+				helper = new CitizenAnimationHelperScene( modelComponent.SceneObject );
+				helperInitialized = true;
+			}
+			helper.WithVelocity( characterController.Velocity );
+			helper.IsGrounded = characterController.IsOnGround;
+
+
+			Eye.Transform.Rotation = new Angles( EyeAngles.pitch, EyeAngles.yaw, 0 ).ToRotation();
+
+			if ( !IsProxy )
+			{
+
+				if ( Input.Pressed( "Jump" ) && characterController.IsOnGround )
+				{
+					helper.SpecialMove = CitizenAnimationHelperScene.SpecialMovement.Roll;
+				}
+				else
+				{
+					helper.SpecialMove = CitizenAnimationHelperScene.SpecialMovement.None;
+				}
+
+				if ( Input.Down( "Attack2" ) )
+				{
+					AimMultiplier = 0.5f;
+
+					var closest = GetClosestAimableObjectInViewcone();
+
+					if ( closest != null )
+					{
+						Vector3 targetPos = closest.GetBounds().Center;
+						Eye.Transform.Rotation = Rotation.LookAt( targetPos - Eye.Transform.Position, Vector3.Up );
+
+						LookAtPos = targetPos;
+
+						helper.WithLookAt( Body.Transform.World, Eye.Transform.Position, LookAtPos );
+					}
+					else
+					{
+						LookAtPos = Eye.Transform.Position + Eye.Transform.Rotation.Forward * 100f;
+
+						helper.WithLookAt( Body.Transform.World, Eye.Transform.Position, LookAtPos );
+					}
+				}
+				else
+				{
+					LookAtPos = Eye.Transform.Position + Eye.Transform.Rotation.Forward * 100f;
+					AimMultiplier = 1f;
+					helper.WithLookAt( Body.Transform.World, Eye.Transform.Position, LookAtPos );
+				}
+
+				if ( Input.Down( "Duck" ) )
+				{
+					Eye.Transform.LocalPosition = EyeStartPos / 2f;
+
+					helper.DuckLevel = 1f;
+				}
+				else
+				{
+					Eye.Transform.LocalPosition = EyeStartPos;
+
+					helper.DuckLevel = 0f;
+				}
+			}
+		}
+	}
+
 	public void BuildWishVelocity()
 	{
 		var rot = EyeAngles.ToRotation();
@@ -431,10 +439,32 @@ public class BrickPlayerController : SingletonComponent<BrickPlayerController>, 
 	public void Write( ref ByteStream stream )
 	{
 		stream.Write( EyeAngles );
+		if ( characterController is null )
+		{
+			characterController = GetComponent<CharacterController>();
+		}
+		stream.Write( WishVelocity );
+		stream.Write( helper.DuckLevel > 0f );
+		stream.Write( LookAtPos );
 	}
 
 	public void Read( ByteStream stream )
 	{
+
 		EyeAngles = stream.Read<Angles>();
+
+		if ( Body.IsValid() )
+		{
+			var helper = new CitizenAnimationHelperScene( Body.GetComponent<AnimatedModelComponent>().SceneObject );
+
+			Vector3 movevec = stream.Read<Vector3>();
+			helper.WithVelocity( movevec );
+
+			float ducklevel = stream.Read<bool>() ? 1f : 0f;
+			helper.DuckLevel = ducklevel;
+
+			Vector3 lookpos = stream.Read<Vector3>();
+			helper.WithLookAt( Body.Transform.World, Body.Transform.Position + Vector3.Up * 64f, lookpos );
+		}
 	}
 }

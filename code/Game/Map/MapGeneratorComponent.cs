@@ -17,6 +17,8 @@ public partial class MapGeneratorComponent : SingletonComponent<MapGeneratorComp
 {
 	private const string BossRoom = "prefabs/rooms/sewer_room_05.object";
 
+	protected override bool NonProxyOnly => false;
+
 	[Property] private string[] Rooms { get; set; }
 	[Property] private string[] Hallways { get; set; }
 

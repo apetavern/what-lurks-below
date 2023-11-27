@@ -10,6 +10,8 @@ public sealed class NavGenComponent : SingletonComponent<NavGenComponent>
 
 	NavigationMesh mesh { get; set; }
 
+	protected override bool NonProxyOnly => false;
+
 	public bool Initialized;
 
 	//NavigationPath path { get; set; }
