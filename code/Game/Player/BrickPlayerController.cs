@@ -159,6 +159,8 @@ public class BrickPlayerController : SingletonComponent<BrickPlayerController>, 
 		if ( characterController is null )
 			characterController = GetComponent<CharacterController>();
 
+		characterController.Move();
+
 		if ( MapGeneratorComponent.Instance.Pickups.Count > 0 )
 		{
 			foreach ( var pickup in MapGeneratorComponent.Instance.Pickups
@@ -167,8 +169,10 @@ public class BrickPlayerController : SingletonComponent<BrickPlayerController>, 
 		}
 
 		var navgen = NavGenComponent.Instance;
-		if ( navgen is null )
+		if ( navgen is null || !navgen.GameObject.IsValid() )
+		{
 			return;
+		}
 
 		if ( !navgen.Initialized )
 		{
@@ -209,15 +213,15 @@ public class BrickPlayerController : SingletonComponent<BrickPlayerController>, 
 			SpawnGlowstick();
 		}
 
-		if ( Input.Down( "Attack2" ) )
+		if ( true )//Input.Down( "Attack2" )
 		{
 			EyeAngles.pitch += Input.MouseDelta.y * 0.1f;
 			EyeAngles.yaw -= Input.MouseDelta.x * 0.1f;
 
-			if ( Input.Pressed( "Backward" ) && !CameraControl )
+			/*if ( Input.Pressed( "Backward" ) && !CameraControl )
 			{
 				EyeAngles.yaw += 180f;
-			}
+			}*/
 		}
 		else
 		{
@@ -229,7 +233,7 @@ public class BrickPlayerController : SingletonComponent<BrickPlayerController>, 
 
 		EyeAngles.roll = 0;
 
-		if ( Camera != null )
+		if ( Camera.IsValid() )
 		{
 			Camera.GetComponent<DepthOfField>().FocalDistance = Vector3.DistanceBetween( Camera.Transform.Position, Eye.Transform.Position );
 		}
@@ -238,7 +242,7 @@ public class BrickPlayerController : SingletonComponent<BrickPlayerController>, 
 		{
 			// Update camera position
 
-			if ( Camera is not null )
+			if ( Camera.IsValid() )
 			{
 				var camPos = Eye.Transform.Position - (EyeAngles.ToRotation() * Rotation.FromPitch( 15f )).Forward * CameraDistance;
 
@@ -254,14 +258,14 @@ public class BrickPlayerController : SingletonComponent<BrickPlayerController>, 
 
 				var camrot = EyeAngles.ToRotation() * Rotation.FromPitch( 15f );
 
-				if ( Input.Down( "Attack2" ) )
-				{
-					camPos += Eye.Transform.Rotation.Right * 16f;
-					camrot *= Rotation.FromPitch( -5f );
-				}
+				//if ( Input.Down( "Attack2" ) )
+				//{
+				camPos += Eye.Transform.Rotation.Right * 16f;
+				camrot *= Rotation.FromPitch( -5f );
+				//}
 
-				Camera.Transform.Position = Vector3.Lerp( Camera.Transform.Position, camPos, Time.Delta * 10f );
-				Camera.Transform.Rotation = Rotation.Lerp( Camera.Transform.Rotation, camrot, Time.Delta * 50f );
+				Camera.Transform.Position = camPos;// Vector3.Lerp( Camera.Transform.Position, camPos, Time.Delta * 10f );
+				Camera.Transform.Rotation = camrot;// Rotation.Lerp( Camera.Transform.Rotation, camrot, Time.Delta * 50f );
 			}
 		}
 
@@ -409,8 +413,11 @@ public class BrickPlayerController : SingletonComponent<BrickPlayerController>, 
 
 		WishVelocity = 0;
 
-		if ( Input.Down( "Forward" ) ) WishVelocity += rot.Forward;
-		if ( Input.Down( "Backward" ) ) WishVelocity += rot.Backward;
+		if ( Input.Down( "Forward" ) ) WishVelocity += rot.Forward.WithZ( 0 );
+		if ( Input.Down( "Backward" ) ) WishVelocity += rot.Backward.WithZ( 0 );
+
+		if ( Input.Down( "Left" ) ) WishVelocity += rot.Left.WithZ( 0 );
+		if ( Input.Down( "Right" ) ) WishVelocity += rot.Right.WithZ( 0 );
 
 
 		WishVelocity = WishVelocity.WithZ( 0 );
