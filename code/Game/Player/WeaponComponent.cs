@@ -15,9 +15,7 @@ public class WeaponComponent : BaseComponent
 
 	public override void OnStart()
 	{
-		base.OnStart();
-
-		_player = BrickPlayerController.Instance.Player;
+		_player = GameObject;
 		playerController = _player.GetComponent<BrickPlayerController>();
 		characterController = _player.GetComponent<CharacterController>();
 		_body = playerController.Body;

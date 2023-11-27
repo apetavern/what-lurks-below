@@ -4,7 +4,7 @@ namespace BrickJam.Components;
 
 public abstract class SingletonComponent<T> : BaseComponent where T : SingletonComponent<T>
 {
-	public static T Instance { get; private set; }
+	public static T Instance { get; set; }
 
 	protected virtual bool ThrowOnDuplicate => false;
 
@@ -28,6 +28,5 @@ public abstract class SingletonComponent<T> : BaseComponent where T : SingletonC
 		{
 			Instance = (T)this;
 		}
-
 	}
 }

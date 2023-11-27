@@ -1,12 +1,8 @@
 {
   "RootObject": {
-    "Id": "d282f87c-2703-4b43-93be-3d83b5cff16b",
+    "Id": "0d9e9982-ad14-42e1-a577-7575d7fbf34e",
     "Name": "gatorkid",
     "Enabled": true,
-    "Position": "0,0,0",
-    "Rotation": "0,0,0,1",
-    "Scale": "1,1,1",
-    "Tags": "",
     "Components": [
       {
         "__type": "CharacterController",
@@ -25,7 +21,7 @@
         "AttackDamage": 3,
         "AttackRange": 64,
         "AttackSound": "lilgator-attack",
-        "Body": "466fe400-4f49-47ed-bebf-fa5e955aab01",
+        "Body": "8cb458c4-d888-4c6b-bf09-e34e8ac98022",
         "DeathSound": "lilgator-death",
         "Friction": 0.9499998,
         "HurtSound": "lilgator-hurt",
@@ -46,13 +42,10 @@
     ],
     "Children": [
       {
-        "Id": "466fe400-4f49-47ed-bebf-fa5e955aab01",
+        "Id": "8cb458c4-d888-4c6b-bf09-e34e8ac98022",
         "Name": "Epic Enemy",
-        "Enabled": true,
-        "Position": "0,0,0",
-        "Rotation": "0,0,0,1",
         "Scale": "0.7,0.7,0.7",
-        "Tags": "",
+        "Enabled": true,
         "Components": [
           {
             "__type": "AnimatedModelComponent",
@@ -68,19 +61,18 @@
         ]
       },
       {
-        "Id": "03dd079a-eaaa-4fb2-bcd3-ac171b48e6a2",
+        "Id": "19944b51-abd7-4adf-ad57-38141618adfe",
         "Name": "Collider",
-        "Enabled": true,
         "Position": "0,0,21.54626",
-        "Rotation": "0,0,0,1",
-        "Scale": "1,1,1",
         "Tags": "trigger,enemy",
+        "Enabled": true,
         "Components": [
           {
             "__type": "ColliderBoxComponent",
             "__enabled": true,
             "IsTrigger": true,
             "Scale": "32,32,42.99999",
+            "Static": false,
             "Surface": null
           },
           {
@@ -91,5 +83,8 @@
       }
     ]
   },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
   "__references": []
 }

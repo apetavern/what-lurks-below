@@ -15,31 +15,11 @@ public sealed class RoomDoorDefinition : BaseComponent
 		if ( ClosedMesh != null ) ClosedMesh.Enabled = false;
 	}
 
-	float SpawnTime = 0f;
-
-	bool FixedWalls;
-
 	public override void OnStart()
 	{
 		base.OnStart();
-		if ( IsProxy )
-		{
-			SpawnTime = Time.Now;
-		}
-	}
 
-	public override void Update()
-	{
-		if ( !IsProxy )
-		{
-			return;
-		}
-
-		if ( !FixedWalls && SpawnTime != 0f && Time.Now - SpawnTime > 1f && NavGenComponent.Instance.Initialized )
-		{
-			OpenDoor();
-			FixedWalls = true;
-		}
+		if ( ClosedMesh != null ) ClosedMesh.Enabled = false;
 	}
 
 	public override void DrawGizmos()

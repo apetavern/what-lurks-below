@@ -9,6 +9,8 @@ namespace BrickJam.Player;
 
 public class BrickPlayerController : SingletonComponent<BrickPlayerController>, INetworkSerializable
 {
+	protected override bool ThrowOnDuplicate => true;
+
 	[Property] public Vector3 Gravity { get; set; } = new Vector3( 0, 0, 800 );
 
 	[Range( 0, 400 )]
@@ -78,6 +80,7 @@ public class BrickPlayerController : SingletonComponent<BrickPlayerController>, 
 			return;
 		}
 
+		Instance = this;
 
 		// Update camera position
 		Camera = Scene.GetAllObjects( true ).Where( X => X.GetComponent<CameraComponent>( false ) != null ).FirstOrDefault();
@@ -297,6 +300,15 @@ public class BrickPlayerController : SingletonComponent<BrickPlayerController>, 
 		if ( IsDead )
 		{
 			return;
+		}
+
+		if ( Instance == this )
+		{
+			modelComponent.Tint = Color.Red;
+		}
+		else
+		{
+			modelComponent.Tint = Color.Green;
 		}
 
 		if ( MapGeneratorComponent.Instance != null && MapGeneratorComponent.Instance.Pickups.Count > 0 )

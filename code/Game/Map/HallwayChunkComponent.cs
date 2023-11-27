@@ -29,7 +29,7 @@ public sealed class HallwayChunkComponent : BaseComponent
 			return;
 		}
 
-		if ( !FixedWalls && SpawnTime != 0f && Time.Now - SpawnTime > 1f && NavGenComponent.Instance.Initialized )
+		if ( !FixedWalls && SpawnTime != 0f && Time.Now - SpawnTime > 5f && NavGenComponent.Instance.Initialized )
 		{
 			CheckSides();
 			FixedWalls = true;
@@ -38,6 +38,12 @@ public sealed class HallwayChunkComponent : BaseComponent
 
 	public void CheckSides()
 	{
+
+		foreach ( var item in GetComponents<Collider>( false, true ) )
+		{
+			item.OnPhysicsChanged();
+		}
+
 		Transform.Rotation = Rotation.Identity;
 
 		var trFront = Physics.Trace.Ray(
@@ -80,10 +86,10 @@ public sealed class HallwayChunkComponent : BaseComponent
 			Right.Destroy();
 		}
 
+
 		foreach ( var item in GetComponents<Collider>( false, true ) )
 		{
 			item.OnPhysicsChanged();
 		}
-
 	}
 }

@@ -1,12 +1,9 @@
 {
   "RootObject": {
-    "Id": "9cc009cd-3d74-494c-b2ca-847b9ebd2d43",
+    "Id": "5ab92996-708e-494e-86cf-9ad986e01524",
     "Name": "box_01",
-    "Enabled": true,
-    "Position": "0,0,0",
-    "Rotation": "0,0,0,1",
     "Scale": "2,2,2",
-    "Tags": "",
+    "Enabled": true,
     "Components": [
       {
         "__type": "ModelComponent",
@@ -30,7 +27,7 @@
       {
         "__type": "DestructableComponent",
         "__enabled": true,
-        "BreakParticle": "55451ac6-966d-422c-9f40-99df7044c260"
+        "BreakParticle": "e76a21a4-3e13-42b0-acd2-bbc0078e0383"
       },
       {
         "__type": "ItemContainer",
@@ -39,31 +36,26 @@
     ],
     "Children": [
       {
-        "Id": "00efa9a4-9295-4092-a04a-13fdaa1413ee",
+        "Id": "2615c507-01cd-4c83-989f-b3427d66ef5b",
         "Name": "Object",
-        "Enabled": true,
         "Position": "0,0,12",
-        "Rotation": "0,0,0,1",
-        "Scale": "1,1,1",
         "Tags": "solid",
+        "Enabled": true,
         "Components": [
           {
             "__type": "ColliderBoxComponent",
             "__enabled": true,
             "IsTrigger": false,
             "Scale": "24,24,24",
+            "Static": false,
             "Surface": null
           }
         ]
       },
       {
-        "Id": "55451ac6-966d-422c-9f40-99df7044c260",
+        "Id": "e76a21a4-3e13-42b0-acd2-bbc0078e0383",
         "Name": "particles",
-        "Enabled": false,
         "Position": "0,0,17.03379",
-        "Rotation": "0,0,0,1",
-        "Scale": "1,1,1",
-        "Tags": "",
         "Components": [
           {
             "__type": "ParticleSystem",
@@ -76,5 +68,8 @@
       }
     ]
   },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
   "__references": []
 }

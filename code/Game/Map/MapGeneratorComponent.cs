@@ -304,6 +304,7 @@ public partial class MapGeneratorComponent : SingletonComponent<MapGeneratorComp
 						var breakable = breakablesToSpawn[new Random().Int( 0, breakablesToSpawn.Count - 1 )];
 						var breaky = SceneUtility.Instantiate( breakable, pos + Vector3.Random.WithZ( 0 ) * 64f, Rotation.LookAt( Vector3.Random.WithZ( 0 ) * 64f ) );
 						breaky.SetParent( GeneratedMapParent );
+						breaky.Network.Spawn();
 					}
 				}
 			}

@@ -186,7 +186,7 @@ public class EnemyController : BaseComponent
 	{
 		base.Update();
 
-		if ( dead || Player is null )
+		if ( dead || Player is null || IsProxy )
 		{
 			return;
 		}

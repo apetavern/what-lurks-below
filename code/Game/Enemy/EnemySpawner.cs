@@ -27,7 +27,6 @@ public class EnemySpawner : BaseComponent
 	{
 		if ( !IsProxy )
 		{
-
 			while ( !NavGenComponent.Instance.Initialized )
 				yield return new WaitForNextFrame();
 

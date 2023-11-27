@@ -1,8 +1,7 @@
 {
   "RootObject": {
-    "Id": "b0fd42a5-0e47-4539-8962-e8c5d86fa122",
+    "Id": "bb07b623-2e24-4bdd-8491-3e9a7430910b",
     "Name": "player",
-    "Position": "99.77042,-294.2368,31.99988",
     "Enabled": true,
     "Components": [
       {
@@ -24,9 +23,9 @@
       {
         "__type": "BrickPlayerController",
         "__enabled": true,
-        "Body": "0c14cac3-7cb3-47ca-9f93-f55f893be640",
+        "Body": "14653382-d50c-4245-812b-919a5452d645",
         "CameraDistance": 100,
-        "Eye": "e217f5ff-41f2-43c6-a33a-d99e30cedfa8",
+        "Eye": "41714235-0ea2-494e-8cce-faa73f370822",
         "FirstPerson": false,
         "Gravity": "0,0,800"
       },
@@ -52,9 +51,8 @@
     ],
     "Children": [
       {
-        "Id": "0c14cac3-7cb3-47ca-9f93-f55f893be640",
+        "Id": "14653382-d50c-4245-812b-919a5452d645",
         "Name": "graphics",
-        "Position": "0,0,0",
         "Enabled": true,
         "Components": [
           {
@@ -84,9 +82,9 @@
         ],
         "Children": [
           {
-            "Id": "71589bfe-a6c5-4e81-93f5-4aa10ed662ef",
+            "Id": "ee2f1b47-ac62-4a5c-95c0-f9bb94bf3a52",
             "Name": "Spot Light",
-            "Position": "12.33927,-0.008758545,70.31702",
+            "Position": "12.33928,-0.008733193,70.31702",
             "Rotation": "-0.706876,0.001099638,0.0004287066,0.7073365",
             "Enabled": true,
             "Components": [
@@ -94,7 +92,7 @@
                 "__type": "FollowAttachmentComponent",
                 "__enabled": true,
                 "AttachmentName": "light",
-                "FollowObject": "20e04941-9f70-4de4-9639-8bc1409e41d5"
+                "FollowObject": "4e58fa68-fabc-4184-8515-027a1c5d9bec"
               },
               {
                 "__type": "SpotLightComponent",
@@ -109,16 +107,15 @@
             ]
           },
           {
-            "Id": "20e04941-9f70-4de4-9639-8bc1409e41d5",
+            "Id": "4e58fa68-fabc-4184-8515-027a1c5d9bec",
             "Name": "Helmet",
-            "Position": "0,0,0",
             "Enabled": true,
             "Components": [
               {
                 "__type": "AnimatedModelComponent",
                 "__enabled": true,
                 "BodyGroups": 18446744073709551615,
-                "BoneMergeTarget": "0c14cac3-7cb3-47ca-9f93-f55f893be640",
+                "BoneMergeTarget": "14653382-d50c-4245-812b-919a5452d645",
                 "CreateBoneObjects": false,
                 "MaterialGroup": null,
                 "MaterialOverride": null,
@@ -129,16 +126,15 @@
             ]
           },
           {
-            "Id": "dd4cff70-6170-4c71-b4be-bed4f7774958",
+            "Id": "0d49b63b-49f1-496d-b182-cd8a69df4850",
             "Name": "Backpack",
-            "Position": "0,0,0",
             "Enabled": true,
             "Components": [
               {
                 "__type": "AnimatedModelComponent",
                 "__enabled": true,
                 "BodyGroups": 18446744073709551615,
-                "BoneMergeTarget": "0c14cac3-7cb3-47ca-9f93-f55f893be640",
+                "BoneMergeTarget": "14653382-d50c-4245-812b-919a5452d645",
                 "CreateBoneObjects": false,
                 "MaterialGroup": null,
                 "MaterialOverride": null,
@@ -149,7 +145,7 @@
             ]
           },
           {
-            "Id": "e217f5ff-41f2-43c6-a33a-d99e30cedfa8",
+            "Id": "41714235-0ea2-494e-8cce-faa73f370822",
             "Name": "eye",
             "Position": "0,0,63.62214",
             "Enabled": true
@@ -158,5 +154,8 @@
       }
     ]
   },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
   "__references": []
 }

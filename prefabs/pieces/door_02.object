@@ -3,21 +3,19 @@
     "Id": "282d0dd1-e5a6-4ee5-a1f8-a6505bfcc5ea",
     "Name": "door_02",
     "Enabled": true,
-    "Position": "0,0,0",
-    "Rotation": "0,0,0,1",
-    "Scale": "1,1,1",
     "Components": [
       {
         "__type": "ModelCollider",
         "__enabled": true,
         "IsTrigger": false,
         "Model": "models/environment/door_01.vmdl",
-        "Surface": null,
-        "Tags": ""
+        "Static": false,
+        "Surface": null
       },
       {
         "__type": "ModelComponent",
         "__enabled": true,
+        "BodyGroups": 18446744073709551615,
         "MaterialOverride": null,
         "Model": "models/environment/door_01.vmdl",
         "ShouldCastShadows": true,
@@ -28,10 +26,9 @@
       {
         "Id": "66e0633b-164a-41c1-9a7f-0675fd0c4625",
         "Name": "Object",
-        "Enabled": true,
         "Position": "0,64,0",
         "Rotation": "0,0,0.707107,0.7071065",
-        "Scale": "1,1,1",
+        "Enabled": true,
         "Components": [
           {
             "__type": "RoomDoorDefinition",
@@ -43,14 +40,14 @@
           {
             "Id": "e579b134-e50d-4cc0-88f2-352a682d6635",
             "Name": "Plane",
-            "Enabled": true,
             "Position": "64,0,0",
             "Rotation": "0,0,0.707107,0.7071065",
-            "Scale": "1,1,1",
+            "Enabled": true,
             "Components": [
               {
                 "__type": "ModelComponent",
                 "__enabled": true,
+                "BodyGroups": 18446744073709551615,
                 "MaterialOverride": null,
                 "Model": "models/environment/door_02.vmdl",
                 "ShouldCastShadows": true,
@@ -61,8 +58,8 @@
                 "__enabled": true,
                 "IsTrigger": false,
                 "Model": "models/environment/door_02.vmdl",
-                "Surface": null,
-                "Tags": ""
+                "Static": false,
+                "Surface": null
               }
             ]
           }
@@ -71,13 +68,14 @@
       {
         "Id": "ff5b080a-5996-4aea-99d0-c92ce1aec06a",
         "Name": "hallway_03",
-        "Enabled": true,
         "Position": "-64,64,0",
-        "Rotation": "0,0,0,1",
-        "Scale": "1,1,1",
+        "Enabled": true,
         "__Prefab": "prefabs/hallways/hallway_03.object"
       }
     ]
   },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
   "__references": []
 }

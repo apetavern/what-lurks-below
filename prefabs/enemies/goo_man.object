@@ -1,12 +1,8 @@
 {
   "RootObject": {
-    "Id": "3ec7608e-78df-4c8f-bce9-ea331cca3e2a",
+    "Id": "2785a8dc-9917-4dc9-8c64-840f1212e817",
     "Name": "goo_man",
     "Enabled": true,
-    "Position": "0,0,0",
-    "Rotation": "0,0,0,1",
-    "Scale": "1,1,1",
-    "Tags": "",
     "Components": [
       {
         "__type": "CharacterController",
@@ -25,7 +21,7 @@
         "AttackDamage": 7,
         "AttackRange": 64,
         "AttackSound": "gooman-attack",
-        "Body": "b60b4c51-fa5e-4bb6-9c6b-99170a47a2b4",
+        "Body": "73af459a-ee9c-402f-a486-b5d9ae6a431d",
         "DeathSound": "gooman-death",
         "Friction": 0.9499998,
         "HurtSound": "gooman-hurt",
@@ -46,13 +42,10 @@
     ],
     "Children": [
       {
-        "Id": "b60b4c51-fa5e-4bb6-9c6b-99170a47a2b4",
+        "Id": "73af459a-ee9c-402f-a486-b5d9ae6a431d",
         "Name": "Epic Enemy",
-        "Enabled": true,
-        "Position": "0,0,0",
-        "Rotation": "0,0,0,1",
         "Scale": "0.7,0.7,0.7",
-        "Tags": "",
+        "Enabled": true,
         "Components": [
           {
             "__type": "AnimatedModelComponent",
@@ -68,19 +61,18 @@
         ]
       },
       {
-        "Id": "e409cb66-4e72-4a55-aaf7-1e80a8b5a9a8",
+        "Id": "829bac1a-181d-491e-8057-f41be8612cc1",
         "Name": "Collider",
-        "Enabled": true,
         "Position": "0,0,15.82238",
-        "Rotation": "0,0,0,1",
-        "Scale": "1,1,1",
         "Tags": "enemy,trigger",
+        "Enabled": true,
         "Components": [
           {
             "__type": "ColliderBoxComponent",
             "__enabled": true,
             "IsTrigger": true,
             "Scale": "32,32,32",
+            "Static": false,
             "Surface": null
           },
           {
@@ -91,5 +83,8 @@
       }
     ]
   },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
   "__references": []
 }

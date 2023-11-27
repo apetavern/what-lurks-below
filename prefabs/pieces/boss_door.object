@@ -3,19 +3,11 @@
     "Id": "d9401f8b-6c23-4016-a6df-e79d667295cd",
     "Name": "boss_door",
     "Enabled": true,
-    "Position": "0,0,0",
-    "Rotation": "0,0,0,1",
-    "Scale": "1,1,1",
-    "Tags": "",
     "Children": [
       {
         "Id": "5afc941e-2594-40dc-bee4-54dc1b4f12f7",
         "Name": "door",
         "Enabled": true,
-        "Position": "0,0,0",
-        "Rotation": "0,0,0,1",
-        "Scale": "1,1,1",
-        "Tags": "",
         "Components": [
           {
             "__type": "ModelComponent",
@@ -31,8 +23,8 @@
             "__enabled": true,
             "IsTrigger": false,
             "Model": "models/environment/door_03.vmdl",
-            "Surface": null,
-            "Tags": ""
+            "Static": false,
+            "Surface": null
           }
         ]
       },
@@ -40,10 +32,6 @@
         "Id": "3420904e-1bed-4f8c-af7e-c64ace8bcc3a",
         "Name": "bezieranimator",
         "Enabled": true,
-        "Position": "0,0,0",
-        "Rotation": "0,0,0,1",
-        "Scale": "1,1,1",
-        "Tags": "",
         "Components": [
           {
             "__type": "BezierAnimationComponent",
@@ -57,39 +45,31 @@
           {
             "Id": "045eb0e8-23f1-40aa-85c7-3c6fb925a963",
             "Name": "point1",
-            "Enabled": true,
-            "Position": "0,0,0",
             "Rotation": "-0,0,-1,-0.0000006397578",
-            "Scale": "1,1,1",
-            "Tags": ""
+            "Enabled": true
           },
           {
             "Id": "bea747be-cd20-4e98-a51a-2863aadc73c2",
             "Name": "point2",
-            "Enabled": true,
-            "Position": "0,0,0",
             "Rotation": "-0.00000004250227,-0.0000000003615028,-0.707107,0.7071065",
-            "Scale": "1,1,1",
-            "Tags": ""
+            "Enabled": true
           }
         ]
       },
       {
         "Id": "ef02c8c5-5f41-4c3f-9d45-ca3894e87353",
         "Name": "trigger",
-        "Enabled": true,
         "Position": "25.02071,31.46987,24.73355",
-        "Rotation": "0,0,0,1",
-        "Scale": "1,1,1",
         "Tags": "trigger",
+        "Enabled": true,
         "Components": [
           {
             "__type": "ColliderBoxComponent",
             "__enabled": true,
             "IsTrigger": true,
             "Scale": "50,50,50",
-            "Surface": null,
-            "Tags": ""
+            "Static": false,
+            "Surface": null
           },
           {
             "__type": "CameraTriggerComponent",
@@ -104,5 +84,8 @@
       }
     ]
   },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
   "__references": []
 }

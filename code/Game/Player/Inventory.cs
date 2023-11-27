@@ -168,12 +168,16 @@ public class Inventory : SingletonComponent<Inventory>
 	public override void OnStart()
 	{
 		_inventorySlots = new bool[SlotsX, SlotsY];
-		_player = BrickPlayerController.Instance.Player;
+
+		_player = GameObject;
 		weaponComponent = _player.GetComponent<WeaponComponent>();
 
 		PlaceItem( KnifeWeapon.KnifeItem.ToReference(), new InvCoord( 0, 0 ) );
 
-		GameHud.Instance.SetInventory( this );
+		if ( !IsProxy )
+		{
+			GameHud.Instance.SetInventory( this );
+		}
 	}
 
 	[Broadcast]
@@ -201,6 +205,7 @@ public class Inventory : SingletonComponent<Inventory>
 		{
 			return;
 		}
+
 		if ( Input.Pressed( "slot1" ) )
 		{
 			if ( _items.All( i => i.Asset.Name != "Knife" ) )

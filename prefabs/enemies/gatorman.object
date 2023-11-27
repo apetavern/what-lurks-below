@@ -1,12 +1,8 @@
 {
   "RootObject": {
-    "Id": "529b8006-8e54-4fe5-b4f3-98a25cd905a8",
+    "Id": "6a4a527d-87b5-46ef-a2d7-57b716a7227c",
     "Name": "gatorman",
     "Enabled": true,
-    "Position": "0,0,0",
-    "Rotation": "0,0,0,1",
-    "Scale": "1,1,1",
-    "Tags": "",
     "Components": [
       {
         "__type": "CharacterController",
@@ -25,7 +21,7 @@
         "AttackDamage": 30,
         "AttackRange": 64,
         "AttackSound": "gator-attack",
-        "Body": "f94e0848-3d77-4beb-b4b0-2fe33044b2c7",
+        "Body": "bcfba61b-10d6-4e1a-97bd-fff9af24584b",
         "DeathSound": "gator-death",
         "Friction": 0.9499998,
         "HurtSound": "gator-hurt",
@@ -46,13 +42,10 @@
     ],
     "Children": [
       {
-        "Id": "f94e0848-3d77-4beb-b4b0-2fe33044b2c7",
+        "Id": "bcfba61b-10d6-4e1a-97bd-fff9af24584b",
         "Name": "Epic Enemy",
-        "Enabled": true,
-        "Position": "0,0,0",
-        "Rotation": "0,0,0,1",
         "Scale": "0.7,0.7,0.7",
-        "Tags": "",
+        "Enabled": true,
         "Components": [
           {
             "__type": "AnimatedModelComponent",
@@ -68,19 +61,18 @@
         ]
       },
       {
-        "Id": "57fd9496-1937-41c2-ae6f-5a4cf664fd2c",
+        "Id": "175825ee-6994-4177-ae15-2e45a92c95ef",
         "Name": "Collider",
-        "Enabled": true,
         "Position": "0,0,41.82742",
-        "Rotation": "0,0,0,1",
-        "Scale": "1,1,1",
         "Tags": "trigger,enemy",
+        "Enabled": true,
         "Components": [
           {
             "__type": "ColliderBoxComponent",
             "__enabled": true,
             "IsTrigger": true,
             "Scale": "32,32,82.69981",
+            "Static": false,
             "Surface": null
           },
           {
@@ -91,5 +83,8 @@
       }
     ]
   },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
   "__references": []
 }
