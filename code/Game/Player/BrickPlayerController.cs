@@ -186,10 +186,14 @@ public class BrickPlayerController : SingletonComponent<BrickPlayerController>, 
 			}
 			characterController.Move();
 			characterController.IsOnGround = false;
-			var helper = new CitizenAnimationHelperScene( modelComponent.SceneObject );
-			helper.WithVelocity( characterController.Velocity - Vector3.Up * Gravity );
-			helper.IsGrounded = characterController.IsOnGround;
-			helper.HoldType = CitizenAnimationHelperScene.HoldTypes.None;
+
+			if ( modelComponent != null )
+			{
+				var helper = new CitizenAnimationHelperScene( modelComponent.SceneObject );
+				helper.WithVelocity( characterController.Velocity - Vector3.Up * Gravity );
+				helper.IsGrounded = characterController.IsOnGround;
+				helper.HoldType = CitizenAnimationHelperScene.HoldTypes.None;
+			}
 
 			if ( Camera == null )
 			{
@@ -231,12 +235,6 @@ public class BrickPlayerController : SingletonComponent<BrickPlayerController>, 
 			if ( Input.Down( "Backward" ) )
 			{
 				Body.Transform.Rotation *= Rotation.FromYaw( 180 );
-
-				if ( !CameraControl )
-				{
-					EyeAngles.yaw += 180;
-					Eye.Transform.Rotation *= Rotation.FromYaw( 180 );
-				}
 			}
 
 			characterController.Velocity = Body.Transform.Rotation.Forward * flMul * flGroundFactor;
@@ -464,8 +462,8 @@ public class BrickPlayerController : SingletonComponent<BrickPlayerController>, 
 		if ( Input.Down( "Forward" ) ) WishVelocity += rot.Forward.WithZ( 0 );
 		if ( Input.Down( "Backward" ) ) WishVelocity += rot.Backward.WithZ( 0 );
 
-		if ( Input.Down( "Left" ) ) WishVelocity += rot.Left.WithZ( 0 );
-		if ( Input.Down( "Right" ) ) WishVelocity += rot.Right.WithZ( 0 );
+		if ( Input.Down( "Left" ) ) WishVelocity += rot.Left.WithZ( 0 ) * 1.5f;
+		if ( Input.Down( "Right" ) ) WishVelocity += rot.Right.WithZ( 0 ) * 1.5f;
 
 
 		WishVelocity = WishVelocity.WithZ( 0 );
