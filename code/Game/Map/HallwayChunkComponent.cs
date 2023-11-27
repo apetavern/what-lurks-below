@@ -29,7 +29,7 @@ public sealed class HallwayChunkComponent : BaseComponent
 			return;
 		}
 
-		if ( !FixedWalls && SpawnTime != 0f && Time.Now - SpawnTime > 5f && NavGenComponent.Instance.Initialized )
+		if ( !FixedWalls && SpawnTime != 0f && Time.Now - SpawnTime > 1f && NavGenComponent.Instance.Initialized )
 		{
 			CheckSides();
 			FixedWalls = true;

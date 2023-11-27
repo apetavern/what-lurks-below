@@ -24,6 +24,20 @@ public sealed class RoomChunkComponent : BaseComponent
 
 		Doors = GetComponents<RoomDoorDefinition>( false, true ).ToList();
 
+		if ( GameObject.Network.IsOwner )
+		{
+			foreach ( var item in GetComponents<EnemySpawner>( false, true ) )
+			{
+				item.GameObject.Parent = Scene;
+				item.GameObject.Network.Spawn();
+			}
+
+			foreach ( var item in GetComponents<DestructableComponent>( false, true ) )
+			{
+				item.GameObject.Parent = Scene;
+				item.GameObject.Network.Spawn();
+			}
+		}
 	}
 
 	public void ClearEnemiesAndItems()
@@ -38,12 +52,6 @@ public sealed class RoomChunkComponent : BaseComponent
 	public override void DrawGizmos()
 	{
 		Gizmo.Draw.Color = ThisColor;
-		//foreach ( var item in ConnectedRooms )
-		//{
-
-
-		//Gizmo.Draw.Line( Vector3.Zero, item.Transform.Position - Transform.Position );
-		//}
 
 		if ( PathPoints.Count > 0 )
 		{
@@ -256,10 +264,5 @@ public sealed class RoomChunkComponent : BaseComponent
 				ConnectRooms( door1, door2 );
 			}
 		}
-	}
-
-	public override void Update()
-	{
-		base.Update();
 	}
 }

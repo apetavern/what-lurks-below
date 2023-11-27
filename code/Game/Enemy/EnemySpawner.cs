@@ -39,10 +39,13 @@ public class EnemySpawner : BaseComponent
 			{
 				var enemy = enemiesToSpawn[new Random().Int( 0, enemiesToSpawn.Count - 1 )];
 				var enemyObject = SceneUtility.Instantiate( enemy, GameObject.Transform.Position, GameObject.Transform.Rotation );
-				enemyObject.Transform.Position = GameObject.Transform.Position;
+
 				enemyObject.SetParent( GameObject.Parent );
 
 				enemyObject.Network.Spawn();
+
+				enemyObject.Transform.Position = GameObject.Transform.Position;
+
 			}
 
 			GameObject.Destroy();
