@@ -1,6 +1,6 @@
 {
   "RootObject": {
-    "Id": "bb07b623-2e24-4bdd-8491-3e9a7430910b",
+    "Id": "45bb9f97-8cd8-4bec-b09e-f6c82e6a2891",
     "Name": "player",
     "Enabled": true,
     "Components": [
@@ -23,9 +23,9 @@
       {
         "__type": "BrickPlayerController",
         "__enabled": true,
-        "Body": "14653382-d50c-4245-812b-919a5452d645",
+        "Body": "74b534b6-7bfc-4799-b9c1-10876c435738",
         "CameraDistance": 100,
-        "Eye": "41714235-0ea2-494e-8cce-faa73f370822",
+        "Eye": "d031714f-e651-4c69-94d0-ba5ee4dd22f7",
         "FirstPerson": false,
         "Gravity": "0,0,800"
       },
@@ -51,14 +51,14 @@
     ],
     "Children": [
       {
-        "Id": "14653382-d50c-4245-812b-919a5452d645",
+        "Id": "74b534b6-7bfc-4799-b9c1-10876c435738",
         "Name": "graphics",
         "Enabled": true,
         "Components": [
           {
             "__type": "AnimatedModelComponent",
             "__enabled": true,
-            "BodyGroups": 18446744073709551615,
+            "BodyGroups": 18446744073709551595,
             "CreateBoneObjects": false,
             "MaterialGroup": null,
             "MaterialOverride": null,
@@ -82,7 +82,7 @@
         ],
         "Children": [
           {
-            "Id": "ee2f1b47-ac62-4a5c-95c0-f9bb94bf3a52",
+            "Id": "3012d608-ef21-42ff-8d07-a885a1f17ceb",
             "Name": "Spot Light",
             "Position": "12.33928,-0.008733193,70.31702",
             "Rotation": "-0.706876,0.001099638,0.0004287066,0.7073365",
@@ -92,7 +92,7 @@
                 "__type": "FollowAttachmentComponent",
                 "__enabled": true,
                 "AttachmentName": "light",
-                "FollowObject": "4e58fa68-fabc-4184-8515-027a1c5d9bec"
+                "FollowObject": "4f58677f-6d49-4e73-8c66-f79b2f6e3e4f"
               },
               {
                 "__type": "SpotLightComponent",
@@ -107,7 +107,7 @@
             ]
           },
           {
-            "Id": "4e58fa68-fabc-4184-8515-027a1c5d9bec",
+            "Id": "4f58677f-6d49-4e73-8c66-f79b2f6e3e4f",
             "Name": "Helmet",
             "Enabled": true,
             "Components": [
@@ -115,7 +115,7 @@
                 "__type": "AnimatedModelComponent",
                 "__enabled": true,
                 "BodyGroups": 18446744073709551615,
-                "BoneMergeTarget": "14653382-d50c-4245-812b-919a5452d645",
+                "BoneMergeTarget": "74b534b6-7bfc-4799-b9c1-10876c435738",
                 "CreateBoneObjects": false,
                 "MaterialGroup": null,
                 "MaterialOverride": null,
@@ -126,7 +126,7 @@
             ]
           },
           {
-            "Id": "0d49b63b-49f1-496d-b182-cd8a69df4850",
+            "Id": "c498bde0-730e-40ca-90d0-24adeae51acd",
             "Name": "Backpack",
             "Enabled": true,
             "Components": [
@@ -134,7 +134,7 @@
                 "__type": "AnimatedModelComponent",
                 "__enabled": true,
                 "BodyGroups": 18446744073709551615,
-                "BoneMergeTarget": "14653382-d50c-4245-812b-919a5452d645",
+                "BoneMergeTarget": "74b534b6-7bfc-4799-b9c1-10876c435738",
                 "CreateBoneObjects": false,
                 "MaterialGroup": null,
                 "MaterialOverride": null,
@@ -145,7 +145,26 @@
             ]
           },
           {
-            "Id": "41714235-0ea2-494e-8cce-faa73f370822",
+            "Id": "8184f866-d60f-47a1-a5df-4d7d20da0432",
+            "Name": "outfit",
+            "Enabled": true,
+            "Components": [
+              {
+                "__type": "AnimatedModelComponent",
+                "__enabled": true,
+                "BodyGroups": 18446744073709551615,
+                "BoneMergeTarget": "74b534b6-7bfc-4799-b9c1-10876c435738",
+                "CreateBoneObjects": false,
+                "MaterialGroup": null,
+                "MaterialOverride": null,
+                "Model": "models/citizen_clothes/shirt/jumpsuit/models/blue_jumpsuit.vmdl",
+                "ShouldCastShadows": true,
+                "Tint": "1,1,1,1"
+              }
+            ]
+          },
+          {
+            "Id": "d031714f-e651-4c69-94d0-ba5ee4dd22f7",
             "Name": "eye",
             "Position": "0,0,63.62214",
             "Enabled": true
